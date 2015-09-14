@@ -59,17 +59,7 @@
   gulp.task('scripts', getTask('scripts'));
   gulp.task('vendor', getTask('vendor'));
   gulp.task('watch', getTask('watch'));
-
-  // gulp.task('watch', function() {
-  //   plugins.livereload({ start: true });
-  //   plugins.livereload.listen();
-  //   gulp.watch([paths.styles.watch], ['style']);
-  //   gulp.watch([paths.templates.watch], ['jade']);
-  //   gulp.watch(paths.assets.watch, ['assets']);
-  //   gulp.watch([paths.vendor.watch, paths.fonts.watch], ['vendor']);
-  //   gulp.watch(paths.scripts.watch, ['scripts']);
-  // });
-
+  gulp.task('test', getTask('test'));
 
   gulp.task('build-prod', function(cb) {
     plugins.runSequence('clean', 'style', 'jade', 'assets', 'vendor', 'scripts');

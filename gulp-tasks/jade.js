@@ -3,7 +3,7 @@ module.exports = function (gulp, plugins, paths) {
         gulp.src(paths.templates.files)
               .pipe(plugins.jade())
               .pipe(gulp.dest(paths.templates.dest))
-              .pipe(plugins.livereload());
+              .pipe(plugins.connect.reload());
     };
 };
 

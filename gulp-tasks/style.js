@@ -4,6 +4,6 @@ module.exports = function (gulp, plugins, paths) {
       .pipe(plugins.sass())
       .pipe(plugins.minifyCss())
       .pipe(gulp.dest(paths.styles.dest))
-      .pipe(plugins.livereload());
+      .pipe(plugins.connect.reload());
     };
 };

@@ -6,6 +6,7 @@ module.exports = function (gulp, plugins, paths) {
       .pipe(plugins.filter('**/*.js'))
       .pipe(plugins.concat(paths.vendor.name))
       .pipe(plugins.jsmin())
-      .pipe(gulp.dest(paths.vendor.dest));
+      .pipe(gulp.dest(paths.vendor.dest))
+      .pipe(plugins.connect.reload());
   };
 };

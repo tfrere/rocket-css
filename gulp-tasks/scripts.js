@@ -4,7 +4,8 @@ module.exports = function (gulp, plugins, paths) {
     gulp.src(paths.scripts.files)
       .pipe(plugins.concat(paths.scripts.name))
       .pipe(plugins.jsmin())
-      .pipe(gulp.dest(paths.scripts.dest));
+      .pipe(gulp.dest(paths.scripts.dest))
+      .pipe(plugins.connect.reload());
     }
 };
 

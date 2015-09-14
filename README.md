@@ -5,16 +5,17 @@ Deploy
 ```
 npm install
 bower install
+npm install protractor -g
+./node_modules/protractor/bin/webdriver-manager update
+
 ```
 
 Launch
 ```
 gulp
 ```
-
-Let's optimize and minify for production purposes
 ```
-gulp prod
+gulp production
 ```
 
 MIT Licence
