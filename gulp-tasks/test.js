@@ -13,6 +13,7 @@ module.exports = function (gulp, plugins, paths) {
           configFile: "protractor.config.js",
           args: ['--baseUrl', 'http://127.0.0.1:8000']
       }))
+      .on('end', function(){plugins.connect.serverClose()})
       .on('error', function(e) { throw e });
     };
 };
