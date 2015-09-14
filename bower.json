@@ -1,0 +1,12 @@
+{
+  "name": "angular-boilerplate",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "~1.4.0",
+    "ui-router": "~0.2.13"
+  },
+  "devDependencies": {
+    "neat": "~1.7.2",
+    "bourbon": "~4.2.4"
+  }
+}

@@ -1,0 +1,31 @@
+/* # Hr
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	hr {
+		border: solid $color-grey-50;
+		border-width: 1px 0 0;
+		margin: 10px 0 30px;
+		height: 0;
+		@include clearfix();
+	}
+
+	/* # Specific hrs              chekout patternify.com
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+		hr.lines {
+			border: none;
+			display:block;
+			width: 100%;
+			height: 5px;
+			background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX1jEj8eiC7ESYA5oAkQQJwDkgAAGKuA4R0d0m8AAAAAElFTkSuQmCC) repeat;
+			opacity: 0.8;
+		}
+
+		hr.triangle {
+			border: none;
+			display:block;
+			width: 100%;
+			height: 5px;
+			background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat;
+
+		}

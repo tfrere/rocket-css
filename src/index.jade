@@ -1,0 +1,38 @@
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='Content-type', content='text/html;charset=UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(http-equiv='X-UA-Compatible', content='IE=10')
+		meta(http-equiv='content-language', content='fr')
+
+		// for good display
+		meta(name='viewport', content='width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0')
+			
+		// titre google et d'onglet
+		title Angular boilerplate
+
+		link(rel="icon" href="favicon.ico")
+
+		// texte google 
+		meta(name='description', content="Site d'Etienne de Rocquigny")
+			
+		// keywords and stuff
+		meta(name='keywords', content='disruption, observatoire, entreprise, algorithme, algorithmie')
+		meta(name='author', content='Etienne de Rocquigny')
+		meta(name='copyright', content='BPI')
+
+
+		// url finale de l'index à mettre dans href
+		link(rel='canonical', href='')
+		meta(name='revisit-after', content='15 days')
+		meta(name='robots', content='index, follow')
+		meta(http-equiv='cache-control', content='public')
+
+		link(src="styles/style.css")
+		script(src="vendor/vendor.min.js")
+
+	body(ng-app="app")
+		div(ui-view="")
+		
+		script(src="scripts/app.min.js")

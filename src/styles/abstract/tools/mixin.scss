@@ -1,0 +1,110 @@
+/* # Library
+============================================= */
+
+	@mixin transition ($attribute: all, $duration: 200ms, $easing: ease-in-out ) {
+		transition: $attribute $duration $easing;
+	}
+
+	@mixin animation ($animation, $delay: 1s, $duration: 1s, $easing: ease-in-out) {
+		animation: $animation $delay $duration $easing;
+	}
+	
+	@mixin opacity($opacity) {
+		opacity: $opacity;
+		$opacity-ie: $opacity * 100;
+		filter: alpha(opacity=$opacity-ie); //IE8
+		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity-ie);
+	}
+
+	@mixin box-sizing ($sizing: border-box) {
+		box-sizing: 				$sizing;
+	}
+
+	@mixin scale ($factor) {
+		transform: 		 		scale($factor);
+	}
+
+	@mixin translateX ($number: -40px) {
+		transform: 		 		translateX($number);
+	}
+
+
+	@mixin translateY ($number: -40px) {
+		transform: 		 		translateY($number);
+	}
+
+	@mixin rotate ($deg) {
+		transform: 		 		rotate($deg);
+	}
+
+	@mixin border-radius ($radius: 5px) {
+		border-radius: 				$radius;
+	}
+
+	@mixin brightness ($value: 40%) {
+		filter: 					brightness($value);
+	}
+
+	@mixin circle {
+		border-radius:				100%;
+	}
+
+	@mixin box-shadow ($x:3px, $y:3px, $blur:5px, $alpha: 0.5) {
+		box-shadow: 				$x $y $blur rgba(0, 0, 0, $alpha);
+	}
+
+
+	@mixin text-shadow ($x:1px, $y:1px, $blur:0px, $color: white) {
+		text-shadow: 				$x $y $blur $color;
+	}
+
+
+	@mixin gradient ($origin: left, $start: #ffffff, $stop: #000000) {
+
+		background-color:	 		$start;
+		background-image:	 		linear-gradient($origin, $start, $stop);
+	}
+
+	@mixin cover {
+		background-size: 			cover;
+	}
+
+	@mixin unselectable () {
+		user-select:           		none;
+	}
+
+	@mixin selectable () {
+		user-select: 				text;
+	}
+
+	@mixin antialiased () {
+		-webkit-font-smoothing:     antialiased;
+		-moz-osx-font-smoothing:    grayscale;
+		text-rendering:             optimizelegibility;
+	}
+
+
+	@mixin selection-color ( $text-color: white, $bg-color: black ) {
+
+		::selection                 { background: $bg-color; color: $text-color; }
+		::-moz-selection            { background: $bg-color; color: $text-color; }
+		::-webkit-selection         { background: $bg-color; color: $text-color; }
+	}
+
+	@mixin placeholder-color ( $color: black ) {
+
+		::-webkit-input-placeholder { color: $color; }
+		::-moz-placeholder          { color: $color; opacity:1; }
+		::-moz-placeholder          { color: $color; opacity:1; }
+		::-ms-input-placeholder     { color: $color; }
+	}
+
+
+	.border-box					{ @include box-sizing; }
+	.circle 					{ @include circle; }
+	.box-shadow 				{ @include box-shadow; }
+	.cover						{ @include cover; }
+	.unselectable               { @include unselectable; }
+	.antialiased                { @include antialiased; }
+
+

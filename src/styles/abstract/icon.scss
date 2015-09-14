@@ -1,0 +1,93 @@
+/* # Typographic base
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	@include include-font("../assets/fonts/icons/", "icomoon"); 
+	
+	[class^="icon-"], [class*=" icon-"] {
+		font-family: 'icomoon';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.icon {
+	  &.pull-left { margin-right: .3em; }
+	  &.pull-right { margin-left: .3em; }
+	}
+
+	.icon-spin {
+	  @include animation(spin, 2s, infinite, linear);
+	}
+
+	.icon-2x { font-size: 2em; }
+	.icon-3x { font-size: 3em; }
+	.icon-4x { font-size: 4em; }
+	.icon-5x { font-size: 5em; }
+
+
+.icon-spinner:before {
+	content: "\e60b";
+}
+.icon-spinner3:before {
+	content: "\e60c";
+}
+.icon-spinner5:before {
+	content: "\e60d";
+}
+.icon-heart:before {
+	content: "\e600";
+}
+.icon-settings:before {
+	content: "\e60e";
+}
+.icon-bulb:before {
+	content: "\e60f";
+}
+.icon-pen:before {
+	content: "\e610";
+}
+.icon-diamond:before {
+	content: "\e611";
+}
+.icon-eye:before {
+	content: "\e601";
+}
+.icon-stack:before {
+	content: "\e602";
+}
+.icon-cup:before {
+	content: "\e603";
+}
+.icon-phone:before {
+	content: "\e604";
+}
+.icon-photo:before {
+	content: "\e612";
+}
+.icon-plane:before {
+	content: "\e605";
+}
+.icon-param:before {
+	content: "\e606";
+}
+.icon-megaphone:before {
+	content: "\e607";
+}
+.icon-lab:before {
+	content: "\e608";
+}
+.icon-clip:before {
+	content: "\e609";
+}
+.icon-vynil:before {
+	content: "\e613";
+}
+.icon-truck:before {
+	content: "\e60a";
+}
