@@ -11,7 +11,7 @@ module.exports = function (gulp, plugins, paths) {
       gulp.src(["./src/tests/*.e2e.js"])
       .pipe(protractor({
           configFile: "protractor.config.js",
-          args: ['--baseUrl', 'http://127.0.0.1:8000']
+          args: ['--baseUrl', 'http://localhost:8000']
       }))
       .on('end', function(){plugins.connect.serverClose()})
       .on('error', function(e) { throw e });
