@@ -1,2 +1,12 @@
-h1 NavCtrl
+nav
+	.container
+		.row
+			.twelve.col
+				#logo.pull-left
+				a.pull-left(ui-sref="nav.home") Accueil
+				a.pull-left(ui-sref="nav.faq") FAQ
+				a.pull-left(ui-sref="nav.contact") Contact
+				a.button.small.pull-right.complement(ui-sref="#") Se connecter
+				a.button.small.pull-right.primary(ui-sref="#") Créer un compte
+
 div(ui-view="")

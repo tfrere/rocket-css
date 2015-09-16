@@ -10,6 +10,6 @@
 		&:focus	 	{ outline: thin dotted; }
 	}
 
-	a + a {
+	a:not(.button) + a:not(.button) {
 		margin-left: 20px;
 	}

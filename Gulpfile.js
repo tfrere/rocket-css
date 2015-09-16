@@ -34,7 +34,7 @@
           watch: './src/styles/**/*.scss'
       },
       scripts: {
-          files: ['./src/scripts/directives/*.js', './src/scripts/*.js'],
+          files: ['./src/scripts/directives/*.js', './src/scripts/app.js', './src/scripts/services/*.js', './src/scripts/controllers/*.js'],
           dest: './public/scripts/',
           name: 'app.min.js',
           watch: './src/scripts/**/*.js'

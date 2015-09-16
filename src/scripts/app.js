@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax']);
+var app = angular.module('app', ['ui.router', 'ngWheel', 'duScroll', 'duParallax']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     
@@ -8,7 +8,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('nav', {
             abstract: true,
             templateUrl: 'templates/nav.html',
-            controller: 'homeCtrl'
+            controller: 'navCtrl'
         })
         .state('nav.home', {
             url: '/',
@@ -20,35 +20,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/faq.html',
             controller: 'faqCtrl'
         })
-        .state('nav.whoami', {
-            url: '/whoami',
-            templateUrl: 'templates/whoami.html',
-            controller: 'whoamiCtrl'
-        })
-        .state('form', {
-            url: '/form',
-            templateUrl: 'templates/form.html',
-            controller: 'formCtrl'
+        .state('nav.contact', {
+            url: '/contact',
+            templateUrl: 'templates/contact.html',
+            controller: 'contactCtrl'
         })
 
 });
 
-app.controller('faqCtrl', function ($scope) {
 
-
-});
-
-app.controller('whoamiCtrl', function ($scope) {
-
-
-});
-
-app.controller('homeCtrl', function ($scope) {
-
-
-});
-
-app.controller('formCtrl', function ($scope) {
-
-
-});

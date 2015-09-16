@@ -10,29 +10,27 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0')
 			
 		// titre google et d'onglet
-		title Angular boilerplate
+		title Peon
 
 		link(rel="icon" href="favicon.ico")
 
 		// texte google 
-		meta(name='description', content="Site d'Etienne de Rocquigny")
+		meta(name='description', content="Expert comptable automatisé pour auto entrepreneurs.")
 			
 		// keywords and stuff
-		meta(name='keywords', content='disruption, observatoire, entreprise, algorithme, algorithmie')
-		meta(name='author', content='Etienne de Rocquigny')
-		meta(name='copyright', content='BPI')
-
+		meta(name='keywords', content='devis, facture, auto entrepreneur')
+		meta(name='author', content='Thibaud FRERE')
+		meta(name='copyright', content='Thibaud FRERE')
 
 		// url finale de l'index à mettre dans href
-		link(rel='canonical', href='')
+		link(rel='canonical', href='http://peon.fr')
 		meta(name='revisit-after', content='15 days')
 		meta(name='robots', content='index, follow')
 		meta(http-equiv='cache-control', content='public')
+		link(type="text/css", rel="stylesheet", href="styles/style.css")
 
-		link(src="styles/style.css")
-		script(src="vendor/vendor.min.js")
-
-	body(ng-app="app")
+	body(ng-scroll="" ng-app="app")
 		div(ui-view="")
 		
-		script(src="scripts/app.min.js")
+		script(type="text/javascript" src="vendor/vendor.min.js")
+		script(type="text/javascript" src="scripts/app.min.js")

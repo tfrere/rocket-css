@@ -5,21 +5,17 @@
                 span text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-    .button,
-    button,
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"]{
+    .button{
         
-        margin-top: 10px;
+        font-weight: 800;
+        letter-spacing: 0.3;
         display: inline-block;
         padding:10px 30px;
         text-decoration: none;
         cursor:pointer;
         color:rgb(60,60,60);
         background-color:transparent;
-        border:1px outset rgba(0,0,0,0.3);
-        //text-shadow: -0.7px -0.7px 1px rgba(0,0,0,0.2);                
+        border:1px outset rgba(0,0,0,0.3);             
         text-transform: uppercase;
         text-decoration: none;
         white-space: nowrap;
@@ -27,8 +23,8 @@
         @include transition(all, 200ms, ease-in-out);
         @include unselectable();
 
-        + .button {
-          margin: 0 0 0 10px;
+        & + .button {
+          margin-right: 10px;
         }
 
         i {
@@ -57,7 +53,7 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
             &.small {
-              padding:5px 10px;
+              padding:6px 10px;
             }
 
             &.big {
@@ -74,7 +70,9 @@
               background-color:$color-primary;
               color:white;
               cursor:pointer;
-              text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+              text-shadow: 0px 1px 0px darken($color-primary, 10%);
+              border: none;
+              border-bottom: 1px solid $color-primary-dark;
               &:hover {
                 background-color: lighten($color-primary, 10%);
               }
@@ -87,7 +85,9 @@
               background-color:$color-complement;
               color:white;
               cursor:pointer;
-              border: 1px solid $color-complement-dark;
+              text-shadow: 0px 1px 0px darken($color-complement, 10%);
+              border: none;
+              border-bottom: 1px solid $color-complement-dark;
               &:hover {
                 background-color: lighten($color-complement, 10%);
               }

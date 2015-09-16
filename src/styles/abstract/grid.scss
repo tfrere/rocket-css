@@ -70,6 +70,8 @@
 				margin: 0 $gutter-size / 2;
 				box-sizing:		border-box;
 
+				&.third 	{ @include col(4); }
+
 				&.one 	 	{ @include col(1);   }
 				&.two 	 	{ @include col(2);   }
 				&.three  	{ @include col(3);   }
