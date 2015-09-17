@@ -2,11 +2,46 @@ nav
 	.container
 		.row
 			.twelve.col
-				#logo.pull-left
-				a.pull-left(ui-sref="nav.home") Accueil
-				a.pull-left(ui-sref="nav.faq") FAQ
-				a.pull-left(ui-sref="nav.contact") Contact
+				a#logo.pull-left(ui-sref="nav.home")
+				a.pull-left.uppercase(ui-sref="nav.apropos") A propos
+				a.pull-left.uppercase(ui-sref="nav.contact") Contact
+				a.pull-left.uppercase(ui-sref="nav.faq") FAQ
 				a.button.small.pull-right.complement(ui-sref="#") Se connecter
 				a.button.small.pull-right.primary(ui-sref="#") Créer un compte
 
 div(ui-view="")
+footer.bg-complement
+	.container
+		.row.text-white.double-bot.quad-top
+			.three.col
+				h6 L'application
+				ul.no-style
+					li
+						a(href="#") Créer un compte
+					li
+						a(href="#") S'inscrire
+					li
+						a(ui-sref="nav.faq") FAQ
+			.three.col
+				h6 Contact
+				ul.no-style
+					li
+						a(ui-sref="nav.contact") Email
+					li
+						a(href="http://twitter.com/peon") Twitter
+					li
+						a(href="http://facebook.com/peon") Facebook
+					li
+						a(href="http://googleplus.com/peon") Google +
+			.three.col
+				h6 A propos
+				ul.no-style
+					li
+						a(href="#") Histoire
+					li
+						a(href="ressources/pressKit.zip") Presse
+			.three.col
+				h6 Conditions
+				ul.no-style
+					li
+						a(href="#") CGV

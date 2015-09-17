@@ -33,6 +33,11 @@
           dest: './public/styles/',
           watch: './src/styles/**/*.scss'
       },
+      ressources: {
+        files: './src/ressources/*',
+        dest: './public/ressources/',
+        watch: './src/ressources/*'
+      },
       scripts: {
           files: ['./src/scripts/directives/*.js', './src/scripts/app.js', './src/scripts/services/*.js', './src/scripts/controllers/*.js'],
           dest: './public/scripts/',
@@ -60,9 +65,11 @@
   gulp.task('vendor', getTask('vendor'));
   gulp.task('watch', getTask('watch'));
   gulp.task('test', getTask('test'));
+  gulp.task('ressources', getTask('ressources'));
+
 
   gulp.task('build-prod', function(cb) {
-    plugins.runSequence('clean', 'style', 'jade', 'assets', 'vendor', 'scripts');
+    plugins.runSequence('clean', 'style', 'jade', 'assets', 'vendor', 'scripts', 'ressources');
   });
 
   gulp.task('default', ['watch', 'serve']);

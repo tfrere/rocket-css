@@ -29,9 +29,6 @@
 // @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 // @import "../../bower_components/neat/app/assets/stylesheets/_neat";
 
-.shadowed {
-	text-shadow: 2px 2px 0px #ffffff, 5px 5px 0px $color-grey-20;
-}
 
 nav {
 	height: 60px;
@@ -47,9 +44,11 @@ nav {
 	a.pull-left {
 		margin-top: 19px;
 		font-weight: 800;
-		color: $color-grey-100;
+		color: $color-grey-100!important;
+		@include transition();
 		&:hover {
-			text-decoration: none;
+			color: $color-grey-50!important;
+			text-decoration: none!important;
 		}
 	}
 	a.pull-right {
@@ -108,3 +107,45 @@ footer {
 	height: 200px;
 	margin: 0 auto;
 }
+
+.flip {
+	height:150px;
+	position:relative;
+	z-index: 11;
+	perspective: 1000;
+	transform-style: preserve-3d;
+	.front, .back {
+		@include border-radius(100px);
+		width: 150px;
+		height: 150px;
+		left: 50%;
+		margin-left: -75px;
+		display: block;
+		position: absolute;
+		color: #fff;
+		transition: transform .5s ease-in-out;
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.front {
+		background-color: $color-grey-30;
+		transform: rotate3d(45, 45, 0, 0deg);
+		backface-visibility: hidden;
+		z-index: 13;
+	}
+	&:hover .front {
+		transform: rotate3d(45, 45, 0, 180deg);
+	}
+	.back {
+		background-color: $color-grey-50;
+		transform: rotate3d(45, 45, 0, -180deg);
+		backface-visibility: hidden;
+		z-index: 12;
+	}
+	&:hover .back {
+		transform: rotate3d(45, 45, 0, 0deg);
+		z-index: 14;
+	}
+} 

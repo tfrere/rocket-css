@@ -1,7 +1,8 @@
 var app = angular.module('app', ['ui.router', 'ngWheel', 'duScroll', 'duParallax']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     
+    //$locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
     
     $stateProvider
@@ -20,12 +21,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/faq.html',
             controller: 'faqCtrl'
         })
+        .state('nav.apropos', {
+            url: '/apropos',
+            templateUrl: 'templates/apropos.html',
+            controller: 'aproposCtrl'
+        })
         .state('nav.contact', {
             url: '/contact',
             templateUrl: 'templates/contact.html',
             controller: 'contactCtrl'
         })
-
 });
 
 
