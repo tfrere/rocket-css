@@ -32,5 +32,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tfrere/angular-boilerplate.git"
+  },
+  "dependencies": {
+    "connect": "^3.4.0",
+    "serve-static": "^1.10.0"
   }
 }
