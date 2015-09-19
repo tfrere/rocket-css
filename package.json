@@ -2,7 +2,10 @@
   "name": "angular-boilerplate",
   "version": "0.0.0",
   "description": "Un super boilerplate pour angular",
-  "main": "public/index.html",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "devDependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
