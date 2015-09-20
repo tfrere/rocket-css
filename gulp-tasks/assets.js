@@ -6,6 +6,7 @@ module.exports = function (gulp, plugins, paths) {
 		.pipe(gulp.dest(paths.fonts.dest));
 
 		return gulp.src(paths.assets.files)
+		.pipe(plugins.plumber())
 		.pipe(plugins.imagemin({
 		  progressive: true,
 		  svgoPlugins: [{removeViewBox: false}],
