@@ -1,0 +1,52 @@
+
+#welcome {
+	position:absolute;
+	z-index: 998;
+	margin-left: -335px;
+	bottom:0;
+	width: 500px;
+	height: 250px;
+	zoom:0.7;
+	background-image: url('../assets/imgs/svg/welcome.svg');
+	overflow:hidden;
+}
+
+#logo {
+	width: 40px;
+	height: 40px;
+	background-image: url('../assets/imgs/svg/logo.svg');
+	@include transition();
+	opacity:0.8;
+	&:hover {
+		opacity:1;
+	}
+}
+
+#peon {
+	width: 150px;
+	height: 150px;
+	background-image: url('../assets/imgs/svg/peon.svg');
+	margin: -75px auto 0 auto;
+	position:absolute;
+	margin-left: 50%;
+	left: -75px;
+}
+
+.circle-calculator {
+	background-image: url('../assets/imgs/svg/calculator.svg');
+}
+.circle-responsive {
+	background-image: url('../assets/imgs/svg/responsive.svg');
+}
+.circle-cloudsafe {
+	background-image: url('../assets/imgs/svg/cloudsafe.svg');
+}
+.circle-pig {
+	background-image: url('../assets/imgs/svg/pig.svg');
+}
+.circle-unlimited {
+	background-image: url('../assets/imgs/svg/unlimited.svg');
+}
+.circle-papers {
+	background-image: url('../assets/imgs/svg/papers.svg');
+}

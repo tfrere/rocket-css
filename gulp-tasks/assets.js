@@ -13,7 +13,6 @@ module.exports = function (gulp, plugins, paths) {
 		  use: [pngquant()]
 		}))
 		.pipe(gulp.dest(paths.assets.dest))
-		.pipe(plugins.connect.reload());
+		.pipe(plugins.livereload());
     };
 };
-

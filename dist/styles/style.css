@@ -9,7 +9,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800,400italic,700italic,300|PT+Serif:400,800italic,700italic|PT+Serif+Caption);
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,600,800,400italic,700italic,300|PT+Serif:400,800italic,700italic|PT+Serif+Caption");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -730,7 +730,7 @@ th {
 
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* ## Checkbox
+/* ## Grey scale list
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* # Class system
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -1424,6 +1424,53 @@ big, .big {
   .button.spinner.on .icon-spin {
     opacity: 1; }
 
+#welcome {
+  position: absolute;
+  z-index: 998;
+  margin-left: -335px;
+  bottom: 0;
+  width: 500px;
+  height: 250px;
+  zoom: 0.7;
+  background-image: url("../assets/imgs/svg/welcome.svg");
+  overflow: hidden; }
+
+#logo {
+  width: 40px;
+  height: 40px;
+  background-image: url("../assets/imgs/svg/logo.svg");
+  transition: all 200ms ease-in-out;
+  opacity: 0.8; }
+  #logo:hover {
+    opacity: 1; }
+
+#peon {
+  width: 150px;
+  height: 150px;
+  background-image: url("../assets/imgs/svg/peon.svg");
+  margin: -75px auto 0 auto;
+  position: absolute;
+  margin-left: 50%;
+  left: -75px; }
+
+.circle-calculator {
+  background-image: url("../assets/imgs/svg/calculator.svg"); }
+
+.circle-responsive {
+  background-image: url("../assets/imgs/svg/responsive.svg"); }
+
+.circle-cloudsafe {
+  background-image: url("../assets/imgs/svg/cloudsafe.svg"); }
+
+.circle-pig {
+  background-image: url("../assets/imgs/svg/pig.svg"); }
+
+.circle-unlimited {
+  background-image: url("../assets/imgs/svg/unlimited.svg"); }
+
+.circle-papers {
+  background-image: url("../assets/imgs/svg/papers.svg"); }
+
 /* # Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
@@ -1595,19 +1642,19 @@ ol ol ol {
 
 /* # Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-a:not(.button) {
+a {
   text-decoration: none; }
-  a:not(.button):hover {
+  a:hover {
     outline: 0;
     text-decoration: underline; }
-  a:not(.button):active {
+  a:active {
     outline: 0; }
-  a:not(.button):visited {
+  a:visited {
     color: inherit; }
-  a:not(.button):focus {
+  a:focus {
     outline: 0; }
 
-a:not(.button) + a:not(.button) {
+a + a {
   margin-left: 20px; }
 
 /* # Hr
@@ -1686,19 +1733,30 @@ nav {
   position: fixed;
   z-index: 999;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); }
-  nav #logo {
-    margin-top: 10px;
-    margin-right: 20px; }
-  nav a.pull-left {
+  nav a {
+    text-decoration: none;
     margin-top: 19px;
     font-weight: 800;
-    color: #9b9b9b !important;
+    color: #9b9b9b;
+    opacity: 0.8;
     transition: all 200ms ease-in-out; }
-    nav a.pull-left:hover  {
-      color: #cdcdcd !important;
-      text-decoration: none !important; }
-  nav a.pull-right {
+    nav a:hover {
+      outline: 0;
+      text-decoration: none;
+      opacity: 1; }
+    nav a:active {
+      outline: 0; }
+    nav a:visited {
+      color: #9b9b9b; }
+    nav a:focus {
+      outline: 0; }
+  nav a + a {
+    margin-left: 20px; }
+  nav button {
     margin-top: 15px; }
+  nav #logo {
+    margin-top: 10px;
+    margin-right: 10px; }
 
 section.background {
   width: 100%;
@@ -1706,36 +1764,12 @@ section.background {
   position: relative; }
 
 footer a {
-  opacity: 0.5; }
-
-#welcome {
-  position: absolute;
-  z-index: 998;
-  margin-left: -335px;
-  bottom: 0;
-  width: 500px;
-  height: 250px;
-  zoom: 0.7;
-  background-image: url("../assets/imgs/svg/welcome.svg");
-  overflow: hidden; }
-
-#logo {
-  width: 40px;
-  height: 40px;
-  background-image: url("../assets/imgs/svg/logo.svg"); }
-
-#peon {
-  width: 150px;
-  height: 150px;
-  background-image: url("../assets/imgs/svg/peon.svg");
-  margin: -75px auto 0 auto;
-  position: absolute;
-  margin-left: 50%;
-  left: -75px; }
+  opacity: 0.5;
+  color: white; }
 
 .small-circle {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto; }
 
 .big-circle {

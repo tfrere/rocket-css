@@ -1,7 +1,7 @@
 /* # Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	a:not(.button) {
+	a {
 		text-decoration: none;
 
 		&:hover 	{ outline: 0; text-decoration: underline; }
@@ -10,6 +10,6 @@
 		&:focus	 	{ outline: 0;  }
 	}
 
-	a:not(.button) + a:not(.button) {
+	a + a {
 		margin-left: 20px;
 	}

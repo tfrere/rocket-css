@@ -17,6 +17,7 @@
 @import "abstract/icon";
 
 @import "atom/button";
+@import "atom/images";
 @import "atom/code";
 @import "atom/input";
 @import "atom/table";
@@ -37,22 +38,28 @@ nav {
 	position:fixed;
 	z-index: 999;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	#logo {
-		margin-top: 10px;
-		margin-right: 20px;
-	}
-	a.pull-left {
+	a {
+		text-decoration: none;
 		margin-top: 19px;
 		font-weight: 800;
-		color: $color-grey-100!important;
+		color: $color-grey-100;
+		opacity:0.8;
 		@include transition();
-		&:hover {
-			color: $color-grey-50!important;
-			text-decoration: none!important;
-		}
+
+		&:hover 	{ outline: 0; text-decoration: none; opacity:1; }
+		&:active 	{ outline: 0; }
+		&:visited 	{ color: $color-grey-100; }
+		&:focus	 	{ outline: 0;  }
 	}
-	a.pull-right {
+	a + a {
+		margin-left: 20px;
+	}
+	button {
 		margin-top: 15px;
+	}
+	#logo {
+		margin-top: 10px;
+		margin-right: 10px;
 	}
 }
 
@@ -65,40 +72,14 @@ section.background {
 footer {
 	a {
 		opacity: 0.5;
+		color:white;
 	}
 }
 
-#welcome {
-	position:absolute;
-	z-index: 998;
-	margin-left: -335px;
-	bottom:0;
-	width: 500px;
-	height: 250px;
-	zoom:0.7;
-	background-image: url('../assets/imgs/svg/welcome.svg');
-	overflow:hidden;
-}
-
-#logo {
-	width: 40px;
-	height: 40px;
-	background-image: url('../assets/imgs/svg/logo.svg');
-}
-
-#peon {
-	width: 150px;
-	height: 150px;
-	background-image: url('../assets/imgs/svg/peon.svg');
-	margin: -75px auto 0 auto;
-	position:absolute;
-	margin-left: 50%;
-	left: -75px;
-}
 
 .small-circle {
-	width: 100px;
-	height: 100px;
+	width: 150px;
+	height: 150px;
 	margin: 0 auto;
 }
 

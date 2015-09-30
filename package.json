@@ -1,10 +1,10 @@
 {
-  "name": "vitrinepeon",
+  "name": "gopeon",
   "version": "0.0.0",
-  "description": "la vitrine de peon",
-  "main": "index.js",
+  "description": "un peon qu'il est bien",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "devDependencies": {
     "del": "^2.0.2",
@@ -17,10 +17,10 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
     "gulp-jsmin": "^0.1.5",
+    "gulp-plumber": "^1.0.1",
     "gulp-load-plugins": "^1.0.0-rc.1",
     "gulp-minify-css": "^1.2.1",
     "gulp-open": "^1.0.0",
-    "gulp-plumber": "^1.0.1",
     "gulp-protractor": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-run-sequence": "^0.3.2",
@@ -30,6 +30,7 @@
     "imagemin": "^3.2.0",
     "imagemin-pngquant": "^4.2.0",
     "main-bower-files": "^2.9.0",
+    "gulp-nodemon": "^2.0.4",
     "protractor": "^2.2.0"
   },
   "repository": {
@@ -37,6 +38,9 @@
     "url": "https://github.com/tfrere/gopeon.git"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.0.1"
   }
 }

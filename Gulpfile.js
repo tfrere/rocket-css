@@ -4,51 +4,57 @@
   var watch         = require('gulp-watch');
   var plugins       = require('gulp-load-plugins')();
 
+  var rootDir = {
+    dev : "./src",
+    dist : "./dist"
+  }
+
   var paths = {
 
       clean: {
-        files: './public'
+        files: rootDir + ''
       },
-      serve : {
-        port: '8000',
-        root: './public'
+      server : {
+        port: '5000',
+        url: 'http://localhost',
+        file: './server.js'
       },
       fonts: {
-        files: './src/assets/fonts/**/*',
-        dest: './public/assets/fonts/',
-        watch: ['./src/assets/fonts/**/*']
+        files: rootDir.dev + '/assets/fonts/**/*',
+        dest: rootDir.dist + '/assets/fonts/',
+        watch: [rootDir.dev + '/assets/fonts/**/*']
       },
       vendor: {
         name: 'vendor.min.js',
-        dest: './public/vendor/',
+        dest: rootDir.dist + '/vendor/',
         watch: './bower_components/*'
       },
       templates: {
-          files: './src/**/*.jade',
-          dest: './public/',
-          watch: './src/**/*.jade'
-      },
-      styles: {
-          files:  './src/styles/*.scss',
-          dest: './public/styles/',
-          watch: './src/styles/**/*.scss'
+          files: rootDir.dev + '/**/*.jade',
+          dest: rootDir.dist + '/',
+          watch: rootDir.dev + '/**/*.jade'
       },
       ressources: {
-        files: './src/ressources/*',
-        dest: './public/ressources/',
-        watch: './src/ressources/*'
+        files: rootDir.dev + '/ressources/*',
+        dest: rootDir.dist + '/ressources/',
+        watch: rootDir.dev + '/ressources/*'
+      },
+      styles: {
+          files:  rootDir.dev + '/styles/*.scss',
+          dest: rootDir.dist + '/styles/',
+          watch: rootDir.dev + '/styles/**/*.scss'
       },
       scripts: {
-          files: ['./src/scripts/directives/*.js', './src/scripts/app.js', './src/scripts/services/*.js', './src/scripts/controllers/*.js'],
-          dest: './public/scripts/',
+          files: [rootDir.dev + '/scripts/directives/*.js', rootDir.dev + '/scripts/app.js', rootDir.dev + '/scripts/services/*.js', rootDir.dev + '/scripts/controllers/*.js'],
+          dest: rootDir.dist + '/scripts/',
           name: 'app.min.js',
-          watch: './src/scripts/**/*.js'
+          watch: rootDir.dev + '/scripts/**/*.js'
       },
       assets : {
-        files: ['./src/assets/imgs/**/*{png,svg}'],
-        dest: './public/assets/imgs/',
-        watch: './src/assets/imgs/**/*',
-        clean: './public/assets/imgs/**/*'
+        files: [rootDir.dev + '/assets/imgs/**/*{png,svg, jpg}'],
+        dest: rootDir.dist + '/assets/imgs/',
+        watch: rootDir.dev + '/assets/imgs/**/*',
+        clean: rootDir.dist + '/assets/imgs/**/*'
       }
   }
   
@@ -57,7 +63,7 @@
   }
 
   gulp.task('clean', getTask('clean'));
-  gulp.task('serve', getTask('serve'));
+  gulp.task('nodemon', getTask('nodemon'));
   gulp.task('style', getTask('style'));
   gulp.task('assets', getTask('assets'));
   gulp.task('jade', getTask('jade'));
@@ -67,10 +73,9 @@
   gulp.task('test', getTask('test'));
   gulp.task('ressources', getTask('ressources'));
 
-
   gulp.task('build-prod', function(cb) {
     plugins.runSequence('clean', 'style', 'jade', 'assets', 'vendor', 'scripts', 'ressources');
   });
 
-  gulp.task('default', ['watch', 'serve']);
+  gulp.task('default', ['watch', 'nodemon']);
   gulp.task('production', ['build-prod']);

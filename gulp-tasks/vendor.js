@@ -8,6 +8,6 @@ module.exports = function (gulp, plugins, paths) {
       .pipe(plugins.concat(paths.vendor.name))
       .pipe(plugins.jsmin())
       .pipe(gulp.dest(paths.vendor.dest))
-      .pipe(plugins.connect.reload());
+      .pipe(plugins.livereload());
   };
 };
