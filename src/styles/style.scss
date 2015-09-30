@@ -17,7 +17,6 @@
 @import "abstract/icon";
 
 @import "atom/button";
-@import "atom/images";
 @import "atom/code";
 @import "atom/input";
 @import "atom/table";
@@ -26,50 +25,15 @@
 @import "atom/link";
 @import "atom/hr";
 @import "atom/toggle";
+@import "atom/circle-flip";
+
+
+@import "molecule/footer";
+@import "molecule/home";
+@import "molecule/nav";
 
 // @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
 // @import "../../bower_components/neat/app/assets/stylesheets/_neat";
-
-
-nav {
-	height: 60px;
-	width: 100%;
-	background-color: white;
-	position:fixed;
-	z-index: 999;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	a {
-		text-decoration: none;
-		margin-top: 19px;
-		font-weight: 800;
-		color: $color-grey-100;
-		opacity:0.8;
-		@include transition();
-
-		&:hover 	{ outline: 0; text-decoration: none; opacity:1; }
-		&:active 	{ outline: 0; }
-		&:visited 	{ color: $color-grey-100; }
-		&:focus	 	{ outline: 0;  }
-	}
-	a + a {
-		margin-left: 20px;
-	}
-	button {
-		margin-top: 15px;
-	}
-	#logo {
-		margin-top: 10px;
-		margin-right: 10px;
-	}
-}
-
-
-footer {
-	a {
-		opacity: 0.5;
-		color:white;
-	}
-}
 
 
 .small-circle {
@@ -79,49 +43,15 @@ footer {
 }
 
 .big-circle {
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
 	margin: 0 auto;
 }
 
-.flip {
-	height:150px;
-	position:relative;
-	z-index: 11;
-	perspective: 1000;
-	transform-style: preserve-3d;
-	.front, .back {
-		@include border-radius(100px);
-		width: 150px;
-		height: 150px;
-		left: 50%;
-		margin-left: -75px;
-		display: block;
-		position: absolute;
-		color: #fff;
-		transition: transform .5s ease-in-out;
-		svg {
-			width: 100%;
-			height: 100%;
-		}
+@include desktop {
+	.big-circle {
+		width: 250px;
+		height: 250px;
+		margin: 0 auto;
 	}
-	.front {
-		background-color: $color-grey-30;
-		transform: rotate3d(45, 45, 0, 0deg);
-		backface-visibility: hidden;
-		z-index: 13;
-	}
-	&:hover .front {
-		transform: rotate3d(45, 45, 0, 180deg);
-	}
-	.back {
-		background-color: $color-grey-50;
-		transform: rotate3d(45, 45, 0, -180deg);
-		backface-visibility: hidden;
-		z-index: 12;
-	}
-	&:hover .back {
-		transform: rotate3d(45, 45, 0, 0deg);
-		z-index: 14;
-	}
-} 
+}

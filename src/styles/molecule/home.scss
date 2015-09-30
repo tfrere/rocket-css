@@ -14,7 +14,7 @@
 
 section.background {
 	width: 100%;
-	background-color: #c5d8e3;
+	background-color: #8DB2C8;
 	position:relative;
 }
 
@@ -32,7 +32,7 @@ section.background {
 	@include cover();
 }
 
-#main-texture {
+.main-texture {
 	background-image: url('../assets/imgs/png/main_texture.png');
 	width:100%;
 	position:absolute;
@@ -40,19 +40,8 @@ section.background {
 	opacity:0.5;
 }
 
-
-#logo {
-	width: 40px;
-	height: 40px;
-	background-image: url('../assets/imgs/svg/logo.svg');
-	@include transition();
-	opacity:0.8;
-	&:hover {
-		opacity:1;
-	}
-}
-
 #peon {
+	z-index: 10;
 	width: 150px;
 	height: 150px;
 	background-image: url('../assets/imgs/svg/peon.svg');

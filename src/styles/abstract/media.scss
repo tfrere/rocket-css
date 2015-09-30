@@ -77,6 +77,11 @@
 		box-sizing: border-box;
 	}
 
+	.large-display {
+		display:none;
+	}
+
+
 	@include phone {
 		#media-debug { &:after { content: "Phone >= #{$phone-width}" } }
 	}
@@ -86,6 +91,9 @@
 	}
 
 	@include phablet {
+		.large-display {
+			display:block;
+		}
 		#media-debug { &:after { content: "Phablet >= #{$phablet-width}" } }
 	}
 

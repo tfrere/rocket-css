@@ -52,6 +52,24 @@
         /* Specific buttons
         –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+            &.cta {
+              
+              position: relative;
+              top: 0px;
+              @include box-shadow(0px, 5px, 0px, $color-primary-dark);
+              text-shadow: 1px 1px 1px $color-primary-dark;
+              @include border-radius(5px);
+              @include transition();
+              &:active {
+                top: 5px;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                -ms-box-shadow: none !important;
+                -o-box-shadow: none !important;
+                box-shadow: none !important;
+              }
+            }
+
             &.small {
               padding:6px 10px;
             }

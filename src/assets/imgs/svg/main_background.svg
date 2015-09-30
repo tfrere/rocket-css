@@ -61,8 +61,7 @@
        sodipodi:nodetypes="ccccc" />
     <g
        id="Plante"
-       transform="matrix(1.8666413,0,0,1.9385731,-515.40269,-594.02022)"
-       style="opacity:1">
+       transform="matrix(1.8666413,0,0,1.9385731,-1097.2506,40.355578)">
       <rect
          x="1151.125"
          y="831.59497"
@@ -71,7 +70,7 @@
          id="rect357"
          style="fill:#9f1a1c" />
       <polygon
-         points="1156.25,840.025 1158.5,851.989 1214,851.973 1217,840.025 "
+         points="1158.5,851.989 1214,851.973 1217,840.025 1156.25,840.025 "
          id="polygon359"
          style="fill:#f8b15d" />
       <path
@@ -92,8 +91,7 @@
     </g>
     <g
        id="g12599"
-       style="opacity:1"
-       transform="translate(751.42857,0)">
+       transform="translate(169.5807,634.3758)">
       <g
          transform="matrix(1.8666413,0,0,1.9385731,-1648.3775,-594.02022)"
          id="Meuble2">
@@ -136,7 +134,7 @@
         <polygon
            style="fill:#09566d"
            id="polygon380"
-           points="1086.458,800.697 1090.791,818.631 1029.124,818.631 1039.791,802.691 " />
+           points="1090.791,818.631 1029.124,818.631 1039.791,802.691 1086.458,800.697 " />
         <polyline
            style="fill:#09566d"
            id="polyline382"

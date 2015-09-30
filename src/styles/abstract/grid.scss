@@ -56,11 +56,11 @@
 	}
 
 	
-	@include desktop {
+	@include phablet {
 
 		.container {
 
-			width: 100%;
+			width: 90%;
 
 			.col {
 

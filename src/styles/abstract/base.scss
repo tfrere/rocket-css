@@ -48,22 +48,13 @@
 			&a { font-weight: inherit; }
 		}
 
-		h1 { @include font(6, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h2 { @include font(5, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h3 { @include font(4, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h4 { @include font(3, $title-size / 3, $ratio); letter-spacing: -.08rem;}
-		h5 { @include font(2, $title-size / 3, $ratio); letter-spacing: -.05rem;}
-		h6 { @include font(1, $title-size / 3, $ratio); letter-spacing: 0;}
+		h1 { @include font(6, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+		h2 { @include font(5, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+		h3 { @include font(4, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+		h4 { @include font(3, $title-size / 2, $ratio); letter-spacing: -.08rem;}
+		h5 { @include font(2, $title-size / 2, $ratio); letter-spacing: -.05rem;}
+		h6 { @include font(1, $title-size / 2, $ratio); letter-spacing: 0;}
 
-		@include tablet {			
-
-			h1 { @include font(6, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h2 { @include font(5, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h3 { @include font(4, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h4 { @include font(3, $title-size / 2, $ratio); letter-spacing: -.08rem;}
-			h5 { @include font(2, $title-size / 2, $ratio); letter-spacing: -.05rem;}
-			h6 { @include font(1, $title-size / 2, $ratio); letter-spacing: 0;}
-		}
 
 		@include desktop {			
 
