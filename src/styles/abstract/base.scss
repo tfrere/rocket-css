@@ -73,7 +73,11 @@
 			h4 { @include font(2, $title-size, $ratio); letter-spacing: -.08rem;}
 			h5 { @include font(1, $title-size, $ratio); letter-spacing: -.05rem;}
 			h6 { @include font(0, $title-size, $ratio); letter-spacing: 0;}
+
+			p { @include font(1, $text-size, 1.2); color:rgb(100,100,100);}
 		}
+
+
 
 	/* # Text
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */

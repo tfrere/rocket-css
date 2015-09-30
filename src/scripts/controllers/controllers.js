@@ -22,7 +22,6 @@ app.controller('homeCtrl', function ($scope, mouseParallaxService) {
 
 	mouseParallaxService.init();
 
-
     // $(document).ready(function(){
     //     $("body").smoothWheel();
     // });

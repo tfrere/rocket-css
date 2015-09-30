@@ -1,4 +1,5 @@
-var app = angular.module('app', ['ui.router', 'ngWheel', 'duScroll', 'duParallax']);
+var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax']);
+
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     

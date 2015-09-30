@@ -11,6 +11,36 @@
 	overflow:hidden;
 }
 
+
+section.background {
+	width: 100%;
+	background-color: #c5d8e3;
+	position:relative;
+}
+
+#content {
+	z-index: 5;
+}
+
+#main-background {
+	z-index: 2;
+	background-image: url('../assets/imgs/svg/main_background.svg');
+	overflow:hidden;
+	width: 100%;
+	position:absolute;
+	height:100%;
+	@include cover();
+}
+
+#main-texture {
+	background-image: url('../assets/imgs/png/main_texture.png');
+	width:100%;
+	position:absolute;
+	height:100%;
+	opacity:0.5;
+}
+
+
 #logo {
 	width: 40px;
 	height: 40px;
@@ -30,6 +60,24 @@
 	position:absolute;
 	margin-left: 50%;
 	left: -75px;
+}
+
+
+.circle-paperasse {
+	background-image: url('../assets/imgs/svg/paperasse.svg');
+}
+
+.circle-paperasse {
+	background-image: url('../assets/imgs/svg/paperasse.svg');
+}
+
+.circle-calculatrice {
+	background-image: url('../assets/imgs/svg/calculatrice.svg');
+}
+
+
+.small-circle{
+	opacity:0.6;
 }
 
 .circle-calculator {

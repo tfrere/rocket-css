@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2000"
+   height="600"
+   id="svg9181"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="main_background.svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     inkscape:document-units="mm"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="976.05111"
+     inkscape:cy="122.59577"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-452.36218)">
+    <path
+       style="fill:#cadbe5;fill-opacity:0.09793814;stroke:none"
+       d="M 2.7600383,708.00394 1997.0399,1044.6976 2003.7678,469.33371 2.2601145,580.85881 z"
+       id="path15204"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <g
+       id="Plante"
+       transform="matrix(1.8666413,0,0,1.9385731,-515.40269,-594.02022)"
+       style="opacity:1">
+      <rect
+         x="1151.125"
+         y="831.59497"
+         width="68.25"
+         height="8.4300003"
+         id="rect357"
+         style="fill:#9f1a1c" />
+      <polygon
+         points="1156.25,840.025 1158.5,851.989 1214,851.973 1217,840.025 "
+         id="polygon359"
+         style="fill:#f8b15d" />
+      <path
+         d="m 1200.042,709.46 c 0,0 12.667,-23.247 19.333,-22.581 0,0 -27,52.667 -20.667,63.333 l 1.334,-40.752 z"
+         id="path361"
+         inkscape:connector-curvature="0"
+         style="fill:#458584" />
+      <path
+         d="m 1173.667,776.685 c 0,0 0.667,-43.414 -19.667,-50.883 0,0 30.667,1.391 36,27.461 5.333,26.07 -16.333,23.422 -16.333,23.422 z"
+         id="path363"
+         inkscape:connector-curvature="0"
+         style="fill:#458584" />
+      <path
+         d="m 1173.333,831.595 c 0,0 -8,-74.754 -37.333,-61.372 -29.333,13.382 18.667,-32.613 34,-7.949 15.333,24.664 19.333,-91.285 -24,-71.977 -43.333,19.308 31.333,-34.454 50,-1.906 18.667,32.548 4.333,76.709 4.333,76.709 0,0 1.699,-35.087 30,-37.092 0,0 -42.5,73.544 -30.5,103.571 l -26.5,0.016 z"
+         id="path365"
+         inkscape:connector-curvature="0"
+         style="fill:#4eb5ce" />
+    </g>
+    <g
+       id="g12599"
+       style="opacity:1"
+       transform="translate(751.42857,0)">
+      <g
+         transform="matrix(1.8666413,0,0,1.9385731,-1648.3775,-594.02022)"
+         id="Meuble2">
+        <rect
+           style="fill:#f08356"
+           id="rect371"
+           height="5.8899999"
+           width="150"
+           y="818.90802"
+           x="999.58301" />
+        <rect
+           style="fill:#ed674f"
+           id="rect373"
+           height="27.194"
+           width="131.5"
+           y="824.79797"
+           x="1009" />
+        <rect
+           style="fill:#f3975b"
+           id="rect375"
+           height="21.992001"
+           width="113"
+           y="830"
+           x="1018.5" />
+        <circle
+           style="fill:#9f1a1c"
+           sodipodi:ry="3.845"
+           sodipodi:rx="3.845"
+           sodipodi:cy="842.23999"
+           sodipodi:cx="1075"
+           d="m 1078.845,842.23999 c 0,2.12354 -1.7215,3.845 -3.845,3.845 -2.1235,0 -3.845,-1.72146 -3.845,-3.845 0,-2.12353 1.7215,-3.845 3.845,-3.845 2.1235,0 3.845,1.72147 3.845,3.845 z"
+           id="circle377"
+           r="3.845"
+           cy="842.23999"
+           cx="1075" />
+      </g>
+      <g
+         transform="matrix(1.8666413,0,0,1.9385731,-1648.3775,-594.02022)"
+         id="Calque_20">
+        <polygon
+           style="fill:#09566d"
+           id="polygon380"
+           points="1086.458,800.697 1090.791,818.631 1029.124,818.631 1039.791,802.691 " />
+        <polyline
+           style="fill:#09566d"
+           id="polyline382"
+           points="1057.75,804.25 1066.25,794 1078.5,792.5 1083.25,805.75 1057.75,805  " />
+      </g>
+    </g>
+    <g
+       id="g12611"
+       style="opacity:1">
+      <g
+         transform="matrix(1.8666413,0,0,1.9385731,-755.40269,-594.02022)"
+         id="g2418">
+        <polygon
+           points="403.824,741.973 403.824,724.46 474.377,726.897 459.309,742.101 "
+           id="polygon2420"
+           style="fill:#93b2c2" />
+        <polygon
+           points="498.574,536.973 483.574,715.996 476.574,715.473 490.947,537.102 "
+           id="polygon2422"
+           style="fill:#849097" />
+        <polygon
+           points="403.824,718.52 403.824,537.102 491.446,537.102 478.566,715.996 "
+           id="polygon2424"
+           style="fill:#eaf1f5" />
+        <polygon
+           points="405.472,587.769 405.824,536.973 480.199,536.973 475.949,589.906 "
+           id="polygon2426"
+           style="fill:#b2c1cb" />
+        <polygon
+           points="405.824,701.973 405.824,589.906 476.574,594.716 470.157,700.693 "
+           id="polygon2428"
+           style="fill:#b2c1cb" />
+        <polygon
+           points="407.121,700.588 408.157,592.64 474.377,596.247 468.49,698.64 "
+           id="polygon2430"
+           style="fill:#fabd64" />
+        <polygon
+           points="407.121,700.588 408.157,592.64 458.632,698.953 "
+           id="polygon2432"
+           style="fill:#f6a55a" />
+        <polygon
+           points="408.392,584.899 408.573,537.094 478.074,536.973 474.377,587.769 "
+           id="polygon2434"
+           style="fill:#fabd64" />
+        <polygon
+           points="408.392,584.899 408.573,537.094 443.233,536.973 474.377,587.769 "
+           id="polygon2436"
+           style="fill:#f6a55a" />
+        <polygon
+           points="405.824,701.205 407.121,536.973 403.824,536.973 403.824,703.473 "
+           id="polygon2438"
+           style="fill:#eaf1f5" />
+        <polygon
+           points="486.324,729.148 403.824,728.016 403.824,715.473 487.574,711.723 "
+           id="polygon2440"
+           style="fill:#9f1a1c" />
+        <rect
+           x="458.82401"
+           y="536.97302"
+           width="1.461"
+           height="104.667"
+           id="rect2442"
+           style="fill:#849097" />
+        <polygon
+           points="403.824,566.83 403.824,576.222 485.653,573.505 485.342,564.124 "
+           id="polygon2444"
+           style="fill:#d6e1e8" />
+        <polygon
+           points="403.824,552.312 403.824,561.7 485.432,563.239 485.609,553.854 "
+           id="polygon2446"
+           style="fill:#d6e1e8" />
+        <polygon
+           points="403.824,538.863 403.824,548.251 486.559,549.811 486.736,540.426 "
+           id="polygon2448"
+           style="fill:#d6e1e8" />
+        <polygon
+           points="461.574,648.348 458.074,647.723 458.074,641.64 461.574,641.64 "
+           id="polygon2450"
+           style="fill:#d6e7f1" />
+        <polygon
+           points="403.824,585.24 403.824,594.716 485.591,583.394 484.303,574.096 "
+           id="polygon2452"
+           style="fill:#d6e1e8" />
+      </g>
+    </g>
+    <g
+       transform="matrix(1.4760084,0,0,1.4760084,598.39719,416.06844)"
+       id="Whiteboard">
+      <rect
+         style="fill:#bac6cd"
+         x="689.14899"
+         y="615.36798"
+         width="161.282"
+         height="102.292"
+         id="rect42" />
+      <rect
+         style="fill:#eaf1f5"
+         x="693.14899"
+         y="621.44897"
+         width="152.196"
+         height="87.959999"
+         id="rect44" />
+      <polygon
+         style="fill:#cde1ed"
+         points="791.75,709.671 693.149,709.409 693.149,621.449 "
+         id="polygon46" />
+    </g>
+  </g>
+</svg>
