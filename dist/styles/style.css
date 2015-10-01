@@ -1642,12 +1642,28 @@ hr.lines {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX1jEj8eiC7ESYA5oAkQQJwDkgAAGKuA4R0d0m8AAAAAElFTkSuQmCC) repeat;
   opacity: 0.8; }
 
+hr.lines.light {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAL/gYARxgdzQAAkAOOA2IzIHJAAACAGEAFjDBirAAAAAElFTkSuQmCC) repeat;
+  opacity: 0.4; }
+
 hr.triangle {
   border: none;
   display: block;
   width: 100%;
   height: 5px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat; }
+
+hr.half {
+  width: 50%;
+  margin: 0 auto; }
+
+hr.quart {
+  width: 25%;
+  margin: 0 auto; }
+
+hr.tiny {
+  width: 10%;
+  margin: 0 auto; }
 
 /* # Toggle
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -1747,6 +1763,26 @@ section.background {
   width: 100%;
   background-color: #8DB2C8;
   position: relative; }
+  section.background.light {
+    background-color: #d2e0e9; }
+
+#video-container {
+  opacity: 1;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  padding-top: 1px; }
+  #video-container #video-box {
+    width: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -10%;
+    padding: 20px;
+    background-color: #ebebeb;
+    margin-bottom: -150px; }
 
 #content {
   z-index: 5; }
@@ -1777,11 +1813,18 @@ section.background {
   margin-left: 50%;
   left: -75px; }
 
-.circle-paperasse {
-  background-image: url("../assets/imgs/svg/paperasse.svg"); }
-
-.circle-paperasse {
-  background-image: url("../assets/imgs/svg/paperasse.svg"); }
+#circle-image-1, #circle-image-2, #circle-image-3 {
+  background-image: url("../assets/imgs/svg/paperasse.svg");
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+  transform: translate(0px, 0px);
+  margin: 0px; }
+  #circle-image-1.fly-left, #circle-image-2.fly-left, #circle-image-3.fly-left {
+    opacity: 1;
+    transform: translate(-10px, 0px); }
+  #circle-image-1.fly-right, #circle-image-2.fly-right, #circle-image-3.fly-right {
+    opacity: 1;
+    transform: translate(20px, 0px); }
 
 .circle-calculatrice {
   background-image: url("../assets/imgs/svg/calculatrice.svg"); }
@@ -1847,6 +1890,25 @@ nav {
   nav #logo {
     margin-top: 10px;
     margin-right: 10px; }
+
+.question {
+  user-select: none;
+  transition: all 200ms ease-in-out;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .question a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    cursor: pointer; }
+    .question a :hover {
+      text-decoration: none !important; }
+    .question a h6 {
+      opacity: 0.6;
+      transition: opacity 200ms ease-in-out; }
+      .question a h6:hover {
+        opacity: 1; }
 
 .small-circle {
   width: 150px;

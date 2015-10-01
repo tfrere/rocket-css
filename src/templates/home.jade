@@ -6,25 +6,25 @@ section.background
 		.twelve.col
 			h3.text-right.octo-top.text-white.
 				Enfin une bonne raison<br> d'entreprendre !
-			button.cta.pull-right.button.quad-bot.primary(href="") essais gratuit
+			button.cta.pull-right.button.quad-bot.primary(ng-click="trackCta1()" href="") essais gratuit
 
 section
 	.container
 		.row
-			.eight.col
-				h4.quad-top Retour à l'essentiel
+			.eight.col.quad-top
+				h4.add-top.remove-bot Retour à l'essentiel
 				h6.text-grey-80 Une interface simple pour une prise en main immédiate.
 				p.quad-bot.
 					Conçus par des auto-entrepreneurs, Peon est probablement le logiciel le plus proche de vous.
 					Nous avons éliminé toutes options superflu pour vous garantir un environnement de travail agréable et
 					intuitif.
-			.four.col
-				.big-circle.circle-paperasse.quad-top.large-display
+			.four.col#waypoint1
+				#circle-image-1.big-circle.quad-top.large-display
 		.row
-			.four.col
-				.big-circle.circle-paperasse.quad-top.large-display
+			.four.col#waypoint2
+				#circle-image-2.big-circle.quad-top.large-display
 			.eight.col.text-right
-				h4.quad-top Plus rapide
+				h4.quad-top.remove-bot Plus rapide
 				h6.text-grey-80 Des fonctionnalités innovantes pour plus de temps libre.
 				p.quad-bot.
 					Grace à ses fonctionnalités innovantes, comme l'édition de facture instantanée, ou la validation des devis en
@@ -33,28 +33,28 @@ section
 					Peon faire le reste. 
 		.row
 			.eight.col
-				h4.quad-top Sans engagement
+				h4.quad-top.remove-bot Sans engagement
 				h6.text-grey-80 Aucune contrainte pour une liberté totale.
-				p.quad-bot.
+				p.
 					La totalitée du service est accessible sans engagement.
 					Vous pouvez à tout moment vous désabonner sur simple clic depuis le menu option tout en exportant votre comptabilité.
 					Et même dans ce cas, votre compte et vos données restent accessible à tout moment.
-			.four.col
-				.big-circle.circle-paperasse.quad-top.large-display
+			.four.col#waypoint3
+				#circle-image-3.big-circle.quad-top.large-display
+section.background.octo-top.bg-grey-05
+	.main-texture
+	#video-container
+		h4.text-center.double-top.
+			Vos devis en moins de<br>60 secondes
+		#video-box.double-top
+			| <iframe width="100%" height="315" src="https://www.youtube.com/embed/GsFQ6jskci0" frameborder="0" allowfullscreen></iframe>
 
-section
-	.container
-		.row
-			h4.text-center.octo-top Vos devis en moins de 60 secondes
-			.eight.col.offset-two.bg-grey-05.double-padding.double-top
-				| <iframe width="100%" height="315" src="https://www.youtube.com/embed/GsFQ6jskci0" frameborder="0" allowfullscreen></iframe>
-
-section
+section.octo-top
 	.container
 		.row
 			.twelve.col
 				h4.text-center.octo-top En détails, ça fait quoi ?
-				h6.text-center.text-grey-80.quad-bot liste non exhaustive
+				hr.lines.tiny.quad-bot
 		.row
 			.four.col
 				.circle.small-circle.circle-responsive
@@ -89,4 +89,4 @@ section.background
 			.twelve.col
 				h4.text-white.text-center.quad-top Convaincu ou non, essayez-le !
 				.fluid-horizontal-center
-					button.cta.button.double-bot.primary C'est gratuit
+					button(ng-click="trackCta1()").cta.button.double-bot.primary C'est gratuit

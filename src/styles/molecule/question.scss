@@ -1,0 +1,19 @@
+.question {
+	@include unselectable();
+	@include transition();
+	display:block;
+	overflow:hidden;
+	margin-bottom:20px;
+	a {
+		text-decoration: none;
+		display:block;
+		width: 100%;
+		cursor:pointer;
+		:hover {
+			text-decoration: none!important;
+		}
+		h6 {
+			@include fade();
+		}
+	}
+}

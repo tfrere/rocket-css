@@ -3,69 +3,13 @@ section.background
 	.container
 		.twelve.col
 			h3.octo-top.double-bot.text-white.text-center Les questions c'est par ici !
-
 .row
 	.container.quad-bot.quad-top
 		.row
 			.twelve.col
-				i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-				h6 Comment m'inscrire au statut d'auto-entrepreneur?
-				hr.lines
-				p.
-					Vous pouvez vous inscrire directement en ligne 
-					<a href="https://www.cfe.urssaf.fr/autoentrepreneur/CFE_Declaration">ici</a> 
-					ou retirer un dossier d'inscription à la 
-					<a href="http://www.artisanat.fr/portals/0/annuaire/annuaire.html">
-					chambres des métiers de votre région</a>. 
-					Une fois inscrit, vous devez encore créer un compte dédié à votre 
-					activité professionnel. Heureusement, un compte particulier suffi, 
-					du moment que celui-ci est dédié à votre activité. 
-		.row
-			.twelve.col.double-top
-				i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-				h6 Quelles sont mes obligations dans le cas d'une activité artisanale?
-				hr.lines
-				p.
-					Dans le cas d'une activité artisanal, et ce depuis 2015, 
-					vous avez l'obligation d'effectuer un stage de préparation à 
-					l'installation. Pour effectuer ce stage vous devez contacter 
-					la chambres des métiers de votre région, dont les coordonnées 
-					se trouve <a href="http://www.artisanat.fr/portals/0/annuaire/annuaire.html">ici</a> 
-					Pour les profession réglementé (dont voici la liste) il est également obligatoire de
-					 contracter une assurance professionnel.
-		.row
-			.twelve.col.double-top
-				i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-				h6 Doit-je payer des cotisation si je ne gagne pas d'argent?
-				hr.lines
-				p.
-					Le statut d'auto-entrepreneur n'impose de payer des cotisations 
-					que sur le chiffre d'affaire réalisé. Par conséquent, si vous ne 
-					gagnez rien, vous ne payez rien.
-		.row
-			.twelve.col.double-top
-				i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-				h6 Puis-je cumuler les status?
-				hr.lines
-				p.
-					Vous ne pouvez cumuler plusieurs activités indépendante. 
-					Par contre, vous pouvez par exemple exercer une activité 
-					de gérant minoritaire au sein d'une SARL et être auto-entrepreneur.
-		.row
-			.twelve.col.double-top
-				i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-				h6 Quel limite de chiffre d'affaire?
-				hr.lines
-				p.
-					Deux limite de chiffre d'affaire sont applicable selon 
-					la nature de votre activité:
-					<br> - 82 200 € pour une activité 
-					de vente de marchandises, d'objets, de fournitures, de denrées 
-					à emporter ou à consommer sur place, ou pour des prestations 
-					d'hébergement, à l'exception de la location de locaux 
-					d'habitation meublés dont le seuil est de 32 900 €. 
-					<br> - 32 900 € pour les prestations de services relevant 
-					de la catégorie des bénéfices industriels et commerciaux (BIC) 
-					ou des bénéfices non commerciaux (BNC). Pour les créations en 
-					cours d'année, ces montants sont réduits en fonction de la 
-					durée d'activité.
+				.question(ng-repeat="question in questions track by $index")
+					a(toggle-child-height="active" index="{{$index}}")
+						i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
+						h6 {{question.title}}
+						hr
+					p.add-left {{question.text}}

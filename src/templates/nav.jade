@@ -7,7 +7,7 @@ nav
 				a.pull-left.uppercase.large-display(ui-sref="nav.contact") Contact
 				a.pull-left.uppercase.large-display(ui-sref="nav.faq") FAQ
 				button.button.small.pull-right.complement(ui-sref="#") Se connecter
-				button.button.small.pull-right.primary(ui-sref="#") Créer un compte
+				button.button.small.pull-right.primary(ui-sref="#" ng-click="trackCreate()") Créer un compte
 
 div(ui-view="")
 footer.bg-complement

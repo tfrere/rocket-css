@@ -12,6 +12,7 @@
 	/* # Specific hrs              chekout patternify.com
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+
 		hr.lines {
 			border: none;
 			display:block;
@@ -21,6 +22,11 @@
 			opacity: 0.8;
 		}
 
+	    hr.lines.light {
+	      background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAL/gYARxgdzQAAkAOOA2IzIHJAAACAGEAFjDBirAAAAAElFTkSuQmCC) repeat;
+	      opacity:0.4;
+	    }
+
 		hr.triangle {
 			border: none;
 			display:block;
@@ -28,4 +34,19 @@
 			height: 5px;
 			background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat;
 
+		}
+
+		hr.half {
+			width: 50%;
+			margin: 0 auto;
+		}
+
+		hr.quart {
+			width: 25%;
+			margin: 0 auto;
+		}
+
+		hr.tiny {
+			width: 10%;
+			margin: 0 auto;
 		}

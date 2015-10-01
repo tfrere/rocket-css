@@ -4,7 +4,8 @@
   "dependencies": {
     "angular": "~1.4.0",
     "ui-router": "~0.2.13",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "waypoints": "~4.0.0"
   },
   "devDependencies": {
     "neat": "~1.7.2",

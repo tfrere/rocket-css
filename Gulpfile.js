@@ -74,7 +74,7 @@
   gulp.task('ressources', getTask('ressources'));
 
   gulp.task('build-prod', function(cb) {
-    plugins.runSequence('clean', 'style', 'jade', 'assets', 'vendor', 'scripts', 'ressources');
+    plugins.runSequence('clean', ['style', 'jade', 'assets', 'vendor', 'scripts', 'ressources']);
   });
 
   gulp.task('default', ['watch', 'nodemon']);

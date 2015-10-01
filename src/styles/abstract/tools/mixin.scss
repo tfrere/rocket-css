@@ -27,7 +27,9 @@
 	@mixin translateX ($number: -40px) {
 		transform: 		 		translateX($number);
 	}
-
+	@mixin translate($n1: 0px, $n2: 0px) {
+		transform: 		 		translate($n1, $n2);
+	}
 
 	@mixin translateY ($number: -40px) {
 		transform: 		 		translateY($number);

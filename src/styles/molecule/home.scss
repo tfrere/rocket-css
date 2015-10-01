@@ -16,8 +16,31 @@ section.background {
 	width: 100%;
 	background-color: #8DB2C8;
 	position:relative;
+	&.light {
+		background-color: lighten(#8DB2C8, 20%);
+	}
 }
 
+#video-container
+{
+	opacity:1;
+	overflow:visible;
+	position:relative;
+	width:100%;
+	min-height: 350px;
+	padding-top:1px;
+	#video-box {
+		width:50%;
+		left:0;
+		right:0;
+		margin: 0 auto;
+		position:absolute;
+		bottom:-10%;
+		padding: 20px;
+		background-color: $color-grey-20;
+		margin-bottom:-150px;
+	}
+}
 #content {
 	z-index: 5;
 }
@@ -52,12 +75,20 @@ section.background {
 }
 
 
-.circle-paperasse {
+#circle-image-1, #circle-image-2, #circle-image-3  {
 	background-image: url('../assets/imgs/svg/paperasse.svg');
-}
-
-.circle-paperasse {
-	background-image: url('../assets/imgs/svg/paperasse.svg');
+	opacity:0;
+	@include transition(all, 500ms, ease-in-out);
+	@include translate(0px, 0px);
+	margin:0px;
+	&.fly-left {
+	  opacity:1;
+	  @include translate(-10px, 0px);
+	}
+	&.fly-right {
+	  opacity:1;
+	  @include translate(20px, 0px);
+	}
 }
 
 .circle-calculatrice {

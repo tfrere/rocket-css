@@ -1,5 +1,4 @@
-var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax']);
-
+var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax', 'toggleHeight']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     
@@ -33,5 +32,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             controller: 'contactCtrl'
         })
 });
+
 
 
