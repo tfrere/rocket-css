@@ -433,6 +433,10 @@ th {
 ================================================== */
 .fade {
   opacity: 0.6;
+  -webkit-transition: opacity 200ms ease-in-out;
+  -moz-transition: opacity 200ms ease-in-out;
+  -ms-transition: opacity 200ms ease-in-out;
+  -o-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out; }
   .fade:hover {
     opacity: 1; }
@@ -679,6 +683,10 @@ th {
     transform: rotate(359deg); } }
 
 .fly-in {
+  -webkit-animation: box-flyin 1.5s 1 ease-in-out;
+  -moz-animation: box-flyin 1.5s 1 ease-in-out;
+  -ms-animation: box-flyin 1.5s 1 ease-in-out;
+  -o-animation: box-flyin 1.5s 1 ease-in-out;
   animation: box-flyin 1.5s 1 ease-in-out; }
 
 /* # Media queries
@@ -1221,6 +1229,10 @@ big, .big {
   margin-left: .3em; }
 
 .icon-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -ms-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear; }
 
 .icon-2x {
@@ -1315,6 +1327,10 @@ big, .big {
   text-decoration: none;
   white-space: nowrap;
   border-radius: 5px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   user-select: none;
   /* Specific buttons
@@ -1342,6 +1358,10 @@ big, .big {
     box-shadow: 0px 5px 0px #b36000;
     text-shadow: 1px 1px 1px #b36000;
     border-radius: 5px;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out; }
     .button.cta:active {
       top: 5px;
@@ -1422,8 +1442,16 @@ big, .big {
       top: 9px;
       right: 20px;
       opacity: 0;
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -ms-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out; }
     .button.spinner span {
+      -webkit-transition: margin-left 200ms ease-in-out;
+      -moz-transition: margin-left 200ms ease-in-out;
+      -ms-transition: margin-left 200ms ease-in-out;
+      -o-transition: margin-left 200ms ease-in-out;
       transition: margin-left 200ms ease-in-out; }
     .button.spinner.on span {
       margin-left: -30px; }
@@ -1473,6 +1501,10 @@ select {
   box-shadow: none;
   box-sizing: border-box;
   position: relative;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out; }
 
 label {
@@ -1592,6 +1624,10 @@ ol ol ol {
       border-top: none;
       border-right: none;
       transform: rotate(-45deg);
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -ms-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out; }
     .checkbox label:hover::after {
       opacity: 0.2; }
@@ -1685,6 +1721,10 @@ hr.tiny {
     height: 30px;
     background-color: #149A57;
     border-radius: 30px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in; }
   .toggle input:checked + label {
     background-color: #D23D29; }
@@ -1699,6 +1739,10 @@ hr.tiny {
     width: 30px;
     background-color: #fff;
     border-radius: 100%;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in; }
   .toggle input:checked + label:after {
     margin-left: 32px; }
@@ -1816,6 +1860,10 @@ section.background {
 #circle-image-1, #circle-image-2, #circle-image-3 {
   background-image: url("../assets/imgs/svg/paperasse.svg");
   opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
   transform: translate(0px, 0px);
   margin: 0px; }
@@ -1854,6 +1902,10 @@ section.background {
   width: 40px;
   height: 40px;
   background-image: url("../assets/imgs/svg/logo.svg");
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   opacity: 0.8; }
   #logo:hover {
@@ -1872,6 +1924,10 @@ nav {
     font-weight: 800;
     color: #9b9b9b;
     opacity: 0.8;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out; }
     nav a:hover {
       outline: 0;
@@ -1893,6 +1949,10 @@ nav {
 
 .question {
   user-select: none;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
   display: block;
   overflow: hidden;
@@ -1906,6 +1966,10 @@ nav {
       text-decoration: none !important; }
     .question a h6 {
       opacity: 0.6;
+      -webkit-transition: opacity 200ms ease-in-out;
+      -moz-transition: opacity 200ms ease-in-out;
+      -ms-transition: opacity 200ms ease-in-out;
+      -o-transition: opacity 200ms ease-in-out;
       transition: opacity 200ms ease-in-out; }
       .question a h6:hover {
         opacity: 1; }

@@ -2,12 +2,13 @@
 ============================================= */
 
 	@mixin transition ($attribute: all, $duration: 200ms, $easing: ease-in-out ) {
-		transition: $attribute $duration $easing;
+		@include prefixer(transition, $attribute $duration $easing, webkit moz ms o spec);
 	}
 
 	@mixin animation ($animation, $delay: 1s, $duration: 1s, $easing: ease-in-out) {
-		animation: $animation $delay $duration $easing;
+		@include prefixer(animation, $animation $delay $duration $easing, webkit moz ms o spec);
 	}
+	
 	
 	@mixin opacity($opacity) {
 		opacity: $opacity;
