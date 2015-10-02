@@ -1651,9 +1651,6 @@ a {
   a:focus {
     outline: 0; }
 
-a + a {
-  margin-left: 20px; }
-
 /* # Hr
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
@@ -1939,9 +1936,9 @@ nav {
       color: #9b9b9b; }
     nav a:focus {
       outline: 0; }
-  nav a + a {
+  nav a.pull-left + a.pull-left {
     margin-left: 20px; }
-  nav button {
+  nav a.pull-right {
     margin-top: 15px; }
   nav #logo {
     margin-top: 10px;

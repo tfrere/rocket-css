@@ -29,10 +29,10 @@ nav {
 		&:visited 	{ color: $color-grey-100; }
 		&:focus	 	{ outline: 0;  }
 	}
-	a + a {
+	a.pull-left + a.pull-left {
 		margin-left: 20px;
 	}
-	button {
+	a.pull-right {
 		margin-top: 15px;
 	}
 	#logo {
