@@ -7,17 +7,17 @@ section.background
 			h3.text-right.octo-top.text-white.
 				Enfin une bonne raison<br> d'entreprendre !
 			a.cta.pull-right.button.quad-bot.primary(ng-click="trackCta1()" href="http://91.121.133.217:9000/inscription") essais gratuit
-section.background.bg-grey-05
+section.background.bg-white
 	//.main-texture
 	#video-container
+		#video-box.quad-top(ng-init="isVideoClicked=false")
+			img#video-cover(ng-click="videoClickMask()" ng-if="isVideoClicked == false" src='assets/imgs/png/video.png')
+			| <iframe  ng-if="isVideoClicked == true" width="100%" height="315" src="https://www.youtube.com/embed/Tve2GEGn7GA?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+		.clearfix
 		h4.text-center.double-top.
 			Vos devis en moins de<br>60 secondes
-		#video-box.double-top
-			| <iframe width="100%" height="315" src="//www.youtube.com/embed/M-7l9Wjkhkk" frameborder="0" allowfullscreen></iframe>
-
 section
-	.clearfix.double-top
-	.clearfix.octo-top
+	.clearfix.quad-top
 	.container
 		.row
 			.eight.col.quad-top

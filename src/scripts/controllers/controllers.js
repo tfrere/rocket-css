@@ -55,7 +55,12 @@ app.controller('aproposCtrl', function ($scope) {
 
 app.controller('homeCtrl', function ($scope, mouseParallaxService, $timeout) {
 
+	$scope.isVideoClicked = false;
 
+	$scope.videoClickMask = function() {
+		$scope.isVideoClicked = true;
+		window.analytics.track('videoOpened');
+	}
 
 	mouseParallaxService.init();
 
