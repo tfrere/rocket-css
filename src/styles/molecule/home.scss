@@ -28,14 +28,14 @@ section.background {
 	padding-top:1px;
 	#video-box {
 		position:relative;
-		width:50%;
+		width:558px;
 		max-height:350px;
 		margin: 0 auto;
 		padding: 20px;
 		background-color: $color-grey-05;
 		@include transition();
 		&:hover{
-			background-color: $color-grey-15;
+			background-color: white;
 		}
 		iframe {
 

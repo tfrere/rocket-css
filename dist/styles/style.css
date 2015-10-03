@@ -1820,7 +1820,7 @@ section.background {
   padding-top: 1px; }
   #video-container #video-box {
     position: relative;
-    width: 50%;
+    width: 558px;
     max-height: 350px;
     margin: 0 auto;
     padding: 20px;
@@ -1831,7 +1831,7 @@ section.background {
     -o-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out; }
     #video-container #video-box:hover {
-      background-color: #f0f0f0; }
+      background-color: white; }
     #video-container #video-box #video-cover {
       z-index: 10;
       width: 100%;
