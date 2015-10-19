@@ -1028,6 +1028,9 @@ th {
 .quad-bot {
   margin-bottom: 80px !important; }
 
+.six-bot {
+  margin-bottom: 120px !important; }
+
 .octo-bot {
   margin-bottom: 160px !important; }
 
@@ -1046,8 +1049,53 @@ th {
 .quad-top {
   margin-top: 80px !important; }
 
+.six-top {
+  margin-top: 120px !important; }
+
 .octo-top {
   margin-top: 160px !important; }
+
+.remove-left {
+  margin-left: 0 !important; }
+
+.half-left {
+  margin-left: 10px !important; }
+
+.add-left {
+  margin-left: 20px !important; }
+
+.double-left {
+  margin-left: 40px !important; }
+
+.quad-left {
+  margin-left: 80px !important; }
+
+.six-left {
+  margin-left: 120px !important; }
+
+.octo-left {
+  margin-left: 160px !important; }
+
+.remove-right {
+  margin-right: 0 !important; }
+
+.half-right {
+  margin-right: 10px !important; }
+
+.add-right {
+  margin-right: 20px !important; }
+
+.double-right {
+  margin-right: 40px !important; }
+
+.quad-right {
+  margin-right: 80px !important; }
+
+.six-right {
+  margin-right: 120px !important; }
+
+.octo-right {
+  margin-right: 160px !important; }
 
 .remove-padding {
   padding: 0 !important; }
@@ -1082,6 +1130,15 @@ html, body {
 body {
   font-family: "Open Sans";
   font-size: 1.6rem; }
+  body ::selection {
+    background: orange;
+    color: white; }
+  body ::-moz-selection {
+    background: orange;
+    color: white; }
+  body ::-webkit-selection {
+    background: orange;
+    color: white; }
 
 /* # Titles
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -1319,6 +1376,14 @@ big, .big {
                 i.icon.icon-whatever
                 span text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button-box.centered {
+  display: inline-block;
+  text-align: center;
+  width: 100%; }
+
+.button-box .button {
+  margin: 0 auto; }
+
 .button {
   font-weight: 800;
   letter-spacing: 0.3;
@@ -1356,6 +1421,7 @@ big, .big {
   .button:active {
     border: 1px outset black; }
   .button.cta {
+    text-decoration: none;
     position: relative;
     top: 0px;
     -webkit-box-shadow: 0px 5px 0px #b36000;
@@ -1376,6 +1442,11 @@ big, .big {
       -ms-box-shadow: none !important;
       -o-box-shadow: none !important;
       box-shadow: none !important; }
+    .button.cta.complement {
+      -webkit-box-shadow: 0px 5px 0px #030303;
+      -moz-box-shadow: 0px 5px 0px #030303;
+      -o-box-shadow: 0px 5px 0px #030303;
+      box-shadow: 0px 5px 0px #030303; }
   .button.small {
     padding: 6px 10px; }
   .button.big {
@@ -1817,14 +1888,16 @@ section.background {
   opacity: 1;
   overflow: visible;
   width: 100%;
-  padding-top: 1px; }
+  padding-top: 1px;
+  box-sizing: border-box; }
   #video-container #video-box {
     position: relative;
-    width: 558px;
-    max-height: 350px;
+    width: 100%;
+    max-height: 300px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fafafa;
+    box-sizing: border-box;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     -ms-transition: all 200ms ease-in-out;
@@ -1870,7 +1943,6 @@ section.background {
 
 #circle-image-1, #circle-image-2, #circle-image-3 {
   background-image: url("../assets/imgs/svg/paperasse.svg");
-  opacity: 0;
   -webkit-transition: all 500ms ease-in-out;
   -moz-transition: all 500ms ease-in-out;
   -ms-transition: all 500ms ease-in-out;

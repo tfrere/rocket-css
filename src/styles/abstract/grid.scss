@@ -113,6 +113,7 @@
 	.add-bot 		{ margin-bottom: 	 $base-margin !important; }
 	.double-bot 	{ margin-bottom: 	($base-margin * 2) !important; }
 	.quad-bot 		{ margin-bottom: 	($base-margin * 4) !important; }
+	.six-bot 		{ margin-bottom: 	($base-margin * 6) !important; }
 	.octo-bot 		{ margin-bottom: 	($base-margin * 8) !important; }
 
 
@@ -121,7 +122,25 @@
 	.add-top 		{ margin-top: 		 $base-margin !important; }
 	.double-top 	{ margin-top: 		($base-margin * 2) !important; }
 	.quad-top 		{ margin-top: 		($base-margin * 4) !important; }
+	.six-top 		{ margin-top: 		($base-margin * 6) !important; }
 	.octo-top 		{ margin-top: 		($base-margin * 8) !important; }
+
+
+	.remove-left 	{ margin-left: 		0 !important; }
+	.half-left 		{ margin-left: 		($base-margin / 2) !important; }
+	.add-left 		{ margin-left: 		 $base-margin !important; }
+	.double-left 	{ margin-left: 		($base-margin * 2) !important; }
+	.quad-left 		{ margin-left: 		($base-margin * 4) !important; }
+	.six-left 		{ margin-left: 		($base-margin * 6) !important; }
+	.octo-left 		{ margin-left: 		($base-margin * 8) !important; }
+
+	.remove-right 	{ margin-right: 		0 !important; }
+	.half-right 	{ margin-right: 		($base-margin / 2) !important; }
+	.add-right 		{ margin-right: 		 $base-margin !important; }
+	.double-right 	{ margin-right: 		($base-margin * 2) !important; }
+	.quad-right 	{ margin-right: 		($base-margin * 4) !important; }
+	.six-right 		{ margin-right: 		($base-margin * 6) !important; }
+	.octo-right 	{ margin-right: 		($base-margin * 8) !important; }
 
 
 	.remove-padding	{ padding: 			0 !important; }

@@ -26,10 +26,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/apropos.html',
             controller: 'aproposCtrl'
         })
-        .state('nav.contact', {
-            url: '/contact',
-            templateUrl: 'templates/contact.html',
-            controller: 'contactCtrl'
+        .state('nav.functionnalites', {
+            url: '/functionnalites',
+            templateUrl: 'templates/functionnalites.html',
+            controller: 'functionnalitesCtrl'
+        })
+        .state('nav.cgu', {
+            url: '/cgu',
+            templateUrl: 'templates/cgu.html',
+            controller: 'cguCtrl'
         })
 });
 

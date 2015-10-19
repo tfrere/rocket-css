@@ -32,6 +32,7 @@
 	body 				{ 
 						  font-family: $text-font;
 						  @include font(0, $text-size, $ratio);
+						  @include selection-color(white,orange);
 						} 
 
 	/* # Titles

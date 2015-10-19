@@ -4,10 +4,10 @@ nav
 			.twelve.col
 				a#logo.pull-left(ui-sref="nav.home")
 				a.pull-left.uppercase.large-display(ui-sref="nav.apropos") A propos
-				a.pull-left.uppercase.large-display(ui-sref="nav.contact") Contact
+				a.pull-left.uppercase.large-display(ui-sref="nav.functionnalites") Fonctionnalitées
 				a.pull-left.uppercase.large-display(ui-sref="nav.faq") FAQ
-				a.button.small.pull-right.complement(href="http://91.121.133.217:9000") Se connecter
-				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://91.121.133.217:9000/inscription") Créer un compte
+				a.button.small.pull-right.complement(href="http://app.peon.fr") Se connecter
+				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://app.peon.fr/inscription") Créer un compte
 
 div(ui-view="")
 footer.bg-complement
@@ -17,9 +17,9 @@ footer.bg-complement
 				h6 L'application
 				ul.no-style
 					li
-						a(href="http://91.121.133.217:9000/inscription") Créer un compte
+						a(href="http://app.peon.fr/inscription") Créer un compte
 					li
-						a(href="http://91.121.133.217:9000/") S'inscrire
+						a(href="http://app.peon.fr/") S'inscrire
 					li
 						a(ui-sref="nav.faq") FAQ
 			.three.col
@@ -44,4 +44,4 @@ footer.bg-complement
 				h6 Conditions
 				ul.no-style
 					li
-						a(href="#") CGV
+						a(ui-sref="nav.cgu") CGV

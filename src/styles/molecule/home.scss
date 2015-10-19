@@ -26,13 +26,15 @@ section.background {
 	overflow:visible;
 	width:100%;
 	padding-top:1px;
+	@include box-sizing(border-box);
 	#video-box {
 		position:relative;
-		width:558px;
-		max-height:350px;
+		width:100%;
+		max-height:300px;
 		margin: 0 auto;
 		padding: 20px;
 		background-color: $color-grey-05;
+		@include box-sizing(border-box);
 		@include transition();
 		&:hover{
 			background-color: white;
@@ -86,7 +88,6 @@ section.background {
 
 #circle-image-1, #circle-image-2, #circle-image-3  {
 	background-image: url('../assets/imgs/svg/paperasse.svg');
-	opacity:0;
 	@include transition(all, 500ms, ease-in-out);
 	@include translate(0px, 0px);
 	margin:0px;

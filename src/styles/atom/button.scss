@@ -5,6 +5,16 @@
                 span text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+    .button-box {
+      &.centered {
+        display:inline-block;
+        text-align: center;
+        width:100%;
+      }
+      .button {
+        margin: 0 auto;
+      }
+    }
     .button{
         
         font-weight: 800;
@@ -53,7 +63,7 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
             &.cta {
-              
+              text-decoration: none;
               position: relative;
               top: 0px;
               @include box-shadow(0px, 5px, 0px, $color-primary-dark);
@@ -67,6 +77,9 @@
                 -ms-box-shadow: none !important;
                 -o-box-shadow: none !important;
                 box-shadow: none !important;
+              }
+              &.complement {
+                @include box-shadow(0px, 5px, 0px, $color-complement-dark);
               }
             }
 
