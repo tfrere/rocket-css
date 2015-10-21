@@ -1154,47 +1154,47 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit; }
 
 h1 {
-  font-size: 6.73228rem;
+  font-size: 6.45177rem;
   letter-spacing: -.1rem; }
 
 h2 {
-  font-size: 5.05047rem;
+  font-size: 4.84004rem;
   letter-spacing: -.1rem; }
 
 h3 {
-  font-size: 3.7888rem;
+  font-size: 3.63093rem;
   letter-spacing: -.1rem; }
 
 h4 {
-  font-size: 2.84231rem;
+  font-size: 2.72388rem;
   letter-spacing: -.08rem; }
 
 h5 {
-  font-size: 2.13227rem;
+  font-size: 2.04342rem;
   letter-spacing: -.05rem; }
 
 h6 {
-  font-size: 1.5996rem;
+  font-size: 1.53295rem;
   letter-spacing: 0; }
 
 @media (min-width: 1000px) {
   h1 {
-    font-size: 10.10094rem;
+    font-size: 9.68007rem;
     letter-spacing: -.1rem; }
   h2 {
-    font-size: 7.5776rem;
+    font-size: 7.26187rem;
     letter-spacing: -.1rem; }
   h3 {
-    font-size: 5.68462rem;
+    font-size: 5.44776rem;
     letter-spacing: -.1rem; }
   h4 {
-    font-size: 4.26453rem;
+    font-size: 4.08684rem;
     letter-spacing: -.08rem; }
   h5 {
-    font-size: 3.1992rem;
+    font-size: 3.0659rem;
     letter-spacing: -.05rem; }
   h6 {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     letter-spacing: 0; }
   p {
     font-size: 1.92rem;
@@ -1763,17 +1763,17 @@ hr.triangle {
   height: 5px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat; }
 
-hr.half {
-  width: 50%;
+hr.centered {
   margin: 0 auto; }
+
+hr.half {
+  width: 50%; }
 
 hr.quart {
-  width: 25%;
-  margin: 0 auto; }
+  width: 25%; }
 
 hr.tiny {
-  width: 10%;
-  margin: 0 auto; }
+  width: 10%; }
 
 /* # Toggle
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
