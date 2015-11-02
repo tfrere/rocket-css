@@ -1,9 +1,12 @@
 #logo {
-	width: 40px;
-	height: 40px;
+	width: 31px;
+	height: 31px;
 	background-image: url('../assets/imgs/svg/logo.svg');
 	@include transition();
 	opacity:0.8;
+	margin-top:5px;
+	margin-top: 15px;
+	margin-right: 10px;
 	&:hover {
 		opacity:1;
 	}
@@ -25,18 +28,23 @@ nav {
 		@include transition();
 
 		&:hover 	{ outline: 0; text-decoration: none; opacity:1; }
-		&:active 	{ outline: 0; }
+		&:active 	{ outline: 0;}
 		&:visited 	{ color: $color-grey-100; }
 		&:focus	 	{ outline: 0;  }
 	}
 	a.pull-left + a.pull-left {
-		margin-left: 20px;
+		margin-left: 25px;
+	}
+	a.pull-left:not(#logo){
+		opacity:0.6;
+		&:hover {
+			opacity:1;
+		}
+	}
+	a.active {
+		opacity:1!important;
 	}
 	a.pull-right {
 		margin-top: 15px;
-	}
-	#logo {
-		margin-top: 10px;
-		margin-right: 10px;
 	}
 }

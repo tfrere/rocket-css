@@ -1866,6 +1866,18 @@ footer {
   footer {
     text-align: left; } }
 
+.shadow  {
+  text-shadow: 2px 2px #FF0000 !important; }
+
+.beta {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-image: url("../assets/imgs/svg/beta.svg");
+  z-index: 999; }
+
 #welcome {
   position: absolute;
   z-index: 997;
@@ -1879,10 +1891,10 @@ footer {
 
 section.background {
   width: 100%;
-  background-color: #8DB2C8;
+  background-color: #6b9bb7;
   position: relative; }
   section.background.light {
-    background-color: #d2e0e9; }
+    background-color: #afc9d9; }
 
 #video-container {
   opacity: 1;
@@ -1897,6 +1909,7 @@ section.background {
     margin: 0 auto;
     padding: 20px;
     background-color: #fafafa;
+    cursor: pointer;
     box-sizing: border-box;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -1905,6 +1918,33 @@ section.background {
     transition: all 200ms ease-in-out; }
     #video-container #video-box:hover {
       background-color: white; }
+      #video-container #video-box:hover #play {
+        opacity: 0.6; }
+    #video-container #video-box #play {
+      width: 100px;
+      height: 100px;
+      opacity: 0.3;
+      background-color: black;
+      border-radius: 50%;
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -ms-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      left: 50%;
+      margin-left: -50px;
+      z-index: 25; }
+      #video-container #video-box #play #triangle {
+        margin-left: 42px;
+        margin-top: 25px;
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        border-left: 25px solid white; }
     #video-container #video-box #video-cover {
       z-index: 10;
       width: 100%;
@@ -1916,6 +1956,7 @@ section.background {
   z-index: 5; }
 
 #main-background {
+  opacity: 0.3;
   z-index: 2;
   background-image: url("../assets/imgs/svg/main_background.svg");
   overflow: hidden;
@@ -1961,7 +2002,14 @@ section.background {
   background-image: url("../assets/imgs/svg/calculatrice.svg"); }
 
 .small-circle {
-  opacity: 0.6; }
+  opacity: 0.9;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -ms-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out; }
+  .small-circle:hover {
+    opacity: 1; }
 
 .circle-calculator {
   background-image: url("../assets/imgs/svg/calculator.svg"); }
@@ -1982,15 +2030,18 @@ section.background {
   background-image: url("../assets/imgs/svg/papers.svg"); }
 
 #logo {
-  width: 40px;
-  height: 40px;
+  width: 31px;
+  height: 31px;
   background-image: url("../assets/imgs/svg/logo.svg");
   -webkit-transition: all 200ms ease-in-out;
   -moz-transition: all 200ms ease-in-out;
   -ms-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
-  opacity: 0.8; }
+  opacity: 0.8;
+  margin-top: 5px;
+  margin-top: 15px;
+  margin-right: 10px; }
   #logo:hover {
     opacity: 1; }
 
@@ -2023,12 +2074,15 @@ nav {
     nav a:focus {
       outline: 0; }
   nav a.pull-left + a.pull-left {
-    margin-left: 20px; }
+    margin-left: 25px; }
+  nav a.pull-left:not(#logo) {
+    opacity: 0.6; }
+    nav a.pull-left:not(#logo):hover {
+      opacity: 1; }
+  nav a.active {
+    opacity: 1 !important; }
   nav a.pull-right {
     margin-top: 15px; }
-  nav #logo {
-    margin-top: 10px;
-    margin-right: 10px; }
 
 .question {
   user-select: none;
@@ -2056,15 +2110,6 @@ nav {
       transition: opacity 200ms ease-in-out; }
       .question a h6:hover {
         opacity: 1; }
-
-.beta {
-  position: fixed;
-  top: 0px;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  background-image: url("../assets/imgs/svg/beta.svg");
-  z-index: 999; }
 
 .small-circle {
   width: 150px;

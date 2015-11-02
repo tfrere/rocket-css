@@ -33,16 +33,6 @@
 @import "molecule/nav";
 @import "molecule/question";
 
-.beta{
-	position:fixed;
-	top:0px;
-	right:0;
-	width:150px;
-	height:150px;
-	background-image: url('../assets/imgs/svg/beta.svg');
-	z-index: 999;
-}
-
 .small-circle {
 	width: 150px;
 	height: 150px;

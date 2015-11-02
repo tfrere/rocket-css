@@ -1,3 +1,16 @@
+.shadow {
+	text-shadow: 2px 2px #FF0000!important;
+}
+
+.beta{
+	position:fixed;
+	top:0px;
+	right:0;
+	width:150px;
+	height:150px;
+	background-image: url('../assets/imgs/svg/beta.svg');
+	z-index: 999;
+}
 
 #welcome {
 	position:absolute;
@@ -13,10 +26,10 @@
 
 section.background {
 	width: 100%;
-	background-color: #8DB2C8;
+	background-color: darken(#8DB2C8, 10%);
 	position:relative;
 	&.light {
-		background-color: lighten(#8DB2C8, 20%);
+		background-color: lighten(#8DB2C8, 10%);
 	}
 }
 
@@ -34,13 +47,40 @@ section.background {
 		margin: 0 auto;
 		padding: 20px;
 		background-color: $color-grey-05;
+		cursor:pointer;
 		@include box-sizing(border-box);
 		@include transition();
 		&:hover{
 			background-color: white;
+			#play {
+				opacity:0.6;
+			}
 		}
 		iframe {
 
+		}
+		#play {
+			width: 100px;
+			height: 100px;
+			opacity:0.3;
+			background-color: rgb(0,0,0);
+			@include border-radius(50%);
+			@include transition();
+			position:absolute;
+			top:50%;
+			margin-top:-50px;
+			left:50%;
+			margin-left:-50px;
+			z-index: 25;
+			#triangle {
+				margin-left:42px;
+				margin-top:25px;
+				width: 0; 
+				height: 0;
+				border-top: 25px solid transparent;
+				border-bottom: 25px solid transparent;
+				border-left: 25px solid white;
+			}
 		}
 		#video-cover {
 			z-index: 10;
@@ -58,6 +98,7 @@ section.background {
 }
 
 #main-background {
+	opacity:0.3;
 	z-index: 2;
 	background-image: url('../assets/imgs/svg/main_background.svg');
 	overflow:hidden;
@@ -106,9 +147,12 @@ section.background {
 	background-image: url('../assets/imgs/svg/calculatrice.svg');
 }
 
-
 .small-circle{
-	opacity:0.6;
+	opacity:0.9;
+	@include transition();
+	&:hover {
+		opacity:1;
+	}
 }
 
 .circle-calculator {

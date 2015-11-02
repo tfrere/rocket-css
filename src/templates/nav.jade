@@ -2,10 +2,10 @@ nav
 	.container
 		.row
 			.twelve.col
-				a#logo.pull-left(ui-sref="nav.home")
-				a.pull-left.uppercase.large-display(ui-sref="nav.apropos") A propos
-				a.pull-left.uppercase.large-display(ui-sref="nav.functionnalites") Fonctionnalitées
-				a.pull-left.uppercase.large-display(ui-sref="nav.faq") FAQ
+				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.apropos") A propos
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.functionnalites") Fonctionnalitées
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.faq") FAQ
 				a.button.small.pull-right.complement(href="http://app.peon.fr") Se connecter
 				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://app.peon.fr/inscription") Créer un compte
 
