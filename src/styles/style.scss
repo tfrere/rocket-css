@@ -33,9 +33,15 @@
 @import "molecule/nav";
 @import "molecule/question";
 
-// @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon";
-// @import "../../bower_components/neat/app/assets/stylesheets/_neat";
-
+.beta{
+	position:fixed;
+	top:0px;
+	right:0;
+	width:150px;
+	height:150px;
+	background-image: url('../assets/imgs/svg/beta.svg');
+	z-index: 999;
+}
 
 .small-circle {
 	width: 150px;
