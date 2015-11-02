@@ -5,14 +5,18 @@ module.exports = function (gulp, plugins, paths) {
 		gulp.src(paths.fonts.files)
 		.pipe(gulp.dest(paths.fonts.dest));
 
-		return gulp.src(paths.assets.files)
-		.pipe(plugins.plumber())
-		.pipe(plugins.imagemin({
-		  progressive: true,
-		  svgoPlugins: [{removeViewBox: false}],
-		  use: [pngquant()]
-		}))
+		gulp.src(paths.assets.files)
 		.pipe(gulp.dest(paths.assets.dest))
 		.pipe(plugins.livereload());
+
+		// return gulp.src(paths.assets.files)
+		// .pipe(plugins.plumber())
+		// .pipe(plugins.imagemin({
+		//   progressive: true,
+		//   svgoPlugins: [{removeViewBox: false}],
+		//   use: [pngquant()]
+		// }))
+		// .pipe(gulp.dest(paths.assets.dest))
+		// .pipe(plugins.livereload());
     };
 };
