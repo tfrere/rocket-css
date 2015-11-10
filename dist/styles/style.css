@@ -2838,9 +2838,6 @@ nav {
     height: 250px;
     margin: 0 auto; } }
 
-#question_handler[ui-view] {
-  min-height: 100px; }
-
 input:not(.ng-pristine).ng-invalid {
   border: 1px solid #D23D29; }
 
