@@ -1,0 +1,46 @@
+section.background
+	.main-texture
+	#general-background
+	.container
+		.twelve.col
+			h3.b.text-white.text-center Le blog
+.container
+	.row.quad-top.double-bot
+		.seven.col.double-bot
+			.article(ng-repeat="article in articles")
+				header
+					h6.pull-left.b.half-bot {{article.title}}
+					p.pull-right.half-bot.remove-top.text-grey-50 {{article.date}}
+					hr.half.half-top.remove-top.light.lines
+				.add-padding.bg-grey-10
+					img(src="{{article.img}}")
+				p(ng-bind-html="article.content")
+				//- hr(ng-if="!$last").lines.centered.half.double-top.double-bot.light
+				.clearfix.quad-top(ng-if="!$last")
+		.four.col.double-bot.offset-one
+			h6.half-bot.
+				Twitter
+			hr.remove-top.light.lines
+			a(class="twitter-timeline" data-widget-id="663443703692976128" href="https://twitter.com/thibaudfrere" data-chrome="nofooter noborders noheader noscrollbar transparent").
+				Tweets by @Peon
+
+section.background
+	#peon
+	.main-texture
+	.container
+		.row
+			#newsletter.twelve.col
+				div(ng-if="!isSended")
+					h4.text-white.text-center.quad-top S'inscrire à la newsletter
+					form(name="form").fluid-horizontal-center
+						input.big(type="email", ng-model="form.email", placeholder="Votre email", required)
+						a(ng-click="sendEmail(form)").cta.button.primary.
+							S'inscrire
+				#isGood(ng-if="isGood")
+					h4.text-white.text-center.quad-top Merci !
+					p.text-center.text-white.double-bot.
+						En email de confirmation viens de vous être envoyé.
+				#isBad(ng-if="isGood != null && isGood == false")
+					h4.text-white.text-center.quad-top Désolé
+					p.text-center.text-white.double-bot.
+						Le serveur à eu un petit probleme, essayez plus tard !

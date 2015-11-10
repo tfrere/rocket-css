@@ -23,7 +23,6 @@
 		}
 
 	    hr.lines.light {
-	      background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAL/gYARxgdzQAAkAOOA2IzIHJAAACAGEAFjDBirAAAAAElFTkSuQmCC) repeat;
 	      opacity:0.4;
 	    }
 
@@ -50,4 +49,9 @@
 
 		hr.tiny {
 			width: 10%;
+		}
+
+		hr.right {
+			display:inline-block;
+			text-align:right;
 		}

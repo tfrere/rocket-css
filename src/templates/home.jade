@@ -4,28 +4,34 @@ section.background
 	#welcome.large-display
 	#content.container
 		.twelve.col
-			h3(style="text-shadow: 2px 2px 3px rgba(0,0,0,0.1)").shadow.text-right.six-top.remove-bot.text-white.
+			h3.text-right.six-top.remove-bot.text-white.
 
 				<b>Une bonne raison d'entreprendre</b> 
-			h6(style="text-shadow: 2px 2px 3px rgba(0,0,0,0.1)").shadow.text-right.text-white.double-bot.
+			h6.text-right.text-white.double-bot.
 				Gestion <b>auto-entrepreneur</b> pour prestataires de services et activités libérales
 			.pull-right
 				a.cta.button.half-right.primary(ng-click="trackCta1()" href="http://app.peon.fr/inscription") Mois d'essais gratuit
 				a.cta.button.complement(ng-click="trackCta1()" href="http://app.peon.fr/connexion") Demo
 			.clearfix
-			p(style="text-shadow: 2px 2px 3px rgba(0,0,0,0.1)").shadow.text-white.text-right.quad-bot.
+			p.text-white.text-right.quad-bot.
 				Seulement <b>4.90</b> par mois.
+#cookie(ng-show="setCookie == false")
+	.container
+		.row
+			.twelve.col
+				p.pull-left.
+					Pour votre confort, ce site utilise des cookies
+				i.icon.icon-cross.pull-right(ng-click="updateCookie()")
 section
 	.clearfix
 	.container
 		.row
 			.six.col.quad-top
 				h5.add-top.remove-bot Vos factures en 42 secondes
-				hr.lines.half
+				hr.light.lines.half
 				p.quad-bot.
 					Peon est un expert comptable totalement automatisé permettant de vous concentrer uniquement sur les besoins réels de votre entreprise. 
 					Avec ça, plus d'excuses !
-			//- #waypoint1
 			.six.col
 					#video-container.double-top
 						#video-box.double-bot(ng-init="isVideoClicked=false")
@@ -36,20 +42,30 @@ section
 							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/mFRwMaYtVjQ?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
 
 						.clearfix
-//- section.background.bg-white
-//- 	h4.text-center.double-top.
-//- 		Vos devis en moins de<br>60 secondes
-//- 	#video-container
-//- 		#video-box.double-bot(ng-init="isVideoClicked=false")
-//- 			img#video-cover(ng-click="videoClickMask()" ng-if="isVideoClicked == false" src='assets/imgs/png/video.png')
-//- 			| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="558" height="300" src="https://www.youtube.com/embed/Tve2GEGn7GA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
-//- 		.clearfix
+		.row
+			.eight.col.quad-top
+				h5.text-right.remove-bot Gagnez du temps grâce à la signature electronique !
+				hr.light.lines.half.right.pull-right
+				.clearfix
+				p.text-right.quad-bot.
+					Faîtes signer vos devis éléctroniquement et gagnez un temps précieux avec vos client.
+			.four.col.quad-top
+				.circle.small-circle.circle-calculator.half-top.large-display
+		.row
+			.four.col.quad-top
+				.circle.small-circle.circle-pig.half-top.large-display
+			.eight.col.quad-top
+				h5.remove-bot Gérez vos impayés automatiquement grâce au systeme de relance.
+				hr.light.lines.half
+				p.quad-bot.
+					Faîtes signer vos devis éléctroniquement et gagnez un temps précieux avec vos client.
 section
 	.container
 		.row
 			.twelve.col
-				h4.text-center.quad-top En détails, ça fait quoi ?
-				hr.lines.tiny.quad-bot.centered
+				hr.light.lines.tiny.quad-top.half-bot.centered
+				h4.text-center En détails, ça fait quoi ?
+				hr.light.lines.tiny.quad-bot.centered
 		.row
 			.four.col
 				.circle.small-circle.circle-responsive

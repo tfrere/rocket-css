@@ -11,8 +11,8 @@ angular.module('toggleHeight', []).directive('toggleChildHeight', function($wind
             element.parent().css({ height: linkHeight });
 
               element.bind('click', function() {
-
                 element.parent().toggleClass('active');
+                element.find("i").toggleClass('active');
               
                 var actualHeight = angular.element(element.parent())[0].offsetHeight;
                 var contentHeight = angular.element(element.next())[0].offsetHeight + 40;

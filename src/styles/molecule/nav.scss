@@ -1,3 +1,23 @@
+#cookie {
+	position:absolute;
+	z-index: 997;
+	top:60px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.1);
+	color:white;
+	p {
+		color:white;
+		margin:0;
+		padding:10px 0;
+		font-size: 0.9em;
+	}
+	i {
+		margin-top:10px;
+		cursor:pointer;
+		@include fade();
+	}
+}
+
 #logo {
 	width: 31px;
 	height: 31px;

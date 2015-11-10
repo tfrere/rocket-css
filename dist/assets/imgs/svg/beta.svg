@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="53.663855"
-     inkscape:cy="53.648404"
+     inkscape:zoom="5.6"
+     inkscape:cx="108.01329"
+     inkscape:cy="106.82952"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -53,6 +53,14 @@
      id="layer1"
      transform="translate(0,-3007.0866)">
     <rect
+       style="fill:#df7200;fill-opacity:1;stroke:none"
+       id="rect3004-1"
+       width="185.73253"
+       height="43.128872"
+       x="2128.8418"
+       y="2043.5454"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
+    <rect
        style="fill:#ffa13f;fill-opacity:1;stroke:none"
        id="rect3004"
        width="189.34213"
@@ -60,6 +68,19 @@
        x="2128.1399"
        y="2044.2004"
        transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)" />
+    <text
+       xml:space="preserve"
+       style="font-size:17.27325439px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#df7200;fill-opacity:0.943299;stroke:none;font-family:PT Serif;-inkscape-font-specification:PT Serif"
+       x="2215.2839"
+       y="2071.4138"
+       id="text3006-9"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3008-7"
+         x="2215.2839"
+         y="2071.4138"
+         style="font-weight:bold;fill:#df7200;fill-opacity:0.943299;font-family:Open Sans;-inkscape-font-specification:Open Sans Bold">BÊTA</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:17.27325439px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:PT Serif;-inkscape-font-specification:PT Serif"

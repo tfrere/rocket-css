@@ -27,12 +27,14 @@
 	are based on 10px sizing. So basically 1.5rem = 15px :) */
 	html 				{ font-size: 62.5%; 
 						  @include antialiased();
+						  overflow-y:scroll;
 						}
 	html, body 			{ width: 100%; height: 100%; }
 	body 				{ 
 						  font-family: $text-font;
 						  @include font(0, $text-size, $ratio);
 						  @include selection-color(white,orange);
+						  color: #3E4149;
 						} 
 
 	/* # Titles

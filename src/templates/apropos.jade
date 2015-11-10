@@ -1,8 +1,9 @@
 section.background
 	.main-texture
+	#general-background
 	.container
 		.twelve.col
-			h3.quad-top.double-bot.text-white.text-center L'equipe
+			h3.b.text-white.text-center L'equipe
 .container
 	.row.quad-top.text-center
 		.three.col
@@ -30,27 +31,31 @@ section.background
 			h6.add-top Design
 			p.text-grey-100 Thibaud Frere
 
-.container.double-top.double-bot
-	form.row
-		.twelve.col.double-top
-			h4.text-center Nous contacter
-			hr.centered.tiny.quad-bot.lines
-			.six.col
-				label Ton nom
-				input.full(type="text", placeholder="")
-			.six.col
-				label Email
-				input.full(type="email", placeholder="")
-			.twelve.col
-				label Message
-				textarea.full(placeholder="Votre message ici ...")
-				button.add-top.button.complement.pull-right Envoyer
-				.clearfix.double-bot
+.container
+	//- form.row.quad-top
+	//- 	.five.col
+	//- 		h4 Nous contacter
+	//- 		hr.tiny.lines
+	//- 		p.
+	//- 			Envie de nous laisser un petit message ? C'est par ici que ça se passe !
+	//- 	.six.col.offset-one
+	//- 		.six.col
+	//- 			label Nom
+	//- 			input.full(type="text", placeholder="")
+	//- 		.six.col
+	//- 			label Email
+	//- 			input.full(type="email", placeholder="")
+	//- 		.twelve.col
+	//- 			label Message
+	//- 			textarea.full(placeholder="Votre message ici ...")
+	//- 			button.add-top.button.complement.pull-right Envoyer
+	//- 			.clearfix.double-bot
 			
 	.row.text-center
-		.twelve.col.quad-top.quad-bot
+		.twelve.col.quad-bot.quad-top
+			hr.light.centered.tiny.lines.half-bot
 			h4 Mentions légales
-			hr.centered.tiny.quad-bot.lines
+			hr.light.centered.tiny.double-bot.lines
 			p.
 				<br> SARL au capital de 1000 euros 
 				<br> 38, rue de jouy 57160 Moulins les Metz

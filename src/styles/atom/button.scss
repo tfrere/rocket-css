@@ -178,12 +178,15 @@
 
             &.spinner {
               position:relative;
-              width: 125px;
-              .icon-spin {
-                position:absolute;
-                top:9px;
-                right:20px;
-                opacity:0;
+              width: 135px;
+              .spin {
+                position: absolute;
+                background-image: url('../../assets/imgs/svg/loading.svg');
+                width: 32px;
+                height: 32px;
+                top: 9px;
+                right: 5px;
+                opacity: 0;
                 @include transition(all, 200ms, ease-in-out);
               }
 
@@ -195,13 +198,13 @@
                 span {
                   margin-left:-30px;
                 }
-                &.icon-spin {
+                &.spin {
                   opacity:1;
                 }
               }
 
             }
-            &.spinner.on .icon-spin {
+            &.spinner.on .spin {
               opacity: 1;
             }
 

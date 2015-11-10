@@ -37,11 +37,27 @@
 	}
 
 	@mixin rotate ($deg) {
-		transform: 		 		rotate($deg);
+		@include prefixer(transform, rotate($deg), webkit moz ms o spec);
 	}
 
 	@mixin border-radius ($radius: 5px) {
-		border-radius: 				$radius;
+		@include prefixer(border-radius, $radius, webkit moz ms o spec);
+	}
+
+	@mixin multi-border-radius ($top-left: 5px, $top-right: 5px, $bottom-left: 5px, $bottom-right: 5px) {
+		-webkit-border-top-left-radius: $top-left;
+		-webkit-border-bottom-left-radius: $bottom-left;
+		-moz-border-radius-topleft: $top-left;
+		-moz-border-radius-bottomleft: $bottom-left;
+		border-top-left-radius: $top-left;
+		border-bottom-left-radius: $bottom-left;
+		-webkit-border-top-right-radius: $top-right;
+		-webkit-border-bottom-right-radius: $bottom-right;
+		-moz-border-radius-topright: $top-right;
+		-moz-border-radius-bottomright: $bottom-right;
+		border-top-right-radius: $top-right;
+		border-bottom-right-radius: $bottom-right;
+
 	}
 
 	@mixin brightness ($value: 40%) {
@@ -78,7 +94,7 @@
 	}
 
 	@mixin unselectable () {
-		user-select:           		none;
+		@include prefixer(user-select, none, webkit moz ms o spec);
 	}
 
 	@mixin selectable () {

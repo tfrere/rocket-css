@@ -1,0 +1,16 @@
+[
+	{
+		"title": "La bêta est dans les bacs !", 
+		"date": "11/11/2015",
+		"img": "/assets/imgs/jpg/beta.png",
+		"tags": ["entreprenariat", "auto-entrepreneur"],
+		"content": "On y est, <b>Peon</b> sort aujourd'hui en version bêta fermée. Un an de travail acharné pour pouvoir enfin annoncer la sortie du plus bel outil de gestion de ses devis au monde ! Et oui, rien que ça."
+	},
+	{
+		"title": "Hello world !", 
+		"date": "10/10/2015",
+		"img": "/assets/imgs/jpg/sample.png",
+		"tags": ["entreprenariat", "auto-entrepreneur"],
+		"content": "Ca y est le site est en place"
+	}
+]

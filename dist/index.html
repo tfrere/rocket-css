@@ -2,5 +2,22 @@
 analytics.load("q5l1jwayPS6xa3Kxi0ujZUkKAEjh2g2E");
 analytics.page()
 }}();
+
+ window.twttr = (function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0],
+     t = window.twttr || {};
+   if (d.getElementById(id)) return t;
+   js = d.createElement(s);
+   js.id = id;
+   js.src = "https://platform.twitter.com/widgets.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ 
+   t._e = [];
+   t.ready = function(f) {
+     t._e.push(f);
+   };
+ 
+   return t;
+ }(document, "script", "twitter-wjs"));
 </script>
 </head><body ng-scroll="" ng-app="app"><div class="beta large-display"></div><div ui-view=""></div><script type="text/javascript" src="vendor/vendor.min.js"></script><script type="text/javascript" src="scripts/app.min.js"></script></body></html>

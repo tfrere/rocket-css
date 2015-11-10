@@ -51,7 +51,7 @@
           watch: rootDir.dev + '/scripts/**/*.js'
       },
       assets : {
-        files: [rootDir.dev + '/assets/imgs/**/*{png,svg, jpg}'],
+        files: [rootDir.dev + '/assets/imgs/**/*{png,svg,jpg,gif}'],
         dest: rootDir.dist + '/assets/imgs/',
         watch: rootDir.dev + '/assets/imgs/**/*',
         clean: rootDir.dist + '/assets/imgs/**/*'

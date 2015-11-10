@@ -2,11 +2,11 @@
 @import "abstract/const/easing";
 @import "abstract/const/normalize";
 
-@import "abstract/tools/mixin";
+@import "abstract/tools/prefixer";
 @import "abstract/tools/include-font";
 @import "abstract/tools/modular-scale";
 @import "abstract/tools/keyframe";
-@import "abstract/tools/prefixer";
+@import "abstract/tools/mixin";
 @import "abstract/tools/center";
 
 @import "abstract/animation";
@@ -32,6 +32,13 @@
 @import "molecule/home";
 @import "molecule/nav";
 @import "molecule/question";
+@import "molecule/newsletter";
+
+.screen-box {
+	position:relative;
+	width:100%;
+	height:100%;
+}
 
 .small-circle {
 	width: 150px;
@@ -51,4 +58,32 @@
 		height: 250px;
 		margin: 0 auto;
 	}
+}
+
+#question_handler[ui-view] {
+	min-height:100px;
+}
+
+input:not(.ng-pristine).ng-invalid {
+	border: 1px solid $color-danger;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+	@include transition();
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
 }

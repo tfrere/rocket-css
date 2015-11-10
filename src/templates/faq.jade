@@ -1,15 +1,49 @@
 section.background
 	.main-texture
+	#general-background
 	.container
 		.twelve.col
-			h3.quad-top.double-bot.text-white.text-center Les questions c'est par ici !
+			h3.b.text-white.text-center Informations générales
 .row
-	.container.quad-bot.quad-top
-		.row
-			.twelve.col
-				.question(ng-repeat="question in questions track by $index")
-					a(toggle-child-height="active" index="{{$index}}")
-						i.icon.icon-pen.pull-left.text-grey-80.add-padding.large-display
-						h6 {{question.title}}
-						hr
-					p.add-left {{question.text}}
+	.container.double-bot.quad-top
+		#app.row
+			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.application").faq-box.six.col
+				.main-texture
+				.tab-peon
+				.background
+				p.text-right.add-top.double-right.b.
+					Application
+			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.statut").faq-box.six.col
+				.main-texture
+				.tab-peon-2
+				.background-2
+				p.text-left.add-top.double-left.b.
+					Statut
+			div#question_handler(ui-view="")
+		form(name="form" novalidate).row.double-top.double-bot
+			.eight.offset-two.col.double-top
+				hr.light.centered.tiny.lines.half-bot
+				h4.text-center Ou posez nous directement la question
+				hr.light.centered.tiny.quad-bot.lines
+				.row(ng-if="!isSended")
+					.six.col
+						label Nom
+						input.full(type="text",  ng-model="form.name", placeholder="", required)
+					.six.col
+						label Email
+						input.full(type="email",  ng-model="form.email", placeholder="", required)
+					.twelve.col
+						label Message
+						textarea.full(ng-model="form.content", placeholder="Votre question ...", required)
+						button#validate(ng-click="sendQuestion(form)").add-top.button.complement.pull-right.spinner
+							.spin
+							span Envoyer
+						.clearfix.double-bot
+				.raw#isGood(ng-if="isGood")
+					h4.text-center.quad-top Merci !
+					p.text-center.double-bot.
+						On vous répondra bientôt
+				.raw#isBad(ng-if="isGood != null && isGood == false")
+					h4.text-center.quad-top Désolé
+					p.text-center.double-bot.
+						Le serveur à eu un petit probleme, essayez plus tard !
