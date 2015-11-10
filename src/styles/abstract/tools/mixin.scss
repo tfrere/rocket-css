@@ -18,22 +18,22 @@
 	}
 
 	@mixin box-sizing ($sizing: border-box) {
-		box-sizing: 				$sizing;
+		@include prefixer(box-sizing, $sizing, webkit moz ms o spec);
 	}
 
 	@mixin scale ($factor) {
-		transform: 		 		scale($factor);
+		@include prefixer(transform, scale($factor), webkit moz ms o spec);
 	}
 
 	@mixin translateX ($number: -40px) {
-		transform: 		 		translateX($number);
+		@include prefixer(transform, translateX($number), webkit moz ms o spec);
 	}
 	@mixin translate($n1: 0px, $n2: 0px) {
-		transform: 		 		translate($n1, $n2);
+		@include prefixer(transform, translate($n1, $n2), webkit moz ms o spec);
 	}
 
 	@mixin translateY ($number: -40px) {
-		transform: 		 		translateY($number);
+		@include prefixer(transform, translateY($number), webkit moz ms o spec);
 	}
 
 	@mixin rotate ($deg) {
@@ -61,25 +61,20 @@
 	}
 
 	@mixin brightness ($value: 40%) {
-		filter: 					brightness($value);
+		@include prefixer(filter, brightness($value), webkit moz ms o spec);
 	}
 
 	@mixin circle {
-		border-radius:				100%;
+		@include prefixer(border-radius , 100%, webkit moz ms o spec);
 	}
 
 	@mixin box-shadow ($x:3px, $y:3px, $blur:5px, $color: grey) {
-
-		-webkit-box-shadow: 		$x $y $blur $color;
-		-moz-box-shadow: 			$x $y $blur $color;
-		-o-box-shadow: 				$x $y $blur $color;
-		box-shadow: 				$x $y $blur $color;
+		@include prefixer(box-shadow, $x $y $blur $color, webkit moz ms o spec);
 	}
 
 
-
 	@mixin text-shadow ($x:1px, $y:1px, $blur:0px, $color: white) {
-		text-shadow: 				$x $y $blur $color;
+		@include prefixer(text-shadow, $x $y $blur $color, webkit moz ms o spec);
 	}
 
 
@@ -90,7 +85,7 @@
 	}
 
 	@mixin cover {
-		background-size: 			cover;
+		@include prefixer(background-size, cover, webkit moz ms o spec);
 	}
 
 	@mixin unselectable () {
@@ -98,7 +93,7 @@
 	}
 
 	@mixin selectable () {
-		user-select: 				text;
+		@include prefixer(user-select, text, webkit moz ms o spec);
 	}
 
 	@mixin antialiased () {

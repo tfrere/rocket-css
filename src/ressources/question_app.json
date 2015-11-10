@@ -1,22 +1,18 @@
 [
 	{
-		"title": "Comment m'inscrire au statut d'auto-entrepreneur ?",
-		"content": "Vous pouvez vous inscrire directement en ligne ou retirer un dossier d'inscription à la chambres des métiers de votre région. Une fois inscrit, vous devez encore créer un compte dédié à votre activité professionnel. Heureusement, un compte particulier suffi, du moment que celui-ci est dédié à votre activité.<br/><img src='assets/imgs/gif/devis.gif'/>"
+		"title": "Pour ajouter un client",
+		"content": "Allez dans le section <b>Client</b> de votre menu et cliquez sur <b>Ajouter</b> Complétez le formulaire, puis validez.<br/>Et voila, c'est fait !<br/><br/><img src='assets/imgs/gif/devis.gif'/>"
 	},
 	{
-		"title": "Quelles sont mes obligations dans le cas d'une activité artisanale?",
-		"content": "Dans le cas d'une activité artisanal, et ce depuis 2015, vous avez l'obligation d'effectuer un stage de préparation à l'installation. Pour effectuer ce stage vous devez contacter la chambres des métiers de votre région, dont les coordonnées se trouve iciPour les profession réglementé (dont voici la liste) il est également obligatoire decontracter une assurance professionnel."
+		"title": "Pour éditer un devis",
+		"content": "Allez dans la section <b>Devis</b> de votre menu et la encore, cliquez sur <b>Ajouter</b><br/><br/>Donnez un titre à votre devis et sélectionnez un client. Par défaut, Peon vous sélectionnera automatiquement le dernier client ajouté. Sélectionner une prestation que vous avez enregistré. <br/>Vous pouvez également en éditez une nouvelle <br/> Pour ajouter plus de prestation cliquez sur le bouton <b>+</b><br/> Il ne vous reste plus qu'a valider. Une fois terminé vous pouvez soit imprimer votre devis soit le télécharger au format PDF.<br/><br/><img src='assets/imgs/gif/client.gif'/>"
 	},
 	{
-		"title": "Doit-je payer des cotisation si je ne gagne pas d'argent?",
-		"content": "Le statut d'auto-entrepreneur n'impose de payer des cotisations que sur le chiffre d'affaire réalisé. Par conséquent, si vous ne gagnez rien, vous ne payez rien."
+		"title": "Pour éditer une facture",
+		"content": "Allez dans la section <b>Devis</b> de votre menu et sélectionnez un devis.Cliquez sur <b>Passer en facture</b> puis validez et Peon s'occupe du reste ! <br/>Vous pouvez soit imprimer votre facture soit la télécharger au format PDF. <br/><br/><img src='assets/imgs/gif/facture.gif'/>"
 	},
 	{
-		"title": "Puis-je cumuler les status?",
-		"content": "Vous ne pouvez cumuler plusieurs activités indépendante. Par contre, vous pouvez par exemple exercer une activité de gérant minoritaire au sein d'une SARL et être auto-entrepreneur."
-	},
-	{
-		"title": "Quel limite de chiffre d'affaire?",
-		"content": "Deux limite de chiffre d'affaire sont applicable selon la nature de votre activité: - 82 200 € pour une activité de vente de marchandises, d'objets, de fournitures, de denrées à emporter ou à consommer sur place, ou pour des prestations d'hébergement, à l'exception de la location de locaux d'habitation meublés dont le seuil est de 32 900 €.  - 32 900 € pour les prestations de services relevant de la catégorie des bénéfices industriels et commerciaux (BIC) ou des bénéfices non commerciaux (BNC). Pour les créations en cours d'année, ces montants sont réduits en fonction de la durée d'activité."
+		"title": "Pour parametrer mon interface",
+		"content": "Dans la section <b>Compte</b> de votre menu. Complétez les cases <b>Information</b> et <b>Réglage</b>. Des icones d'aides <b>I</b> sont à votre disposition pour vous guider.<br/><br/> - Pour gagner encore plus de temps pour la conception de vos devis et factures, vous pouvez préenregistrer les prestations que vous proposez. Pour ce faire, cliquez sur <b>Ajouter une prestation</b>  et complétez les cases. Vous pouvez ajouter autant de prestations que nécessaire . -Comme pour les prestations, vous pouvez préenregistrer des Réductions Pour ce faire, cliquez sur <b>Ajouter une réduction</b> et complétez les cases. Vous pouvez ajouter autant de réduction que nécessaire . Et voila, votre logiciel est configuré ! <br/><br/><img src='assets/imgs/gif/reglages.gif'/>"
 	}
 ]

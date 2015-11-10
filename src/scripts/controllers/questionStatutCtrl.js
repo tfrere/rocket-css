@@ -4,7 +4,7 @@ app.controller('questionStatutCtrl', function ($scope, $http, $sce) {
 	analytics.page({ path: '/faq/statut'});
 	
 	$scope.trackQuestion = function(index) {
-		window.analytics.track('question ' + index);
+		window.analytics.track('questionApp ' + index);
 	};
 
 	$http.get('../ressources/question_statut.json').success(function (data){

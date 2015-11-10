@@ -5,8 +5,8 @@
 	color:black;
 	position:relative;
 	overflow:hidden;
-	border:none;
-	border-bottom:1px solid $color-grey-20;
+	border:none!important;
+	border-bottom:1px solid $color-grey-20!important;
 	@include cover();
 	@include transition();
 	@include multi-border-radius(10px, 10px, 10px, 10px);
@@ -18,7 +18,7 @@
 	p {
 		font-size: 3rem;
 		color:$color-complement-dark;
-		text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+		@include text-shadow(2px, 2px, 3px, rgba(0,0,0,0.1));
 	}
 
 	&:hover {
@@ -32,6 +32,7 @@
 	}
 
 	.tab-peon {
+		border:none!important;
 		position:absolute;
 		background-position: 0% 53%;
 		@include cover();
@@ -44,6 +45,7 @@
 		z-index: 2;
 	}
 	.background {
+		border:none!important;
 		position:absolute;
 		background-position: 25% 73%;
 		@include cover();
@@ -81,16 +83,16 @@
 
 }
 .faq-box.active {
--webkit-box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
--moz-box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
-box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
+	-webkit-box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
+	-moz-box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
+	box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
 	p {
 		color:white;
 	}
 	background-color: darken(#8DB2C8, 10%);
 	color:white;
-	border:none;
-	border-bottom:1px solid $color-complement;
+	border:none!important;
+	border-bottom:1px solid $color-complement!important;
 	.background {
 		opacity:1;
 	}
@@ -113,7 +115,11 @@ box-shadow: inset 0px -1px 11px 1px rgba(0,0,0,0.16);
 	i.active {
 		@include rotate(45deg);
 	}
-
+	img {
+		display:block;
+		margin: 0 auto;
+		width: 50%;
+	}
 	>a {
 		@include unselectable();
 		text-decoration: none;

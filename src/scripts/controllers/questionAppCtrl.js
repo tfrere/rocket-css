@@ -1,10 +1,10 @@
 
-app.controller('questionAppCtrl', function ($scope, $http, $sce) {
+app.controller('questionAppCtrl', function ($scope, $http, $sce, $document) {
 
 	analytics.page({ path: '/faq/app'});
 	
 	$scope.trackQuestion = function(index) {
-		window.analytics.track('question ' + index);
+		window.analytics.track('questionApp ' + index);
 	};
 
 	$http.get('../ressources/question_app.json').success(function (data){
@@ -23,6 +23,12 @@ app.controller('questionAppCtrl', function ($scope, $http, $sce) {
 
     });
 
+	$scope.moveTo = function(id) {
+		var offset = 100;
+		var duration = 500;
+		var someElement = angular.element(document.getElementById(id));
+    	$document.scrollToElement(someElement, offset, duration);
+	}
 
 });
 

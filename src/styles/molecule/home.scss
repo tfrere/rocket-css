@@ -55,7 +55,7 @@ section.background {
 		max-height:300px;
 		margin: 0 auto;
 		padding: 20px;
-		background-color: $color-grey-05;
+		//- background-color: $color-grey-05;
 		cursor:pointer;
 		@include box-sizing(border-box);
 		@include transition();
