@@ -5,5 +5,5 @@ app.controller('navCtrl', function ($scope, $rootScope) {
 	$rootScope.$on('$stateChangeError', function(event) {
 	  $state.go('404');
 	});
-
+ $scope.htmlReady();
 });

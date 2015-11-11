@@ -1,9 +1,14 @@
-var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
+var app = angular.module('app', ['seo', 'ui.router', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-    
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });    
     //$locationProvider.html5Mode(true);
     $urlRouterProvider.when('', '/');
+    $locationProvider.hashPrefix('!');
 
     // For any unmatched url, send to 404
     $urlRouterProvider.otherwise('/404');

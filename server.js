@@ -11,11 +11,20 @@ var app = express();
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));
 
+
+// Here we require the prerender middleware that will handle requests from Search Engine crawlers 
+// We set the token only if we're using the Prerender.io service 
+app.use(require('prerender-node').set('prerenderToken', 'ds8ZK1oQ3gDwsQTAKQ56')); 
 app.use('/', express.static('dist'));
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+
+// for HTML5 mode enabled
+app.all('/*', function(req, res) {
+	res.sendfile('dist/index.html');
 });
+
+
+// FORMS ROUTES
 
 app.post('/subscribeToMailchimp', function(req,res){
 	console.log(req.body);
@@ -35,4 +44,10 @@ app.post('/sendQuestion', function(req,res){
 		return res.send(200);
 	else
 		return res.send(404, error.code);
+});
+
+// SAY HELLO
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });

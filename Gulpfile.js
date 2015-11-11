@@ -10,14 +10,15 @@
   }
 
   var paths = {
-
       clean: {
         files: rootDir + ''
       },
       server : {
         port: '5000',
         url: 'http://localhost',
-        file: './server.js'
+        file: './server.js',
+        snapshot_port: '5001',
+        snapshot_file: './snapshot_server.js'
       },
       fonts: {
         files: rootDir.dev + '/assets/fonts/**/*',
@@ -72,10 +73,12 @@
   gulp.task('watch', getTask('watch'));
   gulp.task('test', getTask('test'));
   gulp.task('ressources', getTask('ressources'));
+  gulp.task('snapshot-server', getTask('snapshot'));
 
   gulp.task('build-prod', function(cb) {
     plugins.runSequence('clean', ['style', 'jade', 'assets', 'vendor', 'scripts', 'ressources']);
   });
 
   gulp.task('default', ['watch', 'nodemon']);
+  gulp.task('snapshot', ['snapshot-server']);
   gulp.task('production', ['build-prod']);

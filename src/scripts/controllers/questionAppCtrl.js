@@ -29,7 +29,7 @@ app.controller('questionAppCtrl', function ($scope, $http, $sce, $document) {
 		var someElement = angular.element(document.getElementById(id));
     	$document.scrollToElement(someElement, offset, duration);
 	}
-
+	 $scope.htmlReady();
 });
 
 // questionAppCtrl.resolve = {

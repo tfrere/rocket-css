@@ -9,7 +9,7 @@
 	border-bottom:1px solid $color-grey-20!important;
 	@include cover();
 	@include transition();
-	@include multi-border-radius(10px, 10px, 10px, 10px);
+	@include multi-border-radius(5px, 5px, 5px, 5px);
 
 	&:hover {
 		background-color: $color-grey-20;

@@ -43,6 +43,9 @@
     "gulp-concat": "^2.6.0",
     "gulp-livereload": "^3.8.0",
     "gulp-plumber": "^1.0.1",
-    "mailchimp-api": "^2.0.7"
+    "mailchimp-api": "^2.0.7",
+    "phantomjs": "^1.9.18",
+    "prerender-node": "^2.1.0",
+    "request": "^2.65.0"
   }
 }

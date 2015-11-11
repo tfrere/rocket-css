@@ -52,5 +52,5 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 	    // });
   	}
   };
-
+ $scope.htmlReady();
 });
