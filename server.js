@@ -16,6 +16,7 @@ app.set('port', (process.env.PORT || 5000));
 // We set the token only if we're using the Prerender.io service 
 app.use(require('prerender-node').set('prerenderToken', 'ds8ZK1oQ3gDwsQTAKQ56')); 
 app.use('/', express.static('dist'));
+app.use('/', express.static('sitemap'));
 
 
 // for HTML5 mode enabled
