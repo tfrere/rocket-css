@@ -56,5 +56,5 @@ app.controller('homeCtrl', function ($scope, mouseParallaxService, $timeout) {
     // $(document).ready(function(){
     //     $("body").smoothWheel();
     // });
-	 $scope.htmlReady();
+	// $scope.htmlReady();
 });

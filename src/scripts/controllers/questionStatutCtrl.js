@@ -22,6 +22,6 @@ app.controller('questionStatutCtrl', function ($scope, $http, $sce) {
 	    $scope.questions = questions;
 
     });
- $scope.htmlReady();
+	// $scope.htmlReady();
 
 });

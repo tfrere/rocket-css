@@ -39,5 +39,5 @@ app.controller('faqCtrl', function ($scope, $http, $document) {
 			});
 		}
 	};
-	 $scope.htmlReady();
+	// $scope.htmlReady();
 });

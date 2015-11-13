@@ -1,5 +1,5 @@
 
 app.controller('404Ctrl', function ($scope) {
 	analytics.page({ path: '/404'});
- 	$scope.htmlReady();
+ 	//$scope.htmlReady();
 });
