@@ -55,6 +55,27 @@
 	background-image: url('../assets/imgs/jpg/quentin.jpg');
 }
 
+#thib-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/thib-peon.jpg');
+}
+
+#val-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/val-peon.jpg');
+}
+
+#antho-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/antho-peon.jpg');
+}
+
+#quentin-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/quentin-peon.jpg');
+}
+
+
 #background_404 {
 	width:100%;
 	height:100%;
