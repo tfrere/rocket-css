@@ -3,14 +3,14 @@ nav
 		.row
 			.twelve.col
 				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
-				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.apropos") A propos
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance") Asssistance
 				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.blog") Blog
 				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.faq") Fiches pratiques
 				a.button.small.pull-right.complement(href="http://app.peon.fr") Se connecter
 				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://app.peon.fr/inscription") Créer un compte
 
 div(ui-view="")
-footer.bg-complement
+footer
 	.container
 		.row.text-white.double-bot.quad-top
 			.three.col
@@ -37,7 +37,7 @@ footer.bg-complement
 				h6 A propos
 				ul.no-style
 					li
-						a(href="#") Histoire
+						a(ui-sref="nav.apropos") L'equipe
 					li
 						a(href="ressources/pressKit.zip") Presse
 			.three.col

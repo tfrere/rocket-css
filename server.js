@@ -4,13 +4,13 @@ var app = express();
 var http = require('http');
 var mcapi = require('./node_modules/mailchimp-api/mailchimp');
 var mc = new mcapi.Mailchimp('63ecaf49616d482e4168575b8b0fe6df-us11');
-
+var cors = require('cors');
 var express = require('express');
 var app = express();
 
 app.use(bodyParser.json());
 app.set('port', (process.env.PORT || 5000));
-
+app.use(cors());
 
 // Here we require the prerender middleware that will handle requests from Search Engine crawlers 
 // We set the token only if we're using the Prerender.io service 

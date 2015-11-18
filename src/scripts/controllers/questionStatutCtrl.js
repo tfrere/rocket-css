@@ -7,7 +7,7 @@ app.controller('questionStatutCtrl', function ($scope, $http, $sce) {
 		window.analytics.track('questionApp ' + index);
 	};
 
-	$http.get('../ressources/question_statut.json').success(function (data){
+	$http.get('http://app.peon.fr/api/infos').success(function (data){
 
 	    var questions = [];
 
@@ -16,8 +16,8 @@ app.controller('questionStatutCtrl', function ($scope, $http, $sce) {
 	      var title = data[i].title;
 
 	      content = $sce.trustAsHtml(content);
-	      
-	      questions.push({index:i, content:content, title:title});
+	      if (data[i].category === "state")
+	      	questions.push({index:i, content:content, title:title});
 	    }
 	    $scope.questions = questions;
 

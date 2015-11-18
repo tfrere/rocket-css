@@ -10,10 +10,10 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 		window.analytics.track('NewsLetter add');
 	};
 
-    $http.get('../ressources/blog.json').success(function (data){
+    $http.get('http://app.peon.fr/api/posts').success(function (data){
 
 	    var articles = [];
-
+	    console.log(data);
 	    for(var i=0;i<data.length;i++){
 	      var content = data[i].content;
 	      var title = data[i].title;

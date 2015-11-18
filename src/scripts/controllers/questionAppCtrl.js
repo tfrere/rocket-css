@@ -7,17 +7,18 @@ app.controller('questionAppCtrl', function ($scope, $http, $sce, $document) {
 		window.analytics.track('questionApp ' + index);
 	};
 
-	$http.get('../ressources/question_app.json').success(function (data){
+	$http.get('http://app.peon.fr/api/infos').success(function (data){
 
 	    var questions = [];
-
+	    console.log(data);
 	    for(var i=0;i<data.length;i++){
+	      
 	      var content = data[i].content;
 	      var title = data[i].title;
-
 	      content = $sce.trustAsHtml(content);
 	      
-	      questions.push({index:i, content:content, title:title});
+	      if (data[i].category === "app")
+	      	questions.push({index:i, content:content, title:title});
 	    }
 	    $scope.questions = questions;
 

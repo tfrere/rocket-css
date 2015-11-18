@@ -1,5 +1,11 @@
 var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
 
+app.config(function($httpProvider){
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
+
+
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode({
@@ -42,6 +48,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/apropos',
             templateUrl: 'templates/apropos.html',
             controller: 'aproposCtrl'
+        })
+        .state('nav.assistance', {
+            url: '/assistance',
+            templateUrl: 'templates/assistance.html',
+            controller: 'assistanceCtrl'
         })
         .state('nav.blog', {
             url: '/blog',
