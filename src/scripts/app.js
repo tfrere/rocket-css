@@ -1,9 +1,14 @@
-var app = angular.module('app', ['ui.router', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
+var app = angular.module('app', ['ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
 
 app.config(function($httpProvider){
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 });
+
+app.run(['optimizely', function(optimizely) {
+  optimizely.loadProject('3529320510');
+}]);
+
 
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
