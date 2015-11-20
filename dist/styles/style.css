@@ -2364,7 +2364,7 @@ section.background {
   background-size: cover; }
 
 #general-background {
-  opacity: 0.5;
+  opacity: 0.2;
   z-index: 0;
   background-image: url("../assets/imgs/svg/general_background.svg");
   overflow: hidden;
