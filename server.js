@@ -20,8 +20,8 @@ app.use('/', express.static('sitemap'));
 
 
 // for HTML5 mode enabled
-app.all('/*', function(req, res) {
-	res.sendfile('dist/index.html');
+app.all('/:anyreq', function(req, res) {
+	 res.sendFile('index.html', { root: __dirname +'/dist' });
 });
 
 
