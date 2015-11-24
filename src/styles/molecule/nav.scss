@@ -16,6 +16,9 @@
 		cursor:pointer;
 		@include fade();
 	}
+	a {
+		color:lighten($color-complement-light, 30%);
+	}
 }
 
 #logo {

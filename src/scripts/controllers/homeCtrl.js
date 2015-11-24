@@ -1,10 +1,17 @@
 
-app.controller('homeCtrl', function ($scope, mouseParallaxService, $timeout) {
+app.controller('homeCtrl', function ($cookies, $scope, mouseParallaxService, $timeout) {
 
 	$scope.setCookie = false;
-	
+	var favoriteCookie = $cookies.get('peonCookie');
+	console.log(favoriteCookie);
+	if (favoriteCookie == 'true')
+		$scope.setCookie = true;
 	$scope.updateCookie = function() {
 		$scope.setCookie = true;
+		var expireDate = new Date();
+		expireDate.setDate(expireDate.getDate() + 365);
+		$cookies.put('peonCookie', 'true', {'expires': expireDate});
+		console.log(favoriteCookie);
 	};
 
 	$scope.isVideoClicked = false;

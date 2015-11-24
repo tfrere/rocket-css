@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
+var app = angular.module('app', ['ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
 
 app.config(function($httpProvider){
     $httpProvider.defaults.useXDomain = true;
@@ -66,13 +66,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('nav.cgu', {
             url: '/cgu',
-            templateUrl: 'templates/cgu.html',
-            controller: 'cguCtrl'
+            templateUrl: 'templates/cgu.html'
         })
         .state('nav.404', {
             url: '/404',
             templateUrl: 'templates/404.html',
             controller: '404Ctrl'
+        })
+        .state('nav.cookies', {
+            url: '/cookies',
+            templateUrl: 'templates/cookies.html'
         })
 });
 

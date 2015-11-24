@@ -3,55 +3,63 @@ section.background
 	#general-background
 	.container
 		.twelve.col
-			h3.b.text-white.text-center A votre service
+			h3.b.text-white.text-center Une question ?
 .container
-	.row.quad-top.text-center
-		.three.col
-			.flip.double-bottom
+	.row.double-top.text-center
+		h6.text-center.double-top Peon a lui aussi ses assistants qui répondront à toutes vos questions.
+		.card.three.col
+			.flip.double-top.double-bottom
 				#quentin.front
 				#quentin-back.back
 			hr.lines.light.add-top.tiny.centered
 			h6.remove-bot.half-top Communauté
 			p.i.remove-top.text-grey-60 Quentin Sombsthay
-		.three.col
-			.flip.double-bottom
+		.card.three.col
+			.flip.double-top.double-bottom
 				#antho.front
 				#antho-back.back
 			hr.lines.light.add-top.tiny.centered
 			h6.remove-bot.half-top Aide juridique
 			p.i.remove-top.text-grey-60 Anthony Lacroix
-		.three.col
-			.flip.double-bottom
+		.card.three.col
+			.flip.double-top.double-bottom
 				#val.front
 				#val-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Debug
+			h6.remove-bot.half-top Développement
 			p.i.remove-top.text-grey-60 Valentin Rebierre
-		.three.col
-			.flip.double-bottom
+		.card.three.col
+			.flip.double-top.double-bottom
 				#thib.front
 				#thib-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Procédures
+			h6.remove-bot.half-top Ergonomie
 			p.i.remove-top.text-grey-60 Thibaud Frere
-
 .container
-	form.row.quad-top
-		.five.col
-			h4 Nous contacter
-			hr.tiny.lines
-			p.
-				Besoin d'aide ? C'est par ici que ça se passe !
-		.six.col.offset-one
-			.six.col
-				label Nom
-				input.full(type="text", placeholder="")
-			.six.col
-				label Email
-				input.full(type="email", placeholder="")
-			.twelve.col
-				label Message
-				textarea.full(placeholder="Votre message ici ...")
-				button.add-top.button.complement.pull-right Envoyer
-				.clearfix.double-bot
-			
+	form(name="form" novalidate).row.double-top
+		.eight.offset-two.col.double-top
+			hr.light.centered.tiny.lines.half-bot
+			h4.text-center C'est par ici
+			hr.light.centered.tiny.quad-bot.lines
+			.row(ng-if="!isSended")
+				.six.col
+					label Nom
+					input.full(type="text",  ng-model="form.name", placeholder="", required)
+				.six.col
+					label Email
+					input.full(type="email",  ng-model="form.email", placeholder="", required)
+				.twelve.col
+					label Message
+					textarea.full(ng-model="form.content", placeholder="Votre question ...", required)
+					button#validate(ng-click="sendQuestion(form)").add-top.button.complement.pull-right.spinner
+						.spin
+						span Envoyer
+					.clearfix.double-bot
+			.raw#isGood(ng-if="isGood")
+				h4.text-center.quad-top Merci !
+				p.text-center.double-bot.
+					On vous répondra bientôt
+			.raw#isBad(ng-if="isGood != null && isGood == false")
+				h4.text-center.quad-top Désolé
+				p.text-center.double-bot.
+					Le serveur à eu un petit probleme, essayez plus tard !

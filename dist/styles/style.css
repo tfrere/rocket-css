@@ -1804,6 +1804,13 @@ big, .big {
         -ms-box-shadow: 0px 3px 0px #365664;
         -o-box-shadow: 0px 3px 0px #365664;
         box-shadow: 0px 3px 0px #365664; }
+      .button.cta.complement:active {
+        top: 5px;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        -ms-box-shadow: none !important;
+        -o-box-shadow: none !important;
+        box-shadow: none !important; }
   .button.small {
     padding: 6px 10px; }
   .button.big {
@@ -2489,6 +2496,8 @@ section.background {
     transition: opacity 200ms ease-in-out; }
     #cookie i:hover {
       opacity: 1; }
+  #cookie a {
+    color: #dfe9ee; }
 
 #logo {
   width: 31px;
