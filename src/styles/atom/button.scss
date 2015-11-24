@@ -69,7 +69,11 @@
               @include box-shadow(0px, 5px, 0px, $color-primary-dark);
               text-shadow: 1px 1px 1px $color-primary-dark;
               @include border-radius(5px);
-              @include transition();
+              @include transition(all, 100ms, ease-in-out);
+              &:hover {
+                top:2px;
+                @include box-shadow(0px, 3px, 0px, $color-primary-dark);
+              }
               &:active {
                 top: 5px;
                 -webkit-box-shadow: none !important;
@@ -80,6 +84,10 @@
               }
               &.complement {
                 @include box-shadow(0px, 5px, 0px, $color-complement-dark);
+                &:hover {
+                  top:2px;
+                  @include box-shadow(0px, 3px, 0px, $color-complement-dark);
+                }
               }
             }
 
