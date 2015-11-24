@@ -12,8 +12,6 @@ section.background
 					h6.pull-left.b.half-bot {{article.title}}
 					p.pull-right.half-bot.remove-top.text-grey-50 {{article.date}}
 					hr.half.half-top.remove-top.light.lines
-				.add-padding.bg-grey-10
-					img(src="{{article.img}}")
 				p(ng-bind-html="article.content")
 				//- hr(ng-if="!$last").lines.centered.half.double-top.double-bot.light
 				.clearfix.quad-top(ng-if="!$last")
