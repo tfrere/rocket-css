@@ -24,7 +24,7 @@ app.controller('faqCtrl', function ($scope, $http, $document) {
 			console.log(form.email);
 			button.addClass('on');
 			window.analytics.track('Question submitted');
-			$http.post('http://app.tfrere.fr/api/questions/', {email:form.email, name:form.name, msg:form.content})
+			$http.post('http://app.peon.fr/api/questions/', {email:form.email, name:form.name, msg:form.content})
 			.success(function(){
 				button.removeClass('on');
 					$scope.isSended = true;
