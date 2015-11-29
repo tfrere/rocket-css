@@ -2,7 +2,9 @@
 app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 
 
-	$timeout = twttr.widgets.load();
+	$timeout(function(){
+		$timeout = twttr.widgets.load();
+	}, 100);
 
 	analytics.page({ path: '/blog'});
  
@@ -15,15 +17,16 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 	    var articles = [];
 	    console.log(data);
 	    for(var i=0;i<data.length;i++){
-	      var content = data[i].content;
+	      var content = data[i].content.substring(0,408);
 	      var title = data[i].title;
 	      var date = data[i].date;
 	      var tags = data[i].tags;
 	      var img = data[i].img;
+	      var slug = data[i].slug;
 
 	      content = $sce.trustAsHtml(content);
 	      
-	      articles.push({index:i, content:content, title:title, date:date, tags:tags, img: img});
+	      articles.push({index:i, slug:slug, content:content, title:title, date:date, tags:tags, img: img});
 	    }
 	    $scope.articles = articles;
 

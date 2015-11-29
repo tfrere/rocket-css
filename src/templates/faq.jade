@@ -7,13 +7,13 @@ section.background
 .row
 	.container.double-bot.quad-top
 		#app.row
-			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.application").faq-box.six.col
+			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.show({id:'app'})").faq-box.six.col
 				.main-texture
 				.tab-peon
 				.background
 				p.text-right.add-top.double-right.b.
 					Application
-			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.statut").faq-box.six.col
+			a(ui-sref-active="active" ng-click="moveTo('app')" ui-sref="nav.faq.show({id:'state'})").faq-box.six.col
 				.main-texture
 				.tab-peon-2
 				.background-2

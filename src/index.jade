@@ -10,15 +10,16 @@ html(ng-scroll="" ng-app="app")
 		meta(name='viewport', content='width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0')
 			
 		// titre google et d'onglet
-		title Peon
+		title(ng-if="false") Peon
+		title(update-title ng-if="!false")
 
 		link(rel="icon" href="ressources/favicon.ico")
 
 		// texte google 
-		meta(name='description', content="Assistant personnel pour auto-entrepreneur. Il vous accompagne dans la gestion de vos clients, devis, factures, calcul de vos cotisations et traitement de vos impayés.")
+		meta(name='description', content="{{seo.desc}}")
 
 		// keywords and stuff
-		meta(name='keywords', content="peon, devis, facture, auto entrepreneur, comptabilité, prestataire de service, auto entreprenariat, impayés, signature electronique, libéral, artisan, s'inscrire, démarche création")
+		meta(name='keywords', content="{{seo.keywords}}")
 		meta(name='author', content='Blue Screen')
 		meta(name='copyright', content='Blue Screen')
 
@@ -27,9 +28,9 @@ html(ng-scroll="" ng-app="app")
 		meta(name='revisit-after', content='15 days')
 		meta(name='robots', content='index, follow')
 		meta(http-equiv='cache-control', content='public')
+		base(href="/")
 		link(type="text/css", rel="stylesheet", href="styles/style.css")
 		
-		base(href="/")
 		meta(name="fragment" content="!")
 		
 		script(type="text/javascript").
@@ -64,9 +65,9 @@ html(ng-scroll="" ng-app="app")
 			ga('send', 'pageview');
 
 
-	body
-		.beta.large-display
-		div(ui-view="")
-		
-		script(type="text/javascript" src="vendor/vendor.min.js")
-		script(type="text/javascript" src="scripts/app.min.js")
+		body
+			.beta.large-display
+			div(ui-view="")
+			
+			script(type="text/javascript" src="vendor/vendor.min.js")
+			script(type="text/javascript" src="scripts/app.min.js")

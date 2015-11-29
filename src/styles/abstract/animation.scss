@@ -71,6 +71,11 @@
     100% { opacity: 1; @include translateY(0px); }
   }
 
+  @include keyframes(box-flyinbot) {
+    0% { opacity: 0; @include translateY(40px); }
+    100% { opacity: 1; @include translateY(0px); }
+  }
+
   @include keyframes(box-flyout) {
     0% { opacity: 1; @include translateY(0px); }
     100% { opacity: 0; @include translateY(-40px); }
@@ -88,4 +93,7 @@
 
 .fly-in {
   @include animation(box-flyin, 1.5s, 1);
+}
+.fly-in-bot {
+  @include animation(box-flyinbot, 1s, 1);
 }

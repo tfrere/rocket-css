@@ -3,16 +3,19 @@ section.background
 	#general-background
 	.container
 		.twelve.col
-			h3.b.text-white.text-center Le blog
+			h3.b.text-white.text-center Blog
 .container
 	.row.quad-top.double-bot
 		.seven.col.double-bot
-			.article(ng-repeat="article in articles")
+			.article(ng-repeat="article in articles | reverse")
 				header
-					h6.pull-left.b.half-bot {{article.title}}
+					a.text-complement-dark(ui-sref="nav.article({slug:article.slug})")
+						h6.pull-left.b.half-bot {{article.title}}
 					p.pull-right.half-bot.remove-top.text-grey-50 {{article.date}}
 					hr.half.half-top.remove-top.light.lines
+				//- img(src="http://app.peon.fr/uploads/69a4edf0-96bd-11e5-a41f-d3aedfa67fae.png")
 				p(ng-bind-html="article.content")
+				a(ui-sref="nav.article({slug:article.slug})") Lire la suite...
 				//- hr(ng-if="!$last").lines.centered.half.double-top.double-bot.light
 				.clearfix.quad-top(ng-if="!$last")
 		.four.col.double-bot.offset-one

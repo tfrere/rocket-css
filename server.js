@@ -15,13 +15,25 @@ app.use(cors());
 // Here we require the prerender middleware that will handle requests from Search Engine crawlers 
 // We set the token only if we're using the Prerender.io service 
 app.use(require('prerender-node').set('prerenderToken', 'ds8ZK1oQ3gDwsQTAKQ56')); 
-app.use('/', express.static('dist'));
-app.use('/', express.static('sitemap'));
+app.use('/', express.static(__dirname + '/dist/'));
+app.use('/', express.static(__dirname + '/sitemap/'));
+app.use("/vendor", express.static(__dirname + "/dist/vendor"));
+app.use("/scripts", express.static(__dirname + "/dist/scripts"));
+app.use("/ressources", express.static(__dirname + "/dist/ressources"));
+app.use("/assets", express.static(__dirname + "/dist/assets"));
+app.use("/styles", express.static(__dirname + "/dist/styles"));
+app.use("/templates", express.static(__dirname + "/dist/templates"));
 
+// app.all("/*", function(req, res, next) {
+//     res.sendfile("index.html", { root: __dirname + "/dist" });
+// });
 
-// for HTML5 mode enabled
-app.all('/:anyreq', function(req, res) {
-	 res.sendFile('index.html', { root: __dirname +'/dist' });
+// send our main angular html file if any link without dot is requested, e.g. 'http://someurl/about'
+// this is our actual server side redirect, we don't send index.html when there's dot in link assuming such a request
+// is for static data like .js, .css or .html
+app.get('/[^\.]+$', function(req, res){
+    res.set('Content-Type', 'text/html')
+    	.sendfile("index.html", { root: __dirname + "/dist" });
 });
 
 
