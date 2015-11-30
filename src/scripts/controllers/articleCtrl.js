@@ -7,7 +7,7 @@ app.controller('articleCtrl', function ($stateParams, $scope, $http, $sce, $time
     	var article = {};
     	article = data;
 		article.content = $sce.trustAsHtml(data.content);
-		article.date = moment(data.publishedAt).format('YYYY');
+		article.date = moment(data.publishedAt).format("dddd, Do MMMM YYYY");
 		$scope.article = article;
 		console.log(data);
     });

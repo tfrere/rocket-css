@@ -11,11 +11,11 @@ section.background
 				header
 					a.text-complement-dark(ui-sref="nav.article({slug:article.slug})")
 						h6.pull-left.b.half-bot {{article.title}}
-					p.pull-right.half-bot.remove-top.text-grey-50 {{article.date}}
-					hr.half.half-top.remove-top.light.lines
+					hr.half.remove-bot.remove-top.light.lines
+					p.small.add-bot.remove-top.text-grey-50 le {{article.date}}
 				//- img(src="http://app.peon.fr/uploads/69a4edf0-96bd-11e5-a41f-d3aedfa67fae.png")
 				p(ng-bind-html="article.content")
-				a(ui-sref="nav.article({slug:article.slug})") Lire la suite...
+				a(ng-if="article.isMore" ui-sref="nav.article({slug:article.slug})") Lire la suite...
 				//- hr(ng-if="!$last").lines.centered.half.double-top.double-bot.light
 				.clearfix.quad-top(ng-if="!$last")
 		.four.col.double-bot.offset-one

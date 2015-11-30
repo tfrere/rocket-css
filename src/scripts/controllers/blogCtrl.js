@@ -15,18 +15,21 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
     $http.get('http://app.peon.fr/api/posts').success(function (data){
 
 	    var articles = [];
-	    console.log(data);
 	    for(var i=0;i<data.length;i++){
 	      var content = data[i].content.substring(0,408);
 	      var title = data[i].title;
-	      var date = data[i].date;
+	      var date = moment(data[i].publishedAt).format("Do MMMM YYYY");;
 	      var tags = data[i].tags;
 	      var img = data[i].img;
 	      var slug = data[i].slug;
+	      var isMore = false;
+
+	      if (data[i].content.length > 400)
+	      	isMore = true;
 
 	      content = $sce.trustAsHtml(content);
 	      
-	      articles.push({index:i, slug:slug, content:content, title:title, date:date, tags:tags, img: img});
+	      articles.push({isMore: isMore, index:i, slug:slug, content:content, title:title, date:date, tags:tags, img: img});
 	    }
 	    $scope.articles = articles;
 
