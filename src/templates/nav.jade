@@ -3,45 +3,46 @@ nav
 		.row
 			.twelve.col
 				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
-				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance") Assistance
-				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.blog") Blog
-				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.faq") Fiches pratiques
-				a.button.small.pull-right.complement(href="http://app.peon.fr") Se connecter
-				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://app.peon.fr/inscription") Créer un compte
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance" compile-unsafe="'views.nav.support' | translate")
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.blog" compile-unsafe="'views.nav.blog' | translate")
+				a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.faq" compile-unsafe="'views.nav.questions' | translate")
+				div.pull-right.half-left(ng-translate-language-select)
+				a.button.small.pull-right.complement(href="http://app.peon.fr" compile-unsafe="'views.nav.login' | translate")
+				a.button.small.pull-right.primary(ng-click="trackCreate()" href="http://app.peon.fr/inscription" compile-unsafe="'views.nav.signup' | translate")
 
 div(ui-view="")
 footer
 	.container
 		.row.text-white.double-bot.quad-top
 			.three.col
-				h6 L'application
+				h6(compile-unsafe="'views.footer.title1' | translate")
 				ul.no-style
 					li
-						a(href="http://app.peon.fr/inscription") Créer un compte
+						a(href="http://app.peon.fr/inscription" compile-unsafe="'views.footer.list1_1' | translate")
 					li
-						a(href="http://app.peon.fr/") S'inscrire
+						a(href="http://app.peon.fr/" compile-unsafe="'views.footer.list1_2' | translate")
 					li
-						a(ui-sref="nav.faq") FAQ
+						a(ui-sref="nav.faq" compile-unsafe="'views.footer.list1_3' | translate")
 			.three.col
-				h6 Contact
+				h6(compile-unsafe="'views.footer.title2' | translate")
 				ul.no-style
 					li
-						a(ui-sref="nav.contact") Email
+						a(ui-sref="nav.contact" compile-unsafe="'views.footer.list2_1' | translate")
 					li
-						a(href="http://twitter.com/peon") Twitter
+						a(href="http://twitter.com/peon" compile-unsafe="'views.footer.list2_2' | translate")
 					li
-						a(href="http://facebook.com/peon") Facebook
+						a(href="http://facebook.com/peon" compile-unsafe="'views.footer.list2_3' | translate")
 					li
-						a(href="http://googleplus.com/peon") Google +
+						a(href="http://googleplus.com/peon" compile-unsafe="'views.footer.list2_4' | translate")
 			.three.col
-				h6 A propos
+				h6(compile-unsafe="'views.footer.title3' | translate")
 				ul.no-style
 					li
-						a(ui-sref="nav.apropos") L'equipe
+						a(ui-sref="nav.apropos" compile-unsafe="'views.footer.list3_1' | translate")
 					li
-						a(href="ressources/pressKit.zip") Presse
+						a(href="ressources/pressKit.zip" compile-unsafe="'views.footer.list3_2' | translate")
 			.three.col
-				h6 Conditions
+				h6(compile-unsafe="'views.footer.title4' | translate")
 				ul.no-style
 					li
-						a(ui-sref="nav.cgu") CGU
+						a(ui-sref="nav.cgu" compile-unsafe="'views.footer.list4_1' | translate")

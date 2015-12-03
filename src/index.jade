@@ -10,13 +10,13 @@ html(ng-scroll="" ng-app="app")
 		meta(name='viewport', content='width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=0')
 			
 		// titre google et d'onglet
-		title(ng-if="false") Peon
+		title(ng-if="false") Peon 
 		title(update-title ng-if="!false")
 
 		link(rel="icon" href="ressources/favicon.ico")
 
 		// texte google 
-		meta(name='description', content="{{seo.desc}}")
+		meta(name='description', update-desc)
 
 		// keywords and stuff
 		meta(name='keywords', content="{{seo.keywords}}")
@@ -68,6 +68,5 @@ html(ng-scroll="" ng-app="app")
 		body
 			.beta.large-display
 			div(ui-view="")
-			
 			script(type="text/javascript" src="vendor/vendor.min.js")
 			script(type="text/javascript" src="scripts/app.min.js")

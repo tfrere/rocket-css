@@ -1,0 +1,88 @@
+{
+	"views.nav.support": "Assistance",
+	"views.nav.blog": "Blog",
+	"views.nav.questions": "Fiches pratiques",
+	"views.nav.login": "Se connecter",
+	"views.nav.signup": "Créer un compte",
+
+	"views.footer.title1": "L'application",
+	"views.footer.list1_1": "Créer un compte",
+	"views.footer.list1_2": "Fiches pratiques",
+	"views.footer.list1_3": "Se connecter",
+
+	"views.footer.title2": "Contact",
+	"views.footer.list2_1": "Email",
+	"views.footer.list2_2": "Twitter",
+	"views.footer.list2_3": "Facebook",
+	"views.footer.list2_4": "Google +",
+
+	"views.footer.title3": "A propos",
+	"views.footer.list3_1": "L'équipe",
+	"views.footer.list3_2": "Presse",
+
+	"views.footer.title4": "Conditions",
+	"views.footer.list4_1": "CGU",
+
+	"views.main.cookie": "Demo",
+
+	"views.main.punchline": "Une bonne raison d'entreprendre",
+	"views.main.subline": "Assistant personnel pour <b>auto-entrepreneurs</b> prestataires de services et activités libérales",
+	"views.main.cta1": "Mois d'essai gratuit",
+	"views.main.cta2": "Demo",
+
+	"views.main.titleVideo": "Vos factures en quelques secondes",
+	"views.main.textVideo": "Ne perdez plus de temps avec la paperasse. Concentrez vous uniquement sur les besoins réels de votre entreprise. Peon se charge de tout.",
+
+	"views.main.titleArg1": "Gagnez du temps avec la validation electronique",
+	"views.main.textArg1": "Votre client valide son devis en quelques secondes et vous receverez instantanément une confirmation.",
+	
+	"views.main.titleArg2": "Ignorez vos impayés grâce au traîtement automatique",
+	"views.main.textArg2": "Une alerte vous prévient en cas de non règlement et Peon effectue les démarches de recouvrement amiable et de mise en demeure.",
+
+	"views.main.titleDetails": "En détails, ça fait quoi ?",
+
+	"views.main.infoDetails1": "Accessible sur tablette et PC.",
+	"views.main.infoDetails2": "Données sécurisées.",
+	"views.main.infoDetails3": "Factures instantannées",
+	"views.main.infoDetails4": "Calcul des cotisations.",
+	"views.main.infoDetails5": "Gestion des impayés.",
+	"views.main.infoDetails6": "Sans engagement.",
+
+	"views.main.tryAnyway": "Convaincu ou non, essayez-le !",
+	"views.main.tryAnywayButton": "C'est gratuit",
+
+	"views.support.punchline": "Une question ?",
+	"views.support.text": "Peon a lui aussi ses assistants qui répondront à toutes vos questions.",
+	"views.support.profile1": "Communauté",
+	"views.support.profile2": "Conseil",
+	"views.support.profile3": "Maintenance",
+	"views.support.profile4": "Ergonomie",
+
+	"views.support.punchline2": "C'est par ici",
+
+	"views.support.label1": "Nom",
+	"views.support.label2": "Email",
+	"views.support.label3": "Message",
+	"views.support.button": "Envoyer",
+
+	"views.support.isGood": "Merci !",
+	"views.support.isGoodSubline": "On vous répondra bientôt",
+	"views.support.isBad": "Désolé !",
+	"views.support.isBadSubline": "Le serveur à eu un petit probleme, essayez plus tard !",
+
+	"views.questions.punchline": "Informations générales",
+
+	"views.questions.punchline2": "Ou posez nous directement la question",
+
+	"views.questions.label1": "Nom",
+	"views.questions.label2": "Email",
+	"views.questions.label3": "Message",
+	"views.questions.button": "Envoyer",
+
+	"views.questions.isGood": "Merci !",
+	"views.questions.isGoodSubline": "On vous répondra bientôt",
+	"views.questions.isBad": "Désolé !",
+	"views.questions.isBadSubline": "Le serveur à eu un petit probleme, essayez plus tard !",
+
+	"directives.language-select.Language": "fr"
+}

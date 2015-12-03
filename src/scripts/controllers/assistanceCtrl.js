@@ -1,5 +1,5 @@
 
-app.controller('assistanceCtrl', function ($scope, $http) {
+app.controller('assistanceCtrl', function ($translate, $scope, $http) {
 	analytics.page({ path: '/assistance'});
 	$scope.isGood = null;
 	$scope.isSended = false;

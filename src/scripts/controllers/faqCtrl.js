@@ -1,4 +1,4 @@
-app.controller('faqCtrl', function ($sce, $stateParams, $scope, $http, $document) {
+app.controller('faqCtrl', function ($translate, $sce, $stateParams, $scope, $http, $document) {
 
 	analytics.page({ path: '/faq'});
 	

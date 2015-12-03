@@ -18,7 +18,8 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 	    for(var i=0;i<data.length;i++){
 	      var content = data[i].content.substring(0,408);
 	      var title = data[i].title;
-	      var date = moment(data[i].publishedAt).format("Do MMMM YYYY");;
+	      var date = moment(data[i].publishedAt).format("Do MMMM YYYY");
+	      var RawDate = data[i].publishedAt;
 	      var tags = data[i].tags;
 	      var img = data[i].img;
 	      var slug = data[i].slug;

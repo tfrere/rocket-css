@@ -18,6 +18,7 @@ app.use(require('prerender-node').set('prerenderToken', 'ds8ZK1oQ3gDwsQTAKQ56'))
 app.use('/', express.static(__dirname + '/dist/'));
 app.use('/', express.static(__dirname + '/sitemap/'));
 app.use("/vendor", express.static(__dirname + "/dist/vendor"));
+app.use("/bower_components", express.static(__dirname + "/bower_components"));
 app.use("/scripts", express.static(__dirname + "/dist/scripts"));
 app.use("/ressources", express.static(__dirname + "/dist/ressources"));
 app.use("/assets", express.static(__dirname + "/dist/assets"));

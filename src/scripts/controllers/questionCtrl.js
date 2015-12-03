@@ -1,4 +1,4 @@
-app.controller('questionCtrl', function ($sce, $stateParams, $scope, $http, $document) {
+app.controller('questionCtrl', function ($translate, $sce, $stateParams, $scope, $http, $document) {
 	
 	$scope.moveTo = function(id) {
 		var offset = 100;

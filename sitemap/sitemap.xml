@@ -1,23 +1,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
-	<loc>http://peon.fr/blog</loc>
+		<loc>http://peon.fr/faq/question/state</loc>
 	</url>
 	<url>
-	<loc>http://peon.fr/faq</loc>
+		<loc>http://www.peon.fr/id=12354</loc>
 	</url>
 	<url>
-	<loc>http://peon.fr/assistance</loc>
+		<loc>http://peon.fr/blog/article/peon-est-dans-les-bacs</loc>
 	</url>
 	<url>
-	<loc>http://peon.fr/apropos</loc>
+		<loc>http://www.peon.fr/cgu</loc>
 	</url>
 	<url>
-	<loc>http://peon.fr/cgu</loc>
+		<loc>http://www.peon.fr/faq/statut</loc>
 	</url>
 	<url>
-	<loc>http://peon.fr/</loc>
+		<loc>http://peon.fr/faq/statut</loc>
 	</url>
 	<url>
-	<loc>http://www.peon.fr/</loc>
+		<loc>http://peon.fr/cookies</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/apropos</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/cgu</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/blog</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/faq</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/assistance</loc>
+	</url>
+	<url>
+		<loc>http://peon.fr/</loc>
+	</url>
+	<url>
+		<loc>http://gopeon.herokuapp.com/</loc>
+	</url>
+	<url>
+		<loc>http://www.peon.fr/</loc>
 	</url>
 </urlset>

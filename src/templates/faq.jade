@@ -3,7 +3,7 @@ section.background
 	#general-background
 	.container
 		.twelve.col
-			h3.b.text-white.text-center Informations générales
+			h3.b.text-white.text-center(compile-unsafe="'views.questions.punchline' | translate")
 .row
 	.container.double-bot.quad-top
 		#app.row
@@ -24,27 +24,25 @@ section.background
 		form(name="form" novalidate).row.double-top
 			.eight.offset-two.col.double-top
 				hr.light.centered.tiny.lines.half-bot
-				h4.text-center Ou posez nous directement la question
+				h4.text-center(compile-unsafe="'views.questions.punchline2' | translate")
 				hr.light.centered.tiny.quad-bot.lines
 				.row(ng-if="!isSended")
 					.six.col
-						label Nom
-						input.full(type="text",  ng-model="form.name", placeholder="", required)
+						label(compile-unsafe="'views.questions.label1' | translate")
+						input.full(type="text",  ng-model="form.name", placeholder="", required )
 					.six.col
-						label Email
-						input.full(type="email",  ng-model="form.email", placeholder="", required)
+						label(compile-unsafe="'views.questions.label2' | translate")
+						input.full(type="email",  ng-model="form.email", placeholder="", required )
 					.twelve.col
-						label Message
+						label(compile-unsafe="'views.questions.label3' | translate")
 						textarea.full(ng-model="form.content", placeholder="Votre question ...", required)
 						button#validate(ng-click="sendQuestion(form)").add-top.button.complement.pull-right.spinner
 							.spin
-							span Envoyer
+							span(compile-unsafe="'views.questions.button' | translate")
 						.clearfix.double-bot
 				.raw#isGood(ng-if="isGood")
-					h4.text-center.quad-top Merci !
-					p.text-center.double-bot.
-						On vous répondra bientôt
+					h4(compile-unsafe="'views.questions.isGood' | translate").text-center.quad-top
+					p(compile-unsafe="'views.questions.isGoodSubline' | translate").text-center.double-bot
 				.raw#isBad(ng-if="isGood != null && isGood == false")
-					h4.text-center.quad-top Désolé
-					p.text-center.double-bot.
-						Le serveur à eu un petit probleme, essayez plus tard !
+					h4.text-center.quad-top(compile-unsafe="'views.questions.isBad' | translate")
+					p.text-center.double-bot(compile-unsafe="'views.questions.isBadSubline' | translate")

@@ -1,15 +1,47 @@
 
-var app = angular.module('app', ['ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
+var app = angular.module('app', ['ngSanitize','ngTranslateSelect', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource', 'ngAnimate']);
+
+// constantes locales
+app.constant('LOCALES', {
+    'locales': {
+        'fr': 'fr',
+        'en': 'en'
+    },
+    'preferredLocale': 'fr'
+});
+
+//debugg helper
+app.config(function ($translateProvider) {
+    $translateProvider.useMissingTranslationHandlerLog();
+});
+
+app.config(function ($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'ressources/locale-',// path to translations files
+        suffix: '.json'// suffix, currently- extension of the translations
+    });
+    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.preferredLanguage('fr');// is applied on first load
+    $translateProvider.useLocalStorage();// saves selected language to localStorage
+});
+
+app.config(function (tmhDynamicLocaleProvider) {
+    tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
+});
+
+app.directive('compileUnsafe', function ($compile) {
+  return function (scope, element, attr) {
+    scope.$watch(attr.compileUnsafe, function (val, oldVal) {
+      if (!val || (val === oldVal && element[0].innerHTML)) return;
+      element.html(val);
+      $compile(element)(scope);
+    });
+  };
+});
 
 app.run(['optimizely', function(optimizely) {
   optimizely.loadProject('3529320510');
 }]);
-
-app.filter('reverse', function() {
-  return function(items) {
-    return items.slice().reverse();
-  };
-});
 
 app.config(function($httpProvider){
     $httpProvider.defaults.useXDomain = true;
@@ -23,11 +55,33 @@ app.directive('updateTitle', ['$rootScope', '$timeout',
 
         var listener = function(event, toState) {
 
-          var title = 'Default Title';
+          var title = 'Peon';
           if (toState.data && toState.data.pageTitle) title = toState.data.pageTitle;
 
           $timeout(function() {
-            element.text(title + " | Peon");
+            element.text(title + "");
+          }, 0, false);
+        };
+
+        $rootScope.$on('$stateChangeSuccess', listener);
+      }
+    };
+  }
+]);
+
+
+app.directive('updateDesc', ['$rootScope', '$timeout',
+  function($rootScope, $timeout) {
+    return {
+      link: function(scope, element) {
+
+        var listener = function(event, toState) {
+
+          var desc = "Peon, c'est bon mangez en";
+          if (toState.data && toState.data.pageDesc) desc = toState.data.pageDesc;
+
+          $timeout(function() {
+            element.text(desc + "");
           }, 0, false);
         };
 
@@ -108,10 +162,20 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     // For any unmatched url, send to 404
     $urlRouterProvider.otherwise('/404');
-    
+    console.log($urlRouterProvider);
     $stateProvider
+        // .state('404', {
+        //     abstract: true,
+        //     url: '',
+        //     templateUrl: 'templates/404.html',
+        //     controller: 'navCtrl'
+        // })
         .state('nav', {
             abstract: true,
+            // params: {
+            //   lang:null
+            // },
+            url: '?{lang:[a-z]{2}}',
             templateUrl: 'templates/nav.html',
             controller: 'navCtrl'
         })
@@ -120,7 +184,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/home.html',
             controller: 'homeCtrl',
             data: {
-              pageTitle: 'Home'
+              pageTitle: 'Home',
+              pageDesc: 'Assistant personnel pour auto-entrepreneur. Il vous accompagne dans la gestion de vos clients, devis, factures, calcul de vos cotisations et traitement de vos impayés.'
             }
         })
         .state('nav.faq', {
@@ -128,7 +193,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/faq.html',
             controller: 'faqCtrl',
             data: {
-              pageTitle: 'Faq'
+              pageTitle: 'Faq',
+              pageDesc: "Toutes les questions que vous vous êtes jamais posés sur l'auto-entreprenariat"
             }
         })
         .state('nav.faq.show', {
@@ -136,7 +202,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/question.html',
             controller: 'questionCtrl',
             data: {
-              pageTitle: 'Faq'
+              pageTitle: 'Faq',
+              pageDesc: ""
             }
         })
         .state('nav.apropos', {
@@ -144,7 +211,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/apropos.html',
             controller: 'aproposCtrl',
             data: {
-              pageTitle: 'A propos'
+              pageTitle: 'A propos',
+              pageDesc: ""
             }
         })
         .state('nav.assistance', {
@@ -152,7 +220,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/assistance.html',
             controller: 'assistanceCtrl',
             data: {
-              pageTitle: 'Assistance'
+              pageTitle: 'Assistance',
+              pageDesc: "Présentation de l'équipe de vrais humains qui vous assisteront dans tous vos besoins."
             }
         })
         .state('nav.blog', {
@@ -160,7 +229,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/blog.html',
             controller: 'blogCtrl',
             data: {
-              pageTitle: 'Blog'
+              pageTitle: 'Blog',
+              pageDesc: "La vie de peon, son histoire, ses coups de coeurs"
             }
         })
         .state('nav.article', {
@@ -194,6 +264,3 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
         })
 });
-
-
-

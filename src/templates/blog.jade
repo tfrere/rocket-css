@@ -7,7 +7,7 @@ section.background
 .container
 	.row.quad-top.double-bot
 		.seven.col.double-bot
-			.article(ng-repeat="article in articles | reverse")
+			.article(ng-repeat="article in articles | orderBy:article.rawDate:true")
 				header
 					a.text-complement-dark(ui-sref="nav.article({slug:article.slug})")
 						h6.pull-left.b.half-bot {{article.title}}

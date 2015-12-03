@@ -3,63 +3,61 @@ section.background
 	#general-background
 	.container
 		.twelve.col
-			h3.b.text-white.text-center Une question ?
+			h3.b.text-white.text-center(compile-unsafe="'views.support.punchline' | translate")
 .container
 	.row.double-top.text-center
-		h6.text-center.double-top Peon a lui aussi ses assistants qui répondront à toutes vos questions.
+		h6.text-center.double-top(compile-unsafe="'views.support.text' | translate")
 		.card.three.col
 			.flip.double-top.double-bottom
 				#quentin.front
 				#quentin-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Communauté
+			h6.remove-bot.half-top(compile-unsafe="'views.support.profile1' | translate")
 			p.i.remove-top.text-grey-60 Quentin Sombsthay
 		.card.three.col
 			.flip.double-top.double-bottom
 				#antho.front
 				#antho-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Conseil
+			h6.remove-bot.half-top(compile-unsafe="'views.support.profile2' | translate")
 			p.i.remove-top.text-grey-60 Anthony Lacroix
 		.card.three.col
 			.flip.double-top.double-bottom
 				#val.front
 				#val-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Maintenance
+			h6.remove-bot.half-top(compile-unsafe="'views.support.profile3' | translate")
 			p.i.remove-top.text-grey-60 Valentin Rebierre
 		.card.three.col
 			.flip.double-top.double-bottom
 				#thib.front
 				#thib-back.back
 			hr.lines.light.add-top.tiny.centered
-			h6.remove-bot.half-top Ergonomie
+			h6.remove-bot.half-top(compile-unsafe="'views.support.profile4' | translate")
 			p.i.remove-top.text-grey-60 Thibaud Frere
 .container
 	form(name="form" novalidate).row.double-top
 		.eight.offset-two.col.double-top
 			hr.light.centered.tiny.lines.half-bot
-			h4.text-center C'est par ici
+			h4.text-center(compile-unsafe="'views.support.punchline2' | translate")
 			hr.light.centered.tiny.quad-bot.lines
 			.row(ng-if="!isSended")
 				.six.col
-					label Nom
+					label(compile-unsafe="'views.support.label1' | translate")
 					input.full(type="text",  ng-model="form.name", placeholder="", required)
 				.six.col
-					label Email
+					label(compile-unsafe="'views.support.label2' | translate")
 					input.full(type="email",  ng-model="form.email", placeholder="", required)
 				.twelve.col
-					label Message
+					label(compile-unsafe="'views.support.label3' | translate")
 					textarea.full(ng-model="form.content", placeholder="Votre question ...", required)
-					button#validate(ng-click="sendQuestion(form)").add-top.button.complement.pull-right.spinner
+					button#validate(ng-click="sendQuestion(form)" ).add-top.button.complement.pull-right.spinner
 						.spin
-						span Envoyer
+						span(compile-unsafe="'views.support.button' | translate")
 					.clearfix.double-bot
 			.raw#isGood(ng-if="isGood")
-				h4.text-center.quad-top Merci !
-				p.text-center.double-bot.
-					On vous répondra bientôt
+				h4(compile-unsafe="'views.support.isGood' | translate").text-center.quad-top
+				p(compile-unsafe="'views.support.isGoodSubline' | translate").text-center.double-bot
 			.raw#isBad(ng-if="isGood != null && isGood == false")
-				h4.text-center.quad-top Désolé
-				p.text-center.double-bot.
-					Le serveur à eu un petit probleme, essayez plus tard !
+				h4(compile-unsafe="'views.support.isBad' | translate").text-center.quad-top
+				p(compile-unsafe="'views.support.isBadSubline' | translate").text-center.double-bot
