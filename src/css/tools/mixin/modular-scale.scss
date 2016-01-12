@@ -1,0 +1,43 @@
+@mixin font($index: 0, $base-size: 1.6em, $ratio: 1.62) {
+
+	@if $index > 0 {
+		@for $i from 1 through $index {
+			$base-size: $base-size * $ratio;
+		}
+		font-size: 				$base-size;
+	}
+	@else {
+		font-size: 				$base-size;		
+	}
+}
+
+//10.000 * 1.618 = 16.180
+//16.180 * 1.618 = 26.179
+//26.179 * 1.618 = 42.358
+//42.358 * etc.
+
+
+/* ## Font size system
+================================================== */
+
+	//$phi: (1 + sqrt(5)) / 2;
+
+	// $xoo: 1 / (2 * $phi);
+
+	// $line-width: 960;
+	// $line-height: sqrt($line-width) / $phi;   
+
+// .golden-font-by-line-width(@line-width: @line-width) {
+
+// 	@font-size:				sqrt(@line-width) / @phi;
+
+// 	font-size: 				@font-size;
+// 	line-height: 			@font-size * @phi;
+// 	margin-bottom:			0px;
+// }
+
+// .golden-font-by-font-size(@size: 16px) {
+// 	font-size: 				@size;
+// 	line-height: 			@font * @phi;
+// 	margin-bottom:			0px;
+// }

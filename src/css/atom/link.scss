@@ -1,0 +1,11 @@
+/* # Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	a:not(.button) {
+		cursor:pointer;
+		text-decoration: none;
+
+		&:hover 	{ outline: 0;}
+		&:active 	{ outline: 0; }
+		&:focus	 	{ outline: thin dotted; }
+	}

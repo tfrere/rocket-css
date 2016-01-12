@@ -1,0 +1,138 @@
+/* # Typographic base
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	// ¶ § “ ” ‘ ’ † ‡ © ™
+	// № ¡ ¿ # º ª ‰ ‱ ′ ″ ‴ ‖
+	// ⁂ ❧ ☞ ‽ ⸮ ◊ ※ ⁀ ¤
+	// ₳ ​ ฿ ​ ₵ ​¢ ​₡ ​₢ ​ $ ​₫ ​₯ ​ ₠ ​€ ​ ƒ ​₣ ​ ₲ ​
+	// ₴ ​ ₭ ​ ₺ ​ ℳ ​₥ ​ ₦ ​ ₧ ​₱ ​₰ ​£ ​ ៛ ​₽ ​₹ ₨ ​ ₪ ​ ৳ ​₸ ​₮ ​ ₩ ​ ¥
+
+	// chinese
+	// 燦爛的中國文明 標點符號的用法
+
+	// hebrew
+	// בראשית ברא אלהים את השמים ואת הארץ׃
+	// והארץ היתה תהו ובהו וחשך על־פני תהום ורוח אלהים מרחפת על־פני המים׃ ויאמר אלהים 
+
+	// japaneese
+	// パーソナル・コンピューター 
+
+	// corean
+	// 사과·배·복숭아·수박은 모두 과일이다.
+
+	@import url(//fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Roboto:300,500,700|Lora:400,700,400italic,700italic|Nunito:400,300,700|Ubuntu:400,700italic,500italic,400italic,300italic,700,500,300|Open+Sans:400,800,700,600,300,300italic,400italic,600italic,800italic,700italic|Oswald:400,300,700|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Quicksand:400,700,300|Raleway:400,200,300,500,600,700,800,900|Raleway+Dots|EB+Garamond|Libre+Baskerville:400,400italic,700);
+	
+	// @include include-font($path:"../fonts/Open_Sans/", $name: "OpenSans-Bold", $weight: normal, $style: normal)
+
+	$font-georgia:          	Georgia, "Times New Roman", Times, serif;
+
+	$font-helvetica:         	"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	$font-lucida-grande:     	"Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	$font-verdana:           	Verdana, Geneva, sans-serif;
+	
+	$font-pt-serif:				"PtSerif", Times;
+	$font-raleway:				"Raleway", sans-serif;
+	$font-open-sans:			"Oswald", sans-serif;
+
+	$font-monospace:        	"Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+
+	$ratio: $perfect-fourth;
+	
+	$title-size: 1.4rem;
+	$title-font: "Roboto", sans-serif;
+	$text-size: 2rem;
+	$text-font: "Merriweather", serif;
+
+	/* NOTE
+	html is set to 62.5% so that all the REM measurements throughout Skeleton
+	are based on 10px sizing. So basically 1.5rem = 15px :) */
+	html 				{ font-size: 62.5%; }
+	html, body 			{ width: 100%; height: 100%; }
+	body 				{ 
+						  font-family: $text-font;
+						  -webkit-font-smoothing:     antialiased;
+						  -moz-osx-font-smoothing:    grayscale;
+						  text-rendering:             geometricPrecision;
+						  @include font(0, $text-size, $ratio);
+						} 
+
+	/* # Titles
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+		h1, h2, h3, h4, h5, h6, button { 
+			font-family: $title-font;
+			font-weight: 200;
+			margin-top:.8em;
+			margin-bottom: 2rem;
+			letter-spacing: 2px;
+			line-height: 1.125;
+			color: darken($color-grey-text, 10%);
+			&a { font-weight: inherit; }
+		}
+		
+ 		p, blockquote, li {
+ 			@include font(1, $text-size, $ratio);
+ 			font-weight: 400;
+ 			line-height: 4rem;
+			letter-spacing: .03rem;
+			color:lighten($color-grey-text, 10%);
+		 	margin-bottom: 1.5rem;
+ 		}
+ 		li {
+			margin-bottom: .5rem;
+ 		}
+
+		h1 { @include font(6, $title-size / 3, $ratio); letter-spacing: -.1rem;}
+		h2 { @include font(5, $title-size / 3, $ratio); letter-spacing: -.1rem;}
+		h3 { @include font(4, $title-size / 3, $ratio); letter-spacing: -.1rem;}
+		h4 { @include font(3, $title-size / 3, $ratio); letter-spacing: -.08rem;}
+		h5 { @include font(2, $title-size / 3, $ratio); letter-spacing: -.05rem;}
+		h6 { @include font(1, $title-size / 3, $ratio); letter-spacing: 0;}
+
+		@include tablet {			
+
+			h1 { @include font(6, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+			h2 { @include font(5, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+			h3 { @include font(4, $title-size / 2, $ratio); letter-spacing: -.1rem;}
+			h4 { @include font(3, $title-size / 2, $ratio); letter-spacing: -.08rem;}
+			h5 { @include font(2, $title-size / 2, $ratio); letter-spacing: -.05rem;}
+			h6 { @include font(1, $title-size / 2, $ratio); letter-spacing: 0;}
+		}
+
+		@include desktop {			
+
+			h1 { @include font(5, $title-size, $ratio); letter-spacing: -.1rem;}
+			h2 { @include font(4, $title-size, $ratio); letter-spacing: -.1rem;}
+			h3 { @include font(3, $title-size, $ratio); letter-spacing: -.1rem;}
+			h4 { @include font(2, $title-size, $ratio); letter-spacing: -.08rem;}
+			h5 { @include font(1, $title-size, $ratio); letter-spacing: -.05rem;}
+			h6 { @include font(0, $title-size, $ratio); letter-spacing: 0;}
+		}
+
+	/* # Text
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+		em, i, .i       { font-style: italic; }
+		strong, b, .b   { font-weight: 800; }
+		.smaller 		{ font-size: 75%; }
+		small, .small   { font-size: 80%; }
+		big, .big		{ font-size: 130%; }
+		.bigger			{ font-size: 175%; }
+		.biggest		{ font-size: 200%; }
+		.lead			{ font-size: 120%; }
+		.caps			{ font-variant: small-caps; }
+
+		.text-left 		{ text-align: left; }
+		.text-right 	{ text-align: right; }
+		.text-center 	{ text-align: center; }
+		.text-justify 	{ text-align: justify; text-justify: newspaper; }								
+
+		.breakword 		{ word-wrap: break-word; }
+		.normal-wrap 	{ word-wrap: normal; }
+		.inherit-wrap 	{ word-wrap: auto; }
+
+		.uppercase 		{ text-transform: uppercase; }
+		.lowercase 		{ text-transform: lowercase; }
+		.capitalize 	{ text-transform: capitalize; }
+		.upper-first	{ display:block; &:first-letter { text-transform: uppercase; }  }

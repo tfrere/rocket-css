@@ -1,0 +1,20 @@
+blockquote {
+  font-style: italic;
+  padding-left: 25px;
+  margin-left: -29px;
+  border-left: 4px solid #222;
+}
+
+// define short quote
+q {
+	font-size: 150%;
+	padding-left: 25px;
+	&:before {
+		margin-right:10px;
+		content:"“ ";
+	}
+	&:after {
+		margin-left:10px;
+		content:" ”";
+	}
+}

@@ -1,0 +1,40 @@
+.navbar {
+	z-index: 999;
+	position: absolute;
+	width:100%;
+	left:0;
+	display: block;
+	background-color: transparent;
+	border-bottom:1px solid transparent;
+	&.top {
+		top:0;
+	}
+	&.bottom {
+		bottom:0;
+	}
+	&.fixed {
+		position:fixed;
+		transition:none;
+		transform: translateY(-300px);
+	}
+	&.fixed.fixedFadeIn {
+		transform: translateY(0px);
+		transition:all 200ms ease-in-out;
+	}
+	&.fixed.fixedFadeOut {
+		transform: translateY(-300px);
+		transition:all 200ms ease-in-out;
+	}
+	&.minified {
+		
+	}
+	// #menu-line{
+	// 	display: block;
+	// 	position: absolute;
+	// 	left: 50%;
+	// 	top: 25px;
+	// 	width: 0;
+	// 	height: 2px;
+	// 	background-color: orange;
+	// }
+}

@@ -1,0 +1,12 @@
+/*
+ *
+ * Aden
+ *
+ */
+
+%blur,
+.blur {
+  @extend %filter-base;
+  -webkit-filter: blur(10px);
+  overflow:hidden;
+}
