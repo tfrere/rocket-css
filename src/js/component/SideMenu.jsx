@@ -10,6 +10,10 @@ export const Direction = {
 
 export default class SideMenu extends Component {
 
+    static childContextTypes = {
+        active: PropTypes.any
+    }
+
     static propTypes = {
         size: PropTypes.string,
         direction: PropTypes.string
@@ -19,13 +23,20 @@ export default class SideMenu extends Component {
         direction: Direction.right
     };
 
+
     constructor( props ) {
         super( props );
         this.state = {};
+        this.getChildContext = this.getChildContext.bind(this);
     }
 
-    onClick() {
+    getChildContext() {
+        return {
+          active: this.state.active
+        };
+    };
 
+    onClick() {
          this.setState({active: !this.state.active });
     }
 
@@ -37,7 +48,8 @@ export default class SideMenu extends Component {
 
     render() {
         return (
-            <div className="side-menu-wrapper">
+            <div className={classNames("side-menu-wrapper", {displayed: this.state.active})}>
+                <div className={classNames("overlay", {displayed: this.state.active})}/>
                 <BurgerMenu onClick={::this.onClick} />
                 <nav className={classNames({active: this.state.active})}>
                     {this.props.children}

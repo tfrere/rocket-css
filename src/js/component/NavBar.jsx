@@ -16,9 +16,9 @@ export default class NavBar extends Component {
             fadeIn : false,
             fadeOut: false,
             minified: false,
-            oldScrollValue: -1
+            scrollTop: -1
         };
-        this.scroll = this.scroll.bind(this);
+        this.scroll = ::this.scroll;
     }
 
     componentDidMount() {
@@ -29,26 +29,31 @@ export default class NavBar extends Component {
         window.removeEventListener('scroll', this.scroll);
     }
 
-    scroll() {
-        var scrollTop = event.srcElement.body.scrollTop;
-        var isScrollingUp = (this.state.oldScrollValue > scrollTop) ? true : false;
+    scroll( event ) {
+        const scrollTop = event.srcElement.body.scrollTop;
+        const isScrollingUp = this.state.scrollTop > scrollTop;
 
-        if (scrollTop > 150)
-            this.setState( { fixed: true, fadeOut: false } );
-        else
-            this.setState( { fixed: false, fadeOut: false } );
+        let { fadeIn, minified } = this.state, fadeOut = false;
 
-        if (scrollTop > 300 && !isScrollingUp)
-            this.setState( { fadeIn : true, fadeOut: false } );
-        if (scrollTop < 300 && isScrollingUp)
-            this.setState( { fadeIn : false, fadeOut: true } );
+        const fixed = scrollTop > 150;
 
-        if (scrollTop > 600 && !isScrollingUp)
-            this.setState( { minified: true } );
-        if (scrollTop < 600)
-            this.setState( { minified: false } );
+        if ( scrollTop > 300 && !isScrollingUp ) {
+            fadeIn = true;
+            fadeOut = false;
+        }
+        if ( scrollTop < 300 && isScrollingUp ) {
+            fadeIn = false;
+            fadeOut = true;
+        }
 
-        this.setState( { oldScrollValue: scrollTop } );
+        if ( scrollTop > 600 && !isScrollingUp ) {
+            minified = true;
+        }
+        if ( scrollTop < 600 ) {
+            minified = false;
+        }
+
+        this.setState( { scrollTop, fixed, fadeIn, fadeOut, minified } );
     }
     render() {
         return (

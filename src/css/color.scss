@@ -1,6 +1,8 @@
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+	$color-subtle-border:			#F2F2F2;
+	$color-subtle-grey:				#FAFAFA;
 	$color-grey-text:				#3E4149;
 	$color-primary:					rgb(100,157,183);
 	$color-complement:				#ff8900;
@@ -18,7 +20,6 @@
 	$color-info-light:				lighten($color-info, 15%);
 	$color-danger-dark:				darken($color-danger, 15%);
 	$color-danger-light:			lighten($color-danger, 15%);
-
 
 	$blue-grey: (
 	  "base":       #607d8b,
@@ -46,63 +47,7 @@
 	  "darken-4":   #212121
 	);
 
-	$shades: (
-	  "black":        #000000,
-	  "white":        #FFFFFF,
-	  "transparent":  transparent
-	);
-
 	$colors: (
 	  "blue-grey": $blue-grey,
 	  "grey": $grey,
-	  "shades": $shades
 	);
-
-
-	// Color Classes
-
-	@each $color_name, $color in $colors {
-	  @each $color_type, $color_value in $color {
-	    @if $color_type == "base" {
-	      .#{$color_name} {
-	        background-color: $color_value !important;
-	      }
-	      .#{$color_name}-text {
-	        color: $color_value !important;
-	      }
-	    }
-	    @else {
-	      .#{$color_name}.#{$color_type} {
-	        background-color: $color_value !important;
-	      }
-	      .#{$color_name}-text.text-#{$color_type} {
-	        color: $color_value !important;
-	      }
-	    }
-	  }
-	}
-
-	// Shade classes
-	@each $color, $color_value in $shades {
-	  .#{$color} {
-	    background-color: $color_value !important;
-	  }
-	  .#{$color}-text {
-	    color: $color_value !important;
-	  }
-	}
-
-
-	// usage: color("name_of_color", "type_of_color")
-	// to avoid to repeating map-get($colors, ...)
-
-	@function color($color, $type) {
-	  @if map-has-key($colors, $color) {
-	    $curr_color: map-get($colors, $color);
-	    @if map-has-key($curr_color, $type) {
-	      @return map-get($curr_color, $type);
-	    }
-	  }
-	  @warn "Unknown `#{name}` in $colors.";
-	  @return null;
-	}

@@ -1,21 +1,15 @@
 .vitrine {
-	article {
-		@extend .container;
-		padding-top:80px;
-		padding-bottom:80px;
+	animation: fadeIn;
+	animation-duration: .5s;
+	.subtle-grey {
+		background-color:$color-subtle-grey;
+		border-bottom: 1px solid $color-subtle-border;
 	}
-	.team {
-		@extend .container;
-		display:flex;
-		div {
-			flex-col:4;
-			margin:auto;
-			@extend .flip;
-		}
-	}
+
+	// LANDING CONTENT
 	.fixed-background-vitrine {
 		width:100%;
-		height:100%;
+		height:90%;
 		display:flex;
 			text-align: left;
 		.section-content {
@@ -33,18 +27,8 @@
 		height:100%;
 		float:left;
 	}
-	footer {
-		@extend .container;
-		a {
-			font-size: 1.5rem;
-			line-height: 0.5rem;
-		}
-		display:flex;
-		div {
-			flex-col:4;
-			margin:auto;
-		}
-	}
+
+	// NAVBAR CONTENT
 	.navbar {
 		ul li {
 			margin-top: 25px;
@@ -89,5 +73,46 @@
 			}
 		}
 	}
+	.mockup-wrapper {
+		background-image: url('../images/mockup/laptop.png');
+		width:550px;
+		min-height:370px;
+		margin: 0 auto;
+		margin-top: 80px;
+		background-size: cover;
+		.video-handler {
+			padding-top:30px;
+		}
+	}
 
+	.page {
+		width:960px;
+		margin: 0 auto;
+		@extend .row;
+	}
+
+
+	.center {
+		padding-top:40px;
+		padding-bottom:60px;
+		@extend .col-xs-12;
+		text-align: center;
+	}
+
+	.one-third {
+		@extend .col-xs-4;
+	}
+
+	.one-quart {
+		@extend .col-xs-3;
+	}
+
+	footer {
+		a {
+			font-size: 1.5rem;
+			line-height: 0.5rem;
+		}
+	}
 }
+
+

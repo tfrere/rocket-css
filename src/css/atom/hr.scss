@@ -4,9 +4,7 @@
 	hr {
 		border: solid #CCC;
 		border-width: 1px 0 0;
-		margin: 10px 0 30px;
 		height: 0;
-		&:after {@include clearfix();}
 	}
 
 	/* # Specific hrs              chekout patternify.com

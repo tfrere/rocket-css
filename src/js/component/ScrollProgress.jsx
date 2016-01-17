@@ -1,3 +1,4 @@
+import $                                from 'jquery';
 import React, { Component, PropTypes }  from 'react';
 import classNames                       from 'classnames';
 
@@ -27,9 +28,8 @@ export default class ScrollProgress extends Component {
 
     scroll() {
         var scrollTop = event.srcElement.body.scrollTop;
-        var documentSize = Math.round(event.srcElement.body.scrollHeight);
+        var documentSize = $( window ).height() * 4.3;
         var progress =  scrollTop * 100 / documentSize;
-        console.log("scrollTop", scrollTop, "total", documentSize, "progress", progress);
         this.setState({ progress: progress });
     }
 

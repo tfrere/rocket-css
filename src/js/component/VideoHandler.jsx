@@ -7,7 +7,9 @@ import classNames                       from 'classnames';
 export default class ShareMenu extends Component {
 
     static defaultProps = {
-        onClick : () => true
+        onClick : () => true,
+        width: 300,
+        height:200
     };
 
     constructor( props ) {
@@ -31,6 +33,7 @@ export default class ShareMenu extends Component {
             <div className="video-handler">
                 <div
                     onClick={ ::this.onClick }
+                    style={ { height: this.props.height} }
                     className={ classNames( 'video-box', { active : this.state.active })}>
                     <div>
                         <div className="play">
@@ -42,18 +45,16 @@ export default class ShareMenu extends Component {
                             className="video-cover"/>
                     </div>
                 </div>
-                {(function(active) {
-                    if (active) {
-                    return (
-                        <iframe
+
+                { 
+                    !this.state.active ? null :
+                    <iframe
                             frameBorder="0"
-                            width="400"
-                            height="300"
+                            width={this.props.width}
+                            height={this.props.height}
                             src="https://www.youtube.com/embed/CDB_XkVuq9Q?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3"
                             allowFullScreen />
-                        ); 
-                    } 
-                })(this.state.active)} 
+                }
             </div> 
         );
     }

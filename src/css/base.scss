@@ -1,117 +1,149 @@
 /* # Typographic base
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	// ¶ § “ ” ‘ ’ † ‡ © ™
-	// № ¡ ¿ # º ª ‰ ‱ ′ ″ ‴ ‖
-	// ⁂ ❧ ☞ ‽ ⸮ ◊ ※ ⁀ ¤
-	// ₳ ​ ฿ ​ ₵ ​¢ ​₡ ​₢ ​ $ ​₫ ​₯ ​ ₠ ​€ ​ ƒ ​₣ ​ ₲ ​
-	// ₴ ​ ₭ ​ ₺ ​ ℳ ​₥ ​ ₦ ​ ₧ ​₱ ​₰ ​£ ​ ៛ ​₽ ​₹ ₨ ​ ₪ ​ ৳ ​₸ ​₮ ​ ₩ ​ ¥
+	/* # Imports and variable
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+		
+		@import url(//fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Cookie:300,500|Roboto:300,500,700|Lora:400,700,400italic,700italic|Nunito:400,300,700|Ubuntu:400,700italic,500italic,400italic,300italic,700,500,300|Open+Sans:400,800,700,600,300,300italic,400italic,600italic,800italic,700italic|Oswald:400,300,700|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Quicksand:400,700,300|Raleway:400,200,300,500,600,700,800,900|Raleway+Dots|EB+Garamond|Libre+Baskerville:400,400italic,700);
+		@include include-font("~/fonts/icomoon/", "icomoon");
 
-	// chinese
-	// 燦爛的中國文明 標點符號的用法
+		// Here are some local fonts cap-height sizes to get you started:
+		// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+		// Lucida Grande: 0.72, Helvetica: 0.66, Verdana: 0.76, Tahoma: 0.76
 
-	// hebrew
-	// בראשית ברא אלהים את השמים ואת הארץ׃
-	// והארץ היתה תהו ובהו וחשך על־פני תהום ורוח אלהים מרחפת על־פני המים׃ ויאמר אלהים 
+		// Selection of Typekit fonts cap-height sizes:
+		// Proxima Nova: 0.57, Museo Slab: 0.66, JAF Facit: 0.7, Brandon Grotesque: 0.65, Clavo: 0.7, Adelle: 0.66, FF Tisa Pro: 0.82, Jubilat: 0.66, Futura PT: 0.66, Chaparral Pro: 0.5, Minion Pro: 0.66, Myriad Pro: 0.66, Adobe Caslon Pro: 0.36
 
-	// japaneese
-	// パーソナル・コンピューター 
+		$font-georgia:          	Georgia, "Times New Roman", Times, serif;
 
-	// corean
-	// 사과·배·복숭아·수박은 모두 과일이다.
+		$font-helvetica:         	"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+		$font-lucida-grande:     	"Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+		$font-verdana:           	Verdana, Geneva, sans-serif;
+		
+		$font-pt-serif:				"PtSerif", Times;
+		$font-open-sans:			"Open Sans";
 
-	@import url(//fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic|Roboto:300,500,700|Lora:400,700,400italic,700italic|Nunito:400,300,700|Ubuntu:400,700italic,500italic,400italic,300italic,700,500,300|Open+Sans:400,800,700,600,300,300italic,400italic,600italic,800italic,700italic|Oswald:400,300,700|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Quicksand:400,700,300|Raleway:400,200,300,500,600,700,800,900|Raleway+Dots|EB+Garamond|Libre+Baskerville:400,400italic,700);
-	
-	// @include include-font($path:"../fonts/Open_Sans/", $name: "OpenSans-Bold", $weight: normal, $style: normal)
+		$font-monospace:        	"Bitstream Vera Sans Mono", Consolas, Courier, monospace;
 
-	$font-georgia:          	Georgia, "Times New Roman", Times, serif;
+		
+		$ratio: $perfect-fourth;
+		$title-size: 2.2rem;
+		$text-size: 1.4rem;
 
-	$font-helvetica:         	"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	$font-lucida-grande:     	"Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-	$font-verdana:           	Verdana, Geneva, sans-serif;
-	
-	$font-pt-serif:				"PtSerif", Times;
-	$font-raleway:				"Raleway", sans-serif;
-	$font-open-sans:			"Oswald", sans-serif;
 
-	$font-monospace:        	"Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+		$title-font: "Roboto", sans-serif;
+		$text-font: "Merriweather", serif;
+		$base-color: $color-grey-text;
 
-	$ratio: $perfect-fourth;
-	
-	$title-size: 1.4rem;
-	$title-font: "Roboto", sans-serif;
-	$text-size: 2rem;
-	$text-font: "Merriweather", serif;
+	/* # Core
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	/* NOTE
-	html is set to 62.5% so that all the REM measurements throughout Skeleton
-	are based on 10px sizing. So basically 1.5rem = 15px :) */
-	html 				{ font-size: 62.5%; }
-	html, body 			{ width: 100%; height: 100%; }
-	body 				{ 
-						  font-family: $text-font;
-						  -webkit-font-smoothing:     antialiased;
-						  -moz-osx-font-smoothing:    grayscale;
-						  text-rendering:             geometricPrecision;
-						  @include font(0, $text-size, $ratio);
-						} 
+		/* NOTE: With a font size based at 62.5% basically 1.5rem = 15px */
+		html 				{ font-size: 62.5%; }
+		html, body 			{ width: 100%; height: 100%; }
+		body 				{ 
+							  font-family: 					$text-font;
+							  text-rendering:             geometricPrecision;
+							  @include modular-scale(0, $text-size, $ratio);
+							  ::selection {
+							  	background: $color-grey-text;
+							  	color: white;
+							  }
+							  ::-webkit-input-placeholder {
+							  	color: lighten($color-grey-text, 20%);
+							  }
+							} 
+
+		hr {
+			margin: $text-size * 2 0 0;
+		}
+
+		.show-baseline {
+			background-image: linear-gradient(to bottom, cyan 0, rgba(255,255,255,0) 1px);
+			background-repeat: repeat-y;
+			background-size: 100% $text-size;
+		}
 
 	/* # Titles
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 		h1, h2, h3, h4, h5, h6, button { 
+			font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
 			font-family: $title-font;
 			font-weight: 200;
-			margin-top:.8em;
-			margin-bottom: 2rem;
+			margin-top:$text-size * 1.2;
+			margin-bottom: $text-size;
 			letter-spacing: 2px;
-			line-height: 1.125;
-			color: darken($color-grey-text, 10%);
+			color: darken($base-color, 10%);
 			&a { font-weight: inherit; }
 		}
-		
- 		p, blockquote, li {
- 			@include font(1, $text-size, $ratio);
+
+		h1 { @include modular-scale(3, $title-size, $ratio); letter-spacing: -.1rem;}
+		h2 { @include modular-scale(2, $title-size, $ratio); letter-spacing: -.1rem;}
+		h3 { @include modular-scale(1, $title-size, $ratio); letter-spacing: -.1rem;}
+		h4 { @include modular-scale(0, $title-size, $ratio); letter-spacing: -.08rem;}
+		h5 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: -.05rem;}
+		h6 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: 0;}
+
+	/* # Paragraphs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+ 		p, blockquote, li, q {
+ 			font-feature-settings: 'kern', 'onum', 'liga';
+ 			@include modular-scale(2, $text-size, $ratio);
  			font-weight: 400;
- 			line-height: 4rem;
+ 			line-height: $text-size * 3;
 			letter-spacing: .03rem;
-			color:lighten($color-grey-text, 10%);
-		 	margin-bottom: 1.5rem;
+			color:lighten($base-color, 10%);
+		 	margin-bottom: $text-size;
  		}
+
+ 		article p:first-child {
+ 			margin-bottom: $text-size * 3;
+ 		}
+
+	/* # Lettrine
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+		article>p:first-child:first-letter {
+			float: left;
+			color: $base-color;
+			font-size: $text-size * 6;
+			line-height: 8rem;
+			padding-top: 4px;
+			padding-right: 8px;
+			padding-left: 3px; 
+		}
+		
+
  		li {
 			margin-bottom: .5rem;
  		}
 
-		h1 { @include font(6, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h2 { @include font(5, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h3 { @include font(4, $title-size / 3, $ratio); letter-spacing: -.1rem;}
-		h4 { @include font(3, $title-size / 3, $ratio); letter-spacing: -.08rem;}
-		h5 { @include font(2, $title-size / 3, $ratio); letter-spacing: -.05rem;}
-		h6 { @include font(1, $title-size / 3, $ratio); letter-spacing: 0;}
 
-		@include tablet {			
+		/* # Icons
+		–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-			h1 { @include font(6, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h2 { @include font(5, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h3 { @include font(4, $title-size / 2, $ratio); letter-spacing: -.1rem;}
-			h4 { @include font(3, $title-size / 2, $ratio); letter-spacing: -.08rem;}
-			h5 { @include font(2, $title-size / 2, $ratio); letter-spacing: -.05rem;}
-			h6 { @include font(1, $title-size / 2, $ratio); letter-spacing: 0;}
+		[class^="icon-"], [class*=" icon-"] {
+		    /* use !important to prevent issues with browser extensions that change fonts */
+		    font-family: 'icomoon' !important;
+		    speak: none;
+		    font-style: normal;
+		    font-weight: normal;
+		    font-variant: normal;
+		    text-transform: none;
+		    line-height: 1;
+		    text-rendering: geometricPrecision;
+		    font-size: $text-size + 0.5rem;
 		}
 
-		@include desktop {			
+		.icon-2x { font-size: 2em; }
+		.icon-3x { font-size: 3em; }
+		.icon-4x { font-size: 4em; }
+		.icon-5x { font-size: 5em; }
 
-			h1 { @include font(5, $title-size, $ratio); letter-spacing: -.1rem;}
-			h2 { @include font(4, $title-size, $ratio); letter-spacing: -.1rem;}
-			h3 { @include font(3, $title-size, $ratio); letter-spacing: -.1rem;}
-			h4 { @include font(2, $title-size, $ratio); letter-spacing: -.08rem;}
-			h5 { @include font(1, $title-size, $ratio); letter-spacing: -.05rem;}
-			h6 { @include font(0, $title-size, $ratio); letter-spacing: 0;}
-		}
-
-	/* # Text
+	/* # Others
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 
 		em, i, .i       { font-style: italic; }
 		strong, b, .b   { font-weight: 800; }
@@ -136,3 +168,4 @@
 		.lowercase 		{ text-transform: lowercase; }
 		.capitalize 	{ text-transform: capitalize; }
 		.upper-first	{ display:block; &:first-letter { text-transform: uppercase; }  }
+
