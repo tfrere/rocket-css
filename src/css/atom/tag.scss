@@ -3,14 +3,14 @@ ul.tag {
 		font-size: modular-scale(0, $text-size, $ratio);
 		display:inline-block;
 		padding: 0 1rem;
-		margin: 0;
 		white-space: nowrap;
 		background:rgba(0,0,0,0.1);
 		border: 1px solid #E1E1E1;
 		border-radius: 4px;
 		display:inline-block;
-		margin-right:10px;
-		margin-bottom:10px;
+		margin-right:$text-size;
+		margin-top:$text-size * 2;
+		margin-bottom:$text-size * 2;
 		transition:all 200ms ease-in-out;
 		&:hover {
 			background: rgba(0,0,0,0.2);

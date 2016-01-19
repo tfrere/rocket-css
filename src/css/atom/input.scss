@@ -14,13 +14,12 @@
 	select {
 	  display:inline-block;
 	  height: auto;
-	  padding: 5px;
-	  margin-top:10px;
+	  padding: $text-size;
+	  margin-top:$text-size;
 	  background-color: #fff;
 	  border: 1px solid #D1D1D1;
 	  border-radius: 4px;
 	  box-shadow: none;
-	  box-sizing: border-box;
 	  position:relative;
 	  transition:all 200ms ease-in-out;
 	}
@@ -47,3 +46,4 @@
     input.large, textarea.large, select.large {
     	width: 100%;
     }
+

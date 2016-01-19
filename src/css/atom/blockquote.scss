@@ -4,6 +4,7 @@ blockquote {
   padding-left:20px;
   border-left: 4px solid rgba(0,0,0,0.2);
 }
+
 blockquote.pullquote {
     border-left: none;
 	text-indent: -0.32em;
@@ -11,10 +12,19 @@ blockquote.pullquote {
 	font-style: italic;
 	color: lighten($color-grey-text, 30%);
 	padding-left: 60px;
-	&:before {
-		content:"“ ";
+	p {
+		font-style: inherit;
+		margin-bottom:0;
+		&:before {
+			content:"“ ";
+		}
+		&:after {
+			content:" ”";
+		}
 	}
-	&:after {
-		content:" ”";
+	footer {
+		font-size: $text-size / 1.1;
+		margin-bottom:$text-size * 2;
+		padding-left: 40px;
 	}
 }

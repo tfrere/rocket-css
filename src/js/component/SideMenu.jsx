@@ -10,31 +10,11 @@ export const Direction = {
 
 export default class SideMenu extends Component {
 
-    static childContextTypes = {
-        active: PropTypes.any
-    }
-
-    static propTypes = {
-        size: PropTypes.string,
-        direction: PropTypes.string
-    };
-
-    static defaultProps = {
-        direction: Direction.right
-    };
-
 
     constructor( props ) {
         super( props );
         this.state = {};
-        this.getChildContext = this.getChildContext.bind(this);
     }
-
-    getChildContext() {
-        return {
-          active: this.state.active
-        };
-    };
 
     onClick() {
          this.setState({active: !this.state.active });

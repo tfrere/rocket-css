@@ -1,22 +1,23 @@
 /* # Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-  code {
-    padding: .2rem .5rem;
-    margin: 0;
-    white-space: nowrap;
-    background: #F1F1F1;
-    border: 1px solid #E1E1E1;
-    border-radius: 4px;
-    display:inline-block;
-    margin-right:10px;
-    margin-bottom:10px;
-    }
-    pre {
-      margin: 0;
-      & > code {
-        display: block;
-        padding: 1rem 1.5rem;
-        white-space: pre;
-    }
+code {
+  padding: .2rem $text-size;
+  margin: 0;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  display:inline-block;
+  margin:0 $text-size / 2;
+  margin-bottom:$text-size;
+}
+
+pre {
+  margin: 0;
+  & > code {
+    display: block;
+    padding: 1rem 1.5rem;
+    white-space: pre;
   }
+}

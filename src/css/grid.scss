@@ -1,228 +1,102 @@
-
-$fg-columns: 12 !default;
-$fg-gutter: 0.5rem !default;
-
-
-$fg-breakpoints: (
-  (xs),
-  (sm, 768px),
-  (md, 992px),
-  (lg, 1200px)
-) !default;
-
-
-/**
- * Calculate column size percentage
- */
-@function get-col-percent($column-num) {
-
-  @return $column-num / $fg-columns * 100%;
-
+html, body {
+  height:100%;
+}
+.center {
+  width:100%;
 }
 
-/**
- * Spacing mixin to create uniform margin/padding
- */
-@mixin spacing( $value, $type: margin, $orientation: vertical ) {
-  @if $orientation == vertical {
-    #{ $type }-top: $value;
-    #{ $type }-bottom: $value;
-  } @else {
-    #{ $type }-left: $value;
-    #{ $type }-right: $value;
-  }
+.demo-cell {
+  padding: 1em;
+  background: rgba(147, 128, 108, 0.1);
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.1);
 }
 
-/**
- * Row wrapper class, flex box parent.
- */
-%row {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  @include spacing( ( -$fg-gutter ), margin, horizontal );
+.height {
+  height:50px;
 }
 
-.row {
-  @extend %row;
+$columns: 12 !default;
+$gutter: 0.5rem !default;
+
+
+.cell {
+    margin-top:5px!important;
+    margin-bottom:5px!important;
 }
-
-
-
-%col {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
-  @include spacing( ( $fg-gutter ), padding, horizontal );
-}
-
-%col-flex {
-  @extend %col;
-  flex-grow: 1;
-  flex-basis: 0;
-  max-width: 100%;
-}
-
-
-
-/**
- * Generate a set of grid column classes using a namespace
- *
- * .col-[namespace] for intelligent column division
- * .col-[namespace]-[number] for a column that covers a specific number of columns (e.g. 1-12 by default)
- * .off-[namespace]-[number] for pushing a col a specific number of columns (e.g. 1-11 by default)
- */
-
-@mixin grid-base( $namespace ) {
-  .col-#{$namespace} {
-    @extend %col-flex;
-  }
-
-  @for $i from 1 through $fg-columns {
-    .col-#{$namespace}-#{$i} {
-      @extend %col;
-    }
-  }
-}
-
-@mixin grid-sizes( $namespace ) {
-
-  // Run the loop for as many columns as speficied
-  @for $i from 1 through $fg-columns {
-    .col-#{$namespace}-#{$i} {
-      flex-basis: get-col-percent($i);
-      max-width:  get-col-percent($i);
-    }
-  }
-
-  @for $i from 1 through $fg-columns {
-
-    // Don't include the .off class for the last column
-    @if ( $i != $fg-columns ) {
-      .off-#{$namespace}-#{$i} {
-        margin-left: get-col-percent($i);
-      }
-    }
-
-  }
-
-}
-
-
-/**
- * Build the grid in two steps, to help minimize file size
- * Step 1, for each namespace, create the grid-base
- * Step 2, for each namespace, wrap the col width/offset measurements in their breakpoint media query
- */
-@each $val in $fg-breakpoints {
-
-  $namespace: nth($val, 1);
-  @include grid-base( $namespace );
-
-}
-
-@each $val in $fg-breakpoints {
-  @if length($val) == 1 {
-
-    $namespace: nth($val, 1);
-    @include grid-sizes( $namespace );
-
-  } @else {
-
-    $namespace: nth($val, 1);
-    $size: nth($val, 2);
-
-    @media only screen and (min-width: #{$size}) {
-      @include grid-sizes( $namespace );
-    }
-  }
-}
-
-
-
-
-
-
-
-
 
 * {
     box-sizing: border-box;
 }
 
-.Grid {
+.row {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.Grid--gutter {
+.row-gutter {
   margin: -1em 0 0 -1em;
 }
-.Grid--gutter > .Grid-cell {
+.row-gutter > .cell {
   padding: 1em 0 0 1em;
 }
 
-.Grid-cell {
-  flex: 1;
+.cell {
+  flex: 0 0 80%;
 }
 
-.Grid--flexCells > .Grid-cell {
+
+@include desktop {
+    .cell {
+        flex:1;    
+    }
+}
+
+
+.row-auto-height > .cell {
   display: flex;
 }
 
-.Grid--top {
+.row-left {
   align-items: flex-start;
 }
 
-.Grid--bottom {
-  align-items: flex-end;
+.row-right {
+  justify-content:flex-end;
 }
 
-.Grid--center {
-  align-items: center;
-}
-
-.Grid--justifyCenter {
+.row-center {
   justify-content: center;
 }
 
-.Grid-cell--top {
+.row-justify {
+  justify-content: center;
+}
+
+.cell-left {
   align-self: flex-start;
 }
 
-.Grid-cell--bottom {
+.cell-right {
   align-self: flex-end;
 }
 
-.Grid-cell--center {
+.cell-center {
   align-self: center;
 }
 
-.Grid-cell--autoSize {
+.cell-autoSize {
   flex: none;
 }
 
-.Grid--fit > .Grid-cell {
-  flex: 1;
-}
+@for $i from 1 through $columns {
 
-.Grid--full > .Grid-cell {
-  flex: 0 0 100%;
-}
-
-.Grid--1of2 > .Grid-cell {
-  flex: 0 0 50%;
-}
-
-.Grid--1of3 > .Grid-cell {
-  flex: 0 0 33.3333%;
-}
-
-.Grid--1of4 > .Grid-cell {
-  flex: 0 0 25%;
+    // Don't include the .off class for the last column
+    @if ( $i != $columns ) {
+      .force-#{$i} {
+        flex: 0 0 100% / $i;
+    }
+  }
 }

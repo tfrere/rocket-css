@@ -57,13 +57,13 @@ export default class CountDown extends Component {
                 <h2 className="timer">
                     <span>  
                         {diff.hours | 0} 
-                    </span> Hours 
+                    </span> H &nbsp;
                     <span>
                         {diff.minutes | 0}  
-                    </span> Minutes 
+                    </span> M &nbsp;
                     <span> 
                         {diff.seconds | 0} 
-                    </span> Seconds 
+                    </span> S &nbsp; 
                 </h2>
             </div>
         );

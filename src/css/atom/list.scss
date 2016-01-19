@@ -7,6 +7,19 @@
 
 	ul, ol { list-style-type: none; }
 
+	ul {
+		margin-top: $text-size;
+		margin-bottom: $text-size;
+		ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+		margin-bottom: $text-size / 2;
+	}
+
 	ul.ul 				{ padding-left:20px; list-style-type: circle; }
 	ul.ul ul 			{ padding-left:20px; list-style-type: disc; }
 	ul.ul ul ul 		{ padding-left:20px; list-style-type: square; }

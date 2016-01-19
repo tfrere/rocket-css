@@ -51,3 +51,29 @@
 	  "blue-grey": $blue-grey,
 	  "grey": $grey,
 	);
+
+
+
+		.bg-primary        			{ background-color: $color-primary!important; }
+		.bg-primary-light   		{ background-color: $color-primary-light!important; }
+		.bg-primary-dark   			{ background-color: $color-primary-dark!important; }
+
+		.bg-complement     			{ background-color: $color-complement!important; }
+		.bg-complement-light		{ background-color: $color-complement-light!important; }
+		.bg-complement-dark   		{ background-color: $color-complement-dark!important; }
+
+		.bg-info           			{ background-color: $color-info!important; }
+		.bg-danger        	 		{ background-color: $color-danger!important; }
+		.bg-success       			{ background-color: $color-success!important; }
+
+		.text-primary        	  	{ color: $color-primary!important; }
+		.text-primary-light   	    { color: $color-primary-light!important; }
+		.text-primary-dark    	   	{ color: $color-primary-dark!important; }
+	
+		.text-complement       	  	{ color: $color-complement!important; }
+		.text-complement-light 	  	{ color: $color-complement-light!important; }
+		.text-complement-dark  	  	{ color: $color-complement-dark!important; }
+
+		.text-info               	{ color: $color-info!important; }
+		.text-danger         	    { color: $color-danger!important; }
+		.text-success      	      	{ color: $color-success!important; }
