@@ -5,11 +5,7 @@
                 span text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-    .button,
-    button,
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"]{
+    .button{
         display: inline-block;
         padding:10px 30px;
         text-decoration: none;
@@ -23,10 +19,6 @@
         transition: all, 200ms, ease-in-out;
         border-radius:5px;
         user-select:none;
-
-        &.light {
-          color:white;
-        }
 
         &.self-center {
           margin: auto;
@@ -62,128 +54,131 @@
         &:active {
         }
 
-        /* Specific buttons
-        –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-            &.small {
-              padding:5px 10px;
-            }
-
-            &.big {
-              padding:15px 35px;
-            }
-
-            &.full {
-              padding:10px 20px;
-              margin:15px 15px 15px 15px;
-              width:calc(100% - 30px);
-            }
-
-            &.primary {
-              background-color:$color-primary;
-              color:white;
-              cursor:pointer;
-              text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
-              &:hover {
-                background-color: lighten($color-primary, 10%);
-              }
-              &:active {
-                background-color: darken($color-primary, 10%);
-              }
-            }
-
-            &.complement {
-              background-color:$color-complement;
-              color:white;
-              cursor:pointer;
-              border: 1px solid $color-complement-dark;
-              &:hover {
-                background-color: lighten($color-complement, 10%);
-              }
-              &:active {
-                background-color: darken($color-complement, 10%);
-              }
-            }
-
-            &.danger {
-              background-color:$color-danger;
-              color:white;
-              cursor:pointer;
-              border: 1px solid $color-danger-dark;
-              &:hover {
-                background-color: lighten($color-danger, 10%);
-              }
-              &:active {
-                background-color: darken($color-danger, 10%);
-              }
-            }
-
-            &.success {
-              background-color:$color-success;
-              color:white;
-              cursor:pointer;
-              border: 1px solid $color-success-dark;
-              &:hover {
-                background-color: lighten($color-success, 10%);
-              }
-              &:active {
-                background-color: darken($color-success, 10%);
-              }
-            }
-
-            &.info {
-              background-color:$color-info;
-              color:white;
-              cursor:pointer;
-              border: 1px solid $color-info-dark;
-              &:hover {
-                background-color: lighten($color-info, 10%);
-              }
-              &:active {
-                background-color: darken($color-info, 10%);
-              }
-            }
-
-            &.disabled {
-              background-color:color("grey", "lighten-2");
-              color:white;
-              cursor:initial;
-              border: 1px solid color("grey", "lighten-4");
-              &:hover {
-                background-color: color("grey", "lighten-3");
-              }
-            }
-
-            &.spinner {
-              position:relative;
-              width: 125px;
-              .icon-spin {
-                position:absolute;
-                top:9px;
-                right:20px;
-                opacity:0;
-                transition: all, 200ms, ease-in-out;
-              }
-
-              span {
-                transition: margin-left, 200ms, ease-in-out;
-              }
-
-              &.on {
-                span {
-                  margin-left:-30px;
-                }
-                &.icon-spin {
-                  opacity:1;
-                }
-              }
-
-            }
-            &.spinner.on .icon-spin {
-              opacity: 1;
-            }
-
-
     }
 
+/* Specific buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.button, .special-button {
+  &.rounded {
+    border-radius: 100px;
+  }
+
+  &.small {
+    padding:5px 10px;
+  }
+
+  &.big {
+    padding:15px 35px;
+  }
+
+  &.full {
+    padding:10px 20px;
+    margin:15px 15px 15px 15px;
+    width:calc(100% - 30px);
+  }
+
+  &.primary {
+    background-color:$color-primary;
+    color:white;
+    cursor:pointer;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+    &:hover {
+      background-color: lighten($color-primary, 10%);
+    }
+    &:active {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+
+  &.complement {
+    background-color:$color-complement;
+    color:white;
+    cursor:pointer;
+    border: 1px solid $color-complement-dark;
+    &:hover {
+      background-color: lighten($color-complement, 10%);
+    }
+    &:active {
+      background-color: darken($color-complement, 10%);
+    }
+  }
+
+  &.danger {
+    background-color:$color-danger;
+    color:white;
+    cursor:pointer;
+    border: 1px solid $color-danger-dark;
+    &:hover {
+      background-color: lighten($color-danger, 10%);
+    }
+    &:active {
+      background-color: darken($color-danger, 10%);
+    }
+  }
+
+  &.success {
+    background-color:$color-success;
+    color:white;
+    cursor:pointer;
+    border: 1px solid $color-success-dark;
+    &:hover {
+      background-color: lighten($color-success, 10%);
+    }
+    &:active {
+      background-color: darken($color-success, 10%);
+    }
+  }
+
+  &.info {
+    background-color:$color-info;
+    color:white;
+    cursor:pointer;
+    border: 1px solid $color-info-dark;
+    &:hover {
+      background-color: lighten($color-info, 10%);
+    }
+    &:active {
+      background-color: darken($color-info, 10%);
+    }
+  }
+
+  &.disabled {
+    background-color:color("grey", "lighten-2");
+    color:white;
+    cursor:initial;
+    border: 1px solid color("grey", "lighten-4");
+    &:hover {
+      background-color: color("grey", "lighten-3");
+    }
+  }
+
+  &.spinner {
+    position:relative;
+    width: 125px;
+    .icon-spin {
+      position:absolute;
+      top:9px;
+      right:20px;
+      opacity:0;
+      transition: all, 200ms, ease-in-out;
+    }
+
+    span {
+      transition: margin-left, 200ms, ease-in-out;
+    }
+
+    &.on {
+      span {
+        margin-left:-30px;
+      }
+      &.icon-spin {
+        opacity:1;
+      }
+    }
+
+  }
+  &.spinner.on .icon-spin {
+    opacity: 1;
+  }
+}

@@ -22,10 +22,20 @@ import Config                   from 'config/config';
 import KeyPress                 from 'component/KeyPress';
 
 export default class Reader extends Component {
-    
+
+    static defaultProps = {
+        onClick : () => true
+    };
+
     constructor( props ) {
         super( props );
         this.state = {};
+    }
+
+    onClick() {
+        console.log("parent");
+         this.props.onClick();
+         this.setState( { active: !this.state.active } );
     }
 
     componentWillMount() {
@@ -66,7 +76,7 @@ export default class Reader extends Component {
                         <ReactTooltip place="bottom" type="light" effect="solid"/>
                     </div>
                 </ShareMenu>
-                <SideMenu>
+                <SideMenu onClick={ ::this.onClick }>
                     <h3>Other stories</h3>
                     <ul>
                         <li className="delay-1">
@@ -111,7 +121,7 @@ export default class Reader extends Component {
                     <h1>La typographie au 21e siècle</h1>
                     <h4 className="b">24 JAN 2015</h4>
                 </FixedBackground>
-                <div className="page">
+                <div className={classNames( 'page', { active : this.state.active } ) }>
                     <article className={ classNames({active:this.state.active}) }>
                         <p>
                             <b>Typographie</b>, à l'heure où j'écris ces lignes, 

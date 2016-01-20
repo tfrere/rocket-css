@@ -17,6 +17,8 @@ export default class SideMenu extends Component {
     }
 
     onClick() {
+        console.log("child");
+         this.props.onClick();
          this.setState({active: !this.state.active });
     }
 

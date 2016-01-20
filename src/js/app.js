@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Reader   from 'core/Reader';
 import Vitrine  from 'core/Vitrine';
 import Main     from 'core/Main';
+import Portfolio     from 'core/Portfolio';
 import Demo     from 'core/Demo';
 import KeyPress     from 'component/KeyPress';
 
@@ -18,5 +19,6 @@ ReactDOM.render((
 	<Route path="reader" component={Reader}/>
 	<Route path="vitrine" component={Vitrine}/>
 	<Route path="demo" component={Demo}/>
+	<Route path="portfolio" component={Portfolio}/>
   </Router>
 ), document.getElementById( 'app-container' ))

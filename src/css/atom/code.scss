@@ -11,10 +11,18 @@ code {
   display:inline-block;
   margin:0 $text-size / 2;
   margin-bottom:$text-size;
+white-space:pre;
+white-space:pre-wrap;
+word-break:break-all;
+word-wrap:break-word;
 }
 
 pre {
   margin: 0;
+white-space:pre;
+white-space:pre-wrap;
+word-break:break-all;
+word-wrap:break-word;
   & > code {
     display: block;
     padding: 1rem 1.5rem;

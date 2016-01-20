@@ -7,7 +7,7 @@ export default class CountDown extends Component {
 
     static defaultProps = {
         bigDay : moment().add(30, "day"),
-    }
+    };
 
     constructor( props ) {
         super( props );

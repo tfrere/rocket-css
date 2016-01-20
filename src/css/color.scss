@@ -1,6 +1,13 @@
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+	$red: random(255);
+	$green: random(255);
+	$blue: random(255);
+
+	$random: rgb($red, $green, $blue);
+
+
 	$color-subtle-border:			#F2F2F2;
 	$color-subtle-grey:				#FAFAFA;
 	$color-grey-text:				#3E4149;

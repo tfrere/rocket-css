@@ -4,8 +4,8 @@
 	a:not(.button) {
 		cursor:pointer;
 		text-decoration: none;
-
+		outline: 0;
 		&:hover 	{ outline: 0;}
 		&:active 	{ outline: 0; }
-		&:focus	 	{ outline: thin dotted; }
+		&:focus	 	{  outline: 0; }
 	}

@@ -40,18 +40,21 @@ export default class Vitrine extends Component {
                 <KeyPress/>
                 <NavBar isTop={true} fixed={true}>
                     <ul>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">A propos</a></li>
+                        <li className="left-stroke"><a href="">Contact</a></li>
+                        <li className="left-stroke"><a href="">A propos</a></li>
                         <li><a href=""><i className="icon icon-heart icon-2x"/></a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">Blog</a></li>
+                        <li className="left-stroke"><a href="">Portfolio</a></li>
+                        <li className="left-stroke"><a href="">Blog</a></li>
                     </ul>
                 </NavBar>
 
                 <FixedBackground position="fixed-background-vitrine" filter="brightness" image="images/background/animated/thegrid-blocks.gif">
                     <h1>Build UI speeder than ever</h1>
                     <h4>With this new toolkit</h4>
-                    <button className="primary">Join the revolution</button>
+                    <button className="special-button naira">
+                        <i className="icon icon-heart"/>
+                        <span>Join the revolution</span>
+                    </button>
                 </FixedBackground>
                 <div style={{padding:"80px"}} className="subtle-grey">
                     <div className="page row row-gutter">
@@ -124,7 +127,10 @@ export default class Vitrine extends Component {
                     <div style={{padding:"80px"}}>
                         <h1>Build UI speeder than ever</h1>
                         <h4>With this new toolkit</h4>
-                        <button className="primary">Join the revolution</button>
+                        <button className="special-button naira">
+                            <i className="icon icon-heart"/>
+                            <span>Join the revolution</span>
+                        </button>
                     </div>
                 </FixedBackground>
                 <div className="subtle-grey">

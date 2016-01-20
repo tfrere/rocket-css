@@ -12,7 +12,7 @@ export default class FixedBackground extends Component {
         fixed: true,
         fadeOut: true,
         maxScrollToFadeOut: 300
-    }
+    };
 
     constructor( props ) {
         super( props );

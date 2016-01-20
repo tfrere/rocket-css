@@ -36,6 +36,17 @@ $gutter: 0.5rem !default;
   margin: 0;
   padding: 0;
 }
+
+.col
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &.cell {
+      flex: 1;
+    }
+}
+
 .row-gutter {
   margin: -1em 0 0 -1em;
 }

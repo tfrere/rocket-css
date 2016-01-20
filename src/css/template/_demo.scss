@@ -6,4 +6,15 @@
 		width:55%;
 		margin: 0 auto;
 	}
+	hr {
+		margin-bottom:$text-size * 3;
+	}
+	nav ul li {
+		margin: 0 15px;
+		font-family: "Open Sans";
+		@extend .uppercase;
+		a {
+			color: $color-primary;
+		}
+	}
 }

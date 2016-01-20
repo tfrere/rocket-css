@@ -10,6 +10,11 @@
 		padding-bottom:80px;
 		width:55%;
 		margin:0 auto;
+		transition:all 600ms ease-in-out;
+		&.active {
+			transform:translateX(-200px);
+
+		}
 	}
 	.fixed-background-reader {
 		width:100%;

@@ -44,7 +44,7 @@ export default class Main extends Component {
                             </Link>
                         </div>
                         <div className="cell">
-                            <Link className="card" to={`vitrine`}>
+                            <Link className="card" to={`portfolio`}>
                                 Portfolio
                             </Link>
                         </div>

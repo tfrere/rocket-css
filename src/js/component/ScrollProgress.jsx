@@ -8,7 +8,7 @@ export default class ScrollProgress extends Component {
         image: "",
         filter: "",
         fullscreen: false
-    }
+    };
 
     constructor( props ) {
         super( props );
