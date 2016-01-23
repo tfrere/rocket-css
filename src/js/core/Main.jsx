@@ -2,6 +2,7 @@ import $                                from 'jquery';
 import React, { Component, PropTypes, TransitionGroup }  from 'react';
 import classNames                       from 'classnames';
 import { Router, Route, Link, browserHistory } from 'react-router';
+import CircleTransition                        from 'component/CircleTransition';
 
 export default class Main extends Component {
 
@@ -23,37 +24,28 @@ export default class Main extends Component {
         return (
             <div className="main">
                 <div >
-                    <div className="row">
-                        <h1>Ui toolkit</h1>
-                    </div>
-                    <hr className="lines"/>
-                    <div className="row">
-                        <div className="cell">
-                            <Link className="card" to={`demo`}>
-                                Documentation
-                            </Link>
-                        </div>
-                        <div className="cell">
-                            <Link className="card" to={`reader`}>
-                                Article
-                            </Link>
-                        </div>
-                        <div className="cell">
-                            <Link className="card" to={`vitrine`}>
-                                Landing
-                            </Link>
-                        </div>
-                        <div className="cell">
-                            <Link className="card" to={`portfolio`}>
-                                Portfolio
-                            </Link>
-                        </div>
-                        <div className="cell">
-                            <Link className="card" to={`vitrine`}>
-                                Interface
-                            </Link>
-                        </div>
-                    </div>
+                    <h1>Whire whire W</h1>
+                        <CircleTransition>
+                            <div>Documentation</div>
+                        </CircleTransition>
+                        <Link to={`reader`}>
+                            <button className="primary special-button naira">
+                                <i className="icon icon-heart"/>
+                                <span>Blog</span>
+                            </button>
+                        </Link>
+                        <Link to={`vitrine`}>
+                            <button className="primary special-button naira">
+                                <i className="icon icon-heart"/>
+                                <span>Landing</span>
+                            </button>
+                        </Link>
+                        <Link to={`demo`}>
+                            <button className="primary special-button naira">
+                                <i className="icon icon-heart"/>
+                                <span>Demo</span>
+                            </button>
+                        </Link>
                 </div>
             </div> 
         );

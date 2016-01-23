@@ -260,7 +260,7 @@ export default class Reader extends Component {
                                 Typography is the craft of endowing human language with a durable visual form.
                             </p>
                             <footer>
-                                - Robert Bringhurst, The Elements of Typographic Style
+                                Robert Bringhurst, The Elements of Typographic Style
                             </footer>
                         </blockquote>
                         <h2> Outils</h2>

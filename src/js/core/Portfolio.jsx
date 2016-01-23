@@ -41,9 +41,6 @@ export default class Portfolio extends Component {
                     <nav>
                       <ul>
                         <li className='scale-stroke'>
-                          <a href="">Home</a>
-                        </li>
-                        <li className='scale-stroke'>
                           <a href="">About</a>
                         </li>
                         <li className='scale-stroke'>

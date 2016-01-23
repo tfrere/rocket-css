@@ -79,67 +79,68 @@
   }
 
   &.primary {
-    background-color:$color-primary;
+    background-color:color("primary", "base");
     color:white;
     cursor:pointer;
     text-shadow: 0px 1px 0px rgba(0,0,0,0.3);
+    border: 1px solid color("primary", "darken-2");
     &:hover {
-      background-color: lighten($color-primary, 10%);
+      background-color: color("primary", "lighten-1");
     }
     &:active {
-      background-color: darken($color-primary, 10%);
+      background-color: color("primary", "darken-1");
     }
   }
 
   &.complement {
-    background-color:$color-complement;
+    background-color:color("complement", "base");
     color:white;
     cursor:pointer;
-    border: 1px solid $color-complement-dark;
+    border: 1px solid color("complement", "darken-2");
     &:hover {
-      background-color: lighten($color-complement, 10%);
+      background-color: color("complement", "lighten-1");
     }
     &:active {
-      background-color: darken($color-complement, 10%);
+      background-color: color("complement", "darken-1");
     }
   }
 
   &.danger {
-    background-color:$color-danger;
+    background-color:color("danger", "base");
     color:white;
     cursor:pointer;
-    border: 1px solid $color-danger-dark;
+    border: 1px solid color("danger", "darken-1");
     &:hover {
-      background-color: lighten($color-danger, 10%);
+      background-color: color("danger", "lighten-1");
     }
     &:active {
-      background-color: darken($color-danger, 10%);
+      background-color: color("danger", "darken-1");
     }
   }
 
   &.success {
-    background-color:$color-success;
+    background-color:color("success", "base");
     color:white;
     cursor:pointer;
-    border: 1px solid $color-success-dark;
+    border: 1px solid color("success", "darken-1");
     &:hover {
-      background-color: lighten($color-success, 10%);
+      background-color: color("success", "lighten-1");
     }
     &:active {
-      background-color: darken($color-success, 10%);
+      background-color: color("success", "darken-1");
     }
   }
 
   &.info {
-    background-color:$color-info;
+    background-color:color("info", "base");
     color:white;
     cursor:pointer;
-    border: 1px solid $color-info-dark;
+    border: 1px solid color("info", "darken-1");
     &:hover {
-      background-color: lighten($color-info, 10%);
+      background-color: color("info", "lighten-1");
     }
     &:active {
-      background-color: darken($color-info, 10%);
+      background-color: color("info", "darken-1");
     }
   }
 

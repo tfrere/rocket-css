@@ -26,5 +26,9 @@ blockquote.pullquote {
 		font-size: $text-size / 1.1;
 		margin-bottom:$text-size * 2;
 		padding-left: 40px;
+		&:before {
+			content: '\2014';
+  			padding: 0 0.5em;
+		}
 	}
 }

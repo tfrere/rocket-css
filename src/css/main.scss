@@ -1,10 +1,10 @@
 @import "helper/core";
+
 @import "color";
 @import "media";
 @import "grid";
 @import "icon";
 @import "base";
-
 
 @import "atom/button";
 @import "atom/input";
@@ -13,17 +13,21 @@
 @import "atom/link";
 @import "atom/code";
 @import "atom/hr";
-@import "atom/circle-flip";
 @import "atom/card";
 @import "atom/tag";
 @import "atom/inclined";
-@import "atom/navigation";
 @import "atom/select";
-@import "atom/touch-animation";
-@import "atom/special-button/codrops-naira.scss";
-@import "atom/special-input/materials.scss";
 
+@import "atom/special-shape/circle";
+@import "atom/special-shape/square";
 
+@import "atom/special-nav/underline-effect";
+@import "atom/special-touch/codrops-ivana";
+@import "atom/special-button/codrops-naira";
+@import "atom/special-input/materials";
+@import "atom/select/react-select";
+
+@import "component/circle-transition";
 @import "component/modal";
 @import "component/navbar";
 @import "component/fixed-background";
@@ -34,10 +38,10 @@
 @import "component/share-menu";
 @import "component/video-handler";
 
-
 @import "template/main";
 @import "template/demo";
 @import "template/reader";
+@import "template/blog";
 @import "template/vitrine";
 
 #app-container, #app-container>div  {

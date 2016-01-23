@@ -1,12 +1,6 @@
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	$red: random(255);
-	$green: random(255);
-	$blue: random(255);
-
-	$random: rgb($red, $green, $blue);
-
 
 	$color-subtle-border:			#F2F2F2;
 	$color-subtle-grey:				#FAFAFA;
@@ -28,6 +22,21 @@
 	$color-danger-dark:				darken($color-danger, 15%);
 	$color-danger-light:			lighten($color-danger, 15%);
 
+
+	$primary: (
+	  "base":       #47DBB4,
+	  "lighten-5":  lighten(#47DBB4, 50%),
+	  "lighten-4":  lighten(#47DBB4, 40%),
+	  "lighten-3":  lighten(#47DBB4, 30%),
+	  "lighten-2":  lighten(#47DBB4, 20%),
+	  "lighten-1":  lighten(#47DBB4, 10%),
+	  "darken-1":   darken(#47DBB4, 10%),
+	  "darken-2":   darken(#47DBB4, 20%),
+	  "darken-3":   darken(#47DBB4, 30%),
+	  "darken-4":   darken(#47DBB4, 40%),
+      "darken-5":   darken(#47DBB4, 50%)
+	);
+
 	$blue-grey: (
 	  "base":       #607d8b,
 	  "lighten-5":  #eceff1,
@@ -39,6 +48,47 @@
 	  "darken-2":   #455a64,
 	  "darken-3":   #37474f,
 	  "darken-4":   #263238
+	);
+
+	$success: (
+	  "base":       $color-success,
+	  "lighten-5":  lighten(#47DBB4, 50%),
+	  "lighten-4":  lighten(#47DBB4, 40%),
+	  "lighten-3":  lighten(#47DBB4, 30%),
+	  "lighten-2":  lighten(#47DBB4, 20%),
+	  "lighten-1":  lighten(#47DBB4, 10%),
+	  "darken-1":   darken(#47DBB4, 10%),
+	  "darken-2":   darken(#47DBB4, 20%),
+	  "darken-3":   darken(#47DBB4, 30%),
+	  "darken-4":   darken(#47DBB4, 40%),
+      "darken-5":   darken(#47DBB4, 50%)
+	);
+
+	$danger: (
+	  "base":       $color-danger,
+	  "lighten-5":  lighten(#47DBB4, 50%),
+	  "lighten-4":  lighten(#47DBB4, 40%),
+	  "lighten-3":  lighten(#47DBB4, 30%),
+	  "lighten-2":  lighten(#47DBB4, 20%),
+	  "lighten-1":  lighten(#47DBB4, 10%),
+	  "darken-1":   darken(#47DBB4, 10%),
+	  "darken-2":   darken(#47DBB4, 20%),
+	  "darken-3":   darken(#47DBB4, 30%),
+	  "darken-4":   darken(#47DBB4, 40%),
+      "darken-5":   darken(#47DBB4, 50%)
+	);	
+	$info: (
+	  "base":       $color-info,
+	  "lighten-5":  lighten(#47DBB4, 50%),
+	  "lighten-4":  lighten(#47DBB4, 40%),
+	  "lighten-3":  lighten(#47DBB4, 30%),
+	  "lighten-2":  lighten(#47DBB4, 20%),
+	  "lighten-1":  lighten(#47DBB4, 10%),
+	  "darken-1":   darken(#47DBB4, 10%),
+	  "darken-2":   darken(#47DBB4, 20%),
+	  "darken-3":   darken(#47DBB4, 30%),
+	  "darken-4":   darken(#47DBB4, 40%),
+      "darken-5":   darken(#47DBB4, 50%)
 	);
 
 	$grey: (
@@ -55,32 +105,11 @@
 	);
 
 	$colors: (
+	  "primary": $primary,
+	  "complement": $blue-grey,
+	  "success": $success,
+	  "danger": $danger,
+	  "info": $info,
 	  "blue-grey": $blue-grey,
 	  "grey": $grey,
 	);
-
-
-
-		.bg-primary        			{ background-color: $color-primary!important; }
-		.bg-primary-light   		{ background-color: $color-primary-light!important; }
-		.bg-primary-dark   			{ background-color: $color-primary-dark!important; }
-
-		.bg-complement     			{ background-color: $color-complement!important; }
-		.bg-complement-light		{ background-color: $color-complement-light!important; }
-		.bg-complement-dark   		{ background-color: $color-complement-dark!important; }
-
-		.bg-info           			{ background-color: $color-info!important; }
-		.bg-danger        	 		{ background-color: $color-danger!important; }
-		.bg-success       			{ background-color: $color-success!important; }
-
-		.text-primary        	  	{ color: $color-primary!important; }
-		.text-primary-light   	    { color: $color-primary-light!important; }
-		.text-primary-dark    	   	{ color: $color-primary-dark!important; }
-	
-		.text-complement       	  	{ color: $color-complement!important; }
-		.text-complement-light 	  	{ color: $color-complement-light!important; }
-		.text-complement-dark  	  	{ color: $color-complement-dark!important; }
-
-		.text-info               	{ color: $color-info!important; }
-		.text-danger         	    { color: $color-danger!important; }
-		.text-success      	      	{ color: $color-success!important; }

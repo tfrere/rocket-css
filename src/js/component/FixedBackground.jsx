@@ -9,6 +9,9 @@ export default class FixedBackground extends Component {
         image: "",
         filter: "",
         position:"",
+        gradient: true,
+        gradientDirection: "to bottom",
+        gradientColor: false,
         fixed: true,
         fadeOut: true,
         maxScrollToFadeOut: 300
@@ -62,9 +65,17 @@ export default class FixedBackground extends Component {
                                 'fixed-background',
                                 this.props.position,
                                 { fixed : this.props.fixed } ) }>
-                <div className="section-gradient"></div>
+                <div className={ classNames(
+                                    { "section-gradient" : this.props.gradient } 
+                                ) }
+                                style={{
+                                    opacity: this.props.gradientColor ? 1 : 0.6,
+                                    background: `linear-gradient(${this.props.gradientDirection},rgba(0, 0, 0, 0), ${this.props.gradientColor} 100%)`
+                                }}></div>
                 <div
-                    className={ classNames(  "section-background " + this.props.filter, { visible : this.state.isLoaded } ) } 
+                    className={ classNames( 
+                                "section-background " + this.props.filter,
+                                { visible : this.state.isLoaded } ) } 
                     style={ {backgroundImage: `url(${this.props.image})`} }  >
                 </div>
                 <div style={ { opacity: this.state.progress } } className="section-content">

@@ -21,7 +21,8 @@ import Images                   from 'config/image';
 import Placeholders             from 'config/placeholder';
 
 import Config                   from 'config/config';
-
+import Select                   from 'react-select';
+ 
 export default class demo extends Component {
 
     componentWillMount() {
@@ -35,6 +36,14 @@ export default class demo extends Component {
 
     render() {
 
+    var options = [
+      { value: 'one', label: 'One' },
+      { value: 'two', label: 'Two' }
+    ];
+     
+    function logChange(val) {
+      console.log("Selected: " + val);
+    }
         return (
             <div className="screen-box demo">
                 <KeyPress/>
@@ -42,6 +51,12 @@ export default class demo extends Component {
                 <div className="center">
                       <article>
                         <h2>Grid</h2>
+                            <Select
+                              name="form-field-name"
+                              value="one"
+                              options={options}
+                              onChange={logChange}
+                            />
                         <hr/>
                       </article>
                       <div>

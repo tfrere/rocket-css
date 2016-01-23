@@ -1,5 +1,7 @@
+$base-index:999;
+
 .navbar {
-	z-index: 999;
+	z-index: $base-index;
 	position: absolute;
 	width:100%;
 	left:0;
