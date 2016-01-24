@@ -12,8 +12,6 @@ import SideMenu                  from 'component/SideMenu';
 import ShareMenu                 from 'component/ShareMenu';
 import ScrollProgress            from 'component/ScrollProgress';
 import KeyPress                  from 'component/KeyPress';
-import Input                     from 'component/Input';
-
 
 import Typographies             from 'config/typography';
 import Colors                   from 'config/color';
@@ -21,7 +19,6 @@ import Images                   from 'config/image';
 import Placeholders             from 'config/placeholder';
 
 import Config                   from 'config/config';
-import Select                   from 'react-select';
  
 export default class demo extends Component {
 
@@ -36,29 +33,145 @@ export default class demo extends Component {
 
     render() {
 
-    var options = [
-      { value: 'one', label: 'One' },
-      { value: 'two', label: 'Two' }
-    ];
-     
-    function logChange(val) {
-      console.log("Selected: " + val);
-    }
         return (
             <div className="screen-box demo">
                 <KeyPress/>
-
                 <div className="center">
                       <article>
-                        <h2>Grid</h2>
-                            <Select
-                              name="form-field-name"
-                              value="one"
-                              options={options}
-                              onChange={logChange}
-                            />
+                        <h1>Demo page</h1>
+                        <p> In this page, there is a sample of every block you can find in this toolkit and they are sorted by their abstraction level. Enjoy.</p>
+                        <h2>Colors</h2>
                         <hr/>
-                      </article>
+                        <p>
+                            You have 6 main colors and their derivate. You can call them by the class system or directly in your scss with the following syntax
+                        </p>
+                        <code> background-color: color("primary", "darken-1"); </code>
+                        
+                        <div className="row colors">
+                          <div className="cell primary lighten-4"/>
+                          <div className="cell primary lighten-3"/>
+                          <div className="cell primary lighten-2"/>
+                          <div className="cell primary lighten-1"/>
+                          <div className="cell primary"/>
+                          <div className="cell primary darken-1"/>
+                          <div className="cell primary darken-2"/>
+                          <div className="cell primary darken-3"/>
+                          <div className="cell primary darken-4"/>
+                          <div className="cell">Primary </div>
+                        </div>
+                        <div className="row colors">
+                          <div className="cell complement lighten-4"/>
+                          <div className="cell complement lighten-3"/>
+                          <div className="cell complement lighten-2"/>
+                          <div className="cell complement lighten-1"/>
+                          <div className="cell complement"/>
+                          <div className="cell complement darken-1"/>
+                          <div className="cell complement darken-2"/>
+                          <div className="cell complement darken-3"/>
+                          <div className="cell complement darken-4"/>
+                          <div className="cell">Complement </div>
+                        </div>
+                        <div className="row colors">
+                          <div className="cell grey lighten-4"/>
+                          <div className="cell grey lighten-3"/>
+                          <div className="cell grey lighten-2"/>
+                          <div className="cell grey lighten-1"/>
+                          <div className="cell grey"/>
+                          <div className="cell grey darken-1"/>
+                          <div className="cell grey darken-2"/>
+                          <div className="cell grey darken-3"/>
+                          <div className="cell grey darken-4"/>
+                          <div className="cell">Grey </div>
+                        </div>
+                        <div className="row colors">
+                          <div className="cell danger lighten-4"/>
+                          <div className="cell danger lighten-3"/>
+                          <div className="cell danger lighten-2"/>
+                          <div className="cell danger lighten-1"/>
+                          <div className="cell danger"/>
+                          <div className="cell danger darken-1"/>
+                          <div className="cell danger darken-2"/>
+                          <div className="cell danger darken-3"/>
+                          <div className="cell danger darken-4"/>
+                          <div className="cell">Danger </div>
+                        </div>
+                        <div className="row colors">
+                          <div className="cell success lighten-4"/>
+                          <div className="cell success lighten-3"/>
+                          <div className="cell success lighten-2"/>
+                          <div className="cell success lighten-1"/>
+                          <div className="cell success"/>
+                          <div className="cell success darken-1"/>
+                          <div className="cell success darken-2"/>
+                          <div className="cell success darken-3"/>
+                          <div className="cell success darken-4"/>
+                          <div className="cell">Success </div>
+                        </div>
+                        <div className="row colors">
+                          <div className="cell info lighten-4"/>
+                          <div className="cell info lighten-3"/>
+                          <div className="cell info lighten-2"/>
+                          <div className="cell info lighten-1"/>
+                          <div className="cell info"/>
+                          <div className="cell info darken-1"/>
+                          <div className="cell info darken-2"/>
+                          <div className="cell info darken-3"/>
+                          <div className="cell info darken-4"/>
+                          <div className="cell">Info </div>
+                        </div>
+                        <h2>Typography</h2>
+                        <p>Normalize and typography, inspired by dave magache's skeleton.</p>
+                        <hr/>
+                        <h1>Title 1</h1>
+                        <h2>Title 2</h2>
+                        <h3>Title 3</h3>
+                        <h4>Title 4</h4>
+                        <h5>Title 5</h5>
+                        <h6>Title 6</h6>
+                        <p> This is a test </p>
+                        <blockquote>I believe that we are who we choose to be. Nobody’s going to come and save you, you’ve got to save yourself. Nobody’s going to give you anything. You’ve got to go out and fight for it. Nobody knows what you want except for you. And nobody will be as sorry as you if you don’t get it. So don’t give up on your dreams.</blockquote>
+                        <blockquote className="pullquote"><p>The less you reveal the more people can wonder.</p><footer>- Henri Ford.</footer></blockquote>
+                        <ul className="ul">
+                            <li>Coucou</li>
+                            <ul>
+                                <li>Coucou</li>
+                                <ul>
+                                    <li>Coucou</li>
+                                    <li>Coucou</li>
+                                </ul>
+                                <li>Coucou</li>
+                            </ul>
+                            <li>Coucou</li>
+                        </ul>
+                        <form>
+                            <div className="row row-gutter">
+                                <div className="cell" >
+                                    <input className="large" placeholder="Email" type="text"/>
+                                </div>
+                                <div className="cell" >
+                                    <input className="large" placeholder="Email" type="text"/>
+                                </div>
+                                <div className="cell" >
+                                    <div className="select select-noimage">
+                                      <select className="large" type="text">
+                                        <option>Coucou</option>
+                                        <option>Test</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <textarea className="large" placeholder="your message"/>
+                            <button className="button primary">
+                                Valider
+                            </button>
+                        </form>
+                      <h2>Grid</h2>
+                      <hr/>
+                      <p> A simple flexgrid </p>
+                      <code>
+                          .row
+                            .cell
+                      </code>
                       <div>
                         <div className="row row-gutter row-center">
                           <div className="cell">
@@ -220,143 +333,103 @@ export default class demo extends Component {
                             </div>
                           </div>
                         </div>
-                        <code>
-                            .row
-                              .cell
-                              .cell
-                            .row.force-2
-                              .cell
-                              .cell
-                        </code>
                       </div>
-                    <article>
-                      <h2>Nav</h2>
+                      <h1> It's time to be more specific</h1>
+                      <p>Note: All these following tools can be used by class or by include </p>
+                      <h2> Special hrs</h2>
                       <hr/>
-                    </article>
-                    <nav>
-                      <ul>
-                        <li className='left-stroke'>
-                          <a href="">Home</a>
-                        </li>
-                        <li className='right-stroke'>
-                          <a href="">About</a>
-                        </li>
-                        <li className='scale-stroke'>
-                          <a href="">Blog</a>
-                        </li>
-                        <li className='double-stroke'>
-                          <a href="">Contact</a>
-                        </li>
-                        <li className='fancy-stroke'>
-                          <a href="">FAQ</a>
-                        </li>
-                      </ul>
-                    </nav>
-                    <article>
-                        <h2> Forms</h2>
-                        <hr/>
-                        <form>
-                            <div className="row row-gutter">
-                                <div className="cell" >
-                                    <input className="large" placeholder="Email" type="text"/>
-                                </div>
-                                <div className="cell" >
-                                    <input className="large" placeholder="Email" type="text"/>
-                                </div>
-                                <div className="cell" >
-                                    <div className="select select-noimage">
-                                      <select className="large" type="text">
-                                        <option>Coucou</option>
-                                        <option>Test</option>
-                                      </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <textarea className="large" className="cell" placeholder="Message" />
-                            </div>
-                            <Input/>
-                            <Input/>
-                            <Input/>
-                            <h2> Buttons</h2>
-                            <hr/>
-                            <button className="button click rounded primary">
-                                Valider
-                            </button>
-                            <button className="button click rounded primary">
-                                Valider
-                            </button>
-                            <button className="button complement">
-                                Valider
-                            </button>
-                            <button className="button big">
-                                Valider
-                            </button>
-                            <button className="button success">
-                                Valider
-                            </button>
-                            <button className="button danger">
-                                Valider
-                            </button>
-                            <button className="button info">
-                                Valider
-                            </button>
-                            <button className="button disabled">
-                                Valider
-                            </button>
-                            <h2> Special buttons</h2>
-                            <hr/>
-                            <button className="special-button naira complement">
-                                <i className="icon icon-heart"/>
-                                <span>Valider</span>
-                            </button>
-                        </form>
-                        <h2>Titles</h2>
-                        <hr/>
-                        <h1>Title 1</h1>
-                        <h2>Title 2</h2>
-                        <h3>Title 3</h3>
-                        <h4>Title 4</h4>
-                        <h5>Title 5</h5>
-                        <h6>Title 6</h6>
-                        <h2> quotes</h2>
-                        <h3> single line quote</h3>
-                        <blockquote>I believe that we are who we choose to be. Nobody’s going to come and save you, you’ve got to save yourself. Nobody’s going to give you anything. You’ve got to go out and fight for it. Nobody knows what you want except for you. And nobody will be as sorry as you if you don’t get it. So don’t give up on your dreams.</blockquote>
-                        <h3> multi line quote</h3>
-                        <blockquote className="pullquote"><p>The less you reveal the more people can wonder.</p><footer>- Henri Ford.</footer></blockquote>
-                        <h2> hr</h2>
-                        <hr></hr>
-                        <hr className="lines"></hr>
-                        <hr className="dashed"></hr>
-                        <hr className="dotted"></hr>
-                        <hr className="gradient"></hr>
-                        <hr className="stamp"></hr>
-                        <hr className="apple"></hr>
-                        <h2> code</h2>
-                        <hr/>
-                        <code>{Placeholders.code}</code>
-                        <h2> image</h2>
-                        <hr/>
-                        <img src="images/background/animated/ui.gif"/>
-                        <div className="inclined">
-                            <img src="images/background/animated/ui.gif"/>
-                        </div>
-                         <h2> list</h2>
-                         <hr/>
-                        <ul className="ul">
-                            <li>Coucou</li>
-                            <ul>
-                                <li>Coucou</li>
-                                <ul>
-                                    <li>Coucou</li>
-                                    <li>Coucou</li>
-                                </ul>
-                                <li>Coucou</li>
-                            </ul>
-                            <li>Coucou</li>
-                        </ul>
-                    </article>
+                      <hr className="lines"></hr>
+                      <code> hr.lines </code>
+                      <hr className="dashed"></hr>
+                      <code> hr.dashed </code>
+                      <hr className="dotted"></hr>
+                      <code> hr.dotted </code>
+                      <hr className="gradient"></hr>
+                      <code> hr.gradient </code>
+                      <hr className="stamp"></hr>
+                      <code> hr.stamp </code>
+                      <hr className="apple"></hr>
+                      <code> hr.apple </code>
+                      <h2> Special buttons</h2>
+                      <hr/>
+                      <p>
+                          Buttons styles are inspired by codrops.
+                      </p>
+                      <code> @include naira(color, background-color); </code>
+                      <button className="naira">
+                          <i className="icon icon-heart"/>
+                          <span>Valider</span>
+                      </button>
+                      <code> @include push(color, background-color); </code>
+                      <button className="push">
+                          Valider
+                      </button>
+                      <h2> Loader</h2>
+                      <hr/>
+                      <p>
+                          A bunch of loaders inspired by <a href="https://connoratherton.com/loaders">loaders.scss</a>
+                      </p>
+                      <div className="ball-pulse">
+                        <div/>
+                        <div/>
+                        <div/>
+                      </div>
+                      <code> @include ball-pulse(color); </code>
+                      <div className="ball-scale">
+                        <div/>
+                      </div>
+                      <code> @include ball-scale(color); </code>
+                      <div className="line-scale">
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                        <div/>
+                      </div>
+                      <code> @include line-scale(color); </code>
+                      <div className="circle-line-scale">
+                        <div/>
+                        <div/>
+                        <div/>
+                      </div>
+                      <code> @include circle-line-scale(color); </code>
 
+                      <h2>Navigation</h2>
+                      <hr/>
+                      <p> Hover effects on navigation menu inspired by </p>
+                    </article>
+                      <nav>
+                        <ul>
+                          <li className='underline-by-left'>
+                            <a href="">Home</a>
+                          </li>
+                        </ul>
+                        <code> @extend underline-by-left; </code>
+                        <ul>
+                          <li className='underline-by-right'>
+                            <a href="">About</a>
+                          </li>
+                        </ul>
+                        <code> @extend underline-by-right; </code>
+                        <ul>
+                          <li className='underline-by-scale'>
+                            <a href="">Blog</a>
+                          </li>
+                        </ul>
+                        <code> @extend underline-by-scale; </code>
+                        <ul>
+                          <li className='underline-by-double'>
+                            <a href="">Contact</a>
+                          </li>
+                        </ul>
+                        <code> @extend underline-by-double; </code>
+                        <ul>
+                          <li className='underline-fancy'>
+                            <a href="">FAQ</a>
+                          </li>
+                        </ul>
+                        <code> @extend underline-fancy; </code>
+                      </nav>
                 </div>
             </div>
         );

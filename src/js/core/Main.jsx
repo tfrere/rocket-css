@@ -2,7 +2,6 @@ import $                                from 'jquery';
 import React, { Component, PropTypes, TransitionGroup }  from 'react';
 import classNames                       from 'classnames';
 import { Router, Route, Link, browserHistory } from 'react-router';
-import CircleTransition                        from 'component/CircleTransition';
 
 export default class Main extends Component {
 
@@ -24,28 +23,25 @@ export default class Main extends Component {
         return (
             <div className="main">
                 <div >
-                    <h1>Whire whire W</h1>
-                        <CircleTransition>
-                            <div>Documentation</div>
-                        </CircleTransition>
-                        <Link to={`reader`}>
-                            <button className="primary special-button naira">
-                                <i className="icon icon-heart"/>
-                                <span>Blog</span>
-                            </button>
-                        </Link>
-                        <Link to={`vitrine`}>
-                            <button className="primary special-button naira">
-                                <i className="icon icon-heart"/>
-                                <span>Landing</span>
-                            </button>
-                        </Link>
-                        <Link to={`demo`}>
-                            <button className="primary special-button naira">
-                                <i className="icon icon-heart"/>
-                                <span>Demo</span>
-                            </button>
-                        </Link>
+                    <h1>React toolkit</h1>
+                    <h5>Let's build UI with less than 100 lines of css</h5>
+                        <div className="button-box">
+                            <Link to={`demo`}>
+                                <button>
+                                    Demo
+                                </button>
+                            </Link>
+                            <Link to={`reader`}>
+                                <button>
+                                    Blog
+                                </button>
+                            </Link>
+                            <Link to={`vitrine`}>
+                                <button>
+                                    Vitrine
+                                </button>
+                            </Link>
+                        </div>
                 </div>
             </div> 
         );

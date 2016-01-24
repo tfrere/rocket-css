@@ -32,7 +32,7 @@
 
 		$title-font: "Roboto", sans-serif;
 		$text-font: "Merriweather", serif;
-		$base-color: $color-grey-text;
+		$base-color: color("grey", "darken-2");
 
 	/* # Core
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -45,11 +45,11 @@
 							  text-rendering:             geometricPrecision;
 							  @include modular-scale(0, $text-size, $ratio);
 							  ::selection {
-							  	background: $color-grey-text;
+							  	background: $base-color;
 							  	color: white;
 							  }
 							  ::-webkit-input-placeholder {
-							  	color: lighten($color-grey-text, 20%);
+							  	color: lighten($base-color, 20%);
 							  }
 							} 
 

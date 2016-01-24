@@ -2,9 +2,44 @@
 	animation: fadeIn;
 	animation-duration: .5s;
 	.center {
-		text-align: center;
 		width:55%;
 		margin: 0 auto;
+	}
+	.colors .cell {
+		height:30px;
+	}
+	.ball-pulse {
+		@include ball-pulse(color("primary", "base"));
+	}
+	.ball-scale {
+		@include ball-scale(color("primary", "base"));
+	}
+	.line-scale {
+		@include line-scale(color("primary", "base"));
+	}
+	.circle-line-scale {
+		@include circle-line-scale(color("primary", "base"));
+	}
+	.naira {
+		@include naira(white, color("primary", "base"));
+	}
+	.push {
+		@include push(white, color("primary", "base"));
+	}
+	.underline-by-scale {
+	  @include underline-by-scale(color("primary", "base"));
+	}
+	.underline-by-left {
+	  @include underline-by-left(color("primary", "base"));
+	}
+	.underline-by-right {
+	  @include underline-by-right(color("primary", "base"));
+	}
+	.underline-by-double {
+	  @include underline-by-double(color("primary", "base"));
+	}
+	.underline-fancy {
+	  @include underline-fancy(color("primary", "base"));
 	}
 	hr {
 		margin-bottom:$text-size * 3;
@@ -17,7 +52,9 @@
 			color: $color-primary;
 		}
 	}
-	
+	nav {
+		margin-bottom:180px;
+	}	
 
 	.cell {
 	    margin-top:5px!important;

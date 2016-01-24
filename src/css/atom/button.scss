@@ -5,6 +5,12 @@
                 span text
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+    .button-box {
+      display:inline-block;
+      text-align: center;
+      width:100%;
+    }
+
     .button{
         display: inline-block;
         padding:10px 30px;

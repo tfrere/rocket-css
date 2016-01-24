@@ -14,7 +14,6 @@
 	$desktop-width: 1000px;
 	$hd-width: 1200px;
 
-
 	@mixin phone {
 	  @media (min-width: #{$phone-width}) {
 	    @content;

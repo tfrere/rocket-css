@@ -1,0 +1,114 @@
+// inspired by 
+
+@keyframes widthAnim {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes heightAnim {
+  from {
+    height: 0; }
+  to {
+    height: 1px; } }
+
+@keyframes bounceIn {
+  0% {
+            transform: scale(0); }
+  100% {
+            transform: scale(1); } }
+
+@mixin underline(){
+
+    height: 1px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+@mixin underline-by-scale($color: blue) {
+    @include underline();
+    
+    &:hover:after {
+        content: '';
+        display: block;
+        background: $color;
+        height: 1px;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+}
+
+@mixin underline-by-left($color: blue) {
+    @include underline();
+    
+    &:hover:after {
+        content: '';
+        display: block;
+        background: $color;
+        height: 1px;
+        float: left;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+}
+
+@mixin underline-by-right($color: blue) {
+    @include underline();
+    
+    &:hover:after {
+        content: '';
+        display: block;
+        background: $color;
+        height: 1px;
+        float: right;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+}
+ 
+@mixin underline-by-double($color: blue) {
+    @include underline();
+    
+    &:hover:before {
+        content: '';
+        background: $color;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+    &:hover:after {
+        content: '';
+        background: $color;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+}
+
+@mixin underline-fancy($color: blue) {
+    @include underline();
+    
+    &:hover:before {
+        content: '';
+        background: $color;
+        display: block;
+        position: absolute;
+        right: 0;
+        height: 1px;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+    &:hover:after {
+        content: '';
+        background: $color;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+    }
+}
