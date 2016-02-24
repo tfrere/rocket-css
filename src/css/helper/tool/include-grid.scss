@@ -17,7 +17,7 @@ html, body {
 }
 
 $columns: 12 !default;
-$gutter: 0.5rem !default;
+$gutter: 1em !default;
 
 
 * {
@@ -42,10 +42,10 @@ $gutter: 0.5rem !default;
 
 
 .row-gutter {
-  margin: -1em 0 0 -1em;
+  margin: -$gutter 0 0 -$gutter;
 }
 .row-gutter > .cell {
-  padding: 1em 0 0 1em;
+  padding: $gutter 0 0 $gutter;
 }
 
 .cell {

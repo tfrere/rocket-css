@@ -15,12 +15,11 @@ import KeyPress                  from 'component/KeyPress';
 
 import Typographies             from 'config/typography';
 import Colors                   from 'config/color';
-import Images                   from 'config/image';
 import Placeholders             from 'config/placeholder';
 
 import Config                   from 'config/config';
  
-export default class demo extends Component {
+export default class Demo extends Component {
 
     componentWillMount() {
     }

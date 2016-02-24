@@ -31,7 +31,7 @@ export default class Main extends Component {
                                     Demo
                                 </button>
                             </Link>
-                            <Link to={`reader`}>
+                            <Link to={`blog`}>
                                 <button>
                                     Blog
                                 </button>

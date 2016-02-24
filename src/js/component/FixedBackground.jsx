@@ -30,7 +30,6 @@ export default class FixedBackground extends Component {
     componentWillMount() {
         setTimeout( () => {
             this.setState( { isLoaded : true } );
-            console.log(1);
         }, 1500 );
     }
 
@@ -64,7 +63,7 @@ export default class FixedBackground extends Component {
             <section className={ classNames(
                                 'fixed-background',
                                 this.props.position,
-                                { fixed : this.props.fixed } ) }>
+                                { fixed : this.props.fixed }) }>
                 <div className={ classNames(
                                     { "section-gradient" : this.props.gradient } 
                                 ) }

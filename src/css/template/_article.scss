@@ -1,0 +1,99 @@
+.article {
+	animation:fadeIn;
+	animation-duration:300ms;
+	position:absolute;
+	width:100%;
+	min-height:100%;
+	height:auto;
+	top:0;
+	left:0;
+	background-color: white;
+	z-index: 9999;
+	overflow:hidden;
+	overflow-x:hidden;
+	.page {
+		overflow-x:hidden;
+	}
+	.back {
+		position:absolute;
+		left:30px;
+		top:30px;
+		a {color:white;}
+		z-index: 9999;
+		transition:all 200ms ease-in-out;
+		&:hover {
+			transform:translateX(-5px);	
+		}
+		&.clicked {
+			transform:translateX(-100px);
+		}
+	}
+
+	article {
+		padding-top:80px;
+		padding-bottom:80px;
+		width:55%;
+		margin:0 auto;
+		transition:all 600ms ease-in-out;
+		transform:translateY(20px);
+		transition-delay:500ms;
+		opacity:0;
+		overflow:hidden;
+	}
+	.fixed-background-reader-wrapper {
+		transition:all 1000ms ease-in-out;
+		transform:translateY(-600px);
+		opacity:0;
+	}
+	.fixed-background-reader {
+		width:100%;
+		display:flex;
+		text-align: center;
+		.section-content {
+			padding:160px 80px;
+		}
+	}
+
+	&.open {
+		article {
+			transform:translateY(0px) translateX(0px);
+			opacity:1;
+		}
+		.fixed-background-reader-wrapper {
+			transform:translateY(0px);
+			opacity:1;
+		}
+	}
+
+	article.active {
+		transform:translateY(0px) translateX(-200px);
+	}
+
+	.fixed-background {
+		text-align: center;
+	}
+	>footer {
+		padding-top:80px;
+		padding-bottom:80px;
+		h6 {
+			text-align: center;
+			margin:0;
+			color: color("grey", "lighten-2");
+		}
+		a {
+			color: $color-primary;
+			font-weight: 600;
+			border-bottom: 1px solid color("grey", "lighten-1");
+			&:focus, &:hover {
+				text-decoration: none;
+				border-bottom: 1px solid color("grey", "darken-2");
+			}
+		}
+	}
+}
+
+.card-list.clicked {
+	.card:not(.clicked) {
+		opacity:0;
+	}
+}

@@ -1,3 +1,14 @@
+/*
+––––––––––––––––––––––––––––––––––––
+   ██████╗ ██████╗ ██████╗ ███████╗
+  ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+  ██║     ██║   ██║██████╔╝█████╗  
+  ██║     ██║   ██║██╔══██╗██╔══╝  
+  ╚██████╗╚██████╔╝██║  ██║███████╗
+   ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+––––––––––––––––––––––––––––––––––––
+*/
+
 @import "helper/core";
 
 @import "color";
@@ -26,11 +37,13 @@
 @import "component/side-menu";
 @import "component/share-menu";
 @import "component/video-handler";
+@import "component/preloader";
 
 @import "template/main";
 @import "template/demo";
-@import "template/reader";
+@import "template/article";
 @import "template/vitrine";
+@import "template/blog";
 
 #app-container, #app-container>div  {
 	width:100%;

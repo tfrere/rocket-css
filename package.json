@@ -15,6 +15,7 @@
     "fbjs": "^0.4.0",
     "fs": "0.0.2",
     "google-maps-api": "^2.0.0",
+    "gsap": "^1.18.2",
     "history": "^1.17.0",
     "jquery": "^2.1.4",
     "json-loader": "^0.5.4",
@@ -33,6 +34,7 @@
     "react-router": "^1.0.3",
     "react-scroll": "^0.35.0",
     "react-select": "^0.9.1",
+    "react-toolbar": "^0.1.1",
     "react-tooltip": "^0.9.8"
   },
   "devDependencies": {
