@@ -53,7 +53,6 @@
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.0",
-    "mathsass": "^0.9.5",
     "node-libs-browser": "^0.5.3",
     "node-sass": "^3.4.2",
     "opn": "^3.0.3",

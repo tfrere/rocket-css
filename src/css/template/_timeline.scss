@@ -13,6 +13,15 @@ $line-color: rgba(0,0,0,0.2);
 	}
 }
 
+@keyframes cursorBlink {
+  0% { opacity: 0; }
+  33% { opacity: 0; }
+  50% { opacity: 0; }
+  51% { opacity: 1; }
+  66% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
 @include phablet {
 
 	.timeline {
@@ -47,8 +56,8 @@ $line-color: rgba(0,0,0,0.2);
 				z-index: 12;
 				display:inline-block;
 				margin-left: 10px;
-				animation: fadeIn infinite;
-    			animation-duration: 1500ms;
+				animation: cursorBlink infinite;
+    			animation-duration: 2000ms;
 			}
 		}
 		.cell {
