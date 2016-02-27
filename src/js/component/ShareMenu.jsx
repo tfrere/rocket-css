@@ -5,7 +5,7 @@ import classNames                       from 'classnames';
 export default class ShareMenu extends Component {
 
     static defaultProps = {
-        onClick : () => true
+        onClick : () => true,
     };
 
     constructor( props ) {
@@ -28,11 +28,29 @@ export default class ShareMenu extends Component {
         window.removeEventListener('scroll', this.scroll);
     }
 
+    // componentWillUpdate() {
+    //   var node = this.findDOMNode();
+    //   this.shouldScrollBottom =
+    //     (node.scrollTop + node.offsetHeight) === node.scrollHeight;
+    // }
+
+    // componentDidUpdate() {
+    //   if (this.shouldScrollBottom) {
+    //     var node = this.findDOMNode();
+    //     node.scrollTop = node.scrollHeight;
+    //     console.log(scrollTop);
+    //   }
+    // }
+
     scroll() {
+
+        var node = this.getDOMNode();
+
         var scrollTop = event.srcElement.body.scrollTop;
         var screenHeight = window.innerHeight
             || document.documentElement.clientHeight
             || document.body.clientHeight;
+        console.log("scrollouech", node, screenHeight);
         if(scrollTop >= screenHeight / 8)
             this.setState({ displayed: true });
         else

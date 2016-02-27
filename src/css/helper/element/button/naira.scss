@@ -18,10 +18,10 @@
   transition: all 200ms ease-in-out;
   border: 1px solid darken($base-background, 30%);
   background: none;
-  color: inherit;
+  color: color("primary","base");
   position: relative;
   z-index: 1;
-  background-color: $base-background;
+  background-color: transparent;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
   transition: background-color 0.3s;
@@ -57,7 +57,7 @@
   }
   & > span,
   & i {
-    padding: 15px 40px;
+    padding: 10px 30px;
     transition: transform 0.3s;
     transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
   }

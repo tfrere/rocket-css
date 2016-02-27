@@ -13,17 +13,17 @@ import NavBar                    from 'component/NavBar';
 import SideMenu                  from 'component/SideMenu';
 import ShareMenu                 from 'component/ShareMenu';
 import ScrollProgress            from 'component/ScrollProgress';
-import PreLoader                from 'component/PreLoader';
 
 import Typographies             from 'config/typography';
 import Colors                   from 'config/color';
 import Placeholders             from 'config/placeholder';
-import Article                  from 'core/Article';
-import Card                     from 'core/Card';
+import Card                     from 'core/blog/Card';
 
 import Config                   from 'config/config';
 import Articles                 from 'config/articles';
-import KeyPress                 from 'component/KeyPress';
+
+import TweenMax from 'gsap/src/minified/TweenMax.min.js';
+import TweenLite from 'gsap/src/minified/TweenLite.min.js';
 
 
 export default class Blog extends Component {
@@ -44,30 +44,38 @@ export default class Blog extends Component {
          this.setState( { clicked: true } );
         setTimeout( () => {
             this.setState( { clicked : false } );
-        }, 1500 );
+        }, 1000 );
     }
 
     componentWillMount() {
     }
 
-    componentDidMount() {
+    componentDidMount(){
+        var blog = this.refs.blog;
+        var card = this.refs.card;
+        var tl3 = new TimelineLite();
+        tl3
+        .from(blog, 1, { opacity:0, y:-50, ease: Cubic.linear }, "+0.5");
+        //.staggerFrom(cards, 1, { y:-50 }, 0.5);
+
     }
+
 
     componentWillUnmount() {
     }
     render() {
 
+        var heart = "<3";
+
         return (
             <div className="screen-box blog">
-                <PreLoader/>
                 <div className="container">
-                    <h1 className={classNames("header", {clicked: this.state.clicked}) }>Blog</h1>
-                    <div className={classNames("row row-gutter card-list", {clicked: this.state.clicked}) }>
-                         {Articles.map((object, i) => <Card onClick={ ::this.onClick } history={this.props.history} data={object} id={i}/> )}
+                    <div ref="blog" className={classNames("row row-gutter card-list", {clicked: this.state.clicked}) }>
+                         {Articles.map((object, i) => <Card ref={`card${i}`} onClick={ ::this.onClick } history={this.props.history} data={object} id={i}/> )}
                     </div>
                 </div>
                 <footer>
-                    <h6>A reading <a href="http://tfrere.fr">experiment</a></h6>
+                    <h6>{heart}</h6>
                 </footer>
             
             </div>

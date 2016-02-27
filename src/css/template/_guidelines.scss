@@ -1,6 +1,9 @@
-.demo {
+.guidelines {
 	animation: fadeIn;
 	animation-duration: .5s;
+	z-index: 1;
+	width:100%;
+	margin-top:150px;
 	.center {
 		width:55%;
 		margin: 0 auto;
@@ -44,17 +47,6 @@
 	hr {
 		margin-bottom:$text-size * 3;
 	}
-	nav ul li {
-		margin: 0 15px;
-		font-family: "Open Sans";
-		@extend .uppercase;
-		a {
-			color: $color-primary;
-		}
-	}
-	nav {
-		margin-bottom:180px;
-	}	
 
 	.cell {
 	    margin-top:5px!important;

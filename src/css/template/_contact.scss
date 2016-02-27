@@ -1,0 +1,109 @@
+$circle-size: 150px;
+$border-size: 10px;
+
+$button-size: 44px;
+$number-of-buttons: 4;
+
+$centered-button-pos: $circle-size / 2 - $button-size / 2 - $border-size;
+$base-delay: 100ms;
+$x:0;
+$y:0;
+$pi: pi();
+
+$base-angle: 45deg; // defines the first button place
+$offset-angle: 30; // defines the separation angle between each buttons
+$radius: $circle-size * 0.85;
+
+.contact {
+	width: 50%;
+	margin: 0 auto;
+
+	header {
+		margin-top:150px;
+		text-align:center;
+		h1 {
+			font-weight: bold;
+		}
+	}
+	p a {
+		color: color("grey", "darken-2");
+		font-weight: 600;
+		border-bottom: 1px solid color("grey", "lighten-1");
+		transition:all 100ms ease-in-out;
+		&:focus, &:hover {
+			text-decoration: none;
+			border-bottom: 1px solid color("primary", "darken-5");
+		}
+	}
+
+	.circle {
+		margin: 0 auto;
+		width:$circle-size;
+		height:$circle-size;
+		margin-bottom:72px;
+		position:relative;
+		box-sizing:border-box;
+		.circle-form {
+			width:$circle-size;
+			height:$circle-size;
+			background-color: color("primary", "base");
+			border: $border-size solid color("primary", "lighten-1");
+			border-radius: 50%;
+			position:relative;
+			z-index: 1;
+			box-sizing:border-box;
+		}
+		a {
+			margin-left:10px;
+			z-index: -1;
+			display:block;
+			position:absolute;
+			top:$centered-button-pos;
+			left:$centered-button-pos;
+			text-decoration: none!important;
+			border:none;
+			.small-circle {
+				border-radius: 50%;
+				margin: auto;
+				width:$button-size;
+				height:$button-size;
+				transition:all 350ms ease-in-out;
+				opacity:0.8;
+				@for $i from 0 through $number-of-buttons {
+					$x: $radius * cos($base-angle);
+					$y: $radius * sin($base-angle);
+
+					&.delay-#{$i}.active {
+						transform: translateX($x)
+								   translateY($y)
+								   rotate(0deg);
+						&:hover {
+							transform:translateX($x)translateY($y)rotate(360deg);
+							opacity:1;
+						}
+					}
+					// incrementing base angle
+					$base-angle: $base-angle + $offset-angle;
+				}
+				&.github {
+					background-image: url("../images/portfolio/svgs/github.svg");
+					background-size: cover;
+				}
+				&.behance {
+					background-image: url("../images/portfolio/svgs/behance.svg");
+					background-size: cover;
+				}
+				&.twitter {
+					background-image: url("../images/portfolio/svgs/twitter.svg");
+					background-size: cover;
+				}
+				&.linkedin {
+					background-image: url("../images/portfolio/svgs/linkedin.svg");
+					background-size: cover;
+				}
+
+			}
+		}
+	}
+
+}

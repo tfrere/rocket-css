@@ -1,0 +1,94 @@
+$base-index: 1;
+
+.project-wrapper {
+	width:100%;
+}
+.project {
+	animation:fadeIn;
+	animation-duration:300ms;
+	width: 70%;
+	margin: 0 auto;
+	.content-wrapper {
+		float:left;
+		width:50%;
+		margin-top:25%;
+	}
+	h2{
+		font-family: "Libre Baskerville"!important;
+		text-transform: uppercase;
+		letter-spacing: .1rem;
+		margin-bottom:$text-size * 2;
+	}
+	h5 {
+		font-weight: bold;
+		font-style: italic;
+		letter-spacing: .05rem;
+		font-family: "Libre Baskerville"!important;
+		margin-bottom:$text-size * 2;
+	}
+	p {
+		margin-bottom:$text-size * 2;
+	}
+	span {
+		color:color("grey", "base");
+	}
+	.mockup {
+		margin-top:25%;
+		background-image:url('../images/mockup/laptop.png');
+		background-position: center;
+		width:50%;
+		height:300px;
+		float:right;
+		background-size: cover;
+		position:relative;
+		a.button {
+			@include naira(white, color("primary", "base"));
+			position:absolute;
+			display: block;
+			height:48px;
+			bottom: -75px;
+			margin: 0 auto;
+			text-align: center;
+			display:inline-block;
+		}
+	}
+	.project-year {
+		font-family: "Open Sans"!important;
+		font-size: 42vw;
+		font-weight: 800;
+	    position: absolute;
+	    top: 45%;
+	    left: 0;
+	    z-index: $base-index - 100;
+	    opacity:0.02;
+	    @extend .unselectable;
+	}
+	header {
+		width:50%;
+		text-align:left;
+		h1 {
+			font-weight: bold;
+		}
+	}
+	a {
+		color: color("grey", "darken-2");
+		font-weight: 600;
+		border-bottom: 1px solid color("grey", "lighten-1");
+		transition:all 100ms ease-in-out;
+		&:focus, &:hover {
+			text-decoration: none;
+			border-bottom: 1px solid color("primary", "darken-5");
+		}
+	}
+	.back {
+		position: fixed;
+	    top: 65px;
+	    left: 30px;
+	    a {
+	    	color: color("primary", "base");
+			text-decoration: none;
+			border:none;
+		}
+	}
+
+}

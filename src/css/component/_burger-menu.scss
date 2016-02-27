@@ -4,6 +4,8 @@
 //       div
 
 $duration : 400ms;
+$base-color: color("primary", "base");
+$base-index: 1200;
 
 .burger-menu {
 	height: 44px;
@@ -13,27 +15,26 @@ $duration : 400ms;
 	cursor: pointer;
 	border-radius: 50%;
 	background-color: #FFF;
-
 	div {
 		transition: all $duration / 2 ease-in-out;
 		position: absolute;
-		z-index: 600;
+		z-index: $base-index;
 		top: 48%;
 		right: 25%;
 		margin-left: -10px;
 		display: block;
 		width: 10px;
 		height: 2px;
-		background: #222;
+		background: $base-color;
 		&:before, &:after {
 			transition: all $duration linear;
-
 			content: '';
 			position: absolute;
 			right: 0;
 			background: inherit;
 			width: 20px;
 			height: 2px;
+			z-index: $base-index - 1;
 		}
 		&:before {
 			top:-6px;
@@ -54,18 +55,18 @@ $duration : 400ms;
 		}
 	}
 	&.active {
-		background-color: rgba(20,20,20,0.9);
+		background-color: rgba(255,255,255,0.6);
 		div {
-			background-color:white;
+			background-color:color("primary", "base");
 			background: rgba(0,0,0,0);
 			&:before {
 				top:0;
-				background: white;
+				background: color("primary", "base");
 				transform: rotate(135deg);
 			}
 			&:after {
 				bottom:0;
-				background: white;
+				background: color("primary", "base");
 				transform: rotate(-135deg);
 			}
 		}

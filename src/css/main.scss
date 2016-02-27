@@ -39,13 +39,17 @@
 @import "component/video-handler";
 @import "component/preloader";
 
-@import "template/main";
-@import "template/demo";
-@import "template/article";
-@import "template/vitrine";
+@import "template/guidelines";
+@import "template/nav";
+@import "template/timeline";
+@import "template/contact";
 @import "template/blog";
+@import "template/article";
+@import "template/project";
 
 #app-container, #app-container>div  {
 	width:100%;
 	height:100%;
 }
+
+//html {background-color:#E2E2E2;}

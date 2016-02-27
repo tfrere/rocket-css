@@ -21,6 +21,10 @@ import Config                   from 'config/config';
 import KeyPress                 from 'component/KeyPress';
 import Articles                 from 'config/articles';
 
+import TweenMax from 'gsap/src/minified/TweenMax.min.js';
+import TweenLite from 'gsap/src/minified/TweenLite.min.js';
+
+
 export default class Article extends Component {
 
     static defaultProps = {
@@ -33,16 +37,15 @@ export default class Article extends Component {
         this.state = {};
         this.onClick = this.onClick.bind(this);
         this.onBack = this.onBack.bind(this);
-        setTimeout( () => {
-            this.setState( { open : true } );
-        }, 1500 );
+        this.tl = new TimelineLite();
+
     }
 
     onBack() {
-         this.setState( { open: false } );
+        this.tl.reverse();
         setTimeout( () => {
-            this.props.history.pushState(null, '/blog/');
-        }, 1500 );
+            this.props.history.pushState(null, '/blog');
+        }, 500 );
     }
 
     onClick() {
@@ -51,38 +54,31 @@ export default class Article extends Component {
     }
 
     componentDidMount(){
+        var head = this.refs.articleHeader;
+        var article = this.refs.articleContent;
+
+        this.tl
+        .fromTo(head, 1, {y:-320, ease: Cubic.linear }, {y:0, ease: Cubic.linear }, "+0.5")
+        .fromTo(article, 1, {y:520, ease: Cubic.linear }, {y:0, ease: Cubic.linear }, "+0.5");
+
         if (this.props.url)
         {
             console.log("scrollTopProblem", document.body.scrollTop)
             document.body.scrollTop = 0;
-            setTimeout( () => {
-                this.setState( { open : true } );
-            }, 1500 );
-        }
-    }
-    componentDidMount(){
-        if (this.props.url)
-        {
-            console.log("scrollTopProblem", document.body.scrollTop)
-            document.body.scrollTop = 0;
-            setTimeout( () => {
-                this.setState( { open : true } );
-            }, 3000 );
         }
     }
     
     render() {
 
             var url = this.props.url;
+            var heart = "<3";
 
             return (
-                <div className={classNames("screen-box article", {open:this.state.open}) }>
-                    <ScrollProgress/>
-                    <KeyPress/>
+                <div className={classNames("screen-box article") }>
                     <div className={classNames("back", {clicked: !this.state.open})}>
                     <a onClick={::this.onBack}><i className="icon icon-arrow_back icon-3x"/></a>
                     </div>
-                    <ShareMenu>
+                    <ShareMenu >
                         <div>
                             <h3>Share this story</h3>
                             <ul>
@@ -105,61 +101,20 @@ export default class Article extends Component {
                             <ReactTooltip place="bottom" type="light" effect="solid"/>
                         </div>
                     </ShareMenu>
-                    <SideMenu onClick={ ::this.onClick }>
-                        <h3>Other stories</h3>
-                        <ul>
-                            <li className="delay-1">
-                                <a className="item" href="">
-                                    <img src="images/background/impress-letters.jpg"/>
-                                    <div className="box">
-                                        <h4>La typographie au 21e siècle</h4>
-                                        <h6>23 APRIL 2016</h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="delay-2">
-                                <a className="item" href="">
-                                    <img src="images/background/photography.jpg"/>
-                                    <div className="box">
-                                        <h4>Composition is not a mess</h4>
-                                        <h6>23 APRIL 2016</h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="delay-3">
-                                <a className="item" href="">
-                                    <img src="images/reader/flower-color.jpg"/>
-                                    <div className="box">
-                                        <h4>Meaning of colors</h4>
-                                        <h6>23 APRIL 2016</h6>
-                                    </div>
-                                </a>
-                            </li>
-                            <li className="delay-4">
-                                <a className="item" href="">
-                                    <img src="images/background/animated/production.gif"/>
-                                    <div className="box">
-                                        <h4>React components</h4>
-                                        <h6>23 APRIL 2016</h6>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </SideMenu>
-                    <div className={classNames("fixed-background-reader-wrapper", {active: this.state.active})}>
+                    <div ref="articleHeader" className={classNames("fixed-background-reader-wrapper", {active: this.state.active})}>
                         <FixedBackground
-                                        position="fixed-background-reader" 
-                                        fullscreen={true} 
-                                        filter="brightness" 
-                                        image={Articles[url].imgUrl}
-                                        >
-
-                            <h1>{ Articles[url].title }</h1>
-                            <h4 className="b">{ Articles[url].creationDate }</h4>
-                        
+                            position="fixed-background-reader" 
+                            fullscreen={true} 
+                            filter="brightness" 
+                            image={Articles[url].imgUrl}
+                            >
+                            <div className="content-wrapper">
+                                <h1>{ Articles[url].title }</h1>
+                                <h4 className="b">{ Articles[url].creationDate }</h4>
+                            </div>
                         </FixedBackground>
                     </div>
-                    <div className={classNames( 'page', { active : this.state.active } ) }>
+                    <div ref="articleContent" className={classNames( 'page', { active : this.state.active } ) }>
                         <article
                             dangerouslySetInnerHTML={{__html: Articles[url].contentHtml}}
                             className={ "article", classNames({active:this.state.active}) }
@@ -175,7 +130,7 @@ export default class Article extends Component {
                         </FixedBackground>
                     </a>
                     <footer>
-                        <h6>A reading <a href="http://tfrere.fr">experiment</a></h6>
+                        <h6>{heart}</h6>
                     </footer>
                 </div>
             );

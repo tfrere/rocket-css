@@ -1,0 +1,152 @@
+$base-index: 2000;
+$base-color: color("primary", "base");
+
+.nav-wrapper {
+	overflow:hidden;
+	visibility: hidden;
+	z-index: $base-index;
+	.nav-info {
+		position:fixed;
+		top:20px;
+		left:40px;
+		h5 { margin-top: 26px; color: $base-color; text-transform: uppercase; letter-spacing: .3em;}
+	}
+	.nav-button {
+		cursor:pointer;
+		position:fixed;
+		top:30px;
+		right:40px;
+		z-index: $base-index;
+		width:44px;
+		height:44px;
+	} 
+	.nav-overlay {
+		z-index: $base-index - 3;
+		position:fixed;
+		border-radius:50%;
+		width:40px;
+		height:40px;
+		top:40px;
+		right:40px;
+		//background-color: rgba($base-color,0.95);
+		background: -webkit-linear-gradient(top, rgba(color("primary","lighten-4"), 0.9) 0, rgba(color("primary","darken-4"), 0.9));
+		transition: all 400ms ease-in-out;
+		transform:scale(0);
+		opacity:0;
+	}
+	.nav {
+		z-index: $base-index - 2;
+		position:fixed;
+		width:100%;
+		height:100%;
+		display:flex;
+		visibility:hidden;
+		opacity:0;
+		transition: opacity 200ms ease-in-out;
+		transition-delay:0ms;
+		div {
+			
+			text-align: center;
+			li {
+				width:100%;
+				a {
+					color:white;
+					font-size:3em;
+					line-height: 1.2em;
+					&.active {
+						opacity:1!important;
+					}
+				}
+			}
+			margin: auto;
+		}
+	}
+	&.displayed {
+		visibility: visible;
+		.nav-button {
+			i {
+				opacity:0.8;
+				transform:scale(1) rotate(0deg);
+			}
+			&:hover i {
+				opacity:1;
+			}
+		}
+	}
+	&.active {
+		visibility: visible;
+		.nav-button { 
+			i {
+				opacity:0;
+				transform:scale(1) rotate(360deg);
+			}
+			div {
+				opacity:0.8;
+				&:before {
+					transform:rotate(135deg);
+				}
+				&:after {
+					transform:rotate(-135deg);
+				}
+			}
+			&:hover i {
+				opacity:0;
+			}
+			&:hover div {
+				opacity:1;
+			}
+		}
+		.nav {
+			opacity:1;
+			transition-delay:350ms;
+			visibility:visible;
+			i {
+				padding-left:14px;
+				padding-right:14px;
+			}
+		}
+		.nav-overlay {
+			opacity:1;
+			transform:scale(100);
+		}
+	}
+
+	.nav {
+		display:flex;
+	}
+	h1,h2,h3,h4,h5,h6,p, i {
+		color: white;
+		text-align: center;
+	}
+	ul li a{
+		transition: all 350ms ease-in;
+		opacity:0;
+	}
+
+	&.active {
+		ul li a{
+			opacity:0.4;
+			transition-delay: 0s;
+			&:hover {
+				opacity:0.8;
+
+			}
+		}
+	}
+	footer {
+		position:fixed;
+		bottom:24px;
+		left:0;
+		right:0;
+		text-align: center;
+		a {
+			color: color("primary", "darken-2");
+			font-weight: 600;
+			border-bottom: 1px solid color("primary", "darken-1");
+			&:focus, &:hover {
+				text-decoration: none;
+				border-bottom: 1px solid color("primary", "darken-2");
+			}
+		}
+	}
+}

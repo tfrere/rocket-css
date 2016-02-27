@@ -1,17 +1,19 @@
+.cell:first-of-type .card {
+	border-radius: 4px 4px 0px 0px!important;
+}
 .card {
 	box-sizing: border-box;
 	color: #444;
 	width: 100%;
 	background: #FAFAFA;
-	border-radius: 4px;
 	transition: all 500ms ease-in-out;
-	margin-bottom: 1.5em;
 	overflow: hidden;
 	display: block;
 	position:relative;
 	transform:scale(1) ;
 	transform-delay:500ms;
 	opacity:1;
+
 	.content {
 		padding: 40px 10px;
 	}
@@ -22,14 +24,19 @@
 		.data {
 			position:absolute;
 			bottom:0;
-			background-color: rgba(0,0,0,0.5);
 			padding:5px;
 			width:100%;
 			z-index: 999;
 			color:white;
 			padding: 0px 40px;
-			h1,h2,h3,h4,h5,h6, span {
+			h1,h2,h3 {
 				color:white;
+				font-family: "Libre Baskerville";
+				margin-bottom:35px;
+			}
+			h4,h5,h6, span  {
+				color:white;
+				margin:0;
 			}
 			i {
 				float:left;
@@ -41,13 +48,13 @@
 			padding:0;
 			margin:0;
 			transition: all 500ms ease-in-out;
-			-webkit-filter:brightness(0.6) grayscale(1);
+			-webkit-filter:brightness(0.7) grayscale(0.5);
 		}
 	}
 	&.hover:hover{
 		box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
 		figure img {
-			-webkit-filter:brightness(1) grayscale(0);
+			-webkit-filter:brightness(0.4) grayscale(1);
 		}
 		&.active.clicked {
 			transform:scale(0.001) ;

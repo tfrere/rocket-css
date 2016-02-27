@@ -19,7 +19,7 @@ import Placeholders             from 'config/placeholder';
 
 import Config                   from 'config/config';
  
-export default class Demo extends Component {
+export default class Guidelines extends Component {
 
     componentWillMount() {
     }
@@ -33,8 +33,7 @@ export default class Demo extends Component {
     render() {
 
         return (
-            <div className="screen-box demo">
-                <KeyPress/>
+            <div className="screen-box guidelines">
                 <div className="center">
                       <article>
                         <h1>Demo page</h1>
@@ -164,175 +163,7 @@ export default class Demo extends Component {
                                 Valider
                             </button>
                         </form>
-                      <h2>Grid</h2>
-                      <hr/>
-                      <p> A simple flexgrid </p>
-                      <code>
-                          .row
-                            .cell
-                      </code>
-                      <div>
-                        <div className="row row-gutter row-center">
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter row-center">
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter">
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter">
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell"></div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter">
-                          <div className="cell cell-center">
-                            <div className="demo-cell">
-                              <div className="row row-gutter">
-                                <div className="cell cell-center">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="cell">
-                            <div className="demo-cell">
-                              <div className="row row-gutter">
-                                <div className="cell">
-                                  <div className="demo-cell">
-                                    <div className="row row-gutter">
-                                      <div className="cell">
-                                        <div className="demo-cell"></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell">
-                                    <div className="row row-gutter">
-                                      <div className="cell">
-                                        <div className="demo-cell"></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
 
-                          <div className="cell cell-center">
-                            <div className="demo-cell">
-                              <div className="row row-gutter">
-                                <div className="cell cell-center">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                                <div className="cell">
-                                  <div className="demo-cell"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter">
-                          <div className="cell">
-                            <div className="row row-gutter force-4 row-right">
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="cell">
-                            <div className="row row-gutter force-4 row-left">
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row row-gutter">
-                          <div className="cell">
-                            <div className="row row-gutter force-6 row-right">
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="cell">
-                            <div className="row row-gutter force-6 row-left">
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                              <div className="cell">
-                                <div className="demo-cell"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                       <h1> It's time to be more specific</h1>
                       <p>Note: All these following tools can be used by class or by include </p>
                       <h2> Special hrs</h2>

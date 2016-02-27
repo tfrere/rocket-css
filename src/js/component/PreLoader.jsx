@@ -26,7 +26,7 @@ export default class MotionTest extends Component {
 
     render() {
         return (
-            <div ref="circleWrapper" className="center">
+            <div ref="circleWrapper" className="preloader">
                 <div ref="circle" className="loading-circle"/>                    
             </div>
         );

@@ -1,3 +1,4 @@
+$base-index:1;
 .article {
 	animation:fadeIn;
 	animation-duration:300ms;
@@ -8,18 +9,19 @@
 	top:0;
 	left:0;
 	background-color: white;
-	z-index: 9999;
+	z-index: $base-index;
 	overflow:hidden;
 	overflow-x:hidden;
 	.page {
 		overflow-x:hidden;
+		overflow-y:hidden;
 	}
 	.back {
 		position:absolute;
 		left:30px;
 		top:30px;
 		a {color:white;}
-		z-index: 9999;
+		z-index: $base-index;
 		transition:all 200ms ease-in-out;
 		&:hover {
 			transform:translateX(-5px);	
@@ -34,36 +36,31 @@
 		padding-bottom:80px;
 		width:55%;
 		margin:0 auto;
-		transition:all 600ms ease-in-out;
-		transform:translateY(20px);
 		transition-delay:500ms;
-		opacity:0;
 		overflow:hidden;
 	}
 	.fixed-background-reader-wrapper {
-		transition:all 1000ms ease-in-out;
-		transform:translateY(-600px);
-		opacity:0;
 	}
 	.fixed-background-reader {
 		width:100%;
-		display:flex;
-		text-align: center;
 		.section-content {
-			padding:160px 80px;
+			height: 320px;
+			width:55%;
+			margin: 0 auto;
+			position:relative;
+			.content-wrapper {
+				position:absolute;
+				bottom: 15px;
+				text-align: left;
+			}
 		}
+	}
+	h1,h2,h3 {
+		color:white;
+		font-family: "Libre Baskerville";
+		margin-bottom:35px;
 	}
 
-	&.open {
-		article {
-			transform:translateY(0px) translateX(0px);
-			opacity:1;
-		}
-		.fixed-background-reader-wrapper {
-			transform:translateY(0px);
-			opacity:1;
-		}
-	}
 
 	article.active {
 		transform:translateY(0px) translateX(-200px);

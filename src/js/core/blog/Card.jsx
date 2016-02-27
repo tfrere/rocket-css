@@ -31,9 +31,9 @@ export default class Blog extends Component {
 
         setTimeout( () => {
             console.log(this.props.history);
-            this.props.history.pushState(null, '/blog/article/'+ this.props.id);
             this.setState( { active : false } );
-        }, 1500 );
+            this.props.history.pushState(null, '/blog/article/'+ this.props.id);
+        }, 500 );
     }
 
     componentWillMount() {
@@ -58,8 +58,8 @@ export default class Blog extends Component {
                         <figure>
                             <img src={this.props.data.imgUrl} />
                             <div className="data">
-                                <i className="icon icon-heart"/>
-                                <h5>{this.props.data.creationDate} | {this.props.data.title}</h5>
+                                <h5>{this.props.data.creationDate}</h5>
+                                <h2>{this.props.data.title}</h2>
                             </div>
                         </figure>
                     </div>

@@ -8,13 +8,12 @@ import ReactDOM                 from 'react-dom';
 import classNames               from 'classnames';
 import ReactTooltip             from 'react-tooltip';
 
-import Article         			from 'core/Article';
+import Project         			from 'core/timeline/Project';
 import Config                   from 'config/config';
-import KeyPress                 from 'component/KeyPress';
 import Articles                 from 'config/articles';
 
 
-export default class ArticleWrapper extends Component {
+export default class ProjectWrapper extends Component {
 	constructor( props ) {
         super( props );
         this.state = {};
@@ -22,8 +21,8 @@ export default class ArticleWrapper extends Component {
 
     render() {
     	return (
-	    	<div>
-	        	<Article  history={this.props.history} url={this.props.params.articleId}/> 
+	    	<div className="projectWrapper">
+	        	<Project history={this.props.history} url={this.props.params.projectId}/> 
 	    	</div>
     	);
     }
