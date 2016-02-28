@@ -36,6 +36,7 @@ export default class Blog extends Component {
         super( props );
         this.state = {clicked:false};
         this.onClick = this.onClick.bind(this);
+        this.tl = new TimelineLite();
     }
 
     onClick() {
@@ -51,12 +52,23 @@ export default class Blog extends Component {
     }
 
     componentDidMount(){
-        var blog = this.refs.blog;
-        var card = this.refs.card;
-        var tl3 = new TimelineLite();
-        tl3
-        .from(blog, 1, { opacity:0, y:-50, ease: Cubic.linear }, "+0.5");
-        //.staggerFrom(cards, 1, { y:-50 }, 0.5);
+
+        var articleLength = Articles.length;
+        var article0 = this.refs.article0;
+        var article1 = this.refs.article1;
+        var article2 = this.refs.article2;
+        var article3 = this.refs.article3;
+        var article4 = this.refs.article4;
+        var article5 = this.refs.article5;
+
+        this.tl
+        .fromTo(article0, 0.6, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut })
+        .fromTo(article1, 0.4, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut })
+        .fromTo(article2, 0.4, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut })
+        .fromTo(article3, 0.4, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut })
+        .fromTo(article4, 0.4, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut })
+        .fromTo(article5, 0.4, { opacity:0, y:50, ease: Circ.easeInOut }, { opacity:1, y:0, ease: Circ.easeInOut });
+
 
     }
 
@@ -71,7 +83,19 @@ export default class Blog extends Component {
             <div className="screen-box blog">
                 <div className="container">
                     <div ref="blog" className={classNames("row row-gutter card-list", {clicked: this.state.clicked}) }>
-                         {Articles.map((object, i) => <Card ref={`card${i}`} onClick={ ::this.onClick } history={this.props.history} data={object} id={i}/> )}
+                         {Articles.map((object, i) => <div ref={`article${i}`} className={ classNames(
+                                                            "cell",
+                                                            { "force-1" : i == 0 },
+                                                            { "force-2" : i != 0 } 
+                                                        ) }>
+                                                            <Card 
+                                                                    onClick={ ::this.onClick } 
+                                                                    history={this.props.history} 
+                                                                    data={object} 
+                                                                    id={i}
+                                                                    key={i}/>
+                                                      </div>
+                                                )}
                     </div>
                 </div>
                 <footer>

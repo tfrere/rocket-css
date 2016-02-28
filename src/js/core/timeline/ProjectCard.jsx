@@ -42,13 +42,13 @@ export default class ProjectCard extends Component {
             console.log(this.props.history);
             this.props.history.pushState(null, '/project/'+ this.props.id);
             this.setState( { active : false } );
-        }, 1500 );
+        }, 600 );
     }
 
     render() {
 
         return (
-            <div className={ classNames( "cell","force-1", {clicked:this.state.active} ) }>
+            <div className={ classNames( {clicked:this.state.active} ) }>
                 <a onClick={ ::this.onClick }>
                     <div className={classNames("delay-" + this.props.id)}>
                         <div className="circle"></div>

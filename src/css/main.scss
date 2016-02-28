@@ -53,3 +53,32 @@
 }
 
 //html {background-color:#E2E2E2;}
+
+
+#preload-1 { background: url(~/images/portfolio/pngs/derock_desktop.png) no-repeat -9999px -9999px; }
+#preload-2 { background: url(~/images/portfolio/pngs/derock_phone.png) no-repeat -9999px -9999px; }
+#preload-3 { background: url(~/images/portfolio/pngs/ethienne_desktop.png) no-repeat -9999px -9999px; }
+#preload-4 { background: url(~/images/portfolio/pngs/ethienne_phone.png) no-repeat -9999px -9999px; }
+#preload-5 { background: url(~/images/portfolio/pngs/framework_desktop.png) no-repeat -9999px -9999px; }
+#preload-6 { background: url(~/images/portfolio/pngs/jab_desktop.png) no-repeat -9999px -9999px; }
+#preload-7 { background: url(~/images/portfolio/pngs/jab_phone.png) no-repeat -9999px -9999px; }
+#preload-8 { background: url(~/images/portfolio/pngs/microsite_desktop.png) no-repeat -9999px -9999px; }
+#preload-9 { background: url(~/images/portfolio/pngs/microsite_phone.png) no-repeat -9999px -9999px; }
+#preload-10 { background: url(~/images/portfolio/pngs/peon_desktop.png) no-repeat -9999px -9999px; }
+#preload-11 { background: url(~/images/portfolio/pngs/peon_phone.png) no-repeat -9999px -9999px; }
+
+.underline-by-scale {
+  @include underline-by-scale(color("primary", "base"));
+}
+.underline-by-left {
+  @include underline-by-left(color("primary", "base"));
+}
+.underline-by-right {
+  @include underline-by-right(color("primary", "base"));
+}
+.underline-by-double {
+  @include underline-by-double(color("primary", "base"));
+}
+.underline-fancy {
+  @include underline-fancy(color("primary", "base"));
+}

@@ -48,23 +48,17 @@ export default class Blog extends Component {
     render() {
 
         return (
-            <div className={ classNames(
-                "cell",
-                { "force-1" : this.props.id == 0 },
-                { "force-2" : this.props.id != 0 } 
-            ) }>
-                <a onClick={ ::this.onClick }>
-                    <div className={classNames("card hover delay-" + this.props.id, {clicked:this.state.active})}>
-                        <figure>
-                            <img src={this.props.data.imgUrl} />
-                            <div className="data">
-                                <h5>{this.props.data.creationDate}</h5>
-                                <h2>{this.props.data.title}</h2>
-                            </div>
-                        </figure>
-                    </div>
-                </a>
-            </div>
+            <a onClick={ ::this.onClick }>
+                <div className={classNames("card hover delay-" + this.props.id, {clicked:this.state.active})}>
+                    <figure>
+                        <img src={this.props.data.imgUrl} />
+                        <div className="data">
+                            <h5>{this.props.data.creationDate}</h5>
+                            <h2>{this.props.data.title}</h2>
+                        </div>
+                    </figure>
+                </div>
+            </a>
         );
     }
 }

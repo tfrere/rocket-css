@@ -53,7 +53,10 @@ export default class Article extends Component {
          this.setState( { active: !this.state.active } );
     }
 
+     componentDidUpdate() { ReactDom.findDOMNode(this).scrollIntoView(); }
+
     componentDidMount(){
+        React.findDOMNode(this).scrollTop = 0 ;
         var head = this.refs.articleHeader;
         var article = this.refs.articleContent;
 

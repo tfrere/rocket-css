@@ -1,7 +1,6 @@
 import $                                from 'jquery';
 import React, { Component, PropTypes }  from 'react';
 import classNames                       from 'classnames';
-import BurgerMenu                       from 'component/BurgerMenu';
 
 export const Direction = {
     right:'right',

@@ -1,5 +1,7 @@
 $base-index: 2000;
 $base-color: color("primary", "base");
+//$number-of-links: 3;
+
 
 .nav-wrapper {
 	overflow:hidden;
@@ -9,7 +11,20 @@ $base-color: color("primary", "base");
 		position:fixed;
 		top:20px;
 		left:40px;
-		h5 { margin-top: 26px; color: $base-color; text-transform: uppercase; letter-spacing: .3em;}
+		z-index: $base-index;
+		h5 { transition:all 200ms ease-in-out; margin-top: 17px; color: $base-color; text-transform: uppercase; letter-spacing: .3em;}
+		h5.active {
+			float:left;
+			transform:translateX(29px);
+		}
+	}
+	.back-button {
+		float:left;
+		cursor:pointer;
+		width:44px;
+		height:44px;
+		background-image: url("../images/portfolio/svgs/back.svg");
+		background-size: cover;
 	}
 	.nav-button {
 		cursor:pointer;
@@ -19,7 +34,7 @@ $base-color: color("primary", "base");
 		z-index: $base-index;
 		width:44px;
 		height:44px;
-	} 
+	}
 	.nav-overlay {
 		z-index: $base-index - 3;
 		position:fixed;
@@ -28,8 +43,8 @@ $base-color: color("primary", "base");
 		height:40px;
 		top:40px;
 		right:40px;
-		//background-color: rgba($base-color,0.95);
-		background: -webkit-linear-gradient(top, rgba(color("primary","lighten-4"), 0.9) 0, rgba(color("primary","darken-4"), 0.9));
+		background-color: rgba($base-color,0.95);
+		//background: -webkit-linear-gradient(top, rgba(color("primary","lighten-4"), 0.9) 0, rgba(color("primary","darken-4"), 0.9));
 		transition: all 400ms ease-in-out;
 		transform:scale(0);
 		opacity:0;
@@ -44,15 +59,20 @@ $base-color: color("primary", "base");
 		opacity:0;
 		transition: opacity 200ms ease-in-out;
 		transition-delay:0ms;
+
 		div {
 			
 			text-align: center;
 			li {
 				width:100%;
+				margin-top:8px;
 				a {
+  					@include underline-fancy(color("primary", "lighten-2"));
+					text-transform: uppercase;
 					color:white;
-					font-size:3em;
-					line-height: 1.2em;
+					@include modular-scale(4, $title-size, $ratio);
+					font-family: "Open Sans";
+					font-weight: 100;
 					&.active {
 						opacity:1!important;
 					}

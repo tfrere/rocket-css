@@ -34,7 +34,7 @@ $line-color: rgba(0,0,0,0.2);
 			z-index: $base-index - 2;
 			position:absolute;
 			width: calc(50% - 1px);
-			top:0;
+			top: 116px;;
 			left:0;
 			height:100%;
 			margin-top:calc(9% - 16px);
@@ -61,6 +61,7 @@ $line-color: rgba(0,0,0,0.2);
 			}
 		}
 		.cell {
+			opacity:0;
 			transition:all 200ms ease-in-out;
 			.data {
 				transition:all 500ms ease-in-out;
@@ -130,8 +131,8 @@ $line-color: rgba(0,0,0,0.2);
 			&:before {
 				margin-left:50%;
 			}
-			&.clicked .data{
-				transform:translateX(800px);
+			.clicked .data{
+				transform:translateX(800px)!important;
 			}
 		}
 		.cell:nth-child(2n + 1) {
@@ -140,17 +141,24 @@ $line-color: rgba(0,0,0,0.2);
 			&:before {
 				margin-left:calc(50% - #{$dash-lenght});
 			}
-			&.clicked .data{
-				transform:translateX(-800px);
+			.clicked .data{
+				transform:translateX(-800px)!important;
 			}
 		}
 	}
 
 	.timeline.clicked {
-		.cell:not(.clicked) {
+		.cell>div:not(.clicked) {
 			opacity:0;
 		}
-		header, .circle .cell:before {
+		header, .circle, .cell:before {
+			opacity:0!important;
+		}
+
+		.circle {
+			transform:scale(0);
+		}
+		.line {
 			opacity:0!important;
 		}
 	}

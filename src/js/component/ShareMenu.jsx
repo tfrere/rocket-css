@@ -44,7 +44,7 @@ export default class ShareMenu extends Component {
 
     scroll() {
 
-        var node = this.getDOMNode();
+        var node = this.refs.shareMenu;
 
         var scrollTop = event.srcElement.body.scrollTop;
         var screenHeight = window.innerHeight
@@ -59,7 +59,7 @@ export default class ShareMenu extends Component {
 
     render() {
         return (
-            <div className={ classNames( 'share-menu-wrapper', { active : this.state.active }, { displayed : this.state.displayed } ) }>
+            <div ref="shareMenu" className={ classNames( 'share-menu-wrapper', { active : this.state.active }, { displayed : this.state.displayed } ) }>
                 <div onClick={ ::this.onClick } className="share-menu-button">
                     <i className="icon icon-heart"/>
                     <div/>

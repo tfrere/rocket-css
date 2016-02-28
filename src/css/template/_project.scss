@@ -1,4 +1,8 @@
 $base-index: 1;
+$large-img-ratio: 1/2;
+$medium-img-ratio: 1/3;
+$small-img-ratio: 1/4;
+
 
 .project-wrapper {
 	width:100%;
@@ -32,26 +36,38 @@ $base-index: 1;
 	span {
 		color:color("grey", "base");
 	}
-	.mockup {
-		margin-top:25%;
-		background-image:url('../images/mockup/laptop.png');
-		background-position: center;
+	a.button {
+		@include naira(color("primary", "base"), color("primary", "base"));
+	}
+	.img-wrapper {
+		perspective:1200px;
+		position:relative;
 		width:50%;
 		height:300px;
 		float:right;
-		background-size: cover;
-		position:relative;
-		a.button {
-			@include naira(white, color("primary", "base"));
-			position:absolute;
-			display: block;
-			height:48px;
-			bottom: -75px;
-			margin: 0 auto;
-			text-align: center;
-			display:inline-block;
+		margin-top:35%;
+	}
+	.img-article {
+		box-shadow: 1px 0px 0 #fff,0 0 10px rgba(0,95,99,0.2);
+		transform: rotateY(-30deg) rotateX(5deg);
+		position:absolute;
+		transition: all, 400ms, ease-in-out;
+		&.img-article-0 {
+			width: 400px;
+			height:200px;
+			right:0px;
+			top:-50px;
+		}
+		&.img-article-1 {
+			width: 105px;
+			height:125px;
+			right:65px;
+			top:15px;
 		}
 	}
+
+
+
 	.project-year {
 		font-family: "Open Sans"!important;
 		font-size: 42vw;
@@ -60,7 +76,7 @@ $base-index: 1;
 	    top: 45%;
 	    left: 0;
 	    z-index: $base-index - 100;
-	    opacity:0.02;
+	    color:#FBFBFB;
 	    @extend .unselectable;
 	}
 	header {
@@ -78,16 +94,6 @@ $base-index: 1;
 		&:focus, &:hover {
 			text-decoration: none;
 			border-bottom: 1px solid color("primary", "darken-5");
-		}
-	}
-	.back {
-		position: fixed;
-	    top: 65px;
-	    left: 30px;
-	    a {
-	    	color: color("primary", "base");
-			text-decoration: none;
-			border:none;
 		}
 	}
 

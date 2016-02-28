@@ -30,25 +30,47 @@ export default class Timeline extends Component {
     }
 
     onClick() {
-        console.log("onclickblog");
          this.props.onClick();
          this.setState( { clicked: true } );
         setTimeout( () => {
             this.setState( { clicked : false } );
-        }, 1500 );
+        }, 600 );
     }
 
     componentDidMount(){
         var title = this.refs.timelineTitle;
         var timeline = this.refs.timeline;
+        var line = this.refs.timelineLine;
+        var projectLength = Projects.length;
+        var project0 = this.refs.project0;
+        var project1 = this.refs.project1;
+        var project2 = this.refs.project2;
+        var project3 = this.refs.project3;
+        var project4 = this.refs.project4;
+        var project5 = this.refs.project5;
 
         this.tl
         .from(title, 1, { opacity:0, y:-20, ease: Cubic.linear }, "+0.5")
-        .fromTo(timeline, 1, { opacity:0, y:500, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear }, "+1");
+        .fromTo(line, 1, { opacity:0, y:500, ease: Cubic.linear },
+                            { opacity:1, y:0, ease: Cubic.linear }, "-=0.5")
+        .fromTo(project0, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
+        .fromTo(project1, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
+        .fromTo(project2, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
+        .fromTo(project3, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
+        .fromTo(project4, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
+        .fromTo(project5, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut });
+
+        // for (var i = 0; i < projectLength; i++)
+        // {
+        //     console.log("here",this.refs);
+        //     this.tl.from(this.refs[i], 1, { opacity:0, y:-20, ease: Cubic.linear }, "+0.5")
+        // }
+
+
     }
 
     componentWillUnMount() {
-        this.tl.reverse();
+
     }
 
     render() {
@@ -59,8 +81,16 @@ export default class Timeline extends Component {
                     <TypeName/>
                 </header>
                 <div ref="timeline" className="row row-gutter">
-                     {Projects.map((object, i) => <ProjectCard onClick={ ::this.onClick } history={this.props.history} data={object} id={i}/> )}
-                    <div className="line"/>
+                     {Projects.map((object, i) => <div className="cell force-1"
+                                                    ref={`project${i}`}
+                                                                > <ProjectCard 
+                                                                onClick={ ::this.onClick } 
+                                                                history={this.props.history} 
+                                                                data={object}
+                                                                id={i}
+                                                                key={i} /></div>
+                                                                )}
+                    <div ref="timelineLine" className="line"/>
                 </div>
             </div>
         );
