@@ -47,15 +47,16 @@ export default class Nav extends Component {
 
     componentDidMount() {
 
-        console.log(this.browserHistory);
         var footer = this.refs.navFooter;
+        var link0 = this.refs.navLink0;
         var link1 = this.refs.navLink1;
         var link2 = this.refs.navLink2;
         var link3 = this.refs.navLink3;
 
         this.tl.stop();
         this.tl
-        .from(link1, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "+=0.3")
+        .from(link0, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "+=0.3")
+        .from(link1, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
         .from(link2, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
         .from(link3, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
         .from(footer, 0.2, { opacity:0, y:40, ease: Circ.easeInOut }, "-=0.3");
@@ -76,7 +77,7 @@ export default class Nav extends Component {
             isBackButtonDisplayed = true;
 
         if (url == "/")
-            var url = "Portfolio";
+            var url = "";
         else 
             url = url.replace(/\//g, ' ');
 
@@ -103,6 +104,14 @@ export default class Nav extends Component {
                     <div className="nav">
                         <div>
                             <ul>
+                                <li ref="navLink0">
+                                    <Link onClick={ ::this.onClick }
+                                            activeClassName='active'
+                                            to={`/`}
+                                    >
+                                        Accueil
+                                    </Link>
+                                </li>
                                 <li ref="navLink1">
                                     <Link onClick={ ::this.onClick }
                                             activeClassName='active'
@@ -114,7 +123,7 @@ export default class Nav extends Component {
                                 <li ref="navLink2">
                                     <Link onClick={ ::this.onClick }
                                             activeClassName='active'
-                                            to={`/`}
+                                            to={`/portfolio`}
                                     >
                                         Portfolio
                                     </Link>

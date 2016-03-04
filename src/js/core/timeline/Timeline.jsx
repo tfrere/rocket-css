@@ -11,7 +11,6 @@ import ProjectCard              from 'core/timeline/ProjectCard';
 import ProjectWrapper           from 'core/timeline/ProjectWrapper';
 import Project                  from 'core/timeline/Project';
 
-import TypeName                 from 'core/timeline/TypeName';
 
 import TweenMax from 'gsap/src/minified/TweenMax.min.js';
 import TweenLite from 'gsap/src/minified/TweenLite.min.js';
@@ -38,10 +37,10 @@ export default class Timeline extends Component {
     }
 
     componentDidMount(){
-        var title = this.refs.timelineTitle;
         var timeline = this.refs.timeline;
         var line = this.refs.timelineLine;
         var projectLength = Projects.length;
+        console.log(Projects.length);
         var project0 = this.refs.project0;
         var project1 = this.refs.project1;
         var project2 = this.refs.project2;
@@ -50,22 +49,14 @@ export default class Timeline extends Component {
         var project5 = this.refs.project5;
 
         this.tl
-        .from(title, 1, { opacity:0, y:-20, ease: Cubic.linear }, "+0.5")
         .fromTo(line, 1, { opacity:0, y:500, ease: Cubic.linear },
-                            { opacity:1, y:0, ease: Cubic.linear }, "-=0.5")
+                            { opacity:1, y:0, ease: Cubic.linear }, "+=0.5")
         .fromTo(project0, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
         .fromTo(project1, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
         .fromTo(project2, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
         .fromTo(project3, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
         .fromTo(project4, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
         .fromTo(project5, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut });
-
-        // for (var i = 0; i < projectLength; i++)
-        // {
-        //     console.log("here",this.refs);
-        //     this.tl.from(this.refs[i], 1, { opacity:0, y:-20, ease: Cubic.linear }, "+0.5")
-        // }
-
 
     }
 
@@ -77,9 +68,7 @@ export default class Timeline extends Component {
 
         return (
             <div className={classNames("timeline", {clicked: this.state.clicked}) }>
-                <header ref="timelineTitle">
-                    <TypeName/>
-                </header>
+
                 <div ref="timeline" className="row row-gutter">
                      {Projects.map((object, i) => <div className="cell force-1"
                                                     ref={`project${i}`}

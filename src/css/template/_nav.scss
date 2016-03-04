@@ -67,7 +67,7 @@ $base-color: color("primary", "base");
 				width:100%;
 				margin-top:8px;
 				a {
-  					@include underline-fancy(color("primary", "lighten-2"));
+  					@include underline-by-scale(color("primary", "lighten-2"));
 					text-transform: uppercase;
 					color:white;
 					@include modular-scale(4, $title-size, $ratio);

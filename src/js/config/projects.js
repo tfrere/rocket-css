@@ -1,45 +1,44 @@
 var Projects = [
   {
+      slug: "matthieu-ricard",
+      title:"Matthieu Ricard",
+      subtitle: "Site personnel",
+      city:"Paris",
+      year:2016,
+      short: "Travail sur l'architecture de l'information et l'identité visuelle.",
+      month: "janvier",
+      purpose: "Site personnel",
+      website:"http://www.matthieuricard.org/",
+      img: ["images/portfolio/pngs/matthieu_desktop.png"],
+      content: "Architecture de l'information, identité visuelle.",
+      subjects: [{name: "Design", value:5},{name: "Inté", value:3}]    
+
+  },
+  {
       slug: "peon",
       title:"Peon",
       subtitle: "Assistant pour auto-entrepreneur",
       city:"Metz",
       year:2015,
       month: "janvier",
-      purpose: "Site vitrine",
+      purpose: "SAAS",
       website:"http://peon.fr/",
       img: ["images/portfolio/pngs/peon_desktop.png", "images/portfolio/pngs/peon_phone.png"],
-      short: "Peon est la référence en gestion de comptabilité en france",
-      content: "<b>Co-fondateur</b>, designer produit et intégrateur. Peon est la référence en gestion de comptabilité en france.",
-      subjects: [{name: "Inté", value:3},{name: "Design", value:5},{name: "UX", value:2}]    
-  },
-  {
-      slug: "jab",
-      title:"JAB",
-      subtitle: "Site vitrine",
-      city:"Paris",
-      year:2015,
-      month: "janvier",
-      purpose: "Site vitrine",
-      website:"http://jab101.fr/",
-      short: "Travail sur l'identité graphique",
-      img: ["images/portfolio/pngs/jab_desktop.png"],
-      content: "Travail sur l'identité graphique, design et développement de site vitrine. ",
-      subjects: [{name: "Recherches", value:3}, {name: "Design", value:5},{name: "Inté", value:3}]    
+      short: "Assistant sur mesure pour auto-entrepreneur, peon est la référence en gestion de comptabilité en france",
+      content: "<b>Co-fondateur</b>, designer produit et développeur. Peon est un des plus gros projets sur lesquels j'ai pu travailler.",
   },
   {
       slug: "ethienne-de-rockiny",
-      title:"Ethienne de Rockigny",
+      title:"Etienne de Rocquigny",
       subtitle: "Promotion livre blanc",
       city:"Paris",
       year:2015,
       month: "janvier",
-      purpose: "Site vitrine",
+      purpose: "Site évenementiel",
       website:"http://obspme.fr/",
-      short: "Présentation des travaux d'ethienne-de-rockiny sur l'algorithmie au service des PMEs",
+      short: "l'algorithmie au service des PMEs",
       img: ["images/portfolio/pngs/derock_desktop.png", "images/portfolio/pngs/ethienne_phone.png"],
-      content: "Présentation des travaux d'ethienne-de-rockiny sur l'algorithmie au service des PMEs.",
-      subjects: [{name: "Design", value:2}, {name: "Développement", value:5}]    
+      content: "Présentation des travaux d'Etienne de Rocquigny sur l'algorithmie au service des PMEs. ",
   },
   {
       slug: "framework-css",
@@ -53,22 +52,6 @@ var Projects = [
       website:"http://tfrere.github.io/frameworkcss/",
       img: ["images/portfolio/pngs/framework_desktop.png"],
       content: "Framework Sass reprennant le concept d'architecture moléculaire, simple et agnostic, il est de ce fait plutôt simple de prise en main.",
-      subjects: [{name: "Recherches", value:5}, {name: "Développement", value:3}]    
-  },
-  {
-      slug: "matthieu-ricard",
-      title:"Matthieu Ricard",
-      subtitle: "Site vitrine",
-      city:"Paris",
-      year:2014,
-      short: "Recherche design et développement pour le site personnel de Matthieu Ricard",
-      month: "janvier",
-      purpose: "Site vitrine",
-      website:"http://www.matthieuricard.org/",
-      img: ["images/portfolio/pngs/matthieu_desktop.png"],
-      content: "Recherche design et développement pour le site personnel de Matthieu Ricard et celui de son association Karuna Seishen.",
-      subjects: [{name: "Design", value:5},{name: "Inté", value:3}]    
-
   },
   {
       slug: "Hubert-reeves",
@@ -81,7 +64,18 @@ var Projects = [
       purpose: "Site vitrine",
       website:"http://www.humanite-biodiversite.fr/",
       content: "Refonte graphique de son réseau social.",
-      subjects: [{name: "Recherches", value:3}, {name: "Design", value:5}]    
+  },
+  {
+      slug: "Hubert-reeves",
+      title:"Hubert Reeves",
+      subtitle: "Refonte graphique de son réseau social",
+      city:"Paris",
+      year:2013,
+      short: "efonte graphique de son réseau social",
+      month: "janvier",
+      purpose: "Site vitrine",
+      website:"http://www.humanite-biodiversite.fr/",
+      content: "Refonte graphique de son réseau social.",
   }
 ];
 

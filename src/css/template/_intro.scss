@@ -1,0 +1,24 @@
+.intro {
+	width:100%;
+	height:100%;
+	display:flex;
+	&>div {
+		margin: auto;
+		text-align:center;
+		h2 span {
+			text-transform: uppercase;
+			letter-spacing: .1rem;
+			color: color("grey", "lighten-3");
+		}
+		#cursor {
+			width: 5px;
+			background-color: color("primary", "base");
+			height:30px;
+			z-index: 12;
+			display:inline-block;
+			margin-left: 10px;
+			animation: cursorBlink infinite;
+			animation-duration: 2000ms;
+		}
+	}
+}

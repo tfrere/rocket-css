@@ -7,6 +7,7 @@ import Guidelines   from 'core/guidelines/Guidelines';
 import Blog         from 'core/blog/Blog';
 import Article   	from 'core/blog/Article';
 import ArticleWrapper  from 'core/blog/ArticleWrapper';
+import Intro  from 'core/intro/Intro';
 import SmoothWheel  from 'component/SmoothWheel';
 
 import Contact      from 'core/contact/Contact';
@@ -24,7 +25,8 @@ ReactDOM.render((
   <Router history={browserHistory}>
   	<Router component={KeyPress}/>
   	<Route component={Nav}>
-		<Route path="/" component={Timeline}/>
+		<Route path="/" component={Intro}/>
+		<Route path="portfolio" component={Timeline}/>
 		<Route path="project/:projectId" component={ProjectWrapper}/>
 		<Route path="blog" component={Blog}/>
 		<Route path="contact" component={Contact}/>
