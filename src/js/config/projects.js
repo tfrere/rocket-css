@@ -1,20 +1,5 @@
 var Projects = [
   {
-      slug: "matthieu-ricard",
-      title:"Matthieu Ricard",
-      subtitle: "Site personnel",
-      city:"Paris",
-      year:2016,
-      short: "Travail sur l'architecture de l'information et l'identité visuelle.",
-      month: "janvier",
-      purpose: "Site personnel",
-      website:"http://www.matthieuricard.org/",
-      img: ["images/portfolio/pngs/matthieu_desktop.png"],
-      content: "Architecture de l'information, identité visuelle.",
-      subjects: [{name: "Design", value:5},{name: "Inté", value:3}]    
-
-  },
-  {
       slug: "peon",
       title:"Peon",
       subtitle: "Assistant pour auto-entrepreneur",
@@ -25,7 +10,7 @@ var Projects = [
       website:"http://peon.fr/",
       img: ["images/portfolio/pngs/peon_desktop.png", "images/portfolio/pngs/peon_phone.png"],
       short: "Assistant sur mesure pour auto-entrepreneur, peon est la référence en gestion de comptabilité en france",
-      content: "<b>Co-fondateur</b>, designer produit et développeur. Peon est un des plus gros projets sur lesquels j'ai pu travailler.",
+      content: "<b>Co-fondateur</b>, designer produit et développeur. Peon est issu de la nécéssitée d'avoir un service correct pour facturer en tant qu'AE. Actuellement en bêta.",
   },
   {
       slug: "ethienne-de-rockiny",
@@ -34,11 +19,11 @@ var Projects = [
       city:"Paris",
       year:2015,
       month: "janvier",
-      purpose: "Site évenementiel",
+      purpose: "Site de promotion",
       website:"http://obspme.fr/",
-      short: "l'algorithmie au service des PMEs",
+      short: "Site de présentation de l'algorithmie au service des PMEs.",
       img: ["images/portfolio/pngs/derock_desktop.png", "images/portfolio/pngs/ethienne_phone.png"],
-      content: "Présentation des travaux d'Etienne de Rocquigny sur l'algorithmie au service des PMEs. ",
+      content: "Présentation du livre blanc d'Etienne de Rocquigny sur l'algorithmie aux services des PMEs. Création d'un double site avec formulaire fullpage ",
   },
   {
       slug: "framework-css",
@@ -49,9 +34,9 @@ var Projects = [
       short: "Framework Sass reprennant le concept d'architecture moléculaire",
       month: "janvier",
       purpose: "Site vitrine",
-      website:"http://tfrere.github.io/frameworkcss/",
+      website:"http://tfrere.github.io/RocketCSS/",
       img: ["images/portfolio/pngs/framework_desktop.png"],
-      content: "Framework Sass reprennant le concept d'architecture moléculaire, simple et agnostic, il est de ce fait plutôt simple de prise en main.",
+      content: "Framework Sass reprennant le concept d'architecture moléculaire, conçu pour être simple de prise en main et le plus agnostic possible.",
   },
   {
       slug: "Hubert-reeves",
@@ -63,19 +48,21 @@ var Projects = [
       month: "janvier",
       purpose: "Site vitrine",
       website:"http://www.humanite-biodiversite.fr/",
+      img: ["images/portfolio/jpgs/karuna.jpg"],
       content: "Refonte graphique de son réseau social.",
   },
   {
-      slug: "Hubert-reeves",
-      title:"Hubert Reeves",
-      subtitle: "Refonte graphique de son réseau social",
+      slug: "matthieu-ricard",
+      title:"Matthieu Ricard",
+      subtitle: "Site personnel",
       city:"Paris",
       year:2013,
-      short: "efonte graphique de son réseau social",
+      short: "Travail sur l'architecture de l'information et l'identité visuelle.",
       month: "janvier",
-      purpose: "Site vitrine",
-      website:"http://www.humanite-biodiversite.fr/",
-      content: "Refonte graphique de son réseau social.",
+      purpose: "Site personnel",
+      website:"http://www.matthieuricard.org/",
+      img: ["images/portfolio/jpgs/karuna.jpg"],
+      content: "Création du site de Matthieu Ricard",
   }
 ];
 

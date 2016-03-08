@@ -65,6 +65,7 @@ export default class SmoothWheel extends Component {
 
     constructor( props ) {
         super( props );
+        
     }
 
     componentDidMount() {

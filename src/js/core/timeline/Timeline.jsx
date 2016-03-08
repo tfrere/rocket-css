@@ -46,17 +46,15 @@ export default class Timeline extends Component {
         var project2 = this.refs.project2;
         var project3 = this.refs.project3;
         var project4 = this.refs.project4;
-        var project5 = this.refs.project5;
 
         this.tl
         .fromTo(line, 1, { opacity:0, y:500, ease: Cubic.linear },
-                            { opacity:1, y:0, ease: Cubic.linear }, "+=0.5")
-        .fromTo(project0, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
-        .fromTo(project1, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
-        .fromTo(project2, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
-        .fromTo(project3, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
-        .fromTo(project4, 0.3, { opacity:0, x:20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut })
-        .fromTo(project5, 0.3, { opacity:0, x:-20, ease: Circ.easeInOut }, { opacity:1, x:0, ease: Circ.easeInOut });
+                            { opacity:1, y:0, ease: Cubic.linear }, "+=0.2")
+        .fromTo(project0, 0.5, { opacity:0, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear }, "-=0.5")
+        .fromTo(project1, 0.5, { opacity:0, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear })
+        .fromTo(project2, 0.5, { opacity:0, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear })
+        .fromTo(project3, 0.5, { opacity:0, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear })
+        .fromTo(project4, 0.5, { opacity:0, ease: Cubic.linear }, { opacity:1, y:0, ease: Cubic.linear });
 
     }
 

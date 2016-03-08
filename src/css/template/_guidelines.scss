@@ -9,8 +9,9 @@
 		margin: 0 auto;
 	}
 	.colors .cell {
-		height:30px;
+		height:75px;
 	}
+	.h2 { margin-top: $text-size * 4;}
 	.ball-pulse {
 		@include ball-pulse(color("primary", "base"));
 	}
@@ -52,4 +53,23 @@
 	    margin-top:5px!important;
 	    margin-bottom:5px!important;
 	}
+	&>footer {
+		padding-top:80px;
+		padding-bottom:80px;
+		h6 {
+			text-align: center;
+			margin:0;
+			color: color("grey", "lighten-2");
+		}
+		a {
+			color: $color-primary;
+			font-weight: 600;
+			border-bottom: 1px solid color("grey", "lighten-1");
+			&:focus, &:hover {
+				text-decoration: none;
+				border-bottom: 1px solid color("grey", "darken-2");
+			}
+		}
+	}
+
 }

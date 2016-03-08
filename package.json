@@ -35,7 +35,8 @@
     "react-scroll": "^0.35.0",
     "react-select": "^0.9.1",
     "react-toolbar": "^0.1.1",
-    "react-tooltip": "^0.9.8"
+    "react-tooltip": "^0.9.8",
+    "react-typewriter": "^0.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",

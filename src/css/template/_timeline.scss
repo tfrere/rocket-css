@@ -33,7 +33,7 @@ $line-color: rgba(0,0,0,0.2);
 			content:"";
 			z-index: $base-index - 2;
 			position:absolute;
-			width: calc(50% - 1px);
+			width: 50%;
 			top: 0px;
 			left:0;
 			height:100%;
@@ -99,7 +99,7 @@ $line-color: rgba(0,0,0,0.2);
 				transition:all 100ms ease-in-out;
 
 			}
-			&:hover .circle{
+			&>div:hover .circle{
 				width:$circle-size * $circle-hover-ratio;
 				height:$circle-size * $circle-hover-ratio;
 				margin-top:-$circle-size * $circle-hover-ratio / 2;

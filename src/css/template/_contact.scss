@@ -36,6 +36,14 @@ $radius: $circle-size * 0.85;
 			border-bottom: 1px solid color("primary", "darken-5");
 		}
 	}
+	a.no-style {
+		border:none;
+		text-decoration: none;
+		&:hover {
+			border:none;
+			text-decoration: none;
+		}
+	}
 
 	.circle {
 		margin: 0 auto;

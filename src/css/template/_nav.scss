@@ -9,15 +9,16 @@ $base-color: color("primary", "base");
 	z-index: $base-index;
 	.nav-info {
 		position:fixed;
-		top:20px;
+		top:27px;
 		left:40px;
-		z-index: $base-index;
+		z-index: $base-index - 4;
 		h5 { transition:all 200ms ease-in-out; margin-top: 17px; color: $base-color; text-transform: uppercase; letter-spacing: .3em;}
 		h5.active {
 			float:left;
 			transform:translateX(29px);
 		}
 	}
+
 	.back-button {
 		float:left;
 		cursor:pointer;
@@ -67,7 +68,6 @@ $base-color: color("primary", "base");
 				width:100%;
 				margin-top:8px;
 				a {
-  					@include underline-by-scale(color("primary", "lighten-2"));
 					text-transform: uppercase;
 					color:white;
 					@include modular-scale(4, $title-size, $ratio);

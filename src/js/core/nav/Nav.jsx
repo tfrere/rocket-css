@@ -41,7 +41,7 @@ export default class Nav extends Component {
 
     onBack() {
         setTimeout( () => {
-            this.props.history.goBack();
+            this.props.history.push('/');
         }, 10);
     }
 
@@ -58,7 +58,6 @@ export default class Nav extends Component {
         .from(link0, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "+=0.3")
         .from(link1, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
         .from(link2, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
-        .from(link3, 0.2, { opacity:0, x:-25, ease: Circ.easeInOut }, "-=0.1")
         .from(footer, 0.2, { opacity:0, y:40, ease: Circ.easeInOut }, "-=0.3");
     }
 
@@ -69,15 +68,12 @@ export default class Nav extends Component {
 
         var url = this.props.location.pathname;
         
-        var deepness = url.split("/");
-        var isBackButtonDisplayed = false;
-        
+        var isBackButtonDisplayed = true;
 
-        if (deepness.length > 2)
-            isBackButtonDisplayed = true;
-
-        if (url == "/")
+        if (url == "/"){
+            isBackButtonDisplayed = false;
             var url = "";
+        }
         else 
             url = url.replace(/\//g, ' ');
 
@@ -107,17 +103,17 @@ export default class Nav extends Component {
                                 <li ref="navLink0">
                                     <Link onClick={ ::this.onClick }
                                             activeClassName='active'
-                                            to={`/`}
+                                            to={`/blog`}
                                     >
-                                        Accueil
+                                        Blog
                                     </Link>
                                 </li>
                                 <li ref="navLink1">
                                     <Link onClick={ ::this.onClick }
                                             activeClassName='active'
-                                            to={`/blog`}
+                                            to={`/contact`}
                                     >
-                                        Blog
+                                        Contact
                                     </Link>
                                 </li>
                                 <li ref="navLink2">
@@ -127,14 +123,7 @@ export default class Nav extends Component {
                                     >
                                         Portfolio
                                     </Link>
-                                </li>
-                                <li ref="navLink3">
-                                    <Link onClick={ ::this.onClick }
-                                            activeClassName='active'
-                                            to={`/contact`}
-                                    >
-                                        Contact
-                                    </Link>
+
                                 </li>
                             </ul>
                             <footer ref="navFooter">

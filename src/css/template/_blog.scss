@@ -5,22 +5,22 @@
 	.container {
 		width:65%;
 		margin: 0 auto;
-		>h1 {
-			@include subtle-underlined();
-			padding:80px;
-			text-align: center;
-			opacity:1;
+		h2 {
+			//@include subtle-underlined();
+			font-family: "Libre Baskerville";
 			transition:all 200ms ease-in-out;
-			&.clicked {
-				opacity:0;
-			}
 		}
 	}
-
 	a {
-		
+		color: $color-primary;
+		font-weight: 600;
+		border-bottom: 1px solid color("grey", "lighten-1");
+		&:focus, &:hover {
+			text-decoration: none;
+			border-bottom: 1px solid color("grey", "darken-2");
+		}
 	}
-	>footer {
+	&>footer {
 		padding-top:80px;
 		padding-bottom:80px;
 		h6 {
@@ -28,14 +28,6 @@
 			margin:0;
 			color: color("grey", "lighten-2");
 		}
-		a {
-			color: $color-primary;
-			font-weight: 600;
-			border-bottom: 1px solid color("grey", "lighten-1");
-			&:focus, &:hover {
-				text-decoration: none;
-				border-bottom: 1px solid color("grey", "darken-2");
-			}
-		}
 	}
+
 }

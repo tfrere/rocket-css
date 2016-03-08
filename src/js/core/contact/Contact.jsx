@@ -67,8 +67,12 @@ export default class Contact extends Component {
                         <br/>
                         Envoyez moi un email à <a href="mailto:ecrire@tfrere.fr">ecrire@tfrere.fr</a>
                         <br/>
-                        <span className="tag">@Paris</span>
-                        <span className="tag">@Metz</span>
+                        <a className="no-style" target="_blank" href="https://www.google.fr/maps/place/Paris/data=!4m2!3m1!1s0x47e66e1f06e2b70f:0x40b82c3688c9460?sa=X&ved=0ahUKEwjO1aWRvajLAhUCM5oKHblzAqAQ8gEIfjAQ">
+                            <span className="tag"><i className="icon icon-location_on"/> Paris</span>
+                        </a>
+                        <a className="no-style" target="_blank" href="https://www.google.fr/maps/place/Metz/data=!4m2!3m1!1s0x4794dc1b6074b6a9:0x596be4b635bba669?sa=X&ved=0ahUKEwjawPfeuqjLAhVjYZoKHQTFDhoQ8gEIfzAQ">
+                            <span className="tag"><i className="icon icon-location_on"/> Metz</span>
+                        </a>
                     </p>
                 </header>
             </div>

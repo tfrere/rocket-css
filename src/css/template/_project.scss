@@ -45,7 +45,7 @@ $small-img-ratio: 1/4;
 		width:50%;
 		height:300px;
 		float:right;
-		margin-top:35%;
+		margin-top:31%;
 	}
 	.img-article {
 		box-shadow: 1px 0px 0 #fff,0 0 10px rgba(0,95,99,0.2);
@@ -53,19 +53,19 @@ $small-img-ratio: 1/4;
 		position:absolute;
 		transition: all, 400ms, ease-in-out;
 		&.img-article-0 {
-			width: 400px;
-			height:200px;
+			opacity:0;
+			width: 500px;
+			height:250px;
 			right:0px;
 			top:-50px;
 		}
 		&.img-article-1 {
 			width: 105px;
 			height:125px;
-			right:65px;
-			top:15px;
+			left:65px;
+			bottom:15px;
 		}
 	}
-
 
 
 	.project-year {
@@ -76,7 +76,7 @@ $small-img-ratio: 1/4;
 	    top: 45%;
 	    left: 0;
 	    z-index: $base-index - 100;
-	    color:#FBFBFB;
+	    color:#FCFCFC;
 	    @extend .unselectable;
 	}
 	header {
@@ -86,7 +86,7 @@ $small-img-ratio: 1/4;
 			font-weight: bold;
 		}
 	}
-	a {
+	a:not(.img-wrapper, .next-projext, .prev-project) {
 		color: color("grey", "darken-2");
 		font-weight: 600;
 		border-bottom: 1px solid color("grey", "lighten-1");
@@ -96,5 +96,26 @@ $small-img-ratio: 1/4;
 			border-bottom: 1px solid color("primary", "darken-5");
 		}
 	}
-
+	.next-project {
+		position:fixed;
+		right:20px;
+		top:50%;
+		i {@include modular-scale(3, $title-size, $ratio); }
+		border:none;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.prev-project {
+		position:fixed;
+		left:20px;
+		top:calc(50% - 20px);
+		i {@include modular-scale(3, $title-size, $ratio); }
+		border:none;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
