@@ -19,23 +19,22 @@ section.background
 					 Peon utilise des cookies pour rendre son site plus simple. <a ui-sref="nav.cookies">En savoir plus sur les cookies</a>.
 				i.icon.icon-cross.pull-right(ng-click="updateCookie()")
 section
-	.clearfix
 	.container
+		.row.quad-top
+			.four.col
+				.circle.small-circle.circle-contact
+				p(compile-unsafe="'views.main.infoDetails1' | translate").i.add-top.text-center
+			.four.col
+				.circle.small-circle.circle-bill
+				p(compile-unsafe="'views.main.infoDetails2' | translate").i.add-top.text-center
+			.four.col
+				.circle.small-circle.circle-stats
+				p(compile-unsafe="'views.main.infoDetails3' | translate").i.add-top.text-center
 		.row
-			.six.col.quad-top
-				h5(compile-unsafe="'views.main.titleVideo' | translate").add-top.remove-bot
-				hr.light.lines.half
-				p(compile-unsafe="'views.main.textVideo' | translate").quad-bot
-			.six.col
-					#video-container.double-top
-						#video-box.double-bot(ng-init="isVideoClicked=false")
-							div(ng-click="videoClickMask()" ng-if="isVideoClicked == false")
-								#play
-									#triangle
-								img#video-cover(src='assets/imgs/svg/video.svg')
-							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/Gp2huQoexmA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
-
-						.clearfix
+			.twelve.col
+				hr.light.lines.tiny.double-top.half-bot.centered
+				h4.text-center Les innovations
+				hr.light.lines.tiny.double-bot.centered
 		.row
 			.eight.col.quad-top
 				h5(compile-unsafe="'views.main.titleArg1' | translate").text-right.remove-bot
@@ -52,32 +51,50 @@ section
 				hr.light.lines.tiny
 				p(compile-unsafe="'views.main.textArg2' | translate").quad-bot
 section
+	.clearfix
+	.container
+		.row.quad-bot.double-top
+			.six.col
+				h4 Fonctionnalités
+				hr.light.lines.tiny.double-bot
+				ul
+					li Gestion des impayés
+					li Calcul en temps réel des charges
+					li Gestion des taux pour l’ACCRE
+					li Importation / exportation de contacts
+					li Modèle de CGV personnalisable
+					li Rappel des déclarations
+					li Exportation des données de facturation
+					li Validation des devis en ligne
+			.six.col
+				h4 Abonnement
+				hr.light.lines.tiny.double-bot
+				ul
+					li Tarif unique
+					li Sans engagement
+					li Délais de 7 jours en cas de non paiement
+					li Suivi de facturation
+					li Désabonnement en un clic
+section
+	.clearfix
 	.container
 		.row
 			.twelve.col
-				hr.light.lines.tiny.quad-top.half-bot.centered
+				hr.light.lines.tiny.double-top.half-bot.centered
 				h4(compile-unsafe="'views.main.titleDetails' | translate").text-center
-				hr.light.lines.tiny.quad-bot.centered
+				hr.light.lines.tiny.double-bot.centered
 		.row
-			.four.col
-				.circle.small-circle.circle-responsive
-				p(compile-unsafe="'views.main.infoDetails1' | translate").i.add-top.text-center
-			.four.col
-				.circle.small-circle.circle-cloudsafe
-				p(compile-unsafe="'views.main.infoDetails2' | translate").i.add-top.text-center
-			.four.col
-				.circle.small-circle.circle-papers
-				p(compile-unsafe="'views.main.infoDetails3' | translate").i.add-top.text-center
-		.row.octo-bot.double-top
-			.four.col
-				.circle.small-circle.circle-calculator
-				p(compile-unsafe="'views.main.infoDetails4' | translate").i.add-top.text-center
-			.four.col
-				.circle.small-circle.circle-pig
-				p(compile-unsafe="'views.main.infoDetails5' | translate").i.add-top.text-center
-			.four.col
-				.circle.small-circle.circle-unlimited
-				p(compile-unsafe="'views.main.infoDetails6' | translate").i.add-top.text-center 
+			.three.col.octo-top
+			.six.col
+					#video-container.double-top
+						#video-box.octo-bot(ng-init="isVideoClicked=false")
+							div(ng-click="videoClickMask()" ng-if="isVideoClicked == false")
+								#play
+									#triangle
+								img#video-cover(src='assets/imgs/svg/video.svg')
+							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/Gp2huQoexmA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
+
+						.clearfix
 section.background
 	#peon
 	.main-texture

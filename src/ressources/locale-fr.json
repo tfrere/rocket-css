@@ -30,20 +30,20 @@
 	"views.main.cta1": "Mois d'essai gratuit",
 	"views.main.cta2": "Demo",
 
-	"views.main.titleVideo": "Vos factures en quelques secondes",
-	"views.main.textVideo": "Ne perdez plus de temps avec la paperasse. Concentrez vous uniquement sur les besoins réels de votre entreprise. Peon se charge de tout.",
+	"views.main.titleVideo": "Validation éléctronique",
+	"views.main.textVideo": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
 
-	"views.main.titleArg1": "Gagnez du temps avec la validation electronique",
-	"views.main.textArg1": "Votre client valide son devis en quelques secondes et vous receverez instantanément une confirmation.",
+	"views.main.titleArg1": "Validation electronique",
+	"views.main.textArg1": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
 	
-	"views.main.titleArg2": "Ignorez vos impayés grâce au traîtement automatique",
-	"views.main.textArg2": "Une alerte vous prévient en cas de non règlement et Peon effectue les démarches de recouvrement amiable et de mise en demeure.",
+	"views.main.titleArg2": "Gestion automatique des impayés",
+	"views.main.textArg2": "Alerte en cas de non règlement et traitement automatisé des démarches de recouvrement.",
 
-	"views.main.titleDetails": "En détails, ça fait quoi ?",
+	"views.main.titleDetails": "Vos devis en quelques secondes",
 
-	"views.main.infoDetails1": "Accessible sur tablette et PC.",
-	"views.main.infoDetails2": "Données sécurisées.",
-	"views.main.infoDetails3": "Factures instantannées",
+	"views.main.infoDetails1": "Gestion des contacts",
+	"views.main.infoDetails2": "Edition de devis et factures",
+	"views.main.infoDetails3": "Suivi de l'actualité et calcul des charges",
 	"views.main.infoDetails4": "Calcul des cotisations.",
 	"views.main.infoDetails5": "Gestion des impayés.",
 	"views.main.infoDetails6": "Sans engagement.",

@@ -2610,6 +2610,33 @@ section.background {
 .circle-papers {
   background-image: url("../assets/imgs/svg/papers.svg"); }
 
+.circle-contact {
+  background-image: url("../assets/imgs/svg/contact.svg"); }
+
+.circle-stats {
+  background-image: url("../assets/imgs/svg/stats.svg"); }
+
+.circle-bill {
+  background-image: url("../assets/imgs/svg/bill.svg"); }
+
+ul {
+  list-style: none; }
+
+li {
+  position: relative;
+  line-height: 30px;
+  margin-left: -10px;
+  text-indent: -.7em; }
+
+li:before {
+  position: absolute;
+  content: "• ";
+  color: #ff8900;
+  /* or whatever color you prefer */
+  zoom: 2;
+  top: 0px;
+  left: -10px; }
+
 #cookie {
   position: absolute;
   z-index: 997;
