@@ -2619,23 +2619,21 @@ section.background {
 .circle-bill {
   background-image: url("../assets/imgs/svg/bill.svg"); }
 
-ul {
+ul.arg-list {
   list-style: none; }
-
-li {
-  position: relative;
-  line-height: 30px;
-  margin-left: -10px;
-  text-indent: -.7em; }
-
-li:before {
-  position: absolute;
-  content: "• ";
-  color: #ff8900;
-  /* or whatever color you prefer */
-  zoom: 2;
-  top: 0px;
-  left: -10px; }
+  ul.arg-list li {
+    position: relative;
+    line-height: 30px;
+    margin-left: -10px;
+    text-indent: -.7em; }
+  ul.arg-list li:before {
+    position: absolute;
+    content: "• ";
+    color: #ff8900;
+    /* or whatever color you prefer */
+    zoom: 2;
+    top: 0px;
+    left: -10px; }
 
 #cookie {
   position: absolute;
