@@ -1,0 +1,82 @@
+	.navbar {
+		font-family: $nav-font;
+		ul {
+			margin-top:25px;
+			margin-bottom:0px;
+		}
+		ul li {
+			margin-top: 20px;
+			margin-left: 30px;
+			display:inline-block;
+
+			a {
+				font-size: 1.8rem;
+				font-family: $nav-font;
+				display:inline-block;
+				padding:0px 5px;
+				color:#DDD;
+				line-height: 2rem;
+				vertical-align: middle;
+				transition:all 200ms ease-in-out;
+				opacity:0.6;
+				&:hover {
+					opacity:1;
+				}
+				&.active {
+					opacity:1;
+				}
+			}
+			&:first-child {
+				margin:0px;
+				a {opacity:1;}
+				font-family: $title-font;
+				border: 1px solid rgba(255,255,255,0.4);
+				h3 {
+					padding: 5px 10px 12px 10px;
+					color:white;
+					margin-top:0;
+					margin-bottom:0;
+				}
+			}
+			&:not(:first-child){
+				@include underline-by-left(rgba(255,255,255,0.4));
+				text-transform: uppercase;
+			}
+		}
+		&.fixed {
+			background-color: white;
+			border-bottom:0px solid;
+			box-shadow: 0 0 5px 0 rgba(0,0,0,0.15);
+			ul {
+				margin-top:0px;
+			}
+			ul li {
+				margin-top: 4px;
+				margin-left: 15px;
+				&:first-child { 
+					border: none;
+					h3 {
+						padding-left:0;
+						color:rgba(black, 0.8);
+					}
+				}
+				a {
+					color:rgba(black, 0.4);
+					padding: 10px 5px;
+					&:hover {
+						color:color("primary", "base");
+					}
+					&.active {
+						color:rgba(black, 1);
+					}
+				}
+			}
+		}
+		&.minified {
+			ul li {
+				a {
+					padding: 5px 5px;
+				}
+			}
+		}
+	}

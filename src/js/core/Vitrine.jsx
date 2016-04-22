@@ -7,7 +7,6 @@ import ReactDOM                 from 'react-dom';
 import ReactTooltip             from 'react-tooltip';
 
 import FixedBackground           from 'component/FixedBackground';
-import NavBar                    from 'component/NavBar';
 import SideMenu                  from 'component/SideMenu';
 import ShareMenu                 from 'component/ShareMenu';
 import ScrollProgress            from 'component/ScrollProgress';
@@ -22,154 +21,44 @@ import Placeholders             from 'config/placeholder';
 
 import Config                   from 'config/config';
 
+import {hexagon}                from './Hexagon.jsx';
+
+
 export default class Vitrine extends Component {
-
-    componentWillMount() {
-    }
-
     componentDidMount() {
-    }
-
-    componentWillUnmount() {
-    }
-
+        window.scrollTo(0,0);
+    }   
     render() {
 
         return (
             <div className="screen-box vitrine">
-                <KeyPress/>
-                <NavBar isTop={true} fixed={true}>
-                    <ul>
-                        <li className="right-stroke"><a href="">Contact</a></li>
-                        <li className="right-stroke"><a href="">A propos</a></li>
-                        <li><a href=""><i className="icon logo icon-heart icon-2x"/></a></li>
-                        <li className="left-stroke"><a href="">Portfolio</a></li>
-                        <li className="left-stroke"><a href="">Blog</a></li>
-                    </ul>
-                </NavBar>
-
-                <FixedBackground position="fixed-background-vitrine" image="images/background/boreal.jpg">
-                    <h1>Build UI speeder than ever</h1>
-                    <h4>With this new toolkit</h4>
-                    <button className="special-button naira">
-                        <i className="icon icon-heart"/>
-                        <span>Join the revolution</span>
-                    </button>
+                <ScrollProgress/>
+                
+                <FixedBackground position="fixed-background-vitrine" image="images/background/animated/sunrise.gif">
+                    <div className="page punchline">
+                        <h1>L’Agence<br/> qui<br/> <i>vous</i><br/> accompagne<br/> au<br/> quotidien</h1>
+                    </div>
                 </FixedBackground>
-                <div style={{padding:"80px"}} className="row row-gutter">
-                  <div className="cell">
-                    <div className="mockup-wrapper">
-                    </div>
-                  </div>
 
-                  <div className="cell cell-center">
-                    <div style={{padding:"40px"}} className="center">
-                        <h5>Time's left</h5>
-                        <CountDown/>
-                        <p><small>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</small></p>
+                <div>
+                    <div className="page padding">
+                        <h2 className="h1">Votre image</h2>
+                        <p className="two-col-text">L'identité visuelle est au cœur des stratégies de communication. Elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité. Dans un monde ou tout besoin de services commence par une recherche sur internet, une présence numérique et une identité structurée sont des facteurs nécessaires pour rassurer et inciter à la prise de contact.        Faire appel à des professionnels vous permet de garder l’esprit libre et vous concentrer sur votre cœur de métier.Votre communication sera cohérente et uniformisée, en adéquation avec vos valeurs et vos objectifs.</p>
                     </div>
-                  </div>
-                </div>
-                <div className="subtle-grey">
-                    <div className="page">
-                        <p  style={{padding:"80px"}}><small> It's a development kit that provides the most basic styles as a foundation, but it's ready to adopt whatever your design or style is. It's a development kit that provides the most basic styles as a foundation, but it's ready to adopt whatever your design or style is. </small></p>
-                    </div>
+                    {/*hexagon()*/}
                 </div>                
                 <div className="dark">
-                    <div className="row">
-                        <div className="cell force-2">
-                            <FixedBackground gradient={true} gradientColor="#263238" gradientDirection="to right" position="everest" image="images/background/everest.jpg"/>
-                        </div>
-                      <div className="cell force-2 cell-center">
-                         <div style={{padding:"80px"}}>
-                            <h2>Time's left</h2>
-                            <p><small>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</small></p>
-                         </div>
-                      </div>
-                    </div>
+                     <div className="page padding">
+                        <h2>Réseaux sociaux</h2>
+                        <p>Les réseaux sociaux offrent de formidables possibilités dans le cadre d’une stratégie de communication web. Interactifs, conviviaux et accessibles à tous, ils sont devenus indispensables pour promouvoir votre société. Facebook, Twitter & TripAdvisor représentent de véritables communautés d’échange et de partage extrêmement bénéfiques pour votre activité.  Communiquer sur les réseaux sociaux vous permet de fidéliser vos clients en entretenant un lien direct avec eux, mais aussi d’en conquérir de nouveaux. BlueScreen vous propose la prise en charge de votre e-communication en adéquation avec vos besoins et votre budget. Nous avons l’expertise pour vous accompagner dans la création, la personnalisation et l’animation régulière de vos pages Facebook, Instagram, TripAdvisor et Youtube.</p>
+                     </div>
                 </div>
-                <div style={{padding:"80px"}} className="page pricing">
-                    <div className="row row-gutter">
-                        <div className="cell cell-center">
-                             <div className="card hover color">
-                                <h2>4.9 <span>€</span></h2>
-                                <small>/ month</small>
-                                <h3>Member plan</h3>
-                                <hr className="tiny centered"/>
-                                <p><small> For small business </small></p>
-                                <button className="button primary">Subscribe</button>
-                            </div>
-                        </div>
-                        <div className="cell cell-center">
-                             <div className="card hover color active">
-                                <h2>0 <span>€</span></h2>
-                                <small>/ month</small>
-                                <h3>Free plan</h3>
-                                <hr className="tiny centered"/>
-                                <p><small> Free account is the best choice you could do</small></p>
-                                <button className="button primary">Subscribe</button>
-                            </div>
-
-                        </div>
-                        <div className="cell cell-center">
-                             <div className="card hover color">
-                                <h2>49.0 <span>€</span></h2>
-                                <small>/ month</small>
-                                <h3>Free plan</h3>
-                                <hr className="tiny centered"/>
-                                <p><small> For big partnership </small></p>
-                                <button className="button primary">Subscribe</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="subtle-grey">
-                    <div className="page">
-                        <p  style={{padding:"80px"}}><small> It's a development kit that provides the most basic styles as a foundation, but it's ready to adopt whatever your design or style is. It's a development kit that provides the most basic styles as a foundation, but it's ready to adopt whatever your design or style is. </small></p>
+                <div id="contact" className="subtle-grey">
+                    <div className="page padding">
+                        <h2>Développement d’application web et mobile</h2>
+                        <p>25 millions de français possèdent un smartphone : si vous ne devriez retenir une seule information pour vous motiver à investir dans le web mobile, ce serait celle-ci (source: Mobile Marketing Association). Nous ne pouvons ignorer ce changement des modes de consommation de l’information ou des contenus, il est essentiel de répondre à ce besoin du consommateur. Il souhaite se simplifier la vie et recherche à répondre à ces besoins d’une façon simple et intuitive. Les applications web et mobiles permettent de faciliter le processus d’achat ou d'interaction avec votre clientèle, cependant cette stratégie doit être calculée et réfléchie de manière globale.Alors que vous soyez en recherche de compétence ou de partenariat, n’hésitez pas à nous contacter pour concrétiser votre projet ! Nous développons notre propre solution web, Peon !(L’agence est en capacité de développer votre projet aussi bien en terme de développement qu’en terme de communication.)</p>
                     </div>
                 </div> 
-                <FixedBackground fixed={true} filter="1977" image="images/background/thegrid-right-blocks.png">
-                    <div style={{padding:"80px"}}>
-                        <h1>Discover a new world</h1>
-                        <h4>a world of possibilities</h4>
-                        <button className="special-button naira">
-                            <i className="icon icon-heart"/>
-                            <span>Join us</span>
-                        </button>
-                    </div>
-                </FixedBackground>
-                <footer>
-                    <div className="page row row-gutter">
-                        <div className="cell">
-                            <h2>Contact</h2>
-                            <hr className="tiny light lines"/>
-                            <ul>
-                                <li><a href="">Contact</a></li>
-                                <li><a href="">Fonctionnalités</a></li>
-                                <li><a href="">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div className="cell">
-                            <h2>Social</h2>
-                            <hr className="tiny light lines"/>
-                            <ul>
-                                <li><a href="">Contact</a></li>
-                                <li><a href="">Fonctionnalités</a></li>
-                                <li><a href="">Blog</a></li>
-                            </ul>
-                        </div>
-                        <div className="cell">
-                            <h2>Coucou</h2>
-                            <hr className="tiny light lines"/>
-                            <ul>
-                                <li><a href="">Contact</a></li>
-                                <li><a href="">Fonctionnalités</a></li>
-                                <li><a href="">Blog</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </footer>
             </div>
         );
     }

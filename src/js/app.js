@@ -3,20 +3,21 @@ import '../css/main.scss';
 
 import React    	from 'react';
 import ReactDOM 	from 'react-dom';
-import Reader   	from 'core/Reader';
 import Vitrine  	from 'core/Vitrine';
-import Main     	from 'core/Main';
-import Demo         from 'core/Demo';
-import KeyPress     from 'component/KeyPress';
+import Contact  	from 'core/Contact';
+import Realisations  	from 'core/Realisations';
+import Services  	from 'core/Services';
+import NavBar    	from 'core/NavBar';
 
 import { Router, Route, Link, browserHistory } from 'react-router';
 
 ReactDOM.render((
   <Router history={browserHistory}>
-  	<Router component={KeyPress}/>
-	<Route path="/" component={Main}/>
-	<Route path="reader" component={Reader}/>
-	<Route path="vitrine" component={Vitrine}/>
-	<Route path="demo" component={Demo}/>
+  	<Route component={NavBar} isTop={true} fixed={true}>
+		<Route path="/" component={Vitrine}/>
+		<Route path="/contact" component={Contact}/>
+		<Route path="/realisations" component={Realisations}/>
+		<Route path="/services" component={Services}/>
+	</Route>
   </Router>
 ), document.getElementById( 'app-container' ))

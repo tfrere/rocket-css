@@ -3,9 +3,12 @@
 
 	/* # Imports and variable
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+		@import url(//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic|Pacifico:400,700|Istok+Web:400,700,400italic,700italic|Cookie:300,500|Roboto:300,500,700|Lora:400,700,400italic,700italic|Nunito:400,300,700|Ubuntu:400,700italic,500italic,400italic,300italic,700,500,300|Open+Sans:400,800,700,600,300,300italic,400italic,600italic,800italic,700italic|Oswald:400,300,700|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Quicksand:400,700,300|Raleway:400,200,300,500,600,700,800,900|Raleway+Dots|EB+Garamond|Libre+Baskerville:400,400italic,700);
 		
-		@import url(//fonts.googleapis.com/css?family=Pacifico:400,700|Istok+Web:400,700,400italic,700italic|Cookie:300,500|Roboto:300,500,700|Lora:400,700,400italic,700italic|Nunito:400,300,700|Ubuntu:400,700italic,500italic,400italic,300italic,700,500,300|Open+Sans:400,800,700,600,300,300italic,400italic,600italic,800italic,700italic|Oswald:400,300,700|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Quicksand:400,700,300|Raleway:400,200,300,500,600,700,800,900|Raleway+Dots|EB+Garamond|Libre+Baskerville:400,400italic,700);
 		@include include-font("~/fonts/icomoon/", "icomoon");
+
+		@include include-font("~/fonts/Liberator/", "liberator-heavy-webfont");
+
 
 		// Here are some local fonts cap-height sizes to get you started:
 		// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
@@ -30,8 +33,9 @@
 		$title-size: 2.2rem;
 		$text-size: 1.4rem;
 
-		$title-font: "Roboto", sans-serif;
-		$text-font: "Merriweather", serif;
+		$title-font: "Playfair Display", serif;
+		$nav-font: "Open Sans", sans-serif;
+		$text-font: "Open Sans", sans-serif;
 		$base-color: color("grey", "darken-2");
 
 	/* # Core
@@ -77,19 +81,19 @@
 			&a { font-weight: inherit; }
 		}
 
-		h1 { @include modular-scale(3, $title-size, $ratio); letter-spacing: -.1rem;}
-		h2 { @include modular-scale(2, $title-size, $ratio); letter-spacing: -.1rem;}
-		h3 { @include modular-scale(1, $title-size, $ratio); letter-spacing: -.1rem;}
-		h4 { @include modular-scale(0, $title-size, $ratio); letter-spacing: -.08rem;}
-		h5 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: -.05rem;}
-		h6 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: 0;}
+		h1, .h1 { @include modular-scale(3, $title-size, $ratio); letter-spacing: -.1rem;}
+		h2, .h2 { @include modular-scale(2, $title-size, $ratio); letter-spacing: -.1rem;}
+		h3, .h3 { @include modular-scale(1, $title-size, $ratio); letter-spacing: -.1rem;}
+		h4, .h4 { @include modular-scale(0, $title-size, $ratio); letter-spacing: -.08rem;}
+		h5, .h5 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: -.05rem;}
+		h6, .h6 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: 0;}
 
 	/* # Paragraphs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
  		p, blockquote, li, q {
  			font-feature-settings: 'kern', 'onum', 'liga';
- 			@include modular-scale(2, $text-size, $ratio);
+ 			@include modular-scale(1, $text-size, $ratio);
  			font-weight: 400;
  			line-height: $text-size * 3;
 			letter-spacing: .03rem;

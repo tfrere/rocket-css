@@ -27,7 +27,8 @@ export default class ScrollProgress extends Component {
     }
 
     scroll() {
-        var scrollTop = event.srcElement.body.scrollTop;
+        var scrollTop = $( window ).scrollTop();
+        //console.log(scrollTop);
         var documentSize = $( window ).height() * 4.3;
         var progress =  scrollTop * 100 / documentSize;
         this.setState({ progress: progress });

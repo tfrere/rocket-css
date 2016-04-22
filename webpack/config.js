@@ -11,7 +11,7 @@ const MODE = process.env.MODE || '';
 const jsBundle = path.join( 'js', util.format( '[name].js' ) );
 const entries = {
     app:       ['app.js'],
-    vendors:   ['react', 'jquery', 'lodash', 'moment', 'firebase', 'classnames'],
+    vendors:   ['react', 'jquery', 'lodash', 'moment', 'classnames'],
     polyfills: ['polyfill.js', 'es6-promise']
 };
 const alias = {
