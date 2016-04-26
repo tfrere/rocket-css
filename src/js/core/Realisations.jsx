@@ -40,7 +40,7 @@ export default class Realisations extends Component {
                     </div>
                 </FixedBackground>
 
-                <div className="page padding">
+                <div className="page double-padding">
                     <h2 className="h1">Realisations</h2>
                     <p className="two-col-text">L'identité visuelle est au cœur des stratégies de communication. Elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité. Dans un monde ou tout besoin de services commence par une recherche sur internet, une présence numérique et une identité structurée sont des facteurs nécessaires pour rassurer et inciter à la prise de contact.        Faire appel à des professionnels vous permet de garder l’esprit libre et vous concentrer sur votre cœur de métier.Votre communication sera cohérente et uniformisée, en adéquation avec vos valeurs et vos objectifs.</p>
                 </div>

@@ -2,16 +2,47 @@
 	box-sizing: border-box;
 	color: #444;
 	width: 100%;
-	text-align: center;
-	background: #FAFAFA;
-	border-radius: 4px;
-	padding: 40px 10px;
-	transition: all 500ms ease-in-out;
-	margin-bottom: 1.5em;
+	background: color("grey", "lighten-5");
+	padding: 75px 115px;
+	transition: all 250ms ease-in-out;
+	margin-bottom: 0em;
 	margin-top: 0em;
+	border: 1px solid color("grey", "lighten-3");
 	overflow: hidden;
 	display: block;
 	position:relative;
+	h1,h2,h3,h4,h5,h6 {
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+	.icon {
+		margin-top: -3px;
+		margin-left:-25px;
+		position:absolute;
+		opacity:0.1;
+		zoom:2;
+	}
+	ul {
+		margin-left:25px;
+	}
+	ul li {
+		position:relative;
+		&:before {
+		    position: absolute;
+		    content: "• ";
+		    color: color("primary","lighten-3");
+		    top: 0px;
+		    left: -25px;
+		}
+	}
+	//
+	cursor:default!important;
+	// &:hover {
+	// 	background: color("primary", "darken-3");
+	// 	h1,h2,h3,h4,h5,h6 {
+	// 		color:white;
+	// 	}
+	// }
 	& figure {
 		margin:-10px;
 		margin-top:-40px;

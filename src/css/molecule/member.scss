@@ -1,0 +1,10 @@
+	.member {
+		padding:40px!important;
+		.circle {
+			width:100%;
+			padding-bottom:100%;
+			border-radius: 100%;
+			background-color: color("grey", "lighten-3");
+		}
+		text-align: center;
+	}

@@ -41,9 +41,51 @@ export default class Services extends Component {
                     </div>
                 </FixedBackground>
 
-                <div className="page padding">
-                    <h2 className="h1">Services</h2>
-                    <p className="two-col-text"> Le Digitale  Site internet Référencement , Adwords Gestion des réseaux sociaux, Consulting    Facebook ,Instagram, Trip Advisor Campagne mailing, SMS  Communication Conception de supports de communication      carterie, flyer, dépliant, brochure, affiche, signalétique, stand, objet publicitaire, packaging  Logo Chartes graphiques Illustrations Photo  Events         Marketing Alternatif : Street marketing         Campagne sponsoring         Développement         Consulting  Développement d’application web et mobile</p>
+                <div className="page double-padding">
+                    <div className="row">
+                        <a className="cell force-2 card">
+                            <i className="icon icon-fullscreen"/>
+                            <h4>Digital</h4>
+                            <ul>
+                                <li> Site internet </li>
+                                <li> Référencement, Adwords </li>
+                                <li> Gestion des réseaux sociaux </li>
+                                <li> Campagne mailing, SMS </li>
+                            </ul>
+                        </a>
+                        <a className="cell force-2 card">
+                            <i className="icon icon-create"/>
+                            <h4>Communication</h4>
+                            <ul>
+                                <li> Support de communication </li>
+                                <li> Logo </li>
+                                <li> Charte Graphique </li>
+                                <li> Illustration </li>
+                                <li> Photographie </li>
+                            </ul>
+                        </a>
+                        <a className="cell force-2 card">
+                            <i className="icon icon-schedule"/>
+                            <h4>Evenementiel</h4>
+                            <ul>
+                                <li> Street Marketing </li>
+                                <li> Campagne sponso </li>
+                                <li> Charte Graphique </li>
+                                <li> Illustration </li>
+                                <li> Photographie </li>
+                            </ul>
+                        </a>
+                        <a className="cell force-2 card">
+                            <i className="icon icon-favorite"/>
+                            <h4>Développement</h4>
+                            <ul>
+                                <li> Consulting </li>
+                                <li> Expertise mobile </li>
+                                <li> Expertise web responsive </li>
+                                <li> Déploiement </li>
+                            </ul>
+                        </a>
+                    </div>
                 </div>
             </div>
         );

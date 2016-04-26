@@ -1,32 +1,71 @@
-.main {
-	animation: fadeIn;
-	animation-duration: .5s;
-	overflow:hidden;
-	background-color: color("grey", "lighten-3");
-	height:100%;
-	display: flex;
-	background-image:url('../images/patterns/linedpaper.png');
-	background-repeat: repeat-x repeat-y; 
-	button {
-		@include push(white, color("primary", "base"));
-		margin-right:10px;
-	}
-	div {
-		animation: zoomIn;
-		animation-duration: .5s;
-		margin: auto;
-		padding:10px;
-		h1 {
-			margin-top:0;
-			font-size: 10rem;
-			margin-bottom:40px;
-			font-family: "Pacifico";
-			@include subtle-underlined(white);
-			text-align: center;
-		}
-		h5 {
-			text-align: center;
-		}
-	}
 
+.two-col-text, .three-col-text {
+	-webkit-column-count: 1;
+	column-count: 1;
+}
+
+.page {
+	width:80%;
+	margin: 0 auto;
+	position:relative;
+}
+
+.dark {
+	background-color: color("grey", "darken-4");
+	h1,h2,h3,h4,h5,h6 {
+		color:white;
+	}
+}
+.subtle-grey {
+	background-color:color("grey", "lighten-4");
+	border-bottom: 1px solid color("grey", "lighten-3");
+}
+
+
+@include tablet {
+	.two-col-text, .three-col-text {
+		-webkit-column-count: 2;
+		column-count: 2;
+	}
+}
+
+@include phablet {
+	.two-col-text {
+		-webkit-column-count: 2;
+		column-count: 2;
+	}
+	.three-col-text {
+		-webkit-column-count: 3;
+		column-count: 3;
+	}
+	.page {
+		max-width:960px;
+		margin: 0 auto;
+	}
+}
+
+
+.add-padding {
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+.double-padding {
+	padding-top:80px;
+	padding-bottom:80px;
+}
+
+.quad-padding {
+	padding-top:80px;
+	padding-bottom:80px;
+}
+
+.big-punchline {
+	padding-top:200px;
+	padding-bottom:120px;
+}
+
+.punchline {
+	padding-top:160px;
+	padding-bottom:80px;
 }

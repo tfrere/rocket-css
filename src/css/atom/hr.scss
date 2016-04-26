@@ -2,7 +2,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 	hr {
-		border: solid #DDD;
+		border: solid rgba(color("grey", "lighten-4"), 0.1);
 		border-width: 1px 0 0;
 		height: 0;
 		display:block;

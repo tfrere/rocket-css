@@ -62,6 +62,9 @@ $gutter: 0.5rem !default;
 
 .row-auto-height > .cell {
   display: flex;
+  div {
+    margin: auto;
+  }
 }
 
 .row-left {

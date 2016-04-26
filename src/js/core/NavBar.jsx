@@ -4,6 +4,7 @@ import classNames                       from 'classnames';
 import ScrollProgress                   from 'component/ScrollProgress';
 import { Router, Route, Link, browserHistory } from 'react-router';
 
+import BurgerMenu                       from 'component/BurgerMenu';
 
 export default class NavBar extends Component {
 
@@ -19,9 +20,17 @@ export default class NavBar extends Component {
             fadeIn : false,
             fadeOut: false,
             minified: false,
-            scrollTop: -1
+            scrollTop: -1,
+            active: false
         };
         this.scroll = ::this.scroll;
+        this.onClick = ::this.onClick;
+
+    }
+
+    onClick() {
+        console.log("child");
+         this.setState({active: !this.state.active });
     }
 
     componentDidMount() {
@@ -71,30 +80,53 @@ export default class NavBar extends Component {
                 { fixedFadeIn : this.state.fadeIn } ,
                 { fixedFadeOut : this.state.fadeOut } 
             ) }>
-                <ul className="page">
-                    <li><a href="#">
-                            <h3>Blue Screen</h3>
-                        </a>
-                    </li>
+                <a className="logo" href="#">
+                    <h3>Blue Screen</h3>
+                </a>
+                <ul className={ classNames( { active : this.state.active } ) }>
                     <li>
-                        <Link activeClassName='active' to={`/`}> Accueil </Link>
+                        <Link onClick={::this.onClick} activeClassName='active' to={`/`}> Accueil </Link>
                     </li>
-                    <li><Link activeClassName='active' to={`/services`}> Les services </Link></li>
-                    <li><Link activeClassName='active' to={`/realisations`}> Realisations </Link></li>
-                    <li><Link activeClassName='active' to={`/contact`}> Contact </Link></li>
+                    <li><Link onClick={::this.onClick} activeClassName='active' to={`/services`}> Services </Link></li>
+                    <li><Link onClick={::this.onClick} activeClassName='active' to={`/agence`}> L'agence </Link></li>
+                    <li><Link onClick={::this.onClick} activeClassName='active' to={`/contact`}> Contact </Link></li>
                 </ul>
+                <BurgerMenu onClick={::this.onClick}/>
             </nav>
             { this.props.children }
             <footer name="footer" className="footer" id="footer">
-                <div className="page row row-gutter">
+                <div className="page row">
+                    <hr/>
                     <div className="cell">
-                        <h2>Blue Screen</h2>
-                        <hr/>
-                        <p> Copygright blabla </p>
+                        <h4>Se connecter</h4>
+                        <hr className="lines light"/>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Pinterest</a></li>
+                        </ul>
                     </div>
-
+                    <div className="cell">
+                        <h4>Légal</h4>
+                        <hr className="lines light"/>
+                        <ul>
+                            <li><a href="#">Mentions légales</a></li>
+                            <li><a href="#">Kit de presse</a></li>
+                            <li><a href="#">Nous contacter</a></li>
+                        </ul>
+                    </div>
+                    <div className="cell cell-center">
+                        <a className="logo" href="#">
+                            <h3>Blue Screen</h3>
+                        </a>
+                    </div>
                 </div>
             </footer>
+            <div className="credentials">
+                <div className="page row row-gutter">
+                    <p><small className="bold">© 2016 Blue Screen. Tous droits reservés.</small></p>
+                </div>
+            </div>
             </div>
         );
     }

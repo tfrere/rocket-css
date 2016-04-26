@@ -16,6 +16,8 @@
 @import "molecule/inclined";
 @import "molecule/form";
 @import "molecule/card";
+@import "molecule/member";
+@import "molecule/slider";
 
 @import "component/modal";
 @import "component/navbar";
@@ -26,11 +28,14 @@
 @import "component/side-menu";
 @import "component/share-menu";
 @import "component/video-handler";
+@import "component/waypoint";
 
 @import "template/main";
-@import "template/vitrine";
 @import "template/nav";
 @import "template/footer";
+
+@import "template/vitrine";
+@import "template/contact";
 
 #app-container, #app-container>div, .screen-box  {
 	width:100%;

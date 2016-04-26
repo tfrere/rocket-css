@@ -1,58 +1,92 @@
-	.navbar {
-		font-family: $nav-font;
-		ul {
-			margin-top:25px;
-			margin-bottom:0px;
-		}
-		ul li {
-			margin-top: 20px;
-			margin-left: 30px;
-			display:inline-block;
+$transitionProperties: all 350ms ease;
 
-			a {
-				font-size: 1.8rem;
-				font-family: $nav-font;
-				display:inline-block;
-				padding:0px 5px;
-				color:#DDD;
-				line-height: 2rem;
-				vertical-align: middle;
-				transition:all 200ms ease-in-out;
-				opacity:0.6;
-				&:hover {
-					opacity:1;
-				}
-				&.active {
-					opacity:1;
-				}
-			}
+.navbar {
+	position:relative;
+	font-family: $nav-font;
+
+	.burger-menu {
+		display:block;
+		position:absolute;
+		top:25px;
+		right:10%;
+		transition: $transitionProperties;
+	}
+	.logo {
+		position:absolute;
+		left:10%;
+		top:28px;
+		display:inline-block;
+		margin:0px;
+		font-family: $title-font;
+		border: 1px solid rgba(255,255,255,0.4);
+		transition: $transitionProperties;
+		h3 {
+			padding: 5px 10px 12px 10px;
+			color:white;
+			margin-top:0;
+			margin-bottom:0;
+		}
+	}
+	ul {
+		width:100%;
+		position:fixed;
+		transform: translateY(-400px);
+		transition: $transitionProperties;
+		margin-top:0px;
+		margin-bottom:0px;
+		&.active {
+			transform: translateY(0px);
+		}
+		li {
+			transition: $transitionProperties;
+			padding:20px;
+			display:block;
+			background-color: color("primary","base");
+			border-bottom: 1px solid color("primary","darken-3");
+			margin:0;
+			padding-left:0px;
 			&:first-child {
-				margin:0px;
-				a {opacity:1;}
-				font-family: $title-font;
-				border: 1px solid rgba(255,255,255,0.4);
-				h3 {
-					padding: 5px 10px 12px 10px;
-					color:white;
-					margin-top:0;
-					margin-bottom:0;
-				}
-			}
-			&:not(:first-child){
-				@include underline-by-left(rgba(255,255,255,0.4));
-				text-transform: uppercase;
+				padding-left: 40px;
 			}
 		}
-		&.fixed {
-			background-color: white;
-			border-bottom:0px solid;
-			box-shadow: 0 0 5px 0 rgba(0,0,0,0.15);
-			ul {
-				margin-top:0px;
+		a {
+			transition: $transitionProperties;
+			text-transform: uppercase;
+			font-size: 1.8rem;
+			font-family: $nav-font;
+			display:inline-block;
+			padding:0px 5px;
+			color:#DDD;
+			line-height: 2rem;
+			vertical-align: middle;
+			opacity:0.6;
+			margin:0;
+			&:hover {
+				opacity:1;
 			}
-			ul li {
-				margin-top: 4px;
-				margin-left: 15px;
+			&.active {
+				opacity:1;
+			}
+		}
+	}
+
+	&.fixed {
+		background-color: white;
+		border-bottom:0px solid;
+		box-shadow: 0 0 5px 0 rgba(0,0,0,0.15);
+		.burger-menu div{
+			background: color("grey", "base");
+			&:before, &:after {
+				background: color("grey", "base");
+			}
+		}
+		.logo h3 {
+			color: color("primary", "base");
+		}
+		ul {
+			li {
+				margin-left: 0px;
+
 				&:first-child { 
 					border: none;
 					h3 {
@@ -72,11 +106,81 @@
 				}
 			}
 		}
-		&.minified {
-			ul li {
-				a {
-					padding: 5px 5px;
+	}
+	// &.minified {
+	// 	ul li {
+	// 		a {
+	// 			padding: 5px 5px;
+	// 		}
+	// 	}
+	// }
+}
+
+
+@include phablet {
+	.navbar {
+		position:absolute;
+		.burger-menu {
+			display:none!important;
+		}
+		ul {
+			margin-left:calc(10% + 185px);
+			display:inline!important;
+			position:relative;
+			text-transform: uppercase;
+			transition: $transitionProperties;
+			display:none;
+			&.active {
+			}
+			li {
+				margin-top: 0px;
+				margin-left: 0px;
+				display:inline-block;
+				background: transparent;
+				border:none;
+			}
+			a {
+				font-size: 1.8rem;
+				font-family: $nav-font;
+				display:inline-block;
+				padding:0px 5px;
+				color:#DDD;
+				line-height: 2rem;
+				vertical-align: middle;
+				opacity:0.6;
+				@include underline-by-left(rgba(255,255,255,0.4));
+				&:hover {
+					opacity:1;
+				}
+				&.active {
+					opacity:1;
+				}
+			}
+
+		}
+		&.fixed {
+			.logo {
+				top:12px;
+			}
+			ul {
+				top:5px;
+				li {
+					padding: 0px 5px 28px 5px;
 				}
 			}
 		}
+		// &.minified {
+		// 	.logo {
+		// 		top:5px;
+		// 	}
+		// 	ul {
+		// 		top:-3px;
+		// 		li {
+		// 			padding: 0px 5px 14px 5px;
+		// 		}
+		// 	}
+		// }
 	}
+}
+
+

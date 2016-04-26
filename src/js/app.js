@@ -8,6 +8,7 @@ import Contact  	from 'core/Contact';
 import Realisations  	from 'core/Realisations';
 import Services  	from 'core/Services';
 import NavBar    	from 'core/NavBar';
+import Agence    	from 'core/Agence';
 
 import { Router, Route, Link, browserHistory } from 'react-router';
 
@@ -18,6 +19,7 @@ ReactDOM.render((
 		<Route path="/contact" component={Contact}/>
 		<Route path="/realisations" component={Realisations}/>
 		<Route path="/services" component={Services}/>
+		<Route path="/agence" component={Agence}/>
 	</Route>
   </Router>
 ), document.getElementById( 'app-container' ))
