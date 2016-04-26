@@ -3,7 +3,7 @@
 	color: #444;
 	width: 100%;
 	background: color("grey", "lighten-5");
-	padding: 75px 115px;
+	padding: 25px 25px;
 	transition: all 250ms ease-in-out;
 	margin-bottom: 0em;
 	margin-top: 0em;
@@ -21,9 +21,10 @@
 		position:absolute;
 		opacity:0.1;
 		zoom:2;
+		display:none;
 	}
 	ul {
-		margin-left:25px;
+		margin-left:0px;
 	}
 	ul li {
 		position:relative;
@@ -33,6 +34,7 @@
 		    color: color("primary","lighten-3");
 		    top: 0px;
 		    left: -25px;
+		    display:none;
 		}
 	}
 	//
@@ -82,4 +84,19 @@
 		}
 	}
 
+}
+
+@include phablet {
+	.card {
+		padding: 75px 115px;
+		.icon {
+			display:block;
+		}
+		ul {
+			margin-left: 25px;
+			li:before {
+				display:block;
+			}
+		}
+	}
 }

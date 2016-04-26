@@ -154,7 +154,7 @@ export default class Vitrine extends Component {
                             </div>
                             <div className="cell force-5">
                                 <div>
-                                    <img src="images/bpifrance.png"/>
+                                    <img src="images/labrh.png"/>
                                 </div>
                             </div>
                         </div>

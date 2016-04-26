@@ -29,7 +29,7 @@
 		opacity:0.1;
 	}
 	.social-text {
-		padding-left:45px;
+		padding-left:0px;
 	}
 
 	.trust {
@@ -77,3 +77,10 @@
 }
 
 
+@include phablet {
+	.vitrine {
+		.social-text {
+			padding-left:45px;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 html, body {
-  height:100%;
+  min-height:100%;
 }
 .center {
   width:100%;
@@ -42,23 +42,16 @@ $gutter: 0.5rem !default;
 
 
 .row-gutter {
-  margin: -1em 0 0 -1em;
+  margin: 0;
 }
 .row-gutter > .cell {
-  padding: 1em 0 0 1em;
+  padding: 0;
 }
 
 .cell {
-  flex: 0 0 80%;
+  flex: 0 0 100%;
+  text-align: center;
 }
-
-
-@include desktop {
-    .cell {
-        flex:1;    
-    }
-}
-
 
 .row-auto-height > .cell {
   display: flex;
@@ -99,12 +92,26 @@ $gutter: 0.5rem !default;
   flex: none;
 }
 
-@for $i from 1 through $columns {
+@include phablet {
+  .row-gutter {
+    margin: -1em 0 0 -1em;
+  }
+  .row-gutter > .cell {
+    padding: 1em 0 0 1em;
+  }
 
-    // Don't include the .off class for the last column
-    @if ( $i != $columns ) {
-      .force-#{$i} {
-        flex: 0 0 100% / $i;
+  .cell {
+    flex: 1;
+    text-align: left;
+  }
+
+  @for $i from 1 through $columns {
+
+      // Don't include the .off class for the last column
+      @if ( $i != $columns ) {
+        .force-#{$i} {
+          flex: 0 0 100% / $i;
+      }
     }
   }
 }

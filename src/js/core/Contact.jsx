@@ -31,7 +31,10 @@ export default class Contact extends Component {
         map.setOptions({
           disableDefaultUI: true,
           styles: Gmap.style,
-          scrollwheel:  false
+          scrollwheel:  false,
+          draggable: false,
+          disableDoubleClickZoom: false,
+          zoomControl: false
         });
       }
 
@@ -57,6 +60,7 @@ export default class Contact extends Component {
                 <div className="page double-padding">
                     <div className="row row-gutter row-auto-height">
                         <div className="cell">
+                            <div className="dot-animation"/>
                             <Gmaps
                             width={'100%'}
                             height={'400px'}

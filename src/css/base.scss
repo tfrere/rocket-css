@@ -44,11 +44,12 @@
 
 		/* NOTE: With a font size based at 62.5% basically 1.5rem = 15px */
 		html 				{ font-size: 62.5%; }
-		html, body 			{ width: 100%; height: 100%; }
+		html, body 			{ width: 100%; min-height: 100%; }
 		body 				{ 
 							  font-family: 					$text-font;
 							  text-rendering:             geometricPrecision;
 							  @include modular-scale(0, $text-size, $ratio);
+							  margin-bottom:0;
 							  ::selection {
 							  	background: $base-color;
 							  	color: white;
@@ -86,17 +87,17 @@
 			font-family: $title-font;
 			font-weight: 200;
 			margin-top:$text-size * 1.2;
-			letter-spacing: .1rem;
+			letter-spacing: .05rem;
 			color: darken($base-color, 10%);
 			&a { font-weight: inherit; }
 		}
 
-		h1, .h1 { @include modular-scale(3, $title-size, $ratio); }
-		h2, .h2 { @include modular-scale(2, $title-size, $ratio); }
-		h3, .h3 { @include modular-scale(1, $title-size, $ratio); }
-		h4, .h4 { @include modular-scale(0, $title-size, $ratio); }
-		h5, .h5 { @include modular-scale(-1, $title-size, $ratio); }
-		h6, .h6 { @include modular-scale(-1, $title-size, $ratio); }
+		h1, .h1 { @include modular-scale(3, $title-size, $ratio); letter-spacing: -.1rem;}
+		h2, .h2 { @include modular-scale(2, $title-size, $ratio); letter-spacing: -.1rem;}
+		h3, .h3 { @include modular-scale(1, $title-size, $ratio); letter-spacing: -.1rem;}
+		h4, .h4 { @include modular-scale(0, $title-size, $ratio); letter-spacing: -.08rem;}
+		h5, .h5 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: -.05rem;}
+		h6, .h6 { @include modular-scale(-1, $title-size, $ratio); letter-spacing: 0;}
 
 	/* # Paragraphs
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -28,9 +28,10 @@
 		opacity:0.1!important;
 	}
 	.logo {
-		float:right;
+		float:center;
 		display:inline-block;
 		margin:0px;
+		margin-top:40px;
 		font-family: $title-font;
 		border: 1px solid rgba(255,255,255,0.4);
 		transition: $transitionProperties;
@@ -47,7 +48,7 @@
 		}
 	}
 	.cell:not(.cell-center) {
-		padding-right:55px;
+		padding-right:0px;
 	}
 }
 .credentials {
@@ -55,5 +56,16 @@
 	background-color: color("grey", "darken-4");
 	p {
 		margin: 10px 0px;
+	}
+}
+
+@include phablet {
+	.footer {
+		.logo {
+			margin-top:0px;
+		}
+		.cell:not(.cell-center) {
+			padding-right:55px;
+		}
 	}
 }

@@ -24,25 +24,34 @@ export default class NavBar extends Component {
             active: false
         };
         this.scroll = ::this.scroll;
+        this.resize = ::this.resize;
         this.onClick = ::this.onClick;
 
     }
 
     onClick() {
         console.log("child");
+        if ($( window ).width() < 750)
          this.setState({active: !this.state.active });
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.scroll);
+        window.addEventListener('resize', this.resize);
     }
 
     componentWillUnmount() {
+        window.removeEventListener('resize', this.resize);
         window.removeEventListener('scroll', this.scroll);
     }
 
+    resize(event) {
+        this.setState({active: false });
+    }
+
     scroll( event ) {
-        const scrollTop = window.scrollY;
+        this.setState({active: false });
+        const scrollTop = $(window).scrollTop();
         const isScrollingUp = this.state.scrollTop > scrollTop;
 
         let { fadeIn, minified } = this.state, fadeOut = false;
@@ -91,7 +100,7 @@ export default class NavBar extends Component {
                     <li><Link onClick={::this.onClick} activeClassName='active' to={`/agence`}> L'agence </Link></li>
                     <li><Link onClick={::this.onClick} activeClassName='active' to={`/contact`}> Contact </Link></li>
                 </ul>
-                <BurgerMenu onClick={::this.onClick}/>
+                <BurgerMenu onClick={::this.onClick} />
             </nav>
             { this.props.children }
             <footer name="footer" className="footer" id="footer">

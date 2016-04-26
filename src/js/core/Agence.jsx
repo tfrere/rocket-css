@@ -35,7 +35,7 @@ export default class Services extends Component {
             <div className="screen-box services">
                 <ScrollProgress/>
                 
-                <FixedBackground position="fixed-background-vitrine" image="images/agence/hi.jpg">
+                <FixedBackground position="fixed-background-vitrine" image="images/background/animated/sunrise.gif">
                     <div className="page punchline">
                         <h1>Une société<br/> <i>coopérative</i> et <i>participative</i></h1>
                     </div>
@@ -44,7 +44,7 @@ export default class Services extends Component {
                 <div className="page double-padding">
                     <div className="row row-gutter">
                         <div className="cell">
-                            <p className="lettrine"> 
+                            <p className="lettrine text-left"> 
                                 <b>BlueScreen</b> est fondé sur un <b>principe démocratique</b> qui défend des valeurs 
                                 de <b>responsabilité</b>, de <b>solidarité</b> et de <b>transparence</b>. La répartition des résultats 
                                 est prioritairement affectée à la pérennité des emplois et du projet d’entreprise.
