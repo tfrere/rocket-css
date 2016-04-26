@@ -83,45 +83,45 @@ export default class Services extends Component {
                             de nouvelles solutions efficaces.</p>
                         <div className="row row-gutter row-center add-padding">
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle anthony"/>
                                 <h4>Anthony Lacroix </h4>
                                 <p>
-                                    Commercial / Chef de projet
+                                    Développement commercial<br/> Gérant
                                 </p>
                             </div>
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle tritz"/>
                                 <h4>Quentin Tritz </h4>
                                 <p>
-                                    Commercial / Community Manager / Marketer
+                                    Directeur de clientèle<br/> Community Manager
                                 </p>
                             </div>
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle marie"/>
                                 <h4>Marie Madec </h4>
                                 <p>
-                                    Community Manager / Photographe
+                                    Chargée de Communication<br/> Community Manager
                                 </p>
                             </div>
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle quentin"/>
                                 <h4>Quentin Sombsthay </h4>
                                 <p>
-                                    Illustrateur / Graphiste / Motion Designer
+                                    Illustrateur<br/> Animateur
                                 </p>
                             </div>
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle thibaud"/>
                                 <h4>Thibaud Frere </h4>
                                 <p>
-                                    Graphiste / Designer / Développeur
+                                    Chef de projet<br/> Directeur artistique<br/> Développeur
                                 </p>
                             </div>
                             <div className="cell force-3 member">
-                                <div className="circle"/>
+                                <div className="circle valentin"/>
                                 <h4>Valentin Rebierre </h4>
                                 <p>
-                                    Développeur / Dev Ops
+                                    Développeur<br/> Administrateur Systeme
                                 </p>
                             </div>
                         </div>
