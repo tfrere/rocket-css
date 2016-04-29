@@ -27,11 +27,14 @@
 
 	"views.main.punchline": "Une bonne raison d'entreprendre",
 	"views.main.subline": "Assistant personnel pour <b>auto-entrepreneurs</b> prestataires de services et activités libérales",
-	"views.main.cta1": "Mois d'essai gratuit",
+	"views.main.cta1": "Essayez moi gratuitement",
 	"views.main.cta2": "Demo",
 
 	"views.main.titleVideo": "Validation éléctronique",
 	"views.main.textVideo": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
+
+	"views.main.mainTitleArg": "Des fonctions innovantes",
+
 
 	"views.main.titleArg1": "Validation electronique",
 	"views.main.textArg1": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
@@ -57,6 +60,8 @@
 	"views.support.profile2": "Conseil",
 	"views.support.profile3": "Maintenance",
 	"views.support.profile4": "Ergonomie",
+	"views.support.profile5": "Assistance",
+	"views.support.profile6": "Assistance",
 
 	"views.support.punchline2": "C'est par ici",
 

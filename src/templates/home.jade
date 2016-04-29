@@ -9,7 +9,7 @@ section.background
 			h6.text-right.text-white.double-bot(compile-unsafe="'views.main.subline' | translate")
 			.pull-right.quad-bot
 				a.cta.button.half-right.primary(ng-click="trackCta1()" href="http://app.peon.fr/inscription" compile-unsafe="'views.main.cta1' | translate")
-				a.cta.button.complement(ng-click="trackCta1()" href="http://app.peon.fr/connexion" compile-unsafe="'views.main.cta2' | translate") Demo
+				//- a.cta.button.complement(ng-click="trackCta1()" href="http://app.peon.fr/connexion" compile-unsafe="'views.main.cta2' | translate") Demo
 			.clearfix
 #cookie(ng-show="setCookie == false")
 	.container
@@ -33,7 +33,7 @@ section
 		.row
 			.twelve.col
 				hr.light.lines.tiny.double-top.half-bot.centered
-				h4.text-center Les innovations
+				h4.text-center(compile-unsafe="'views.main.mainTitleArg' | translate")
 				hr.light.lines.tiny.double-bot.centered
 		.row
 			.eight.col.quad-top

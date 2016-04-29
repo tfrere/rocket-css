@@ -2998,6 +2998,22 @@ nav {
   background-size: cover;
   background-image: url("../assets/imgs/jpg/quentin.jpg"); }
 
+#marie {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("../assets/imgs/jpg/marie.jpg"); }
+
+#tritz {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("../assets/imgs/jpg/tritz.jpg"); }
+
 #thib-back {
   -webkit-background-size: cover;
   -moz-background-size: cover;

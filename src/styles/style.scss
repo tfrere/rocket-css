@@ -57,6 +57,17 @@
 	background-image: url('../assets/imgs/jpg/quentin.jpg');
 }
 
+#marie {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/marie.jpg');
+}
+
+
+#tritz {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/tritz.jpg');
+}
+
 #thib-back {
 	@include cover();
 	background-image: url('../assets/imgs/jpg/thib-peon.jpg');
