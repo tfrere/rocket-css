@@ -14,7 +14,6 @@ app.use(cors());
 
 // Here we require the prerender middleware that will handle requests from Search Engine crawlers 
 // We set the token only if we're using the Prerender.io service 
-app.use(require('prerender-node').set('prerenderToken', 'ds8ZK1oQ3gDwsQTAKQ56')); 
 app.use('/', express.static(__dirname + '/dist/'));
 app.use('/', express.static(__dirname + '/sitemap/'));
 app.use("/vendor", express.static(__dirname + "/dist/vendor"));

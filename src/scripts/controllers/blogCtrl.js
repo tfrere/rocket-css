@@ -12,7 +12,7 @@ app.controller('blogCtrl', function ($scope, $http, $sce, $timeout) {
 		window.analytics.track('NewsLetter add');
 	};
 
-    $http.get('http://app.peon.fr/api/posts').success(function (data){
+    $http.get('https://app.peon.fr/api/posts').success(function (data){
 
 	    var articles = [];
 	    for(var i=0;i<data.length;i++){
