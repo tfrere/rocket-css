@@ -12,7 +12,7 @@ app.controller('assistanceCtrl', function ($translate, $scope, $http) {
 			console.log(form.email);
 			button.addClass('on');
 			window.analytics.track('Question submitted');
-			$http.post('http://app.peon.fr/api/questions/', {email:form.email, name:form.name, msg:form.content})
+			$http.post('https://app.peon.fr/api/questions/', {email:form.email, name:form.name, msg:form.content})
 			.success(function(){
 				button.removeClass('on');
 					$scope.isSended = true;

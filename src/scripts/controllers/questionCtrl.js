@@ -15,7 +15,7 @@ app.controller('questionCtrl', function ($translate, $sce, $stateParams, $scope,
 
 	console.log($stateParams);
 
-	$http.get('http://app.peon.fr/api/infos').success(function (data){
+	$http.get('https://app.peon.fr/api/infos').success(function (data){
 
 	    var questions = [];
 	    for(var i=0;i<data.length;i++){
