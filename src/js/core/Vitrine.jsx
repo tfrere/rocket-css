@@ -44,9 +44,9 @@ export default class Vitrine extends Component {
 
                 <div>
                     <div className="page double-padding">
-                        <h5 className="subtitle"> Notre expertise </h5>
+                        <h5 className="subtitle"> Une stratégie sur-mesure </h5>
                         <h2 className="h1">Votre image</h2>
-                        <p className="three-col-text">L'identité visuelle est au cœur des stratégies de communication. Elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité. Dans un monde ou tout besoin de services commence par une recherche sur internet, une présence numérique et une identité structurée sont des facteurs nécessaires pour rassurer et inciter à la prise de contact. Faire appel à des professionnels vous permet de garder l’esprit libre et vous concentrer sur votre cœur de métier. Votre communication sera cohérente et uniformisée, en adéquation avec vos valeurs et vos objectifs.</p>
+                        <p className="three-col-text">L'identité visuelle est au cœur des stratégies de communication. Elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité. Dans un monde ou tout besoin de services commence par une recherche sur internet, une présence numérique et une identité structurée sont des facteurs nécessaires pour rassurer et inciter à la prise de contact. Faire appel à des professionnels vous permet de garder l’esprit libre et vous concentrer sur votre cœur de métier. En adéquation avec vos valeurs et objectifs, votre communication sera cohérente et uniformisée.</p>
                     </div>
                     {/*hexagon()*/}
                 </div>                
@@ -60,7 +60,7 @@ export default class Vitrine extends Component {
                             </div>
                             <div className="cell social-text">
                                 <div>
-                                    <h2>Réseaux sociaux</h2>
+                                    <h2>Les réseaux sociaux</h2>
                                     <p>
                                         Les réseaux sociaux offrent de formidables possibilités dans le cadre d’une stratégie de communication web. 
                                         <b> Interactifs, conviviaux et accessibles à tous,</b> ils sont devenus indispensables pour promouvoir votre société.
@@ -80,8 +80,7 @@ export default class Vitrine extends Component {
                                     Notre travail ?
                                 </h1>
                                 <p className="biggest">
-                                    Vous rendre <b className="i">beau</b>, <b className="i">crédible</b> et <b className="i">accessible</b>.<br/>
-                                    Nous ne vendons pas du rêve, nous vendons une expérience client.
+                                    Vous rendre <b className="i">beau</b>, <b className="i">crédible</b> et <b className="i">accessible</b>.
                                 </p>
                             </div>
                             <div className="double-padding text-center">
@@ -89,8 +88,7 @@ export default class Vitrine extends Component {
                                     Notre travail ?
                                 </h1>
                                 <p className="biggest">
-                                    Vous rendre « beau », « crédible » et « accessible ».<br/>
-                                    Nous ne vendons pas du rêve, nous vendons une expérience client.
+                                    Vous rendre <b className="i">beau</b>, <b className="i">crédible</b> et <b className="i">accessible</b>.
                                 </p>
                             </div>
                             <div className="double-padding text-center">
@@ -98,8 +96,7 @@ export default class Vitrine extends Component {
                                     Notre travail ?
                                 </h1>
                                 <p className="biggest">
-                                    Vous rendre « beau », « crédible » et « accessible ».<br/>
-                                    Nous ne vendons pas du rêve, nous vendons une expérience client.
+                                    Vous rendre <b className="i">beau</b>, <b className="i">crédible</b> et <b className="i">accessible</b>.
                                 </p>
                             </div>
                         </Carousel>            
@@ -112,12 +109,7 @@ export default class Vitrine extends Component {
                                 <div>
                                     <h2>Développement d’application<br/> <i>web</i> et <i>mobile</i></h2>
                                     <p>
-                                        Les applications web ou mobiles sont omniprésentes dans nos vies. 
-                                        Canal de communication en plein essor, elles représentent un enjeu 
-                                        stratégique pour les entreprises et collectivités.
-                                        <br/><br/>
-                                        Alors que vous soyez en recherche de compétence ou de partenariat, 
-                                        n’<b>hésitez pas à nous contacter</b> pour concrétiser votre projet.
+                                        Les applications web ou mobiles font maintenant partie à part entière de notre vie de tous les jours. Ce canal de communication en plein essor représente un enjeu stratégique pour les entreprises et collectivités. 
                                     </p>
                                 </div>
                             </div>

@@ -75,6 +75,11 @@ export default class Services extends Component {
                         <b> « formations express »</b>.
                     </p>
                 </div>
+                <FixedBackground fixed={false} position="fixed-background-sweet" image="images/agence/sweet.jpg">
+                    <div className="page punchline">
+                        <h1>Une société<br/> <i>coopérative</i> et <i>participative</i></h1>
+                    </div>
+                </FixedBackground>
                 <div className="subtle-grey">
                     <div className="page add-padding text-center">
                         <h2 className="h1">L'Equipe </h2>
