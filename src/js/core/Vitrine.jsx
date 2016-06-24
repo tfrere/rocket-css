@@ -46,7 +46,7 @@ export default class Vitrine extends Component {
                     <div className="page double-padding">
                         <h5 className="subtitle"> Une stratégie sur-mesure </h5>
                         <h2 className="h1">Votre image</h2>
-                        <p className="three-col-text">L'identité visuelle est au cœur des stratégies de communication. Elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité. Dans un monde ou tout besoin de services commence par une recherche sur internet, une présence numérique et une identité structurée sont des facteurs nécessaires pour rassurer et inciter à la prise de contact. Faire appel à des professionnels vous permet de garder l’esprit libre et vous concentrer sur votre cœur de métier. En adéquation avec vos valeurs et objectifs, votre communication sera cohérente et uniformisée.</p>
+                        <p className="two-col-text">L'identité visuelle est au cœur des stratégies de communication : elle véhicule l'image de l'entreprise et représente un vecteur important de crédibilité.En adéquation avec vos valeurs et objectifs, votre communication sera cohérente et uniformisée.</p>
                     </div>
                     {/*hexagon()*/}
                 </div>                
@@ -60,12 +60,10 @@ export default class Vitrine extends Component {
                             </div>
                             <div className="cell social-text">
                                 <div>
+                                    <h5 className="subtitle"> Créer une communauté </h5>
                                     <h2>Les réseaux sociaux</h2>
                                     <p>
-                                        Les réseaux sociaux offrent de formidables possibilités dans le cadre d’une stratégie de communication web. 
-                                        <b> Interactifs, conviviaux et accessibles à tous,</b> ils sont devenus indispensables pour promouvoir votre société.
-                                        Facebook, Twitter & TripAdvisor représentent de véritables <b>communautés d’échange et 
-                                        de partage</b> extrêmement bénéfiques pour votre activité.
+                                        Les réseaux sociaux offrent de formidables possibilités de communication pour promouvoir une marque : un lien direct se créée avec la clientèle pour mieux la fidéliser et toucher de nouveaux prospects.
                                     </p>
                                 </div>
                             </div>
@@ -107,6 +105,7 @@ export default class Vitrine extends Component {
                         <div className="row row-gutter row-auto-height">
                             <div className="cell mobile-text">
                                 <div>
+                                    <h5 className="subtitle"> Simplifier l'expérience client </h5>
                                     <h2>Développement d’application<br/> <i>web</i> et <i>mobile</i></h2>
                                     <p>
                                         Les applications web ou mobiles font maintenant partie à part entière de notre vie de tous les jours. Ce canal de communication en plein essor représente un enjeu stratégique pour les entreprises et collectivités. 

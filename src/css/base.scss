@@ -76,7 +76,11 @@
 			letter-spacing: .01em;
 			color:color("grey", "lighten-2");
 			margin:-17px;
-			margin-left: $text-size * 2;
+			margin-left: .5rem;
+		}
+
+		.subtle-grey .subtitle {
+			color:color("grey", "lighten-1");
 		}
 
 	/* # Titles
