@@ -39,6 +39,10 @@
 			filter: grayscale(1);
 			-webkit-filter: grayscale(1);
 			opacity:0.4;
+			&:hover {
+				filter: grayscale(0);
+				-webkit-filter: grayscale(0);
+			}
 		}
 	}
 
