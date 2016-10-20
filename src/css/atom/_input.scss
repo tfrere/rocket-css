@@ -1,0 +1,131 @@
+/*
+––––
+
+	title:
+		Inputs
+
+	comment:
+		La input est une plante qui se mange froide
+
+	markup:
+		<input type="text" placeholder="test"/>
+		<input class="large" type="text" placeholder="test"/>
+
+		<div class="input-material">
+			<label>Name</label>
+			<input class="large" type="text"/>
+		</div>
+
+––––
+*/
+
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+	box-shadow: inset 0px -1px 1px #efebeb, inset 0px 1px 1px #e4e4e4; // OU PAS
+	display:inline-block;
+	height: auto;
+	padding: $text-size;
+	margin-bottom:$text-size;
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	border-radius: 4px;
+	box-shadow: none;
+	position:relative;
+	box-sizing: border-box;
+	transition:all 200ms ease-in-out;
+}
+
+label {
+	font-weight: 500;
+}
+
+textarea {
+	width: 350px;
+	min-height: 100px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+	outline: 0;
+	border: 1px solid color("primary", "darken-1");
+}
+
+input[disabled='disabled'] {
+	background-color: color("grey", "lighten-1");	
+}
+
+input.large, textarea.large, select.large {
+	width: 100%;
+}
+
+
+
+
+
+$base-index:1;
+
+.input-material {
+	margin-top:5px;
+	margin-bottom:15px;
+	position:relative;
+	input {
+		border:none;
+		margin-bottom:0;
+		padding-left:0;
+	}
+	&:before {
+		position:absolute;
+		bottom:0;
+		left:0;
+		content:"";
+		width:0%;
+		height:2px;
+		background-color: color("primary", "lighten-1");
+		opacity:1;
+		transition: width 400ms ease-in-out;
+	}
+	&:after {
+		position:absolute;
+		bottom:0;
+		left:0;
+		content:"";
+		width:100%;
+		height:2px;
+		background-color: color("grey", "lighten-2");
+		opacity:0.2;
+		transition: all .2s ease-in-out;
+	}
+	label {
+		position:absolute;
+		top:14px;
+		left:0px;
+		transition: all .2s ease-in-out;
+		font-size: $text-size;
+		z-index: $base-index + 10;
+	}
+	&.focus {
+		textarea {
+			min-height: 100px;
+		}
+		input, textarea{
+			background-color: rgba(255,255,255,0.1);
+		}
+		label {
+			top: -8px;
+			font-size: $text-size / 1.5;
+		}
+		&:before {
+			width:100%;
+		}
+	}
+}

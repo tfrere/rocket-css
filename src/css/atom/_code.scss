@@ -1,0 +1,50 @@
+/*
+––––
+
+	title:
+		Code
+
+	comment:
+		La code est une plante qui se mange froide
+
+	markup:
+		<code>
+			some code here
+		</code>
+		<pre>
+			<code>
+The pre balise is here to preserve
+indentation of text.
+(\/)
+(oO)
+c(")(")
+			</code>
+		</pre>
+
+––––
+*/
+
+code {
+	padding: .2rem $text-size / 2;
+	margin: 0 0.1rem;
+	font-size: 80%;
+	white-space: nowrap;
+	background: #F1F1F1;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+	display:inline;
+}
+
+pre {
+	margin: 0;
+	white-space:pre;
+	white-space:pre-wrap;
+	word-break:break-all;
+	word-wrap:break-word;
+	& > code {
+		display: block;
+		padding: 1rem 1.5rem;
+		white-space: pre;
+		margin-bottom:$text-size;
+	}
+}

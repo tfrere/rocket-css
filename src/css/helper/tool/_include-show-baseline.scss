@@ -1,0 +1,6 @@
+
+@mixin show-baseline($text-size: 1.4rem, $color: rgba(255,255,255,0.5)) {
+	background-image: linear-gradient(to bottom, $color 0, rgba(255,255,255,0) 1px);
+	background-repeat: repeat-y;
+	background-size: 100% $text-size;
+}

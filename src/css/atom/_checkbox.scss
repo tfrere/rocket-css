@@ -1,0 +1,80 @@
+/*
+––––
+
+	title:
+		Checkbox
+
+	comment:
+		La checkbox est une plante qui se mange froide
+
+	markup:
+		<div class="checkbox">
+			<input id="checkbox1" type="checkbox" disabled="disabled"/>
+			<label for="checkbox1"></label>
+		</div>
+		<div class="checkbox primary">
+			<input id="checkbox2" type="checkbox"/>
+			<label for="checkbox2"></label>
+		</div>
+		<div class="checkbox">
+			<input id="checkbox3" type="checkbox"/>
+			<label for="checkbox3"></label>
+		</div>
+
+––––
+*/
+
+.checkbox {
+
+	margin-top:3px;
+	
+	@extend .unselectable;
+
+	&:before {
+		@include clearfix();
+	}
+	label {
+		margin-top:3px;
+	}
+	label {
+		display:block;
+		position:relative;
+		width:20px;
+		height:20px;
+		border-radius: 5px;
+		border:1px solid color("grey", "lighten-3");
+		cursor:pointer;
+		&:after {
+			opacity: 0.1;
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#bbb" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
+			top: 1px;
+			left: 1px;
+			transition: transform 200ms ease;
+		}
+		&:hover::after {
+			opacity: 0.2;
+		}
+	}
+	input:checked + label:after {
+		opacity: 1;
+	}
+	input {
+		visibility: hidden;
+		display:none;
+	}
+	&.primary label {
+		background-color: color("primary", "base");
+		border: 1px solid color("primary", "darken-3");
+		&:after {
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
+		}
+	}
+	input:disabled + label:after {
+		cursor:default;
+		opacity:0.5;
+	}
+}

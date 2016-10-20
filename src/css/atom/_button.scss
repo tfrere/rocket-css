@@ -1,0 +1,227 @@
+/*
+––––
+
+	title:
+		Button
+
+	comment:
+		La Button est une plante qui se mange froide
+
+	markup:
+		<button class="button">
+			<i class="icon icon-sun"></i>
+			<span>Bouton</span>
+		</button>
+		<button class="primary button">
+			Bouton
+		</button>
+		<button disabled class="primary button disabled">
+			Bouton
+		</button>
+		<a class="complement button">
+			<i class="icon icon-sun"></i>
+			<span>Bouton</span>
+		</a>
+		<button disabled class="danger button disabled only-icon">
+			<i class="icon icon-sun"></i>
+		</button>
+		<button disabled class="small success button only-icon">
+			<i class="icon icon-warning"></i>
+		</button>
+
+––––
+*/
+
+.button{
+	display: inline-block;
+	padding:10px 30px;
+	text-decoration: none;
+	cursor:pointer;
+	color:color("grey", "darken-4");
+	margin-right: $text-size;
+	background-color:transparent;
+	border: 1px solid color("grey", "lighten-2");
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: all, 200ms, ease-in-out;
+	border-radius:0.3125em;
+	user-select:none;
+	font-family: $nav-font;
+	letter-spacing: 0.1rem;
+	box-shadow: 0px 1px 1px -1px #8C9DA1;
+
+	&:hover {
+	  border: 1px solid color("grey", "lighten-1");
+	}
+	
+	i {
+	  color: color("grey", "lighten-1");
+	  letter-spacing: 0;
+	}
+
+	i + span {
+		display:inline-block;
+		margin-left:10px;
+	}
+
+	span + i {
+		display:inline-block;
+		margin-left:10px;
+	}
+
+}
+
+.dark .button {
+  color:color("grey", "contrast-darken-4");
+  border: 1px solid color("grey", "contrast-darken-4");
+  i, span {
+	color:color("grey", "contrast-darken-4");
+  }
+}
+
+/* Specific buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.button, .special-button {
+  &.rounded {
+	border-radius: 100px;
+  }
+
+  &.small {
+	padding:5px 10px;
+  }
+
+	&.only-icon {
+		padding:10px;
+	}
+
+	&.small.only-icon {
+		padding:5px;
+	}
+
+
+  &.big {
+	padding:15px 35px;
+  }
+
+  &.full {
+	padding:10px 20px;
+	margin:15px 15px 15px 15px;
+	width:calc(100% - 30px);
+  }
+
+  &.primary {
+	background-color:color("primary", "base");
+	color:white;
+	cursor:pointer;
+	border: 0;
+	border-bottom: 1px solid color("primary", "darken-1");
+	&:hover {
+	  background-color: color("primary", "darken-1");
+	}
+	&:active {
+	  margin-top:1px;
+	  border: 0;
+	  background-color: color("primary", "darken-2");
+	}
+  }
+
+  &.complement {
+	background-color:color("complement", "base");
+	color:white;
+	cursor:pointer;
+	border: 0;
+	i {
+	  color: white;
+	}
+	&:hover {
+	  background-color: color("complement", "darken-1");
+	}
+	&:active {
+	  background-color: color("complement", "darken-2");
+	}
+  }
+
+  &.danger {
+	background-color:color("danger", "base");
+	color:white;
+	cursor:pointer;
+	border: 0;
+	i {
+	  color: white;
+	}
+	&:hover {
+	  background-color: color("danger", "darken-1");
+	}
+	&:active {
+	  background-color: color("danger", "darken-2");
+	}
+  }
+
+  &.success {
+	background-color:color("success", "base");
+	color:white;
+	cursor:pointer;
+	border: 0;
+	i {
+	  color: white;
+	}
+	&:hover {
+	  background-color: color("success", "darken-1");
+	}
+	&:active {
+	  background-color: color("success", "darken-2");
+	}
+  }
+
+  &.info {
+	background-color:color("info", "base");
+	color:white;
+	cursor:pointer;
+	border: 0;
+	i {
+	  color: white;
+	}
+	&:hover {
+	  background-color: color("info", "darken-1");
+	}
+	&:active {
+	  background-color: color("info", "darken-1");
+	}
+  }
+
+  &.disabled {
+	cursor:initial;
+	opacity:0.3;
+  }
+
+  &.spinner {
+	position:relative;
+	width: 125px;
+	.icon-spin {
+	  position:absolute;
+	  top:9px;
+	  right:20px;
+	  opacity:0;
+	  transition: all, 200ms, ease-in-out;
+	}
+
+	span {
+	  transition: margin-left, 200ms, ease-in-out;
+	}
+
+	&.on {
+	  span {
+		margin-left:-30px;
+	  }
+	  &.icon-spin {
+		opacity:1;
+	  }
+	}
+
+  }
+  &.spinner.on .icon-spin {
+	opacity: 1;
+  }
+}

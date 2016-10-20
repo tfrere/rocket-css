@@ -1,1 +1,0 @@
-# http://www.colourlovers.com/api/palettes/random 

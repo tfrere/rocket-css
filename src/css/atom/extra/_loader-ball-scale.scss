@@ -1,0 +1,49 @@
+/*
+––––
+
+	title:
+		Button-ball-scale
+
+	comment:
+		Blabla
+
+	markup:
+		<div class="ball-scale">
+			<div></div>
+		</div>
+
+––––
+*/
+
+$loader-ball-scale-base-color: color("primary", "base");
+
+@keyframes ball-scale {
+	0% {
+		transform: scale(0.0);
+	}
+	100% {
+		transform: scale(1.0);
+		opacity: 0;
+	}
+}
+
+@mixin ball-scale(
+		$color: $loader-ball-scale-base-color,
+		$ball-size: 60px,
+		$margin: 5px
+	){
+
+	> div {
+		width: $ball-size;
+		height: $ball-size;
+		border-radius: 100%;
+		margin: $margin;
+		animation-fill-mode: both;
+		background-color: $color;
+
+		display: inline-block;
+		animation: ball-scale 1s 0s ease-in-out infinite;
+	}
+}
+
+.ball-scale { @include ball-scale; };

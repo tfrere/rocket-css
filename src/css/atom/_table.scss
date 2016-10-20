@@ -1,0 +1,91 @@
+/*
+––––
+
+	title:
+		Table
+
+	comment:
+		La Table est une plante qui se mange froide
+
+	markup:
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Thibaud Frere</td>
+					<td>24</td>
+					<td>Male</td>
+					<td>Paris</td>
+				</tr>
+				<tr>
+					<td>Anthony Lacroix</td>
+					<td>26</td>
+					<td>Male</td>
+					<td>Metz</td>
+				</tr>
+			</tbody>
+		</table>
+
+––––
+*/
+
+table {
+	width: 100%;
+	text-align: left;
+	font-family: $nav-font;
+	thead {
+		font-weight: 800;
+		text-transform: uppercase;
+		tr th{
+			&:first-child {
+				margin-left: 5px;
+			}
+			button {
+				margin-right:15px;
+			}
+			padding: 15px 15px 15px 1px;
+		}
+
+	}
+
+	tbody {
+
+		tr {
+			&:last-child {
+				border-bottom:1px solid color("grey", "lighten-2");
+			}
+			&:nth-child(2n) {
+				background-color: color("grey", "lighten-5");
+				margin:5px;
+			}
+			&:hover {
+				background-color: color("grey", "lighten-4");
+				td:first-child {
+					margin-left:5px;
+				}
+			}
+			td {
+				&:first-child {
+					margin-left: 5px;
+				}
+				border-top: 1px solid color("grey", "lighten-2");
+				padding: 15px 15px 15px 1px;
+				input {
+					min-width: 10px;
+				    max-width: 100%;
+				    width: 100%;
+				}
+			}
+			
+		}
+
+	}
+
+}

@@ -1,0 +1,45 @@
+.doc--typo {
+	.doc--typo-heading {
+		
+		.heading {
+			display:inline-block;
+		}
+
+		span {
+			margin-left:$text-size;
+			opacity:0.3;
+		}
+	}
+
+	.two-cols-verticaly-aligned {
+		.wrapper:first-child {
+			text-align:right;
+			margin-right:$text-size * 4;
+			h5 {
+				text-transform: uppercase;
+				margin-bottom:0;
+			}
+		}
+	}
+}
+
+.doc--typo-info {
+	.wrapper:first-child {
+		margin-right:$text-size * 6;
+	}
+	.bloc {
+		display: flex;
+
+		.header {
+			width:30%;
+			margin-right: 15%;
+			h4 {
+				margin: 0;
+			}
+			span {
+				opacity:0.3;
+				margin-top:0;
+			}
+		}
+	}
+}

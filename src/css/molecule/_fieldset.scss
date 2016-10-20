@@ -1,0 +1,83 @@
+/*
+––––
+
+	title:
+		Fieldset
+
+	comment:
+		La Fieldset est une plante qui se mange froide
+
+	markup:
+		<fieldset class="has-icon">
+			<i class="icon icon-lock"></i>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+		</fieldset>
+		<fieldset>
+			<label>Test</label>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+		</fieldset>
+		<fieldset class="merged">
+			<label>Test</label>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+		</fieldset>
+
+––––
+*/
+
+$base-index: 0;
+
+fieldset {
+	margin-top:5px;
+	margin-bottom:15px;
+	position:relative;
+	border: none;
+	position:relative;
+    display: inline-block;
+    &.large {
+    	width:100%;
+    }
+	&.has-icon {
+		input {
+			z-index: $base-index;
+			padding-left:40px;
+		}
+		i {
+			z-index: $base-index + 1;
+			position:absolute;
+			top:19px;
+			left:24px;
+			opacity:0.5;
+			font-size: 1.8rem;
+		}
+		&.small {
+			i {
+				top:13px;
+			}
+		}
+	}
+	textarea {
+		min-height: 10px;
+	}
+}

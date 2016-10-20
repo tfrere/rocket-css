@@ -1,0 +1,73 @@
+/*
+––––
+
+	title:
+		Toggle
+
+	comment:
+		La Toggle est une plante qui se mange froide
+
+	markup:
+		<div class="toggle">
+			<input id="toggle1" type="checkbox">
+			<label for="toggle1"></label>
+		</div>
+		<div class="disabled toggle">
+			<input id="toggle2" type="checkbox" checked disabled>
+			<label for="toggle2"></label>
+		</div>
+
+––––
+*/
+
+
+.toggle {
+	@extend .unselectable;
+	margin-bottom: $text-size / 2;
+	input {
+		position: absolute;
+		margin-left: -9999px;
+		visibility: hidden;
+	}
+	input + label {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		outline: none;
+		user-select: none;
+		padding: 2px;
+		width: 40px;
+		height: 20px;
+		background-color: color("primary", "base");
+		border: 1px solid color("primary", "darken-1");
+		border-radius: 30px;
+		transition: all 0.2s ease-in-out;
+	}
+	input:checked + label {
+		background-color: color("grey", "lighten-2");
+		border: 1px solid color("grey", "lighten-1");
+	}
+	label:before; label:after {
+		display: block;
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		bottom: 1px;
+		content: "";
+	}
+	label:after {
+		width: 16px;
+		background-color: #fff;
+		border-radius: 100%;
+		transition:all, 200ms, ease-in-out;
+	}
+	input:checked + label:after {
+		margin-left: 20px;
+	}
+	&.disabled {
+		opacity:0.3;
+		input + label {
+			cursor: default;
+		}
+	}
+}

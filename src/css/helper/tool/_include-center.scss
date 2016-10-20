@@ -1,0 +1,45 @@
+/*
+	A noter : pour avoir un bloc qui utilise une hauteur en pourcentage
+			  il faut obligatoirement que tous ses parents jusqu'au html
+			  aient une taille définie ( ici grâce à .screen-box )
+
+	Markup :
+
+	<div className="screen-box center">
+	  <div class="center-wrapper">
+	  	// ton contenu 
+	  </div>
+	</div>
+*/
+
+.screen-box {
+	width:100%;
+	min-height:100%;
+	position:relative;
+}
+
+.semi-screen-box {
+	width:100%;
+	min-height:50%;
+	position:relative;
+}
+
+.center {
+	display:flex;
+	position:relative;
+	.center-wrapper {
+		position:relative;
+		margin:auto;
+		z-index: 1;
+	}
+}
+
+.two-cols-verticaly-aligned {
+	display: flex;
+	align-items: center;
+	.wrapper {
+		width:50%;
+		padding:20px;
+	}
+}
+

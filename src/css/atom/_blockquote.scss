@@ -1,0 +1,21 @@
+/*
+––––
+
+	title:
+		Blockquote
+
+	comment:
+		La blockquote est une plante qui se mange froide
+
+	markup:
+		<blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
+
+––––
+*/
+
+blockquote {
+  font-style: italic;
+  margin-left: -20px;
+  padding-left:20px;
+  border-left: 2px solid rgba(0,0,0,0.2);
+}
