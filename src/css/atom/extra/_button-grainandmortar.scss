@@ -39,11 +39,11 @@ $cubic-bezier : cubic-bezier(0.2, 0.3, 0.25, 0.9);
 	margin: 0;
 	padding: 0.875em 1.428571429em;
 	border:none;
+	box-shadow: none;
 	&:hover, &:focus {
 		border:none;
 	}
 	letter-spacing: 0.2em;
-	font-family: "Open Sans",sans-serif;
 	text-decoration: none;
 	text-transform: uppercase;
 	white-space: nowrap;
@@ -154,7 +154,7 @@ $cubic-bezier : cubic-bezier(0.2, 0.3, 0.25, 0.9);
 	}
 
 	// Old button container didn't work correctly
-	
+
 	.button-container & {
 		margin-bottom: 10px;
 	}

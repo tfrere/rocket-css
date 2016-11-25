@@ -1,0 +1,75 @@
+/*
+––––
+
+	title:
+		Icon & Flag
+
+	comment:
+		La icon est une plante qui se mange froide
+
+	markup:
+  <label>Icones</label>
+  <i class="icon -x4 _text-success -checkmark-circle"></i>
+  <i class="icon -x3 _text-danger -cross-circle"></i>
+  <i class="icon -x2 _text-success -plus-circle"></i>
+  <i class="icon -star"></i>
+  <i class="icon -heart"></i>
+  <i class="icon -cog -spin"></i>
+  <label>Flags</label>
+  <div class="flag -x4 -fr"></div>
+  <div class="flag -x3 -be"></div>
+  <div class="flag -x2 -it"></div>
+  <div class="flag -eu"></div>
+  <label>Social</label>
+  <div class="social -x4 -behance"></div>
+  <div class="social -x3 -facebook"></div>
+  <div class="social -x2 -github"></div>
+  <div class="social -email"></div>
+––––
+*/
+
+@include include-font("../fonts/icomoon/", "icomoon");
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.flag, .social {
+  margin-right:$text-size / 2;
+  margin-bottom: $text-size;
+  width: 30px;
+  height:20px;
+  border-radius:2px;
+  display:inline-block;
+  background-size: cover;
+  &.-x2 { width: $text-size * 3; height: (($text-size * 3) / 3) * 2; }
+  &.-x3 { width: $text-size * 4; height: (($text-size * 4) / 3) * 2; border-radius:5px; }
+  &.-x4 { width: $text-size * 5; height: (($text-size * 5) / 3) * 2; border-radius:5px; }
+  &.-x5 { width: $text-size * 6; height: (($text-size * 6) / 3) * 2; border-radius:5px; }
+}
+
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: geometricPrecision;
+    font-size: $text-size;
+
+    &.-x2 { font-size: $text-size * 2; }
+    &.-x3 { font-size: $text-size * 3; }
+    &.-x4 { font-size: $text-size * 4; }
+    &.-x5 { font-size: $text-size * 5; }
+    &.-spin { animation: spin 0.8s infinite linear; display: inline-block; }
+
+}

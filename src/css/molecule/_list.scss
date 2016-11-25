@@ -1,0 +1,142 @@
+/*
+––––
+
+	title:
+		List
+
+	comment:
+		La List est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <ul class="list">
+      <li class="item touch">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With circle image</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+      </li>
+      <li class="item -has-notif touch">
+        <i class="head _bg-grey-lighten-2 icon -sun"></i>
+        <div class="content">
+          <h6 class="title">With icon</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="tag notif -corner -top-right -primary">
+          <span> 32 </span>
+        </div>
+      </li>
+      <li class="item touch -has-notif">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With tags</h6>
+          <div class="desc">
+            <div class="tag">
+              <i class="icon -sun"></i>
+              <span>Thibaud</span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="item touch -headless">
+        <div class="content">
+          <h6 class="title">Headless with chevron</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="action">
+          <i class="icon -chevron-right"></i>
+        </div>
+      </li>
+    </ul>
+––––
+*/
+
+.list {
+  width:100%;
+  position:relative;
+  .item {
+    width:100%;
+  	min-height: 70px;
+  	background-color: white;
+  	padding:$text-size;
+    margin:0;
+  	position:relative;
+  	-webkit-user-select: none;
+  	font-family: $nav-font;
+
+    &:not(:last-child) {
+      border-bottom:1px solid color("grey", "lighten-2");
+    }
+    &:nth-child(2n) {
+      background-color: #fbfbfb;
+    }
+
+    .head {
+      position:absolute;
+      width:40px;
+      height:40px;
+      margin-right:$text-size;
+      opacity:0.8;
+      font-size: 2rem;
+      &.-circle {
+        border-radius: 100%;
+      }
+    }
+    i.head {
+      padding:10px;
+    }
+
+    .content {
+
+        margin-left:55px;
+
+        .title {
+          margin-top:0;
+          margin-bottom: 0px;
+          font-weight: bold;
+        }
+        .desc {
+          margin-bottom: -9px;
+          margin-bottom: 0;
+        }
+        .text {
+
+        }
+    }
+    &.-headless .content {
+      margin-left:0px;
+    }
+    &.-has-notif .notif {
+      position:absolute;
+      top:0;
+      right:0;
+    }
+    &.loading {
+      .content, .head {
+        visibility: hidden;
+      }
+    }
+  }
+  .action {
+    i {
+      position:absolute;
+      right:2rem;
+      top: calc(50% - 8px);
+      color:color("grey", "lighten-1");
+      transition: transform 200ms ease;
+    }
+  }
+	&:hover {
+    .action {
+      i {
+        transform: translateX(5px);
+      }
+    }
+	}
+  &.loading {
+    .item {
+      visibility: hidden;
+    }
+  }
+}

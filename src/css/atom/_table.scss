@@ -8,6 +8,7 @@
 		La Table est une plante qui se mange froide
 
 	markup:
+		<label>Simple</label>
 		<table>
 			<thead>
 				<tr>
@@ -41,9 +42,9 @@ table {
 	text-align: left;
 	font-family: $nav-font;
 	thead {
-		font-weight: 800;
-		text-transform: uppercase;
 		tr th{
+			font-weight: 500;
+			text-transform: uppercase;
 			&:first-child {
 				margin-left: 5px;
 			}
@@ -83,7 +84,7 @@ table {
 				    width: 100%;
 				}
 			}
-			
+
 		}
 
 	}

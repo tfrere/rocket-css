@@ -1,30 +1,34 @@
 var fs = require("fs");
 var del = require("del");
-const atoms = getFiles('../src/styles/atom');
-const molecules = getFiles('../src/styles/molecule');
+const atoms = getFiles('../css/atom');
+const molecules = getFiles('../css/molecule');
 const sources = atoms.concat(molecules);
 
 const splitDataAndCode = /^\/\*\n\–\–\–\–((.|\n)*)\–\–\–\–\n\*\/\n\n((.|\n)*)/g;
 const titleExp = /title:\n\t*(.*)\n\n\tcomment:/g;
 const commentExp = /comment:\n\t*(.*)\n\n\tmarkup:/g;
 const markupExp = /markup:\n\t*((.|\n)*)/g;
-const typeExp = /\.\.\/src\/styles\/(.*?)\//g;
+const typeExp = /\.\.\/css\/(.*?)\//g;
 const removeTwoFirstsTabs = /^\t\t/gm;
 const removeLastEndOfLine = /^\t\t/gm;
 
 
 var blocs = [];
 
-var docSrc = "../dist/doc.html";
-var partials = [{name:"header", url:"head.html"}, {name:"navHead", url:"navHead.html"}, {name:"intro", url:"intro.html"}, {name:"footer", url:"foot.html"}]; 
+var docSrc = "../../build/doc.html";
+var partials = [
+  {name:"header", url:"head.html"},
+  {name:"navHead", url:"navHead.html"},
+  {name:"intro", url:"intro.html"},
+  {name:"footer", url:"foot.html"}
+];
 
-del([docSrc]);
+//del([docSrc]);
 
 sources.map(function(url) {
     getFileContent(url, function(data) {
-
         object = getHeaderAndCode(splitDataAndCode, data);
-
+        console.log(url);
         object.type = getInfo(typeExp, url);
         object.hasExtra = false;
         if( url.indexOf('extra') >= 0)
@@ -38,6 +42,7 @@ sources.map(function(url) {
         console.log("URLS ============");
         console.log(url, object.type, object.hasExtra);
         console.log("============");
+        console.log(object);
         blocs.push(object);
     });
 });
@@ -48,10 +53,8 @@ partials.map(function(object) {
     });
 });
 
-
-
 setTimeout(function(){
-    
+
     var html = "";
     var head = partials[0].html;
     var navHead = partials[1].html;
@@ -60,62 +63,57 @@ setTimeout(function(){
 
     var navFoot = '</nav>';
 
-    var contentFoot = '</div>';
-
     html += head;
     html += navHead;
 
-    html += "<h4>Atom</h4><ul>";
+    html += '<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul>';
 
     blocs.map(function(bloc) {
         if(bloc.type == "atom")
-            html += '<li><a href="#'+bloc.title+'">' + bloc.title + '</a></li>';
+            html += '<li><a href="#atom-'+bloc.title+'">' + bloc.title + '</a></li>';
     });
 
-    html += "</ul>";
+    html += "</ul></div>";
 
-    html += "<h4>Molecule</h4><ul>";
+    html += '<div id="nav-molecule" class="accordion"><h5 class="title"><a href="#molecule-head">Molecule</a></h5><ul>';
 
     blocs.map(function(bloc) {
         if(bloc.type == "molecule")
-            html += '<li><a href="#'+bloc.title+'">' + bloc.title + '</a></li>';
+            html += '<li><a href="#molecule-'+bloc.title+'">' + bloc.title + '</a></li>';
     });
 
-    html += "</ul>";
+    html += "</ul></div>";
 
 
     html += navFoot;
     html += intro;
 
-    html += "<div class='doc--content-type'><div class='container'><h2>Atom</h2></div></div><div class='container'>";
+    html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';
 
     blocs.map(function(bloc) {
         if(bloc.type == "atom") {
-            html += '<div class="row" id="' + bloc.title + '">';
-            html += '<div class="twelve col"><h3>' + bloc.title + '<span>.scss</span></h3></div>';
-            html += '<div class="three col"><p>' + bloc.comment + '</p></div>';
-            html += '<div class="eight col offset-one">' + bloc.markup + '</div>';
-            html += '<pre class="twelve col doc--code-example"><code class="html">' + bloc.code + '</code></pre>';
-            html += '</div>';
+          html += '<div class="bloc" id="atom-' + bloc.title + '">';
+          html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+          html += '<div class="wrapper">' + bloc.markup + '</div>';
+          html += '<div class="wrapper"><pre><code class="html">' + bloc.code + '</code></pre></div>';
+          html += '</div></div></div>';
         }
     });
 
-    html += "</div><div class='doc--content-type'><div class='container'><h2>Molecule</h2></div></div><div class='container'>";
+    html += '</section><header id="molecule-head"><div><h3>Molecule</h3></div></header><section class="section" id="molecule">';
 
     blocs.map(function(bloc) {
         if(bloc.type == "molecule") {
-            html += '<div class="row" id="' + bloc.title + '">';
-            html += '<div class="twelve col"><h3>' + bloc.title + '</h3></div>';
-            html += '<div class="three col"><p>' + bloc.comment + '</p></div>';
-            html += '<div class="eight col offset-one">' + bloc.markup + '</div>';
-            html += '<pre class="twelve col doc--code-example"><code class="html">' + bloc.code + '</code></pre>';
-            html += '</div>';
+          html += '<div class="bloc" id="molecule-' + bloc.title + '">';
+          html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+          html += '<div class="wrapper">' + bloc.markup + '</div>';
+          html += '<div class="wrapper"><pre><code class="html">' + bloc.code + '</code></pre></div>';
+          html += '</div></div></div>';
         }
     });
 
-    html += '</div>';
+    html += '</section>';
 
-    html += contentFoot;
     html += foot;
 
     //console.log(html);
@@ -125,12 +123,12 @@ setTimeout(function(){
         console.log('complete');
     });
 
-}, 1000);
+}, 3000);
 
 // EscapeHTML
 
-String.prototype.escapeHTML = function () {                                        
-  return(                                                                 
+String.prototype.escapeHTML = function () {
+  return(
     this.replace(/>/g,'&gt;').
          replace(/</g,'&lt;').
          replace(/"/g,'&quot;')
@@ -141,7 +139,7 @@ String.prototype.escapeHTML = function () {
 // Regexp matches
 
 function getInfo(re, data) {
-   
+
         var result = [];
         var info = "";
 
@@ -154,7 +152,7 @@ function getInfo(re, data) {
 }
 
 function getHeaderAndCode(re, data) {
-   
+
         var result = [];
 
         var object = {header: "", "code": ""};
@@ -176,16 +174,17 @@ function getFiles (dir, files_){
     var files = fs.readdirSync(dir);
     for (var i in files){
         var name = dir + '/' + files[i];
-        if (fs.statSync(name).isDirectory()){
-            getFiles(name, files_);
-        } else {
-            files_.push(name);
+        if (!fs.statSync(name).isDirectory()){
+          files_.push(name);
         }
+        // else {
+        //   getFiles(name, files_);
+        // }
     }
     return files_;
 }
 
-function getFileContent(srcPath, callback) { 
+function getFileContent(srcPath, callback) {
     fs.readFile(srcPath, 'utf8', function (err, data) {
         if (err) throw err;
         callback(data);
@@ -193,7 +192,7 @@ function getFileContent(srcPath, callback) {
     );
 }
 
-function copyFileContent(savPath, srcPath) { 
+function copyFileContent(savPath, srcPath) {
     getFileContent(srcPath, function(data) {
         fs.writeFile (savPath, data, function(err) {
             if (err) throw err;

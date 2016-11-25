@@ -8,17 +8,15 @@
 		La code est une plante qui se mange froide
 
 	markup:
+		<label>Simple</label>
 		<code>
 			some code here
 		</code>
+		<label>Pre > code</label>
 		<pre>
-			<code>
-The pre balise is here to preserve
-indentation of text.
-(\/)
+			<code class="nohighlight">(\/)
 (oO)
-c(")(")
-			</code>
+c(")(")</code>
 		</pre>
 
 ––––
@@ -27,10 +25,9 @@ c(")(")
 code {
 	padding: .2rem $text-size / 2;
 	margin: 0 0.1rem;
-	font-size: 80%;
 	white-space: nowrap;
-	background: #F1F1F1;
-	border: 1px solid #E1E1E1;
+	box-shadow: inset 1px 1px rgba(0, 0, 0, 0.04);
+	background: #fafbfb;
 	border-radius: 4px;
 	display:inline;
 }
@@ -43,7 +40,7 @@ pre {
 	word-wrap:break-word;
 	& > code {
 		display: block;
-		padding: 1rem 1.5rem;
+		padding: 2rem 2.5rem;
 		white-space: pre;
 		margin-bottom:$text-size;
 	}

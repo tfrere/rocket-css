@@ -8,44 +8,54 @@
 		La input est une plante qui se mange froide
 
 	markup:
+		<label>Simple</label>
 		<input type="text" placeholder="test"/>
-		<input class="large" type="text" placeholder="test"/>
-
-		<div class="input-material">
-			<label>Name</label>
-			<input class="large" type="text"/>
-		</div>
+		<label>With -round -large</label>
+		<input class="-round -large" type="text" placeholder="test" required />
 
 ––––
 */
 
 
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-input[type="date"],
+input:not([type="submit"]),
 textarea,
 select {
-	box-shadow: inset 0px -1px 1px #efebeb, inset 0px 1px 1px #e4e4e4; // OU PAS
 	display:inline-block;
 	height: auto;
-	padding: $text-size;
+	padding: $text-size / 2 $text-size / 2 $text-size / 2 $text-size;
 	margin-bottom:$text-size;
-	background-color: #fff;
+	background-color: transparent;
 	border: 1px solid #D1D1D1;
 	border-radius: 4px;
 	box-shadow: none;
 	position:relative;
 	box-sizing: border-box;
 	transition:all 200ms ease-in-out;
-}
-
-label {
-	font-weight: 500;
+	box-shadow: inset 0 1px 2px rgba(203,203,210,0.2);
+	&:-webkit-autofill {
+		box-shadow: inset 0 1px 2px rgba(203,203,210,0.2), inset 0 0 10px 1000px #fffedb;
+	}
+	// &[required] {
+	// 	background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"> <g transform="translate(0,-52)"><g transform="matrix(-0.33458243,0.33458243,-0.33458243,-0.33458243,5243.4717,-2524.4629)"><path d="m11681,3975.4,0.887-0.8873-6.024-6.0243,15.785,0,0-1.3076-15.785,0,6.165-6.1644-0.888-0.8873c-2.568,2.5685-5.137,5.137-7.705,7.7055,2.522,2.5218,5.043,5.0436,7.565,7.5654z"/></g></g></svg>');
+	// 	background-position: top right;
+	// 	background-size: 15px 15px;
+	// 	background-repeat: no-repeat;
+	// }
+	&::-webkit-input-placeholder {
+		color: color("grey", "lighten-2");
+		transition: color 200ms ease;
+	}
+	&:focus {
+		&::-webkit-input-placeholder {
+			color: color("grey", "base");
+		}
+	}
+	&.-large {
+		width: 100%;
+	}
+	&.-round {
+		border-radius:1000px;
+	}
 }
 
 textarea {
@@ -57,75 +67,10 @@ input:focus,
 textarea:focus,
 select:focus {
 	outline: 0;
-	border: 1px solid color("primary", "darken-1");
+	border: 1px solid color("primary", "base");
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.035),0 0 8px rgba(color("primary", "base"),0.3);
 }
 
 input[disabled='disabled'] {
-	background-color: color("grey", "lighten-1");	
-}
-
-input.large, textarea.large, select.large {
-	width: 100%;
-}
-
-
-
-
-
-$base-index:1;
-
-.input-material {
-	margin-top:5px;
-	margin-bottom:15px;
-	position:relative;
-	input {
-		border:none;
-		margin-bottom:0;
-		padding-left:0;
-	}
-	&:before {
-		position:absolute;
-		bottom:0;
-		left:0;
-		content:"";
-		width:0%;
-		height:2px;
-		background-color: color("primary", "lighten-1");
-		opacity:1;
-		transition: width 400ms ease-in-out;
-	}
-	&:after {
-		position:absolute;
-		bottom:0;
-		left:0;
-		content:"";
-		width:100%;
-		height:2px;
-		background-color: color("grey", "lighten-2");
-		opacity:0.2;
-		transition: all .2s ease-in-out;
-	}
-	label {
-		position:absolute;
-		top:14px;
-		left:0px;
-		transition: all .2s ease-in-out;
-		font-size: $text-size;
-		z-index: $base-index + 10;
-	}
-	&.focus {
-		textarea {
-			min-height: 100px;
-		}
-		input, textarea{
-			background-color: rgba(255,255,255,0.1);
-		}
-		label {
-			top: -8px;
-			font-size: $text-size / 1.5;
-		}
-		&:before {
-			width:100%;
-		}
-	}
+	background-color: color("grey", "lighten-1");
 }

@@ -7,7 +7,7 @@
 
 	<div className="screen-box center">
 	  <div class="center-wrapper">
-	  	// ton contenu 
+	  	// ton contenu
 	  </div>
 	</div>
 */
@@ -34,12 +34,18 @@
 	}
 }
 
+.two-cols {
+	display: flex;
+	.wrapper {
+		width:50%;
+	}
+}
+
 .two-cols-verticaly-aligned {
 	display: flex;
 	align-items: center;
 	.wrapper {
 		width:50%;
-		padding:20px;
+		padding:24px;
 	}
 }
-

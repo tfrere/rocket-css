@@ -1,0 +1,1139 @@
+<html>
+  <head>
+    <title>RocketCSS</title>
+    <meta name="author" content="keywords, comma, separated"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="css/app.css?v=<%= buildTime %>">
+    <link rel="icon" href="images/favicon.ico">
+  </head>
+  <body>
+  <header>
+    <div class="pattern"></div>
+    <h5>Documentation</h5>
+  </header>
+<nav class="nav">
+	<header>
+		<div id="logo" class="pattern"></div>
+	</header>
+	<div id="nav-typography" class="accordion active">
+		<h5 class="title active"><a href="#typo-head">Typography</a></h5>
+		<ul class="active">
+			<li><a href="#typo-hierarchy">Hierarchy</a></li>
+			<li><a href="#typo-typefaces">Typefaces</a></li>
+		</ul>
+	</div>
+	<div id="nav-color" class="accordion">
+		<h5 class="title"><a href="#color-head">Colors</a></h5>
+		<ul>
+			<li><a href="#color-main">Main</a></li>
+			<li><a href="#color-semantic">Semantic</a></li>
+		</ul>
+	</div>
+<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul><li><a href="#atom-Checkbox">Checkbox</a></li><li><a href="#atom-Blockquote">Blockquote</a></li><li><a href="#atom-Code">Code</a></li><li><a href="#atom-Button">Button</a></li><li><a href="#atom-Label">Label</a></li><li><a href="#atom-Icon & Flag">Icon & Flag</a></li><li><a href="#atom-Inputs">Inputs</a></li><li><a href="#atom-Separators">Separators</a></li><li><a href="#atom-Select">Select</a></li><li><a href="#atom-Links">Links</a></li><li><a href="#atom-Lists">Lists</a></li><li><a href="#atom-Radio">Radio</a></li><li><a href="#atom-Toggle">Toggle</a></li><li><a href="#atom-Table">Table</a></li></ul></div><div id="nav-molecule" class="accordion"><h5 class="title"><a href="#molecule-head">Molecule</a></h5><ul><li><a href="#molecule-Bubble">Bubble</a></li><li><a href="#molecule-Card">Card</a></li><li><a href="#molecule-List">List</a></li><li><a href="#molecule-Fieldset">Fieldset</a></li><li><a href="#molecule-Merge">Merge</a></li><li><a href="#molecule-Loading">Loading</a></li><li><a href="#molecule-Tag">Tag</a></li><li><a href="#molecule-Progress">Progress</a></li></ul></div></nav>
+<div class="content-wrapper">
+  <header id="typo-head">
+    <div>
+      <h3>Typography</h3>
+    </div>
+  </header>
+  <section class="section typo" id="typography">
+    <div id="typo-hierarchy" class="bloc">
+      <h5>Hierarchy</h5>
+      <hr/>
+      <div class="two-cols-verticaly-aligned">
+        <div class="wrapper">
+          <p class="lead">The typography system is designed to create a <b>strong</b> hierarchy.</p>
+          <p class="lettrine">Regular paragraphs are set at a 15<sup>px</sup> base with 24<sup>px</sup> line height.  Other type basics like <a href="#">special links</a>, <a target="_blank" href="http://tfrere.fr">external link</a>, <b>strong</b>, <em>emphasis</em>, <u>special underline</u> and <s>strikethrough</s>  are all obviously included.</p>
+        </div>
+        <div class="wrapper toggle-baseline show-baseline">
+          <div class="heading-wrapper">
+            <h1 class="heading">
+              Heading
+            </h1><code>h1</code><span></span>
+          </div>
+          <div class="heading-wrapper">
+            <h2 class="heading">
+              Heading
+            </h2><code>h2</code><span></span>
+          </div>
+          <div class="heading-wrapper">
+            <h3 class="heading">
+              Heading
+            </h3><code>h3</code><span></span>
+          </div>
+          <div class="heading-wrapper">
+            <h4 class="heading">
+              Heading
+            </h4><code>h4</code><span></span>
+          </div>
+          <div class="heading-wrapper">
+            <h5 class="heading">
+              Heading
+            </h5><code>h5</code><span></span>
+          </div>
+          <div class="heading-wrapper">
+            <h6 class="heading">
+              Heading
+            </h6><code>h6</code><span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="typo-typefaces" class="bloc">
+      <h5>Typefaces</h5>
+      <hr/>
+      <div class="info">
+        <div class="semi-colon">
+          <h6 class="uppercase">Titles</h6>
+          <h2>TypoName</h2>
+          <div class="header">
+            <h4 class="title-font">Abc</h4><span class="title-font">regular</span>
+          </div>
+          <div class="header">
+            <h4 class="bold title-font">Abc</h4><span class="title-font">bold</span>
+          </div>
+          <div class="header">
+            <h4 class="italic title-font">Abc</h4><span class="title-font">italic</span>
+          </div>
+          <hr class="-invisible"/>
+          <p class="toggle-baseline show-baseline title-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
+        </div>
+        <div class="semi-colon">
+          <h6 class="uppercase">Texts</h6>
+          <h2 class="text-font">TypoName</h2>
+          <div class="header">
+            <h4 class="text-font">Abc</h4><span class="title-font">regular</span>
+          </div>
+          <div class="header">
+            <h4 class="bold text-font">Abc</h4><span class="title-font">bold</span>
+          </div>
+          <div class="header">
+            <h4 class="italic text-font">Abc</h4><span class="title-font">italic</span>
+          </div>
+          <hr class="-invisible"/>
+          <p class="toggle-baseline show-baseline text-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <header id="color-head">
+    <div>
+      <h3>Colors</h3>
+    </div>
+  </header>
+  <section id="color" class="section color">
+    <div id="color-main" class="bloc">
+      <h5>Main</h5>
+      <hr/>
+      <div class="-first">
+        <div class="column _bg-grey-darken-4">
+          <div class="info">
+            <h3 class="name _text-grey-contrast-darken-5">ColorName</h3>
+            <h6 class="_text-grey-contrast-darken-5">The words</h6>
+          </div>
+          <div class="variation _text-grey-contrast-darken-5">
+            <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
+            <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
+            <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
+            <div> <span>cmyk</span><span class="cmyk"></span></div>
+          </div>
+          <div class="gradient">
+            <div class="_bg-grey-lighten-1"></div>
+            <div class="_bg-grey"></div>
+            <div class="_bg-grey-darken-2"></div>
+            <div class="_bg-grey-darken-3"></div>
+            <div class="_bg-grey-darken-4"></div>
+            <div class="_bg-grey-darken-5"></div>
+          </div>
+        </div>
+        <div class="column _bg-primary">
+          <div class="info">
+            <h3 class="name _text-primary-contrast-darken-5">ColorName</h3>
+            <h6 class="_text-primary-contrast-darken-5">The identity</h6>
+          </div>
+          <div class="variation _text-primary-contrast-darken-5">
+            <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
+            <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
+            <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
+            <div> <span>cmyk</span><span class="cmyk"></span></div>
+          </div>
+          <div class="gradient">
+            <div class="_bg-primary-lighten-2"></div>
+            <div class="_bg-primary-lighten-1"></div>
+            <div class="_bg-primary"></div>
+            <div class="_bg-primary-darken-1"></div>
+            <div class="_bg-primary-darken-2"></div>
+            <div class="_bg-primary-darken-3"></div>
+          </div>
+        </div>
+        <div class="column _bg-complement-darken-3">
+          <div class="info">
+            <h3 class="name _text-complement-contrast-darken-5">ColorName</h3>
+            <h6 class="_text-complement-contrast-darken-5">The links</h6>
+          </div>
+          <div class="variation _text-complement-contrast-darken-5">
+            <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
+            <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
+            <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
+            <div> <span>cmyk</span><span class="cmyk"></span></div>
+          </div>
+          <div class="gradient">
+            <div class="_bg-complement-lighten-1"></div>
+            <div class="_bg-complement"></div>
+            <div class="_bg-complement-darken-1"></div>
+            <div class="_bg-complement-darken-2"></div>
+            <div class="_bg-complement-darken-3"></div>
+            <div class="_bg-complement-darken-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="color-semantic" class="bloc color">
+      <h5>Semantic</h5>
+      <hr/>
+      <div class="-last">
+        <div class="column _bg-danger-darken-2">
+          <div class="info">
+            <h5 class="name _text-danger-contrast-darken-5">ColorName</h5>
+            <h6 class="_text-danger-contrast-darken-5">Dangers</h6>
+          </div>
+          <div class="gradient">
+            <div class="_bg-danger-lighten-1"></div>
+            <div class="_bg-danger"></div>
+            <div class="_bg-danger-darken-1"></div>
+            <div class="_bg-danger-darken-2"></div>
+            <div class="_bg-danger-darken-3"></div>
+            <div class="_bg-danger-darken-4"></div>
+          </div>
+        </div>
+        <div class="column _bg-warning-darken-2">
+          <div class="info">
+            <h5 class="name _text-warning-contrast-darken-5">ColorName</h5>
+            <h6 class="_text-warning-contrast-darken-5">Warnings</h6>
+          </div>
+          <div class="gradient">
+            <div class="_bg-warning-lighten-1"></div>
+            <div class="_bg-warning"></div>
+            <div class="_bg-warning-darken-1"></div>
+            <div class="_bg-warning-darken-2"></div>
+            <div class="_bg-warning-darken-3"></div>
+            <div class="_bg-warning-darken-4">			</div>
+          </div>
+        </div>
+        <div class="column _bg-success-darken-2">
+          <div class="info">
+            <h5 class="name _text-success-contrast-darken-5">ColorName</h5>
+            <h6 class="_text-success-contrast-darken-5">Success</h6>
+          </div>
+          <div class="gradient">
+            <div class="_bg-success-lighten-1"></div>
+            <div class="_bg-success"></div>
+            <div class="_bg-success-darken-1"></div>
+            <div class="_bg-success-darken-2"></div>
+            <div class="_bg-success-darken-3"></div>
+            <div class="_bg-success-darken-4"></div>
+          </div>
+        </div>
+        <div class="column _bg-info-darken-2">
+          <div class="info">
+            <h5 class="name _text-info-contrast-darken-5">ColorName</h5>
+            <h6 class="_text-info-contrast-darken-5">Infos</h6>
+          </div>
+          <div class="gradient">
+            <div class="_bg-info-lighten-1"></div>
+            <div class="_bg-info"></div>
+            <div class="_bg-info-darken-1"></div>
+            <div class="_bg-info-darken-2"></div>
+            <div class="_bg-info-darken-3"></div>
+            <div class="_bg-info-darken-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom"><div class="bloc" id="atom-Checkbox"><h5>Checkbox</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<div class="checkbox -primary">
+			<input id="checkbox2" type="checkbox"/>
+			<label for="checkbox2"><span>Apples</span></label>
+		</div>
+		<label>Checked</label>
+		<div class="checkbox">
+			<input id="checkbox3" type="checkbox" checked/>
+			<label for="checkbox3"><span>Lemons</span></label>
+		</div>
+		<label>Disabled</label>
+		<div class="checkbox">
+		<input id="checkbox1" type="checkbox" disabled="disabled"/>
+		<label for="checkbox1"><span>Tomatoes</span></label>
+		</div>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;checkbox -primary&quot;&gt;
+	&lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
+	&lt;label for=&quot;checkbox2&quot;&gt;&lt;span&gt;Apples&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Checked&lt;/label&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+	&lt;input id=&quot;checkbox3&quot; type=&quot;checkbox&quot; checked/&gt;
+	&lt;label for=&quot;checkbox3&quot;&gt;&lt;span&gt;Lemons&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Disabled&lt;/label&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+&lt;input id=&quot;checkbox1&quot; type=&quot;checkbox&quot; disabled=&quot;disabled&quot;/&gt;
+&lt;label for=&quot;checkbox1&quot;&gt;&lt;span&gt;Tomatoes&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Blockquote"><h5>Blockquote</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+		<blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
+    <label>With -pullquote</label>
+    <blockquote class="-pullquote">
+    <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    <footer>Isaac Asimov</footer>
+    </blockquote>
+
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+&lt;blockquote&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/blockquote&gt;
+    &lt;label&gt;With -pullquote&lt;/label&gt;
+    &lt;blockquote class=&quot;-pullquote&quot;&gt;
+    &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;footer&gt;Isaac Asimov&lt;/footer&gt;
+    &lt;/blockquote&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Code"><h5>Code</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<code>
+			some code here
+		</code>
+		<label>Pre > code</label>
+		<pre>
+			<code class="nohighlight">(\/)
+(oO)
+c(")(")</code>
+		</pre>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;code&gt;
+	some code here
+&lt;/code&gt;
+&lt;label&gt;Pre &gt; code&lt;/label&gt;
+&lt;pre&gt;
+	&lt;code class=&quot;nohighlight&quot;&gt;(\/)
+(oO)
+c(&quot;)(&quot;)&lt;/code&gt;
+&lt;/pre&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Button"><h5>Button</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+    <button class="button touch">
+      <span>Bouton</span>
+    </button>
+    <button class="button -primary touch">
+      <span>Bouton</span>
+    </button>
+		<button class="button touch">
+			<i class="icon -sun"></i>
+			<span>Bouton</span>
+		</button>
+    <button class="button -primary touch">
+      <span>Bouton</span>
+      <i class="icon -arrow-right"></i>
+    </button>
+    <label>With -round</label>
+    <button class="button touch -round -line-danger">
+			<i class="icon -sun"></i>
+      <span>Button</span>
+		</button>
+    <label>With -disabled</label>
+    <input type="submit" value="button" disabled class="button -primary"/>
+    <a class="button -danger -disabled -round -icon-only">
+      <i class="icon -sun"></i>
+    </a>
+
+
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;button class=&quot;button touch&quot;&gt;
+      &lt;span&gt;Bouton&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;button -primary touch&quot;&gt;
+      &lt;span&gt;Bouton&lt;/span&gt;
+    &lt;/button&gt;
+&lt;button class=&quot;button touch&quot;&gt;
+	&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+	&lt;span&gt;Bouton&lt;/span&gt;
+&lt;/button&gt;
+    &lt;button class=&quot;button -primary touch&quot;&gt;
+      &lt;span&gt;Bouton&lt;/span&gt;
+      &lt;i class=&quot;icon -arrow-right&quot;&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;label&gt;With -round&lt;/label&gt;
+    &lt;button class=&quot;button touch -round -line-danger&quot;&gt;
+	&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+      &lt;span&gt;Button&lt;/span&gt;
+&lt;/button&gt;
+    &lt;label&gt;With -disabled&lt;/label&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;button&quot; disabled class=&quot;button -primary&quot;/&gt;
+    &lt;a class=&quot;button -danger -disabled -round -icon-only&quot;&gt;
+      &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+
+</code></pre></div></div></div></div><div class="bloc" id="atom-Label"><h5>Label</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+		<label><i class="icon -sun"></i>With icon</label>
+    <label class="-step"><span>1</span>With -step</label>
+
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+&lt;label&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;With icon&lt;/label&gt;
+    &lt;label class=&quot;-step&quot;&gt;&lt;span&gt;1&lt;/span&gt;With -step&lt;/label&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Icon & Flag"><h5>Icon & Flag</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">  <label>Icones</label>
+  <i class="icon -x4 _text-success -checkmark-circle"></i>
+  <i class="icon -x3 _text-danger -cross-circle"></i>
+  <i class="icon -x2 _text-success -plus-circle"></i>
+  <i class="icon -star"></i>
+  <i class="icon -heart"></i>
+  <i class="icon -cog -spin"></i>
+  <label>Flags</label>
+  <div class="flag -x4 -fr"></div>
+  <div class="flag -x3 -be"></div>
+  <div class="flag -x2 -it"></div>
+  <div class="flag -eu"></div>
+  <label>Social</label>
+  <div class="social -x4 -behance"></div>
+  <div class="social -x3 -facebook"></div>
+  <div class="social -x2 -github"></div>
+  <div class="social -email"></div>
+</div><div class="wrapper"><pre><code class="html">  &lt;label&gt;Icones&lt;/label&gt;
+  &lt;i class=&quot;icon -x4 _text-success -checkmark-circle&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;icon -x3 _text-danger -cross-circle&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;icon -x2 _text-success -plus-circle&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;icon -star&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;icon -heart&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;icon -cog -spin&quot;&gt;&lt;/i&gt;
+  &lt;label&gt;Flags&lt;/label&gt;
+  &lt;div class=&quot;flag -x4 -fr&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flag -x3 -be&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flag -x2 -it&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flag -eu&quot;&gt;&lt;/div&gt;
+  &lt;label&gt;Social&lt;/label&gt;
+  &lt;div class=&quot;social -x4 -behance&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;social -x3 -facebook&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;social -x2 -github&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;social -email&quot;&gt;&lt;/div&gt;</code></pre></div></div></div></div><div class="bloc" id="atom-Inputs"><h5>Inputs</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<input type="text" placeholder="test"/>
+		<label>With -round -large</label>
+		<input class="-round -large" type="text" placeholder="test" required />
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
+&lt;label&gt;With -round -large&lt;/label&gt;
+&lt;input class=&quot;-round -large&quot; type=&quot;text&quot; placeholder=&quot;test&quot; required /&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Separators"><h5>Separators</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<hr/>
+		<hr class="-lines" />
+		<hr class="-dashed -half -center" />
+		<hr class="-double  -half" />
+		<hr class="-gradient -tiny" />
+		<hr class="-triangle -quart" />
+		<label>With data-title</label>
+		<hr data-title="another title" />
+		<hr class="-title-left" data-title="yet another title" />
+		<hr class="-title-right" data-title="title right" />
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;hr/&gt;
+&lt;hr class=&quot;-lines&quot; /&gt;
+&lt;hr class=&quot;-dashed -half -center&quot; /&gt;
+&lt;hr class=&quot;-double  -half&quot; /&gt;
+&lt;hr class=&quot;-gradient -tiny&quot; /&gt;
+&lt;hr class=&quot;-triangle -quart&quot; /&gt;
+&lt;label&gt;With data-title&lt;/label&gt;
+&lt;hr data-title=&quot;another title&quot; /&gt;
+&lt;hr class=&quot;-title-left&quot; data-title=&quot;yet another title&quot; /&gt;
+&lt;hr class=&quot;-title-right&quot; data-title=&quot;title right&quot; /&gt;</code></pre></div></div></div></div><div class="bloc" id="atom-Select"><h5>Select</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<div class="select">
+			<select required="" >
+				<option value="lib">Libéral</option>
+				<option value="craft">Artisanal</option>
+				<option value="commercial">Commercial</option>
+			</select>
+		</div>
+		<label>With -large</label>
+		<div class="select -large">
+			<select required="" >
+				<option value="lib">Libéral</option>
+				<option value="craft">Artisanal</option>
+				<option value="commercial">Commercial</option>
+			</select>
+		</div>
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;select&quot;&gt;
+	&lt;select required=&quot;&quot; &gt;
+		&lt;option value=&quot;lib&quot;&gt;Libéral&lt;/option&gt;
+		&lt;option value=&quot;craft&quot;&gt;Artisanal&lt;/option&gt;
+		&lt;option value=&quot;commercial&quot;&gt;Commercial&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;
+&lt;label&gt;With -large&lt;/label&gt;
+&lt;div class=&quot;select -large&quot;&gt;
+	&lt;select required=&quot;&quot; &gt;
+		&lt;option value=&quot;lib&quot;&gt;Libéral&lt;/option&gt;
+		&lt;option value=&quot;craft&quot;&gt;Artisanal&lt;/option&gt;
+		&lt;option value=&quot;commercial&quot;&gt;Commercial&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/div&gt;</code></pre></div></div></div></div><div class="bloc" id="atom-Links"><h5>Links</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</input>
+    <a href="#">Hello world</a>
+    <label>With -custom</input>
+		<a class="-custom" href="#">Hello world</a>
+    <label>Inside text</input>
+		<p>In texts, links are underlined by default like <a href="#">this</a>. It keeps general line height</p>
+
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/input&gt;
+    &lt;a href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
+    &lt;label&gt;With -custom&lt;/input&gt;
+&lt;a class=&quot;-custom&quot; href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
+    &lt;label&gt;Inside text&lt;/input&gt;
+&lt;p&gt;In texts, links are underlined by default like &lt;a href=&quot;#&quot;&gt;this&lt;/a&gt;. It keeps general line height&lt;/p&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Lists"><h5>Lists</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Unordered</input>
+		<ul class="ul">
+			<li>Unordered lists have basic styles</li>
+			<li>They use the circle list style</li>
+			<ul>
+				<li>Nested lists styled to feel right</li>
+				<li>Can nest either type of list into the other</li>
+			</ul>
+		</ul>
+		<label>Ordered</input>
+		<ol class="ol">
+			<li>Ordered lists also have basic styles</li>
+			<li>They use the decimal list style</li>
+			<ol>
+				<li>Ordered and unordered can be nested</li>
+				<li>Can nest either type of list into the other</li>
+			</ol>
+			<li>Last list item just for the fun</li>
+		</ol>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Unordered&lt;/input&gt;
+&lt;ul class=&quot;ul&quot;&gt;
+	&lt;li&gt;Unordered lists have basic styles&lt;/li&gt;
+	&lt;li&gt;They use the circle list style&lt;/li&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Nested lists styled to feel right&lt;/li&gt;
+		&lt;li&gt;Can nest either type of list into the other&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/ul&gt;
+&lt;label&gt;Ordered&lt;/input&gt;
+&lt;ol class=&quot;ol&quot;&gt;
+	&lt;li&gt;Ordered lists also have basic styles&lt;/li&gt;
+	&lt;li&gt;They use the decimal list style&lt;/li&gt;
+	&lt;ol&gt;
+		&lt;li&gt;Ordered and unordered can be nested&lt;/li&gt;
+		&lt;li&gt;Can nest either type of list into the other&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;li&gt;Last list item just for the fun&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Radio"><h5>Radio</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+	<div class="radio">
+		<input id="radio1" type="radio" name='radio-group' />
+		<label for="radio1">Apples</label>
+	</div>
+	<label>Checked</label>
+	<div class="radio">
+		<input id="radio2" type="radio" name='radio-group' checked='checked' />
+		<label for="radio2">Lemons</label>
+	</div>
+	<label>Disabled</label>
+	<div class="radio">
+		<input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
+		<label for="radio3">Tomatoes</label>
+	</div>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+	&lt;div class=&quot;radio&quot;&gt;
+&lt;input id=&quot;radio1&quot; type=&quot;radio&quot; name='radio-group' /&gt;
+&lt;label for=&quot;radio1&quot;&gt;Apples&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;label&gt;Checked&lt;/label&gt;
+	&lt;div class=&quot;radio&quot;&gt;
+&lt;input id=&quot;radio2&quot; type=&quot;radio&quot; name='radio-group' checked='checked' /&gt;
+&lt;label for=&quot;radio2&quot;&gt;Lemons&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;label&gt;Disabled&lt;/label&gt;
+	&lt;div class=&quot;radio&quot;&gt;
+&lt;input id=&quot;radio3&quot; type=&quot;radio&quot; name='radio-group' disabled=&quot;disabled&quot;/&gt;
+&lt;label for=&quot;radio3&quot;&gt;Tomatoes&lt;/label&gt;
+	&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Toggle"><h5>Toggle</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<div class="toggle">
+			<input id="toggle1" type="checkbox">
+			<label for="toggle1"><span>Apples</span></label>
+		</div>
+		<label>Checked</label>
+		<div class="toggle">
+			<input id="toggle2" type="checkbox" checked="checked">
+			<label for="toggle2"><span>Lemons</span></label>
+		</div>
+		<label>Disabled</label>
+		<div class="disabled toggle">
+			<input id="toggle3" type="checkbox" checked="checked" disabled>
+			<label for="toggle3"><span>Tomatoes</span></label>
+		</div>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;toggle&quot;&gt;
+	&lt;input id=&quot;toggle1&quot; type=&quot;checkbox&quot;&gt;
+	&lt;label for=&quot;toggle1&quot;&gt;&lt;span&gt;Apples&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Checked&lt;/label&gt;
+&lt;div class=&quot;toggle&quot;&gt;
+	&lt;input id=&quot;toggle2&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
+	&lt;label for=&quot;toggle2&quot;&gt;&lt;span&gt;Lemons&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Disabled&lt;/label&gt;
+&lt;div class=&quot;disabled toggle&quot;&gt;
+	&lt;input id=&quot;toggle3&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot; disabled&gt;
+	&lt;label for=&quot;toggle3&quot;&gt;&lt;span&gt;Tomatoes&lt;/span&gt;&lt;/label&gt;
+&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Table"><h5>Table</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Thibaud Frere</td>
+					<td>24</td>
+					<td>Male</td>
+					<td>Paris</td>
+				</tr>
+				<tr>
+					<td>Anthony Lacroix</td>
+					<td>26</td>
+					<td>Male</td>
+					<td>Metz</td>
+				</tr>
+			</tbody>
+		</table>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Name&lt;/th&gt;
+			&lt;th&gt;Age&lt;/th&gt;
+			&lt;th&gt;Sex&lt;/th&gt;
+			&lt;th&gt;Location&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Thibaud Frere&lt;/td&gt;
+			&lt;td&gt;24&lt;/td&gt;
+			&lt;td&gt;Male&lt;/td&gt;
+			&lt;td&gt;Paris&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Anthony Lacroix&lt;/td&gt;
+			&lt;td&gt;26&lt;/td&gt;
+			&lt;td&gt;Male&lt;/td&gt;
+			&lt;td&gt;Metz&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre></div></div></div></div></section><header id="molecule-head"><div><h3>Molecule</h3></div></header><section class="section" id="molecule"><div class="bloc" id="molecule-Bubble"><h5>Bubble</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+    <div class="bubble">
+        <img src="images/joe.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Joe</span>
+                <span class="date">à 17h34</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hello Elliot, how are u ?</p>
+        </div>
+    </div>
+    <label>With -mine</label>
+    <div class="bubble -mine">
+        <img src="images/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">à 17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+        </div>
+    </div>
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;div class=&quot;bubble&quot;&gt;
+        &lt;img src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div class=&quot;header&quot;&gt;
+                &lt;span class=&quot;name&quot;&gt;Joe&lt;/span&gt;
+                &lt;span class=&quot;date&quot;&gt;à 17h34&lt;/span&gt;
+                &lt;div class=&quot;admin&quot;&gt;
+                    &lt;i class=&quot;icon -pencil&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p&gt;Hello Elliot, how are u ?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -mine&lt;/label&gt;
+    &lt;div class=&quot;bubble -mine&quot;&gt;
+        &lt;img src=&quot;images/elliot.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div class=&quot;header&quot;&gt;
+                &lt;span class=&quot;name&quot;&gt;Elliot&lt;/span&gt;
+                &lt;span class=&quot;date&quot;&gt;à 17h36&lt;/span&gt;
+                &lt;div class=&quot;admin&quot;&gt;
+                    &lt;i class=&quot;icon -pencil&quot;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;p&gt;Hey! I'm fine, and you?&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre></div></div></div></div><div class="bloc" id="molecule-Card"><h5>Card</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+    <div class="card">
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With -line-primary</label>
+    <div class="card -line-primary">
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With -primary</label>
+    <div class="card -primary">
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;div class=&quot;card&quot;&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -line-primary&lt;/label&gt;
+    &lt;div class=&quot;card -line-primary&quot;&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -primary&lt;/label&gt;
+    &lt;div class=&quot;card -primary&quot;&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;</code></pre></div></div></div></div><div class="bloc" id="molecule-List"><h5>List</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Simple</label>
+    <ul class="list">
+      <li class="item touch">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With circle image</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+      </li>
+      <li class="item -has-notif touch">
+        <i class="head _bg-grey-lighten-2 icon -sun"></i>
+        <div class="content">
+          <h6 class="title">With icon</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="tag notif -corner -top-right -primary">
+          <span> 32 </span>
+        </div>
+      </li>
+      <li class="item touch -has-notif">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With tags</h6>
+          <div class="desc">
+            <div class="tag">
+              <i class="icon -sun"></i>
+              <span>Thibaud</span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="item touch -headless">
+        <div class="content">
+          <h6 class="title">Headless with chevron</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="action">
+          <i class="icon -chevron-right"></i>
+        </div>
+      </li>
+    </ul>
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;ul class=&quot;list&quot;&gt;
+      &lt;li class=&quot;item touch&quot;&gt;
+        &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;With circle image&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;Lorem ipsum dolor&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;item -has-notif touch&quot;&gt;
+        &lt;i class=&quot;head _bg-grey-lighten-2 icon -sun&quot;&gt;&lt;/i&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;With icon&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;Lorem ipsum dolor&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;tag notif -corner -top-right -primary&quot;&gt;
+          &lt;span&gt; 32 &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;item touch -has-notif&quot;&gt;
+        &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;With tags&lt;/h6&gt;
+          &lt;div class=&quot;desc&quot;&gt;
+            &lt;div class=&quot;tag&quot;&gt;
+              &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;Thibaud&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;item touch -headless&quot;&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;Headless with chevron&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;Lorem ipsum dolor&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;action&quot;&gt;
+          &lt;i class=&quot;icon -chevron-right&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;</code></pre></div></div></div></div><div class="bloc" id="molecule-Fieldset"><h5>Fieldset</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>With right tag</label>
+		<fieldset class="-has-icon">
+			<i class="icon -lock"></i>
+			<input
+			class=""
+			type="password"
+			placeholder="Password"
+			/>
+			<div class="tag -line-danger -left -pointing">
+				<span>Password incorrect</span>
+			</div>
+		</fieldset>
+		<fieldset class="-has-icon -large -has-tag">
+			<i class="icon -lock"></i>
+			<label>With sub tag</label>
+			<input
+			type="password"
+			placeholder="Password"
+			/>
+			<div class="tag -line-danger -large -top -pointing">
+				<span>Votre password est inccorect</span>
+			</div>
+		</fieldset>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;With right tag&lt;/label&gt;
+&lt;fieldset class=&quot;-has-icon&quot;&gt;
+	&lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+	&lt;input
+	class=&quot;&quot;
+	type=&quot;password&quot;
+	placeholder=&quot;Password&quot;
+	/&gt;
+	&lt;div class=&quot;tag -line-danger -left -pointing&quot;&gt;
+		&lt;span&gt;Password incorrect&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;-has-icon -large -has-tag&quot;&gt;
+	&lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+	&lt;label&gt;With sub tag&lt;/label&gt;
+	&lt;input
+	type=&quot;password&quot;
+	placeholder=&quot;Password&quot;
+	/&gt;
+	&lt;div class=&quot;tag -line-danger -large -top -pointing&quot;&gt;
+		&lt;span&gt;Votre password est inccorect&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/fieldset&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Merge"><h5>Merge</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Horizontal</label>
+		<div class="merge -horizontal">
+			<fieldset class="-has-icon">
+			<i class="icon -lock"></i>
+			<input type="password" placeholder="Password" />
+			</fieldset>
+			<button class="button -primary -icon-only -no-gradient">
+			<i class="icon -pencil"></i>
+			</button>
+			<button class="button -primary -icon-only -no-gradient">
+			<i class="icon -cross"></i>
+			</button>
+		</div>
+    <div class="merge -horizontal">
+      <input class="-round" type="password" placeholder="Password" />
+      <button class="button loading -primary -round -only-icon">
+        <i class="icon -sun"></i>
+      </button>
+    </div>
+    <div class="merge -large -horizontal">
+    	<button class="button -small -icon-only loading">
+    		<i class="icon -sun"></i>
+    	</button>
+    	<button class="button -small -icon-only">
+    		<i class="icon -sun"></i>
+    	</button>
+    	<button class="button -small -icon-only">
+    		<i class="icon -moon"></i>
+    	</button>
+    </div>
+		<label>Vertical</label>
+		<div class="merge -large -vertical">
+      <fieldset class="">
+        <input type="password" placeholder="Password" />
+      </fieldset>
+      <fieldset class="-has-icon -right">
+        <i class="icon -eye"></i>
+        <input type="password" placeholder="Password" />
+      </fieldset>
+      <button class="button loading -primary">
+        <span>Se connecter</span>
+      </button>
+    </div>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Horizontal&lt;/label&gt;
+&lt;div class=&quot;merge -horizontal&quot;&gt;
+	&lt;fieldset class=&quot;-has-icon&quot;&gt;
+	&lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+	&lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+	&lt;/fieldset&gt;
+	&lt;button class=&quot;button -primary -icon-only -no-gradient&quot;&gt;
+	&lt;i class=&quot;icon -pencil&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;button class=&quot;button -primary -icon-only -no-gradient&quot;&gt;
+	&lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+	&lt;/button&gt;
+&lt;/div&gt;
+    &lt;div class=&quot;merge -horizontal&quot;&gt;
+      &lt;input class=&quot;-round&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+      &lt;button class=&quot;button loading -primary -round -only-icon&quot;&gt;
+        &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;merge -large -horizontal&quot;&gt;
+    	&lt;button class=&quot;button -small -icon-only loading&quot;&gt;
+    		&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+    	&lt;/button&gt;
+    	&lt;button class=&quot;button -small -icon-only&quot;&gt;
+    		&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+    	&lt;/button&gt;
+    	&lt;button class=&quot;button -small -icon-only&quot;&gt;
+    		&lt;i class=&quot;icon -moon&quot;&gt;&lt;/i&gt;
+    	&lt;/button&gt;
+    &lt;/div&gt;
+&lt;label&gt;Vertical&lt;/label&gt;
+&lt;div class=&quot;merge -large -vertical&quot;&gt;
+      &lt;fieldset class=&quot;&quot;&gt;
+        &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+      &lt;/fieldset&gt;
+      &lt;fieldset class=&quot;-has-icon -right&quot;&gt;
+        &lt;i class=&quot;icon -eye&quot;&gt;&lt;/i&gt;
+        &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+      &lt;/fieldset&gt;
+      &lt;button class=&quot;button loading -primary&quot;&gt;
+        &lt;span&gt;Se connecter&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Loading"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>Button</label>
+    <button class="button loading touch">
+			<i class="icon -sun"></i>
+			<span>Bouton</span>
+		</button>
+    <label>Card</label>
+    <div class="card loading -primary">
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>Entire list</label>
+    <ul class="list loading">
+      <li class="item touch">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">Item</h6>
+          <p class="desc">bla blbla blalabla</p>
+        </div>
+      </li>
+    </ul>
+    <label>List item</label>
+    <ul class="list">
+      <li class="item touch loading">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">Item</h6>
+          <p class="desc">bla blbla blalabla</p>
+        </div>
+      </li>
+      <li class="item touch">
+        <img class="head grey -circle" src="images/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">Item</h6>
+          <p class="desc">bla blbla blalabla</p>
+        </div>
+      </li>
+    </ul>
+
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;Button&lt;/label&gt;
+    &lt;button class=&quot;button loading touch&quot;&gt;
+	&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+	&lt;span&gt;Bouton&lt;/span&gt;
+&lt;/button&gt;
+    &lt;label&gt;Card&lt;/label&gt;
+    &lt;div class=&quot;card loading -primary&quot;&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;label&gt;Entire list&lt;/label&gt;
+    &lt;ul class=&quot;list loading&quot;&gt;
+      &lt;li class=&quot;item touch&quot;&gt;
+        &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;label&gt;List item&lt;/label&gt;
+    &lt;ul class=&quot;list&quot;&gt;
+      &lt;li class=&quot;item touch loading&quot;&gt;
+        &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;item touch&quot;&gt;
+        &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+        &lt;div class=&quot;content&quot;&gt;
+          &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+          &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Tag"><h5>Tag</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper"><label>Simple</label>
+		<div class="tag"><span>Html</span></div>
+		<div class="tag -line-primary"><span><i class="icon -sun"></i>Test</span></div>
+		<div class="tag"><img src="images/joe.jpg"/><span>Joe</span></div>
+		<br/>
+		<label>With -square</label>
+		<div class="tag -square -uppercase -blur"><span>Thibaud</span></div>
+		<div class="tag -square -uppercase -blur"><i class="icon -user"></i><span>Thibaud</span></div>
+		<br/>
+		<label>With -round</label>
+		<div class="tag -line-primary -round"><span>2</span></div>
+		<div class="tag -line-primary -round"><span>Thibaud</span></div>
+		<div class="tag -round -no-border"><img src="images/joe.jpg"/><span> Joe </span></div>
+		<label>With -ticket</label>
+		<div class="tag -ticket"><span>Html</span></div>
+		<div class="tag -ticket"><span>Js</span></div>
+		<label>With -pointing</label>
+		<div class="tag -line-primary -pointing"><span>42</span></div>
+		<div class="tag -line-primary -pointing -bottom"><span>42</span></div>
+		<div class="tag -line-primary -pointing -left"><span>42</span></div>
+		<div class="tag -line-primary -pointing -right"><span>42</span></div>
+		<label>With -empty</label>
+		<div class="tag -round -primary -empty"></div>
+		<div class="tag -info -circular -empty"></div>
+		<br/>
+		<label>With -corner</label>
+		<div class="tag -corner -top-left -primary"><span> 32 </span></div>
+		<div class="tag -corner -top-left -line-primary"><i class="icon -sun"></i></div>
+		<div class="tag -corner -top-right -line-primary"><span> 3 </span></div>
+		<div class="tag -corner -top-right -primary"><i class="icon -sun"></i></div>
+
+</div><div class="wrapper"><pre><code class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;tag&quot;&gt;&lt;span&gt;Html&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -line-primary&quot;&gt;&lt;span&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Test&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag&quot;&gt;&lt;img src=&quot;images/joe.jpg&quot;/&gt;&lt;span&gt;Joe&lt;/span&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;label&gt;With -square&lt;/label&gt;
+&lt;div class=&quot;tag -square -uppercase -blur&quot;&gt;&lt;span&gt;Thibaud&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -square -uppercase -blur&quot;&gt;&lt;i class=&quot;icon -user&quot;&gt;&lt;/i&gt;&lt;span&gt;Thibaud&lt;/span&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;label&gt;With -round&lt;/label&gt;
+&lt;div class=&quot;tag -line-primary -round&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -line-primary -round&quot;&gt;&lt;span&gt;Thibaud&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -round -no-border&quot;&gt;&lt;img src=&quot;images/joe.jpg&quot;/&gt;&lt;span&gt; Joe &lt;/span&gt;&lt;/div&gt;
+&lt;label&gt;With -ticket&lt;/label&gt;
+&lt;div class=&quot;tag -ticket&quot;&gt;&lt;span&gt;Html&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -ticket&quot;&gt;&lt;span&gt;Js&lt;/span&gt;&lt;/div&gt;
+&lt;label&gt;With -pointing&lt;/label&gt;
+&lt;div class=&quot;tag -line-primary -pointing&quot;&gt;&lt;span&gt;42&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -line-primary -pointing -bottom&quot;&gt;&lt;span&gt;42&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -line-primary -pointing -left&quot;&gt;&lt;span&gt;42&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -line-primary -pointing -right&quot;&gt;&lt;span&gt;42&lt;/span&gt;&lt;/div&gt;
+&lt;label&gt;With -empty&lt;/label&gt;
+&lt;div class=&quot;tag -round -primary -empty&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -info -circular -empty&quot;&gt;&lt;/div&gt;
+&lt;br/&gt;
+&lt;label&gt;With -corner&lt;/label&gt;
+&lt;div class=&quot;tag -corner -top-left -primary&quot;&gt;&lt;span&gt; 32 &lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -corner -top-left -line-primary&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -corner -top-right -line-primary&quot;&gt;&lt;span&gt; 3 &lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;tag -corner -top-right -primary&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Progress"><h5>Progress</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper">    <label>With -small</label>
+    <div class="progress -primary -small">
+      <div class="bar">
+      </div>
+    </div>
+    <div class="progress -primary -small -wick">
+      <div style="width:30%" class="bar">
+      </div>
+    </div>
+    <label>With -inner</label>
+    <div class="progress -inner">
+      <div style="width:50%" class="bar">
+      <span>60 %</span>
+      </div>
+    </div>
+    <div class="progress -active -inner -round -line-success">
+      <div style="width:60%" class="bar ">
+      <span>80 %</span>
+      </div>
+    </div>
+    <label>With animation</label>
+    <div class="progress -round -active -danger">
+      <div style="width:70%" class="bar">
+        <span>70 %</span>
+      </div>
+    </div>
+    <div class="progress -dashed -danger">
+      <div style="width:100%" class="bar">
+        <span>100 %</span>
+      </div>
+    </div>
+</div><div class="wrapper"><pre><code class="html">    &lt;label&gt;With -small&lt;/label&gt;
+    &lt;div class=&quot;progress -primary -small&quot;&gt;
+      &lt;div class=&quot;bar&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -primary -small -wick&quot;&gt;
+      &lt;div style=&quot;width:30%&quot; class=&quot;bar&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -inner&lt;/label&gt;
+    &lt;div class=&quot;progress -inner&quot;&gt;
+      &lt;div style=&quot;width:50%&quot; class=&quot;bar&quot;&gt;
+      &lt;span&gt;60 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -active -inner -round -line-success&quot;&gt;
+      &lt;div style=&quot;width:60%&quot; class=&quot;bar &quot;&gt;
+      &lt;span&gt;80 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With animation&lt;/label&gt;
+    &lt;div class=&quot;progress -round -active -danger&quot;&gt;
+      &lt;div style=&quot;width:70%&quot; class=&quot;bar&quot;&gt;
+        &lt;span&gt;70 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -dashed -danger&quot;&gt;
+      &lt;div style=&quot;width:100%&quot; class=&quot;bar&quot;&gt;
+        &lt;span&gt;100 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre></div></div></div></div></section>      </section>
+      <footer class="footer semi-screen-box center">
+        <div class="center-wrapper">
+          <h5><i class="icon -x3 -heart"></i></h5>
+        </div>
+      </footer>
+    </div>
+    <script src="js/polyfills.js?v=<%= buildTime %>"></script>
+    <script src="js/vendors.js?v=<%= buildTime %>"></script>
+    <script src="js/app.js?v=<%= buildTime %>"></script>
+  </body>
+</html>

@@ -8,13 +8,20 @@
 		La Toggle est une plante qui se mange froide
 
 	markup:
+		<label>Simple</label>
 		<div class="toggle">
 			<input id="toggle1" type="checkbox">
-			<label for="toggle1"></label>
+			<label for="toggle1"><span>Apples</span></label>
 		</div>
+		<label>Checked</label>
+		<div class="toggle">
+			<input id="toggle2" type="checkbox" checked="checked">
+			<label for="toggle2"><span>Lemons</span></label>
+		</div>
+		<label>Disabled</label>
 		<div class="disabled toggle">
-			<input id="toggle2" type="checkbox" checked disabled>
-			<label for="toggle2"></label>
+			<input id="toggle3" type="checkbox" checked="checked" disabled>
+			<label for="toggle3"><span>Tomatoes</span></label>
 		</div>
 
 ––––
@@ -38,14 +45,19 @@
 		padding: 2px;
 		width: 40px;
 		height: 20px;
-		background-color: color("primary", "base");
-		border: 1px solid color("primary", "darken-1");
-		border-radius: 30px;
-		transition: all 0.2s ease-in-out;
-	}
-	input:checked + label {
 		background-color: color("grey", "lighten-2");
 		border: 1px solid color("grey", "lighten-1");
+		border-radius: 30px;
+		transition: all 0.2s ease-in-out;
+		span {
+			display:inline-block;
+			padding-left: 45px;
+	    line-height: 14px;
+		}
+	}
+	input:checked + label {
+		background-color: color("primary", "base");
+		border: 1px solid color("primary", "darken-1");
 	}
 	label:before; label:after {
 		display: block;

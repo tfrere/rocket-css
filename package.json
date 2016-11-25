@@ -34,7 +34,11 @@
     "react-router": "^1.0.3",
     "react-scroll": "^0.35.0",
     "react-select": "^0.9.1",
-    "react-tooltip": "^0.9.8"
+    "react-tooltip": "^0.9.8",
+    "semantic-ui-accordion": "^2.2.3",
+    "semantic-ui-popup": "^2.2.3",
+    "semantic-ui-sticky": "^2.2.3",
+    "semantic-ui-visibility": "^2.2.3"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",

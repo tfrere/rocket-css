@@ -1,14 +1,14 @@
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	$color-primary:					#048b8d;
-	$color-complement:				#FF9153;
-	$color-third:		     		#FF9153;
+	$color-primary:				#048b8d;
+	$color-complement:		#FF9153;
+	$color-third:		     	#FF9153;
 
-	$color-success:					#149A57;
-	$color-warning:					#EBAD23;
+	$color-success:				#149A57;
+	$color-warning:				#EBAD23;
 	$color-info:					#303E73;
-	$color-danger:					#D23D29;
+	$color-danger:				#D23D29;
 
 	$primary: (
 	  "base":       $color-primary,
@@ -133,7 +133,7 @@
 	  "contrast-darken-3":   color-contrast(darken($color-danger, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-danger, 40%)),
       "contrast-darken-5":   color-contrast(darken($color-danger, 50%))
-	);	
+	);
 	$info: (
 	  "base":       $color-info,
 	  "lighten-5":  lighten($color-info, 50%),
@@ -194,23 +194,42 @@
 	  "grey": $grey,
 	);
 
+
+$facebook-color:    #3b5998;
+$twitter-color:     #55acee;
+$googleplus-color:  #dd4b39;
+$youtube-color: 		#bb0000;
+$linkedin-color: 		#007bb5;
+$instagram-color: 	#e95950;
+$pinterest-color: 	#cb2027;
+$snapshat-color: 		#fffc00;
+$dropbox-color: 		#007ee5;
+$flickr-color: 			#ff0084;
+$tumblr-color: 			#32506d;
+$vk-color: 					#45668e;
+$vimeo-color: 			#aad450;
+$foursquare-color: 	#0072b1;
+$spotify-color: 		#00e461;
+$github-color: 			#000000;
+$behance-color: 		#1769ff;
+
 	// Color Classes
 
 	@each $color_name, $color in $colors {
 	  @each $color_type, $color_value in $color {
 	    @if $color_type == "base" {
-	      .bg-#{$color_name} {
+	      ._bg-#{$color_name} {
 	        background-color: $color_value !important;
 	      }
-	      .text-#{$color_name} {
+	      ._text-#{$color_name} {
 	        color: $color_value !important;
 	      }
 	    }
 	    @else {
-	      .bg-#{$color_name}.#{$color_type} {
+	      ._bg-#{$color_name}-#{$color_type} {
 	        background-color: $color_value !important;
 	      }
-	      .text-#{$color_name}.#{$color_type} {
+	      ._text-#{$color_name}-#{$color_type} {
 	        color: $color_value !important;
 	      }
 	    }

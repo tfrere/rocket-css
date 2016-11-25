@@ -8,134 +8,130 @@
 		La hr est une plante qui se mange froide
 
 	markup:
+		<label>Simple</label>
 		<hr/>
-		<hr class="nested"/>
-		<hr class="lines"/>
-		<hr class="triangle"/>
-		<hr class="double"/>
-		<hr class="dashed"/>
-		<hr class="dotted"/>
-		<hr class="gradient"/>
-		<hr class="stamp"/>
-		<hr class="apple"/>
-		<hr class="lines half centered"/>
-		<hr class="lines half"/>
-		<hr class="lines tiny"/>
-		<hr class="lines quart"/>
-
+		<hr class="-lines" />
+		<hr class="-dashed -half -center" />
+		<hr class="-double  -half" />
+		<hr class="-gradient -tiny" />
+		<hr class="-triangle -quart" />
+		<label>With data-title</label>
+		<hr data-title="another title" />
+		<hr class="-title-left" data-title="yet another title" />
+		<hr class="-title-right" data-title="title right" />
 ––––
 */
 
-hr {
-	border: 1px solid color("grey", "lighten-4");
-	height: 0;
-	display:block;
-	margin: $text-size * 2 0 $text-size * 2 0 ;
-	&:before, &:after {
-		clear:both;
-	}
-}
 
-.dark hr {
-border: 1px solid color("grey", "contrast-lighten-4");
-}
 
 /* # Specific hrs              chekout patternify.com
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-hr.letterpressed {
 
-}
-hr.nested {
-	border-width: 0;
-	border-bottom: 1px solid white;
-	width:100%;
-	height:2px;
-	background-color: rgb(240,240,240);
-	display:inline-block;
-	@include clearfix();
-}
+hr, .hr {
 
-hr.lines {
 	border: none;
+	border-bottom: 1px solid color("grey", "lighten-3");
+	height: 0;
 	display:block;
-	width: 100%;
-	height: 5px;
-	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX1jEj8eiC7ESYA5oAkQQJwDkgAAGKuA4R0d0m8AAAAAElFTkSuQmCC) repeat;
-	opacity: 0.8;
+	margin: $text-size * 2 0 $text-size * 2 0 ;
+	clear:both;
+	position:relative;
+	text-align: center;
+	&:after {
+		content:"";
+		clear:both;
+	}
+
+	&[data-title]:before, span {
+		content: attr(data-title);
+    background-color: white;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0px 10px;
+    text-transform: uppercase;
+		transform: translateY(-10px);
+	}
+
+	&.-title-left {
+		text-align: left;
+		&:before {
+			margin-left: 15px;
+		}
+	}
+	&.-title-right {
+		text-align: right;
+		&:before {
+			margin-right: 15px;
+		}
+	}
+
+	&.-invisible {
+		border: none;
+	}
+
+	&.-nested {
+		border-width: 0;
+		border-bottom: 1px solid white;
+		width:100%;
+		height:2px;
+		background-color: rgb(240,240,240);
+	}
+	&.-lines {
+		border: none;
+		display:block;
+		width: 100%;
+		height: 5px;
+		background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAX1jEj8eiC7ESYA5oAkQQJwDkgAAGKuA4R0d0m8AAAAAElFTkSuQmCC) repeat;
+	}
+
+	&.-triangle {
+		border: none;
+		display:block;
+		width: 100%;
+		height: 5px;
+		background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat;
+	}
+
+	&.-double {
+		border-top: 3px double #8c8b8b;
+	}
+
+	&.-dashed {
+		border-top: 1px dashed #8c8b8b;
+	}
+
+	&.-shadow {
+		height: 10px;
+		border: 0;
+		box-shadow: 0 10px 10px -10px #8C8B8B inset;
+	}
+
+	&.-gradient {
+		border: 0;
+		height: 1px;
+		background-image: -webkit-linear-gradient(left, white, color("grey","lighten-2"), white);
+	}
+
+	&.-half {
+		width: 50%;
+	}
+
+	&.-quart {
+		width: 25%;
+	}
+
+	&.-tiny {
+		width: 10%;
+	}
+
+	&.-center {
+		display:block;
+		margin: 0 auto;
+	}
 }
 
-hr.lines.light {
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2NkQAL/gYARxgdzQAAkAOOA2IzIHJAAACAGEAFjDBirAAAAAElFTkSuQmCC) repeat;
-  opacity:0.4;
-}
 
-hr.triangle {
-	border: none;
-	display:block;
-	width: 100%;
-	height: 5px;
-	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAPklEQVQYV2NkwAT/gUKM6MLoAjBFGIqRFaJLovBhCrFaB7QeLg5SiEsRzJlgeQxHY/EcSOg/sQoxgwGHiQwA+f4KCL3Y/AQAAAAASUVORK5CYII=) repeat;
-}
-
-hr.double {
-	border-top: 3px double #8c8b8b;
-}
-
-hr.dashed {
-	border-top: 1px dashed #8c8b8b;
-}
-
-hr.dotted {
-	border-top: 1px dotted #8c8b8b;
-}
-
-hr.gradient {
-	height: 10px;
-	border: 0;
-	box-shadow: 0 10px 10px -10px #8C8B8B inset;
-}
-
-hr.stamp:before { 
-	content: '₪'; 
-	display: block; 
-	position: relative; 
-	top: -12px; 
-	margin:0 auto;
-	width: 15px;
-	padding: 0 10px; 
-	background: white; 
-	color: #8c8b8b; 
-	font-size: 18px; 
-}
-
-
-hr.apple { 
-	border: 0; 
-	height: 1px; 
-	background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-	background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
-}
-
-
-hr.half {
-	//display:inline-block;
-	width: 50%;
-}
-
-hr.quart {
-	//display:inline-block;
-	width: 25%;
-}
-
-hr.tiny {
-	//display:inline-block;
-	width: 10%;
-}
-
-hr.centered {
-	display:block;
-	margin: 0 auto;
+body.dark hr {
+	border-bottom: 1px solid color("grey", "contrast-lighten-3");
 }

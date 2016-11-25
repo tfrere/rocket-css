@@ -1,0 +1,42 @@
+/*
+––––
+
+	title:
+		Label
+
+	comment:
+		La Label est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+		<label><i class="icon -sun"></i>With icon</label>
+    <label class="-step"><span>1</span>With -step</label>
+
+––––
+*/
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  i {
+    margin-right: 5px;
+  }
+  &:after {
+    content:"";
+    clear:both;
+  }
+  &.-step {
+    span {
+      border: 1px solid color("grey", "lighten-2");
+      border-radius: 1000px;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: 400;
+      font-family: sans-serif;
+    }
+  }
+}

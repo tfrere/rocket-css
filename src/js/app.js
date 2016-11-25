@@ -1,81 +1,21 @@
-import '../index.html';
-import '../css/main.scss';
-import $ 		from 'jquery';
-import hljs 	from 'plugins/highlight';
+import 					'../index.html';
+import 					'../css/main.scss';
+import $ 				from 'jquery';
+
+$.fn.sticky 	  = 	require('semantic-ui-sticky');
+$.fn.accordion  = 	require('semantic-ui-accordion');
+$.fn.visibility = 	require('semantic-ui-visibility');
+$.fn.popup      = 	require('semantic-ui-popup');
+
+import hljs 		from 'plugins/highlight';
 import w3color 	from 'plugins/w3color';
-import ntc 		from 'plugins/nameThatColor';
+import ntc 			from 'plugins/nameThatColor';
 
+const showAsFloat = (value) => {
+	return !isNaN(+value) ? (+value).toFixed(2) : value;
+}
 
-console.log(w3color);
-
-ntc.init();
-hljs.initHighlightingOnLoad();
-
-
-let $nav = $('.doc--nav');
-let $navLinks = $('.doc--nav ul li a');
-let $content= $('.doc--content');
-
-
-$('.doc--typo-heading').each(function(index){
-	var values = $( this ).find('.heading').css("font-size");
-	console.log(values);
-	$(this).find('span').text(values);
-});
-
-$('.doc--typo-info .wrapper h2').each(function(index){
-	var values = $( this ).css("font-family").match(/\"(.*)\"/g);
-	$(this).text(values);
-});
-
-let colors = [];
-let oldScrollValue = -1;
-
-$(document).ready(function () {
-
-	$('.doc--color .doc--color-first .doc--column').each(function(index){
-		colors[index] = {};
-		colors[index].hex = hexc($(this).css('backgroundColor'));
-		var color = new w3color(colors[index].hex);
-		colors[index].rgb = color.toRgbString();
-		colors[index].hsl = color.toHslString();
-		colors[index].cmyk = color.toCmykString();
-		colors[index].name = ntc.name(colors[index].hex)[1];
-
-		$(this).find('.hex').html(colors[index].hex);
-		$(this).find('.rgb').html(colors[index].rgb);
-		$(this).find('.hsb').html(colors[index].hsl);
-		$(this).find('.cmyk').html(colors[index].cmyk);
-		$(this).find('.name').html(colors[index].name);
-	});
-
-
-	$('.doc--color .doc--color-last .doc--column').each(function(index){
-		console.log(1);
-		colors[index] = {};
-		colors[index].hex = hexc($(this).css('backgroundColor'));
-		colors[index].name = ntc.name(colors[index].hex)[1];
-
-		$(this).find('.name').html(colors[index].name);
-	});
-
-
-
-	console.log(colors);
-
-
-
-//    $content.on("scroll", onScroll);
-    
-  //   $('a[href^="#"]').on('click', function (e) {
-  //       e.preventDefault();
-		// var target = this.hash;
-		// smoothScroll(target);
-  //   });
-
-});
-
-function hexc(colorval) {
+const hexc = (colorval) => {
     var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
     delete(parts[0]);
     for (var i = 1; i <= 3; ++i) {
@@ -85,75 +25,210 @@ function hexc(colorval) {
     return '#' + parts.join('');
 }
 
+const $headers = $('.content header');
 
-// var stickyNav = function($nav, navOffset, navEndOffset) {
+$headers.each(function(index) {
+	$(this).css("z-index", 999 + index);
+});
 
-// 	const scrollTop = $(window).scrollTop();
-// 	const isScrollingUp = oldScrollValue > scrollTop;
+const $menuLinks = $('nav ul a[href]');
+const $accordions = $('.accordion');
+const $sectionHeaders = $('section');
+const $blocs = $('.bloc');
+const $popup = $('.button-popup');
 
-// 	const fixed = scrollTop > navOffset && scrollTop < navEndOffset;
+$accordions.accordion({
+	exclusive: true,
+	collapsible: false,
+  selector: {
+    trigger: '.title2'
+  }
+});
 
-// 	if( fixed )
-// 		$nav.addClass("fixed");
-// 	else
-// 		$nav.removeClass("fixed");
+$sectionHeaders.visibility({
+	observeChanges: true,
+	once: false,
+	offset: 80,
+	onTopPassed: function() {
+		const currentHeader = $(this).attr("id");
+		console.log(currentHeader);
+		$accordions.each(function(index) {
+			if (currentHeader == $(this).attr("id").replace('nav-', ''))
+				$(this).accordion("open", 0);
+			else
+				$(this).accordion("close", 0);
+		});
+	},
+	onBottomPassedReverse: function() {
+		const currentHeader = $(this).attr("id");
+		console.log(currentHeader);
+		$accordions.each(function(index) {
+			if (currentHeader == $(this).attr("id").replace('nav-', ''))
+				$(this).accordion("open", 0);
+			else
+				$(this).accordion("close", 0);
+		});
+	}
+});
 
-// }
-
-// var activeNav = function($navLinks) {
-
-//     var scrollPos = $content.scrollTop();
-
-//    $navLinks.each(function () {
-//         var currLink = $(this);
-//         var refElement = $(currLink.attr("href"));
-//         if (refElement.position().top - 100 <= scrollPos && refElement.position().top + refElement.height() - 100 > scrollPos) {
-//            $navLinks.removeClass("active");
-//             currLink.addClass("active");
-//         }
-//         else{
-//             currLink.removeClass("active");
-//         }
-//     });
-	
-// }
-
-// function onScroll(event){
-	
-
-// 	activeNav($navLinks);
-
-// }
+$blocs.visibility({
+	observeChanges: true,
+	once: false,
+	offset: 50,
+	onTopPassed: function() {
+		const currentBloc = $(this);
+		$menuLinks.each(function() {
+			if($(this).attr('href').replace('#', '') == currentBloc.attr("id"))
+				$(this).parent().addClass("active");
+			else
+				$(this).parent().removeClass("active");
+		});
+	},
+	onTopPassedReverse: function() {
+		const currentBloc = $(this);
+		$menuLinks.each(function() {
+			if($(this).attr('href').replace('#', '') == currentBloc.attr("id"))
+				$(this).parent().addClass("active");
+			else
+				$(this).parent().removeClass("active");
+		});
+	}
+});
 
 
-// var smoothScroll = function(target) {
+$menuLinks.on('click', function(event) {
+	var
+	id       = $(this).attr('href').replace('#', ''),
+	$element = $('#' + id),
+	position = $element.offset().top + 10
+	;
 
-// 	$target = $(target);
+	$('html, body').animate({
+		scrollTop: position
+	}, 500);
 
-// 	$content.stop().animate(
-// 	{
-// 		'scrollTop': $target.offset().top + 50
-// 	},
-// 	500,
-// 	'swing',
-// 	function () {
-// 		window.location.hash = target;
-// 	});
-// }
+	window.location.hash = '#' + id;
+	event.stopImmediatePropagation();
+	event.preventDefault();
+	return false;
+});
 
+
+ntc.init();
+hljs.initHighlightingOnLoad();
+
+
+let $nav = $('.nav');
+let $navLinks = $('.nav ul li a');
+let $content= $('.content');
+
+let colors = [];
+
+$(document).ready(function () {
+
+	setTimeout(function () {
+
+		$('.heading-wrapper').each(function(index) {
+			var values = $( this ).find('.heading').css("font-size");
+			console.log(showAsFloat(values));
+			$(this).find('span').text(showAsFloat(values));
+		});
+
+		$('.typo .info h2').each(function(index){
+			console.log($( this ).css("font-family"));
+			let values = $( this ).css("font-family").match(/^([a-zA-Z "]*),/g)[0];
+			$(this).text(values.slice(0, -1));
+		});
+
+		$('.color .-first .column').each(function(index){
+
+			colors[index] = {};
+			colors[index].hex = hexc($(this).css('backgroundColor'));
+
+			var color = new w3color(colors[index].hex);
+			colors[index].rgb = color.toRgbString();
+			colors[index].hsl = color.toHslString();
+			colors[index].cmyk = color.toCmykString();
+			colors[index].name = ntc.name(colors[index].hex)[1];
+
+			$(this).find('.hex').html(colors[index].hex.slice(1));
+			$(this).find('.rgb').html(colors[index].rgb.slice(4, -1));
+			$(this).find('.hsb').html(colors[index].hsl.slice(4, -1));
+			$(this).find('.cmyk').html(colors[index].cmyk.slice(5, -1));
+			$(this).find('.name').html(colors[index].name);
+		});
+
+		$('.color .-last .column').each(function(index){
+			colors[index] = {};
+			colors[index].hex = hexc($(this).css('backgroundColor'));
+			colors[index].name = ntc.name(colors[index].hex)[1];
+			$(this).find('.name').html(colors[index].name);
+		});
+
+	}, 1000);
+
+
+});
 
 $("#toggleBaseline").click(function(){
-	$("body").toggleClass("show-baseline");
+	$(".toggle-baseline").toggleClass("show-baseline");
+	$("#toggleBaseline").toggleClass("-active");
 });
 $("#toggleNight").click(function(){
 	$("body").toggleClass("dark");
-	$("#toggleNight i").toggleClass("icon-moon");
-	$("#toggleNight i").toggleClass("icon-sun");
+	$("#toggleNight").toggleClass("-active");
+	$("#toggleNight i").toggleClass("-moon");
+	$("#toggleNight i").toggleClass("-sun");
 });
 
 $(".burger-menu").click(function(){
 	$(".burger-menu").toggleClass("active");
 });
+
+
+// Progress
+
+var getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+$(".loading").each(function(){
+	$(this).addClass("toggle-loading");
+});
+
+window.setInterval(function(){
+	$(".toggle-loading").each(function(){
+		$(this).toggleClass("loading");
+	});
+	$(".progress .bar").each(function() {
+		let progressValue = getRandomInt(0,100);
+		$(this).css("width",  progressValue+ "%");
+		$(this).find("span").text(progressValue+"%");
+	});
+}, 3000);
+
+
+$(function(){
+	var elem, d, x, y;
+	$(".touch, .button:not(.-loading):not([disabled])").click(function(e){
+    if($(this).find(".touch-elem").length === 0)
+      $(this).prepend("<div class='touch-elem'></div>");
+
+    elem = $(this).find(".touch-elem");
+    elem.removeClass("animate");
+
+    if(!elem.height() && !elem.width()){
+        d = Math.max($(this).outerWidth(), $(this).outerHeight());
+        elem.css({height: d, width: d});
+    }
+
+    x = e.pageX - $(this).offset().left - elem.width()/2;
+    y = e.pageY - $(this).offset().top - elem.height()/2;
+
+    elem.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+	});
+});
+
 
 $(".input-material input").focus(function(){
 	$(".input-material").addClass("focus");
@@ -164,3 +239,20 @@ $(".input-material input").blur(function(){
 	if ($(".input-material input").val() == "")
 		$(".input-material").removeClass("focus");
 });
+
+//
+// $('#typo-head')
+//   .sticky({
+//     context: '#typography'
+//   })
+// ;
+// $('#color-head')
+//   .sticky({
+//     context: '#color'
+//   })
+// ;
+// $('#atom-head')
+//   .sticky({
+//     context: '#atom'
+//   })
+// ;

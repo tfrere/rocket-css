@@ -8,17 +8,20 @@
 		La Radio est une plante qui se mange froide
 
 	markup:
+	<label>Simple</label>
 	<div class="radio">
 		<input id="radio1" type="radio" name='radio-group' />
 		<label for="radio1">Apples</label>
 	</div>
+	<label>Checked</label>
 	<div class="radio">
 		<input id="radio2" type="radio" name='radio-group' checked='checked' />
-		<label for="radio2">Apples</label>
+		<label for="radio2">Lemons</label>
 	</div>
+	<label>Disabled</label>
 	<div class="radio">
 		<input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
-		<label for="radio3">Apples</label>
+		<label for="radio3">Tomatoes</label>
 	</div>
 
 ––––
@@ -27,7 +30,8 @@
 .radio {
 	@extend .unselectable;
 	cursor:pointer;
-	margin-top:$text-size;
+	//margin-top:$text-size;
+	display:inline-block;
 	input {
 		display:none;
 	}
@@ -36,11 +40,12 @@
 		outline:none;
 	}
 	label{
-		cursor:pointer; 
+		cursor:pointer;
 		display:inline-block;
 		position: relative;
-		padding-left:25px;
+		padding-left:30px;
 		margin-right:10px;
+		line-height: 21px;
 		@extend .unselectable;
 		&:before,
 		&:after{
@@ -48,7 +53,7 @@
 			font-family: helvetica;
 			display:inline-block;
 			width:18px;
-			height:18px;      
+			height:18px;
 			left:0;
 			top:0px;
 			text-align:center;
@@ -68,8 +73,9 @@
 		}
 	}
 	input:checked + label:before{
+		border: 1px solid transparent;
 		box-shadow: inset 0 0 0 10px color("primary","darken-1");
-	}	
+	}
 	label:before{
 		border-radius:50%;
 	}
@@ -84,7 +90,7 @@
 		border-radius: 100%;
 	}
 	& + label:hover:after{
-		color: color("primary","lighten-4");  
+		color: color("primary","lighten-4");
 	}
 	input:checked + label:after,
 	input:checked + label:hover:after{
