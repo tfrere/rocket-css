@@ -1,15 +1,15 @@
 var fs = require("fs");
 var del = require("del");
-const atoms = getFiles('../css/atom');
-const molecules = getFiles('../css/molecule');
-const modifiers = getFiles('../css/modifier');
+const atoms = getFiles('./src/css/atom');
+const molecules = getFiles('./src/css/molecule');
+const modifiers = getFiles('./src/css/modifier');
 
 const getEachIcon = /.icon.-(.*):before/gm;
 const getEachSocial = /.social.-(.*) {/gm;
 const getEachFlag = /\/\*(.*)\*\/\n(.*) {/gm;
 const getEachEase = /(.*):.*cubic-bezier\((.*)\),/gm;
 
-getFileContent('../css/helper/const/_icon.scss', function(data) {
+getFileContent('./src/css/helper/const/_icon.scss', function(data) {
   const icons = getEachInfo(getEachIcon, data);
   let html;
   let iconBlock;
@@ -20,15 +20,15 @@ getFileContent('../css/helper/const/_icon.scss', function(data) {
   html += '</div>';
 });
 
-getFileContent('../css/helper/const/_social.scss', function(data) {
+getFileContent('./src/css/helper/const/_social.scss', function(data) {
   const socials = getEachInfo(getEachSocial, data);
 });
 
-getFileContent('../css/helper/const/_flag.scss', function(data) {
+getFileContent('./src/css/helper/const/_flag.scss', function(data) {
   const flags = getEachObjectInfo(getEachFlag, data);
 });
 
-getFileContent('../css/helper/const/_ease.scss', function(data) {
+getFileContent('./src/css/helper/const/_ease.scss', function(data) {
   const easings = getEachObjectInfo(getEachEase, data);
 });
 
@@ -47,12 +47,12 @@ const removeLastEndOfLine = /^\t\t/gm;
 
 var blocs = [];
 
-var docSrc = "../../build/doc.html";
+var docSrc = "./build/doc.html";
 var partials = [
-  {name:"header", url:"head.html"},
-  {name:"navHead", url:"navHead.html"},
-  {name:"intro", url:"intro.html"},
-  {name:"footer", url:"foot.html"}
+  {name:"header", url:"./src/doc/head.html"},
+  {name:"navHead", url:"./src/doc/navHead.html"},
+  {name:"intro", url:"./src/doc/intro.html"},
+  {name:"footer", url:"./src/doc/foot.html"}
 ];
 
 //del([docSrc]);
