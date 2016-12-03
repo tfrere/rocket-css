@@ -3,7 +3,7 @@
     <title>RocketCSS</title>
     <meta name="author" content="keywords, comma, separated"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="css/app.css?v=<%= buildTime %>">
+    <link rel="stylesheet" href="css/app.css">
     <link rel="icon" href="images/favicon.ico">
   </head>
   <body>
@@ -38,7 +38,13 @@
 			<li><a href="#color-semantic">Semantic</a></li>
 		</ul>
 	</div>
-<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul><li><a href="#atom-Blockquote">Blockquote</a></li><li><a href="#atom-Button">Button</a></li><li><a href="#atom-Checkbox">Checkbox</a></li><li><a href="#atom-Icon & Flag">Icon & Flag</a></li><li><a href="#atom-Code">Code</a></li><li><a href="#atom-Hr">Hr</a></li><li><a href="#atom-Inputs">Inputs</a></li><li><a href="#atom-Label">Label</a></li><li><a href="#atom-Links">Links</a></li><li><a href="#atom-Select">Select</a></li><li><a href="#atom-Radio">Radio</a></li><li><a href="#atom-Progress">Progress</a></li><li><a href="#atom-Toggle">Toggle</a></li><li><a href="#atom-Tag">Tag</a></li></ul></div><div id="nav-molecule" class="accordion"><h5 class="title"><a href="#molecule-head">Molecule</a></h5><ul><li><a href="#molecule-Bubble">Bubble</a></li><li><a href="#molecule-Figure">Figure</a></li><li><a href="#molecule-Card">Card</a></li><li><a href="#molecule-Fieldset">Fieldset</a></li><li><a href="#molecule-List">List</a></li><li><a href="#molecule-Modal">Modal</a></li><li><a href="#molecule-Message">Message</a></li><li><a href="#molecule-Panel">Panel</a></li><li><a href="#molecule-Shape">Shape</a></li><li><a href="#molecule-Table">Table</a></li></ul></div><div id="nav-modifier" class="accordion"><h5 class="title"><a href="#molecule-head">Modifier</a></h5><ul><li><a href="#modifier-Loading">Loading</a></li><li><a href="#modifier-Level">Level</a></li><li><a href="#modifier-Filter">Filter</a></li><li><a href="#modifier-Merge">Merge</a></li><li><a href="#modifier-Touch">Touch</a></li></ul></div></nav>
+	<div id="nav-symbols" class="accordion">
+		<h5 class="title"><a href="#symbols-head">Symbols</a></h5>
+		<ul>
+			<li><a href="#symbols-icons">Icons</a></li>
+		</ul>
+	</div>
+<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul><li><a href="#atom-Checkbox">Checkbox</a></li><li><a href="#atom-Button">Button</a></li><li><a href="#atom-Code">Code</a></li><li><a href="#atom-Hr">Hr</a></li><li><a href="#atom-Icon & Flag">Icon & Flag</a></li><li><a href="#atom-Inputs">Inputs</a></li><li><a href="#atom-Links">Links</a></li><li><a href="#atom-Label">Label</a></li><li><a href="#atom-Progress">Progress</a></li><li><a href="#atom-Select">Select</a></li><li><a href="#atom-Radio">Radio</a></li><li><a href="#atom-Toggle">Toggle</a></li><li><a href="#atom-Tag">Tag</a></li><li><a href="#atom-Blockquote">Blockquote</a></li></ul></div><div id="nav-molecule" class="accordion"><h5 class="title"><a href="#molecule-head">Molecule</a></h5><ul><li><a href="#molecule-Bubble">Bubble</a></li><li><a href="#molecule-Figure">Figure</a></li><li><a href="#molecule-Card">Card</a></li><li><a href="#molecule-Fieldset">Fieldset</a></li><li><a href="#molecule-Modal">Modal</a></li><li><a href="#molecule-Message">Message</a></li><li><a href="#molecule-List">List</a></li><li><a href="#molecule-Panel">Panel</a></li><li><a href="#molecule-Table">Table</a></li><li><a href="#molecule-Shape">Shape</a></li></ul></div><div id="nav-modifier" class="accordion"><h5 class="title"><a href="#molecule-head">Modifier</a></h5><ul><li><a href="#modifier-Filter">Filter</a></li><li><a href="#modifier-Loading">Loading</a></li><li><a href="#modifier-Merge">Merge</a></li><li><a href="#modifier-Level">Level</a></li><li><a href="#modifier-Touch">Touch</a></li></ul></div></nav>
 <div class="main-wrapper">
   <header id="typo-head">
     <div>
@@ -260,21 +266,49 @@
       </div>
     </div>
   </section>
-<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom"><div class="bloc" id="atom-Blockquote"><h5>Blockquote</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
-    <blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
-    <label>With -pullquote</label>
-    <blockquote class="-pullquote">
-      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-      <footer>Isaac Asimov</footer>
-    </blockquote>
+<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom"><div class="bloc" id="atom-Checkbox"><h5>Checkbox</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
+		<div class="checkbox">
+			<input id="checkbox2" type="checkbox"/>
+			<label for="checkbox2">
+				<span>Apples</span>
+			</label>
+		</div>
+		<label>Checked</label>
+		<div class="checkbox">
+			<input id="checkbox3" type="checkbox" checked/>
+			<label for="checkbox3">
+				<span>Lemons</span>
+			</label>
+		</div>
+		<label>Disabled</label>
+		<div class="checkbox">
+		<input id="checkbox1" type="checkbox" disabled="disabled"/>
+			<label for="checkbox1">
+				<span>Tomatoes</span>
+			</label>
+		</div>
 
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Blockquote-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Blockquote-code">    &lt;label&gt;Simple&lt;/label&gt;
-    &lt;blockquote&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/blockquote&gt;
-    &lt;label&gt;With -pullquote&lt;/label&gt;
-    &lt;blockquote class=&quot;-pullquote&quot;&gt;
-      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-      &lt;footer&gt;Isaac Asimov&lt;/footer&gt;
-    &lt;/blockquote&gt;
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Checkbox-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Checkbox-code">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+	&lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
+	&lt;label for=&quot;checkbox2&quot;&gt;
+		&lt;span&gt;Apples&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Checked&lt;/label&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+	&lt;input id=&quot;checkbox3&quot; type=&quot;checkbox&quot; checked/&gt;
+	&lt;label for=&quot;checkbox3&quot;&gt;
+		&lt;span&gt;Lemons&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;label&gt;Disabled&lt;/label&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+&lt;input id=&quot;checkbox1&quot; type=&quot;checkbox&quot; disabled=&quot;disabled&quot;/&gt;
+	&lt;label for=&quot;checkbox1&quot;&gt;
+		&lt;span&gt;Tomatoes&lt;/span&gt;
+	&lt;/label&gt;
+&lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Button"><h5>Button</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
     <button class="button -primary touch">
       <span>Bouton</span>
@@ -332,84 +366,6 @@
 &lt;a class=&quot;button -disabled&quot;&gt;
       &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
     &lt;/a&gt;
-</code></pre></div></div></div></div><div class="bloc" id="atom-Checkbox"><h5>Checkbox</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
-		<div class="checkbox">
-			<input id="checkbox2" type="checkbox"/>
-			<label for="checkbox2">
-				<span>Apples</span>
-			</label>
-		</div>
-		<label>Checked</label>
-		<div class="checkbox">
-			<input id="checkbox3" type="checkbox" checked/>
-			<label for="checkbox3">
-				<span>Lemons</span>
-			</label>
-		</div>
-		<label>Disabled</label>
-		<div class="checkbox">
-		<input id="checkbox1" type="checkbox" disabled="disabled"/>
-			<label for="checkbox1">
-				<span>Tomatoes</span>
-			</label>
-		</div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Checkbox-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Checkbox-code">&lt;label&gt;Simple&lt;/label&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
-	&lt;label for=&quot;checkbox2&quot;&gt;
-		&lt;span&gt;Apples&lt;/span&gt;
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;label&gt;Checked&lt;/label&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-	&lt;input id=&quot;checkbox3&quot; type=&quot;checkbox&quot; checked/&gt;
-	&lt;label for=&quot;checkbox3&quot;&gt;
-		&lt;span&gt;Lemons&lt;/span&gt;
-	&lt;/label&gt;
-&lt;/div&gt;
-&lt;label&gt;Disabled&lt;/label&gt;
-&lt;div class=&quot;checkbox&quot;&gt;
-&lt;input id=&quot;checkbox1&quot; type=&quot;checkbox&quot; disabled=&quot;disabled&quot;/&gt;
-	&lt;label for=&quot;checkbox1&quot;&gt;
-		&lt;span&gt;Tomatoes&lt;/span&gt;
-	&lt;/label&gt;
-&lt;/div&gt;
-</code></pre></div></div></div></div><div class="bloc" id="atom-Icon & Flag"><h5>Icon & Flag</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Icones</label>
-    <i class="icon -x4 _text-success -checkmark-circle"></i>
-    <i class="icon -x3 _text-danger -cross-circle"></i>
-    <i class="icon -x2 _text-success -plus-circle"></i>
-    <i class="icon -star"></i>
-    <i class="icon -heart"></i>
-    <i class="icon -cog -spin"></i>
-    <label>Flags</label>
-    <div class="flag -x4 -fr"></div>
-    <div class="flag -x3 -be"></div>
-    <div class="flag -x2 -it"></div>
-    <div class="flag -eu"></div>
-    <label>Social</label>
-    <div class="social -x4 -behance"></div>
-    <div class="social -x3 -facebook"></div>
-    <div class="social -x2 -github"></div>
-    <div class="social -email"></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Icon & Flag-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Icon & Flag-code">    &lt;label&gt;Icones&lt;/label&gt;
-    &lt;i class=&quot;icon -x4 _text-success -checkmark-circle&quot;&gt;&lt;/i&gt;
-    &lt;i class=&quot;icon -x3 _text-danger -cross-circle&quot;&gt;&lt;/i&gt;
-    &lt;i class=&quot;icon -x2 _text-success -plus-circle&quot;&gt;&lt;/i&gt;
-    &lt;i class=&quot;icon -star&quot;&gt;&lt;/i&gt;
-    &lt;i class=&quot;icon -heart&quot;&gt;&lt;/i&gt;
-    &lt;i class=&quot;icon -cog -spin&quot;&gt;&lt;/i&gt;
-    &lt;label&gt;Flags&lt;/label&gt;
-    &lt;div class=&quot;flag -x4 -fr&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;flag -x3 -be&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;flag -x2 -it&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;flag -eu&quot;&gt;&lt;/div&gt;
-    &lt;label&gt;Social&lt;/label&gt;
-    &lt;div class=&quot;social -x4 -behance&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;social -x3 -facebook&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;social -x2 -github&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;social -email&quot;&gt;&lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Code"><h5>Code</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 		<code>
 			some code here
@@ -456,6 +412,41 @@ c(&quot;)(&quot;)&lt;/code&gt;
 &lt;hr class=&quot;-title-left&quot; data-title=&quot;yet another title&quot; /&gt;
 &lt;hr class=&quot;-title-right&quot; data-title=&quot;title right&quot; /&gt;
 &lt;div class=&quot;hr&quot;&gt;&lt;span&gt;&lt;i class=&quot;icon -heart&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Icon & Flag"><h5>Icon & Flag</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Icones</label>
+    <i class="icon -x4 _text-success -checkmark-circle"></i>
+    <i class="icon -x3 _text-danger -cross-circle"></i>
+    <i class="icon -x2 _text-success -plus-circle"></i>
+    <i class="icon -star"></i>
+    <i class="icon -heart"></i>
+    <i class="icon -cog -spin"></i>
+    <label>Flags</label>
+    <div class="flag -x4 -fr"></div>
+    <div class="flag -x3 -be"></div>
+    <div class="flag -x2 -it"></div>
+    <div class="flag -eu"></div>
+    <label>Social</label>
+    <div class="social -x4 -behance"></div>
+    <div class="social -x3 -facebook"></div>
+    <div class="social -x2 -github"></div>
+    <div class="social -email"></div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Icon & Flag-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Icon & Flag-code">    &lt;label&gt;Icones&lt;/label&gt;
+    &lt;i class=&quot;icon -x4 _text-success -checkmark-circle&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;icon -x3 _text-danger -cross-circle&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;icon -x2 _text-success -plus-circle&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;icon -star&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;icon -heart&quot;&gt;&lt;/i&gt;
+    &lt;i class=&quot;icon -cog -spin&quot;&gt;&lt;/i&gt;
+    &lt;label&gt;Flags&lt;/label&gt;
+    &lt;div class=&quot;flag -x4 -fr&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;flag -x3 -be&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;flag -x2 -it&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;flag -eu&quot;&gt;&lt;/div&gt;
+    &lt;label&gt;Social&lt;/label&gt;
+    &lt;div class=&quot;social -x4 -behance&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;social -x3 -facebook&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;social -x2 -github&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;social -email&quot;&gt;&lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Inputs"><h5>Inputs</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 		<input type="text" placeholder="test"/>
 		<label>With -round -large</label>
@@ -465,6 +456,19 @@ c(&quot;)(&quot;)&lt;/code&gt;
 &lt;input type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
 &lt;label&gt;With -round -large&lt;/label&gt;
 &lt;input class=&quot;-round -large&quot; type=&quot;text&quot; placeholder=&quot;test&quot; required /&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Links"><h5>Links</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</input>
+    <a href="#">Hello world</a>
+    <label>With -custom</input>
+    <a class="-custom" href="#">Hello world</a>
+    <label>Inside text</input>
+    <p>In texts, links are underlined by default like <a href="#">this</a>. It keeps general line height</p>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Links-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Links-code">    &lt;label&gt;Simple&lt;/input&gt;
+    &lt;a href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
+    &lt;label&gt;With -custom&lt;/input&gt;
+    &lt;a class=&quot;-custom&quot; href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
+    &lt;label&gt;Inside text&lt;/input&gt;
+    &lt;p&gt;In texts, links are underlined by default like &lt;a href=&quot;#&quot;&gt;this&lt;/a&gt;. It keeps general line height&lt;/p&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Label"><h5>Label</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
     <label>
       <i class="icon -sun"></i>
@@ -484,19 +488,65 @@ c(&quot;)(&quot;)&lt;/code&gt;
       &lt;span&gt;1&lt;/span&gt;
       With -step
     &lt;/label&gt;
-</code></pre></div></div></div></div><div class="bloc" id="atom-Links"><h5>Links</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</input>
-    <a href="#">Hello world</a>
-    <label>With -custom</input>
-    <a class="-custom" href="#">Hello world</a>
-    <label>Inside text</input>
-    <p>In texts, links are underlined by default like <a href="#">this</a>. It keeps general line height</p>
+</code></pre></div></div></div></div><div class="bloc" id="atom-Progress"><h5>Progress</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>With -small</label>
+    <div class="progress -small">
+      <div class="bar"></div>
+    </div>
+    <div class="progress -small -wick">
+      <div style="width:30%" class="bar"></div>
+    </div>
+    <label>With -inner</label>
+    <div class="progress -inner">
+      <div style="width:50%" class="bar">
+        <span>60 %</span>
+      </div>
+    </div>
+    <div class="progress -inner -round">
+      <div style="width:60%" class="bar ">
+        <span>80 %</span>
+      </div>
+    </div>
+    <label>With animation</label>
+    <div class="progress -round -active">
+      <div style="width:70%" class="bar">
+        <span>70 %</span>
+      </div>
+    </div>
+    <div class="progress -dashed">
+      <div style="width:100%" class="bar">
+        <span>100 %</span>
+      </div>
+    </div>
 
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Links-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Links-code">    &lt;label&gt;Simple&lt;/input&gt;
-    &lt;a href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
-    &lt;label&gt;With -custom&lt;/input&gt;
-    &lt;a class=&quot;-custom&quot; href=&quot;#&quot;&gt;Hello world&lt;/a&gt;
-    &lt;label&gt;Inside text&lt;/input&gt;
-    &lt;p&gt;In texts, links are underlined by default like &lt;a href=&quot;#&quot;&gt;this&lt;/a&gt;. It keeps general line height&lt;/p&gt;
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Progress-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Progress-code">    &lt;label&gt;With -small&lt;/label&gt;
+    &lt;div class=&quot;progress -small&quot;&gt;
+      &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -small -wick&quot;&gt;
+      &lt;div style=&quot;width:30%&quot; class=&quot;bar&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -inner&lt;/label&gt;
+    &lt;div class=&quot;progress -inner&quot;&gt;
+      &lt;div style=&quot;width:50%&quot; class=&quot;bar&quot;&gt;
+        &lt;span&gt;60 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -inner -round&quot;&gt;
+      &lt;div style=&quot;width:60%&quot; class=&quot;bar &quot;&gt;
+        &lt;span&gt;80 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With animation&lt;/label&gt;
+    &lt;div class=&quot;progress -round -active&quot;&gt;
+      &lt;div style=&quot;width:70%&quot; class=&quot;bar&quot;&gt;
+        &lt;span&gt;70 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;progress -dashed&quot;&gt;
+      &lt;div style=&quot;width:100%&quot; class=&quot;bar&quot;&gt;
+        &lt;span&gt;100 %&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Select"><h5>Select</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 		<div class="select">
 			<select required="" >
@@ -559,65 +609,6 @@ c(&quot;)(&quot;)&lt;/code&gt;
 	&lt;input id=&quot;radio3&quot; type=&quot;radio&quot; name='radio-group' disabled=&quot;disabled&quot;/&gt;
 	&lt;label for=&quot;radio3&quot;&gt;Tomatoes&lt;/label&gt;
 &lt;/div&gt;
-</code></pre></div></div></div></div><div class="bloc" id="atom-Progress"><h5>Progress</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>With -small</label>
-    <div class="progress -small">
-      <div class="bar"></div>
-    </div>
-    <div class="progress -small -wick">
-      <div style="width:30%" class="bar"></div>
-    </div>
-    <label>With -inner</label>
-    <div class="progress -inner">
-      <div style="width:50%" class="bar">
-        <span>60 %</span>
-      </div>
-    </div>
-    <div class="progress -inner -round">
-      <div style="width:60%" class="bar ">
-        <span>80 %</span>
-      </div>
-    </div>
-    <label>With animation</label>
-    <div class="progress -round -active">
-      <div style="width:70%" class="bar">
-        <span>70 %</span>
-      </div>
-    </div>
-    <div class="progress -dashed">
-      <div style="width:100%" class="bar">
-        <span>100 %</span>
-      </div>
-    </div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Progress-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Progress-code">    &lt;label&gt;With -small&lt;/label&gt;
-    &lt;div class=&quot;progress -small&quot;&gt;
-      &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;progress -small -wick&quot;&gt;
-      &lt;div style=&quot;width:30%&quot; class=&quot;bar&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;label&gt;With -inner&lt;/label&gt;
-    &lt;div class=&quot;progress -inner&quot;&gt;
-      &lt;div style=&quot;width:50%&quot; class=&quot;bar&quot;&gt;
-        &lt;span&gt;60 %&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;progress -inner -round&quot;&gt;
-      &lt;div style=&quot;width:60%&quot; class=&quot;bar &quot;&gt;
-        &lt;span&gt;80 %&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;label&gt;With animation&lt;/label&gt;
-    &lt;div class=&quot;progress -round -active&quot;&gt;
-      &lt;div style=&quot;width:70%&quot; class=&quot;bar&quot;&gt;
-        &lt;span&gt;70 %&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;progress -dashed&quot;&gt;
-      &lt;div style=&quot;width:100%&quot; class=&quot;bar&quot;&gt;
-        &lt;span&gt;100 %&lt;/span&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="atom-Toggle"><h5>Toggle</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 		<div class="toggle">
 			<input id="toggle1" type="checkbox">
@@ -710,6 +701,21 @@ c(&quot;)(&quot;)&lt;/code&gt;
 &lt;div class=&quot;tag -corner -top-left&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;/div&gt;
 &lt;div class=&quot;tag -corner -top-right&quot;&gt;&lt;span&gt; 3 &lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;tag -corner -top-right&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="atom-Blockquote"><h5>Blockquote</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
+    <blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
+    <label>With -pullquote</label>
+    <blockquote class="-pullquote">
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+      <footer>Isaac Asimov</footer>
+    </blockquote>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Blockquote-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Blockquote-code">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;blockquote&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/blockquote&gt;
+    &lt;label&gt;With -pullquote&lt;/label&gt;
+    &lt;blockquote class=&quot;-pullquote&quot;&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+      &lt;footer&gt;Isaac Asimov&lt;/footer&gt;
+    &lt;/blockquote&gt;
 </code></pre></div></div></div></div></section><header id="molecule-head"><div><h3>Molecule</h3></div></header><section class="section" id="molecule"><div class="bloc" id="molecule-Bubble"><h5>Bubble</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
     <div class="bubble">
         <img src="images/joe.jpg"/>
@@ -872,6 +878,68 @@ c(&quot;)(&quot;)&lt;/code&gt;
 		&lt;span&gt;Votre password est inccorect&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/fieldset&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Modal"><h5>Modal</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <button class="button open-modal">Open modal</button>
+    <div class="modal">
+      <div class="overlay close-modal"></div>
+      <div class="content">
+        <div class="card content-wrapper">
+          <header class="header">
+						<h5>Modal title</h5>
+						<div class="close-button close-modal">
+							<i class="icon -cross"></i>
+						</div>
+					</header>
+          <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+					<footer class="footer merge -large -horizontal">
+		        <button class="button">Accept</button>
+		        <button class="button">Decline</button>
+		      </footer>
+				</div>
+      </div>
+    </div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Modal-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Modal-code">    &lt;button class=&quot;button open-modal&quot;&gt;Open modal&lt;/button&gt;
+    &lt;div class=&quot;modal&quot;&gt;
+      &lt;div class=&quot;overlay close-modal&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;content&quot;&gt;
+        &lt;div class=&quot;card content-wrapper&quot;&gt;
+          &lt;header class=&quot;header&quot;&gt;
+				&lt;h5&gt;Modal title&lt;/h5&gt;
+				&lt;div class=&quot;close-button close-modal&quot;&gt;
+					&lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/header&gt;
+          &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+			&lt;footer class=&quot;footer merge -large -horizontal&quot;&gt;
+        &lt;button class=&quot;button&quot;&gt;Accept&lt;/button&gt;
+        &lt;button class=&quot;button&quot;&gt;Decline&lt;/button&gt;
+      &lt;/footer&gt;
+		&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Message"><h5>Message</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
+    <div class="message">
+      <h5><i class="icon -sun"></i>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With -with-intent -line-primary</label>
+    <div class="message -with-intent -line-primary">
+      <i class="icon status -sun"></i>
+      <h5>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Message-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Message-code">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;div class=&quot;message&quot;&gt;
+      &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
+    &lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
+      &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
+      &lt;h5&gt;Title&lt;/h5&gt;
+      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+    &lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="molecule-List"><h5>List</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Unordered</input>
     <ul class="ul">
       <li>Unordered lists have basic styles</li>
@@ -1001,68 +1069,6 @@ c(&quot;)(&quot;)&lt;/code&gt;
         &lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
-</code></pre></div></div></div></div><div class="bloc" id="molecule-Modal"><h5>Modal</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <button class="button open-modal">Open modal</button>
-    <div class="modal">
-      <div class="overlay close-modal"></div>
-      <div class="content">
-        <div class="card content-wrapper">
-          <header class="header">
-						<h5>Modal title</h5>
-						<div class="close-button close-modal">
-							<i class="icon -cross"></i>
-						</div>
-					</header>
-          <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-					<footer class="footer merge -large -horizontal">
-		        <button class="button">Accept</button>
-		        <button class="button">Decline</button>
-		      </footer>
-				</div>
-      </div>
-    </div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Modal-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Modal-code">    &lt;button class=&quot;button open-modal&quot;&gt;Open modal&lt;/button&gt;
-    &lt;div class=&quot;modal&quot;&gt;
-      &lt;div class=&quot;overlay close-modal&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;content&quot;&gt;
-        &lt;div class=&quot;card content-wrapper&quot;&gt;
-          &lt;header class=&quot;header&quot;&gt;
-				&lt;h5&gt;Modal title&lt;/h5&gt;
-				&lt;div class=&quot;close-button close-modal&quot;&gt;
-					&lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
-				&lt;/div&gt;
-			&lt;/header&gt;
-          &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-			&lt;footer class=&quot;footer merge -large -horizontal&quot;&gt;
-        &lt;button class=&quot;button&quot;&gt;Accept&lt;/button&gt;
-        &lt;button class=&quot;button&quot;&gt;Decline&lt;/button&gt;
-      &lt;/footer&gt;
-		&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-</code></pre></div></div></div></div><div class="bloc" id="molecule-Message"><h5>Message</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
-    <div class="message">
-      <h5><i class="icon -sun"></i>Title</h5>
-      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-    </div>
-    <label>With -with-intent -line-primary</label>
-    <div class="message -with-intent -line-primary">
-      <i class="icon status -sun"></i>
-      <h5>Title</h5>
-      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-    </div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Message-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Message-code">    &lt;label&gt;Simple&lt;/label&gt;
-    &lt;div class=&quot;message&quot;&gt;
-      &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
-      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
-    &lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
-      &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
-      &lt;h5&gt;Title&lt;/h5&gt;
-      &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-    &lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="molecule-Panel"><h5>Panel</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><button class="button open-panel">Open panel</button>
 		<div class="panel -panel -left">
       <div class="overlay close-panel"></div>
@@ -1102,13 +1108,6 @@ c(&quot;)(&quot;)&lt;/code&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-</code></pre></div></div></div></div><div class="bloc" id="molecule-Shape"><h5>Shape</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <div class="shape one"></div>
-    <div class="shape two"></div>
-    <div class="shape three"></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Shape-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Shape-code">    &lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;shape three&quot;&gt;&lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="molecule-Table"><h5>Table</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 		<table>
 			<thead>
@@ -1206,7 +1205,49 @@ c(&quot;)(&quot;)&lt;/code&gt;
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-</code></pre></div></div></div></div></section><header id="modifier-head"><div><h3>Modifier</h3></div></header><section class="section" id="modifier"><div class="bloc" id="modifier-Loading"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Button</label>
+</code></pre></div></div></div></div><div class="bloc" id="molecule-Shape"><h5>Shape</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <div class="shape one"></div>
+    <div class="shape two"></div>
+    <div class="shape three"></div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Shape-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Shape-code">    &lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;shape three&quot;&gt;&lt;/div&gt;
+</code></pre></div></div></div></div></section><header id="modifier-head"><div><h3>Modifier</h3></div></header><section class="section" id="modifier"><div class="bloc" id="modifier-Filter"><h5>Filter</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
+    <figure class="filter -grayscale -example">
+      <img src="/images/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+    <br/>
+    <label>With filter -blur</label>
+    <figure class="filter -blur -example">
+      <img src="/images/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Filter-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Filter-code">    &lt;label&gt;Simple&lt;/label&gt;
+    &lt;figure class=&quot;filter -grayscale -example&quot;&gt;
+      &lt;img src=&quot;/images/background/leaf.jpg&quot;&gt;
+      &lt;figcaption&gt;
+        &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
+        &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;br/&gt;
+    &lt;label&gt;With filter -blur&lt;/label&gt;
+    &lt;figure class=&quot;filter -blur -example&quot;&gt;
+      &lt;img src=&quot;/images/background/leaf.jpg&quot;&gt;
+      &lt;figcaption&gt;
+        &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
+        &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+</code></pre></div></div></div></div><div class="bloc" id="modifier-Loading"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Button</label>
     <button class="button loading toggle-loading toggle-success touch">
       <i class="icon -sun"></i>
       <span>Bouton</span>
@@ -1279,54 +1320,6 @@ c(&quot;)(&quot;)&lt;/code&gt;
         &lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
-</code></pre></div></div></div></div><div class="bloc" id="modifier-Level"><h5>Level</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <div class="card level-1 toggle-level"><p>Ground</p></div>
-    <div class="card level-2 toggle-level"><p>Level 2</p></div>
-    <div class="card level-3 toggle-level"><p>Level 3</p></div>
-    <div class="card level-4 toggle-level"><p>Level 4</p></div>
-    <div class="card level-5 toggle-level"><p>Level 5</p></div>
-    <div class="card level-6 toggle-level"><p>Level 6</p></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Level-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Level-code">    &lt;div class=&quot;card level-1 toggle-level&quot;&gt;&lt;p&gt;Ground&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card level-2 toggle-level&quot;&gt;&lt;p&gt;Level 2&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card level-3 toggle-level&quot;&gt;&lt;p&gt;Level 3&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card level-4 toggle-level&quot;&gt;&lt;p&gt;Level 4&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
-    &lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
-</code></pre></div></div></div></div><div class="bloc" id="modifier-Filter"><h5>Filter</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <label>Simple</label>
-    <figure class="filter -grayscale -example">
-      <img src="/images/background/leaf.jpg">
-      <figcaption>
-        <h6 class="title">Title</h6>
-        <span class="desc">Dzongsar, Tibet 2004</span>
-      </figcaption>
-    </figure>
-    <br/>
-    <label>With filter -blur</label>
-    <figure class="filter -blur -example">
-      <img src="/images/background/leaf.jpg">
-      <figcaption>
-        <h6 class="title">Title</h6>
-        <span class="desc">Dzongsar, Tibet 2004</span>
-      </figcaption>
-    </figure>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Filter-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Filter-code">    &lt;label&gt;Simple&lt;/label&gt;
-    &lt;figure class=&quot;filter -grayscale -example&quot;&gt;
-      &lt;img src=&quot;/images/background/leaf.jpg&quot;&gt;
-      &lt;figcaption&gt;
-        &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
-        &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
-      &lt;/figcaption&gt;
-    &lt;/figure&gt;
-    &lt;br/&gt;
-    &lt;label&gt;With filter -blur&lt;/label&gt;
-    &lt;figure class=&quot;filter -blur -example&quot;&gt;
-      &lt;img src=&quot;/images/background/leaf.jpg&quot;&gt;
-      &lt;figcaption&gt;
-        &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
-        &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
-      &lt;/figcaption&gt;
-    &lt;/figure&gt;
 </code></pre></div></div></div></div><div class="bloc" id="modifier-Merge"><h5>Merge</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Horizontal</label>
 		<div class="merge -horizontal">
 			<fieldset class="-has-icon">
@@ -1414,6 +1407,19 @@ c(&quot;)(&quot;)&lt;/code&gt;
 		&lt;span&gt;Se connecter&lt;/span&gt;
 	&lt;/button&gt;
 &lt;/div&gt;
+</code></pre></div></div></div></div><div class="bloc" id="modifier-Level"><h5>Level</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <div class="card level-1 toggle-level"><p>Ground</p></div>
+    <div class="card level-2 toggle-level"><p>Level 2</p></div>
+    <div class="card level-3 toggle-level"><p>Level 3</p></div>
+    <div class="card level-4 toggle-level"><p>Level 4</p></div>
+    <div class="card level-5 toggle-level"><p>Level 5</p></div>
+    <div class="card level-6 toggle-level"><p>Level 6</p></div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#Level-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="Level-code">    &lt;div class=&quot;card level-1 toggle-level&quot;&gt;&lt;p&gt;Ground&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card level-2 toggle-level&quot;&gt;&lt;p&gt;Level 2&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card level-3 toggle-level&quot;&gt;&lt;p&gt;Level 3&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card level-4 toggle-level&quot;&gt;&lt;p&gt;Level 4&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
+    &lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
 </code></pre></div></div></div></div><div class="bloc" id="modifier-Touch"><h5>Touch</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample">    <div class="radio -primary touch ">
       <input id="radio4" type="radio" name='radio-group' />
       <label for="radio4"<span>Apples</span></label>
@@ -1490,8 +1496,8 @@ c(&quot;)(&quot;)&lt;/code&gt;
           <h5><i class="icon -x3 -heart"></i></h5>
       </footer>
     </div>
-    <script src="js/polyfills.js?v=<%= buildTime %>"></script>
-    <script src="js/vendors.js?v=<%= buildTime %>"></script>
-    <script src="js/app.js?v=<%= buildTime %>"></script>
+    <script src="js/polyfills.js"></script>
+    <script src="js/vendors.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

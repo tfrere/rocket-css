@@ -84,7 +84,7 @@
     "webpack": "webpack --colors --display-error-details --progress --config ./webpack/config",
     "start": "node server.js",
     "dev": "NODE_ENV=dev node ./webpack/dev-server  --colors --display-error-details --progress",
-    "build": "npm run webpack",
+    "build": "npm run webpack; node ./src/doc/generate.js",
     "prepublish": "npm run build"
   },
   "config": {
