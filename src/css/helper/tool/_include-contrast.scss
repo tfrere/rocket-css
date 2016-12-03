@@ -7,7 +7,7 @@
 
 // sRGB BT-709 BRIGHTNESS
 
-@function brightness($c) {
+@function resolve-brightness($c) {
 	$rlin: log2lin(red($c)/255);
 	$glin: log2lin(green($c)/255);
 	$blin: log2lin(blue($c)/255);
@@ -21,10 +21,10 @@
     @return null;
   }
   @else {
-    $color-brightness: brightness($color);  
-    $light-text-brightness: brightness($light);
-    $dark-text-brightness: brightness($dark);
-    
-    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);  
+    $color-brightness: resolve-brightness($color);  
+    $light-text-brightness: resolve-brightness($light);
+    $dark-text-brightness: resolve-brightness($dark);
+
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
   }
 }

@@ -17,37 +17,44 @@
 @import "atom/icon";
 @import "atom/button";
 @import "atom/input";
-@import "atom/list";
 @import "atom/blockquote";
 @import "atom/toggle";
 @import "atom/checkbox";
 @import "atom/link";
-@import "atom/table";
 @import "atom/code";
 @import "atom/hr";
 @import "atom/select";
 @import "atom/radio";
 @import "atom/label";
+@import "atom/tag";
+@import "atom/progress";
 
-@import "atom/extra/loader-line-scale";
-@import "atom/extra/loader-circle-scale";
-@import "atom/extra/loader-ball-scale";
-@import "atom/extra/loader-ball-pulse";
 @import "atom/extra/button-grainandmortar";
 @import "atom/extra/button-naira";
 @import "atom/extra/button-push";
 @import "atom/extra/anim-underline";
-@import "atom/extra/touch-event";
 @import "atom/extra/burger-menu";
+@import "atom/extra/loader-line-scale";
+@import "atom/extra/loader-circle-scale";
+@import "atom/extra/loader-ball-scale";
+@import "atom/extra/loader-ball-pulse";
 
 @import "molecule/fieldset";
-@import "molecule/merge";
-@import "molecule/tag";
-@import "molecule/list";
 @import "molecule/bubble";
+@import "molecule/message";
 @import "molecule/card";
-@import "molecule/progress";
-@import "molecule/loading";
+@import "molecule/modal";
+@import "molecule/panel";
+@import "molecule/list";
+@import "molecule/table";
+@import "molecule/shape";
+@import "molecule/figure";
+
+@import "modifier/merge";
+@import "modifier/touch";
+@import "modifier/loading";
+@import "modifier/level";
+@import "modifier/filter";
 
 @import "template/nav";
 @import "template/section";
@@ -105,7 +112,7 @@ body.dark {
 	display:none;
 }
 
-.content-wrapper {
+.main-wrapper {
 	margin-left:295px;
 	width:calc(100% - 295px);
 	position:relative;

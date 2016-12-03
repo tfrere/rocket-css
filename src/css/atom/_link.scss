@@ -11,9 +11,9 @@
     <label>Simple</input>
     <a href="#">Hello world</a>
     <label>With -custom</input>
-		<a class="-custom" href="#">Hello world</a>
+    <a class="-custom" href="#">Hello world</a>
     <label>Inside text</input>
-		<p>In texts, links are underlined by default like <a href="#">this</a>. It keeps general line height</p>
+    <p>In texts, links are underlined by default like <a href="#">this</a>. It keeps general line height</p>
 
 ––––
 */
@@ -75,6 +75,7 @@ a:not(.button), u {
 p a, a.-custom {
   text-decoration: none;
   position: relative;
+  display:inline;
   text-shadow: -1px -1px 0 $background-color, 1px -1px 0 $background-color, -1px 1px 0 $background-color, 1px 1px 0 $background-color;
   @include underline($link-color, 1px, 2px);
   &:hover, &:focus {

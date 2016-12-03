@@ -34,7 +34,6 @@
 		  font-family: $text-font;
 		  color: $title-color;
 			font-style: normal;
-			//
 			svg {
 				fill: currentColor;
 			}
@@ -59,6 +58,10 @@
 			letter-spacing: .05rem;
 			color: darken($title-color, 10%);
 			&a { font-weight: inherit; }
+			.icon {
+				font-size: inherit;
+				margin-right:5px;
+			}
 		}
 
 		h1 { font-size: $title-size * 2.0833334; line-height: 1.2;  letter-spacing: -.1rem; } // 1.25
@@ -131,14 +134,6 @@
 		.upper-first	{ display:block; &:first-letter { text-transform: uppercase; }  }
 
 		.unselectable 	{ user-select: none; }
-
-		/* # Importants helpers prefixed by _
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		._unmargin { margin: 0 !important; }
-		._center { text-align: center !important; }
-		._pull-left { float: left !important; }
-		._pull-right { float: right !important; }
 
 		/* # Baseline
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */

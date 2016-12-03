@@ -8,23 +8,24 @@
 		La icon est une plante qui se mange froide
 
 	markup:
-  <label>Icones</label>
-  <i class="icon -x4 _text-success -checkmark-circle"></i>
-  <i class="icon -x3 _text-danger -cross-circle"></i>
-  <i class="icon -x2 _text-success -plus-circle"></i>
-  <i class="icon -star"></i>
-  <i class="icon -heart"></i>
-  <i class="icon -cog -spin"></i>
-  <label>Flags</label>
-  <div class="flag -x4 -fr"></div>
-  <div class="flag -x3 -be"></div>
-  <div class="flag -x2 -it"></div>
-  <div class="flag -eu"></div>
-  <label>Social</label>
-  <div class="social -x4 -behance"></div>
-  <div class="social -x3 -facebook"></div>
-  <div class="social -x2 -github"></div>
-  <div class="social -email"></div>
+    <label>Icones</label>
+    <i class="icon -x4 _text-success -checkmark-circle"></i>
+    <i class="icon -x3 _text-danger -cross-circle"></i>
+    <i class="icon -x2 _text-success -plus-circle"></i>
+    <i class="icon -star"></i>
+    <i class="icon -heart"></i>
+    <i class="icon -cog -spin"></i>
+    <label>Flags</label>
+    <div class="flag -x4 -fr"></div>
+    <div class="flag -x3 -be"></div>
+    <div class="flag -x2 -it"></div>
+    <div class="flag -eu"></div>
+    <label>Social</label>
+    <div class="social -x4 -behance"></div>
+    <div class="social -x3 -facebook"></div>
+    <div class="social -x2 -github"></div>
+    <div class="social -email"></div>
+
 ––––
 */
 
@@ -37,6 +38,24 @@
 
   100% {
     transform: rotate(359deg);
+  }
+}
+
+@keyframes flip {
+  0% {
+      transform: rotate(0deg);
+  }
+  15% {
+      transform: rotate(-25deg);
+  }
+  70% {
+      transform: rotate(195deg);
+  }
+  85% {
+      transform: rotate(173deg);
+  }
+  100% {
+      transform: rotate(180deg);
   }
 }
 

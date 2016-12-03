@@ -54,6 +54,10 @@ body.dark>header {
 		margin-bottom: 60px;
     margin-left: 103px;
     margin-top: 64px;
+		border-radius:100%;
+		&:after {
+			content:"";
+		}
 	}
 	h5 {
 		text-transform: uppercase;

@@ -11,29 +11,32 @@
 		<label>With right tag</label>
 		<fieldset class="-has-icon">
 			<i class="icon -lock"></i>
-			<input
-			class=""
-			type="password"
-			placeholder="Password"
-			/>
-			<div class="tag -line-danger -left -pointing">
+			<input type="password" placeholder="Password" />
+			<div class="tag visible -line-danger -left -pointing">
 				<span>Password incorrect</span>
 			</div>
 		</fieldset>
 		<fieldset class="-has-icon -large -has-tag">
 			<i class="icon -lock"></i>
 			<label>With sub tag</label>
-			<input
-			type="password"
-			placeholder="Password"
-			/>
-			<div class="tag -line-danger -large -top -pointing">
+			<input type="password" placeholder="Password" />
+			<div class="tag visible -line-danger -large -top -pointing">
 				<span>Votre password est inccorect</span>
 			</div>
 		</fieldset>
 
 ––––
 */
+
+@keyframes fade-in {
+  0% {
+    transform: translateX(5px);
+  }
+
+  100% {
+		transform: translateX(0px);
+  }
+}
 
 $base-index: 0;
 
@@ -45,7 +48,7 @@ fieldset {
 	border: none;
 	padding:0;
   display: inline-block;
-	width:50%;
+	//max-width:50%;
 	input {
 		width:100%;
 		margin-bottom:0!important;
@@ -53,8 +56,12 @@ fieldset {
 
   &.-large {
   	width:100%;
-  }
+	}
 
+	&:after {
+		clear:both;
+		content:"";
+	}
 
 	&.-has-icon {
 		input {
@@ -97,12 +104,17 @@ fieldset {
 	.tag {
 		position: absolute;
 		min-height: 26px;
+		display: none;
+		animation: fade-in 1OOms;
+		&.visible {
+			display: block;
+		}
 		&.-left {
-			bottom: 0px;
+			bottom: -3px;
 			left: calc(100% + 15px);
 		}
 		&.-right {
-			bottom: 0px;
+			bottom: -3px;
 			right: calc(100% + 8px);
 		}
 		&.-top {

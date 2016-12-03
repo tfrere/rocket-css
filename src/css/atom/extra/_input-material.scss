@@ -60,7 +60,7 @@ $base-index:1;
 		position:absolute;
 		top:14px;
 		left:0px;
-		transition: all .2s $ease-material;
+		transition: all .2s ease('swift-out');
 		font-size: $text-size;
 		z-index: $base-index + 1;
 	}
@@ -74,6 +74,7 @@ $base-index:1;
 		label {
 			top: -8px;
 			font-size: $text-size / 1.5;
+			transition: all .2s ease('swift-in');
 		}
 		&:before {
 			width:100%;

@@ -21,7 +21,7 @@
 	  "darken-2":   darken($color-primary, 20%),
 	  "darken-3":   darken($color-primary, 30%),
 	  "darken-4":   darken($color-primary, 40%),
-      "darken-5":   darken($color-primary, 50%),
+    "darken-5":   darken($color-primary, 50%),
 	  "contrast-base": color-contrast($color-primary),
 	  "contrast-lighten-5":  color-contrast(lighten($color-primary, 50%)),
 	  "contrast-lighten-4":  color-contrast(lighten($color-primary, 40%)),
@@ -32,7 +32,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-primary, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-primary, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-primary, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-primary, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-primary, 50%))
 	);
 
 	$complement: (
@@ -46,7 +46,7 @@
 	  "darken-2":   darken($color-complement, 20%),
 	  "darken-3":   darken($color-complement, 30%),
 	  "darken-4":   darken($color-complement, 40%),
-      "darken-5":   darken($color-complement, 50%),
+    "darken-5":   darken($color-complement, 50%),
 	  "contrast-base": color-contrast($color-complement),
 	  "contrast-lighten-5":  color-contrast(lighten($color-complement, 50%)),
 	  "contrast-lighten-4":  color-contrast(lighten($color-complement, 40%)),
@@ -57,7 +57,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-complement, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-complement, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-complement, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-complement, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-complement, 50%))
 	);
 
 	$success: (
@@ -71,7 +71,7 @@
 	  "darken-2":   darken($color-success, 20%),
 	  "darken-3":   darken($color-success, 30%),
 	  "darken-4":   darken($color-success, 40%),
-      "darken-5":   darken($color-success, 50%),
+    "darken-5":   darken($color-success, 50%),
 	  "contrast-base": color-contrast($color-success),
 	  "contrast-lighten-5":  color-contrast(lighten($color-success, 50%)),
 	  "contrast-lighten-4":  color-contrast(lighten($color-success, 40%)),
@@ -82,7 +82,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-success, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-success, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-success, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-success, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-success, 50%))
 	);
 
 	$warning: (
@@ -96,7 +96,7 @@
 	  "darken-2":   darken($color-warning, 20%),
 	  "darken-3":   darken($color-warning, 30%),
 	  "darken-4":   darken($color-warning, 40%),
-      "darken-5":   darken($color-warning, 50%),
+    "darken-5":   darken($color-warning, 50%),
 	  "contrast-base": color-contrast($color-warning),
 	  "contrast-lighten-5":  color-contrast(lighten($color-warning, 50%)),
 	  "contrast-lighten-4":  color-contrast(lighten($color-warning, 40%)),
@@ -107,7 +107,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-warning, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-warning, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-warning, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-warning, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-warning, 50%))
 	);
 
 	$danger: (
@@ -132,7 +132,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-danger, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-danger, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-danger, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-danger, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-danger, 50%))
 	);
 	$info: (
 	  "base":       $color-info,
@@ -145,7 +145,7 @@
 	  "darken-2":   darken($color-info, 20%),
 	  "darken-3":   darken($color-info, 30%),
 	  "darken-4":   darken($color-info, 40%),
-      "darken-5":   darken($color-info, 50%),
+    "darken-5":   darken($color-info, 50%),
 	  "contrast-base": color-contrast($color-info),
 	  "contrast-lighten-5":  color-contrast(lighten($color-info, 50%)),
 	  "contrast-lighten-4":  color-contrast(lighten($color-info, 40%)),
@@ -156,7 +156,7 @@
 	  "contrast-darken-2":   color-contrast(darken($color-info, 20%)),
 	  "contrast-darken-3":   color-contrast(darken($color-info, 30%)),
 	  "contrast-darken-4":   color-contrast(darken($color-info, 40%)),
-      "contrast-darken-5":   color-contrast(darken($color-info, 50%))
+    "contrast-darken-5":   color-contrast(darken($color-info, 50%))
 	);
 
 	$grey: (
@@ -194,6 +194,15 @@
 	  "grey": $grey,
 	);
 
+
+$red: #F15854;
+$gray: #4D4D4D;
+$blue: #5DA5DA;
+$yellow: #DECF3F;
+$purple: #B276B2;
+$orange: #FAA43A;
+
+$medium-grey: #fafafa;
 
 $facebook-color:    #3b5998;
 $twitter-color:     #55acee;

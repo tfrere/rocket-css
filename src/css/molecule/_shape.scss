@@ -1,0 +1,57 @@
+/*
+––––
+
+	title:
+		Shape
+
+	comment:
+		La Shape est une plante qui se mange froide
+
+	markup:
+    <div class="shape one"></div>
+    <div class="shape two"></div>
+    <div class="shape three"></div>
+
+––––
+*/
+
+$background: color("grey", "lighten-2");
+$maskColor: white;
+$maskColorBorder: grey;
+
+.shape {
+  width:100%;
+  min-height:50px;
+  background-color: $background;
+  position:relative;
+  margin: 0;
+  margin-bottom: $text-size;
+  &:after {
+    content: "";
+    width:100%;
+    min-height:30px;
+    position:absolute;
+    background-repeat: no-repeat;
+  }
+}
+
+.shape.one:after {
+  bottom:-1px;
+  background-image: url('data:image/svg+xml;utf8,<svg class="lego-element svg-bottom-curve" width="100%" viewBox="0 0 1440 84" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <path d="M0 2276h1440v-48c-378.594 80.074-921.422 3.066-1440-36" id="a"></path> </defs> <use fill="#{$maskColor}" xlink:href="#a" transform="translate(0 -2192)" fill-rule="evenodd"></use> </svg>');
+}
+
+.shape.two:after {
+  top:-1px;
+  background-image: url('data:image/svg+xml;utf8, <svg class="lego-element " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" width="100%" height="48" preserveAspectRatio="none"> <path style="fill:#{$maskColor}" d="M0 46.3V0h1440v26.8C878.3 3.7 232.8 46.9 0 46.3z"></path> </svg>');
+}
+
+.shape.three {
+  min-height:100px;
+  &:after {
+    margin-top:20px;
+    margin-bottom:20px;
+    bottom:0;
+    top:0;
+    background-image: url('data:image/svg+xml;utf8, <svg class="lego-element svg-ribbon" min-width="1440px" width="100%" height="259" viewBox="0 0 1440 259" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="mix-blend-mode:multiply;"> <defs> <linearGradient x1="77.212%" y1="-27.043%" x2="33.994%" y2="183.95%" id="a"> <stop stop-color="#29488C" offset="0%"></stop> <stop stop-color="#21386D" offset="100%"></stop> </linearGradient> </defs> <path d="M1440 302C1207.37 342.754 428.43 426.7 0 342v214.383c508.207 9.312 872.277 3.02 1440-34.383V302z" transform="translate(0 -302)" fill="url(#a)" fill-rule="evenodd"></path> </svg>');
+  }
+}
