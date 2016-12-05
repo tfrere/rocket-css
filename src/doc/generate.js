@@ -6,27 +6,37 @@ const modifiers = getFiles('./src/css/modifier');
 
 const getEachIcon = /.icon.-(.*):before/gm;
 const getEachSocial = /.social.-(.*) {/gm;
-const getEachFlag = /\/\*(.*)\*\/\n(.*) {/gm;
+const getEachFlag = /\/\*(.*)\*\/\n.flag.-(.*) {/gm;
 const getEachEase = /(.*):.*cubic-bezier\((.*)\),/gm;
+let iconHtml;
+let flagHtml;
 
 getFileContent('./src/css/helper/const/_icon.scss', function(data) {
   const icons = getEachInfo(getEachIcon, data);
-  let html;
-  let iconBlock;
-  icons.map(function(iconName) { iconBlock += '<i class="icon -' + iconName + '"></i>' });
-  html += '<div class="bloc" id="symbols-Icon">';
-  html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';
-  html += '<h5>Icon</h5><hr/><div>' + iconBlock + '</div></div>';
-  html += '</div>';
+  let iconBlocks = " ";
+  console.log("HERE", iconBlocks);
+  icons.map(function(iconName) { iconBlocks += '<div class="icon-block"><i class="icon -' + iconName + '"></i><div class="tag -pointing -top"><span>'+iconName+'</span></div></div>' });
+  iconHtml += '<div class="bloc" id="symbol-icon"><h5>Icon</h5><hr/><div>';
+  iconHtml += iconBlocks;
+  iconHtml += '</div></div>';
+  iconHtml.replace(/undefined/g, "");
+  console.log(iconHtml);
+});
+
+getFileContent('./src/css/helper/const/_flag.scss', function(data) {
+  const flags = getEachObjectInfo(getEachFlag, data);
+  var flagBlocks = " ";
+  console.log("HERE", flagBlocks);
+  flags.map(function(flag) { flagBlocks += '<div class="flag-block"><i class="flag -' + flag.class + '"></i><div class="tag -pointing -top"><span>'+flag.name+'</span></div></div>' });
+  flagHtml += '<div class="bloc" id="symbol-flag"><h5>Flag</h5><hr/><div>';
+  flagHtml += flagBlocks;
+  flagHtml += '</div></div>';
 });
 
 getFileContent('./src/css/helper/const/_social.scss', function(data) {
   const socials = getEachInfo(getEachSocial, data);
 });
 
-getFileContent('./src/css/helper/const/_flag.scss', function(data) {
-  const flags = getEachObjectInfo(getEachFlag, data);
-});
 
 getFileContent('./src/css/helper/const/_ease.scss', function(data) {
   const easings = getEachObjectInfo(getEachEase, data);
@@ -40,7 +50,7 @@ const splitDataAndCode = /^\/\*\n\–\–\–\–((.|\n)*)\–\–\–\–\n\*\/
 const titleExp = /title:\n\t*(.*)\n\n\tcomment:/g;
 const commentExp = /comment:\n\t*(.*)\n\n\tmarkup:/g;
 const markupExp = /markup:\n\t*((.|\n)*)/g;
-const typeExp = /\.\.\/css\/(.*?)\//g;
+const typeExp = /\.\/src\/css\/(.*?)\//g;
 const removeTwoFirstsTabs = /^\t\t/gm;
 const removeLastEndOfLine = /^\t\t/gm;
 
@@ -60,7 +70,7 @@ var partials = [
 sources.map(function(url) {
     getFileContent(url, function(data) {
         object = getHeaderAndCode(splitDataAndCode, data);
-        //console.log(url);
+        //console.log( getInfo(typeExp, url));
         object.type = getInfo(typeExp, url);
         object.hasExtra = false;
         if( url.indexOf('extra') >= 0)
@@ -93,10 +103,19 @@ setTimeout(function(){
     var intro = partials[2].html;
     var foot = partials[3].html;
 
+    //console.log(blocs);
+
     var navFoot = '</nav>';
 
     html += head;
     html += navHead;
+
+    html += '<div id="nav-symbol" class="accordion"><h5 class="title"><a href="#symbol-head">Symbol</a></h5><ul>';
+
+    html += '<li><a href="#symbol-icon">Icon</a></li>';
+    html += '<li><a href="#symbol-flag">Flag</a></li>';
+
+    html += "</ul></div>";
 
     html += '<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul>';
 
@@ -128,6 +147,11 @@ setTimeout(function(){
 
     html += navFoot;
     html += intro;
+
+    html += '<header id="symbol-head"><div><h3>Symbol</h3></div></header><section id="symbol" class="section">';
+    html += iconHtml;
+    html += flagHtml;
+    html += '</section>';
 
     html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';
 
