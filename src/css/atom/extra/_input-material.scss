@@ -14,6 +14,15 @@
 			<input class="-large" type="text"/>
 		</div>
 
+	script:
+		$(".input-material input").focus(function(){
+			$(".input-material").addClass("focus");
+		});
+		$(".input-material input").blur(function(){
+			if ($(".input-material input").val() == "")
+				$(".input-material").removeClass("focus");
+		});
+
 ––––
 */
 

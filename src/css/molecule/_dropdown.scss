@@ -1,0 +1,110 @@
+/*
+––––
+
+	title:
+		Dropdown
+
+	comment:
+		La Dropdown est une plante qui se mange froide
+
+	markup:
+    <div class="dropdown toggle-dropdown">
+      <div class="merge -large -horizontal">
+        <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
+        <button class="button -primary toggle-loading"><span>Go !</span></button>
+      </div>
+      <div class="results">
+        <ul>
+          <li class="touch">Aide-soignant</li>
+          <li class="touch">A<span class="highlight">id</span>e-soignante</li>
+          <li class="touch">Aide-soignante2</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+        </ul>
+      </div>
+    </div>
+
+  script:
+    $(".toggle-dropdown").focusin(function() {
+    	$(this).addClass("-visible");
+    });
+    $(".toggle-dropdown input").blur(function() {
+    	$(this).parent().removeClass("-visible");
+    	$(this).parent().parent().removeClass("-visible");
+    });
+
+
+––––
+*/
+
+.dropdown {
+  position:relative;
+  .merge, input {
+    position: relative;
+    z-index: 2;
+  }
+  input {
+    background-color: white;
+  }
+  .button {
+    flex-shrink: 5;
+    z-index: 2;
+  }
+  .results {
+    display: none;
+    background-color: white;
+    width: calc(100% - 1px);
+    margin-top: -31px;
+    top:100%;
+    position: absolute;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid color("grey", "lighten-2");
+    border-top: none;
+    &:before {
+      background: linear-gradient(to bottom,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0) 100%);
+      content: '';
+      height: 4px;
+      width: 100%;
+      top: 15px;
+      left: 0;
+      position: absolute;
+      opacity: .6;
+    }
+    ul {
+      margin-top: 1.6rem;
+      padding-top: .4rem;
+      margin-bottom: 0;
+      max-height: 230px;
+      overflow-y: scroll;
+    }
+    li {
+      padding: 10px 15px;
+      text-align: left;
+      margin: 0;
+      transform: background-color 100ms ease;
+      cursor: pointer;
+      border-bottom: 1px solid color("grey", "lighten-3");
+      user-select: unselectable;
+      .highlight {
+        background-color: rgba(255,237,40,.4);
+      }
+      &:hover {
+        background-color: color("grey", "lighten-5");
+      }
+    }
+  }
+  &.-visible {
+    input {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+     .results {
+       display: block;
+     }
+  }
+}

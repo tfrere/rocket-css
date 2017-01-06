@@ -36,8 +36,25 @@
 
 .two-cols {
 	display: flex;
+	flex-wrap: wrap;
 	.wrapper {
-		width:50%;
+		width:100%;
+	}
+}
+
+.three-cols {
+	display: flex;
+	flex-wrap: wrap;
+	.wrapper {
+		width:100%;
+	}
+}
+
+.four-cols {
+	display: flex;
+	flex-wrap: wrap;
+	.wrapper {
+		width:25%;
 	}
 }
 
@@ -46,6 +63,15 @@
 	align-items: center;
 	.wrapper {
 		width:50%;
-		padding:24px;
 	}
+}
+
+
+@include break-point("desktop") {
+	.two-cols .wrapper {
+		width:50%;
+  }
+  .three-cols .wrapper {
+		width:33.33%;
+  }
 }

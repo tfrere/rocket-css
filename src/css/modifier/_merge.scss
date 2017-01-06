@@ -52,6 +52,8 @@
 			</button>
 		</div>
 
+		script:
+
 ––––
 */
 
@@ -130,14 +132,13 @@
   			border-top-right-radius: 1000px;
       }
 		}
-		&>:last-child, button:last-child {
+		&>:last-child input, button:last-child {
 			border-top: none;
 			border-bottom-left-radius: 3px;
 			border-bottom-right-radius: 3px;
-
 			border-top-left-radius: 0px;
 			border-top-right-radius: 0px;
-      margin-bottom: $text-size;
+      margin-bottom: $text-size!important; // hmmkay
       &.-round {
         border-bottom-left-radius: 1000px;
   			border-bottom-right-radius: 1000px;

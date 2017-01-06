@@ -1,14 +1,36 @@
 /* # Colors
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-	$color-primary:				#048b8d;
-	$color-complement:		#FF9153;
-	$color-third:		     	#FF9153;
+	//048b8d mine
+	// FF9153 mine 2
+	// 9f3738 conseil emploi
+	// 9e2a2c collectivz 1
+	// 8686bf collectivz 2
+
+	$color-primary:				rgb(22, 0, 102);
+	$color-complement:		rgb(209, 38, 49);
 
 	$color-success:				#149A57;
 	$color-warning:				#EBAD23;
 	$color-info:					#303E73;
 	$color-danger:				#D23D29;
+
+	/* # Color core
+
+	   NOTE: color("name_of_color", "type_of_color")
+	          to avoid to repeating map-get($colors, ...)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	@function color($color, $type) {
+	  @if map-has-key($colors, $color) {
+	    $curr_color: map-get($colors, $color);
+	    @if map-has-key($curr_color, $type) {
+	      @return map-get($curr_color, $type);
+	    }
+	  }
+	  @warn "Unknown `#{name}` in $colors.";
+	  @return null;
+	}
 
 	$primary: (
 	  "base":       $color-primary,
@@ -184,6 +206,13 @@
       "contrast-darken-5":   color-contrast(black)
 	);
 
+	$subtle-grey: (
+	  "lightest":  #fafafa,
+	  "light":  #f0f0f0,
+	  "base":  #b3b3b1,
+	);
+
+
 	$colors: (
 	  "primary": $primary,
 	  "complement": $complement,
@@ -191,7 +220,7 @@
 	  "danger": $danger,
 	  "warning": $warning,
 	  "info": $info,
-	  "grey": $grey,
+	  "grey": $grey
 	);
 
 
@@ -224,23 +253,23 @@ $behance-color: 		#1769ff;
 
 	// Color Classes
 
-	@each $color_name, $color in $colors {
-	  @each $color_type, $color_value in $color {
-	    @if $color_type == "base" {
-	      ._bg-#{$color_name} {
-	        background-color: $color_value !important;
-	      }
-	      ._text-#{$color_name} {
-	        color: $color_value !important;
-	      }
-	    }
-	    @else {
-	      ._bg-#{$color_name}-#{$color_type} {
-	        background-color: $color_value !important;
-	      }
-	      ._text-#{$color_name}-#{$color_type} {
-	        color: $color_value !important;
-	      }
-	    }
-	  }
-	}
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      ._bg-#{$color_name} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name} {
+        color: $color_value !important;
+      }
+    }
+    @else {
+      ._bg-#{$color_name}-#{$color_type} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name}-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}

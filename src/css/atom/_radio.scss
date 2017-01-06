@@ -15,7 +15,7 @@
 		</div>
 		<label>Checked</label>
 		<div class="radio">
-			<input id="radio2" type="radio" name='radio-group' checked='' />
+			<input id="radio2" type="radio" name='radio-group' checked='checked' />
 			<label for="radio2">Lemons</label>
 		</div>
 		<label>Disabled</label>
@@ -23,6 +23,8 @@
 			<input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
 			<label for="radio3">Tomatoes</label>
 		</div>
+
+  script:
 
 ––––
 */
@@ -49,6 +51,7 @@
 		padding-right:10px;
 		margin-bottom:0;
 		line-height: 21px;
+		font-weight: 400;
 		@extend .unselectable;
 		&:before,
 		&:after{
@@ -76,12 +79,12 @@
 			transform:translateX(6px) translateY(6px) scale(0);
 		}
 	}
-	input:checked + label:before{
+	input:checked + label:before , input[checked="checked"] + label:before {
 		border: 1px solid transparent;
-		background-color: color("grey", "lighten-1");
-		box-shadow: 1px 1px 1px color("grey", "base") inset;
+		background-color: color("primary", "lighten-2");
+		box-shadow: 1px 1px 1px color("primary", "base") inset;
 	}
-	input:checked + label:after {
+	input:checked + label:after, input[checked="checked"] + label:after {
 		content:'';
 		position:absolute;
 		width: 8px;

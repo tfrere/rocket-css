@@ -19,14 +19,13 @@
 @import "atom/blockquote";
 @import "atom/toggle";
 @import "atom/checkbox";
-@import "atom/link";
-@import "atom/code";
 @import "atom/hr";
-@import "atom/select";
 @import "atom/radio";
 @import "atom/label";
 @import "atom/tag";
 @import "atom/progress";
+@import "atom/video";
+@import "atom/rating";
 
 @import "atom/extra/button-grainandmortar";
 @import "atom/extra/button-naira";
@@ -37,23 +36,29 @@
 @import "atom/extra/loader-circle-scale";
 @import "atom/extra/loader-ball-scale";
 @import "atom/extra/loader-ball-pulse";
+@import "atom/extra/invite-to-scroll";
 
 @import "molecule/fieldset";
 @import "molecule/bubble";
 @import "molecule/message";
 @import "molecule/card";
-@import "molecule/modal";
-@import "molecule/panel";
 @import "molecule/list";
 @import "molecule/table";
 @import "molecule/shape";
 @import "molecule/figure";
+@import "molecule/background";
+@import "molecule/dropdown";
+@import "molecule/tip";
 
+@import "modifier/modal";
+@import "modifier/panel";
+@import "modifier/isolate";
 @import "modifier/merge";
 @import "modifier/touch";
 @import "modifier/loading";
 @import "modifier/level";
 @import "modifier/filter";
+@import "modifier/swipe";
 
 @import "template/nav";
 @import "template/section";
@@ -62,10 +67,8 @@
 @import "template/typo";
 @import "template/symbol";
 
-// background-image:  url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.5" fill="#555" cx="28.75" cy="22.338" r="0.713"/><circle opacity="0.2" fill="#555" cx="26.75" cy="79.443" r="0.307"/><circle opacity="0.5" fill="#555" cx="50" cy="41.884" r="0.308"/><circle fill="#555" cx="12.883" cy="42.25" r="0.367"/><circle opacity="0.4" fill="#555" cx="80" cy="72.818" r="0.307"/><circle opacity="0.5" fill="#555" cx="55.625" cy="12.375" r="0.308"/><circle opacity="0.2" fill="#555" cx="73.307" cy="89.375" r="0.308"/><circle opacity="0.5" fill="#555" cx="73" cy="53.884" r="0.308"/><circle opacity="0.5" fill="#555" cx="38.875" cy="89.432" r="0.385"/></svg>');
-// background-size: 20rem 20rem;
-// background-position: center 0;
-// animation: bg 6s linear infinite;
+@import "template/conseil-emploi/main";
+
 
 html, body {
 	width:100%;
@@ -112,7 +115,7 @@ body.dark {
 	display:none;
 }
 
-.main-wrapper {
+.doc-wrapper {
 	margin-left:295px;
 	width:calc(100% - 295px);
 	position:relative;
@@ -144,7 +147,7 @@ body.dark {
 		h1, h2, h3, h4, h5, h6 {
 			margin-bottom:0;
 			text-transform: uppercase;
-			color: color("primary", "darken-1");
+			color: color("primary", "base");
 		}
 	}
 }

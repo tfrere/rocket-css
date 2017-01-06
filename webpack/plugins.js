@@ -19,7 +19,8 @@ const plugins = [
 
 const copy = [
     { from: path.resolve( __dirname, '../src/images' ), to: 'images' },
-    { from: path.resolve( __dirname, '../src/fonts' ),  to: 'fonts' }
+    { from: path.resolve( __dirname, '../src/fonts' ),  to: 'fonts' },
+    { from: path.resolve( __dirname, '../src/templates' ),  to: 'templates' }
 ];
 
 if( DEV ) {

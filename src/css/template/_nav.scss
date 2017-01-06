@@ -1,4 +1,4 @@
-body>header {
+#doc>header {
 	width:45px;
 	position:fixed;
 	height:100%;
@@ -30,7 +30,7 @@ body>header {
 	}
 }
 
-body.dark>header {
+#doc.dark>header {
 	border-right: 1px solid color("grey", "contrast-lighten-3");
 	h1,h2,h3,h4,h5,h6 {
 		color: color("primary", "contrast-darken-2");
@@ -39,7 +39,7 @@ body.dark>header {
 }
 
 
-.nav {
+#doc .nav {
 	width: 250px;
 	position: fixed;
 	height: 100%;
@@ -47,6 +47,7 @@ body.dark>header {
 	left:45px;
 	z-index: 999999;
 	border-right: 1px solid color("grey", "lighten-3");
+	padding-top: 63px;
 	overflow: hidden;
 	#logo {
 		width:40px;
@@ -130,7 +131,7 @@ body.dark>header {
 	}
 }
 
-body.dark>nav {
+#doc.dark>nav {
 	border-right: 1px solid color("grey", "contrast-lighten-3");
 	h1,h2,h3,h4,h5,h6 {
 		color: color("primary", "contrast-darken-2");

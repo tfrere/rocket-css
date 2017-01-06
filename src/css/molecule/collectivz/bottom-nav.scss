@@ -1,0 +1,70 @@
+
+/*
+
+	Markup :
+
+    <div className="navbar">
+      <div class="navbar-item active touch-event">
+        <i className="icon icon-3x icon-text-bubble"/>
+        <span>ActionZ</span>
+      </div>
+      <div class="navbar-item touch-event" >
+        <i className="icon icon-3x icon-temple"/>
+        <span>Communautés</span>
+      </div>
+      <div class="navbar-item touch-event" >
+        <i className="icon icon-3x icon-big-user"/>
+        <span>Profil</span>
+      </div>
+    </div>
+
+*/
+
+$navbar-height: 80px;
+$navbar-size-of-icon: 30px;
+$navbar-item-width: 150px;
+$navbar-touch-size: $navbar-height * 1.5;
+$navbar-base-index: 999;
+
+.navbar {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:$navbar-height;
+	z-index: $navbar-base-index;
+	background-color: #16162b;
+  display: flex;
+  justify-content: center;
+
+	.navbar-item {
+		display:inline-block;
+		text-align: center;
+		height:$navbar-height;
+		max-width: $navbar-item-width;
+		-webkit-user-select: none;
+		flex: 1;
+		transition: all 200ms ease;
+		i {
+			color:white;
+			display:block;
+			padding: 16px 12px 5px 12px;
+		}
+		span {
+			color:white;
+			font-family: $nav-font;
+			user-select: none;
+			font-size: 1.2rem;
+			opacity:0.4;
+		}
+		&.active {
+			background-color: #2b2b4e;
+		}
+		&::after {
+			background-color:rgba(white, 0.3);
+			width:$navbar-item-width;
+			height:$navbar-item-width;
+			margin-left:-($navbar-item-width / 2);
+			margin-top:-($navbar-item-width / 2);
+		}
+	}
+}

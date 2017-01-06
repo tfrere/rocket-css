@@ -1,59 +1,22 @@
 var fs = require("fs");
 var del = require("del");
+
 const atoms = getFiles('./src/css/atom');
 const molecules = getFiles('./src/css/molecule');
 const modifiers = getFiles('./src/css/modifier');
 
 const getEachIcon = /.icon.-(.*):before/gm;
 const getEachSocial = /.social.-(.*) {/gm;
-const getEachFlag = /\/\*(.*)\*\/\n.flag.-(.*) {/gm;
+const getEachFlag = /.flag.-(.*) {/gm;
 const getEachEase = /(.*):.*cubic-bezier\((.*)\),/gm;
-let iconHtml;
-let flagHtml;
-
-getFileContent('./src/css/helper/const/_icon.scss', function(data) {
-  const icons = getEachInfo(getEachIcon, data);
-  let iconBlocks = " ";
-  console.log("HERE", iconBlocks);
-  icons.map(function(iconName) { iconBlocks += '<div class="icon-block"><i class="icon -' + iconName + '"></i><div class="tag -pointing -top"><span>'+iconName+'</span></div></div>' });
-  iconHtml += '<div class="bloc" id="symbol-icon"><h5>Icon</h5><hr/><div>';
-  iconHtml += iconBlocks;
-  iconHtml += '</div></div>';
-  iconHtml.replace(/undefined/g, "");
-  console.log(iconHtml);
-});
-
-getFileContent('./src/css/helper/const/_flag.scss', function(data) {
-  const flags = getEachObjectInfo(getEachFlag, data);
-  var flagBlocks = " ";
-  console.log("HERE", flagBlocks);
-  flags.map(function(flag) { flagBlocks += '<div class="flag-block"><i class="flag -' + flag.class + '"></i><div class="tag -pointing -top"><span>'+flag.name+'</span></div></div>' });
-  flagHtml += '<div class="bloc" id="symbol-flag"><h5>Flag</h5><hr/><div>';
-  flagHtml += flagBlocks;
-  flagHtml += '</div></div>';
-});
-
-getFileContent('./src/css/helper/const/_social.scss', function(data) {
-  const socials = getEachInfo(getEachSocial, data);
-});
-
-
-getFileContent('./src/css/helper/const/_ease.scss', function(data) {
-  const easings = getEachObjectInfo(getEachEase, data);
-});
-
-
-
-const sources = atoms.concat(molecules).concat(modifiers);
-
-const splitDataAndCode = /^\/\*\n\–\–\–\–((.|\n)*)\–\–\–\–\n\*\/\n\n((.|\n)*)/g;
+const splitDataAndCode = /^\/\*\n\–\–\–\–([\d\S\t \n]*)\–\–\–\–\n\*\/\n\n([\d\S\t \n]*)/g;
 const titleExp = /title:\n\t*(.*)\n\n\tcomment:/g;
-const commentExp = /comment:\n\t*(.*)\n\n\tmarkup:/g;
-const markupExp = /markup:\n\t*((.|\n)*)/g;
+const commentExp = /comment:\n\t*([\d\S\n\t ]*)\n\n\tmarkup:/g;
+const markupExp = /markup:\n\t*([\d\S\n\t ]*)script:/g;
+const scriptExp = /script:\n\t*([\d\S\n\t ]*)/g;
 const typeExp = /\.\/src\/css\/(.*?)\//g;
 const removeTwoFirstsTabs = /^\t\t/gm;
 const removeLastEndOfLine = /^\t\t/gm;
-
 
 var blocs = [];
 
@@ -65,28 +28,70 @@ var partials = [
   {name:"footer", url:"./src/doc/foot.html"}
 ];
 
-//del([docSrc]);
+let iconHtml = " ";
+let iconBlocks = " ";
+let flagHtml = " ";
+var flagBlocks = " ";
+let socialHtml = " ";
+var socialBlocks = " ";
+
+
+let jqueryHtml = " ";
+
+getFileContent('./src/css/helper/const/_linear-icon.scss', function(data) {
+  const icons = getEachInfo(getEachIcon, data);
+  icons.map(function(iconName) { iconBlocks += '<div class="icon-block"><i class="icon -' + iconName + '"></i><div class="tag -pointing -top"><span>'+iconName+'</span></div></div>' });
+  iconHtml += '<div class="bloc" id="symbol-icon"><h5>Icon<a href="https://en.wikipedia.org/wiki/Semiotics">Semiotics</a></h5><hr/><div>';
+  iconHtml += iconBlocks;
+  iconHtml += '</div></div>';
+});
+
+getFileContent('./src/css/helper/const/_flag.scss', function(data) {
+  const flags = getEachInfo(getEachFlag, data);
+  console.log("HERE", flagBlocks);
+  flags.map(function(flag) { flagBlocks += '<div class="flag-block"><i class="flag -' + flag + '"></i><div class="tag -pointing -top"><span>'+flag+'</span></div></div>' });
+  flagHtml += '<div class="bloc" id="symbol-flag"><h5>Flag</h5><hr/><div>';
+  flagHtml += flagBlocks;
+  flagHtml += '</div></div>';
+});
+
+getFileContent('./src/css/helper/const/_social.scss', function(data) {
+  const socials = getEachInfo(getEachSocial, data);
+  socials.map(function(social) { socialBlocks += '<div class="social-block"><i class="social -' + social + '"></i><div class="tag -pointing -top"><span>'+social+'</span></div></div>' });
+  socialHtml += '<div class="bloc" id="symbol-social"><h5>Social</h5><hr/><div>';
+  socialHtml += socialBlocks;
+  socialHtml += '</div></div>';
+});
+
+getFileContent('./src/css/helper/const/_ease.scss', function(data) {
+  const easings = getEachObjectInfo(getEachEase, data);
+});
+
+getFileContent('./src/doc/jquery.js', function(data) {
+  jqueryHtml = data;
+});
+
+const sources = atoms.concat(molecules).concat(modifiers);
+
 
 sources.map(function(url) {
-    getFileContent(url, function(data) {
-        object = getHeaderAndCode(splitDataAndCode, data);
-        //console.log( getInfo(typeExp, url));
-        object.type = getInfo(typeExp, url);
-        object.hasExtra = false;
-        if( url.indexOf('extra') >= 0)
-            object.hasExtra = true;
-        object.comment = getInfo(commentExp, object.header);
-        object.title = getInfo(titleExp, object.header);
-        object.markup = getInfo(markupExp, object.header);
-        object.code = object.markup.replace(removeTwoFirstsTabs, "").escapeHTML();
-        object.code = object.code.slice(0,-1);
-
-        // console.log("URLS ============");
-        // console.log(url, object.type, object.hasExtra);
-        // console.log("============");
-        // console.log(object);
-        blocs.push(object);
-    });
+  getFileContent(url, function(data) {
+    object = getHeaderAndCode(splitDataAndCode, data);
+    object.type = getInfo(typeExp, url);
+    object.hasExtra = false;
+    if( url.indexOf('extra') >= 0)
+      object.hasExtra = true;
+    object.comment = getInfo(commentExp, object.header);
+    const script = getInfo(scriptExp, object.header);
+    if(script.length > 5) {
+      object.script = script;
+    }
+    object.title = getInfo(titleExp, object.header);
+    object.markup = getInfo(markupExp, object.header);
+    object.code = object.markup.replace(removeTwoFirstsTabs, "").escapeHTML();
+    object.code = object.code.slice(0,-1);
+    blocs.push(object);
+  });
 });
 
 partials.map(function(object) {
@@ -114,14 +119,15 @@ setTimeout(function(){
 
     html += '<li><a href="#symbol-icon">Icon</a></li>';
     html += '<li><a href="#symbol-flag">Flag</a></li>';
+    html += '<li><a href="#symbol-social">Social</a></li>';
 
     html += "</ul></div>";
 
     html += '<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul>';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "atom")
-            html += '<li><a href="#atom-'+bloc.title+'">' + bloc.title + '</a></li>';
+      if(bloc.type == "atom")
+          html += '<li><a href="#atom-'+bloc.title+'">' + bloc.title + '</a></li>';
     });
 
     html += "</ul></div>";
@@ -129,8 +135,8 @@ setTimeout(function(){
     html += '<div id="nav-molecule" class="accordion"><h5 class="title"><a href="#molecule-head">Molecule</a></h5><ul>';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "molecule")
-            html += '<li><a href="#molecule-'+bloc.title+'">' + bloc.title + '</a></li>';
+      if(bloc.type == "molecule")
+          html += '<li><a href="#molecule-'+bloc.title+'">' + bloc.title + '</a></li>';
     });
 
     html += "</ul></div>";
@@ -138,8 +144,8 @@ setTimeout(function(){
     html += '<div id="nav-modifier" class="accordion"><h5 class="title"><a href="#molecule-head">Modifier</a></h5><ul>';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "modifier")
-            html += '<li><a href="#modifier-'+bloc.title+'">' + bloc.title + '</a></li>';
+      if(bloc.type == "modifier")
+          html += '<li><a href="#modifier-'+bloc.title+'">' + bloc.title + '</a></li>';
     });
 
     html += "</ul></div>";
@@ -151,49 +157,71 @@ setTimeout(function(){
     html += '<header id="symbol-head"><div><h3>Symbol</h3></div></header><section id="symbol" class="section">';
     html += iconHtml;
     html += flagHtml;
+    html += socialHtml;
     html += '</section>';
 
     html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "atom") {
-          html += '<div class="bloc" id="atom-' + bloc.title + '">';
-          html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
-          html += '<div class="wrapper sample">' + bloc.markup + '</div>';
-          html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code></pre></div>';
-          html += '</div></div></div>';
-        }
+      if(bloc.type == "atom") {
+        html += '<div class="bloc" id="atom-' + bloc.title + '">';
+        html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+        html += '<div class="wrapper sample">' + bloc.markup + '</div>';
+        html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre>';
+        html += '<code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code>';
+        if (bloc.script)
+          html += '<code class="javascript" id="'+bloc.title+'-code">' + bloc.script + '</code>';
+        html += '</pre></div>';
+        html += '</div></div></div>';
+      }
     });
 
     html += '</section><header id="molecule-head"><div><h3>Molecule</h3></div></header><section class="section" id="molecule">';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "molecule") {
-          html += '<div class="bloc" id="molecule-' + bloc.title + '">';
-          html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
-          html += '<div class="wrapper sample">' + bloc.markup + '</div>';
-          html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code></pre></div>';
-          html += '</div></div></div>';
-        }
+      if(bloc.type == "molecule") {
+        html += '<div class="bloc" id="molecule-' + bloc.title + '">';
+        html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+        html += '<div class="wrapper sample">' + bloc.markup + '</div>';
+        html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre>';
+        html += '<code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code>';
+        if (bloc.script)
+          html += '<code class="javascript" id="'+bloc.title+'-code">' + bloc.script + '</code>';
+        html += '</pre></div>';
+        html += '</div></div></div>';
+      }
     });
 
     html += '</section><header id="modifier-head"><div><h3>Modifier</h3></div></header><section class="section" id="modifier">';
 
     blocs.map(function(bloc) {
-        if(bloc.type == "modifier") {
-          html += '<div class="bloc" id="modifier-' + bloc.title + '">';
-          html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
-          html += '<div class="wrapper sample">' + bloc.markup + '</div>';
-          html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -sun"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre><code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code></pre></div>';
-          html += '</div></div></div>';
-        }
+      if(bloc.type == "modifier") {
+        html += '<div class="bloc" id="modifier-' + bloc.title + '">';
+        html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+        html += '<div class="wrapper sample">' + bloc.markup + '</div>';
+        html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre>';
+        html += '<code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code>';
+        if (bloc.script)
+          html += '<code class="javascript" id="'+bloc.title+'-code">' + bloc.script + '</code>';
+        html += '</pre></div>';
+        html += '</div></div></div>';
+      }
     });
 
     html += '</section>';
 
     html += foot;
-
-    //console.log(html);
+    html += "<script>";
+    html += jqueryHtml;
+    html += "</script>";
+    html += "<script>";
+    html += "$(document).ready(function () {";
+    blocs.map(function(bloc) {
+      if(bloc.script)
+        html += bloc.script;
+    });
+    html += "});";
+    html += "</script>";
 
     fs.writeFile (docSrc, html, function(err) {
         if (err) throw err;
@@ -254,7 +282,6 @@ function getEachObjectInfo(re, data) {
 function getHeaderAndCode(re, data) {
 
         var result = [];
-
         var object = {header: "", "code": ""};
 
         while((result = re.exec(data)) != null) {
@@ -274,12 +301,9 @@ function getFiles (dir, files_){
     var files = fs.readdirSync(dir);
     for (var i in files){
         var name = dir + '/' + files[i];
-        if (!fs.statSync(name).isDirectory()){
+        if (!fs.statSync(name).isDirectory()) {
           files_.push(name);
         }
-        // else {
-        //   getFiles(name, files_);
-        // }
     }
     return files_;
 }
@@ -287,7 +311,7 @@ function getFiles (dir, files_){
 function getFileContent(srcPath, callback) {
     fs.readFile(srcPath, 'utf8', function (err, data) {
         if (err) throw err;
-        callback(data);
+          callback(data);
         }
     );
 }

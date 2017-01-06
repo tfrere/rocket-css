@@ -27,6 +27,8 @@
       </footer>
     </div>
 
+  script:
+  
 ––––
 */
 
@@ -39,7 +41,9 @@
   position:relative;
   opacity: 1;
   transition: opacity 200ms ease;
-  p {
+  overflow: hidden;
+  background-color: white;
+  p, .content {
     margin:0;
     color: inherit;
     padding:10px 15px;
@@ -54,11 +58,7 @@
     border-bottom: 1px solid color("grey", "lighten-3");
     padding:10px 15px;
     position:relative;
-    //margin-bottom: $text-size;
-    h1,h2,h3,h4,h5,h6 {
-      margin: 0;
-    }
-    button {
+    h1,h2,h3,h4,h5,h6,label,button {
       margin: 0;
     }
   }

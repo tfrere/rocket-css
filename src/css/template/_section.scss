@@ -10,7 +10,7 @@
 		position: relative;
 
 		>h5 {
-			color: color('primary', 'darken-1');
+			color: color('primary', 'base');
 			font-size: $text-size;
 			font-weight: 500;
 			letter-spacing: .2rem;
@@ -45,6 +45,7 @@
 		}
 		.sample {
 			padding: 0px 24px 0px 0px;
+			position: relative;
 		}
 
 		.sample-code {

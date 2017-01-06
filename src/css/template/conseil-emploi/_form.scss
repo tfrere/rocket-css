@@ -1,0 +1,101 @@
+
+#form {
+  width: 100%;
+  min-height:100%;
+  padding-top: 110px;
+  margin-bottom: $text-size * 4;
+  .two-cols {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    .wrapper {
+      width: auto;
+      &>label {
+        margin-bottom: $text-size;
+        margin-left: 1rem;
+      }
+      &.card, .card {
+        background-color: white;
+      }
+      &:first-child {
+        width: 100%;
+        .tags {
+          position: relative;
+        }
+      }
+      &:last-child {
+        margin-top: $text-size * 2;
+        width:100%;
+      }
+    }
+  }
+}
+
+@include break-point("desktop") {
+  #form {
+    margin-bottom: $text-size * 2;
+    .two-cols {
+      flex-direction: row;
+      .wrapper {
+        &:first-child {
+          width: 70%;
+          margin-right: 10px;
+        }
+        &:last-child {
+          width:30%;
+          margin-top: 0;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+#job-list {
+  .list .item {
+    padding: 1rem 1.5rem;
+    &.-active {
+      span {
+        font-weight: 600;
+      }
+    }
+    i {
+      float:right;
+      cursor: pointer;
+      opacity: 0;
+      line-height: 1.6;
+    }
+    &:hover i {
+      opacity: 1;
+    }
+  }
+  .button {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+#job-form {
+  overflow: visible;
+  .content {
+    padding: $text-size * 2 $text-size * 2 $text-size * 3 $text-size * 2;
+    label {
+      margin-bottom: 1.5rem;
+      span:not(:first-child):last-of-type {
+        color: color("grey", "lighten-2");
+        transform: translateY(-1px);
+        display: inline-block;
+        margin-left: 10px;
+        float:right;
+      }
+    }
+    .button {
+      margin: 0;
+      position: absolute;
+      bottom: -19px;
+    }
+  }
+}

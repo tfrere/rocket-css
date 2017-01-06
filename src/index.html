@@ -4,591 +4,143 @@
     <meta name="author" content="keywords, comma, separated"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="stylesheet" href="css/app.css?v=<%= buildTime %>">
+    <link rel="stylesheet" href="../css/app.css?v=<%= buildTime %>">
     <link rel="icon" href="images/favicon.ico">
   </head>
-  <body>
-  <header>
-    <div class="pattern"></div>
-    <h5>Documentation</h5>
-  </header>
-  <nav class="doc--nav">
-    <header>
-      <div id="logo" class="pattern"></div>
-    </header>
-    <div class="options-wrapper horizontal merged">
-      <button id="toggleBaseline" class="button -no-border -active -icon-only"><i class="icon -text-align-justify"></i></button>
-      <button id="toggleNight" class="button -no-border -icon-only"><i class="icon -moon"></i></button>
-      <button id="toggleCode" class="button -no-border -icon-only"><i class="icon -code"></i></button>
-    </div>
-    <div id="nav-typography" class="accordion active">
-      <h5 class="title active"><a href="#typo-head">Typography</a></h5>
-    	<ul class="active">
-        <li><a href="#typo-hierarchy">Hierarchy</a></li>
-        <li><a href="#typo-typefaces">Typefaces</a></li>
-      </ul>
-    </div>
-    <div id="nav-color" class="accordion">
-      <h5 class="title"><a href="#color-head">Colors</a></h5>
-      <ul>
-        <li><a href="#color-main">Main</a></li>
-    		<li><a href="#color-semantic">Semantic</a></li>
-    	</ul>
-    </div>
-    <div id="nav-atom" class="accordion">
-      <h5 class="title"><a href="#atom-head">Atom</a></h5>
-      <ul>
-        <li><a href="#atom-blockquote">Blockquote</a></li>
-        <li><a href="#atom-button">Button</a></li>
-        <li><a href="#atom-checkbox">checkbox</a></li>
-        <li><a href="#atom-hr">hr</a></li>
-        <li><a href="#atom-code">code</a></li>
-        <li><a href="#atom-input">input</a></li>
-        <li><a href="#atom-link">link</a></li>
-        <li><a href="#atom-radio">radio</a></li>
-      </ul>
-    </div>
-  </nav>
-
-    <div class="doc--content">
-      <header id="typo-head">
-        <div>
-          <h3>Typography</h3>
+  <body class="conseil-emploi">
+      <nav class="nav dark">
+        <div class="container main-wrapper">
+          <a class="logo" href="#">Conseil emploi</a>
+          <ul>
+            <li><a href="#how">Comment ça marche ?</a></li>
+            <!--<li><a href="#who">Qui sommes nous ?</a></li>-->
+            <li><a class="button -complement open-modal" href="#">Se connecter</a></li>
+            <li><a class="button -complement open-modal" href="#">S'inscrire</a></li>
+          </ul>
         </div>
-      </header>
-      <section class="section doc--typo" id="typography">
-        <div id="typo-hierarchy" class="bloc">
-          <h5>Hierarchy</h5>
-          <hr/>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p class="lead">The typography system is designed to create a <b>strong</b> hierarchy.</p>
-              <p class="lettrine">Regular paragraphs are set at a 15<sup>px</sup> base with 24<sup>px</sup> line height.  Other type basics like <a href="#">special links</a>, <a target="_blank" href="http://tfrere.fr">external link</a>, <b>strong</b>, <em>emphasis</em>, <u>special underline</u> and <s>strikethrough</s>  are all obviously included.</p>
-            </div>
-            <div class="wrapper toggle-baseline show-baseline">
-              <div class="doc--typo-heading">
-                <h1 class="heading">
-                  Heading
-                </h1><code>h1</code><span></span>
+      </nav>
+      <section class="screen-box center background -visible">
+        <div class="gradient"></div>
+        <div class="image" style="background-image:url(images/background/animated/dog.gif);"></div>
+        <div class="content center-wrapper main-wrapper">
+          <div class="select-your-job">
+            <h1 class="title">Découvrez votre <i>futur</i> emploi</h1>
+            <p class="lead desc">Faîtes un bilan de vos compétences en 5 minutes,<br/> on s'occupe de vous trouver un job</p>
+            <div class="dropdown isolate dropdown-search toggle-visible">
+              <div class="merge -large -horizontal">
+                <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
+                <button class="button -complement toggle-loading"><span>Go !</span></button>
               </div>
-              <div class="doc--typo-heading">
-                <h2 class="heading">
-                  Heading
-                </h2><code>h2</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h3 class="heading">
-                  Heading
-                </h3><code>h3</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h4 class="heading">
-                  Heading
-                </h4><code>h4</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h5 class="heading">
-                  Heading
-                </h5><code>h5</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h6 class="heading">
-                  Heading
-                </h6><code>h6</code><span></span>
+              <div class="results">
+                <ul>
+                  <li class="touch">Oenologue</li>
+                  <li class="touch">A<span class="highlight">id</span>e-soignante</li>
+                  <li class="touch">Professeur en Zoologie</li>
+                  <li class="touch">Chercheur en physique nucléaire</li>
+                  <li class="touch">Astronaute</li>
+                  <li class="touch">Dresseur de lion</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-        <div id="typo-typefaces" class="bloc">
-          <h5>Typefaces</h5>
-          <hr/>
-          <div class="doc--typo-info">
-            <div class="semi-colon">
-              <h6 class="uppercase">Titles</h6>
-              <h2>TypoName</h2>
-              <div class="header">
-                <h4 class="title-font">Abc</h4><span class="title-font">regular</span>
-              </div>
-              <div class="header">
-                <h4 class="bold title-font">Abc</h4><span class="title-font">bold</span>
-              </div>
-              <div class="header">
-                <h4 class="italic title-font">Abc</h4><span class="title-font">italic</span>
-              </div>
-              <hr class="-invisible"/>
-              <p class="toggle-baseline show-baseline title-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
+        <div class="shape"></div>
+        <!--<a href="#how" id="more"><i class="icon -chevron-down"></i></a>-->
+      </section>
+      <section id="how">
+        <div class="main-wrapper">
+          <h3>Comment ça marche ?</h3>
+          <p class="lead">Au 21e sciècle, le secteur de l'emploi est en pleine mutation, nous serons tous amenés à changer de métier régulièrement. Nous avons donc conçu un algorithme de recherche par compétence et par interet vous permettant de trouver de nouvelles perspectives de carrière auxquelles vous n'auriez pas pensés.</p>
+          <div class="arguments">
+            <div class="argument" >
+              <img class="image" src="images/icon/Comet.svg"></img>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
             </div>
-            <div class="semi-colon">
-              <h6 class="uppercase">Texts</h6>
-              <h2 class="text-font">TypoName</h2>
-              <div class="header">
-                <h4 class="text-font">Abc</h4><span class="title-font">regular</span>
-              </div>
-              <div class="header">
-                <h4 class="bold text-font">Abc</h4><span class="title-font">bold</span>
-              </div>
-              <div class="header">
-                <h4 class="italic text-font">Abc</h4><span class="title-font">italic</span>
-              </div>
-              <hr class="-invisible"/>
-              <p class="toggle-baseline show-baseline text-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
+            <div class="argument" >
+              <img class="image" src="images/icon/Helmet.svg"></img>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+            </div>
+            <div class="argument" >
+              <img class="image" src="images/icon/Telescope.svg"></img>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
             </div>
           </div>
         </div>
       </section>
-      <header id="color-head">
-        <div>
-          <h3>Colors</h3>
-        </div>
-      </header>
-      <section id="color" class="section">
-        <div id="color-main" class="bloc">
-          <h5>Main</h5>
-          <hr/>
-          <div class="doc--color">
-            <div class="doc--color-first">
-              <div class="doc--column bg-grey darken-4">
-                <div class="doc--color-info contrast-darken-5">
-                  <h3 class="name text-grey contrast-darken-5">ColorName</h3>
-                  <h6 class="text-grey contrast-darken-5">The words</h6>
-                </div>
-                <div class="doc--color-variant text-grey contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-grey lighten-1"></div>
-                  <div class="bg-grey"></div>
-                  <div class="bg-grey darken-2"></div>
-                  <div class="bg-grey darken-3"></div>
-                  <div class="bg-grey darken-4"></div>
-                  <div class="bg-grey darken-5"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-primary">
-                <div class="doc--color-info contrast-darken-5">
-                  <h3 class="name text-primary contrast-darken-5">ColorName</h3>
-                  <h6 class="text-primary contrast-darken-5">The identity</h6>
-                </div>
-                <div class="doc--color-variant text-primary contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-primary lighten-2"></div>
-                  <div class="bg-primary lighten-1"></div>
-                  <div class="bg-primary"></div>
-                  <div class="bg-primary darken-1"></div>
-                  <div class="bg-primary darken-2"></div>
-                  <div class="bg-primary darken-3"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-complement darken-3">
-                <div class="doc--color-info contrast-base">
-                  <h3 class="name text-complement contrast-darken-5">ColorName</h3>
-                  <h6 class="text-complement contrast-darken-5">The links</h6>
-                </div>
-                <div class="doc--color-variant text-complement contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-complement lighten-1"></div>
-                  <div class="bg-complement"></div>
-                  <div class="bg-complement darken-1"></div>
-                  <div class="bg-complement darken-2"></div>
-                  <div class="bg-complement darken-3"></div>
-                  <div class="bg-complement darken-4"></div>
-                </div>
-              </div>
+      <!--<section id="who">
+        <div class="main-wrapper">
+          <hr class="-half -center"/>
+          <h3>Qui sommes nous ?</h3>
+          <div class="members">
+            <div class="member">
+              <img src="http://cdn.intra.42.fr/users/medium_msourdin.jpg"/>
+              <h5 class="title">Maxime</h5>
+              <h6 class="desc">Routing</h6>
+            </div>
+            <div class="member">
+              <img src="http://cdn.intra.42.fr/users/medium_cfriot.jpg"/>
+              <h5 class="title">Charles</h5>
+              <h6 class="desc">Back-end</h6>
+            </div>
+            <div class="member">
+              <img src="http://cdn.intra.42.fr/users/medium_ajodin.jpg"/>
+              <h5 class="title">Anthony</h5>
+              <h6 class="desc">Front-end</h6>
             </div>
           </div>
         </div>
-        <div id="color-semantic" class="bloc doc--color">
-          <h5>Semantic</h5>
-          <hr/>
-          <div class="doc--color">
-            <div class="doc--color-last">
-              <div class="doc--column bg-danger darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-danger contrast-darken-5">ColorName</h5>
-                  <h6 class="text-danger contrast-darken-5">Dangers</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-danger lighten-1"></div>
-                  <div class="bg-danger"></div>
-                  <div class="bg-danger darken-1"></div>
-                  <div class="bg-danger darken-2"></div>
-                  <div class="bg-danger darken-3"></div>
-                  <div class="bg-danger darken-4"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-warning darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-warning contrast-darken-5">ColorName</h5>
-                  <h6 class="text-warning contrast-darken-5">Warnings</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-warning lighten-1"></div>
-                  <div class="bg-warning"></div>
-                  <div class="bg-warning darken-1"></div>
-                  <div class="bg-warning darken-2"></div>
-                  <div class="bg-warning darken-3"></div>
-                  <div class="bg-warning darken-4">			</div>
-                </div>
-              </div>
-              <div class="doc--column bg-success darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-success contrast-darken-5">ColorName</h5>
-                  <h6 class="text-success contrast-darken-5">Success</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-success lighten-1"></div>
-                  <div class="bg-success"></div>
-                  <div class="bg-success darken-1"></div>
-                  <div class="bg-success darken-2"></div>
-                  <div class="bg-success darken-3"></div>
-                  <div class="bg-success darken-4"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-info darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-info contrast-darken-5">ColorName</h5>
-                  <h6 class="text-info contrast-darken-5">Infos</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-info lighten-1"></div>
-                  <div class="bg-info"></div>
-                  <div class="bg-info darken-1"></div>
-                  <div class="bg-info darken-2"></div>
-                  <div class="bg-info darken-3"></div>
-                  <div class="bg-info darken-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="desc">
+          <p class="lead">Nous sommes 3 étudiants de l'école 42 qui prenons à coeur la question du bonheur au travail et de l'emploi en france, trop souvent oublié par la société dans laquelle nous vivons.</p>
+          <p>Nous voulons aller au bout des choses, et prendre en compte un maximum d'informations afin de proposer des métiers toujours plus pertinent spécifiquement à chacun. Optimisme, dévouement et innovation sont les éléments moteurs qui nous ont permis la création de cet outil</p>
         </div>
-      </section>
-      <header id="atom-head">
-        <div>
-          <h3>Atom</h3>
-        </div>
-      </header>
-      <section class="section" id="atom">
-        <div id="atom-blockquote" class="bloc">
-            <h5>Blockquote<span>.scss</span></h5>
-            <hr/>
-            <div>
-              <div class="two-cols-verticaly-aligned">
-                <div class="wrapper">
-                  <p>La blockquote est une plante qui se mange froide</p>
-                </div>
-                <div class="wrapper">
-                  <blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
-                </div>
-              </div>
-              <pre>
-                  <code class="toggle-code html hidden">&lt;blockquote&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/blockquote&gt;
-                </code>
-              </pre>
-            </div>
-        </div>
-
-
-        <div id="atom-button" class="bloc">
-          <h5>Button<span>.scss</span></h5>
-          <hr/>
-          <div>
-            <div class="two-cols-verticaly-aligned">
-              <div class="wrapper">
-                <p>La Button est une plante qui se mange froide</p>
-              </div>
-              <div class="wrapper">
-                <button class="button">
-                  <i class="icon -sun"></i>
-                  <span>Bouton</span>
-                </button>
-                <button class="button -primary">
-                  Bouton
-                </button>
-                <button disabled class="button -primary -disabled">
-                  Bouton
-                </button>
-                <a class="button -complement">
-                  <i class="icon -sun"></i>
-                  <span>Bouton</span>
-                </a>
-                <button disabled class="button -danger -disabled -icon-only">
-                  <i class="icon -sun"></i>
-                </button>
-                <button disabled class="button -small -success -circular -icon-only -loading">
-                  <i class="icon -sun"></i>
-                </button>
-              </div>
-            </div>
-            <pre>
-              <code class="toggle-code html hidden">&lt;button class=&quot;button&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;span&gt;Bouton&lt;/span&gt;
-                &lt;/button&gt;
-                &lt;button class=&quot;primary button&quot;&gt;
-                Bouton
-                &lt;/button&gt;
-                &lt;button disabled class=&quot;primary button disabled&quot;&gt;
-                Bouton
-                &lt;/button&gt;
-                &lt;a class=&quot;complement button&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;span&gt;Bouton&lt;/span&gt;
-                &lt;/a&gt;
-                &lt;button disabled class=&quot;danger button disabled only-icon&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;/button&gt;
-                &lt;button disabled class=&quot;small success button only-icon&quot;&gt;
-                &lt;i class=&quot;icon -warning&quot;&gt;&lt;/i&gt;
-                &lt;/button&gt;
-              </code>
-            </pre>
-          </div>
-        </div>
-
-        <div id="atom-checkbox" class="bloc">
-          <h5>Checkbox<span>.scss</span></h5>
-          <hr/>
-          <div>
-            <div class="two-cols-verticaly-aligned">
-              <div class="wrapper">
-                <p>La checkbox est une plante qui se mange froide</p>
-              </div>
-              <div class="wrapper">
-                <div class="checkbox">
-            			<input id="checkbox1" type="checkbox" disabled="disabled"/>
-            			<label for="checkbox1"><span>Lololo</span></label>
-            		</div>
-            		<div class="checkbox -primary">
-            			<input id="checkbox2" type="checkbox"/>
-            			<label for="checkbox2"><span>Lololo</span></label>
-            		</div>
-            		<div class="checkbox">
-            			<input id="checkbox3" type="checkbox"/>
-            			<label for="checkbox3"></label>
-            		</div>
-              </div>
-          </div>
-          <pre>
-            <code class="toggle-code html hidden">&lt;div class=&quot;checkbox&quot;&gt;
-              &lt;input id=&quot;checkbox1&quot; type=&quot;checkbox&quot; disabled=&quot;disabled&quot;/&gt;
-              &lt;label for=&quot;checkbox1&quot;&gt;&lt;span&gt;Lololo&lt;/span&gt;&lt;/label&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;checkbox primary&quot;&gt;
-              &lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
-              &lt;label for=&quot;checkbox2&quot;&gt;&lt;span&gt;Lololo&lt;/span&gt;&lt;/label&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;checkbox&quot;&gt;
-              &lt;input id=&quot;checkbox3&quot; type=&quot;checkbox&quot;/&gt;
-              &lt;label for=&quot;checkbox3&quot;&gt;&lt;/label&gt;
-              &lt;/div&gt;
-            </code>
-          </pre>
-        </div>
-      </div>
-
-
-
-
-
-      <div id="atom-hr" class="bloc">
-        <h5>Hr<span>.scss</span></h5>
-        <hr/>
-        <div>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p>La hr est une plante qui se mange froide</p>
-            </div>
-            <div class="wrapper">
-              <hr class="-nested"/>
-          		<hr class="-lines"/>
-          		<hr class="-triangle"/>
-          		<hr class="-double"/>
-          		<hr class="-dashed"/>
-          		<hr class="-dotted"/>
-          		<hr class="-gradient"/>
-          		<hr class="-apple"/>
-          		<hr class="-lines -half -centered"/>
-          		<hr class="-lines -half"/>
-          		<hr class="-lines -tiny"/>
-          		<hr class="-lines -quart"/>
-            </div>
-        </div>
-        <pre>
-          <code class="toggle-code html hidden">&lt;hr/&gt;
-            &lt;hr class=&quot;nested&quot;/&gt;
-            &lt;hr class=&quot;lines&quot;/&gt;
-            &lt;hr class=&quot;triangle&quot;/&gt;
-            &lt;hr class=&quot;double&quot;/&gt;
-            &lt;hr class=&quot;dashed&quot;/&gt;
-            &lt;hr class=&quot;dotted&quot;/&gt;
-            &lt;hr class=&quot;gradient&quot;/&gt;
-            &lt;hr class=&quot;apple&quot;/&gt;
-            &lt;hr class=&quot;lines half centered&quot;/&gt;
-            &lt;hr class=&quot;lines half&quot;/&gt;
-            &lt;hr class=&quot;lines tiny&quot;/&gt;
-            &lt;hr class=&quot;lines quart&quot;/&gt;
-          </code>
-        </pre>
-      </div>
-    </div>
-
-
-
-    <div id="atom-code" class="bloc">
-      <h5>Code<span>.scss</span></h5>
-      <hr/>
-      <div>
-        <div class="two-cols-verticaly-aligned">
-          <div class="wrapper">
-            <p>La code est une plante qui se mange froide</p>
-          </div>
-          <div class="wrapper">
-            <pre>
-        			<code>
-        The pre balise is here to preserve
-        indentation of text.
-        (\/)
-        (oO)
-        c(")(")
-        			</code>
-        		</pre>
-          </div>
-      </div>
-      <pre>
-        <code class="toggle-code html hidden">&lt;code&gt;
-          some code here
-          &lt;/code&gt;
-          &lt;pre&gt;
-          &lt;code&gt;
-          The pre balise is here to preserve
-          indentation of text.
-          (\/)
-          (oO)
-          c(&quot;)(&quot;)
-          &lt;/code&gt;
-          &lt;/pre&gt;
-        </code>
-      </pre>
-    </div>
-  </div>
-
-
-
-    <div id="atom-input" class="bloc">
-      <h5>input<span>.scss</span></h5>
-      <hr/>
-      <div>
-        <div class="two-cols-verticaly-aligned">
-          <div class="wrapper">
-            <p>La input est une plante qui se mange froide</p>
-          </div>
-          <div class="wrapper">
-            <input type="text" placeholder="test"/>
-          		<input class="-large" type="text" placeholder="test" required/>
-
-          		<div class="input-material">
-          			<label>Name</label>
-          			<input class="-large" type="text"/>
-          		</div>
-          </div>
-      </div>
-      <pre>
-        <code class="toggle-code html hidden">&lt;input type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
-          &lt;input class=&quot;large&quot; type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
-
-          &lt;div class=&quot;input-material&quot;&gt;
-          &lt;label&gt;Name&lt;/label&gt;
-          &lt;input class=&quot;large&quot; type=&quot;text&quot;/&gt;
-          &lt;/div&gt;
-        </code>
-      </pre>
-    </div>
-  </div>
-
-
-      <div id="atom-link" class="bloc">
-        <h5>link<span>.scss</span></h5>
-        <hr/>
-        <div>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p>La link est une plante qui se mange froide</p>
-            </div>
-            <div class="wrapper">
-              <a href="#">Ouaiis je suis un lien</a>
-              <p>In texts, links are underlined by default like <a href="#">Ouaiis je suis un lien</a></p>
-
-            </div>
-        </div>
-        <pre>
-          <code class="toggle-code html hidden">&lt;a href=&quot;#&quot;&gt;Ouaiis je suis un lien&lt;/a&gt;
-            &lt;p&gt;In texts, links are underlined by default like &lt;a href=&quot;#&quot;&gt;Ouaiis je suis un lien&lt;/a&gt;&lt;/p&gt;
-          </code>
-        </pre>
-      </div>
-    </div>
-
-
-
-          <div id="atom-radio" class="bloc">
-            <h5>radio<span>.scss</span></h5>
-            <hr/>
-            <div>
-              <div class="two-cols-verticaly-aligned">
-                <div class="wrapper">
-                  <p>La radio est une plante qui se mange froide</p>
-                </div>
-                <div class="wrapper">
-                  <div class="radio">
-                		<input id="radio1" type="radio" name='radio-group' />
-                		<label for="radio1">Apples</label>
-                	</div>
-                	<div class="radio">
-                		<input id="radio2" type="radio" name='radio-group' checked='checked' />
-                		<label for="radio2">Lemons</label>
-                	</div>
-                	<div class="radio">
-                		<input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
-                		<label for="radio3">Tomatoes</label>
-                	</div>
-                </div>
-            </div>
-            <pre>
-              <code class="toggle-code html hidden">&lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio1&quot; type=&quot;radio&quot; name='radio-group' /&gt;
-                &lt;label for=&quot;radio1&quot;&gt;Apples&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio2&quot; type=&quot;radio&quot; name='radio-group' checked='checked' /&gt;
-                &lt;label for=&quot;radio2&quot;&gt;Lemons&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio3&quot; type=&quot;radio&quot; name='radio-group' disabled=&quot;disabled&quot;/&gt;
-                &lt;label for=&quot;radio3&quot;&gt;Tomatoes&lt;/label&gt;
-                &lt;/div&gt;
-              </code>
-            </pre>
-          </div>
-        </div>
-
-      </section>
-      <footer class="footer screen-box center">
-        <div class="center-wrapper">
-          <h5><i class="icon -x3 -heart"></i></h5>
+      </section>-->
+      <footer>
+        <div class="main-wrapper">
+          <p>ConseilEmploi © 2016</p>
+          <a href="https://www.facebook.com/conseilemploi.fr/"><i class="social -facebook"></i></a>
+          <a href="https://twitter.com/ConseilEmploiFR"><i class="social -twitter"></i></a>
         </div>
       </footer>
+    <div class="modal login">
+      <div class="overlay close-modal"></div>
+      <div class="content">
+        <div class="card content-wrapper">
+          <!--<img class="image" src="images/icon/Comet.svg"></img>-->
+          <div class="close-button close-modal">
+            <i class="icon -cross"></i>
+          </div>
+          <div>
+            <h5>Se connecter</h5>
+      			<fieldset class="-large -has-icon -has-tag">
+              <i class="icon -user"></i>
+      				<input type="password" placeholder="Pseudo ou email" />
+              <div class="tag visible -line-danger -large -top -pointing">
+                <span>Votre identifiant n'existe pas</span>
+              </div>
+      			</fieldset>
+      			<fieldset class="-large -has-icon -has-tag">
+      				<i class="icon -lock"></i>
+      				<input type="password" placeholder="Mot de passe" />
+              <div class="tag visible -line-danger -large -top -pointing">
+                <span>Votre mot de passe est inccorect</span>
+              </div>
+      			</fieldset>
+            <div class="checkbox">
+              <input id="checkbox2" type="checkbox"/>
+              <label for="checkbox2">
+                <span>rester connecté</span>
+              </label>
+            </div>
+      			<button class="button loading -large -primary">
+      				<span>Se connecter</span>
+      			</button>
+            <footer>
+              <a href="">S'inscrire</a> -
+              <a href="">Mot de passe perdu ?</a>
+            </footer>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/polyfills.js?v=<%= buildTime %>"></script>
     <script src="js/vendors.js?v=<%= buildTime %>"></script>

@@ -39,6 +39,11 @@
 		<div class="tag -corner -top-right"><span> 3 </span></div>
 		<div class="tag -corner -top-right"><i class="icon -sun"></i></div>
 
+  script:
+    $(".toggle-active").click(function(){
+    	$(this).toggleClass("-line-primary");
+    });
+
 ––––
 */
 
@@ -58,8 +63,8 @@
 	position:relative;
 	display:inline-block;
 	white-space: nowrap;
-	background:transparent;
-	border: 1px solid rgba(0,0,0,0.2);
+	background:white;
+	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 3px;
 	display:inline-block;
 	margin-bottom:$text-size / 2;
@@ -68,7 +73,8 @@
 	font-family: $nav-font;
 	color: $title-color;
 	vertical-align: top;
-	user-select:unselectable;
+  user-select: none;
+  -webkit-user-select: none;
 	text-align: center;
 	&>img {
 			width:26px!important;
@@ -106,7 +112,6 @@
 	span {
 			margin: 2px 7px 2px 7px;
 			font-family: $nav-font;
-			text-transform: capitalize;
 			user-select:unselectable;
 			i {
     		margin-right: 3px;
@@ -121,13 +126,15 @@
 		height: 26px;
 		padding: 0 2px 0 7px;
 		background: rgba(0,0,0,0.05);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: #333E48;
 		font-size: 1.2rem;
 		line-height: 27px;
 		border: none;
 		overflow: visible;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 		&:before {
 			content:"\25CF";
 			color: #FFF;
@@ -146,11 +153,12 @@
 	}
 
 	&.-pointing {
+    animation: fade-in 200ms ease;
 		&:before {
 			content: "";
 			color: #FFF;
-			border-top: 1px solid rgba(0,0,0,0.2);
-			border-left: 1px solid rgba(0,0,0,0.2);
+			border-top: 1px solid rgba(0,0,0,0.1);
+			border-left: 1px solid rgba(0,0,0,0.1);
 			position: absolute;
 			width: 10px;
 			height: 10px;
@@ -168,7 +176,6 @@
 			top: calc(50% - 6px);
 			left: -6px;
 			transform: rotate(-45deg);
-      animation: fade-in 200ms ease;
 		}
 		&.-right:before  {
 			top: calc(50% - 5px);
@@ -199,14 +206,14 @@
 		&.-line-#{$color_name}:not(.-ticket) {
 			background-color: transparent!important;
 			color: color(#{$color_name}, "base");
-			border: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.5);
+			border: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
 			i {
 				color: color(#{$color_name}, "darken-1");
 			}
 			&:before {
 				background-color: white;
-				border-top: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.5);
-				border-left: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.5);
+				border-top: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
+				border-left: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
 			}
 		}
 
@@ -233,6 +240,10 @@
 	&.-large {
 		width: 100%;
 	}
+
+  &.-link {
+    cursor: pointer;
+  }
 
 	&.-blur {
 		backdrop-filter: blur(10px);
@@ -281,13 +292,13 @@ $offset: $finalSize / 2 + 2;
 		position: relative;
 		margin:0;
 		padding:0;
-		background: none;
+		background: white;
 
 		i {
 			position:absolute;
 			overflow: hidden;
 			z-index: 1;
-			padding: 5px 7px;
+			padding: 4px 5px;
 		}
 		span {
 			position: absolute;
@@ -365,7 +376,7 @@ $offset: $finalSize / 2 + 2;
 				color: color(#{$color_name}, "darken-1");
 				border:none;
 				&:before {
-					background-color: transparent;
+					background-color: rgba(color(#{$color_name}, "lighten-5"), 0.2);
 					border: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.5);
 				}
 			}

@@ -13,6 +13,8 @@
 		<label>With -round -large</label>
 		<input class="-round -large" type="text" placeholder="test" required />
 
+  script:
+
 ––––
 */
 
@@ -24,7 +26,7 @@ select {
 	height: auto;
 	padding: $text-size / 2 $text-size / 2 $text-size / 2 $text-size;
 	margin-bottom:$text-size;
-	background-color: transparent;
+	background-color: white;
 	border: 1px solid #D1D1D1;
 	border-radius: 4px;
 	box-shadow: none;
@@ -42,7 +44,7 @@ select {
 	// 	background-repeat: no-repeat;
 	// }
 	&::-webkit-input-placeholder {
-		color: color("grey", "lighten-2");
+		color: color("grey", "lighten-1");
 		transition: color 200ms ease;
 	}
 	&:focus {

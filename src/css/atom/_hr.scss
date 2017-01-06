@@ -20,6 +20,9 @@
 		<hr class="-title-left" data-title="yet another title" />
 		<hr class="-title-right" data-title="title right" />
 		<div class="hr"><span><i class="icon -heart"></i></span></div>
+		<div class="hr"><button class="button"><i class="icon -top-arrow"></i>Go to top?</button></div>
+
+  script:
 
 ––––
 */
@@ -45,14 +48,19 @@ hr, .hr {
 		clear:both;
 	}
 
-	&[data-title]:before, span {
+	&[data-title]:before, span, button {
 		content: attr(data-title);
     background-color: white;
     display: inline-block;
-    margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
     padding: 0px 10px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 		transform: translateY(-10px);
+	}
+	button {
+		text-transform: none;
+		transform: translateY(-18px);
 	}
 
 	&.-title-left {
@@ -70,6 +78,7 @@ hr, .hr {
 
 	&.-invisible {
 		border: none;
+		margin:0;
 	}
 
 	&.-nested {
@@ -129,7 +138,8 @@ hr, .hr {
 
 	&.-center {
 		display:block;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 

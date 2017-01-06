@@ -1,0 +1,23 @@
+#jobs {
+  padding-top: 20px;
+  overflow: hidden;
+  &>label {
+    margin-bottom: $text-size;
+    margin-left: 1rem;
+  }
+  .two-cols, .three-cols, .four-cols {
+    align-items: flex-start;
+    margin-right:-10px;
+    margin-left:-10px;
+    .wrapper {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+  >button {
+    margin-top:$text-size * 3;
+    margin-bottom:$text-size * 6;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -9,7 +9,7 @@
 
 	markup:
     <label>Button</label>
-    <button class="button loading toggle-loading toggle-success touch">
+    <button class="button loading toggle-loading touch">
       <i class="icon -sun"></i>
       <span>Bouton</span>
     </button>
@@ -45,6 +45,13 @@
       </li>
     </ul>
 
+  script:
+    window.setInterval(function() {
+    	$(".toggle-loading").each(function() {
+    		$(this).toggleClass("loading");
+    	});
+    }, 3000);
+
 ––––
 */
 
@@ -68,10 +75,14 @@
   }
 }
 
+$loadingSize: 1.2rem;
+$loadingOffset: -$loadingSize / 2;
+
 .loading {
   cursor: not-allowed!important;
   opacity:0.8;
   transform: all .2s ease;
+  position: relative;
   &::before, &::after {
     animation: scale .5s ease;
   }
@@ -80,63 +91,30 @@
 		content: '';
 		top: 48%;
 		left: 48%;
-		margin: -.5em 0 0 -.5em;
-		width: .8em;
-		height: .8em;
+		margin: $loadingOffset 0 0 $loadingOffset;
+		width: $loadingSize;
+		height: $loadingSize;
 		border-radius: 500rem;
 		border: 2px solid rgba(0,0,0,.15);
     transition: transform 200ms ease;
 	}
-  &:not(.-valid):not(.-invalid) {
-    &::after {
-      position: absolute;
-      content: '';
-      top: 48%;
-      left: 48%;
-      margin: -.5em 0 0 -.5em;
-      width: .8em;
-      height: .8em;
-      animation: spin .6s linear;
-      animation-iteration-count: infinite;
-      border-radius: 500rem;
-      border-color: #FFF transparent transparent;
-      border-style: solid;
-      border-width: 2px;
-      box-shadow: 0 0 0 1px transparent;
-    }
+  &::after {
+    position: absolute;
+    content: '';
+    top: 48%;
+    left: 48%;
+    margin: $loadingOffset 0 0 $loadingOffset;
+    width: $loadingSize;
+    height: $loadingSize;
+    animation: spin .6s linear;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border-color: #FFF transparent transparent;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 0 0 0 1px transparent;
   }
 
-  &.-valid, &.-invalid {
-    //background-image: none;
-    &::before {
-      display:none;
-    }
-    &::after {
-      position: absolute;
-      content: '';
-      top: 48%;
-      left: 48%;
-      margin: -0.8em 0 0 -0.6em;
-      width: 1.5em;
-      height: 1.5em;
-    }
-
-  }
-
-  &.-valid {
-    background-color: color("success", "base");
-    &::after {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="rgba(0,0,0,.25)" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
-    }
-
-  }
-  &.-invalid {
-    background-color: color("danger", "base");
-    &::after {
-      margin: -0.7em 0 0 -0.5em;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g id="layer1" transform="translate(0 -1036.4)"><path fill="rgba(0,0,0,.25)" fill-rule="evenodd" d="m4.8855 1039.9a0.93955 0.93955 0 0 0 -0.70276 1.5909l2.6312 2.7982-2.6073 2.822a0.93955 0.93955 0 1 0 1.3798 1.2752l2.5174-2.7248 2.4936 2.6496a0.93955 0.93955 0 1 0 1.3688 -1.2862l-2.5835-2.7469 2.5578-2.7688a0.93955 0.93955 0 0 0 -0.65138 -1.5853 0.93955 0.93955 0 0 0 -0.72844 0.3101l-2.4679 2.6715-2.5413-2.7008a0.93955 0.93955 0 0 0 -0.66606 -0.3047z"/></g></svg>');
-    }
-  }
 
 }
 
@@ -162,4 +140,10 @@
   .content, .head {
     visibility: hidden;
   }
+}
+
+.tags.loading {
+    .tag {
+      visibility: hidden;
+    }
 }

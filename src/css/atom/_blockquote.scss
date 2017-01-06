@@ -16,6 +16,8 @@
       <footer>Isaac Asimov</footer>
     </blockquote>
 
+  script:
+
 ––––
 */
 
@@ -49,7 +51,7 @@ blockquote.-pullquote, .blockquote.-pullquote {
 	footer {
 		padding-left: 15px;
 		margin-top:10px;
-		color: color("grey", "lighten-2");
+		color: color("grey", "lighten-1");
 		&:before {
 			content: '\2014';
 			padding: 0 0.5em;

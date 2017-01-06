@@ -1,0 +1,57 @@
+/*
+––––
+
+	title:
+		Swipe
+
+	comment:
+		La Swipe est une plante qui se mange froide
+
+	markup:
+    <div class="slider">
+      <div class="container">
+        <img src="https://lh4.googleusercontent.com/_D9-nzLCi9qU/TNQ2hYNqQEI/AAAAAAAADtI/TcqCdc6N26A/s500/twick_pool_stairs~.jpg"/>
+        <img src="https://lh6.googleusercontent.com/_D9-nzLCi9qU/TNQ2gdP8JYI/AAAAAAAADtI/NU2WBbaXpgU/s500/twick_pool_stairsAndChanginRoom~.jpg"/>
+        <img src="https://lh4.googleusercontent.com/_D9-nzLCi9qU/TNQ2UWpqLgI/AAAAAAAADtI/-OG4z6RxHwA/s500/twick_pool_hall~.jpg"/>
+      </div>
+    </div>
+
+  script:
+  
+––––
+*/
+
+$sizeOfImage: 50;
+$sizeOfSlider: 151;
+
+.slider {
+    height: $sizeOfImage;
+    width: $sizeOfImage;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+}
+
+.slider .container {
+    float: left;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    width: $sizeOfSlider;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+    /*apply a transform to kick in the hardware acceleration.  Without this, the first
+    time we add the transform you get odd rendering of the divs (half missing) */
+    transform: translate(0, 0);
+}
+.slider .container img {
+    padding: 0;
+    margin: 0;
+    background-color:grey;
+    width: $sizeOfImage;
+    height: $sizeOfImage;
+    /*apply a transform to kick in the hardware acceleration.  Without this, the first
+    time we add the transform you get odd rendering of the divs (half missing) */
+    transform: translate(0, 0);
+}

@@ -8,25 +8,7 @@
 		La List est une plante qui se mange froide
 
 	markup:
-    <label>Unordered</input>
-    <ul class="ul">
-      <li>Unordered lists have basic styles</li>
-      <li>They use the circle list style</li>
-      <ul>
-        <li>Nested lists styled to feel right</li>
-        <li>Can nest either type of list into the other</li>
-      </ul>
-    </ul>
-    <label>Ordered</input>
-    <ol class="ol">
-      <li>Ordered lists also have basic styles</li>
-      <li>They use the decimal list style</li>
-      <ol>
-        <li>Ordered and unordered can be nested</li>
-        <li>Can nest either type of list into the other</li>
-      </ol>
-      <li>Last list item just for the fun</li>
-    </ol>
+
     <label>Simple</label>
     <ul class="list">
       <li class="item touch">
@@ -73,47 +55,48 @@
       </li>
     </ul>
 
+  script:
+
 ––––
 */
 
 
-ul, ol { list-style-type: none; }
-
-ul {
-	margin-top: $text-size;
-	margin-bottom: $text-size;
-	ul {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+@keyframes listItemEnter {
+  0% {
+    transform: scale(0.8);
+		opacity: 0;
+  }
+  100% {
+		transform: scale(1);
+		opacity: 1;
+  }
 }
 
-li {
-	margin-bottom: $text-size / 2;
+@keyframes listItemLeave {
+  0% {
+		transform: rotate3d(1, 0, 0, 0deg);
+  }
+  100% {
+		transform: rotate3d(1, 0, 0, 50deg);
+  }
 }
-
-ul.ul 				{ padding-left:20px; list-style-type: circle; }
-ul.ul ul 			{ padding-left:20px; list-style-type: disc; }
-ul.ul ul ul 		{ padding-left:20px; list-style-type: square; }
-
-ol.ol 				{ padding-left:20px; list-style-type: decimal; }
-ol.ol ol 			{ padding-left:20px; list-style-type: lower-alpha; }
-ol.ol ol ol 		{ padding-left:20px; list-style-type: lower-greek; }
 
 .list {
   width:100%;
   position:relative;
   .item {
     width:100%;
-  	min-height: 70px;
+  	//min-height: 70px;
   	background-color: white;
   	padding:$text-size;
     margin:0;
   	position:relative;
+		user-select: none;
   	-webkit-user-select: none;
   	font-family: $nav-font;
     opacity: 1;
     transition: opacity 200ms ease;
+		animation: listItemEnter 500ms ease;
 
     &:not(:last-child) {
       border-bottom:1px solid color("grey", "lighten-2");
@@ -136,7 +119,9 @@ ol.ol ol ol 		{ padding-left:20px; list-style-type: lower-greek; }
     i.head {
       padding:13px;
     }
-
+		.button {
+			margin:0;
+		}
     .content {
 
         margin-left:55px;
@@ -164,6 +149,9 @@ ol.ol ol ol 		{ padding-left:20px; list-style-type: lower-greek; }
       top:0;
       right:0;
     }
+		&.-enter {
+			animation: listItemEnter 500ms ease;
+		}
   }
   .action {
     i {

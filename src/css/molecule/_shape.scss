@@ -10,8 +10,9 @@
 	markup:
     <div class="shape one"></div>
     <div class="shape two"></div>
-    <div class="shape three"></div>
 
+  script:
+  
 ––––
 */
 
@@ -23,35 +24,22 @@ $maskColorBorder: grey;
   width:100%;
   min-height:50px;
   background-color: $background;
-  position:relative;
   margin: 0;
   margin-bottom: $text-size;
-  &:after {
-    content: "";
-    width:100%;
-    min-height:30px;
-    position:absolute;
-    background-repeat: no-repeat;
-  }
+  position:absolute;
+  background-repeat: no-repeat;
 }
 
-.shape.one:after {
+.shape.one {
   bottom:-1px;
   background-image: url('data:image/svg+xml;utf8,<svg class="lego-element svg-bottom-curve" width="100%" viewBox="0 0 1440 84" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <path d="M0 2276h1440v-48c-378.594 80.074-921.422 3.066-1440-36" id="a"></path> </defs> <use fill="#{$maskColor}" xlink:href="#a" transform="translate(0 -2192)" fill-rule="evenodd"></use> </svg>');
 }
 
-.shape.two:after {
+.shape.two {
   top:-1px;
   background-image: url('data:image/svg+xml;utf8, <svg class="lego-element " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" width="100%" height="48" preserveAspectRatio="none"> <path style="fill:#{$maskColor}" d="M0 46.3V0h1440v26.8C878.3 3.7 232.8 46.9 0 46.3z"></path> </svg>');
 }
 
-.shape.three {
-  min-height:100px;
-  &:after {
-    margin-top:20px;
-    margin-bottom:20px;
-    bottom:0;
-    top:0;
-    background-image: url('data:image/svg+xml;utf8, <svg class="lego-element svg-ribbon" min-width="1440px" width="100%" height="259" viewBox="0 0 1440 259" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="mix-blend-mode:multiply;"> <defs> <linearGradient x1="77.212%" y1="-27.043%" x2="33.994%" y2="183.95%" id="a"> <stop stop-color="#29488C" offset="0%"></stop> <stop stop-color="#21386D" offset="100%"></stop> </linearGradient> </defs> <path d="M1440 302C1207.37 342.754 428.43 426.7 0 342v214.383c508.207 9.312 872.277 3.02 1440-34.383V302z" transform="translate(0 -302)" fill="url(#a)" fill-rule="evenodd"></path> </svg>');
-  }
-}
+// top to bottom background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="83" width="1440" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 1440 83.000002"><g transform="translate(0 -969.36)"><path style="fill:#{$landingMaskColor}" d="m0.87342 1046.2c-0.30527-4.5375-0.80374-23.72-1.1077-42.629l-0.55269-34.379 3.0115 0.60231c10.087 2.0175 100.68 11.613 152.02 16.101 123.06 10.759 234.83 17.057 386.5 21.777 55.33 1.7221 298.03 1.7224 354.5 0.0005 204.84-6.246 370.69-16.877 518.35-33.226 14.892-1.6489 27.432-2.9981 27.865-2.9981 0.4337 0 0.7885 18.675 0.7885 41.5v41.5h-720.41-720.41l-0.55503-8.25z"/></g></svg>');
+
+// bottom to top background-image: url('data:image/svg+xml;utf8, <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="83" width="1440" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 1440 83.000002"><g transform="translate(0 -969.36)"><path style="fill:#{$footerMaskColor}" d="m1440.6 977.45c0.3053 4.5375 0.8037 23.72 1.1077 42.629l0.5527 34.379-3.0115-0.6023c-10.087-2.0175-100.68-11.612-152.02-16.102-123.06-10.759-234.83-17.057-386.5-21.777-55.33-1.7221-298.03-1.7224-354.5-0.0005-204.84 6.246-370.69 16.877-518.35 33.226-14.892 1.6489-27.431 2.998-27.865 2.998-0.4337 0-0.7885-18.675-0.7885-41.5v-41.5h720.41 720.41l0.555 8.25z"/></g></svg>');

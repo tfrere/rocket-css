@@ -14,7 +14,7 @@
         <div class="content">
             <div class="header">
                 <span class="name">Joe</span>
-                <span class="date">à 17h34</span>
+                <span class="date">17h34</span>
                 <div class="admin">
                     <i class="icon -pencil"></i>
                 </div>
@@ -23,12 +23,12 @@
         </div>
     </div>
     <label>With -mine</label>
-    <div class="bubble -mine">
+    <div class="bubble -mine toggle-bounce">
         <img src="images/elliot.jpg"/>
         <div class="content">
             <div class="header">
                 <span class="name">Elliot</span>
-                <span class="date">à 17h36</span>
+                <span class="date">17h36</span>
                 <div class="admin">
                     <i class="icon -pencil"></i>
                 </div>
@@ -36,13 +36,45 @@
             <p>Hey! I'm fine, and you?</p>
         </div>
     </div>
-    
+    <label>With -minimalist</label>
+    <div class="bubble -minimalist">
+        <img src="images/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor ascim emet dolor ipsum orem isma ole orem ipsum dolor ascim emet dolor ipsum orem isma ole</p>
+        </div>
+    </div>
+    <div class="bubble -minimalist">
+        <img src="images/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+            <p>Are u there ?</p>
+        </div>
+    </div>
+  script:
+    window.setInterval(function() {
+      $(".toggle-bounce").toggleClass("hide");
+    }, 3000);
+
 ––––
 */
 
 $bubble-2n-color: #fbfbfb;
 
-@keyframes bounce {
+@keyframes bubbleBounce {
   0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
@@ -62,6 +94,7 @@ $bubble-2n-color: #fbfbfb;
 	width:100%;
 	margin-bottom:1rem;
   position:relative;
+  min-height: 65px;
   button {
     margin-top:0;
   }
@@ -71,7 +104,11 @@ $bubble-2n-color: #fbfbfb;
 		height:40px;
     position:absolute;
     left:0;
+    z-index: 1;
 	}
+  &.hide .content {
+    display: none;
+  }
 	.content {
 		margin-left:55px;
 		padding:0px 15px 1px 15px;
@@ -83,13 +120,14 @@ $bubble-2n-color: #fbfbfb;
 		position:relative;
 		box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
 		transition: box-shadow 200ms ease;
+    animation: bubbleBounce 250ms ease;
+    z-index: 0;
 		span {
 			font-family: $nav-font;
 		}
 
 		p {
 			margin: 0;
-			margin-top:5px;
 			margin-bottom:8px;
 			max-width:100%;
 			word-wrap:break-word;
@@ -105,7 +143,6 @@ $bubble-2n-color: #fbfbfb;
 			}
 		}
 		.header {
-			overflow: hidden;
 			position:relative;
 			padding: 7px 75px 0px 0px;
 			.name {
@@ -114,11 +151,12 @@ $bubble-2n-color: #fbfbfb;
 			}
 			.date {
 				transition: all 200ms ease;
-				color:color("grey", "lighten-2");
+				color:color("grey", "base");
 				user-select: unselectable;
 				font-weight: normal;
 				margin-left:5px;
-				font-size: 1.1rem;
+        font-size: 80%;
+        font-family: $text-font;
 			}
 			.admin {
 				position:absolute;
@@ -169,7 +207,7 @@ $bubble-2n-color: #fbfbfb;
       margin-left: 0px;
 			.date {
 				transition: all 200ms ease;
-				color:color("grey", "lighten-1");
+				color:color("grey", "base");
 			}
 			&::after {
 				right: -8px;
@@ -179,4 +217,24 @@ $bubble-2n-color: #fbfbfb;
 			}
 		}
 	}
+}
+
+.bubble.-minimalist {
+  >img {
+    width: 30px;
+    height: 30px;
+  }
+  .header {
+    padding: 0px 75px 0px 0px;
+  }
+  .content {
+    box-shadow: none;
+    margin-left:35px;
+    &:after {
+      display: none;
+    }
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid color("grey", "lighten-3");
+  }
 }

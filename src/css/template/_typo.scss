@@ -35,6 +35,9 @@
 			width:49%;
 			display:inline-block;
 			margin-top: $text-size * 2;
+			h1,h2,h3 {
+				display: block;
+			}
 			&:first-of-type {
 				padding-right:$text-size;
 			}
