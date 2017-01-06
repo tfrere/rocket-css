@@ -3,595 +3,316 @@
     <title>RocketCSS</title>
     <meta name="author" content="keywords, comma, separated"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="css/app.css?v=1480956112311">
+    <link rel="stylesheet" href="css/app.css?v=1483715012765">
     <link rel="icon" href="images/favicon.ico">
   </head>
-  <body>
-  <header>
-    <div class="pattern"></div>
-    <h5>Documentation</h5>
-  </header>
-  <nav class="doc--nav">
-    <header>
-      <div id="logo" class="pattern"></div>
-    </header>
-    <div class="options-wrapper horizontal merged">
-      <button id="toggleBaseline" class="button -no-border -active -icon-only"><i class="icon -text-align-justify"></i></button>
-      <button id="toggleNight" class="button -no-border -icon-only"><i class="icon -moon"></i></button>
-      <button id="toggleCode" class="button -no-border -icon-only"><i class="icon -code"></i></button>
-    </div>
-    <div id="nav-typography" class="accordion active">
-      <h5 class="title active"><a href="#typo-head">Typography</a></h5>
-    	<ul class="active">
-        <li><a href="#typo-hierarchy">Hierarchy</a></li>
-        <li><a href="#typo-typefaces">Typefaces</a></li>
-      </ul>
-    </div>
-    <div id="nav-color" class="accordion">
-      <h5 class="title"><a href="#color-head">Colors</a></h5>
-      <ul>
-        <li><a href="#color-main">Main</a></li>
-    		<li><a href="#color-semantic">Semantic</a></li>
-    	</ul>
-    </div>
-    <div id="nav-atom" class="accordion">
-      <h5 class="title"><a href="#atom-head">Atom</a></h5>
-      <ul>
-        <li><a href="#atom-blockquote">Blockquote</a></li>
-        <li><a href="#atom-button">Button</a></li>
-        <li><a href="#atom-checkbox">checkbox</a></li>
-        <li><a href="#atom-hr">hr</a></li>
-        <li><a href="#atom-code">code</a></li>
-        <li><a href="#atom-input">input</a></li>
-        <li><a href="#atom-link">link</a></li>
-        <li><a href="#atom-radio">radio</a></li>
-      </ul>
-    </div>
-  </nav>
-
-    <div class="doc--content">
-      <header id="typo-head">
-        <div>
-          <h3>Typography</h3>
-        </div>
-      </header>
-      <section class="section doc--typo" id="typography">
-        <div id="typo-hierarchy" class="bloc">
-          <h5>Hierarchy</h5>
-          <hr/>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p class="lead">The typography system is designed to create a <b>strong</b> hierarchy.</p>
-              <p class="lettrine">Regular paragraphs are set at a 15<sup>px</sup> base with 24<sup>px</sup> line height.  Other type basics like <a href="#">special links</a>, <a target="_blank" href="http://tfrere.fr">external link</a>, <b>strong</b>, <em>emphasis</em>, <u>special underline</u> and <s>strikethrough</s>  are all obviously included.</p>
-            </div>
-            <div class="wrapper toggle-baseline show-baseline">
-              <div class="doc--typo-heading">
-                <h1 class="heading">
-                  Heading
-                </h1><code>h1</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h2 class="heading">
-                  Heading
-                </h2><code>h2</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h3 class="heading">
-                  Heading
-                </h3><code>h3</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h4 class="heading">
-                  Heading
-                </h4><code>h4</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h5 class="heading">
-                  Heading
-                </h5><code>h5</code><span></span>
-              </div>
-              <div class="doc--typo-heading">
-                <h6 class="heading">
-                  Heading
-                </h6><code>h6</code><span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="typo-typefaces" class="bloc">
-          <h5>Typefaces</h5>
-          <hr/>
-          <div class="doc--typo-info">
-            <div class="semi-colon">
-              <h6 class="uppercase">Titles</h6>
-              <h2>TypoName</h2>
-              <div class="header">
-                <h4 class="title-font">Abc</h4><span class="title-font">regular</span>
-              </div>
-              <div class="header">
-                <h4 class="bold title-font">Abc</h4><span class="title-font">bold</span>
-              </div>
-              <div class="header">
-                <h4 class="italic title-font">Abc</h4><span class="title-font">italic</span>
-              </div>
-              <hr class="-invisible"/>
-              <p class="toggle-baseline show-baseline title-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
-            </div>
-            <div class="semi-colon">
-              <h6 class="uppercase">Texts</h6>
-              <h2 class="text-font">TypoName</h2>
-              <div class="header">
-                <h4 class="text-font">Abc</h4><span class="title-font">regular</span>
-              </div>
-              <div class="header">
-                <h4 class="bold text-font">Abc</h4><span class="title-font">bold</span>
-              </div>
-              <div class="header">
-                <h4 class="italic text-font">Abc</h4><span class="title-font">italic</span>
-              </div>
-              <hr class="-invisible"/>
-              <p class="toggle-baseline show-baseline text-font">A B C D E F G H I J K L M N O P Q R S T U V X Y Z <br/>a b c d e f g h i j k l m n o p q r s t u v x y z <br/>1 2 3 4 5 6 7 8 9 0 - = _ + < > ? / . , : "</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <header id="color-head">
-        <div>
-          <h3>Colors</h3>
-        </div>
-      </header>
-      <section id="color" class="section">
-        <div id="color-main" class="bloc">
-          <h5>Main</h5>
-          <hr/>
-          <div class="doc--color">
-            <div class="doc--color-first">
-              <div class="doc--column bg-grey darken-4">
-                <div class="doc--color-info contrast-darken-5">
-                  <h3 class="name text-grey contrast-darken-5">ColorName</h3>
-                  <h6 class="text-grey contrast-darken-5">The words</h6>
-                </div>
-                <div class="doc--color-variant text-grey contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-grey lighten-1"></div>
-                  <div class="bg-grey"></div>
-                  <div class="bg-grey darken-2"></div>
-                  <div class="bg-grey darken-3"></div>
-                  <div class="bg-grey darken-4"></div>
-                  <div class="bg-grey darken-5"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-primary">
-                <div class="doc--color-info contrast-darken-5">
-                  <h3 class="name text-primary contrast-darken-5">ColorName</h3>
-                  <h6 class="text-primary contrast-darken-5">The identity</h6>
-                </div>
-                <div class="doc--color-variant text-primary contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-primary lighten-2"></div>
-                  <div class="bg-primary lighten-1"></div>
-                  <div class="bg-primary"></div>
-                  <div class="bg-primary darken-1"></div>
-                  <div class="bg-primary darken-2"></div>
-                  <div class="bg-primary darken-3"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-complement darken-3">
-                <div class="doc--color-info contrast-base">
-                  <h3 class="name text-complement contrast-darken-5">ColorName</h3>
-                  <h6 class="text-complement contrast-darken-5">The links</h6>
-                </div>
-                <div class="doc--color-variant text-complement contrast-darken-5">
-                  <div> <span>hex&nbsp;&nbsp;&nbsp;</span><span class="hex"></span></div>
-                  <div> <span>rgb&nbsp;&nbsp;&nbsp;</span><span class="rgb"></span></div>
-                  <div> <span>hsb&nbsp;&nbsp;&nbsp;</span><span class="hsb"></span></div>
-                  <div> <span>cmyk</span><span class="cmyk"></span></div>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-complement lighten-1"></div>
-                  <div class="bg-complement"></div>
-                  <div class="bg-complement darken-1"></div>
-                  <div class="bg-complement darken-2"></div>
-                  <div class="bg-complement darken-3"></div>
-                  <div class="bg-complement darken-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="color-semantic" class="bloc doc--color">
-          <h5>Semantic</h5>
-          <hr/>
-          <div class="doc--color">
-            <div class="doc--color-last">
-              <div class="doc--column bg-danger darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-danger contrast-darken-5">ColorName</h5>
-                  <h6 class="text-danger contrast-darken-5">Dangers</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-danger lighten-1"></div>
-                  <div class="bg-danger"></div>
-                  <div class="bg-danger darken-1"></div>
-                  <div class="bg-danger darken-2"></div>
-                  <div class="bg-danger darken-3"></div>
-                  <div class="bg-danger darken-4"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-warning darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-warning contrast-darken-5">ColorName</h5>
-                  <h6 class="text-warning contrast-darken-5">Warnings</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-warning lighten-1"></div>
-                  <div class="bg-warning"></div>
-                  <div class="bg-warning darken-1"></div>
-                  <div class="bg-warning darken-2"></div>
-                  <div class="bg-warning darken-3"></div>
-                  <div class="bg-warning darken-4">			</div>
-                </div>
-              </div>
-              <div class="doc--column bg-success darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-success contrast-darken-5">ColorName</h5>
-                  <h6 class="text-success contrast-darken-5">Success</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-success lighten-1"></div>
-                  <div class="bg-success"></div>
-                  <div class="bg-success darken-1"></div>
-                  <div class="bg-success darken-2"></div>
-                  <div class="bg-success darken-3"></div>
-                  <div class="bg-success darken-4"></div>
-                </div>
-              </div>
-              <div class="doc--column bg-info darken-2">
-                <div class="doc--color-info contrast-base">
-                  <h5 class="name text-info contrast-darken-5">ColorName</h5>
-                  <h6 class="text-info contrast-darken-5">Infos</h6>
-                </div>
-                <div class="doc--color-gradient">
-                  <div class="bg-info lighten-1"></div>
-                  <div class="bg-info"></div>
-                  <div class="bg-info darken-1"></div>
-                  <div class="bg-info darken-2"></div>
-                  <div class="bg-info darken-3"></div>
-                  <div class="bg-info darken-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <header id="atom-head">
-        <div>
-          <h3>Atom</h3>
-        </div>
-      </header>
-      <section class="section" id="atom">
-        <div id="atom-blockquote" class="bloc">
-            <h5>Blockquote<span>.scss</span></h5>
-            <hr/>
-            <div>
-              <div class="two-cols-verticaly-aligned">
-                <div class="wrapper">
-                  <p>La blockquote est une plante qui se mange froide</p>
-                </div>
-                <div class="wrapper">
-                  <blockquote>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</blockquote>
-                </div>
-              </div>
-              <pre>
-                  <code class="toggle-code html hidden">&lt;blockquote&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/blockquote&gt;
-                </code>
-              </pre>
-            </div>
-        </div>
-
-
-        <div id="atom-button" class="bloc">
-          <h5>Button<span>.scss</span></h5>
-          <hr/>
-          <div>
-            <div class="two-cols-verticaly-aligned">
-              <div class="wrapper">
-                <p>La Button est une plante qui se mange froide</p>
-              </div>
-              <div class="wrapper">
-                <button class="button">
-                  <i class="icon -sun"></i>
-                  <span>Bouton</span>
-                </button>
-                <button class="button -primary">
-                  Bouton
-                </button>
-                <button disabled class="button -primary -disabled">
-                  Bouton
-                </button>
-                <a class="button -complement">
-                  <i class="icon -sun"></i>
-                  <span>Bouton</span>
-                </a>
-                <button disabled class="button -danger -disabled -icon-only">
-                  <i class="icon -sun"></i>
-                </button>
-                <button disabled class="button -small -success -circular -icon-only -loading">
-                  <i class="icon -sun"></i>
-                </button>
-              </div>
-            </div>
-            <pre>
-              <code class="toggle-code html hidden">&lt;button class=&quot;button&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;span&gt;Bouton&lt;/span&gt;
-                &lt;/button&gt;
-                &lt;button class=&quot;primary button&quot;&gt;
-                Bouton
-                &lt;/button&gt;
-                &lt;button disabled class=&quot;primary button disabled&quot;&gt;
-                Bouton
-                &lt;/button&gt;
-                &lt;a class=&quot;complement button&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;span&gt;Bouton&lt;/span&gt;
-                &lt;/a&gt;
-                &lt;button disabled class=&quot;danger button disabled only-icon&quot;&gt;
-                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-                &lt;/button&gt;
-                &lt;button disabled class=&quot;small success button only-icon&quot;&gt;
-                &lt;i class=&quot;icon -warning&quot;&gt;&lt;/i&gt;
-                &lt;/button&gt;
-              </code>
-            </pre>
-          </div>
-        </div>
-
-        <div id="atom-checkbox" class="bloc">
-          <h5>Checkbox<span>.scss</span></h5>
-          <hr/>
-          <div>
-            <div class="two-cols-verticaly-aligned">
-              <div class="wrapper">
-                <p>La checkbox est une plante qui se mange froide</p>
-              </div>
-              <div class="wrapper">
-                <div class="checkbox">
-            			<input id="checkbox1" type="checkbox" disabled="disabled"/>
-            			<label for="checkbox1"><span>Lololo</span></label>
-            		</div>
-            		<div class="checkbox -primary">
-            			<input id="checkbox2" type="checkbox"/>
-            			<label for="checkbox2"><span>Lololo</span></label>
-            		</div>
-            		<div class="checkbox">
-            			<input id="checkbox3" type="checkbox"/>
-            			<label for="checkbox3"></label>
-            		</div>
-              </div>
-          </div>
-          <pre>
-            <code class="toggle-code html hidden">&lt;div class=&quot;checkbox&quot;&gt;
-              &lt;input id=&quot;checkbox1&quot; type=&quot;checkbox&quot; disabled=&quot;disabled&quot;/&gt;
-              &lt;label for=&quot;checkbox1&quot;&gt;&lt;span&gt;Lololo&lt;/span&gt;&lt;/label&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;checkbox primary&quot;&gt;
-              &lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
-              &lt;label for=&quot;checkbox2&quot;&gt;&lt;span&gt;Lololo&lt;/span&gt;&lt;/label&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;checkbox&quot;&gt;
-              &lt;input id=&quot;checkbox3&quot; type=&quot;checkbox&quot;/&gt;
-              &lt;label for=&quot;checkbox3&quot;&gt;&lt;/label&gt;
-              &lt;/div&gt;
-            </code>
-          </pre>
-        </div>
+  <body class="conseil-emploi">
+    <nav class="nav">
+      <div class="container main-wrapper">
+        <a class="logo" href="#">Conseil emploi</a>
+        <ul>
+          <li><a href="#how">Comment ça marche ?</a></li>
+          <!--<li><a href="#who">Qui sommes nous ?</a></li>-->
+          <li><a class="button -complement open-modal" href="#">Se connecter</a></li>
+          <li><a class="button -complement open-modal" href="#">S'inscrire</a></li>
+        </ul>
       </div>
+    </nav>
+    <section id="info" class="message sub-nav -line-primary">
+      <div class="content main-wrapper">
+        <h6>Résultats pour</h6>
+        <div class="tag-container">
+          <div class="tag -line-primary"><span>Infographiste</span></div>
+          <div class="tag -line-primary"><span>Montage de structure et charpentes en bois</span></div>
+        </div>
+        <button class="button -small -primary"> <span>Modifier ma recherche</span></button>
+      </div>
+    </section>
 
-
-
-
-
-      <div id="atom-hr" class="bloc">
-        <h5>Hr<span>.scss</span></h5>
+      <section id="jobs" class="main-wrapper">
+        <label><i class="icon -heart"></i>Nos coups de coeur</label>
+        <div class="two-cols">
+          <div class="wrapper">
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
+                </div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité <span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
+                </div>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc fade">Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
+          </div>
+          <div class="wrapper">
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
+                </div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité <span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
+                </div>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc">Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
+          </div>
+        </div>
         <hr/>
-        <div>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p>La hr est une plante qui se mange froide</p>
-            </div>
-            <div class="wrapper">
-              <hr class="-nested"/>
-          		<hr class="-lines"/>
-          		<hr class="-triangle"/>
-          		<hr class="-double"/>
-          		<hr class="-dashed"/>
-          		<hr class="-dotted"/>
-          		<hr class="-gradient"/>
-          		<hr class="-apple"/>
-          		<hr class="-lines -half -centered"/>
-          		<hr class="-lines -half"/>
-          		<hr class="-lines -tiny"/>
-          		<hr class="-lines -quart"/>
-            </div>
-        </div>
-        <pre>
-          <code class="toggle-code html hidden">&lt;hr/&gt;
-            &lt;hr class=&quot;nested&quot;/&gt;
-            &lt;hr class=&quot;lines&quot;/&gt;
-            &lt;hr class=&quot;triangle&quot;/&gt;
-            &lt;hr class=&quot;double&quot;/&gt;
-            &lt;hr class=&quot;dashed&quot;/&gt;
-            &lt;hr class=&quot;dotted&quot;/&gt;
-            &lt;hr class=&quot;gradient&quot;/&gt;
-            &lt;hr class=&quot;apple&quot;/&gt;
-            &lt;hr class=&quot;lines half centered&quot;/&gt;
-            &lt;hr class=&quot;lines half&quot;/&gt;
-            &lt;hr class=&quot;lines tiny&quot;/&gt;
-            &lt;hr class=&quot;lines quart&quot;/&gt;
-          </code>
-        </pre>
-      </div>
-    </div>
-
-
-
-    <div id="atom-code" class="bloc">
-      <h5>Code<span>.scss</span></h5>
-      <hr/>
-      <div>
-        <div class="two-cols-verticaly-aligned">
+        <label><i class="icon -list"></i>Plus de résultats</label>
+        <div class="two-cols">
           <div class="wrapper">
-            <p>La code est une plante qui se mange froide</p>
-          </div>
-          <div class="wrapper">
-            <pre>
-        			<code>
-        The pre balise is here to preserve
-        indentation of text.
-        (\/)
-        (oO)
-        c(")(")
-        			</code>
-        		</pre>
-          </div>
-      </div>
-      <pre>
-        <code class="toggle-code html hidden">&lt;code&gt;
-          some code here
-          &lt;/code&gt;
-          &lt;pre&gt;
-          &lt;code&gt;
-          The pre balise is here to preserve
-          indentation of text.
-          (\/)
-          (oO)
-          c(&quot;)(&quot;)
-          &lt;/code&gt;
-          &lt;/pre&gt;
-        </code>
-      </pre>
-    </div>
-  </div>
-
-
-
-    <div id="atom-input" class="bloc">
-      <h5>input<span>.scss</span></h5>
-      <hr/>
-      <div>
-        <div class="two-cols-verticaly-aligned">
-          <div class="wrapper">
-            <p>La input est une plante qui se mange froide</p>
-          </div>
-          <div class="wrapper">
-            <input type="text" placeholder="test"/>
-          		<input class="-large" type="text" placeholder="test" required/>
-
-          		<div class="input-material">
-          			<label>Name</label>
-          			<input class="-large" type="text"/>
-          		</div>
-          </div>
-      </div>
-      <pre>
-        <code class="toggle-code html hidden">&lt;input type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
-          &lt;input class=&quot;large&quot; type=&quot;text&quot; placeholder=&quot;test&quot;/&gt;
-
-          &lt;div class=&quot;input-material&quot;&gt;
-          &lt;label&gt;Name&lt;/label&gt;
-          &lt;input class=&quot;large&quot; type=&quot;text&quot;/&gt;
-          &lt;/div&gt;
-        </code>
-      </pre>
-    </div>
-  </div>
-
-
-      <div id="atom-link" class="bloc">
-        <h5>link<span>.scss</span></h5>
-        <hr/>
-        <div>
-          <div class="two-cols-verticaly-aligned">
-            <div class="wrapper">
-              <p>La link est une plante qui se mange froide</p>
-            </div>
-            <div class="wrapper">
-              <a href="#">Ouaiis je suis un lien</a>
-              <p>In texts, links are underlined by default like <a href="#">Ouaiis je suis un lien</a></p>
-
-            </div>
-        </div>
-        <pre>
-          <code class="toggle-code html hidden">&lt;a href=&quot;#&quot;&gt;Ouaiis je suis un lien&lt;/a&gt;
-            &lt;p&gt;In texts, links are underlined by default like &lt;a href=&quot;#&quot;&gt;Ouaiis je suis un lien&lt;/a&gt;&lt;/p&gt;
-          </code>
-        </pre>
-      </div>
-    </div>
-
-
-
-          <div id="atom-radio" class="bloc">
-            <h5>radio<span>.scss</span></h5>
-            <hr/>
-            <div>
-              <div class="two-cols-verticaly-aligned">
-                <div class="wrapper">
-                  <p>La radio est une plante qui se mange froide</p>
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
                 </div>
-                <div class="wrapper">
-                  <div class="radio">
-                		<input id="radio1" type="radio" name='radio-group' />
-                		<label for="radio1">Apples</label>
-                	</div>
-                	<div class="radio">
-                		<input id="radio2" type="radio" name='radio-group' checked='checked' />
-                		<label for="radio2">Lemons</label>
-                	</div>
-                	<div class="radio">
-                		<input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
-                		<label for="radio3">Tomatoes</label>
-                	</div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité <span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
                 </div>
-            </div>
-            <pre>
-              <code class="toggle-code html hidden">&lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio1&quot; type=&quot;radio&quot; name='radio-group' /&gt;
-                &lt;label for=&quot;radio1&quot;&gt;Apples&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio2&quot; type=&quot;radio&quot; name='radio-group' checked='checked' /&gt;
-                &lt;label for=&quot;radio2&quot;&gt;Lemons&lt;/label&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;radio&quot;&gt;
-                &lt;input id=&quot;radio3&quot; type=&quot;radio&quot; name='radio-group' disabled=&quot;disabled&quot;/&gt;
-                &lt;label for=&quot;radio3&quot;&gt;Tomatoes&lt;/label&gt;
-                &lt;/div&gt;
-              </code>
-            </pre>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc">Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
+          </div>
+          <div class="wrapper">
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
+                </div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité <span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
+                </div>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc">Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
+          </div>
+          <div class="wrapper">
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
+                </div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité<span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
+                </div>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc">Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
+          </div>
+          <div class="wrapper">
+            <a href="#" class="job-item card open-modal">
+              <header class="header">
+                <div class="match">
+                  <span class="desc">Compatiblité</span>
+                  <span class="data">34<span>%</span></span>
+                </div>
+                <div class="info">
+                  <span class="employability">
+                    Employabilité <span class="text-success">Bonne</span>
+                  </span>
+                  <span class="competencies">
+                     Compétences en commun<span class="text-success">4 sur 12</span>
+                  </span>
+                </div>
+              </header>
+              <div class="content">
+                <h6 class="title">Réalisation d'objets décoratifs et utilitaires en céramique et matériaux de synthèse</h6>
+                <p class="desc">Monte une structure Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, Monte une structure (charpente et ossature d'ouvrage), en bois ou en matériaux composites, (charpente et ossature d'ouvrage), en bois ou en matériaux composites, composée d'éléments préfabriqués et le plus souvent pré-assemblés, selon les règles de sécurité.</p>
+                <div class="tag-box">
+                  <label>Compétences en commun</label>
+                  <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                  <div class="tag -line-primary"><span>Lecture de plan</span></div>
+                  <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                  <div class="tag -line-primary"><span>Types d'explosifs</span></div>
+                  <div class="more">et 8 autres à découvrir...</div>
+                </div>
+              </div>
+              <footer class="footer touch">
+                <p>En savoir plus</p>
+              </footer>
+            </a>
           </div>
         </div>
-
+        <button class="button -primary -big"><i class="icon -redo2"></i><span>Faire une nouvelle recherche</span></button>
       </section>
-      <footer class="footer screen-box center">
-        <div class="center-wrapper">
-          <h5><i class="icon -x3 -heart"></i></h5>
+      <div id="job" class="modal">
+        <div class="overlay close-modal"></div>
+        <div class="content">
+          <div class="card content-wrapper job-item">
+            <div class="close-button close-modal">
+              <i class="icon -cross"></i>
+            </div>
+            <header class="header">
+              <div class="match">
+                <span class="desc">Compatiblité</span>
+                <span class="data">34<span>%</span></span>
+              </div>
+              <div class="info">
+                <span class="employability">
+                  Employabilité dans votre département <span class="text-success">Bonne</span>
+                </span>
+                <span class="competencies">
+                   Compétences en commun<span class="text-success">4 sur 12</span>
+                </span>
+              </div>
+              <!-- <div class="evaluate">
+                <label>Vous avez aimé?</label>
+                <div class="rating -thumb-down -activable">
+                  <div class="level"></div>
+                </div>
+                <div class="rating -thumb-up -activable">
+                  <div class="level"></div>
+                </div>
+              </div> -->
+            </header>
+            <div class="content">
+              <h3 class="title">Installation et maintenance électronique</h3>
+              <h6 class="subtitle">Référence pôle emploi <a target="_blank" href="http://candidat.pole-emploi.fr/marche-du-travail/fichemetierrome?codeRome=I1305">I1305</a></h6>
+              <p class="desc lead">Procède à l'installation et à la maintenance corrective et préventive d'appareils, d'équipements, d'installations ou de systèmes à forte composante électronique, selon les règles de sécurité.Peut assurer une assistance téléphonique (hot line, ...) aux utilisateurs.Peut coordonner une équipe.</p>
+              <hr class="-gradient"/>
+              <h5 class="required"><i class="icon -color-sampler"></i>Compétences nécéssaires <span>5 en commun</span></h5>
+              <div class="tag-box">
+                <div class="tag -line-primary"><span>Elements de base en hydraulique</span></div>
+                <div class="tag"><span>Réglementation en pyrotechnie</span></div>
+                <div class="tag -line-primary"><span>Calcul de tir de fragmentation</span></div>
+                <div class="tag"><span>Règles et consignes de sécurité</span></div>
+                <div class="tag -line-primary"><span>Elements de base en mécanique générale</span></div>
+                <div class="tag"><span>Lecture de plan</span></div>
+                <div class="tag"><span>Types d'explosifs</span></div>
+                <div class="tag -line-primary"><span>Nature des gisements</span></div>
+                <div class="tag"><span>Débitage</span></div>
+                <div class="tag"><span>Marinage</span></div>
+              </div>
+              <hr class="-gradient"/>
+              <div class="two-cols">
+                <div class="wrapper">
+                  <h6><i class="icon -graduation-hat"></i>Conditions d'accès au métier</h6>
+                  <p class="justify">Cet emploi/métier est accessible avec un diplôme de niveau Bac+2 (BTS/DUT) en électronique, électrotechnique, informatique, automatisme, ...Il est également accessible avec un Bac professionnel dans les mêmes secteurs, complété par une expérience professionnelle.Une habilitation aux risques d'origine électrique est requise.La pratique de l'anglais (vocabulaire technique) peut être demandée.</p>
+                </div>
+                <div class="wrapper">
+                  <h6><i class="icon -list4"></i>Conditions de travail</h6>
+                  <p class="justify">L'activité de cet emploi/métier s'exerce au sein d'entreprises industrielles, d'entreprises de maintenance spécialisées, de sociétés de services, des armées, en contact avec différents intervenants (production, méthodes, études, clients, fournisseurs, ...). Elle peut impliquer des déplacements.Elle peut s'exercer les fins de semaine, de nuit et être soumise à des astreintes.Elle peut s'effectuer en zone à atmosphère contrôlée.Le port d'équipements de protection (gants, ...) peut être exigé.</p>
+                </div>
+              </div>
+              <hr class="-gradient"/>
+              <div class="evaluate">
+                <h3>Ce métier vous à plu?</h3>
+                <div class="rating -thumb-down -activable">
+                  <div class="level -active "></div>
+                </div>
+                <div class="rating -thumb-up -activable">
+                  <div class="level -active "></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
+      </div>
     </div>
-    <script src="js/polyfills.js?v=1480956112311"></script>
-    <script src="js/vendors.js?v=1480956112311"></script>
-    <script src="js/app.js?v=1480956112311"></script>
+    <script src="js/polyfills.js?v=1483715012765"></script>
+    <script src="js/vendors.js?v=1483715012765"></script>
+    <script src="js/app.js?v=1483715012765"></script>
   </body>
 </html>
