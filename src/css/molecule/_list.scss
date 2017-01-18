@@ -104,7 +104,9 @@
     &:nth-child(2n) {
       background-color: #fbfbfb;
     }
-
+    &.-active {
+      cursor: default;
+    }
     .head {
       position:absolute;
       width:45px;
