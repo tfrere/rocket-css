@@ -1,0 +1,92 @@
+/*
+––––
+
+	title:
+		Material input
+
+	comment:
+		La material input est une plante qui se mange froide
+
+	markup:
+		<label>Simple input</input>
+		<div class="input-material">
+			<label>Name</label>
+			<input class="-large" type="text"/>
+		</div>
+
+	script:
+		$(".input-material input").focus(function(){
+			$(".input-material").addClass("focus");
+		});
+		$(".input-material input").blur(function(){
+			if ($(".input-material input").val() == "")
+				$(".input-material").removeClass("focus");
+		});
+
+––––
+*/
+
+
+$base-index:1;
+
+.input-material {
+	margin-top:5px;
+	margin-bottom:15px;
+	position:relative;
+	input {
+		border:none;
+		margin-bottom:0;
+		padding-left:0;
+		z-index: $base-index + 2;
+		box-shadow: none;
+		&:-webkit-autofill {
+			box-shadow: none;
+		}
+	}
+	&:before {
+		position:absolute;
+		bottom:0;
+		left:0;
+		content:"";
+		width:0%;
+		height:2px;
+		background-color: color("primary", "lighten-1");
+		opacity:1;
+		transition: width .2s ease-in-out;
+	}
+	&:after {
+		position:absolute;
+		bottom:0;
+		left:0;
+		content:"";
+		width:100%;
+		height:2px;
+		background-color: color("grey", "lighten-2");
+		opacity:0.2;
+		transition: all .2s ease-in-out;
+	}
+	label {
+		position:absolute;
+		top:14px;
+		left:0px;
+		transition: all .2s ease('swift-out');
+		font-size: $text-size;
+		z-index: $base-index + 1;
+	}
+	&.focus {
+		textarea {
+			min-height: 100px;
+		}
+		input, textarea{
+			background-color: rgba(255,255,255,0.1);
+		}
+		label {
+			top: -8px;
+			font-size: $text-size / 1.5;
+			transition: all .2s ease('swift-in');
+		}
+		&:before {
+			width:100%;
+		}
+	}
+}

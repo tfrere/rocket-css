@@ -1,0 +1,275 @@
+/* # Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	//048b8d mine
+	// FF9153 mine 2
+	// 9f3738 conseil emploi
+	// 9e2a2c collectivz 1
+	// 8686bf collectivz 2
+
+	$color-primary:				rgb(22, 0, 102);
+	$color-complement:		rgb(209, 38, 49);
+
+	$color-success:				#149A57;
+	$color-warning:				#EBAD23;
+	$color-info:					#303E73;
+	$color-danger:				#D23D29;
+
+	/* # Color core
+
+	   NOTE: color("name_of_color", "type_of_color")
+	          to avoid to repeating map-get($colors, ...)
+	–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	@function color($color, $type) {
+	  @if map-has-key($colors, $color) {
+	    $curr_color: map-get($colors, $color);
+	    @if map-has-key($curr_color, $type) {
+	      @return map-get($curr_color, $type);
+	    }
+	  }
+	  @warn "Unknown `#{name}` in $colors.";
+	  @return null;
+	}
+
+	$primary: (
+	  "base":       $color-primary,
+	  "lighten-5":  lighten($color-primary, 50%),
+	  "lighten-4":  lighten($color-primary, 40%),
+	  "lighten-3":  lighten($color-primary, 30%),
+	  "lighten-2":  lighten($color-primary, 20%),
+	  "lighten-1":  lighten($color-primary, 10%),
+	  "darken-1":   darken($color-primary, 10%),
+	  "darken-2":   darken($color-primary, 20%),
+	  "darken-3":   darken($color-primary, 30%),
+	  "darken-4":   darken($color-primary, 40%),
+    "darken-5":   darken($color-primary, 50%),
+	  "contrast-base": color-contrast($color-primary),
+	  "contrast-lighten-5":  color-contrast(lighten($color-primary, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-primary, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-primary, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-primary, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-primary, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-primary, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-primary, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-primary, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-primary, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-primary, 50%))
+	);
+
+	$complement: (
+	  "base":       $color-complement,
+	  "lighten-5":  lighten($color-complement, 50%),
+	  "lighten-4":  lighten($color-complement, 40%),
+	  "lighten-3":  lighten($color-complement, 30%),
+	  "lighten-2":  lighten($color-complement, 20%),
+	  "lighten-1":  lighten($color-complement, 10%),
+	  "darken-1":   darken($color-complement, 10%),
+	  "darken-2":   darken($color-complement, 20%),
+	  "darken-3":   darken($color-complement, 30%),
+	  "darken-4":   darken($color-complement, 40%),
+    "darken-5":   darken($color-complement, 50%),
+	  "contrast-base": color-contrast($color-complement),
+	  "contrast-lighten-5":  color-contrast(lighten($color-complement, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-complement, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-complement, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-complement, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-complement, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-complement, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-complement, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-complement, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-complement, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-complement, 50%))
+	);
+
+	$success: (
+	  "base":       $color-success,
+	  "lighten-5":  lighten($color-success, 50%),
+	  "lighten-4":  lighten($color-success, 40%),
+	  "lighten-3":  lighten($color-success, 30%),
+	  "lighten-2":  lighten($color-success, 20%),
+	  "lighten-1":  lighten($color-success, 10%),
+	  "darken-1":   darken($color-success, 10%),
+	  "darken-2":   darken($color-success, 20%),
+	  "darken-3":   darken($color-success, 30%),
+	  "darken-4":   darken($color-success, 40%),
+    "darken-5":   darken($color-success, 50%),
+	  "contrast-base": color-contrast($color-success),
+	  "contrast-lighten-5":  color-contrast(lighten($color-success, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-success, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-success, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-success, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-success, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-success, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-success, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-success, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-success, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-success, 50%))
+	);
+
+	$warning: (
+	  "base":       $color-warning,
+	  "lighten-5":  lighten($color-warning, 50%),
+	  "lighten-4":  lighten($color-warning, 40%),
+	  "lighten-3":  lighten($color-warning, 30%),
+	  "lighten-2":  lighten($color-warning, 20%),
+	  "lighten-1":  lighten($color-warning, 10%),
+	  "darken-1":   darken($color-warning, 10%),
+	  "darken-2":   darken($color-warning, 20%),
+	  "darken-3":   darken($color-warning, 30%),
+	  "darken-4":   darken($color-warning, 40%),
+    "darken-5":   darken($color-warning, 50%),
+	  "contrast-base": color-contrast($color-warning),
+	  "contrast-lighten-5":  color-contrast(lighten($color-warning, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-warning, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-warning, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-warning, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-warning, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-warning, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-warning, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-warning, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-warning, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-warning, 50%))
+	);
+
+	$danger: (
+	  "base":       $color-danger,
+	  "lighten-5":  lighten($color-danger, 50%),
+	  "lighten-4":  lighten($color-danger, 40%),
+	  "lighten-3":  lighten($color-danger, 30%),
+	  "lighten-2":  lighten($color-danger, 20%),
+	  "lighten-1":  lighten($color-danger, 10%),
+	  "darken-1":   darken($color-danger, 10%),
+	  "darken-2":   darken($color-danger, 20%),
+	  "darken-3":   darken($color-danger, 30%),
+	  "darken-4":   darken($color-danger, 40%),
+      "darken-5":   darken($color-danger, 50%),
+	  "contrast-base": color-contrast($color-danger),
+	  "contrast-lighten-5":  color-contrast(lighten($color-danger, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-danger, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-danger, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-danger, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-danger, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-danger, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-danger, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-danger, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-danger, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-danger, 50%))
+	);
+	$info: (
+	  "base":       $color-info,
+	  "lighten-5":  lighten($color-info, 50%),
+	  "lighten-4":  lighten($color-info, 40%),
+	  "lighten-3":  lighten($color-info, 30%),
+	  "lighten-2":  lighten($color-info, 20%),
+	  "lighten-1":  lighten($color-info, 10%),
+	  "darken-1":   darken($color-info, 10%),
+	  "darken-2":   darken($color-info, 20%),
+	  "darken-3":   darken($color-info, 30%),
+	  "darken-4":   darken($color-info, 40%),
+    "darken-5":   darken($color-info, 50%),
+	  "contrast-base": color-contrast($color-info),
+	  "contrast-lighten-5":  color-contrast(lighten($color-info, 50%)),
+	  "contrast-lighten-4":  color-contrast(lighten($color-info, 40%)),
+	  "contrast-lighten-3":  color-contrast(lighten($color-info, 30%)),
+	  "contrast-lighten-2":  color-contrast(lighten($color-info, 20%)),
+	  "contrast-lighten-1":  color-contrast(lighten($color-info, 10%)),
+	  "contrast-darken-1":   color-contrast(darken($color-info, 10%)),
+	  "contrast-darken-2":   color-contrast(darken($color-info, 20%)),
+	  "contrast-darken-3":   color-contrast(darken($color-info, 30%)),
+	  "contrast-darken-4":   color-contrast(darken($color-info, 40%)),
+    "contrast-darken-5":   color-contrast(darken($color-info, 50%))
+	);
+
+	$grey: (
+	  "base":       #9e9e9e,
+	  "lighten-5":  #fafafa,
+	  "lighten-4":  #f5f5f5,
+	  "lighten-3":  #eeeeee,
+	  "lighten-2":  #e0e0e0,
+	  "lighten-1":  #bdbdbd,
+	  "darken-1":   #757575,
+	  "darken-2":   #616161,
+	  "darken-3":   #424242,
+	  "darken-4":   #212121,
+	  "darken-5":   black,
+	  "contrast-base": color-contrast(#9e9e9e),
+	  "contrast-lighten-5":  color-contrast(#fafafa),
+	  "contrast-lighten-4":  color-contrast(#f5f5f5),
+	  "contrast-lighten-3":  color-contrast(#eeeeee),
+	  "contrast-lighten-2":  color-contrast(#e0e0e0),
+	  "contrast-lighten-1":  color-contrast(#bdbdbd),
+	  "contrast-darken-1":   color-contrast(#757575),
+	  "contrast-darken-2":   color-contrast(#616161),
+	  "contrast-darken-3":   color-contrast(#424242),
+	  "contrast-darken-4":   color-contrast(#212121),
+      "contrast-darken-5":   color-contrast(black)
+	);
+
+	$subtle-grey: (
+	  "lightest":  #fafafa,
+	  "light":  #f0f0f0,
+	  "base":  #b3b3b1,
+	);
+
+
+	$colors: (
+	  "primary": $primary,
+	  "complement": $complement,
+	  "success": $success,
+	  "danger": $danger,
+	  "warning": $warning,
+	  "info": $info,
+	  "grey": $grey
+	);
+
+
+$red: #F15854;
+$gray: #4D4D4D;
+$blue: #5DA5DA;
+$yellow: #DECF3F;
+$purple: #B276B2;
+$orange: #FAA43A;
+
+$medium-grey: #fafafa;
+
+$facebook-color:    #3b5998;
+$twitter-color:     #55acee;
+$googleplus-color:  #dd4b39;
+$youtube-color: 		#bb0000;
+$linkedin-color: 		#007bb5;
+$instagram-color: 	#e95950;
+$pinterest-color: 	#cb2027;
+$snapshat-color: 		#fffc00;
+$dropbox-color: 		#007ee5;
+$flickr-color: 			#ff0084;
+$tumblr-color: 			#32506d;
+$vk-color: 					#45668e;
+$vimeo-color: 			#aad450;
+$foursquare-color: 	#0072b1;
+$spotify-color: 		#00e461;
+$github-color: 			#000000;
+$behance-color: 		#1769ff;
+
+	// Color Classes
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      ._bg-#{$color_name} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name} {
+        color: $color_value !important;
+      }
+    }
+    @else {
+      ._bg-#{$color_name}-#{$color_type} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name}-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}

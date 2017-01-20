@@ -1,0 +1,40 @@
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  10%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( .75 );
+  }
+  30%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+
+#doc .footer {
+  padding: 20px;
+  h5 {
+    text-align: center;
+    margin:0;
+  }
+  i {
+    color: color("grey", "lighten-3");
+    animation: heartbeat 2s infinite;
+    display:block;
+  }
+}

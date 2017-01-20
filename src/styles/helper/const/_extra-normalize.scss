@@ -1,0 +1,44 @@
+html, body, body>div {margin:0;padding:0;}
+
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 10px;
+}
+
+html, body {
+  width:100%;
+  margin:0;
+  padding:0;
+  min-height:100%;
+}
+
+ul {
+  padding-left:0;
+  margin:0;
+}
+
+/* awkward default styles on some inputs for iOS */
+input,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+textarea:focus {
+  outline:none;
+}
+
+ul, ol { list-style-type: none; }
+
+a:not(.button) {
+  cursor:pointer;
+  text-decoration: none;
+
+  &:hover   { outline: 0;}
+  &:active  { outline: 0; }
+  &:focus   { outline: thin dotted; }
+}

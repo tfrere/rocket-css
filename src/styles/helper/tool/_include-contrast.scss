@@ -1,0 +1,30 @@
+// http://codepen.io/lunelson/pen/jENxwB?editors=0100
+
+// LINEAR to LOGARITHMIC and vicev-ersa
+
+@function lin2log($n) { @if $n <= 0.0031308 { @return $n * 12.92; } @else { @return 1.055 * pow($n,1/2.4) - 0.055; } }
+@function log2lin($n) { @if $n <= 0.04045 { @return $n / 12.92; } @else { @return pow((($n + 0.055)/1.055),2.4); } }
+
+// sRGB BT-709 BRIGHTNESS
+
+@function resolve-brightness($c) {
+	$rlin: log2lin(red($c)/255);
+	$glin: log2lin(green($c)/255);
+	$blin: log2lin(blue($c)/255);
+	@return lin2log(0.2126 * $rlin + 0.7152 * $glin + 0.0722 * $blin) * 100;
+}
+
+// Compares contrast of a given color to the light/dark arguments and returns whichever is most "contrasty"
+
+@function color-contrast($color, $dark: rgb(230,230,230), $light: rgb(30,30,30)) {
+  @if $color == null {
+    @return null;
+  }
+  @else {
+    $color-brightness: resolve-brightness($color);  
+    $light-text-brightness: resolve-brightness($light);
+    $dark-text-brightness: resolve-brightness($dark);
+
+    @return if(abs($color-brightness - $light-text-brightness) > abs($color-brightness - $dark-text-brightness), $light, $dark);
+  }
+}

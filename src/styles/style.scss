@@ -1,151 +1,103 @@
-@import "abstract/const/ratio";
-@import "abstract/const/easing";
-@import "abstract/const/normalize";
+/*
+–––––––––––––––––––––––––––––––––––––––
+  ███╗   ███╗  █████╗  ██╗ ███╗   ██╗
+  ████╗ ████║ ██╔══██╗ ██║ ████╗  ██║
+  ██╔████╔██║ ███████║ ██║ ██╔██╗ ██║
+  ██║╚██╔╝██║ ██╔══██║ ██║ ██║╚██╗██║
+  ██║ ╚═╝ ██║ ██║  ██║ ██║ ██║ ╚████║
+  ╚═╝     ╚═╝ ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═══╝
+–––––––––––––––––––––––––––––––––––––––
+*/
 
-@import "abstract/tools/prefixer";
-@import "abstract/tools/include-font";
-@import "abstract/tools/modular-scale";
-@import "abstract/tools/keyframe";
-@import "abstract/tools/mixin";
-@import "abstract/tools/center";
+@import "helper/core";
 
-@import "abstract/animation";
-@import "abstract/media";
-@import "abstract/color";
-@import "abstract/grid";
-@import "abstract/base";
-@import "abstract/icon";
+@import "color";
+@import "base";
 
 @import "atom/button";
-@import "atom/code";
 @import "atom/input";
-@import "atom/select";
-@import "atom/table";
-@import "atom/list";
-@import "atom/checkbox";
-@import "atom/link";
-@import "atom/hr";
+@import "atom/blockquote";
 @import "atom/toggle";
-@import "atom/circle-flip";
-@import "atom/card";
+@import "atom/checkbox";
+@import "atom/hr";
+@import "atom/radio";
+@import "atom/label";
+@import "atom/tag";
+@import "atom/progress";
+@import "atom/video";
+@import "atom/rating";
 
+@import "atom/extra/button-grainandmortar";
+@import "atom/extra/button-naira";
+@import "atom/extra/button-push";
+@import "atom/extra/anim-underline";
+@import "atom/extra/burger-menu";
+@import "atom/extra/loader-line-scale";
+@import "atom/extra/loader-circle-scale";
+@import "atom/extra/loader-ball-scale";
+@import "atom/extra/loader-ball-pulse";
+@import "atom/extra/invite-to-scroll";
 
-@import "molecule/footer";
-@import "molecule/home";
-@import "molecule/nav";
-@import "molecule/question";
-@import "molecule/newsletter";
-@import "molecule/article";
+@import "molecule/fieldset";
+@import "molecule/bubble";
+@import "molecule/message";
+@import "molecule/card";
+@import "molecule/list";
+@import "molecule/table";
+@import "molecule/shape";
+@import "molecule/figure";
+@import "molecule/background";
+@import "molecule/dropdown";
+@import "molecule/tip";
 
-#thib {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/thib.jpg');
-}
+@import "modifier/modal";
+@import "modifier/panel";
+@import "modifier/isolate";
+@import "modifier/merge";
+@import "modifier/touch";
+@import "modifier/loading";
+@import "modifier/level";
+@import "modifier/filter";
+@import "modifier/swipe";
 
-#val {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/val.jpg');
-}
+@import "template/nav";
+@import "template/section";
+@import "template/footer";
+@import "template/color";
+@import "template/typo";
+@import "template/symbol";
 
-#antho {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/antho.jpg');
-}
+//@import "template/conseil-emploi/main";
+@import "template/apl-simulator/main";
 
-#quentin {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/quentin.jpg');
-}
-
-#marie {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/marie.jpg');
-}
-
-
-#tritz {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/tritz.jpg');
-}
-
-#thib-back {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/thib-peon.jpg');
-}
-
-#val-back {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/val-peon.jpg');
-}
-
-#antho-back {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/antho-peon.jpg');
-}
-
-#quentin-back {
-	@include cover();
-	background-image: url('../assets/imgs/jpg/quentin-peon.jpg');
-}
-
-
-#background_404 {
+html, body, [ui-view] {
 	width:100%;
-	height:100%;
-	@include cover();
-	background-repeat: no-repeat;
-	background-image: url('../assets/imgs/svg/404.svg');
+	min-height:100%;
 }
 
-.screen-box {
-	position:relative;
-	width:100%;
-	height:100%;
-}
-
-.small-circle {
-	width: 150px;
-	height: 150px;
-	margin: 0 auto;
-}
-
-.big-circle {
-	width: 200px;
-	height: 200px;
-	margin: 0 auto;
-}
-
-@include desktop {
-	.big-circle {
-		width: 250px;
-		height: 250px;
-		margin: 0 auto;
-	}
-}
-
-#question_handler[ui-view] {
-}
-
-input:not(.ng-pristine).ng-invalid {
-	border: 1px solid $color-danger;
-}
-
-[ui-view].ng-enter, [ui-view].ng-leave {
-	@include transition();
-}
-
-[ui-view].ng-enter {
-  opacity: 0;
-}
-
-[ui-view].ng-enter-active {
-  opacity: 1;
-}
-
-[ui-view].ng-leave {
-  opacity: 1;
-}
-
-[ui-view].ng-leave-active {
-  opacity: 0;
-}
+//
+// .pattern {
+// 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAAAXNSR0IArs4c6QAAAGBJREFUSA1jZCARnD17djOyFmNjY19kPhMyhxrswW8gIyFvEgozdP2D38tUdyFGGJIaZqNhyMBIaZiNhiED1RP2CDRwNC+jZyTS+RhhiG4EqXl9NB2ihyAmn1CYjsAwBACOcRw6x5qRuQAAAABJRU5ErkJggg==');
+// 	background-repeat: repeat;
+// 	background-size: 5px 8px !important;
+// }
+//
+// .texture {
+// 	border-top: 1px solid color("grey", "lighten-3");
+// 	border-bottom: 1px solid color("grey", "lighten-3");
+// 	overflow: hidden;
+// 	position:relative;
+// 	&::after {
+// 		content:"";
+// 		background-image: url("../images/topoPattern.jpg");
+// 		background-size: cover;
+// 		width:100%;
+// 		height:100%;
+// 		position:absolute;
+// 		background-attachment: fixed;
+// 		z-index: -1;
+// 		opacity: 0.04;
+// 		left:0;
+// 		top:0;
+// 	}
+// }

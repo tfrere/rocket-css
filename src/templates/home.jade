@@ -1,14 +1,14 @@
 section.background
 	.main-texture
 	#main-background
-	#welcome.large-display
+	//#welcome.large-display
 	#content.container
 		.twelve.col.double-top
 			h3.text-right.six-top.remove-bot.text-white
 				b(compile-unsafe="'views.main.punchline' | translate")
 			h6.text-right.text-white.double-bot(compile-unsafe="'views.main.subline' | translate")
 			.pull-right.quad-bot
-				a.cta.button.half-right.primary(ng-click="trackCta1()" href="http://app.peon.fr/inscription" compile-unsafe="'views.main.cta1' | translate")
+				a.cta.button.half-right.-primary(ui-sref="nav.form" compile-unsafe="'views.main.cta1' | translate")
 				//- a.cta.button.complement(ng-click="trackCta1()" href="http://app.peon.fr/connexion" compile-unsafe="'views.main.cta2' | translate") Demo
 			.clearfix
 #cookie(ng-show="setCookie == false")
@@ -50,51 +50,51 @@ section
 				h5(compile-unsafe="'views.main.titleArg2' | translate").remove-bot
 				hr.light.lines.tiny
 				p(compile-unsafe="'views.main.textArg2' | translate").quad-bot
-section
-	.clearfix
-	.container
-		.row.quad-bot.double-top
-			.six.col
-				h4 Fonctionnalités
-				hr.light.lines.tiny.double-bot
-				ul.arg-list
-					li Gestion des impayés
-					li Calcul en temps réel des charges
-					li Gestion des taux pour l’ACCRE
-					li Importation / exportation de contacts
-					li Modèle de CGV personnalisable
-					li Rappel des déclarations
-					li Exportation des données de facturation
-					li Validation des devis en ligne
-			.six.col
-				h4 Abonnement
-				hr.light.lines.tiny.double-bot
-				ul.arg-list
-					li Tarif unique
-					li Sans engagement
-					li Délais de 7 jours en cas de non paiement
-					li Suivi de facturation
-					li Désabonnement en un clic
-section
-	.clearfix
-	.container
-		.row
-			.twelve.col
-				hr.light.lines.tiny.double-top.half-bot.centered
-				h4(compile-unsafe="'views.main.titleDetails' | translate").text-center
-				hr.light.lines.tiny.double-bot.centered
-		.row
-			.three.col.octo-top
-			.six.col
-					#video-container.double-top
-						#video-box.octo-bot(ng-init="isVideoClicked=false")
-							div(ng-click="videoClickMask()" ng-if="isVideoClicked == false")
-								#play
-									#triangle
-								img#video-cover(src='assets/imgs/svg/video.svg')
-							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/Gp2huQoexmA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
-
-						.clearfix
+//- section
+//- 	.clearfix
+//- 	.container
+//- 		.row.quad-bot.double-top
+//- 			.six.col
+//- 				h4 Fonctionnalités
+//- 				hr.light.lines.tiny.double-bot
+//- 				ul.arg-list
+//- 					li Gestion des impayés
+//- 					li Calcul en temps réel des charges
+//- 					li Gestion des taux pour l’ACCRE
+//- 					li Importation / exportation de contacts
+//- 					li Modèle de CGV personnalisable
+//- 					li Rappel des déclarations
+//- 					li Exportation des données de facturation
+//- 					li Validation des devis en ligne
+//- 			.six.col
+//- 				h4 Abonnement
+//- 				hr.light.lines.tiny.double-bot
+//- 				ul.arg-list
+//- 					li Tarif unique
+//- 					li Sans engagement
+//- 					li Délais de 7 jours en cas de non paiement
+//- 					li Suivi de facturation
+//- 					li Désabonnement en un clic
+//- section
+//- 	.clearfix
+//- 	.container
+//- 		.row
+//- 			.twelve.col
+//- 				hr.light.lines.tiny.double-top.half-bot.centered
+//- 				h4(compile-unsafe="'views.main.titleDetails' | translate").text-center
+//- 				hr.light.lines.tiny.double-bot.centered
+//- 		.row
+//- 			.three.col.octo-top
+//- 			.six.col
+//- 					#video-container.double-top
+//- 						#video-box.octo-bot(ng-init="isVideoClicked=false")
+//- 							div(ng-click="videoClickMask()" ng-if="isVideoClicked == false")
+//- 								#play
+//- 									#triangle
+//- 								img#video-cover(src='assets/imgs/svg/video.svg')
+//- 							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/Gp2huQoexmA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
+//- 
+//- 						.clearfix
 section.background
 	#peon
 	.main-texture
@@ -103,4 +103,38 @@ section.background
 			.twelve.col
 				h4(compile-unsafe="'views.main.tryAnyway' | translate").text-white.text-center.quad-top
 				.fluid-horizontal-center
-					a(ng-click="trackCta1()" href="http://app.peon.fr" compile-unsafe="'views.main.tryAnywayButton' | translate").cta.button.double-bot.primary
+					a(ui-sref="nav.form" compile-unsafe="'views.main.tryAnywayButton' | translate").cta.button.double-bot.primary
+footer
+	.container
+		.row.text-white.double-bot.quad-top
+			.three.col
+				h6(compile-unsafe="'views.footer.title1' | translate")
+				ul.no-style
+					li
+						a(href="http://app.peon.fr/inscription" compile-unsafe="'views.footer.list1_1' | translate")
+					li
+						a(href="http://app.peon.fr/" compile-unsafe="'views.footer.list1_2' | translate")
+					li
+						a(ui-sref="nav.faq" compile-unsafe="'views.footer.list1_3' | translate")
+			.three.col
+				h6(compile-unsafe="'views.footer.title2' | translate")
+				ul.no-style
+					li
+						a(ui-sref="nav.contact" compile-unsafe="'views.footer.list2_1' | translate")
+					li
+						a(href="http://twitter.com/peon_actu" compile-unsafe="'views.footer.list2_2' | translate")
+					li
+						a(href="http://facebook.com/gopeon" compile-unsafe="'views.footer.list2_3' | translate")
+
+			.three.col
+				h6(compile-unsafe="'views.footer.title3' | translate")
+				ul.no-style
+					li
+						a(ui-sref="nav.apropos" compile-unsafe="'views.footer.list3_1' | translate")
+					li
+						a(href="ressources/pressKit.zip" compile-unsafe="'views.footer.list3_2' | translate")
+			.three.col
+				h6(compile-unsafe="'views.footer.title4' | translate")
+				ul.no-style
+					li
+						a(ui-sref="nav.cgu" compile-unsafe="'views.footer.list4_1' | translate")

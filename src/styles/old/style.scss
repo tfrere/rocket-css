@@ -1,0 +1,151 @@
+@import "abstract/const/ratio";
+@import "abstract/const/easing";
+@import "abstract/const/normalize";
+
+@import "abstract/tools/prefixer";
+@import "abstract/tools/include-font";
+@import "abstract/tools/modular-scale";
+@import "abstract/tools/keyframe";
+@import "abstract/tools/mixin";
+@import "abstract/tools/center";
+
+@import "abstract/animation";
+@import "abstract/media";
+@import "abstract/color";
+@import "abstract/grid";
+@import "abstract/base";
+@import "abstract/icon";
+
+@import "atom/button";
+@import "atom/code";
+@import "atom/input";
+@import "atom/select";
+@import "atom/table";
+@import "atom/list";
+@import "atom/checkbox";
+@import "atom/link";
+@import "atom/hr";
+@import "atom/toggle";
+@import "atom/circle-flip";
+@import "atom/card";
+
+
+@import "molecule/footer";
+@import "molecule/home";
+@import "molecule/nav";
+@import "molecule/question";
+@import "molecule/newsletter";
+@import "molecule/article";
+
+#thib {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/thib.jpg');
+}
+
+#val {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/val.jpg');
+}
+
+#antho {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/antho.jpg');
+}
+
+#quentin {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/quentin.jpg');
+}
+
+#marie {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/marie.jpg');
+}
+
+
+#tritz {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/tritz.jpg');
+}
+
+#thib-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/thib-peon.jpg');
+}
+
+#val-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/val-peon.jpg');
+}
+
+#antho-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/antho-peon.jpg');
+}
+
+#quentin-back {
+	@include cover();
+	background-image: url('../assets/imgs/jpg/quentin-peon.jpg');
+}
+
+
+#background_404 {
+	width:100%;
+	height:100%;
+	@include cover();
+	background-repeat: no-repeat;
+	background-image: url('../assets/imgs/svg/404.svg');
+}
+
+.screen-box {
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+.small-circle {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.big-circle {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+@include desktop {
+	.big-circle {
+		width: 250px;
+		height: 250px;
+		margin: 0 auto;
+	}
+}
+
+#question_handler[ui-view] {
+}
+
+input:not(.ng-pristine).ng-invalid {
+	border: 1px solid $color-danger;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+	@include transition();
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+}

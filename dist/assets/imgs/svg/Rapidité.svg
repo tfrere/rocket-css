@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="297.638px" height="297.638px" viewBox="0 0 297.638 297.638" enable-background="new 0 0 297.638 297.638"
+	 xml:space="preserve">
+<path fill="#3363AC" d="M176.06,60.428c-8.561-2.636-17.651-4.057-27.075-4.057c-50.757,0-91.903,41.146-91.903,91.903
+	c0,50.757,41.146,91.904,91.903,91.904c9.424,0,18.515-1.422,27.075-4.057c37.541-11.557,64.828-46.514,64.828-87.847
+	C240.888,106.942,213.601,71.985,176.06,60.428z"/>
+<circle fill="#3363AC" cx="148.984" cy="148.275" r="91.903"/>
+<circle opacity="0.25" fill="#FFFFFF" cx="148.984" cy="148.275" r="82.894"/>
+<circle fill="#FFFFFF" cx="148.984" cy="148.275" r="74.394"/>
+<g>
+	<rect x="144.667" y="83.881" fill="#3363AC" width="8.635" height="22"/>
+	
+		<rect x="182.422" y="99.52" transform="matrix(0.7072 0.7071 -0.7071 0.7072 132.8275 -99.6701)" fill="#3363AC" width="8.635" height="22"/>
+	<rect x="191.378" y="143.958" fill="#3363AC" width="22" height="8.635"/>
+	
+		<rect x="182.421" y="175.03" transform="matrix(-0.7071 0.7072 -0.7072 -0.7071 450.3271 185.5079)" fill="#3363AC" width="8.637" height="22"/>
+	<rect x="144.666" y="190.669" fill="#3363AC" width="8.637" height="22"/>
+	
+		<rect x="106.911" y="175.03" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 58.338 396.223)" fill="#3363AC" width="8.637" height="21.999"/>
+	<rect x="84.591" y="143.957" fill="#3363AC" width="22" height="8.636"/>
+	
+		<rect x="106.912" y="99.521" transform="matrix(0.7071 -0.7072 0.7072 0.7071 -45.5713 111.0347)" fill="#3363AC" width="8.637" height="22"/>
+</g>
+<circle fill="#3363AC" cx="148.984" cy="148.275" r="4.318"/>
+<circle opacity="0.25" fill="#FFFFFF" cx="148.984" cy="148.275" r="2.227"/>
+<path opacity="0.25" fill="#FFFFFF" d="M240.888,148.275c0-41.333-27.287-76.29-64.828-87.847
+	c-37.542,11.557-64.829,46.514-64.829,87.847c0,41.333,27.287,76.291,64.829,87.847
+	C213.601,224.565,240.888,189.608,240.888,148.275z"/>
+</svg>

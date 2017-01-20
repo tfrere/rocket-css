@@ -39,10 +39,6 @@ app.directive('compileUnsafe', function ($compile) {
   };
 });
 
-app.run(['optimizely', function(optimizely) {
-  optimizely.loadProject('3529320510');
-}]);
-
 app.config(function($httpProvider){
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -156,7 +152,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
-    });    
+    });
     $urlRouterProvider.when('', '/');
     $locationProvider.hashPrefix('!');
 
@@ -164,17 +160,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/404');
     console.log($urlRouterProvider);
     $stateProvider
-        // .state('404', {
-        //     abstract: true,
-        //     url: '',
-        //     templateUrl: 'templates/404.html',
-        //     controller: 'navCtrl'
-        // })
+        .state('404', {
+            abstract: true,
+            url: '',
+            templateUrl: 'templates/404.html',
+            controller: 'navCtrl'
+        })
         .state('nav', {
             abstract: true,
-            // params: {
-            //   lang:null
-            // },
             url: '?{lang:[a-z]{2}}',
             templateUrl: 'templates/nav.html',
             controller: 'navCtrl'
@@ -186,24 +179,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             data: {
               pageTitle: 'Home',
               pageDesc: 'Assistant personnel pour auto-entrepreneur. Il vous accompagne dans la gestion de vos clients, devis, factures, calcul de vos cotisations et traitement de vos impayés.'
-            }
-        })
-        .state('nav.faq', {
-            url: '/faq',
-            templateUrl: 'templates/faq.html',
-            controller: 'faqCtrl',
-            data: {
-              pageTitle: 'Faq',
-              pageDesc: "Toutes les questions que vous vous êtes jamais posés sur l'auto-entreprenariat"
-            }
-        })
-        .state('nav.faq.show', {
-            url: '/question/:id',
-            templateUrl: 'templates/question.html',
-            controller: 'questionCtrl',
-            data: {
-              pageTitle: 'Faq',
-              pageDesc: ""
             }
         })
         .state('nav.apropos', {
@@ -224,28 +199,19 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
               pageDesc: "Présentation de l'équipe de vrais humains qui vous assisteront dans tous vos besoins."
             }
         })
-        .state('nav.blog', {
-            url: '/blog',
-            templateUrl: 'templates/blog.html',
-            controller: 'blogCtrl',
-            data: {
-              pageTitle: 'Blog',
-              pageDesc: "La vie de peon, son histoire, ses coups de coeurs"
-            }
-        })
-        .state('nav.article', {
-            url: '/blog/article/:slug',
-            templateUrl: 'templates/article.html',
-            controller: 'articleCtrl',
-            data: {
-              pageTitle: 'Article'
-            }
-        })
         .state('nav.cgu', {
             url: '/cgu',
             templateUrl: 'templates/cgu.html',
             data: {
               pageTitle: 'Cgu'
+            }
+        })
+        .state('nav.form', {
+            url: '/form',
+            templateUrl: 'templates/form.html',
+            controller: 'formCtrl',
+            data: {
+              pageTitle: 'form'
             }
         })
         .state('nav.404', {

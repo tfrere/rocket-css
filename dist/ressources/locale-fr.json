@@ -4,6 +4,7 @@
 	"views.nav.questions": "Fiches pratiques",
 	"views.nav.login": "Se connecter",
 	"views.nav.signup": "Créer un compte",
+	"views.nav.punchline": "Simuler",
 
 	"views.footer.title1": "L'application",
 	"views.footer.list1_1": "Créer un compte",
@@ -25,9 +26,9 @@
 
 	"views.main.cookie": "Demo",
 
-	"views.main.punchline": "Une bonne raison d'entreprendre",
+	"views.main.punchline": "Touchez simplement toutes vos prestations sociales",
 	"views.main.subline": "Assistant personnel pour <b>auto-entrepreneurs</b> prestataires de services et activités libérales",
-	"views.main.cta1": "Essayez moi gratuitement",
+	"views.main.cta1": "Simuler",
 	"views.main.cta2": "Demo",
 
 	"views.main.titleVideo": "Validation éléctronique",
@@ -38,7 +39,7 @@
 
 	"views.main.titleArg1": "Validation electronique",
 	"views.main.textArg1": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
-	
+
 	"views.main.titleArg2": "Gestion automatique des impayés",
 	"views.main.textArg2": "Alerte en cas de non règlement et traitement automatisé des démarches de recouvrement.",
 

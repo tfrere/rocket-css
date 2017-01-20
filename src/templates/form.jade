@@ -1,0 +1,58 @@
+section.screen-box.center.full-form
+  .info-handler
+    .progress.-primary.-small.-wick(ng-class="{on: step != 1 }")
+      .bar(style='width:30%')
+    .info
+      h5 Votre simulation
+      button.button(ui-sref="nav.home")
+        i.icon.-chevron-left
+        span Retour au site
+    .navigation
+      .navigation-handler
+        .dot-button.clickable.current(ng-click="goTo($event, 1)")
+        .dot-button(ng-click="goTo($event, 2)")
+        .dot-button(ng-click="goTo($event, 3)")
+        .dot-button(ng-click="goTo($event, 4)")
+        .dot-button(ng-click="goTo($event, 5)")
+    .step
+      h5 {{ step }} / {{ totalStep }}
+  form.center-wrapper(name="step1" ng-if="step === 1" novalidate)
+    h3 Pour commencer, quelle est votre nationalité ? 
+    .button-box
+      button.button.-primary(ng-click="next(step1)") Français
+      button.button.-primary(ng-click="next(step1)") Union Européene
+      button.button.-primary(ng-click="next(step1)") Autre
+  form.center-wrapper(name="step2" ng-if="step === 2" novalidate)
+    h3 Vous êtes ?  -- multichoice
+    .radio-custom
+      span
+        input(id="radio-6-1-1" type="radio" ng-click="next(step3)" value="1" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-1")
+          | Enceinte
+      span
+        input(id="radio-6-1-2" type="radio" ng-click="next(step3)" value="2" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-2")
+          | Demandeur d'emploi
+      span
+        input(id="radio-6-1-3" type="radio" ng-click="next(step3)" value="3" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-3")
+          | Etudiant
+      span
+        input(id="radio-6-1-4" type="radio" ng-click="next(step3)" value="4" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-4")
+          | Retraité
+      span
+        input(id="radio-6-1-5" type="radio" ng-click="next(step3)" value="5" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-5")
+          | Handicapé
+      span
+        input(id="radio-6-1-6" type="radio" ng-click="next(step3)" value="6" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label(for="radio-6-1-6")
+          | Inapte au travail
+
+
+  form.center-wrapper(name="step3" ng-if="step === 3" novalidate)
+    h3 Les enfants de votre foyer
+    .button-box
+      button.button.-primary(ng-click="next(step3)") Oui
+      button.button.-primary(ng-click="next(step3)") Non

@@ -1,0 +1,105 @@
+/*
+––––
+
+	title:
+		Anim-underline
+
+	comment:
+		Blabla
+
+	markup:
+		<a class="underline-by-left">by left</a>
+		<br/>
+		<a class="underline-by-right">by right</a>
+		<br/>
+		<a class="underline-by-scale">by scale</a>
+
+––––
+*/
+
+$button-underline-base-color: color("primary", "base");
+
+@keyframes widthAnim {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes heightAnim {
+	from {
+		height: 0;
+	}
+	to {
+		height: 1px;
+	}
+}
+
+@keyframes bounceIn {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+$anim-underline-base-color: color("primary", "base");
+
+@mixin underline(){
+	height: 1px;
+	display: inline-block!important;
+	position: relative;
+	cursor: pointer;
+}
+
+@mixin underline-by-scale($color: $anim-underline-base-color) {
+	@include underline();
+
+	&:hover:after {
+		content: '';
+		display: block;
+		background: $color;
+		height: 1px;
+		animation: bounceIn 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+	}
+}
+
+@mixin underline-by-left($color: $anim-underline-base-color) {
+	@include underline();
+
+	&:hover:after {
+		content: '';
+		display: block;
+		background: $color;
+		height: 1px;
+		float: left;
+		animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+	}
+}
+
+@mixin underline-by-right($color: $anim-underline-base-color) {
+	@include underline();
+
+	&:hover:after {
+		content: '';
+		display: block;
+		background: $color;
+		height: 1px;
+		float: right;
+		animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards;
+	}
+}
+
+
+.underline-by-left {
+	@include underline-by-left($button-underline-base-color);
+}
+.underline-by-right {
+	@include underline-by-right($button-underline-base-color);
+}
+.underline-by-scale {
+	@include underline-by-scale($button-underline-base-color);
+}

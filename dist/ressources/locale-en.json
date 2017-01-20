@@ -4,6 +4,7 @@
 	"views.nav.questions": "Questions",
 	"views.nav.login": "Login",
 	"views.nav.signup": "Signup",
+	"views.nav.punchline": "Simulate",
 
 	"views.footer.title1": "The application",
 	"views.footer.list1_1": "Signup",
@@ -25,9 +26,9 @@
 
 	"views.main.cookie": "Demo",
 
-    "views.main.punchline": "A good way to be an entrepreneur",
+    "views.main.punchline": "Paper work, without paper, without work",
     "views.main.subline": "Personnal assistant for <b>auto-entrepreneurs</b>",
-	"views.main.cta1": "One free month",
+	"views.main.cta1": "Simuler",
 	"views.main.cta2": "Demo",
 
 	"views.main.titleVideo": "Your bills in few seconds",
@@ -35,7 +36,7 @@
 
 	"views.main.titleArg1": "Win some time with electronic validation",
 	"views.main.textArg1": "Your client can validate his bills in seconds and you are notified with a confirmation.",
-	
+
 	"views.main.titleArg2": "Ignore your unpayed with auto-emails",
 	"views.main.textArg2": "An alert pop when an unpayed bill is expiring and auto send an email to your client",
 

@@ -1,0 +1,162 @@
+/*
+––––
+
+	title:
+		Button-graindandmortar
+
+	comment:
+		Blabla
+
+	markup:
+		<a href="#" target="_blank" class="button button-grainandmortar">
+			<span class="content" >Visiter le site</span>
+			<span class="extra first"</span>
+			<span class="extra last" ></span>
+		</a>
+
+––––
+*/
+
+$base-text:color("primary", "base");
+$base-border:rgba(color("grey", "base"), 0.2);
+
+$hover-text: rgba(color("primary", "darken-2"), 0.8);
+$hover-border: rgba(color("primary", "base"), 1);
+
+$clicked-color: color("primary", "darken-4");
+$clicked-text-color: white;
+
+$cubic-bezier : cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+
+.button-grainandmortar {
+	position: relative;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all 0.2s $cubic-bezier 0s;
+	color: $base-text;
+	display: inline-flex;
+	margin: 0;
+	padding: 0.875em 1.428571429em;
+	border:none;
+	box-shadow: none;
+	&:hover, &:focus {
+		border:none;
+	}
+	letter-spacing: 0.2em;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	&::after {
+		content: '';
+		width: 80%;
+		left: 50%;
+		height: 1px;
+		bottom: 0;
+		transform: translatex(-50%);
+		transition: width 0.2s $cubic-bezier 0.4s, background 0.2s $cubic-bezier 0s;
+		display: block;
+		position: absolute;
+		background: $base-border;
+	}
+
+	span.extra {
+		display: block;
+		position: absolute;
+		transition: all 0.2s $cubic-bezier;
+		width: 100%;
+		top: 0;
+		left: 0;
+
+		&::before,
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			background: $base-border;
+			transition: transform 0.2s $cubic-bezier;
+		}
+
+		// Left & Right Border
+		&.first {
+			height: 100%;
+
+			&::before, &::after {
+				width: 1px;
+				height: 100%;
+				bottom: 0;
+				transform: scale3d(1, 0 , 1);
+				transform-origin: bottom center;
+				transition: transform 0.2s $cubic-bezier 0.2s, background 0.2s $cubic-bezier 0s;
+			}
+			&::before { left: 0; }
+			&::after  { right: 0; }
+		}
+
+		// Top Borders
+		&.last {
+			width: 100%;
+			height: 1px;
+
+			&::before, &::after {
+				height: 1px;
+				width: 100%;
+				bottom: 0;
+				transform: scale3d(0, 1 , 1);
+				transition: transform 0.2s $cubic-bezier 0s, background 0.2s $cubic-bezier 0s;
+			}
+			&::before {
+				left: 0;
+				transform-origin: bottom left;
+			}
+
+			&::after  {
+				right: 0;
+				transform-origin: bottom right;
+			}
+		}
+
+	}
+
+	&:hover {
+		opacity: 1;
+		outline: 0;
+		color: $hover-text !important;
+		text-decoration: none;
+		transition: color 0.2s $cubic-bezier 0s;
+
+		&::after {
+			width: 100%;
+			background: $hover-border;
+			transition: width 0.2s $cubic-bezier 0s, background 0.2s $cubic-bezier 0s;
+		}
+
+		span.extra {
+
+			&.first {
+				&::before, &::after {
+					transform: scale3d(1, 1, 1);
+					background: $hover-border;
+					transition: transform 0.2s $cubic-bezier 0.2s, background 0.2s $cubic-bezier 0s;
+				}
+			}
+
+			&.last {
+				&::before, &::after {
+					transform: scale3d(1, 1, 1);
+					background: $hover-border;
+					transition: transform 0.2s $cubic-bezier 0.4s, background 0.2s $cubic-bezier 0s;
+				}
+			}
+
+		}
+
+	}
+
+	// Old button container didn't work correctly
+
+	.button-container & {
+		margin-bottom: 10px;
+	}
+
+}

@@ -1,0 +1,125 @@
+
+/*
+
+	Markup :
+
+	<div className="chat-input-wrapper">
+	    <div className="chat-input">
+	        <button className="chat-input-button-left button">
+	            <i className="icon icon-plus-circle"></i>
+	        </button>
+	        <form className="chat-input-form">
+	            <textarea className="chat-input-textarea"></textarea>
+	        </form>
+	        <button className="chat-input-button-right button">
+	            <i className="icon icon-paperplane"></i>
+	        </button>
+	    </div>
+	    // la boite action picker vient juste ici
+	</div>
+*/
+
+$base-index: 99999999;
+$chat-input-height: 60px;
+$chat-input-open-height: 140px;
+
+
+.chat-input-disabled {
+	width:100%;
+	height:$chat-input-open-height;
+	background-color: #16162b;
+	z-index: $base-index;
+	display:none;
+	p {
+		margin-top:15px;
+		color:white;
+		text-align: center;
+		font-family: $nav-font;
+	}
+	button {
+		margin: 0 auto;
+		margin-top:20px;
+		display:block;
+	}
+}
+
+.chat-input-wrapper {
+	width:100%;
+	position:fixed;
+	bottom:0;
+	left:0;
+	height:$chat-input-height;
+	display: flex;
+	transition: height 200ms ease;
+	//box-shadow: 0 -4px 10px rgba(color("grey", "darken-1"), .25);
+	&.open {
+		height:$chat-input-open-height;
+	}
+	&.disabled {
+		.chat-input-disabled {
+			display:block;
+		}
+		.chat-input {
+			display:none;
+		}
+	}
+}
+
+
+
+.chat-input {
+	background-color: #16162b;
+	width:100%;
+	padding:10px;
+	height:$chat-input-height;
+	display: flex;
+	.button {
+		display:inline-block;
+		margin:0;
+	}
+	.chat-input-button-left {
+		border-right: none;
+		border-bottom-right-radius: 0px;
+		border-top-right-radius: 0px;
+		padding-top:8px;
+		padding:8px;
+		border-color: rgba(255,255,255,0.3);
+		i {
+			font-size: 2.2rem;
+			color:white;
+			transform: translateY(0px) rotate(0deg);
+			&.icon-rotate-45 {
+				transform: translateY(0px) rotate(45deg);
+			}
+		}
+	}
+	.chat-input-button-right {
+		border: none;
+		border-bottom-left-radius: 0px;
+		border-top-left-radius: 0px;
+		background-color: white;
+		padding: 10px 13px 10px 20px;
+		i {
+			font-size: 2.2rem;
+			margin-left: 3px;
+			margin-top: -4px;
+			color:color("grey", "base");
+			display: inline-block;
+		}
+	}
+	.chat-input-form {
+		display: flex;
+		flex: 1 0;
+		align-items: center;
+	}
+	.chat-input-textarea {
+		display: inline-block;
+		resize: none;
+		margin: 0;
+		height: 40px;
+		width: 100%;
+		padding: 10px;
+		border:none;
+		border-radius:0px;
+	}
+}

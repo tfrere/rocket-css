@@ -13,21 +13,8 @@ app.controller('homeCtrl', function ($cookies, $scope, mouseParallaxService, $ti
 		$cookies.put('cookiePopup', 'true', {'expires': expireDate});
 	};
 
-	$scope.isVideoClicked = false;
 
-	$scope.videoClickMask = function() {
-		$scope.isVideoClicked = true;
-		window.analytics.track('videoOpened');
-	}
+	//mouseParallaxService.init();
 
-	mouseParallaxService.init();
-
-	$scope.trackCta1 = function() {
-		window.analytics.track('cta1');
-	};
-
-	$scope.trackCta2 = function() {
-		window.analytics.track('cta2');
-	};
 
 });

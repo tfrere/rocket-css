@@ -1,0 +1,111 @@
+/*
+––––
+
+	title:
+		Figure
+
+	comment:
+		La Figure est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <figure class="filter -nashville -example">
+      <img class="rotate-img" src="/images/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+    <br/>
+    <label>With filter -seventies</label>
+    <figure class="filter -seventies -example">
+      <img class="rotate-img" src="/images/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+
+  script:
+		var img = $('.rotate-img');
+		if(img.length > 0){
+	    var offset = img.offset();
+	    function mouse(evt){
+        var center_x = (offset.left) + (img.width()/2);
+        var center_y = (offset.top) + (img.height()/2);
+        var mouse_x = evt.pageX; var mouse_y = evt.pageY;
+        var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+        var degree = (radians * (180 / Math.PI) * -1) + 90;
+        img.css('transform', 'translateX('+mouse_x/100+'px) translateY('+mouse_y/1000+'px)');
+	    }
+	    $(document).mousemove(mouse);
+		}
+
+––––
+*/
+
+$base-index: 1;
+
+figure {
+	position:relative;
+	z-index: $base-index;
+	overflow:hidden;
+	img:first-child {
+    z-index: $base-index + 1;
+    position:relative;
+    width: 110%;
+    height: 110%;
+    margin-left: -5%;
+    margin-top: -5%;
+	}
+  figcaption {
+    &:after {
+      background: linear-gradient(to top,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0) 60%);
+      content: '';
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: $base-index + 2;
+      opacity: 1;
+    }
+  }
+	figcaption,
+	figcaption > a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	figcaption > a {
+		z-index:  $base-index + 3;
+		text-indent: 200%;
+		white-space: nowrap;
+		font-size: 0;
+		opacity: 0;
+	}
+	.title {
+    z-index: $base-index + 3;
+    color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 26px;
+    left: 17px;
+    font-weight: bold;
+	}
+  .desc {
+    z-index: $base-index + 3;
+    color: color("grey","lighten-3");
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 17px;
+    font-weight: 400;
+	}
+  &.-example {
+    height:150px;
+    width:350px;
+  }
+}
