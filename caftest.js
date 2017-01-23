@@ -9,6 +9,10 @@
 
 var casper, repo, repoStargazers, stargazers;
 
+var data = {
+	nationality: "fr",
+};
+
 var casper = require('casper').create({
 	verbose: true,
 	logLevel: 'debug',
@@ -24,10 +28,7 @@ dest = 'https://wwwd.caf.fr/wps/portal/caffr/aidesetservices/lesservicesenligne/
 casper.start(dest);
 
 casper.then(function() {
-	this.evaluate(function() {
-		console.log(document.querySelectorAll('a'));
-
-	});
+		console.log(document.querySelectorAll('div.radio input'));
 });
 
 casper.run();

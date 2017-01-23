@@ -1,5 +1,5 @@
 section.screen-box.center.full-form
-  .info-handler
+  .info-handler(ng-class="{ 'active': isLastStepReached }")
     .progress.-primary.-small.-wick(ng-class="{on: step != 1 }")
       .bar(style='width:30%')
     .info
@@ -9,50 +9,92 @@ section.screen-box.center.full-form
         span Retour au site
     .navigation
       .navigation-handler
-        .dot-button.clickable.current(ng-click="goTo($event, 1)")
-        .dot-button(ng-click="goTo($event, 2)")
-        .dot-button(ng-click="goTo($event, 3)")
-        .dot-button(ng-click="goTo($event, 4)")
-        .dot-button(ng-click="goTo($event, 5)")
+        .dot-button.clickable.current.touch(ng-click="goTo($event, 1)")
+        .dot-button.touch(ng-click="goTo($event, 2)")
+        .dot-button.touch(ng-click="goTo($event, 3)")
+        .dot-button.touch(ng-click="goTo($event, 4)")
     .step
       h5 {{ step }} / {{ totalStep }}
   form.center-wrapper(name="step1" ng-if="step === 1" novalidate)
-    h3 Pour commencer, quelle est votre nationalité ? 
-    .button-box
-      button.button.-primary(ng-click="next(step1)") Français
-      button.button.-primary(ng-click="next(step1)") Union Européene
-      button.button.-primary(ng-click="next(step1)") Autre
-  form.center-wrapper(name="step2" ng-if="step === 2" novalidate)
-    h3 Vous êtes ?  -- multichoice
+    h3.
+      Pour commencer,<br/> quelle est votre nationalité ? 
     .radio-custom
       span
-        input(id="radio-6-1-1" type="radio" ng-click="next(step3)" value="1" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-1")
+        input(id="radio-1-1-4" type="radio" ng-click="next(step1)" value="4" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.retirement(for="radio-1-1-4")
+          | Française
+      span
+        input(id="radio-1-1-5" type="radio" ng-click="next(step1)" value="5" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.handicap(for="radio-1-1-5")
+          | Européenne
+      span
+        input(id="radio-1-1-6" type="radio" ng-click="next(step1)" value="6" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.student(for="radio-1-1-6")
+          | Autre
+  form.center-wrapper(name="step2" ng-if="step === 2" novalidate)
+    h3 Vous êtes ?
+    .radio-custom
+      span
+        input(id="radio-6-1-1" type="radio" ng-click="next(step2)" value="1" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.pregnant(for="radio-6-1-1")
           | Enceinte
       span
-        input(id="radio-6-1-2" type="radio" ng-click="next(step3)" value="2" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-2")
+        input(id="radio-6-1-2" type="radio" ng-click="next(step2)" value="2" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.cv(for="radio-6-1-2")
           | Demandeur d'emploi
       span
-        input(id="radio-6-1-3" type="radio" ng-click="next(step3)" value="3" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-3")
+        input(id="radio-6-1-3" type="radio" ng-click="next(step2)" value="3" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.student(for="radio-6-1-3")
           | Etudiant
       span
-        input(id="radio-6-1-4" type="radio" ng-click="next(step3)" value="4" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-4")
+        input(id="radio-6-1-4" type="radio" ng-click="next(step2)" value="4" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.retirement(for="radio-6-1-4")
           | Retraité
       span
-        input(id="radio-6-1-5" type="radio" ng-click="next(step3)" value="5" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-5")
+        input(id="radio-6-1-5" type="radio" ng-click="next(step2)" value="5" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.handicap(for="radio-6-1-5")
           | Handicapé
       span
-        input(id="radio-6-1-6" type="radio" ng-click="next(step3)" value="6" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label(for="radio-6-1-6")
+        input(id="radio-6-1-6" type="radio" ng-click="next(step2)" value="6" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.student(for="radio-6-1-6")
           | Inapte au travail
 
-
   form.center-wrapper(name="step3" ng-if="step === 3" novalidate)
-    h3 Les enfants de votre foyer
+    h3 Code postal
     .button-box
-      button.button.-primary(ng-click="next(step3)") Oui
-      button.button.-primary(ng-click="next(step3)") Non
+      fieldset.-has-icon
+        i.icon.-map-marker#geoloc(ng-click="getPosition()" ng-class="{ 'active': isGetPositionLoading }")
+        input(type="text" ng-model="zipCode" name="postal-code" placeholder="Votre code postal...")
+      hr.-invisible
+      button.button.-round.-line-primary.touch(ng-click="next(step3)" ng-validate) Valider
+      
+  form.center-wrapper(name="step4" ng-if="step === 4" novalidate)
+    h3 Code postal
+    .button-box
+      fieldset.-has-icon
+        i.icon.-map-marker#geoloc(ng-click="getPosition()" ng-class="{ 'active': isGetPositionLoading }")
+        input(type="text" ng-model="zipCode" placeholder="Votre code postal...")
+      hr.-invisible
+      button.button.-round.-line-primary.touch(ng-click="next(step4)" ng-validate) Valider
+        
+  #result.center-wrapper.text-center(name="step5" ng-if="step === 5" novalidate)
+    div(ng-if="!isLoadingFinished")
+      .circle-line-scale
+        div
+        div
+        div
+      .info-box
+        h4 Le saviez vous ?
+        p.lead 10 milliard d'euros n'ont pas été réclamés en 2016 !
+      h6.desc Algo super compliqué
+    div(ng-if="isLoadingFinished")
+      #result-success
+      h2.
+        Vous avez le droit à <span count-to="{{countTo}}" value="0" duration="1"></span> €
+      h5 Vous avez terminé le formulaire en <span count-to="{{duration}}" value="0" duration="1"></span> secondes
+      .button-box
+        button.button.-primary(ui-sref="nav.home") Refaire une simulation
+      p Partager votre temps sur les réseaux sociaux !
+      a(href="#").social.-facebook
+      a(href="#").social.-twitter
+      a(href="#").social.-googleplus

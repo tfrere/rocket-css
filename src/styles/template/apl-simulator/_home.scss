@@ -44,3 +44,27 @@ section.background {
 #content {
 	z-index: 5;
 }
+
+
+
+.small-circle{
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+	opacity:0.7;
+	transition: all 200ms ease;
+	background-size: cover;
+	&:hover {
+		opacity:1;
+	}
+}
+
+.circle-simple {
+	background-image: url('../assets/imgs/svg/Simple.svg');
+}
+.circle-safe {
+	background-image: url('../assets/imgs/svg/Safe.svg');
+}
+.circle-quick {
+	background-image: url('../assets/imgs/svg/Quick.svg');
+}

@@ -1,3 +1,12 @@
+nav
+	.container
+		.row
+			.twelve.col
+				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
+				//- a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance" compile-unsafe="'views.nav.support' | translate")
+				div.pull-right.half-left(ng-translate-language-select)
+				a.button.small.pull-right.-primary(ui-sref-active="active" ui-sref="nav.form" compile-unsafe="'views.nav.punchline' | translate")
+
 section.background
 	.main-texture
 	#main-background
@@ -7,103 +16,40 @@ section.background
 			h3.text-right.six-top.remove-bot.text-white
 				b(compile-unsafe="'views.main.punchline' | translate")
 			h6.text-right.text-white.double-bot(compile-unsafe="'views.main.subline' | translate")
-			.pull-right.quad-bot
+			.quad-bot
 				a.cta.button.half-right.-primary(ui-sref="nav.form" compile-unsafe="'views.main.cta1' | translate")
-				//- a.cta.button.complement(ng-click="trackCta1()" href="http://app.peon.fr/connexion" compile-unsafe="'views.main.cta2' | translate") Demo
 			.clearfix
 #cookie(ng-show="setCookie == false")
 	.container
 		.row
 			.twelve.col
 				p.pull-left.
-					 Peon utilise des cookies pour rendre son site plus simple. <a ui-sref="nav.cookies">En savoir plus sur les cookies</a>.
-				i.icon.icon-cross.pull-right(ng-click="updateCookie()")
-section
+					 Ce site utilise des cookies pour rendre son site plus simple. <a ui-sref="nav.cookies">En savoir plus sur les cookies</a>.
+				i.icon.-cross.pull-right(ng-click="updateCookie()")
+section.args.text-center
 	.container
-		.row.quad-top
+		.row.quad-top.quad-bot
 			.four.col
-				.circle.small-circle.circle-contact
-				p(compile-unsafe="'views.main.infoDetails1' | translate").i.add-top.text-center
+				.circle.small-circle.circle-safe
+				h5(compile-unsafe="'views.main.argTitle1' | translate")
+				p(compile-unsafe="'views.main.argText1' | translate")
 			.four.col
-				.circle.small-circle.circle-bill
-				p(compile-unsafe="'views.main.infoDetails2' | translate").i.add-top.text-center
+				.circle.small-circle.circle-simple
+				h5(compile-unsafe="'views.main.argTitle2' | translate")
+				p(compile-unsafe="'views.main.argText2' | translate")
 			.four.col
-				.circle.small-circle.circle-stats
-				p(compile-unsafe="'views.main.infoDetails3' | translate").i.add-top.text-center
-		.row
-			.twelve.col
-				hr.light.lines.tiny.double-top.half-bot.centered
-				h4.text-center(compile-unsafe="'views.main.mainTitleArg' | translate")
-				hr.light.lines.tiny.double-bot.centered
-		.row
-			.eight.col.quad-top
-				h5(compile-unsafe="'views.main.titleArg1' | translate").text-right.remove-bot
-				hr.light.lines.tiny.right.pull-right
-				.clearfix
-				p(compile-unsafe="'views.main.textArg1' | translate").text-right.quad-bot
-			.four.col.quad-top
-				.circle.small-circle.circle-calculator.half-top.large-display
-		.row
-			.four.col.quad-top
-				.circle.small-circle.circle-pig.half-top.large-display
-			.eight.col.quad-top
-				h5(compile-unsafe="'views.main.titleArg2' | translate").remove-bot
-				hr.light.lines.tiny
-				p(compile-unsafe="'views.main.textArg2' | translate").quad-bot
-//- section
-//- 	.clearfix
-//- 	.container
-//- 		.row.quad-bot.double-top
-//- 			.six.col
-//- 				h4 Fonctionnalités
-//- 				hr.light.lines.tiny.double-bot
-//- 				ul.arg-list
-//- 					li Gestion des impayés
-//- 					li Calcul en temps réel des charges
-//- 					li Gestion des taux pour l’ACCRE
-//- 					li Importation / exportation de contacts
-//- 					li Modèle de CGV personnalisable
-//- 					li Rappel des déclarations
-//- 					li Exportation des données de facturation
-//- 					li Validation des devis en ligne
-//- 			.six.col
-//- 				h4 Abonnement
-//- 				hr.light.lines.tiny.double-bot
-//- 				ul.arg-list
-//- 					li Tarif unique
-//- 					li Sans engagement
-//- 					li Délais de 7 jours en cas de non paiement
-//- 					li Suivi de facturation
-//- 					li Désabonnement en un clic
-//- section
-//- 	.clearfix
-//- 	.container
+				.circle.small-circle.circle-quick
+				h5(compile-unsafe="'views.main.argTitle3' | translate")
+				p(compile-unsafe="'views.main.argText3' | translate")
+//- section.background
+//- 	#peon
+//- 	.main-texture
+//- 	.container.text-center
 //- 		.row
-//- 			.twelve.col
-//- 				hr.light.lines.tiny.double-top.half-bot.centered
-//- 				h4(compile-unsafe="'views.main.titleDetails' | translate").text-center
-//- 				hr.light.lines.tiny.double-bot.centered
-//- 		.row
-//- 			.three.col.octo-top
-//- 			.six.col
-//- 					#video-container.double-top
-//- 						#video-box.octo-bot(ng-init="isVideoClicked=false")
-//- 							div(ng-click="videoClickMask()" ng-if="isVideoClicked == false")
-//- 								#play
-//- 									#triangle
-//- 								img#video-cover(src='assets/imgs/svg/video.svg')
-//- 							| <iframe  ng-if="isVideoClicked == true" frameborder="0" width="100%" height="300" src="https://www.youtube.com/embed/Gp2huQoexmA?rel=0&theme=dark&color=white&autoplay=1&autohide=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="1" allowfullscreen></iframe>
-//- 
-//- 						.clearfix
-section.background
-	#peon
-	.main-texture
-	.container
-		.row
-			.twelve.col
-				h4(compile-unsafe="'views.main.tryAnyway' | translate").text-white.text-center.quad-top
-				.fluid-horizontal-center
-					a(ui-sref="nav.form" compile-unsafe="'views.main.tryAnywayButton' | translate").cta.button.double-bot.primary
+//- 			.twelve.col.double-top
+//- 				h4(compile-unsafe="'views.main.tryAnyway' | translate")
+//- 				.fluid-horizontal-center
+//- 					a(ui-sref="nav.form" compile-unsafe="'views.main.tryAnywayButton' | translate").cta.button.-primary
 footer
 	.container
 		.row.text-white.double-bot.quad-top

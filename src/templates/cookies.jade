@@ -1,15 +1,24 @@
+nav
+	.container
+		.row
+			.twelve.col
+				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
+				//- a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance" compile-unsafe="'views.nav.support' | translate")
+				div.pull-right.half-left(ng-translate-language-select)
+				a.button.small.pull-right.-primary(ui-sref-active="active" ui-sref="nav.form" compile-unsafe="'views.nav.punchline' | translate")
+
 section.background
 	.main-texture
 	#general-background
 	.container
 		.twelve.col
-			h3.b.text-white.text-center Peon et les cookies
+			h3.b.text-white.text-center Edetmoi et les cookies
 .container
 	.row.quad-top.double-bot
 		h5 Le rôle des cookies
 		hr.light.lines
 		p.
-			Peon dépose des petits fichiers (appelés cookies) sur votre ordinateur pour y recueillir des informations sur votre navigation.
+			Nous déposons des petits fichiers (appelés cookies) sur votre ordinateur pour y recueillir des informations sur votre navigation.
 			<br><br>
 			<b>Ces cookies servent à</b>
 			<br><br>

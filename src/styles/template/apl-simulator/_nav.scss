@@ -14,7 +14,7 @@
 	i {
 		margin-top:10px;
 		cursor:pointer;
-		opacity: 0;
+		opacity: 0.8;
 		transition: all 200ms ease;
 		&:hover {
 			opacity: 1;
@@ -26,15 +26,17 @@
 }
 
 #logo {
-	width: 31px;
-	height: 31px;
-	background-image: url('../assets/imgs/svg/logo.svg');
+	width: 37px;
+	height: 37px;
+	//background-image: url('../assets/imgs/svg/logo.svg');
+	//background-size: cover;
 	transition: all 200ms ease;
 	opacity:0.8;
 	margin-top:5px;
 	margin-top: 12px;
 	margin-right: 10px;
-	background-size: cover;
+	border-radius: 100%;
+	background-color: color("primary", "lighten-5");
 	&:hover {
 		opacity:1;
 	}
@@ -44,7 +46,6 @@ nav {
 	height: 60px;
 	width: 100%;
 	background-color: white;
-	position:fixed;
 	z-index: 998;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 	a {
@@ -74,5 +75,7 @@ nav {
 	}
 	.pull-right {
 		margin-top: 11px;
+		margin-right: 3px;
+		height: 37px;
 	}
 }

@@ -17,7 +17,7 @@
 ––––
 */
 
-$loader-circle-scale-base-color: color("primary", "base");
+$loader-circle-scale-base-color: rgba(color("primary", "lighten-4"), .2);
 
 @keyframes circle-line-scale {
 	0% {
@@ -42,7 +42,9 @@ $loader-circle-scale-base-color: color("primary", "base");
 	) {
 
 	position: relative;
-	
+	margin: 0 auto;
+	width: $size;
+
 	@for $i from $start through $n {
 		> div:nth-child(#{$i}) {
 			animation-delay: 0.2s * $i;

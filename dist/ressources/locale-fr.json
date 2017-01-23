@@ -1,9 +1,4 @@
 {
-	"views.nav.support": "Assistance",
-	"views.nav.blog": "Blog",
-	"views.nav.questions": "Fiches pratiques",
-	"views.nav.login": "Se connecter",
-	"views.nav.signup": "Créer un compte",
 	"views.nav.punchline": "Simuler",
 
 	"views.footer.title1": "L'application",
@@ -27,68 +22,20 @@
 	"views.main.cookie": "Demo",
 
 	"views.main.punchline": "Touchez simplement toutes vos prestations sociales",
-	"views.main.subline": "Assistant personnel pour <b>auto-entrepreneurs</b> prestataires de services et activités libérales",
-	"views.main.cta1": "Simuler",
-	"views.main.cta2": "Demo",
+	"views.main.subline": "Gagnez de l'argent simplement en moins de 5 minutes",
+	"views.main.cta1": "Faire une simulation",
 
-	"views.main.titleVideo": "Validation éléctronique",
-	"views.main.textVideo": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
+	"views.main.argTitle1": "Sécurité",
+	"views.main.argText1": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
 
-	"views.main.mainTitleArg": "Des fonctions innovantes",
+	"views.main.argTitle2": "Simplicité",
+	"views.main.argText2": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
 
-
-	"views.main.titleArg1": "Validation electronique",
-	"views.main.textArg1": "Une interface client dédiée, pour une validation instantanée et sécurisée des devis.",
-
-	"views.main.titleArg2": "Gestion automatique des impayés",
-	"views.main.textArg2": "Alerte en cas de non règlement et traitement automatisé des démarches de recouvrement.",
-
-	"views.main.titleDetails": "Vos devis en quelques secondes",
-
-	"views.main.infoDetails1": "Gestion des contacts",
-	"views.main.infoDetails2": "Edition de devis et factures",
-	"views.main.infoDetails3": "Suivi de l'actualité et calcul des charges",
-	"views.main.infoDetails4": "Calcul des cotisations.",
-	"views.main.infoDetails5": "Gestion des impayés.",
-	"views.main.infoDetails6": "Sans engagement.",
+	"views.main.argTitle3": "Rapidité",
+	"views.main.argText3": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
 
 	"views.main.tryAnyway": "Convaincu ou non, essayez-le !",
 	"views.main.tryAnywayButton": "C'est gratuit",
-
-	"views.support.punchline": "Une question ?",
-	"views.support.text": "Peon a lui aussi ses assistants qui répondront à toutes vos questions.",
-	"views.support.profile1": "Communauté",
-	"views.support.profile2": "Conseil",
-	"views.support.profile3": "Maintenance",
-	"views.support.profile4": "Ergonomie",
-	"views.support.profile5": "Assistance",
-	"views.support.profile6": "Assistance",
-
-	"views.support.punchline2": "C'est par ici",
-
-	"views.support.label1": "Nom",
-	"views.support.label2": "Email",
-	"views.support.label3": "Message",
-	"views.support.button": "Envoyer",
-
-	"views.support.isGood": "Merci !",
-	"views.support.isGoodSubline": "On vous répondra bientôt",
-	"views.support.isBad": "Désolé !",
-	"views.support.isBadSubline": "Le serveur à eu un petit probleme, essayez plus tard !",
-
-	"views.questions.punchline": "Informations générales",
-
-	"views.questions.punchline2": "Ou posez nous directement la question",
-
-	"views.questions.label1": "Nom",
-	"views.questions.label2": "Email",
-	"views.questions.label3": "Message",
-	"views.questions.button": "Envoyer",
-
-	"views.questions.isGood": "Merci !",
-	"views.questions.isGoodSubline": "On vous répondra bientôt",
-	"views.questions.isBad": "Désolé !",
-	"views.questions.isBadSubline": "Le serveur à eu un petit probleme, essayez plus tard !",
 
 	"directives.language-select.Language": "fr"
 }

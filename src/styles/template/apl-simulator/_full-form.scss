@@ -11,6 +11,17 @@
   }
 }
 
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+		transform: scale(1);
+  }
+}
 
 @keyframes box-flyin {
   0% { opacity: 0;  transform: translateY(-50px); }
@@ -22,6 +33,39 @@
   100% { opacity: 0;  transform: translateY(-50px); }
 }
 
+
+#geoloc {
+  cursor:pointer;
+  overflow: visible;
+  &::before {
+    cursor:pointer;
+    color: color("primary", "lighten-2");
+  }
+  &.active {
+    animation: bounce 350ms ease("swift-in");
+  }
+}
+
+#result {
+  h1,h2,h3,h4,h5 {
+    color: color("primary", "base");
+    margin-bottom: $text-size / 2;
+  }
+  p {
+    color: color("grey", "base");
+  }
+  .circle-line-scale {
+    margin-bottom: $text-size;
+  }
+}
+
+#result-success {
+	width: 150px;
+	height: 100px;
+	background-image: url('../assets/imgs/svg/success.svg');
+	background-size: cover;
+  margin: 0 auto;
+}
 
 .full-form {
   z-index: 999999999999999999;
@@ -41,21 +85,24 @@
 }
 
 
+
 .info-handler {
   position: absolute;
   width: 100%;
   height: 100%;
   top:0;
   left:0;
-}
-
-.info-handler {
+  opacity: 1;
+  transition: all 200ms ease;
+  &.active {
+    opacity: 0;
+  }
   .progress {
     width: 100%;
     position: absolute;
     top:0;
     left:0;
-    background-color: color("grey", "lighten-3");
+    background-color: color("warning", "lighten-3");
   }
   .step, .info {
     position: absolute;
@@ -153,6 +200,7 @@
   text-align: center;
   font-weight: 400;
   font-size: 50%;
+  margin-bottom: 25px;
 }
 
 .radio-custom span label {
@@ -195,8 +243,25 @@
   transition: padding, 200ms, ease-in-out;
 }
 
-.radio-custom label::after {
-  background-image: url('../assets/imgs/svg/Student.svg');
+.radio-custom label.student::after {
+  background-image: url('../assets/imgs/svg/student.svg');
+}
+
+
+.radio-custom label.pregnant::after {
+  background-image: url('../assets/imgs/svg/pregnant.svg');
+}
+
+.radio-custom label.retirement::after {
+  background-image: url('../assets/imgs/svg/retirement.svg');
+}
+
+.radio-custom label.cv::after {
+  background-image: url('../assets/imgs/svg/cv.svg');
+}
+
+.radio-custom label.handicap::after {
+  background-image: url('../assets/imgs/svg/handicap.svg');
 }
 
 
@@ -205,7 +270,6 @@ input[type="radio"]:focus + label::after,
 input[type="radio"]:checked + label::after {
   opacity: 1;
   padding:6px;
-  background-image: url('../assets/imgs/svg/Student.svg');
 }
 
 .radio-custom input[type="radio"]:checked + label {
