@@ -23,7 +23,7 @@
 
 .invite-to-scroll {
   position: absolute;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 15px;
   background-clip: padding-box;
   height: 33px;
@@ -39,7 +39,7 @@
     position: relative;
     border-radius: 5px;
     background-clip: padding-box;
-    background: grey;
+    background: color("grey","lighten-4");
     width: 2px;
     height: 6px;
     top: 5px;
@@ -50,5 +50,11 @@
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-play-state: running;
+  }
+  &.dark {
+    border: 1px solid black;
+    &:before {
+      background: grey;
+    }
   }
 }

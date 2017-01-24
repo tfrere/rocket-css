@@ -3,10 +3,10 @@ section.screen-box.center.full-form
     .progress.-primary.-small.-wick(ng-class="{on: step != 1 }")
       .bar(style='width:30%')
     .info
-      h5 Votre simulation
-      button.button(ui-sref="nav.home")
-        i.icon.-chevron-left
-        span Retour au site
+      h4 Votre simulation
+      //- button.button(ui-sref="nav.home")
+      //-   i.icon.-chevron-left
+      //-   span Retour au site
     .navigation
       .navigation-handler
         .dot-button.clickable.current.touch(ng-click="goTo($event, 1)")
@@ -15,67 +15,81 @@ section.screen-box.center.full-form
         .dot-button.touch(ng-click="goTo($event, 4)")
     .step
       h5 {{ step }} / {{ totalStep }}
+    .next
+      button.button.-round.-line-primary.touch(ng-click="next()" ng-validate)
+        span Valider
+        i.icon.-arrow-return
+      hr.-invisible
+      label.
+        Appuyer sur <b>entrer</b> pour passer à la suite
+      
   form.center-wrapper(name="step1" ng-if="step === 1" novalidate)
-    h3.
-      Pour commencer,<br/> quelle est votre nationalité ? 
+    h3(compile-unsafe="'views.form.question1.title' | translate")
     .radio-custom
       span
-        input(id="radio-1-1-4" type="radio" ng-click="next(step1)" value="4" ng-model="data.step2" name="step2" ng-required="!data.step2")
-        label.retirement(for="radio-1-1-4")
-          | Française
+        input(id="radio-1-1-4" type="radio" value="4"  ng-click="isEuropeanActive = false; isOtherActive = false" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.french(for="radio-1-1-4" compile-unsafe="'views.form.question1.answer1' | translate")
       span
-        input(id="radio-1-1-5" type="radio" ng-click="next(step1)" value="5" ng-model="data.step2" name="step2" ng-required="!data.step2")
-        label.handicap(for="radio-1-1-5")
-          | Européenne
+        input(id="radio-1-1-5" type="radio" ng-click="isEuropeanActive = true; isOtherActive = false" value="5" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.european(for="radio-1-1-5" compile-unsafe="'views.form.question1.answer2' | translate")
       span
-        input(id="radio-1-1-6" type="radio" ng-click="next(step1)" value="6" ng-model="data.step2" name="step2" ng-required="!data.step2")
-        label.student(for="radio-1-1-6")
-          | Autre
+        input(id="radio-1-1-6" type="radio" ng-click="isOtherActive = true; isEuropeanActive = false" value="6" ng-model="data.step2" name="step2" ng-required="!data.step2")
+        label.other(for="radio-1-1-6" compile-unsafe="'views.form.question1.answer3' | translate")
+    .checkbox(ng-if="isEuropeanActive")
+      input#checkbox1(type='checkbox' ng-model="data.isEuropeanActive")
+      label(for='checkbox1')
+        span Détenteur d'un droit au séjour valide et résidant en France plus de 9 mois par an.
+    .checkbox(ng-if="isOtherActive")
+      input#checkbox2(type='checkbox' ng-model="data.isOtherActive")
+      label(for='checkbox2')
+        span Détenteur d'une carte de résident ou d'un titre de séjour valide et résidant en France plus de 9 mois par an.
   form.center-wrapper(name="step2" ng-if="step === 2" novalidate)
-    h3 Vous êtes ?
+    h3(compile-unsafe="'views.form.question2.title' | translate")
     .radio-custom
       span
-        input(id="radio-6-1-1" type="radio" ng-click="next(step2)" value="1" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.pregnant(for="radio-6-1-1")
-          | Enceinte
+        input(id="radio-6-1-1" type="radio" value="1" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.pregnant(for="radio-6-1-1" compile-unsafe="'views.form.question2.answer1' | translate")
       span
-        input(id="radio-6-1-2" type="radio" ng-click="next(step2)" value="2" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.cv(for="radio-6-1-2")
-          | Demandeur d'emploi
+        input(id="radio-6-1-2" type="radio" value="2" ng-click="isClaimingJob = true" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.cv(for="radio-6-1-2" compile-unsafe="'views.form.question2.answer2' | translate")
       span
-        input(id="radio-6-1-3" type="radio" ng-click="next(step2)" value="3" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.student(for="radio-6-1-3")
-          | Etudiant
+        input(id="radio-6-1-3" type="radio" value="3" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.student(for="radio-6-1-3" compile-unsafe="'views.form.question2.answer3' | translate")
       span
-        input(id="radio-6-1-4" type="radio" ng-click="next(step2)" value="4" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.retirement(for="radio-6-1-4")
-          | Retraité
+        input(id="radio-6-1-4" type="radio" value="4" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.retirement(for="radio-6-1-4" compile-unsafe="'views.form.question2.answer4' | translate")
       span
-        input(id="radio-6-1-5" type="radio" ng-click="next(step2)" value="5" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.handicap(for="radio-6-1-5")
-          | Handicapé
+        input(id="radio-6-1-5" type="radio" value="5" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.handicap(for="radio-6-1-5" compile-unsafe="'views.form.question2.answer5' | translate")
       span
-        input(id="radio-6-1-6" type="radio" ng-click="next(step2)" value="6" ng-model="data.step3" name="step3" ng-required="!data.step3")
-        label.student(for="radio-6-1-6")
-          | Inapte au travail
-
+        input(id="radio-6-1-6" type="radio" value="6" ng-model="data.step3" name="step3" ng-required="!data.step3")
+        label.unfit(for="radio-6-1-6" compile-unsafe="'views.form.question2.answer6' | translate")
+    .button-box(ng-if="isClaimingJob == true")
+      fieldset
+        input(type="date" ng-model="date" name="bday" ng-change="isEndOfLastJob = true")
+    .checkbox(ng-if="isEndOfLastJob == true")
+      input#checkbox1(type='checkbox' ng-model="data.isEuropeanActive")
+      label(for='checkbox1')
+        span Détenteur d'un droit au séjour valide et résidant en France plus de 9 mois par an.
   form.center-wrapper(name="step3" ng-if="step === 3" novalidate)
-    h3 Code postal
+    h3(compile-unsafe="'views.form.question3.title' | translate")
     .button-box
       fieldset.-has-icon
-        i.icon.-map-marker#geoloc(ng-click="getPosition()" ng-class="{ 'active': isGetPositionLoading }")
+        i.icon.-map-marker#geoloc(ng-click="getPosition()" ng-class="{ 'loading': isGetPositionLoading }")
         input(type="text" ng-model="zipCode" name="postal-code" placeholder="Votre code postal...")
-      hr.-invisible
-      button.button.-round.-line-primary.touch(ng-click="next(step3)" ng-validate) Valider
+      label.
+        <i class="icon -pointer-up2 levitate"></i>
+        Cliquez sur l'icone pour vous géolocaliser
+      
+      //-button.button.-round.-line-primary.touch(ng-click="next(step3)" ng-validate)
+        //- i.icon.-arrow-return
+        //- span Valider
       
   form.center-wrapper(name="step4" ng-if="step === 4" novalidate)
-    h3 Code postal
+    h3(compile-unsafe="'views.form.question4.title' | translate")
     .button-box
-      fieldset.-has-icon
-        i.icon.-map-marker#geoloc(ng-click="getPosition()" ng-class="{ 'active': isGetPositionLoading }")
-        input(type="text" ng-model="zipCode" placeholder="Votre code postal...")
-      hr.-invisible
-      button.button.-round.-line-primary.touch(ng-click="next(step4)" ng-validate) Valider
+      fieldset
+        input(type="date" ng-model="date" name="bday" )
         
   #result.center-wrapper.text-center(name="step5" ng-if="step === 5" novalidate)
     div(ng-if="!isLoadingFinished")
@@ -84,17 +98,32 @@ section.screen-box.center.full-form
         div
         div
       .info-box
-        h4 Le saviez vous ?
-        p.lead 10 milliard d'euros n'ont pas été réclamés en 2016 !
-      h6.desc Algo super compliqué
+        h6.info(compile-unsafe="'views.form.loading.info' | translate")
+        //- h4(compile-unsafe="'views.form.loading.title' | translate")
+        //- p.lead(compile-unsafe="'views.form.loading.lead' | translate")
     div(ng-if="isLoadingFinished")
-      #result-success
-      h2.
-        Vous avez le droit à <span count-to="{{countTo}}" value="0" duration="1"></span> €
-      h5 Vous avez terminé le formulaire en <span count-to="{{duration}}" value="0" duration="1"></span> secondes
-      .button-box
-        button.button.-primary(ui-sref="nav.home") Refaire une simulation
-      p Partager votre temps sur les réseaux sociaux !
-      a(href="#").social.-facebook
-      a(href="#").social.-twitter
-      a(href="#").social.-googleplus
+      .two-cols-verticaly-aligned
+        .wrapper
+          #result-success
+        .wrapper
+          h5.
+            Vous avez le droit à 
+          h1.add-bot.b.
+            <span count-to="{{countTo}}" value="0" duration="1"></span><span> €</span>
+          p Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor 
+          .button-box
+            button.touch.button.-round.-line-primary(ui-sref="nav.home") Refaire une simulation
+          .double-bot
+            .tip.-bottom
+              button.button.-round.-primary(ui-sref="nav.home" disabled="disabled") Soumettre un dossier à la CAF
+              .tag.-pointing.-top
+                span Bientôt disponible !
+  
+          h6.remove-bot Formulaire terminé en <span class="bold" count-to="{{duration}}" value="0" duration="1"></span> secondes
+          p Partager le sur les réseaux sociaux !
+          a(href="#").social-link.touch
+            i.social.-dark.-facebook
+          a(href="#").social-link.touch
+            i.social.-dark.-twitter
+          a(href="#").social-link.touch
+            i.social.-dark.-googleplus

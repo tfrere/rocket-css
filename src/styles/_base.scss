@@ -88,7 +88,7 @@
  		}
 
 		em, i, .i, .italic     { font-style: italic; letter-spacing: 0.1rem; }
-		strong, b, .b, .bold   { font-weight: 600!important; }
+		strong, b, .b, .bold   { font-weight: 600; }
 		small, p.small         { font-size: 90%; }
 		big, .big		           { font-size: 110%; }
 
@@ -360,11 +360,17 @@
 			&.-large {
 				width:100%;
 			}
-
+			&.-round {
+				border-radius: 1000px;
+				select {
+					border-radius: 1000px;
+				}
+			}
 			select {
 				height:34px; // fix ie
 				font-size: 1.3rem;
 				padding: $text-size / 2;
+				padding-left: $text-size;
 				margin: 0;
 				box-sizing: border-box;
 				color:black;

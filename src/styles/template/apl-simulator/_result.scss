@@ -1,7 +1,48 @@
+
 #result {
-  .social {
-    border-radius: 100%;
-    background-color: color("grey", "lighten-3");
-    padding:5px;
+  text-align: left;
+  max-width: 60%;
+  h1,h2,h3,h4,h5 {
+    color: color("primary", "base");
+    margin-bottom: $text-size / 2;
   }
+  h5 {
+    margin-bottom: 0;
+  }
+  p {
+    color: color("grey", "darken-1");
+  }
+  .circle-line-scale {
+    margin-bottom: $text-size;
+  }
+  .info {
+    color: color("grey", "base");
+    text-transform: uppercase;
+  }
+  .social-link {
+    padding:4px;
+    border-radius:100%;
+    border: 1px solid color("primary","base");
+    opacity: 0.8;
+    transition: all 150ms ease("swift-in");
+    margin-right: $text-size;
+    .social {
+      margin: 0;
+      color: color("primary","base");
+      transform: rotate(0deg);
+      transition: transform 350ms ease("swift-in");
+      &:hover {
+        transform: rotate(359deg);
+
+      }
+    }
+  }
+}
+
+#result-success {
+	width: 190px;
+	height: 215px;
+	background-image: url('../assets/imgs/svg/gift.svg');
+	background-size: cover;
+  margin: 0 auto;
 }

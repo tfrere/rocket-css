@@ -1,5 +1,5 @@
 
-var app = angular.module('app', ['ng-touch', 'countTo','ngSanitize','ngTranslateSelect', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource']);
+var app = angular.module('app', ['ng-touch', 'ng-tip', 'countTo','ngSanitize','ngTranslateSelect', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource']);
 
 // constantes locales
 app.constant('LOCALES', {
@@ -211,7 +211,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/form.html',
             controller: 'formCtrl',
             data: {
-              pageTitle: 'form'
+              pageTitle: 'Simulateur'
             }
         })
         .state('nav.404', {

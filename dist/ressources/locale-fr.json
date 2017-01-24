@@ -1,11 +1,6 @@
 {
 	"views.nav.punchline": "Simuler",
 
-	"views.footer.title1": "L'application",
-	"views.footer.list1_1": "Créer un compte",
-	"views.footer.list1_2": "Fiches pratiques",
-	"views.footer.list1_3": "Se connecter",
-
 	"views.footer.title2": "Contact",
 	"views.footer.list2_1": "Email",
 	"views.footer.list2_2": "Twitter",
@@ -19,7 +14,7 @@
 	"views.footer.title4": "Conditions",
 	"views.footer.list4_1": "CGU",
 
-	"views.main.cookie": "Demo",
+	"views.cookie.info": "Ce site utilise des cookies pour rendre son site plus simple. <a href='/cookie' ui-sref='nav.cookies'>En savoir plus sur les cookies</a>.",
 
 	"views.main.punchline": "Touchez simplement toutes vos prestations sociales",
 	"views.main.subline": "Gagnez de l'argent simplement en moins de 5 minutes",
@@ -34,8 +29,29 @@
 	"views.main.argTitle3": "Rapidité",
 	"views.main.argText3": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
 
-	"views.main.tryAnyway": "Convaincu ou non, essayez-le !",
-	"views.main.tryAnywayButton": "C'est gratuit",
+	"views.form.info.title": "Votre simulation",
+	"views.form.info.back": "Retour au site",
+	"views.form.info.back": "Valider",
+
+	"views.form.loading.title": "Le saviez vous ?",
+	"views.form.loading.lead": "10 milliard d'euros n'ont pas été réclamés en 2016 !",
+	"views.form.loading.info": "Calculs compliqués",
+
+	"views.form.question1.title": "Pour commencer,<br/> quelle est votre nationalité ?",
+	"views.form.question1.answer1": "Française",
+	"views.form.question1.answer2": "Européene",
+	"views.form.question1.answer3": "Autre",
+
+	"views.form.question2.title": "Vous êtes ?",
+	"views.form.question2.answer1": "Enceinte",
+	"views.form.question2.answer2": "Demandeur d'emploi",
+	"views.form.question2.answer3": "Etudiant",
+	"views.form.question2.answer4": "Retraité",
+	"views.form.question2.answer5": "Handicapé",
+	"views.form.question2.answer6": "Inapte au travail",
+
+	"views.form.question3.title": "Votre code postal",
+	"views.form.question4.title": "Votre date de naissance",
 
 	"directives.language-select.Language": "fr"
 }
