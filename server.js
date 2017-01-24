@@ -19,7 +19,7 @@ app.use("/ressources", express.static(__dirname + "/dist/ressources"));
 app.use("/assets", express.static(__dirname + "/dist/assets"));
 app.use("/styles", express.static(__dirname + "/dist/styles"));
 app.use("/templates", express.static(__dirname + "/dist/templates"));
-
+*/
 app.get('/test', function(req,res){
 		return res.send(200);
 });
