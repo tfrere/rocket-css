@@ -123,7 +123,7 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
       console.log(duration.format("h:mm:ss"));
       $scope.duration = duration.format("h:mm:ss");
     }
-    else {
+    else if($scope.forms[$scope.step - 1].$valid) {
       // to remove for debugging if($scope.forms[$scope.step - 1].$valid)
       $scope.step++;
       if ($scope.maxStep < $scope.step)
