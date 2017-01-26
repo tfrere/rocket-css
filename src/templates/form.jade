@@ -57,11 +57,11 @@ section.screen-box.center.full-form
     hr.-invisible(ng-init="setForm(step2, 2)")
     .box.radio-custom
       span
-        input(id="radio-2-1" type="radio" value="1"  ng-model="data.isAlone" name="isAlone" ng-required="!data.isAlone")
+        input(id="radio-2-1" type="radio" value="true"  ng-model="data.isAlone" name="isAlone" ng-required="!data.isAlone")
         label.alone(for="radio-2-1")
           span(compile-unsafe="'views.form.question2.answer1' | translate")
       span
-        input(id="radio-2-2" type="radio" value="0" ng-model="data.isAlone" name="isAlone" ng-required="!data.isAlone")
+        input(id="radio-2-2" type="radio" value="false" ng-model="data.isAlone" name="isAlone" ng-required="!data.isAlone")
         label.couple(for="radio-2-2")
           span(compile-unsafe="'views.form.question2.answer2' | translate")
 
@@ -87,27 +87,27 @@ section.screen-box.center.full-form
           p(compile-unsafe="'views.form.question4.desc' | translate")
           .radio-custom
             span
-              input(id="checkbox-4-1" type="checkbox" value="1" ng-model="data.isPregnant" name="checkbox1" ng-required="!question4" )
+              input(id="checkbox-4-1" type="checkbox" value="true" ng-model="data.isPregnant" name="checkbox1" ng-required="!question4" )
               label.pregnant(for="checkbox-4-1")
                 span(compile-unsafe="'views.form.question4.answer1' | translate")
             span
-              input(id="checkbox-4-2" type="checkbox" value="2" ng-click="isClaimingJob = !isClaimingJob" ng-model="data.isCv" name="checkbox2"ng-required="!question4" )
+              input(id="checkbox-4-2" type="checkbox" value="true" ng-click="isClaimingJob = !isClaimingJob" ng-model="data.isCv" name="checkbox2" ng-required="!question4" )
               label.cv(for="checkbox-4-2")
                 span(compile-unsafe="'views.form.question4.answer2' | translate")
             span
-              input(id="checkbox-4-3" type="checkbox" value="3" ng-click="isAStudent = !isAStudent" ng-model="data.isStudent" name="checkbox3" ng-required="!question4" )
+              input(id="checkbox-4-3" type="checkbox" value="true" ng-click="isAStudent = !isAStudent" ng-model="data.isStudent" name="checkbox3" ng-required="!question4" )
               label.student(for="checkbox-4-3")
                 span(compile-unsafe="'views.form.question4.answer3' | translate")
             span
-              input(id="checkbox-4-4" type="checkbox" value="4" ng-model="data.isRetirement" name="checkbox4" ng-required="!question4" )
+              input(id="checkbox-4-4" type="checkbox" value="true" ng-model="data.isRetirement" name="checkbox4" ng-required="!question4" )
               label.retirement(for="checkbox-4-4")
                 span(compile-unsafe="'views.form.question4.answer4' | translate")
             span
-              input(id="checkbox-4-5" type="checkbox" value="5" ng-click="isHandicap = !isHandicap" ng-model="data.isHandicap" name="checkbox4" ng-required="!question4" )
+              input(id="checkbox-4-5" type="checkbox" value="true" ng-click="isHandicap = !isHandicap" ng-model="data.isHandicap" name="checkbox4" ng-required="!question4" )
               label.handicap(for="checkbox-4-5")
                 span(compile-unsafe="'views.form.question4.answer5' | translate")
             span
-              input(id="checkbox-4-6" type="checkbox" value="6" ng-model="data.isUnfit" name="checkbox6" ng-required="!question4" )
+              input(id="checkbox-4-6" type="checkbox" value="true" ng-model="data.isUnfit" name="checkbox6" ng-required="!question4" )
               label.unfit(for="checkbox-4-6")
                 span(compile-unsafe="'views.form.question4.answer6' | translate")
         .six.col
@@ -222,7 +222,8 @@ section.screen-box.center.full-form
         .wrapper
           h5(compile-unsafe="'views.result.title' | translate")
           h1.add-bot.b
-            span(count-to="{{countTo}}" value="0" duration="1")
+            span(count-to="{{finalResult.apl}}" value="0" duration="1")
+            span(count-to="{{finalResult.rsa}}" value="0" duration="1")
             span(compile-unsafe="'views.result.currency' | translate")
           p(compile-unsafe="'views.result.desc' | translate")
           .button-box
@@ -233,13 +234,13 @@ section.screen-box.center.full-form
               .tag.-pointing.-top
                 span(compile-unsafe="'views.result.soon' | translate")
 
-          h6.remove-bot
-            span(compile-unsafe="'views.result.timer' | translate")
-            span.b(count-to="{{duration}}" value="0" duration="1") secondes
-          p(compile-unsafe="'views.result.social' | translate")
-          a(href="#").social-link.touch
-            i.social.-dark.-facebook
-          a(href="#").social-link.touch
-            i.social.-dark.-twitter
-          a(href="#").social-link.touch
-            i.social.-dark.-googleplus
+//- h6.remove-bot
+//-   span(compile-unsafe="'views.result.timer' | translate")
+//-   span.b(count-to="{{duration}}" value="0" duration="1") secondes
+//- p(compile-unsafe="'views.result.social' | translate")
+//- a(href="#").social-link.touch
+//-   i.social.-dark.-facebook
+//- a(href="#").social-link.touch
+//-   i.social.-dark.-twitter
+//- a(href="#").social-link.touch
+//-   i.social.-dark.-googleplus

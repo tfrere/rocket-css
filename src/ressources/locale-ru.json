@@ -1,0 +1,56 @@
+{
+	"views.nav.punchline": "Simulate",
+
+	"views.footer.title2": "Contact",
+	"views.footer.list2_1": "Email",
+	"views.footer.list2_2": "Twitter",
+	"views.footer.list2_3": "Facebook",
+	"views.footer.list2_4": "Google +",
+
+	"views.footer.title3": "About",
+	"views.footer.list3_1": "The team",
+	"views.footer.list3_2": "Press",
+
+	"views.footer.title4": "Conditions",
+	"views.footer.list4_1": "CGU",
+
+	"views.main.cookie.info": "This website is using cookies to improve efficiency.",
+
+	"views.main.punchline": "Paper work, without paper, without work RUSSE",
+	"views.main.subline": "Gagnez de l'argent simplement en moins de 5 minutes",
+	"views.main.cta1": "Faire une simulation",
+
+	"views.main.argTitle1": "Safe",
+	"views.main.argText1": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+
+	"views.main.argTitle2": "Simple",
+	"views.main.argText2": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+
+	"views.main.argTitle3": "Quick",
+	"views.main.argText3": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+
+	"views.form.info.title": "Your simulation",
+	"views.form.info.back": "Back to website",
+	"views.form.info.back": "Validate",
+
+	"views.form.loading.title": "Did you know ?",
+	"views.form.loading.lead": "10 billion were not claimed in 2016!",
+	"views.form.loading.desc": "Loading",
+
+	"views.form.question1.title": "What's your nationality ?",
+	"views.form.question1.answer1": "French",
+	"views.form.question1.answer2": "European",
+	"views.form.question1.answer3": "Other",
+
+	"views.form.question2.title": "Vous êtes ?",
+	"views.form.question2.answer1": "Pregnant",
+	"views.form.question2.answer2": "Demandeur d'emploi",
+	"views.form.question2.answer3": "Student",
+	"views.form.question2.answer4": "Retraité",
+	"views.form.question2.answer5": "Handicapé",
+	"views.form.question2.answer6": "Inapte au travails",
+
+	"views.form.question3.title": "Votre code postal",
+
+	"directives.language-select.Language": "en"
+}

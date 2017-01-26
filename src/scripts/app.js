@@ -5,7 +5,9 @@ var app = angular.module('app', ['rzModule', 'ng-touch', 'ng-tip', 'countTo','ng
 app.constant('LOCALES', {
     'locales': {
         'fr': 'fr',
-        'en': 'en'
+        'en': 'en',
+        'ru': 'ru',
+        'de': 'de'
     },
     'preferredLocale': 'fr'
 });

@@ -34,7 +34,6 @@ app.post('/test', function(req,res){
 		return res.send(200);
 });
 
-
 app.post('/sendQuestion', function(req,res){
 	console.log(req.body);
 	if (req.body.email && req.body.name && req.body.content)

@@ -1,14 +1,7 @@
 
 app.controller('formCtrl', function ($cookies, $scope, $timeout) {
 
-  $scope.data = {
-    sector:"",
-    email:"",
-    fname:"",
-    lname:"",
-    phone:"",
-    company:""
-  };
+  $scope.data = {};
   $scope.zipCode = "";
   $scope.isGetPositionLoading = false;
   $scope.isLastStepReached = false;
@@ -21,6 +14,9 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
   $scope.isGetPositionTriggered = false;
   $scope.forms = [];
   $scope.data = {};
+  $scope.finalResult = {};
+  $scope.finalResult.rsa = 0;
+  $scope.finalResult.apl = 0;
 
   $scope.getPosition = function() {
   var geocoder = new google.maps.Geocoder;
@@ -127,13 +123,17 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
       console.log(duration.format("h:mm:ss"));
       $scope.duration = duration.format("h:mm:ss");
     }
-    else if($scope.forms[$scope.step - 1].$valid) {
+    else {
       // to remove for debugging if($scope.forms[$scope.step - 1].$valid)
       $scope.step++;
       if ($scope.maxStep < $scope.step)
         $scope.maxStep++;
       if ($scope.maxStep == $scope.step) {
         $scope.isLastStepReached = true;
+
+        console.log(012345)
+        $scope.calculate();
+
         $timeout(function () {
           $scope.isLoadingFinished = true;
         }, 2500);
@@ -207,18 +207,86 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     $scope.isEndOfLastJob = true;
   };
 
-  $scope.sendForm = function(form){
-      if (form.$valid)
-      {
-        $http.post('/postForm', keepData)
-            .success(function(a,b){
-              console.log(a,b);
-            })
-            .error(function(a,b){
-                console.log(a,b);
-            });
-      }
+
+  $scope.calculate = function() {
+    var isRsa;
+    var apl, purse;
+    var rsa = 535.17;
+    var minRsa = 470;
+    var purse = 0;
+    var minus = 60;
+    var maxApl = 240;
+    var ratio = 1;
+
+    console.log(678910);
+
+    var todayOld = moment().subtract(25, 'years');
+
+    console.log("todayOld", todayOld);
+
+    if (!$scope.data.isAlone)
+     {
+     	rsa = 802.76;
+      console.log("isAlone", $scope.data.isAlone);
+     }
+
+    if (todayOld >= $scope.data.birthday || $scope.data.isPregnant === true) {
+    	isRsa = true;
+      console.log("isRsa", isRsa);
+    } else {
+    	isRsa = false;
+    }
+
+    if ($scope.data.isHelpedStudent) {
+    	purse = 40;
+      console.log("isHelpedStudent", true);
+    }
+
+    if ($scope.data.money > minRsa / 0.38) {
+    	isRsa = false;
+      console.log("calcRsa", true);
+    }
+
+    if ($scope.data.isColloc) {
+    	minus = 90;
+    	maxApl = 110;
+      console.log("isColloc", true);
+    }
+
+    if ($scope.data.isWithFurniture) {
+    	ratio = 0.7;
+      console.log("isWithFurniture", true);
+    }
+
+    apl = $scope.data.rentPrice - minus * ratio;
+
+    if (apl > maxApl) {
+    	apl = maxApl;
+    }
+
+    apl += purse;
+
+    console.log("APL FINAL", apl);
+
+
+    if (isRsa) {
+    	rsa -= apl;
+    	if (rsa < minRsa) {
+    		rsa = minRsa;
+    	}
+    }
+    else
+      rsa = 0;
+
+    console.log("RSA FINAL", rsa);
+
+    $scope.finalResult.rsa = rsa;
+    $scope.finalResult.apl = apl;
+    $scope.$applyAsync();
+
   };
+
+
 
 }).directive('watchChange', function() {
     return {

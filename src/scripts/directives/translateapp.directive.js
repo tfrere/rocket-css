@@ -16,14 +16,14 @@
             controller: function ($cookies, $translate, $scope, $timeout, $rootScope, $stateParams, $state) {
 
                 // on init la lang depuis l'URL
-                if($stateParams.lang == "en")
+                if($stateParams.lang == "en" || $stateParams.lang == "ru" || $stateParams.lang == "de")
                     LocaleService.setLocaleByDisplayName($stateParams.lang);
                 else
                     LocaleService.setLocaleByDisplayName("fr");
 
-                $timeout(function(){
+                $timeout(function() {
 
-                    if($stateParams.lang == "en")
+                    if($stateParams.lang == "en" || $stateParams.lang == "ru" || $stateParams.lang == "de")
                         $scope.currentLocaleFromUrl = $stateParams.lang;
                     else
                         $scope.currentLocaleFromUrl = "fr";
@@ -36,11 +36,11 @@
 
                     // dès que ça change on update le service et l'url
                     $scope.changeLanguage = function (locale) {
-                        console.log("UPDATED LOCALE from directive", locale);                        
-                 
+                        console.log("UPDATED LOCALE from directive", locale);
+
                         $state.go($state.current.name, {lang:locale});
                     };
-                    
+
                 });
             }
         };
