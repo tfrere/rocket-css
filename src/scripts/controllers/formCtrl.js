@@ -15,33 +15,54 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
   $scope.countTo = 340;
   $scope.startTime = moment(new Date());
   $scope.step = 1;
-  $scope.maxStep = 5;
-  $scope.totalStep = 5;
+  $scope.maxStep = 7;
+  $scope.totalStep = 7;
   $scope.isLoadingFinished = false;
+  $scope.isGetPositionTriggered = false;
+  $scope.forms = [];
+  $scope.data = {};
 
   $scope.getPosition = function() {
-    var geocoder = new google.maps.Geocoder;
-    var zip = "";
-    console.log(navigator);
-    $scope.isGetPositionLoading = true;
-    // Try HTML5 gecolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-        $timeout(function () {
-          $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
-            $scope.zipCode = data.zip;
-            $scope.$applyAsync();
-            $scope.isGetPositionLoading = false;
-          });
-        }, 50);
-      });
-    }
+  var geocoder = new google.maps.Geocoder;
+  console.log(navigator);
+  $scope.isGetPositionLoading = true;
+  $scope.isGetPositionTriggered = true;
+  // Try HTML5 gecolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      geocoder.geocode({'location': pos}, function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              console.log(results);
+              var concat = "";
+              for(var i = 0; i < results.length; i++){
+                concat += results[i].formatted_address;
+              }
+              console.log($scope.data.zip);
+              $scope.data.zip = extractZipCode(concat);
+              $scope.$applyAsync();
+              $scope.isGetPositionLoading = false;
+            } else {
+              console.log("No result found");
+            }
+          } else {
+            console.log('Geocoder failed due to: ' + status);
+          }
+        });
+    }, function() {
+      $scope.isGeolocDisabled = true;
+      // $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+      //   $scope.zipCode = data.zip;
+      //   $scope.$applyAsync();
+      //   $scope.isGetPositionLoading = false;
+      // });
+    });
   }
-
+}
 
   var extractZipCode = function(str) {
     const regex = /(?!\.).{1}(\d{5})/gm;
@@ -80,6 +101,7 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
 
   $timeout(function(){
     updateBar();
+    //console.log($scope.forms);
   });
 
   $scope.goTo = function ($event, number) {
@@ -91,14 +113,22 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     }
   };
 
-  $scope.next = function (form) {
+
+  $scope.setForm = function (form, i) {
+    $scope.forms.push(form);
+  }
+
+  $scope.next = function () {
+    console.log($scope.data);
+
     if ($scope.step == $scope.totalStep) {
       $scope.endTime = moment(new Date());
       var duration = moment.duration($scope.endTime.diff($scope.startTime));
       console.log(duration.format("h:mm:ss"));
       $scope.duration = duration.format("h:mm:ss");
     }
-    else {
+    else if($scope.forms[$scope.step - 1].$valid) {
+      // to remove for debugging if($scope.forms[$scope.step - 1].$valid)
       $scope.step++;
       if ($scope.maxStep < $scope.step)
         $scope.maxStep++;
@@ -111,11 +141,14 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
       updateBar();
       updateNav();
       $timeout(function () {
-        console.log(angular.element($("form[name='step" + $scope.step + "'] input")));
-        angular.element($("form[name='step" + $scope.step + "'] input")).focus();
+        $scope.focusOnFirstInput();
       }, 250);
     }
   };
+
+  $scope.focusOnFirstInput = function() {
+    angular.element($("form[name='step" + $scope.step + "'] input:not([type='checkbox']):not([type='radio']):first-of-type")).focus();
+  }
 
   $("body").keydown(function (event) {
       keyReport(event);
@@ -134,8 +167,8 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
         break;
       case 13:
         console.log(" Enter");
-        //$scope.next();
         $('.button[ng-validate]').click();
+        $scope.focusOnFirstInput();
         break;
       case 27:
         console.log(" Escape");
@@ -160,35 +193,43 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
         break;
     }
   }
+  $scope.slider_ticks = {
+      minValue: 50,
+      value: 50,
+      options: {
+          ceil: 80,
+          floor: 30,
+          showTicks: true,
+          step: 35
+      }
+  };
+  $scope.dateUpdate = function() {
+    $scope.isEndOfLastJob = true;
+  };
 
+  $scope.sendForm = function(form){
+      if (form.$valid)
+      {
+        $http.post('/postForm', keepData)
+            .success(function(a,b){
+              console.log(a,b);
+            })
+            .error(function(a,b){
+                console.log(a,b);
+            });
+      }
+  };
 
-  //
-  // $scope.sendForm = function(form){
-  //     if (form.$valid)
-  //     {
-  //       var text = document.getElementById('text').outerHTML;
-  //       button.addClass('on');
-  //       var keepData = angular.copy($scope.data);
-  //       keepData.response = text;
-  //       if (!$scope.isToken)
-  //         keepData.sector = angular.copy($scope.data.sector.response);
-  //       $http.post('/postDiagnostic', keepData)
-  //           .success(function(a,b){
-  //               if ($scope.isToken)
-  //                 $state.go('nav.home', { context: 0 });
-  //               else
-  //               {
-  //                 console.log(a, b);
-  //                 $state.go('nav.home', { context: a.token });
-  //               }
-  //               calq.action.track('Opt-in', {"data": keepData});
-  //               console.log(a,b);
-  //           })
-  //           .error(function(a,b){
-  //               button.removeClass('on');
-  //               console.log(a,b);
-  //           });
-  //     }
-  // };
-
+}).directive('watchChange', function() {
+    return {
+        scope: {
+            onchange: '&watchChange'
+        },
+        link: function(scope, element, attrs) {
+            element.on('input', function() {
+                console.log(1);
+                scope.onchange();
+            });
+        }
+    };
 });

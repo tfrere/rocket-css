@@ -58,6 +58,9 @@ select {
 	&.-round {
 		border-radius:1000px;
 	}
+	&.ng-invalid:not(.ng-pristine) {
+		border: 2px dashed color("danger","base")!important;
+	}
 }
 
 textarea {
@@ -73,6 +76,7 @@ select:focus {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.035),0 0 8px rgba(color("primary", "base"),0.3);
 }
 
-input[disabled='disabled'] {
-	background-color: color("grey", "lighten-1");
+input[disabled='disabled'], input.-disabled {
+	background-color: color("grey", "lighten-4")!important;
+	cursor: not-allowed;
 }

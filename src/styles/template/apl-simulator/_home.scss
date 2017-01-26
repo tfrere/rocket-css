@@ -30,8 +30,7 @@ section.background {
 	background-color: darken(#8DB2C8, 10%);
 	position:relative;
 	padding: 75px 0;
-	// height:calc(60% + 83px);
-	// min-height: calc(60% + 83px);
+	min-height: 500px;
 	overflow: visible;
 	background: #02AAB0; /* fallback for old browsers */
 	background: linear-gradient(to left, #02AAB0 , #7092c5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -98,17 +97,18 @@ section.background {
 	opacity:0.7;
 	transition: all 200ms ease;
 	background-size: cover;
+	margin-bottom: $text-size;
 	&:hover {
 		opacity:1;
 	}
 }
 
 .circle-simple {
-	background-image: url('../assets/imgs/svg/Simple.svg');
+	background-image: url('../assets/imgs/svg/simple.svg');
 }
 .circle-safe {
-	background-image: url('../assets/imgs/svg/Safe.svg');
+	background-image: url('../assets/imgs/svg/lock.svg');
 }
 .circle-quick {
-	background-image: url('../assets/imgs/svg/Quick.svg');
+	background-image: url('../assets/imgs/svg/clock.svg');
 }

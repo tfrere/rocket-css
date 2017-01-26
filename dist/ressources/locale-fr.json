@@ -31,7 +31,8 @@
 
 	"views.form.info.title": "Votre simulation",
 	"views.form.info.back": "Retour au site",
-	"views.form.info.back": "Valider",
+	"views.form.info.validate": "Valider",
+	"views.form.info.validateLabel": "Appuyer sur <b>entrer</b> pour passer à la suite",
 
 	"views.form.loading.title": "Le saviez vous ?",
 	"views.form.loading.lead": "10 milliard d'euros n'ont pas été réclamés en 2016 !",
@@ -42,16 +43,57 @@
 	"views.form.question1.answer2": "Européene",
 	"views.form.question1.answer3": "Autre",
 
-	"views.form.question2.title": "Vous êtes ?",
-	"views.form.question2.answer1": "Enceinte",
-	"views.form.question2.answer2": "Demandeur d'emploi",
-	"views.form.question2.answer3": "Etudiant",
-	"views.form.question2.answer4": "Retraité",
-	"views.form.question2.answer5": "Handicapé",
-	"views.form.question2.answer6": "Inapte au travail",
+	"views.form.question1.label1": "Détenteur d'un <b>droit au séjour valide</b> et <b>résidant en France plus de 9 mois par an</b>.",
+	"views.form.question1.label2": "Détenteur d'une <b>carte de résident</b> ou d'un <b>titre de séjour valide et résidant en France plus de 9 mois par an</b>.",
 
-	"views.form.question3.title": "Votre code postal",
-	"views.form.question4.title": "Votre date de naissance",
+	"views.form.question2.title": "Êtes-vous ?",
+	"views.form.question2.answer1": "Seul",
+	"views.form.question2.answer2": "En couple",
+
+	"views.form.question3.title": "Votre date de naissance",
+
+	"views.form.question4.title": "Êtes-vous ?",
+	"views.form.question4.desc": "Vous pouvez selectionner plusieurs cases",
+	"views.form.question4.title2": "Plus précisement ?",
+	"views.form.question4.desc2": "",
+	"views.form.question4.answer1": "Enceinte",
+	"views.form.question4.answer2": "Chômeur",
+	"views.form.question4.answer3": "Etudiant",
+	"views.form.question4.answer4": "Retraité",
+	"views.form.question4.answer5": "Handicapé",
+	"views.form.question4.answer6": "Invalide",
+	"views.form.question4.checkbox1": "Êtes-vous étudiant boursier ?",
+	"views.form.question4.checkbox2": "Avez-vous travaillé au moins 5 ans entre depuis le premier janvier 2012 ?",
+	"views.form.question4.date1": "Dernier mois travaillé",
+	"views.form.question4.slider1": "Votre taux d'incapacité ?",
+
+	"views.form.question5.title": "Votre domicile",
+	"views.form.question5.title2": "Plus précisement ?",
+	"views.form.question5.desc2": "",
+	"views.form.question5.label1": "Code postal",
+	"views.form.question5.label2": "Loyer total",
+	"views.form.question5.label3": "Loyer sans charges",
+	"views.form.question5.geoloc": "Cliquez sur l'icone pour vous géolocaliser",
+
+	"views.form.question5-1.title": "Est-ce une collocation ?",
+	"views.form.question5-1.answer1": "Oui",
+	"views.form.question5-1.answer2": "Non",
+	"views.form.question5-2.title": "Est-il meublé ?",
+	"views.form.question5-2.answer1": "Oui",
+	"views.form.question5-2.answer2": "Non",
+	"views.form.question5-3.title": "Votre code postal",
+	"views.form.question5-4.checkbox": "Avez-vous un lien de parenté direct avec votre propriétaire ?",
+
+	"views.form.question6.title": "Vos revenus de l'année dernière ?",
+	"views.form.question6.desc": "",
+
+	"views.result.title": "Vous avez le droit à",
+	"views.result.currency": "€",
+	"views.result.desc": "Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor",
+	"views.result.cta1": "Refaire une simulation",
+	"views.result.cta2": "Soumettre un dossier à la CAF",
+	"views.result.timer": "Formulaire terminé en",
+	"views.result.social": "<b>Partagez</b> le sur les réseaux sociaux !",
 
 	"directives.language-select.Language": "fr"
 }
