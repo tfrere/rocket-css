@@ -90,7 +90,13 @@ $base-index: 999999999999999999999;
 		margin:auto;
 		background-color: white;
 		overflow: visible;
-
+	}
+	&.modal-2 .content-wrapper {
+		width: 880px;
+	}
+	&.modal-2 .close-button {
+		top: -39px;
+		right: -67px;
 	}
 	.close-button {
 		position:absolute;

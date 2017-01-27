@@ -111,5 +111,11 @@
 	"views.result.modal.cafLink": "Sur le site de la CAF",
 
 
+	"views.result.modal-2.title1": "Qu'est ce qu'un meublé ?",
+	"views.result.modal-2.desc1": " Ton logement doit être équipé dans chaque pièce du mobilier nécessaire à son usage (ex: la chambre doit comporter un sommier avec matelas).<br/> <br/> Ce n’est pas parce que ta cuisine est équipée que le logement est meublé, si d’autres pièces sont nues.<br/><br/>  En cas de doute, cette information figure sur le bail que tu as signé.",
+	"views.result.modal-2.title2": "Pourquoi cette question ?",
+	"views.result.modal-2.desc2": "Pour calculer le montant de l’APL, la Caf soustrait du loyer brut le coût des meubles, estimé à environs 30% du loyer.<br/><br/>  Pour cette raison, à loyer égal, la Caf verse pour un meublé environs 70% de l’aide qu’elle aurait versé pour un non-meublé.",
+
+
 	"directives.language-select.Language": "fr"
 }

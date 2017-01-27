@@ -82,29 +82,24 @@ html, body, [ui-view] {
 	text-align: center;
 }
 
-//
-// .pattern {
-// 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAAAXNSR0IArs4c6QAAAGBJREFUSA1jZCARnD17djOyFmNjY19kPhMyhxrswW8gIyFvEgozdP2D38tUdyFGGJIaZqNhyMBIaZiNhiED1RP2CDRwNC+jZyTS+RhhiG4EqXl9NB2ihyAmn1CYjsAwBACOcRw6x5qRuQAAAABJRU5ErkJggg==');
-// 	background-repeat: repeat;
-// 	background-size: 5px 8px !important;
-// }
-//
-// .texture {
-// 	border-top: 1px solid color("grey", "lighten-3");
-// 	border-bottom: 1px solid color("grey", "lighten-3");
-// 	overflow: hidden;
-// 	position:relative;
-// 	&::after {
-// 		content:"";
-// 		background-image: url("../images/topoPattern.jpg");
-// 		background-size: cover;
-// 		width:100%;
-// 		height:100%;
-// 		position:absolute;
-// 		background-attachment: fixed;
-// 		z-index: -1;
-// 		opacity: 0.04;
-// 		left:0;
-// 		top:0;
-// 	}
-// }
+
+#meuble {
+	width: 250px;
+	height: 250px;
+	background-image: url(../assets/imgs/svg/furnished.svg);
+	background-size: cover;
+	margin-top: 35px;
+}
+
+#help {
+	font-size: 2em;
+	opacity: 0.2;
+	transition: all 200ms ease;
+	position: absolute;
+	left: -35px;
+	transform: translateY(-3px);
+	cursor: pointer;
+	&:hover {
+		opacity: 0.5;
+	}
+}

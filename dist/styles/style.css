@@ -9109,6 +9109,11 @@ figure {
     margin: auto;
     background-color: white;
     overflow: visible; }
+  .modal.modal-2 .content-wrapper {
+    width: 880px; }
+  .modal.modal-2 .close-button {
+    top: -39px;
+    right: -67px; }
   .modal .close-button {
     position: absolute;
     top: 13px;
@@ -11215,3 +11220,21 @@ html, body, [ui-view] {
 
 .text-center {
   text-align: center; }
+
+#meuble {
+  width: 250px;
+  height: 250px;
+  background-image: url(../assets/imgs/svg/furnished.svg);
+  background-size: cover;
+  margin-top: 35px; }
+
+#help {
+  font-size: 2em;
+  opacity: 0.2;
+  transition: all 200ms ease;
+  position: absolute;
+  left: -35px;
+  transform: translateY(-3px);
+  cursor: pointer; }
+  #help:hover {
+    opacity: 0.5; }

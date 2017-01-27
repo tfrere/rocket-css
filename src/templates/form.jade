@@ -22,7 +22,7 @@ section.screen-box.center.full-form
         i.icon.-arrow-return
       hr.-invisible
       label(compile-unsafe="'views.form.info.validateLabel' | translate")
-    .socials(ng-if="isLoadingFinished")
+    .socials(ng-show="isLoadingFinished")
       a(href="#").social-link.touch
         i.social.-dark.-facebook
       a(href="#").social-link.touch
@@ -162,8 +162,9 @@ section.screen-box.center.full-form
               input(id="radio-5-1-2" type="radio" value="1" ng-model="data.isColloc" name="isColloc" ng-required="!data.isColloc")
               label.alone(for="radio-5-1-2")
                 span(compile-unsafe="'views.form.question5-1.answer2' | translate")
-          label(compile-unsafe="'views.form.question5-2.title' | translate")
-          i.icon.-warning()
+          label
+            span(compile-unsafe="'views.form.question5-2.title' | translate")
+            i.icon.-question-circle#help(ng-click="openModal2()")
           .radio-custom
             span.-big
               input(id="radio-5-2-1" type="radio" value="0"  ng-model="data.isWithFurniture" name="isWithFurniture" ng-required="!data.isWithFurniture")
@@ -255,7 +256,7 @@ section.screen-box.center.full-form
 
           p(compile-unsafe="'views.result.desc' | translate")
         
-.modal
+.modal.modal-1
   .overlay.close-modal(ng-click="closeModal()")
   .content
     .message.content-wrapper.-with-intent
@@ -280,6 +281,25 @@ section.screen-box.center.full-form
       //- a.button.-complement( target="_blank" href="http://www.caf.fr/aides-et-services/les-services-en-ligne/estimer-vos-droits/simulation-rsa").
       //-   Faire la demande
 
+      
+.modal.modal-2
+  .overlay.close-modal(ng-click="closeModal2()")
+  .content
+    .message.content-wrapper
+      h5(compile-unsafe="'views.result.modal-2.title1' | translate")
+      .container
+        .row
+          .four.col
+            #meuble
+          .four.col
+            label.add-top.add-bot(compile-unsafe="'views.result.modal-2.desc1' | translate")
+          .four.col
+            //- h6(compile-unsafe="'views.result.modal-2.title2' | translate")
+            label.add-top.add-bot(compile-unsafe="'views.result.modal-2.desc2' | translate")
+            .close-button.close-modal(ng-click="closeModal2()")
+              i.icon.-cross
+            //- a.button.-complement( target="_blank" href="http://www.caf.fr/aides-et-services/les-services-en-ligne/estimer-vos-droits/simulation-rsa").
+            //-   Faire la demande
 
 
 //- h6.remove-bot

@@ -18,20 +18,39 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
   $scope.finalResult.rsa = 0;
   $scope.finalResult.apl = 0;
 
-
   $scope.openModal = function() {
-    $(".modal").addClass("-opening");
+    console.log(1);
+    $(".modal.modal-1").addClass("-opening");
     window.setTimeout(function() {
       $("body").addClass("no-scroll");
-      $(".modal").addClass("-open");
-      $(".modal").removeClass("-opening");
+      $(".modal.modal-1").addClass("-open");
+      $(".modal.modal-1").removeClass("-opening");
     }, 600);
   };
   $scope.closeModal = function() {
-    $(".modal").addClass("-closing");
+    console.log(1);
+    $(".modal.modal-1").addClass("-closing");
     window.setTimeout(function() {
-      $(".modal").removeClass("-open");
-      $(".modal").removeClass("-closing");
+      $(".modal.modal-1").removeClass("-open");
+      $(".modal.modal-1").removeClass("-closing");
+      $("body").removeClass("no-scroll");
+    }, 350);
+  };
+
+  $scope.openModal2 = function() {
+    $(".modal.modal-2").addClass("-opening");
+    window.setTimeout(function() {
+      $("body").addClass("no-scroll");
+      $(".modal.modal-2").addClass("-open");
+      $(".modal.modal-2").removeClass("-opening");
+    }, 600);
+  };
+
+  $scope.closeModal2 = function() {
+    $(".modal.modal-2").addClass("-closing");
+    window.setTimeout(function() {
+      $(".modal.modal-2").removeClass("-open");
+      $(".modal.modal-2").removeClass("-closing");
       $("body").removeClass("no-scroll");
     }, 350);
   };
@@ -54,46 +73,51 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
   $scope.isGetPositionLoading = true;
   $scope.isGetPositionTriggered = true;
   // Try HTML5 gecolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      geocoder.geocode({'location': pos}, function(results, status) {
-          if (status === google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-              console.log(results);
-              var concat = "";
-              for(var i = 0; i < results.length; i++){
-                concat += results[i].formatted_address;
-              }
-              console.log($scope.data.zip);
-              $scope.data.zip = extractZipCode(concat);
-              $scope.$applyAsync();
-              $scope.isGetPositionLoading = false;
-            } else {
-              console.log("No result found");
-              $scope.data.zip = "75004";
-              $scope.$applyAsync();
-              $scope.isGetPositionLoading = false;
-            }
-          } else {
-            console.log('Geocoder failed due to: ' + status);
-            $scope.data.zip = "75004";
-            $scope.$applyAsync();
-            $scope.isGetPositionLoading = false;
-          }
-        });
-    }, function() {
-      $scope.isGeolocDisabled = true;
-      // $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
-      //   $scope.zipCode = data.zip;
-      //   $scope.$applyAsync();
-      //   $scope.isGetPositionLoading = false;
-      // });
-    });
-  }
+  window.setTimeout(function() {
+    $scope.data.zip = "75004";
+    $scope.isGetPositionLoading = false;
+    $scope.$applyAsync();
+  }, 650);
+  // if (navigator.geolocation) {
+    // navigator.geolocation.getCurrentPosition(function(position) {
+    //   var pos = {
+    //     lat: position.coords.latitude,
+    //     lng: position.coords.longitude
+    //   };
+    //   geocoder.geocode({'location': pos}, function(results, status) {
+    //       if (status === google.maps.GeocoderStatus.OK) {
+    //         if (results[1]) {
+    //           console.log(results);
+    //           var concat = "";
+    //           for(var i = 0; i < results.length; i++){
+    //             concat += results[i].formatted_address;
+    //           }
+    //           console.log($scope.data.zip);
+    //           $scope.data.zip = extractZipCode(concat);
+    //           $scope.$applyAsync();
+    //           $scope.isGetPositionLoading = false;
+    //         } else {
+    //           console.log("No result found");
+    //           $scope.data.zip = "75004";
+    //           $scope.$applyAsync();
+    //           $scope.isGetPositionLoading = false;
+    //         }
+    //       } else {
+    //         console.log('Geocoder failed due to: ' + status);
+    //         $scope.data.zip = "75004";
+    //         $scope.$applyAsync();
+    //         $scope.isGetPositionLoading = false;
+    //       }
+    //     });
+    // }, function() {
+    //   $scope.isGeolocDisabled = true;
+    //   // $.getJSON("http://ip-api.com/json/?callback=?", function(data) {
+    //   //   $scope.zipCode = data.zip;
+    //   //   $scope.$applyAsync();
+    //   //   $scope.isGetPositionLoading = false;
+    //   // });
+    // });
+  // }
 }
 
   var extractZipCode = function(str) {
@@ -314,6 +338,10 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     }
     else {
       rsa = 0;
+    }
+
+    if (apl < 0) {
+        apl = 0;
     }
 
     console.log("RSA FINAL", rsa);
