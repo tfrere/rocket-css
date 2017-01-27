@@ -88,7 +88,7 @@
  		}
 
 		em, i, .i, .italic     { font-style: italic; letter-spacing: 0.1rem; }
-		strong, b, .b, .bold   { font-weight: 600; }
+		strong, b, .b, .bold   { font-weight: 800; }
 		small, p.small         { font-size: 90%; }
 		big, .big		           { font-size: 110%; }
 
@@ -266,23 +266,23 @@
 		  &:hover, &:focus {
 		    color: $link-color-active;
 		  }
-		  &[href^="http://"][target="_blank"] {
-		    margin-right: 13px;
-				position: relative;
-		    &:after {
-		        content: "";
-		        background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"> <g transform="translate(0,-52)"><g transform="matrix(-0.33458243,0.33458243,-0.33458243,-0.33458243,5243.4717,-2524.4629)"><path d="m11681,3975.4,0.887-0.8873-6.024-6.0243,15.785,0,0-1.3076-15.785,0,6.165-6.1644-0.888-0.8873c-2.568,2.5685-5.137,5.137-7.705,7.7055,2.522,2.5218,5.043,5.0436,7.565,7.5654z"/></g></g></svg>');
-		        display: inline-block;
-		        width: 15px;
-		        height: 15px;
-		        top: 5px;
-		        right: -15px;
-		        position:absolute;
-		    }
-		  }
 		}
 
 
+		a[target="_blank"] {
+			margin-right: 13px;
+			position: relative;
+			&:after {
+				content: "";
+				background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"> <g transform="translate(0,-52)"><g transform="matrix(-0.33458243,0.33458243,-0.33458243,-0.33458243,5243.4717,-2524.4629)"><path d="m11681,3975.4,0.887-0.8873-6.024-6.0243,15.785,0,0-1.3076-15.785,0,6.165-6.1644-0.888-0.8873c-2.568,2.5685-5.137,5.137-7.705,7.7055,2.522,2.5218,5.043,5.0436,7.565,7.5654z"/></g></g></svg>');
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				top: 5px;
+				right: -15px;
+				position:absolute;
+			}
+		}
 
 		.dark a:not(.button) {
 		  color: color-contrast($link-color);

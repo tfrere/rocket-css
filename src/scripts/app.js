@@ -179,7 +179,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/home.html',
             controller: 'homeCtrl',
             data: {
-              pageTitle: 'Home',
+              pageTitle: 'EdEtMoi',
               pageDesc: 'Assistant personnel pour auto-entrepreneur. Il vous accompagne dans la gestion de vos clients, devis, factures, calcul de vos cotisations et traitement de vos impayés.'
             }
         })

@@ -18,6 +18,36 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
   $scope.finalResult.rsa = 0;
   $scope.finalResult.apl = 0;
 
+
+  $scope.openModal = function() {
+    $(".modal").addClass("-opening");
+    window.setTimeout(function() {
+      $("body").addClass("no-scroll");
+      $(".modal").addClass("-open");
+      $(".modal").removeClass("-opening");
+    }, 600);
+  };
+  $scope.closeModal = function() {
+    $(".modal").addClass("-closing");
+    window.setTimeout(function() {
+      $(".modal").removeClass("-open");
+      $(".modal").removeClass("-closing");
+      $("body").removeClass("no-scroll");
+    }, 350);
+  };
+
+  $scope.isEmailSended = false;
+
+  $scope.sendEmail = function() {
+    $(".modal .merge .button").addClass("loading");
+    window.setTimeout(function() {
+      $(".modal .merge .button").removeClass("loading");
+      $scope.isEmailSended = true;
+      $scope.$applyAsync();
+    }, 650);
+  }
+
+
   $scope.getPosition = function() {
   var geocoder = new google.maps.Geocoder;
   console.log(navigator);
@@ -44,9 +74,15 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
               $scope.isGetPositionLoading = false;
             } else {
               console.log("No result found");
+              $scope.data.zip = "75004";
+              $scope.$applyAsync();
+              $scope.isGetPositionLoading = false;
             }
           } else {
             console.log('Geocoder failed due to: ' + status);
+            $scope.data.zip = "75004";
+            $scope.$applyAsync();
+            $scope.isGetPositionLoading = false;
           }
         });
     }, function() {
@@ -109,13 +145,13 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     }
   };
 
-
   $scope.setForm = function (form, i) {
     $scope.forms.push(form);
   }
 
   $scope.next = function () {
-    console.log($scope.data);
+    //console.log($scope.data);
+    console.log("formValid", $scope.forms[$scope.step - 1].$valid);
 
     if ($scope.step == $scope.totalStep) {
       $scope.endTime = moment(new Date());
@@ -126,6 +162,7 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     else if($scope.forms[$scope.step - 1].$valid) {
       // to remove for debugging if($scope.forms[$scope.step - 1].$valid)
       $scope.step++;
+      $scope.$applyAsync();
       if ($scope.maxStep < $scope.step)
         $scope.maxStep++;
       if ($scope.maxStep == $scope.step) {
@@ -275,13 +312,15 @@ app.controller('formCtrl', function ($cookies, $scope, $timeout) {
     		rsa = minRsa;
     	}
     }
-    else
+    else {
       rsa = 0;
+    }
 
     console.log("RSA FINAL", rsa);
 
     $scope.finalResult.rsa = rsa;
     $scope.finalResult.apl = apl;
+
     $scope.$applyAsync();
 
   };

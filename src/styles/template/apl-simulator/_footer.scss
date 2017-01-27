@@ -1,15 +1,13 @@
 
-footer {
+footer#footer {
 	//background-color: #26272C;
-	text-align: center;
+	margin-top: $text-size * 4;
+	margin-bottom: $text-size * 4;
+	overflow: hidden;
+	h6, a, li {
+		text-align: right;
+	}
 	a {
 		opacity: 0.5;
-		color:white;
-	}
-}
-
-@include break-point("phablet") {
-	footer {
-		text-align: left;
 	}
 }

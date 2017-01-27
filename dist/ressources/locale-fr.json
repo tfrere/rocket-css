@@ -1,6 +1,10 @@
 {
 	"views.nav.punchline": "Simuler",
 
+	"views.main.tryAnyway": "Pas convaincu ? Testez le, ça prend 5 minutes",
+	"views.main.cta3": "Faire une simulation",
+
+
 	"views.footer.title2": "Contact",
 	"views.footer.list2_1": "Email",
 	"views.footer.list2_2": "Twitter",
@@ -21,13 +25,13 @@
 	"views.main.cta1": "Faire une simulation",
 
 	"views.main.argTitle1": "Sécurité",
-	"views.main.argText1": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+	"views.main.argText1": "Pas d'inquiétude, nous nous engageons à ne jamais dévoiler tes données !",
 
-	"views.main.argTitle2": "Simplicité",
-	"views.main.argText2": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+	"views.main.argTitle2": "Suivi",
+	"views.main.argText2": "Donne nous ton avis, on améliorera le service en conséquence",
 
 	"views.main.argTitle3": "Rapidité",
-	"views.main.argText3": "Lorem ipsum dolor ascim emet lorem ascim emet ipsum loremLorem ipsum dolor ascim emet lorem ascim emet ipsum lorem",
+	"views.main.argText3": "Faîtes votre test en moins de 5 minutes. no bullshit.",
 
 	"views.form.info.title": "Votre simulation",
 	"views.form.info.back": "Retour au site",
@@ -46,13 +50,13 @@
 	"views.form.question1.label1": "Détenteur d'un <b>droit au séjour valide</b> et <b>résidant en France plus de 9 mois par an</b>.",
 	"views.form.question1.label2": "Détenteur d'une <b>carte de résident</b> ou d'un <b>titre de séjour valide et résidant en France plus de 9 mois par an</b>.",
 
-	"views.form.question2.title": "Êtes-vous ?",
+	"views.form.question2.title": "Êtes-vous... ?",
 	"views.form.question2.answer1": "Seul",
 	"views.form.question2.answer2": "En couple",
 
 	"views.form.question3.title": "Votre date de naissance",
 
-	"views.form.question4.title": "Êtes-vous ?",
+	"views.form.question4.title": "Êtes-vous... ?",
 	"views.form.question4.desc": "Vous pouvez selectionner plusieurs cases",
 	"views.form.question4.title2": "Plus précisement ?",
 	"views.form.question4.desc2": "",
@@ -88,12 +92,24 @@
 	"views.form.question6.desc": "",
 
 	"views.result.title": "Vous avez le droit à",
-	"views.result.currency": "€",
+	"views.result.currency": " €",
 	"views.result.desc": "Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor",
 	"views.result.cta1": "Partager",
 	"views.result.cta2": "Soumettre un dossier à la CAF",
 	"views.result.timer": "Formulaire terminé en",
 	"views.result.social": "<b>Partagez</b> le sur les réseaux sociaux !",
+
+	"views.result.result.apl": "Aides au logement",
+	"views.result.result.rsa": "Revenu de solidarité active",
+	"views.result.month": "/ mois",
+
+	"views.result.modal.demand": "Faire la demande",
+	"views.result.modal.title1": "Faire la demande",
+	"views.result.modal.desc": " Cette fonctionnalité n'est pas encore disponible, mais on y travaille. Donnez nous votre email pour vous tenir informé",
+	"views.result.modal.thanks": "Merci !",
+	"views.result.modal.or": "ou",
+	"views.result.modal.cafLink": "Sur le site de la CAF",
+
 
 	"directives.language-select.Language": "fr"
 }

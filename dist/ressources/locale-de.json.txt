@@ -28,8 +28,7 @@
     "views.form.info.title": "Ihre Simulation",
     "views.form.info.back": "Zurück zur Startseite",
     "views.form.info.validate": "Senden",
-    "views.form.info.validateLabel": "Drücken Sie Enter, um weiterzumachen",
-		"views.form.loading.title": "Wussten Sie?",
+    "views.form.info.validateLabel": "Drücken Sie Enter, um weiterzumachen"views.form.loading.title": "Wussten Sie?",
     "views.form.loading.lead": "10 Millionen Euro wurden im Jahr 2016 nicht beansprucht!",
     "views.form.loading.info": "Komplizierte Berechnungen",
     "views.form.question1.title": "Erstens, was ist Ihre Nationalität?",
@@ -74,12 +73,11 @@
     "views.form.question6.title": "Ihr Nettoeinkommen im vergangenen Jahr?",
     "views.form.question6.desc": "",
     "views.result.title": "Sie qualifizieren sich für",
-    "views.result.currency": " €",
+    "views.result.currency": "€",
     "views.result.desc": "Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor",
     "views.result.cta1": "Teilen",
     "views.result.cta2": "Bewerben Sie sich auf das CAF",
     "views.result.timer": "Form in x Minuten abgeschlossen",
     "views.result.social": "<b>Teilen</b> auf sozialen Netzwerken!",
-
-    "directives.language-select.Language": "de"
+    "directives.language-select.Language": "en"
 }

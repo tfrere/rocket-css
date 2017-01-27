@@ -6,6 +6,12 @@
     color: color("primary", "base");
     margin-bottom: $text-size / 2;
   }
+  .wrapper:first-child {
+    width: 40%;
+  }
+  .wrapper:last-child {
+    width: 60%;
+  }
   h5 {
     margin-bottom: 0;
   }
@@ -36,6 +42,43 @@
 
       }
     }
+  }
+}
+
+.result-value {
+  display: inline-block;
+  font-family: $text-font;
+  text-align: center;
+  &:first-child, &,:last-of-type {
+    margin-left:0;
+    min-width: 160px;
+  }
+  .value, .currency, h1 {
+    margin-bottom:0!important;
+  }
+  .currency {
+      opacity: 0.5;
+      color: color("complement", "base");
+  }
+  .month {
+    display: inline-block;
+    text-transform: uppercase;
+    color: color("grey","base");
+    margin-bottom: $text-size;
+  }
+  .desc {
+    &:before,&:after {
+      @include clearfix();
+    }
+  }
+  .button {
+    margin: 0;
+    width: 100%;
+  }
+  &.-disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+    filter: saturate(0);
   }
 }
 

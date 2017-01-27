@@ -68,7 +68,8 @@ $base-index: 999999999999999999999;
 	top: 0;
 	left: 0;
 	display:none;
-	//overflow: hidden;
+	//overflow-y: scroll;
+	overflow: hidden;
 	&>.content {
 		margin: auto;
 		position:relative;
@@ -80,18 +81,21 @@ $base-index: 999999999999999999999;
 		min-width: 220px;
 		transition: all $modal-open-duration ease('swift-in-bouncy');
 		transform:scale(0);
+
 	}
 	.content-wrapper {
+		//text-align: center;
 		z-index: $base-index + 1;
-		width: 100%;
+		width: 350px;
 		margin:auto;
 		background-color: white;
 		overflow: visible;
+
 	}
 	.close-button {
 		position:absolute;
-		top: 0px;
-		right: -75px;
+		top: 13px;
+    right: -45px;
 		opacity: 0.6;
 		transition: opacity .2s ease;
 		padding: 0;
@@ -133,7 +137,6 @@ $base-index: 999999999999999999999;
 	&.-open {
 		opacity:1;
 		display:flex;
-		overflow: auto;
 		.content {
 			transform:scale(1);
 			overflow: visible;
@@ -143,7 +146,9 @@ $base-index: 999999999999999999999;
 			opacity:1;
 		}
 	}
-
+h5 {
+	margin-top: 8px;
+}
 	&.-closing {
 		display:flex;
 		transition: all $modal-close-duration ease('swift-out');
@@ -155,6 +160,9 @@ $base-index: 999999999999999999999;
 			opacity:0;
 			transition: all $modal-overlay-close-duration ease;
 		}
+	}
+	.button {
+		flex-shrink: 7;
 	}
 }
 

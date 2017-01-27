@@ -11,7 +11,7 @@
     "views.footer.title4": "Условия",
     "views.footer.list4_1": "Условия и положения",
     "views.cookie.info": "Этот сайт использует файлы-cookies, чтобы повысить эффективность. <a href='/cookie' ui-sref='nav.cookies'>Что такое cookies?</a>.",
-    "views.main.punchline": "Не упустите ваше социальное пособие",
+    "views.main.punchline": "Не упустите ваша социальные пособия",
     "views.main.subline": "Подача заявления на получение денежных пособий занимает менее чем пять минут.",
     "views.main.cta1": "Провести симуляцию",
     "views.main.argTitle1": "Безопасно",
@@ -33,6 +33,7 @@
     "views.form.question1.answer3": "Другая",
     "views.form.question1.label1": "Вы имеете <b> действительный вид на жительство </b>, и вы живете во Франции, <b>по крайней мере, 9 месяцев в году.</b>.",
     "views.form.question1.label2": "Вы имеете <b>эквивалент вида на жительство </b>, и вы живете во Франции, <b>по крайней мере, 9 месяцев в году.</b>.",
+    .",
     "views.form.question2.title": "Ваше семейное положение?",
     "views.form.question2.answer1": "Не женат / Не замужем",
     "views.form.question2.answer2": "Женат / Замужем",
@@ -69,12 +70,11 @@
     "views.form.question6.title": "Ваш чистый доход в прошлом году?",
     "views.form.question6.desc": "",
     "views.result.title": "Вы имеете право на",
-    "views.result.currency": " €",
+    "views.result.currency": "€",
     "views.result.desc": "Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor",
     "views.result.cta1": "Выложить",
     "views.result.cta2": "Подать на CAF (КАФ)",
     "views.result.timer": "Форма заполнена в течение х минут",
     "views.result.social": "<b>Выложите</b> на вашей странице!",
-
     "directives.language-select.Language": "ru"
 }

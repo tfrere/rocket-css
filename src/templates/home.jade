@@ -5,12 +5,11 @@ nav
 				a#logo.pull-left(ui-sref-active="active" ui-sref="nav.home")
 				//- a.pull-left.uppercase.large-display(ui-sref-active="active" ui-sref="nav.assistance" compile-unsafe="'views.nav.support' | translate")
 				div.-round.pull-right.half-left(ng-translate-language-select)
-				a.button.-round.small.pull-right.-line-primary(ui-sref-active="active" ui-sref="nav.form" compile-unsafe="'views.nav.punchline' | translate")
+				a.button.-round.small.pull-right.-line-complement(ui-sref-active="active" ui-sref="nav.form" compile-unsafe="'views.nav.punchline' | translate")
 
 section.background
 	.main-texture
 	#main-background
-	//#welcome.large-display
 	#content.container
 		.twelve.col.double-top
 			h1.punchline.text-right.text-white.remove-bot(compile-unsafe="'views.main.punchline' | translate")
@@ -31,32 +30,29 @@ section.args.text-center
 		.row.quad-top.quad-bot
 			.four.col
 				.circle.small-circle.circle-safe
-				h5(compile-unsafe="'views.main.argTitle1' | translate")
-				p(compile-unsafe="'views.main.argText1' | translate")
+				h5.b.-complement(compile-unsafe="'views.main.argTitle1' | translate")
+				p.lead(compile-unsafe="'views.main.argText1' | translate")
 			.four.col
 				.circle.small-circle.circle-quick
-				h5(compile-unsafe="'views.main.argTitle3' | translate")
-				p(compile-unsafe="'views.main.argText3' | translate")
+				h5.b.-complement(compile-unsafe="'views.main.argTitle3' | translate")
+				p.lead(compile-unsafe="'views.main.argText3' | translate")
 			.four.col
 				.circle.small-circle.circle-simple
-				h5(compile-unsafe="'views.main.argTitle2' | translate")
-				p(compile-unsafe="'views.main.argText2' | translate")
-//- section.background
-//- 	#peon
-//- 	.main-texture
-//- 	.container.text-center
-//- 		.row
-//- 			.twelve.col.double-top
-//- 				h4(compile-unsafe="'views.main.tryAnyway' | translate")
-//- 				.fluid-horizontal-center
-//- 					a(ui-sref="nav.form" compile-unsafe="'views.main.tryAnywayButton' | translate").cta.button.-primary
-footer
+				h5.b.-complement(compile-unsafe="'views.main.argTitle2' | translate")
+				p.lead(compile-unsafe="'views.main.argText2' | translate")
+section.semi-background
+	.main-texture
+	.text-center
+		h2.b.add-bottom(compile-unsafe="'views.main.tryAnyway' | translate")
+		.fluid-horizontal-center
+			a(ui-sref="nav.form" compile-unsafe="'views.main.cta3' | translate").cta.-big.button.-round
+footer#footer
 	.container
-		.row.text-white.double-bot.quad-top
+		.row.text-white
 			.three.col
-				h6(compile-unsafe="'views.footer.title1' | translate")
+				#logo
 			.three.col
-				h6(compile-unsafe="'views.footer.title2' | translate")
+				h6.b(compile-unsafe="'views.footer.title2' | translate")
 				ul.no-style
 					li
 						a(ui-sref="nav.contact" compile-unsafe="'views.footer.list2_1' | translate")
@@ -66,14 +62,14 @@ footer
 						a(href="http://facebook.com/gopeon" compile-unsafe="'views.footer.list2_3' | translate")
 
 			.three.col
-				h6(compile-unsafe="'views.footer.title3' | translate")
+				h6.b(compile-unsafe="'views.footer.title3' | translate")
 				ul.no-style
 					li
 						a(ui-sref="nav.apropos" compile-unsafe="'views.footer.list3_1' | translate")
 					li
 						a(href="ressources/pressKit.zip" compile-unsafe="'views.footer.list3_2' | translate")
 			.three.col
-				h6(compile-unsafe="'views.footer.title4' | translate")
+				h6.b(compile-unsafe="'views.footer.title4' | translate")
 				ul.no-style
 					li
 						a(ui-sref="nav.cgu" compile-unsafe="'views.footer.list4_1' | translate")
