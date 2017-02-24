@@ -10926,6 +10926,11 @@ section.background, section.semi-background {
   margin-left: 25px;
   opacity: 0.3; }
 
+.socials {
+  position: absolute;
+  bottom: 25px;
+  left: 35px; }
+
 .info-handler {
   position: absolute;
   width: 100%;
@@ -10936,10 +10941,6 @@ section.background, section.semi-background {
   transition: all 200ms ease; }
   .info-handler.active {
     opacity: 0; }
-  .info-handler .socials {
-    position: absolute;
-    bottom: 25px;
-    left: 35px; }
   .info-handler .progress {
     width: 100%;
     position: absolute;

@@ -14,6 +14,7 @@ section.screen-box.center.full-form
         .dot-button.touch(ng-click="goTo($event, 3)")
         .dot-button.touch(ng-click="goTo($event, 4)")
         .dot-button.touch(ng-click="goTo($event, 5)")
+        .dot-button.touch(ng-click="goTo($event, 6)")
     .step
       h5 {{ step }} / {{ totalStep }}
     .next
@@ -22,17 +23,17 @@ section.screen-box.center.full-form
         i.icon.-arrow-return
       hr.-invisible
       label(compile-unsafe="'views.form.info.validateLabel' | translate")
-    .socials(ng-show="isLoadingFinished")
-      a(href="#").social-link.touch
-        i.social.-dark.-facebook
-      a(href="#").social-link.touch
-        i.social.-dark.-twitter
-      a(href="#").social-link.touch
-        i.social.-dark.-googleplus
-      .button-box
-        button.-big.touch.button.-round.-line-primary(ui-sref="nav.home" compile-unsafe="'views.result.cta1' | translate")
+  .socials(ng-show="isLoadingFinished")
+    a(href="#").social-link.touch
+      i.social.-dark.-facebook
+    a(href="#").social-link.touch
+      i.social.-dark.-twitter
+    a(href="#").social-link.touch
+      i.social.-dark.-googleplus
+    .button-box
+      button.-big.touch.button.-round.-line-primary(ui-sref="nav.home" compile-unsafe="'views.result.cta1' | translate")
 
-  
+
   
   //- QUESTION 1
   
@@ -234,7 +235,7 @@ section.screen-box.center.full-form
           #result-success
         .wrapper
           h5.b.add-bot(compile-unsafe="'views.result.title' | translate")
-          .result-value.card
+          .result-value.card(ng-class="{'-disabled': finalResult.apl == 0}")
             header.header
               span.b.desc(compile-unsafe="'views.result.result.apl' | translate")
             .content
@@ -253,8 +254,7 @@ section.screen-box.center.full-form
                 span.currency(compile-unsafe="'views.result.currency' | translate")
               span.month(compile-unsafe="'views.result.month' | translate")
             a.button.-complement(ng-click="openModal()" compile-unsafe="'views.result.modal.demand' | translate")
-
-          p(compile-unsafe="'views.result.desc' | translate")
+          p.add-top(compile-unsafe="'views.result.desc' | translate")
         
 .modal.modal-1
   .overlay.close-modal(ng-click="closeModal()")

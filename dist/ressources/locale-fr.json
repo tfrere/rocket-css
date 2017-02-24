@@ -93,7 +93,7 @@
 
 	"views.result.title": "Vous avez le droit à",
 	"views.result.currency": " €",
-	"views.result.desc": "Lorem ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor ipsum ascim emeter dolor",
+	"views.result.desc": "<span class='lead'>Merci qui ? Merci l'Etat !</span> <br/> <br/> Les résultats de cette simulation sont indicatifs. Clique sur <b>faire la demande</b> sur le site de la CAF pour lancer les démarches ! ",
 	"views.result.cta1": "Partager",
 	"views.result.cta2": "Soumettre un dossier à la CAF",
 	"views.result.timer": "Formulaire terminé en",
