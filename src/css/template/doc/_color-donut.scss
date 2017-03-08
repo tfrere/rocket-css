@@ -1,11 +1,11 @@
-$donut-width: 200px;
+$donut-width: 350px;
 $hover-variation: 30%;
-$numberOfChunk: 12;
+$numberOfChunk: 10;
 $totalDegree: 360deg;
 $angle: $totalDegree / $numberOfChunk;
-$innerRadius: 150px;
+$innerRadius: 250px;
 
-$clipRect: 200px;
+$clipRect: 220px;
 
 @mixin donut {
   position: relative;
@@ -25,12 +25,6 @@ $clipRect: 200px;
 	//   border-radius: 1000px;
   //   transition: all 350ms ease;
 	// }
-  // &:hover .center {
-  //   top: ( $donut-width - 150px ) / 2;
-	//   left: ( $donut-width - 150px ) / 2;
-	//   height: 150px;
-	//   width: 150px;
-  // }
 	&>[class^='-part'] {
 		border-radius: 50%;
 		clip: rect(0px, $clipRect, 200px, 100px);
@@ -77,35 +71,35 @@ $i: 0;
     $i: $i + 1;
   }
 }
-
-$donut-width: 320px;
-$hover-variation: 30%;
-$numberOfChunk: 6;
-$totalDegree: 360deg;
-$angle: $totalDegree / $numberOfChunk;
-$innerRadius: 150px;
-
-$clipRect: 300px;
-
-
-.donut-3 {
-  @include donut();
-}
-
-$i: 0;
-.donut-3 {
-  @each $color_name, $color in $colors {
-    @debug($color_name);
-    @each $color_type, $color_value in $color {
-      @if $color_type == "base" {
-        @debug($color_type);
-        .-part-#{$i} {
-          @debug($i);
-          transform: rotate($i * $angle);
-          &::after { background-color: $color_value !important; }
-        }
-      }
-    }
-    $i: $i + 1;
-  }
-}
+//
+// $donut-width: 320px;
+// $hover-variation: 30%;
+// $numberOfChunk: 6;
+// $totalDegree: 360deg;
+// $angle: $totalDegree / $numberOfChunk;
+// $innerRadius: 150px;
+//
+// $clipRect: 300px;
+//
+//
+// .donut-3 {
+//   @include donut();
+// }
+//
+// $i: 0;
+// .donut-3 {
+//   @each $color_name, $color in $colors {
+//     @debug($color_name);
+//     @each $color_type, $color_value in $color {
+//       @if $color_type == "base" {
+//         @debug($color_type);
+//         .-part-#{$i} {
+//           @debug($i);
+//           transform: rotate($i * $angle);
+//           &::after { background-color: $color_value !important; }
+//         }
+//       }
+//     }
+//     $i: $i + 1;
+//   }
+// }

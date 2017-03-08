@@ -15,31 +15,7 @@ import ntc 			from 'plugins/nameThatColor';
 import List   	from 'plugins/jsfilter';
 import whichCulture   	from 'plugins/coloursInCulture';
 
-$(document).ready(function(){
-
-  $("#visual-defficiency-choice").change(function() {
-    $("html").removeClass();
-    $("html").addClass($( this ).val());
-  });
-
-  $("#culture-choice").change(function() {
-      var culture = $( this ).val();
-  		$('.color .-first .column').each(function(index){
-  			colors[index] = {};
-  			colors[index].hex = hexc($(this).css('backgroundColor'));
-        let colorMatch = new whichCulture(colors[index].hex, culture);
-        colorMatch.init();
-        let cultures = colorMatch.init().cultures;
-        $(this).find('.culture').html("");
-        let text = "<h6>Symbolic for " + culture + "<h6>";
-        for(var i = 0; i < cultures.length; i++) {
-          text += "<div class='tag -transparent'><span>" + cultures[i] + "</span></div>";
-        }
-        $(this).find('.culture').html(text);
-  		});
-    });
-
-});
+// FUNCTIONS
 
 const showAsFloat = (value) => {
 	return !isNaN(+value) ? (+value).toFixed(2) : value;
@@ -55,12 +31,46 @@ const hexc = (colorval) => {
     return '#' + parts.join('');
 }
 
+// INITS
+
+hljs.configure({
+  tabReplace: '  '
+});
+
+ntc.init();
+
+hljs.initHighlightingOnLoad();
+
+var clipboard = new Clipboard('.copy-button');
+
+clipboard.on('success', function(e) {
+		$(".toggle-copy-success").addClass("visible");
+		window.setTimeout(function(){
+			$(".toggle-copy-success").removeClass("visible");
+		}, 550);
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+});
+
+// READY
+
 const $headers = $('.content header');
 const $menuLinks = $('nav ul a[href]');
 const $accordions = $('.accordion');
 const $sectionHeaders = $('section');
 const $blocs = $('.bloc');
 const $popup = $('.button-popup');
+
+const $cultureChoice = $('#culture-choice');
+const $visualDefficiencyChoice = $('#visual-defficiency-choice');
+
+const $nav = $('.nav');
+const $navLinks = $('.nav ul li a');
+const $content= $('.content');
+
+let colors = [];
 
 $headers.each(function(index) {
   $(this).css("z-index", 999 + index);
@@ -127,47 +137,30 @@ $blocs.visibility({
 });
 
 $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
+
+
+  $visualDefficiencyChoice.change(function() {
+    $("html").removeClass();
+    $("html").addClass($( this ).val());
   });
-});
 
-hljs.configure({
-  tabReplace: '  '
-});
+  $cultureChoice.change(function() {
+      var culture = $( this ).val();
+  		$('.color .-first .column').each(function(index){
+  			colors[index] = {};
+  			colors[index].hex = hexc($(this).css('backgroundColor'));
+        let colorMatch = new whichCulture(colors[index].hex, culture);
+        colorMatch.init();
+        let cultures = colorMatch.init().cultures;
+        $(this).find('.culture').html("");
+        let text = "<h6>Symbolic for " + culture + "<h6>";
+        for(var i = 0; i < cultures.length; i++) {
+          text += "<div class='tag -transparent'><span>" + cultures[i] + "</span></div>";
+        }
+        $(this).find('.culture').html(text);
+  		});
+    });
 
-ntc.init();
-hljs.initHighlightingOnLoad();
-var clipboard = new Clipboard('.copy-button');
-
-clipboard.on('success', function(e) {
-		$(".toggle-copy-success").addClass("visible");
-		window.setTimeout(function(){
-			$(".toggle-copy-success").removeClass("visible");
-		}, 550);
-    e.clearSelection();
-});
-
-clipboard.on('error', function(e) {
-});
-
-
-let $nav = $('.nav');
-let $navLinks = $('.nav ul li a');
-let $content= $('.content');
-
-let colors = [];
-
-$(document).ready(function () {
 
 	setTimeout(function () {
 
@@ -225,49 +218,4 @@ $(document).ready(function () {
 	}, 1000);
 
 
-});
-
-
-$(".open-modal").click(function() {
-	$(".modal").addClass("-opening");
-	window.setTimeout(function() {
-		$(".modal").addClass("-open");
-		$(".modal").removeClass("-opening");
-	}, 600);
-});
-$(".close-modal").click(function() {
-	$(".modal").addClass("-closing");
-	window.setTimeout(function() {
-		$(".modal").removeClass("-open");
-		$(".modal").removeClass("-closing");
-		$("body").removeClass("no-scroll");
-	}, 350);
-});
-
-$("#toggleBaseline").click(function(){
-	$(".toggle-baseline").toggleClass("show-baseline");
-	$("#toggleBaseline").toggleClass("-active");
-});
-
-$("#toggleNight").click(function(){
-	$("body").toggleClass("dark");
-	$("#toggleNight").toggleClass("-active");
-	$("#toggleNight i").toggleClass("-moon");
-	$("#toggleNight i").toggleClass("-sun");
-});
-
-
-
-
-$(".toggle-visible").focusin(function(){
-	$(this).addClass("-visible");
-});
-
-$(".toggle-visible input").blur(function(){
-	$(this).parent().removeClass("-visible");
-	$(this).parent().parent().removeClass("-visible");
-});
-
-$(".add-item").click(function(){
-	$(".list").append('<div class="item"><span>Job</span><i class="icon -pencil"></i></div>');
 });

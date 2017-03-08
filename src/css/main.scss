@@ -59,17 +59,21 @@
 @import "modifier/level";
 @import "modifier/filter";
 
-@import "template/nav";
-@import "template/section";
-@import "template/footer";
-@import "template/color";
-@import "template/color-donut";
-@import "template/typo";
-@import "template/symbol";
-@import "template/ease-curve";
-@import "template/ease";
+@import "template/doc/nav";
+@import "template/doc/section";
+@import "template/doc/footer";
+@import "template/doc/color";
+@import "template/doc/color-donut";
+@import "template/doc/typo";
+@import "template/doc/symbol";
+@import "template/doc/ease-curve";
+@import "template/doc/ease";
 
-@import "template/conseil-emploi/main";
+@import "template/account";
+@import "template/login";
+@import "template/nav";
+@import "template/sub-nav";
+@import "template/footer";
 
 
 html, body {

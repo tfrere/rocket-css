@@ -50,7 +50,6 @@ getFileContent('./src/css/helper/const/_linear-icon.scss', function(data) {
 
 getFileContent('./src/css/helper/const/_flag.scss', function(data) {
   const flags = getEachInfo(getEachFlag, data);
-  console.log("HERE", flagBlocks);
   flags.map(function(flag) { flagBlocks += '<div class="flag-block"><i class="flag -' + flag + '"></i><div class="tag -pointing -top"><span>'+flag+'</span></div></div>' });
   flagHtml += '<div class="bloc" id="symbol-flag"><h5>Flag</h5><hr/><div>';
   flagHtml += flagBlocks;
@@ -68,7 +67,6 @@ getFileContent('./src/css/helper/const/_social.scss', function(data) {
 getFileContent('./src/css/helper/const/_ease.scss', function(data) {
   const easings = getEachObjectInfo(getEachEase, data);
   easings.map(function(ease) {
-    console.log(ease);
     easeBlocks
      += '<div class="ease-demo  ease-demo-' + ease.name.trim() + '">'
         + '<div class="grid-wrapper">'
@@ -105,7 +103,7 @@ getFileContent('./src/css/helper/const/_ease.scss', function(data) {
     //     + '<span class="curve"></span>'
     // + '</div>';
   });
-  easeHtml += '<div class="bloc" id="animation-head"><h5>Easings</h5><hr/><div> <div class="ease-wrapper">';
+  easeHtml += '<div class="bloc" id="animation-ease"><h5>Easings</h5><hr/><div> <div class="ease-wrapper">';
   easeHtml += easeBlocks;
   easeHtml += '</div></div></div>';
 });
@@ -158,17 +156,17 @@ setTimeout(function(){
     html += head;
     html += navHead;
 
+    html += '<div id="nav-animation" class="accordion"><h5 class="title"><a href="#animation-head">Animation</a></h5><ul>';
+
+    html += '<li><a href="#animation-ease">Easings</a></li>';
+
+    html += "</ul></div>";
+
     html += '<div id="nav-symbol" class="accordion"><h5 class="title"><a href="#symbol-head">Symbol</a></h5><ul>';
 
     html += '<li><a href="#symbol-icon">Icon</a></li>';
     html += '<li><a href="#symbol-flag">Flag</a></li>';
     html += '<li><a href="#symbol-social">Social</a></li>';
-
-    html += "</ul></div>";
-
-    html += '<div id="nav-animation" class="accordion"><h5 class="title"><a href="#animation-head">Animation</a></h5><ul>';
-
-    html += '<li><a href="#animation-ease">Easings</a></li>';
 
     html += "</ul></div>";
 
@@ -203,14 +201,14 @@ setTimeout(function(){
     html += navFoot;
     html += intro;
 
+    html += '<header id="animation-head"><div><h3>Animation</h3></div></header><section id="ease" class="section">';
+    html += easeHtml;
+    html += '</section>';
+
     html += '<header id="symbol-head"><div><h3>Symbol</h3></div></header><section id="symbol" class="section">';
     html += iconHtml;
     html += flagHtml;
     html += socialHtml;
-    html += '</section>';
-
-    html += '<header id="animation-head"><div><h3>Animation</h3></div></header><section id="ease" class="section">';
-    html += easeHtml;
     html += '</section>';
 
     html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';
