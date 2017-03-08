@@ -1,0 +1,25 @@
+
+/// Create a urlEncoded SVG DOM element
+/// @author Mike iLL
+/// @param {String} $bg - SVG PATH, including parameters
+/// @param {String} $width - Width of SVG DOM Element
+/// @param {String} $height - Height of SVG DOM Element
+/// @param {String} $viewbox - Four values, separated by spaces, compatible with svg viewbox specifications
+/// @return {String} urlEncoded SVG DOM Object
+@function _buildSVG($bg, $width:'100%', $height:'100%', $viewbox:'0 0 100 100') {
+  $width: str-replace($width, '%', '%25');
+  $height: str-replace($height, '%', '%25');
+  $viewbox: str-replace($viewbox, ' ', '%20');
+  $bg: '%3Csvg%20width%3D%22#{$width}%22%20height%3D%22#{$width}%22%20viewBox%3D%22#{$viewbox}%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E#{$bg}%3C%2Fsvg%3E%0A%0A';
+  @return $bg;
+}
+
+/// Create a urlEncoded SVG path
+/// @author Mike iLL
+/// @param {String} $path - Actual DATA string containg the SVG image
+/// @param {Map} $parameters - Parameter keys and corresponsing values to apply to SVG
+/// @return {String} urlEncoded SVG data string
+@function _buildPath($path, $parameters) {
+  $icon: '%3Cpath%20fill%3D%22#{map-get($parameters, color)}%22%20stroke%3D%22#{map-get($parameters, stroke-color)}%22%20stroke-width%3D%22#{map-get($parameters, stroke-width)}%22%20style%3D%22#{map-get($parameters, css)}%22%20d%3D%22#{$path}%22%20%2F%3E';
+  @return $icon;
+}

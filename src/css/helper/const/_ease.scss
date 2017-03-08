@@ -1,10 +1,16 @@
+// never begin a curve with a 0
+// to fix
+// atan() bug
 $ease: (
   swift-move:         cubic-bezier(0.4, 0, 0.2, 1),
   swifter-move:       cubic-bezier(0.4, 0, 0, 1),
   heavy-move:         cubic-bezier(0.7, 0, 0.6, 1),
-  swift-in:           cubic-bezier(0, 0, 0.2, 1),
-  swift-in-bouncy:    cubic-bezier(0,0,.11,1.17),
+  swift-in:           cubic-bezier(0.1, 0, 0.2, 1),
+  swift-in-bouncy:    cubic-bezier(0.1, 0, 0.11, 1.17),
   swift-out:          cubic-bezier(0.4, 0, 1, 1),
+  // test1t:          cubic-bezier(0.1, 2, 0, 1.1),
+  // test2:          cubic-bezier(0.5, 0.3, .6, .7),
+  // test3:          cubic-bezier(0.1, 0.3, .7, .2),
 );
 
 @function ease($key) {

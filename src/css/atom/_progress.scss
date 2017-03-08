@@ -92,7 +92,9 @@
     background-color: color("grey", "darken-1");
     overflow: hidden;
     transition: width 300ms ease-in-out, background-color 100ms linear;
-
+    &.-no-animate {
+      transition: none;
+    }
     span {
       position:absolute;
       right:5px;

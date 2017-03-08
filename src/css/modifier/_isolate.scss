@@ -54,7 +54,7 @@
     background: rgba(0,0,0,0.6);
   }
   &>div {
-    z-index: 2147483647;
+    z-index: 214748; // 3647
     position: relative;
   }
 }

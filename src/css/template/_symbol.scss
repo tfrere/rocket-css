@@ -1,4 +1,11 @@
 
+#icon-search {
+  right: 11rem;
+  position: absolute;
+  z-index: 999999;
+  top: -20px;
+}
+
 #symbol-icon, #symbol-flag, #symbol-social {
   margin-top: 0;
   &>div {

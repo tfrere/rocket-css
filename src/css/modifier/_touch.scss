@@ -92,13 +92,13 @@
 }
 
 .animate {
-  animation:ripple 0.35s linear;
+  animation:ripple 0.35s ease("swift-out");
 }
 
 .touch.checkbox, .touch.radio, .touch.toggle {
   overflow: visible;
   .touch-elem.animate {
-    animation: small-ripple 0.35s linear;
+    animation: small-ripple 0.55s ease("swift-out");
 
   }
 }

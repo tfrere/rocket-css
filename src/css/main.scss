@@ -58,21 +58,23 @@
 @import "modifier/loading";
 @import "modifier/level";
 @import "modifier/filter";
-@import "modifier/swipe";
 
 @import "template/nav";
 @import "template/section";
 @import "template/footer";
 @import "template/color";
+@import "template/color-donut";
 @import "template/typo";
 @import "template/symbol";
+@import "template/ease-curve";
+@import "template/ease";
 
 @import "template/conseil-emploi/main";
 
 
 html, body {
 	width:100%;
-	min-height:100%;
+	height:100%;
 }
 
 body.dark {

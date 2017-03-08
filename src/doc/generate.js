@@ -18,6 +18,7 @@ const typeExp = /\.\/src\/css\/(.*?)\//g;
 const removeTwoFirstsTabs = /^\t\t/gm;
 const removeLastEndOfLine = /^\t\t/gm;
 
+
 var blocs = [];
 
 var docSrc = "./build/doc.html";
@@ -28,22 +29,23 @@ var partials = [
   {name:"footer", url:"./src/doc/foot.html"}
 ];
 
-let iconHtml = " ";
-let iconBlocks = " ";
-let flagHtml = " ";
+var iconHtml = " ";
+var iconBlocks = " ";
+var flagHtml = " ";
 var flagBlocks = " ";
-let socialHtml = " ";
+var socialHtml = " ";
 var socialBlocks = " ";
-
-
-let jqueryHtml = " ";
+var jqueryHtml = " ";
+var easeHtml = " ";
+var easeBlocks = " ";
 
 getFileContent('./src/css/helper/const/_linear-icon.scss', function(data) {
   const icons = getEachInfo(getEachIcon, data);
-  icons.map(function(iconName) { iconBlocks += '<div class="icon-block"><i class="icon -' + iconName + '"></i><div class="tag -pointing -top"><span>'+iconName+'</span></div></div>' });
-  iconHtml += '<div class="bloc" id="symbol-icon"><h5>Icon<a href="https://en.wikipedia.org/wiki/Semiotics">Semiotics</a></h5><hr/><div>';
+  icons.map(function(iconName) { iconBlocks += '<li class="icon-block"><i class="icon -' + iconName + '"></i><div class="tag -pointing -top"><span class="name">'+iconName+'</span></div></li>' });
+  const infoText = '<i class="icon -sun"></i>';
+  iconHtml += '<div class="bloc" id="symbol-icon"><h5>Icon</h5><input type="text" class="search" id="icon-search" placeholder="Filter by name..."/><hr/><div><p>To use icons, <code class="html">' + infoText.escapeHTML() + '</code>. Check this  => <a target="_blank" href="https://en.wikipedia.org/wiki/Semiotics">Semiotics</a></p><ul class="list">';
   iconHtml += iconBlocks;
-  iconHtml += '</div></div>';
+  iconHtml += '</ul></div></div>';
 });
 
 getFileContent('./src/css/helper/const/_flag.scss', function(data) {
@@ -65,6 +67,47 @@ getFileContent('./src/css/helper/const/_social.scss', function(data) {
 
 getFileContent('./src/css/helper/const/_ease.scss', function(data) {
   const easings = getEachObjectInfo(getEachEase, data);
+  easings.map(function(ease) {
+    console.log(ease);
+    easeBlocks
+     += '<div class="ease-demo  ease-demo-' + ease.name.trim() + '">'
+        + '<div class="grid-wrapper">'
+          + '<div class="grid">'
+            + '<div class="line" ></div>'
+            + '<div class="line" ></div>'
+            + '<div class="line" ></div>'
+            + '<div class="vertical-line" ></div>'
+            + '<div class="vertical-line" ></div>'
+            + '<div class="vertical-line" ></div>'
+          + '</div>'
+        + '</div>'
+        + '<div class="dot-wrapper">'
+          + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
+        + '</div>'
+        + '<span><span></span></span>'
+    + '</div>';
+    //  + '<div class="ease-block ease-demo-' + ease.name.trim() + '">'
+    //     + '<div class="grid-wrapper">'
+    //       + '<div class="grid">'
+    //         + '<div class="line" ></div>'
+    //         + '<div class="line" ></div>'
+    //         + '<div class="line" ></div>'
+    //         + '<div class="vertical-line" ></div>'
+    //         + '<div class="vertical-line" ></div>'
+    //         + '<div class="vertical-line" ></div>'
+    //       + '</div>'
+    //     + '</div>'
+    //     + '<div class="dot-wrapper">'
+    //       + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
+    //     + '</div>'
+    //     + '<span class="svg-dots"></span>'
+    //     + '<span class="svg-lines"></span>'
+    //     + '<span class="curve"></span>'
+    // + '</div>';
+  });
+  easeHtml += '<div class="bloc" id="animation-head"><h5>Easings</h5><hr/><div> <div class="ease-wrapper">';
+  easeHtml += easeBlocks;
+  easeHtml += '</div></div></div>';
 });
 
 getFileContent('./src/doc/jquery.js', function(data) {
@@ -123,6 +166,12 @@ setTimeout(function(){
 
     html += "</ul></div>";
 
+    html += '<div id="nav-animation" class="accordion"><h5 class="title"><a href="#animation-head">Animation</a></h5><ul>';
+
+    html += '<li><a href="#animation-ease">Easings</a></li>';
+
+    html += "</ul></div>";
+
     html += '<div id="nav-atom" class="accordion"><h5 class="title"><a href="#atom-head">Atom</a></h5><ul>';
 
     blocs.map(function(bloc) {
@@ -158,6 +207,10 @@ setTimeout(function(){
     html += iconHtml;
     html += flagHtml;
     html += socialHtml;
+    html += '</section>';
+
+    html += '<header id="animation-head"><div><h3>Animation</h3></div></header><section id="ease" class="section">';
+    html += easeHtml;
     html += '</section>';
 
     html += '<header id="atom-head"><div><h3>Atom</h3></div></header><section class="section" id="atom">';

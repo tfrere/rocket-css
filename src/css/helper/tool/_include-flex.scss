@@ -1,0 +1,182 @@
+/* # Grid core
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  $grid-width:          960px;
+  $grid-columns:        12;
+  $gutter-size:         2%;
+  $base-margin:         20px;
+  $base-padding:        $base-margin / 2;
+
+  $col-size: 100 / $grid-columns * 1%;
+
+  @mixin col( $x : 1 ) {
+    float: left;
+    width: $col-size * $x - $gutter-size;
+  }
+
+  @mixin offset( $offset : 1 ) {
+    margin-left: ($col-size * $offset) + $gutter-size / 2;
+  }
+
+
+/* # Class system
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  .pull-right { float: right; }
+  .pull-left { float: left; }
+
+  .clearfix   { @include clearfix(); }
+
+  .container {
+    position:   relative;
+    width:      85%;
+    max-width:    $grid-width; 
+    display:    block;
+    margin:     0 auto;
+    content: "";
+    display: table;
+    clear: both;
+    min-height: 0px;
+    display: block;
+
+    .row {
+      @include    clearfix();
+      img[src$='.jpeg'], img[src$='.jpg'], img[src$='.png'] { 
+        max-width:100%; 
+      }
+    }
+    .col {
+      width: 100%;
+    }
+
+  }
+
+  &.alpha   { margin-left:0; }
+  &.omega   { margin-right:0; }
+  
+
+  
+  @include break-point(mobile) {
+
+    .container {
+
+      width: 100%;
+
+      .col {
+
+        margin: 0 $gutter-size / 2;
+        box-sizing:   border-box;
+
+        &.mobile-one     { @include col(1);   }
+        &.mobile-two     { @include col(2);   }
+        &.mobile-three   { @include col(3);   }
+        &.mobile-four    { @include col(4);   }
+        &.mobile-five    { @include col(5);   }
+        &.mobile-six     { @include col(6);   }
+        &.mobile-seven   { @include col(7);   }
+        &.mobile-eight   { @include col(8);   }
+        &.mobile-nine    { @include col(9);   }
+        &.mobile-ten     { @include col(10);  }
+        &.mobile-eleven  { @include col(11);  }
+        &.mobile-twelve  { @include col(12);  }  
+        &.mobile-offset-one  { @include offset(1);  }
+        &.mobile-offset-two  { @include offset(2);  }
+        &.mobile-offset-three  { @include offset(3);  }
+        &.mobile-offset-four { @include offset(4);  }
+        &.mobile-offset-five { @include offset(5);  }
+        &.mobile-offset-six  { @include offset(6);  }
+        &.mobile-offset-seven  { @include offset(7);  }
+        &.mobile-offset-eight  { @include offset(8);  }
+        &.mobile-offset-nine { @include offset(9);  }
+        &.mobile-offset-ten  { @include offset(10); }
+        &.mobile-offset-eleven { @include offset(11); }
+      }
+      
+    }
+      
+  }
+
+
+  
+  @include break-point(tablet) {
+
+    .container {
+
+      width: 100%;
+
+      .col {
+
+        margin: 0 $gutter-size / 2;
+        box-sizing:   border-box;
+
+        &.tablet-one     { @include col(1);   }
+        &.tablet-two     { @include col(2);   }
+        &.tablet-three   { @include col(3);   }
+        &.tablet-four    { @include col(4);   }
+        &.tablet-five    { @include col(5);   }
+        &.tablet-six     { @include col(6);   }
+        &.tablet-seven   { @include col(7);   }
+        &.tablet-eight   { @include col(8);   }
+        &.tablet-nine    { @include col(9);   }
+        &.tablet-ten     { @include col(10);  }
+        &.tablet-eleven  { @include col(11);  }
+        &.tablet-twelve  { @include col(12);  }  
+        &.tablet-offset-one  { @include offset(1);  }
+        &.tablet-offset-two  { @include offset(2);  }
+        &.tablet-offset-three  { @include offset(3);  }
+        &.tablet-offset-four { @include offset(4);  }
+        &.tablet-offset-five { @include offset(5);  }
+        &.tablet-offset-six  { @include offset(6);  }
+        &.tablet-offset-seven  { @include offset(7);  }
+        &.tablet-offset-eight  { @include offset(8);  }
+        &.tablet-offset-nine { @include offset(9);  }
+        &.tablet-offset-ten  { @include offset(10); }
+        &.tablet-offset-eleven { @include offset(11); }
+      }
+      
+    }
+      
+  }
+
+  @include break-point(desktop) {
+
+    .container {
+
+      width: 100%;
+
+      .col {
+
+        margin: 0 $gutter-size / 2;
+        box-sizing:   border-box;
+
+        &.one     { @include col(1);   }
+        &.two     { @include col(2);   }
+        &.three   { @include col(3);   }
+        &.four    { @include col(4);   }
+        &.five    { @include col(5);   }
+        &.six     { @include col(6);   }
+        &.seven   { @include col(7);   }
+        &.eight   { @include col(8);   }
+        &.nine    { @include col(9);   }
+        &.ten     { @include col(10);  }
+        &.eleven  { @include col(11);  }
+        &.twelve  { @include col(12);  }  
+
+
+        &.offset-one  { @include offset(1);  }
+        &.offset-two  { @include offset(2);  }
+        &.offset-three  { @include offset(3);  }
+        &.offset-four { @include offset(4);  }
+        &.offset-five { @include offset(5);  }
+        &.offset-six  { @include offset(6);  }
+        &.offset-seven  { @include offset(7);  }
+        &.offset-eight  { @include offset(8);  }
+        &.offset-nine { @include offset(9);  }
+        &.offset-ten  { @include offset(10); }
+        &.offset-eleven { @include offset(11); }
+      }
+      
+    }
+      
+  }
+

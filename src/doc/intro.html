@@ -94,6 +94,38 @@
     <div id="color-main" class="bloc">
       <h5>Main</h5>
       <hr/>
+      <div class="options">
+        <div class="select">
+  				<select id="visual-defficiency-choice" >
+            <option value="default">Visual defficiency</option>
+  					<option value="protanopia">Protanopia</option>
+            <option value="deuteranopia">Deuteranopia</option>
+            <option value="tritanopia">Tritanopia</option>
+            <option value="monochromacy">Monochromacy</option>
+            <option value="enhance-r">Enhance-r</option>
+            <option value="enhance-g">Enhance-g</option>
+            <option value="enhance-r2">Enhance-r2</option>
+            <option value="enhance-g2">Enhance-g2</option>
+  				</select>
+        </div>
+        <div class="select">
+          <select id="culture-choice" >
+            <option value="default">Culture meanings</option>
+            <option value="westernAmerican"> Western American </option>
+            <option value="westernEuropean" selected="selected"> Western European </option>
+            <option value="south"> South American </option>
+            <option value="russia"> Russia </option>
+            <option value="india"> India </option>
+            <option value="northAfrica"> NorthAfrica </option>
+            <option value="southAfrica"> SouthAfrica </option>
+            <option value="muslim"> Muslim </option>
+            <option value="asia"> Asia </option>
+            <option value="chinese"> Chinese </option>
+            <option value="japanese"> Japanese </option>
+            <option value="nativeAmericans"> NativeAmericans </option>
+  				</select>
+  			</div>
+      </div>
       <div class="-first">
         <div class="column _bg-grey-darken-4">
           <div class="info">
@@ -114,6 +146,9 @@
             <div class="_bg-grey-darken-4"></div>
             <div class="_bg-grey-darken-5"></div>
           </div>
+          <div class="culture-wrapper">
+            <div class="culture"></div>
+        </div>
         </div>
         <div class="column _bg-primary">
           <div class="info">
@@ -134,8 +169,11 @@
             <div class="_bg-primary-darken-2"></div>
             <div class="_bg-primary-darken-3"></div>
           </div>
+          <div class="culture-wrapper">
+            <div class="culture"></div>
         </div>
-        <div class="column _bg-complement-darken-3">
+        </div>
+        <div class="column _bg-complement">
           <div class="info">
             <h3 class="name _text-complement-contrast-darken-5">ColorName</h3>
             <h6 class="_text-complement-contrast-darken-5">The links</h6>
@@ -154,6 +192,9 @@
             <div class="_bg-complement-darken-3"></div>
             <div class="_bg-complement-darken-4"></div>
           </div>
+          <div class="culture-wrapper">
+            <div class="culture"></div>
+        </div>
         </div>
       </div>
     </div>
@@ -219,4 +260,71 @@
         </div>
       </div>
     </div>
+    <div id="color-grey" class="bloc color">
+      <h5>Grey</h5>
+      <hr/>
+      <!-- <div class="-last">
+        <div class="column _bg-grey-darken-2">
+          <div class="info">
+            <h5 class="name _text-grey-contrast-darken-5">ColorName</h5>
+            <h6 class="_text-grey-contrast-darken-5">Greys</h6>
+          </div>
+          <div class="gradient">
+            <div class="_bg-grey-lighten-4"></div>
+            <div class="_bg-grey-lighten-3"></div>
+            <div class="_bg-grey-lighten-2"></div>
+            <div class="_bg-grey-lighten-1"></div>
+            <div class="_bg-grey"></div>
+            <div class="_bg-grey-darken-1"></div>
+            <div class="_bg-grey-darken-2"></div>
+            <div class="_bg-grey-darken-3"></div>
+            <div class="_bg-grey-darken-4"></div>
+          </div>
+        </div>
+      </div> -->
+      <div class="container">
+        <p> Greys variants. They are based on 10% of the chosen color mixed with a shade of grey.</p>
+        <div class="donut-chart donut-1">
+          <div class="-part-1"></div>
+          <div class="-part-2"></div>
+          <div class="-part-3"></div>
+          <div class="-part-4"></div>
+          <div class="-part-5"></div>
+          <div class="-part-6"></div>
+          <div class="-part-7"></div>
+          <div class="-part-8"></div>
+          <div class="-part-9"></div>
+          <div class="-part-10"></div>
+          <div class="center"></div>
+        </div>
+        <div class="donut-chart donut-2">
+          <div class="-part-1"></div>
+          <div class="-part-2"></div>
+          <div class="-part-3"></div>
+          <div class="-part-4"></div>
+          <div class="-part-5"></div>
+          <div class="-part-6"></div>
+          <div class="-part-7"></div>
+          <div class="-part-8"></div>
+          <div class="-part-9"></div>
+          <div class="-part-10"></div>
+          <div class="center"></div>
+        </div>
+        <!-- <div class="donut-chart donut-3">
+          <div class="-part-1"></div>
+          <div class="-part-2"></div>
+          <div class="-part-3"></div>
+          <div class="-part-4"></div>
+          <div class="-part-5"></div>
+          <div class="-part-6"></div>
+          <div class="-part-7"></div>
+          <div class="-part-8"></div>
+          <div class="-part-9"></div>
+          <div class="-part-10"></div>
+          <div class="center">
+          </div>
+        </div> -->
+      </div>
+    </div>
+
   </section>

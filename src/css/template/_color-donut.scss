@@ -1,0 +1,111 @@
+$donut-width: 200px;
+$hover-variation: 30%;
+$numberOfChunk: 12;
+$totalDegree: 360deg;
+$angle: $totalDegree / $numberOfChunk;
+$innerRadius: 150px;
+
+$clipRect: 200px;
+
+@mixin donut {
+  position: relative;
+  width: $donut-width;
+  height: $donut-width;
+  margin: 2rem;
+  //border-radius: 100%;
+  display: inline-block;
+  float: left;
+	// .center {
+  //   background-color: white;
+	//   position: absolute;
+	//   top: ( $donut-width - $innerRadius ) / 2;
+	//   left: ( $donut-width - $innerRadius ) / 2;
+	//   height: $innerRadius;
+	//   width: $innerRadius;
+	//   border-radius: 1000px;
+  //   transition: all 350ms ease;
+	// }
+  // &:hover .center {
+  //   top: ( $donut-width - 150px ) / 2;
+	//   left: ( $donut-width - 150px ) / 2;
+	//   height: 150px;
+	//   width: 150px;
+  // }
+	&>[class^='-part'] {
+		border-radius: 50%;
+		clip: rect(0px, $clipRect, 200px, 100px);
+		height: 100%;
+		position: absolute;
+		width: 100%;
+    &::after {
+      content: "";
+      border-radius: 50%;
+      clip: rect(0px, 100px, 200px, 0px);
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      font-family: monospace;
+      font-size: 1.5rem;
+      transform: rotate($angle);
+    }
+	}
+}
+
+.donut-chart {
+  @include donut();
+}
+
+$i: 0;
+.donut-1 {
+  @each $color_type, $color_value in $primary-grey {
+    .-part-#{$i} {
+      transform: rotate($i * $angle);
+      &::after { background-color: $color_value !important; }
+    }
+    $i: $i + 1;
+  }
+}
+
+
+$i: 0;
+.donut-2 {
+  @each $color_type, $color_value in $complement-grey {
+    .-part-#{$i} {
+      transform: rotate($i * $angle);
+      &::after { background-color: $color_value !important; }
+    }
+    $i: $i + 1;
+  }
+}
+
+$donut-width: 320px;
+$hover-variation: 30%;
+$numberOfChunk: 6;
+$totalDegree: 360deg;
+$angle: $totalDegree / $numberOfChunk;
+$innerRadius: 150px;
+
+$clipRect: 300px;
+
+
+.donut-3 {
+  @include donut();
+}
+
+$i: 0;
+.donut-3 {
+  @each $color_name, $color in $colors {
+    @debug($color_name);
+    @each $color_type, $color_value in $color {
+      @if $color_type == "base" {
+        @debug($color_type);
+        .-part-#{$i} {
+          @debug($i);
+          transform: rotate($i * $angle);
+          &::after { background-color: $color_value !important; }
+        }
+      }
+    }
+    $i: $i + 1;
+  }
+}

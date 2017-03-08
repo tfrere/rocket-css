@@ -30,15 +30,6 @@
 	}
 }
 
-#doc.dark>header {
-	border-right: 1px solid color("grey", "contrast-lighten-3");
-	h1,h2,h3,h4,h5,h6 {
-		color: color("primary", "contrast-darken-2");
-		background-color: color("grey", "darken-3");
-	}
-}
-
-
 #doc .nav {
 	width: 250px;
 	position: fixed;
@@ -128,13 +119,5 @@
 				font-weight: 500;
 			}
 		}
-	}
-}
-
-#doc.dark>nav {
-	border-right: 1px solid color("grey", "contrast-lighten-3");
-	h1,h2,h3,h4,h5,h6 {
-		color: color("primary", "contrast-darken-2");
-		background-color: color("grey", "darken-3");
 	}
 }
