@@ -15,6 +15,12 @@ import ntc 			from 'plugins/nameThatColor';
 import List   	from 'plugins/jsfilter';
 import whichCulture   	from 'plugins/coloursInCulture';
 
+var options = {
+  valueNames: [ 'name' ]
+};
+
+var userList = new List('symbol-icon', options);
+
 // FUNCTIONS
 
 const showAsFloat = (value) => {

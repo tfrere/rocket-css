@@ -42,6 +42,9 @@
 
 		.two-cols-verticaly-aligned {
 			min-height:600px;
+			&.remove-height {
+				min-height:auto;
+			}
 		}
 		.sample {
 			padding: 0px 24px 0px 0px;

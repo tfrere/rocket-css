@@ -173,12 +173,9 @@ $hoverEaseOut: ease-in;
 			margin-right: 0;
 		}
 		&:hover .gradient {
-			height: 100%;
-			transition-timing-function: ease-out;
-			transition-duration: $hoverTimeIn;
+			height: 150px;
 			>div {
-				transition: height $hoverTimeIn ease-out, width $hoverTimeIn 200ms ease;
-				height: 100%;
+				height: 150px;
 			}
 		}
 	}
