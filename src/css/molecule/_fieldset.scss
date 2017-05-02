@@ -1,0 +1,134 @@
+/*
+––––
+
+	title:
+		Fieldset
+
+	comment:
+		La Fieldset est une plante qui se mange froide
+
+	markup:
+    <label>With right tag</label>
+    <fieldset class="-has-icon">
+      <i class="icon -lock"></i>
+      <input type="password" placeholder="Password" />
+      <div class="tag visible -line-danger -left -pointing">
+        <span>Password incorrect</span>
+      </div>
+    </fieldset>
+    <fieldset class="-has-icon -large -has-tag">
+      <i class="icon -lock"></i>
+      <label>With sub tag</label>
+      <input type="password" placeholder="Password" />
+      <div class="tag visible -line-danger -large -top -pointing">
+        <span>Votre password est inccorect</span>
+      </div>
+    </fieldset>
+
+  script:
+
+––––
+*/
+
+@keyframes fade-in {
+  0% {
+    transform: translateX(5px);
+  }
+
+  100% {
+		transform: translateX(0px);
+  }
+}
+
+$base-index: 0;
+
+fieldset {
+	margin:0;
+	margin-top:5px;
+	margin-bottom:$text-size;
+	position:relative;
+	border: none;
+	padding:0;
+  display: inline-block;
+	//max-width:50%;
+	input {
+		width:100%;
+		margin-bottom:0!important;
+	}
+
+  &.-large {
+  	width:100%;
+	}
+
+	&:after {
+		clear:both;
+		content:"";
+	}
+
+	&.-has-icon {
+		input {
+			z-index: $base-index;
+			padding-left:50px;
+		}
+		&:after {
+			content:"";
+			position:absolute;
+			width:1px;
+			height:35px;
+			bottom:3px;
+			left:40px;
+			background-color: color("grey", "lighten-5");
+		}
+		&>i {
+			z-index: $base-index + 1;
+			position:absolute;
+			bottom:12px;
+			left:13px;
+			opacity:0.5;
+			font-size: 1.8rem;
+		}
+		&.-right {
+			input {
+				z-index: $base-index;
+				padding-left: $text-size;
+				padding-right: 50px;
+			}
+			&:after {
+				right: 40px;
+				left: auto;
+			}
+			i {
+				right: 11px;
+				left: auto;
+			}
+		}
+	}
+	.tag {
+		position: absolute;
+		min-height: 26px;
+		display: none;
+		animation: fade-in 1OOms;
+		&.visible {
+			display: block;
+		}
+		&.-left {
+			bottom: -3px;
+			left: calc(100% + 15px);
+		}
+		&.-right {
+			bottom: -3px;
+			right: calc(100% + 8px);
+		}
+		&.-top {
+
+			top: calc(100% + 12px);
+			left: 0;
+			&:before {
+				left:15px;
+			}
+		}
+	}
+	&.-has-tag {
+		margin-bottom: 4.5rem;
+	}
+}

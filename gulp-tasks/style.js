@@ -4,6 +4,10 @@ module.exports = function (gulp, plugins, paths) {
       .pipe(plugins.plumber())
       .pipe(plugins.sass())
       //.pipe(plugins.minifyCss())
+      .pipe(plugins.autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
       .pipe(gulp.dest(paths.styles.dest))
       .pipe(plugins.livereload());
     };

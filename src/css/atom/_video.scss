@@ -1,0 +1,105 @@
+/*
+––––
+
+	title:
+		Video
+
+	comment:
+		A recupérer sur l'inté de matthieu
+
+  markup:
+    <div class="video toggle-video">
+      <div class="video-box">
+        <div class="play"></div>
+        <img class="video-cover" src="/assets/imgs/jpg/leaf.jpg"/>
+      </div>
+      <iframe width="400" height="300" src="https://www.youtube.com/embed/cSC95AiLlM0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  script:
+    $(".toggle-video").click(function(){
+      $(this).addClass("-activating");
+      window.setTimeout(function(){
+        $(".toggle-video").addClass("-active");
+        $(".toggle-video").removeClass("-activating");
+      }, 150);
+    });
+    window.setInterval(function(){
+      $(".toggle-video").removeClass("-active");
+    }, 3000);
+
+––––
+*/
+
+.video
+{
+	opacity:1;
+	overflow:visible;
+	width:400px;
+	height:300px;
+	margin: 0 auto;
+	padding-top:1px;
+	box-sizing: border-box;
+	img {
+		width:400px;
+		height:300px;
+	}
+	iframe {
+		position: absolute;
+		top:0;
+		z-index: -1;
+		background-color: rgb(250,250,250);
+	}
+	.video-cover {
+		z-index: 10;
+		width :100%;
+		background-size: cover;
+	}
+	.video-box {
+		position:relative;
+		width:400px;
+		height:300px;
+		margin: 0 auto;
+		cursor:pointer;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all 200ms ease-in-out;
+		display:block;
+		.play {
+			width: 100px;
+			height: 100px;
+			opacity:0.8;
+			transition: opacity 200ms ease, transform 150ms ease("swift-out");
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			z-index: 25;
+      transform: scale(1);
+			background: url('data:image/svg+xml;utf8, <svg id="Layer_1" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><g id="g3"><path id="path21" fill="url(#SVGID_2_)" d="m505.98 276.92c0 44.782-5.0012 89.55-5.0012 89.55s-4.8913 38.135-19.864 54.901c-19.02 22.019-40.321 22.149-50.089 23.446-69.98 5.55-175.03 5.75-175.03 5.75s-130-1.3125-169.99-5.5614c-11.128-2.3032-36.086-1.6376-55.121-23.657-14.987-16.766-19.864-54.901-19.864-54.901s-5.0012-44.752-5.0012-89.55v-41.962c0-44.767 5.0012-89.534 5.0012-89.534s4.8913-38.152 19.864-54.949c19.029-22.025 40.315-22.154 50.083-23.402 69.952-5.626 174.9-5.626 174.9-5.626h0.23463s104.94 0 174.91 5.6261c9.7678 1.2478 31.069 1.3789 50.089 23.396 14.987 16.798 19.864 54.949 19.864 54.949s5.0012 44.767 5.0012 89.55z"/><polygon id="polygon12" points="313.2 256 217.95 198.85 217.95 313.15" fill="#fff" transform="matrix(1.6408 0 0 1.7023 -164.05 -179.79)"/><linearGradient id="SVGID_2_" y2="452.59" gradientUnits="userSpaceOnUse" y1="39.351" gradientTransform="matrix(1.6408 0 0 1.7023 -164.05 -179.79)" x2="452.59" x1="39.351"><stop id="stop15" stop-color="#DD272D" offset="0"/><stop id="stop17" stop-color="#CA2429" offset=".5153"/><stop id="stop19" stop-color="#B22025" offset="1"/></linearGradient></g></svg>');
+			background-size: cover;
+		}
+	}
+	&:hover {
+		.play {
+			opacity:1;
+      &:after {
+        transform: scale(1.1);
+      }
+		}
+	}
+  &.-activating {
+    .play {
+      transform: scale(0);
+    }
+    .video-box {
+      opacity: 0;
+    }
+  }
+	&.-active .video-box {
+		display:none;
+		visibility: hidden;
+	}
+}

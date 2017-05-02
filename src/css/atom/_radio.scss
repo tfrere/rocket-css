@@ -1,0 +1,101 @@
+/*
+––––
+
+	title:
+		Radio
+
+	comment:
+		La Radio est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="radio -primary">
+      <input id="radio1" type="radio" name='radio-group' />
+      <label for="radio1">Apples</label>
+    </div>
+    <label>Checked</label>
+    <div class="radio">
+      <input id="radio2" type="radio" name='radio-group' checked='checked' />
+      <label for="radio2">Lemons</label>
+    </div>
+    <label>Disabled</label>
+    <div class="radio">
+      <input id="radio3" type="radio" name='radio-group' disabled="disabled"/>
+      <label for="radio3">Tomatoes</label>
+    </div>
+
+  script:
+
+––––
+*/
+
+
+
+.radio {
+	@extend .unselectable;
+	cursor:pointer;
+	display:inline-block;
+	margin-bottom: $text-size / 2;
+	input {
+		display:none;
+	}
+	&:focus,
+	&:active{
+		outline:none;
+	}
+	label{
+		cursor:pointer;
+		display:inline-block;
+		position: relative;
+		padding-left:30px;
+		padding-right:10px;
+		margin-bottom:0;
+		line-height: 21px;
+		font-weight: 400;
+		@extend .unselectable;
+		&:before,
+		&:after{
+			content:'';
+			font-family: helvetica;
+			display:inline-block;
+			width:18px;
+			height:18px;
+			left:0;
+			top:0px;
+			text-align:center;
+			position: absolute;
+			transition: all .3s ease-in-out;
+			border-radius: 100%;
+		}
+		&:before{
+			background-color: white;
+			border: 1px solid color("grey","lighten-2");
+			transition: all .3s ease-in-out;
+			box-shadow: 1px 1px 1px #efefef inset;
+		}
+		&:after{
+			width: 8px;
+			height: 8px;
+			transform:translateX(6px) translateY(6px) scale(0);
+		}
+	}
+	input:checked + label:before , input[checked="checked"] + label:before {
+		border: 1px solid transparent;
+		background-color: color("primary", "lighten-2");
+		box-shadow: 1px 1px 1px color("primary", "base") inset;
+	}
+	input:checked + label:after, input[checked="checked"] + label:after {
+		content:'';
+		position:absolute;
+		width: 8px;
+		height: 8px;
+		transform:translateX(6px) translateY(6px) scale(1);
+		background-color: #fff;
+	}
+	input:disabled + label {
+		opacity:0.3;
+		cursor: not-allowed;
+		&:before {
+		}
+	}
+}

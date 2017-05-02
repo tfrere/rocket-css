@@ -1,0 +1,219 @@
+/* # Colors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+	//048b8d mine
+	// FF9153 mine 2
+	// 9f3738 conseil emploi
+	// 9e2a2c collectivz 1
+	// 8686bf collectivz 2
+
+	// rocketcss #048b8d
+	// complement($color-primary)
+
+	$color-primary:				#721011;
+	$color-complement:		#C57329;
+
+	$color-success:				#149A57;
+	$color-warning:				#EBAD23;
+	$color-info:					#303E73;
+	$color-danger:				#D23D29;
+
+	$primary: (
+	  "lighten-5":  lighten($color-primary, 50%),
+	  "lighten-4":  lighten($color-primary, 40%),
+	  "lighten-3":  lighten($color-primary, 30%),
+	  "lighten-2":  lighten($color-primary, 20%),
+	  "lighten-1":  lighten($color-primary, 10%),
+	  "darken-1":   darken($color-primary, 10%),
+	  "darken-2":   darken($color-primary, 20%),
+	  "darken-3":   darken($color-primary, 30%),
+	  "darken-4":   darken($color-primary, 40%),
+    "darken-5":   darken($color-primary, 50%),
+		"base":       $color-primary
+	);
+
+	$complement: (
+	  "lighten-5":  lighten($color-complement, 50%),
+	  "lighten-4":  lighten($color-complement, 40%),
+	  "lighten-3":  lighten($color-complement, 30%),
+	  "lighten-2":  lighten($color-complement, 20%),
+	  "lighten-1":  lighten($color-complement, 10%),
+	  "darken-1":   darken($color-complement, 10%),
+	  "darken-2":   darken($color-complement, 20%),
+	  "darken-3":   darken($color-complement, 30%),
+	  "darken-4":   darken($color-complement, 40%),
+    "darken-5":   darken($color-complement, 50%),
+		"base":       $color-complement
+	);
+
+	$success: (
+	  "lighten-5":  lighten($color-success, 50%),
+	  "lighten-4":  lighten($color-success, 40%),
+	  "lighten-3":  lighten($color-success, 30%),
+	  "lighten-2":  lighten($color-success, 20%),
+	  "lighten-1":  lighten($color-success, 10%),
+	  "darken-1":   darken($color-success, 10%),
+	  "darken-2":   darken($color-success, 20%),
+	  "darken-3":   darken($color-success, 30%),
+	  "darken-4":   darken($color-success, 40%),
+    "darken-5":   darken($color-success, 50%),
+		"base":       $color-success
+	);
+
+	$warning: (
+	  "lighten-5":  lighten($color-warning, 50%),
+	  "lighten-4":  lighten($color-warning, 40%),
+	  "lighten-3":  lighten($color-warning, 30%),
+	  "lighten-2":  lighten($color-warning, 20%),
+	  "lighten-1":  lighten($color-warning, 10%),
+	  "darken-1":   darken($color-warning, 10%),
+	  "darken-2":   darken($color-warning, 20%),
+	  "darken-3":   darken($color-warning, 30%),
+	  "darken-4":   darken($color-warning, 40%),
+    "darken-5":   darken($color-warning, 50%),
+		"base":       $color-warning
+	);
+
+	$danger: (
+	  "lighten-5":  lighten($color-danger, 50%),
+	  "lighten-4":  lighten($color-danger, 40%),
+	  "lighten-3":  lighten($color-danger, 30%),
+	  "lighten-2":  lighten($color-danger, 20%),
+	  "lighten-1":  lighten($color-danger, 10%),
+	  "darken-1":   darken($color-danger, 10%),
+	  "darken-2":   darken($color-danger, 20%),
+	  "darken-3":   darken($color-danger, 30%),
+	  "darken-4":   darken($color-danger, 40%),
+      "darken-5":   darken($color-danger, 50%),
+		"base":       $color-danger
+	);
+	$info: (
+	  "lighten-5":  lighten($color-info, 50%),
+	  "lighten-4":  lighten($color-info, 40%),
+	  "lighten-3":  lighten($color-info, 30%),
+	  "lighten-2":  lighten($color-info, 20%),
+	  "lighten-1":  lighten($color-info, 10%),
+	  "darken-1":   darken($color-info, 10%),
+	  "darken-2":   darken($color-info, 20%),
+	  "darken-3":   darken($color-info, 30%),
+	  "darken-4":   darken($color-info, 40%),
+    "darken-5":   darken($color-info, 50%),
+		"base":       $color-info
+	);
+
+	$grey: (
+	  "lighten-5":  #fafafa,
+	  "lighten-4":  #f5f5f5,
+	  "lighten-3":  #eeeeee,
+	  "lighten-2":  #e0e0e0,
+	  "lighten-1":  #bdbdbd,
+		"base":       #9e9e9e,
+	  "darken-1":   #757575,
+	  "darken-2":   #616161,
+	  "darken-3":   #424242,
+	  "darken-4":   #212121,
+	  "darken-5":   black
+	);
+
+
+	// 11% each
+	$subtle-grey: (
+		"lighten-4":  #F0F0F0, // 6
+		"lighten-3":  #D4D4D4, // 17
+		"lighten-2":  #B8B8B8, // 28
+		"lighten-1":  #9C9C9C, // 39
+		"base":  			#7F7F7F, // 50
+		"darken-1":   #636363, // 61
+		"darken-2":   #474747, // 72
+		"darken-3":   #2B2B2B, // 83
+		"darken-4":   #OFOFOF  // 94
+	);
+
+	$primary-grey: (
+	  "lighten-5":  mix($color-primary, #fafafa, 5%),
+	  "lighten-4":  mix($color-primary, #f5f5f5, 5%),
+	  "lighten-3":  mix($color-primary, #eeeeee, 5%),
+	  "lighten-2":  mix($color-primary, #e0e0e0, 5%),
+	  "lighten-1":  mix($color-primary, #bdbdbd, 5%),
+		"base":       mix($color-primary, #9e9e9e, 5%),
+	  "darken-1":   mix($color-primary, #757575, 5%),
+	  "darken-2":   mix($color-primary, #616161, 5%),
+	  "darken-3":   mix($color-primary, #424242, 5%),
+	  "darken-4":   mix($color-primary, #212121, 5%),
+	  "darken-5":   mix($color-primary, black,  5%)
+	);
+
+	$complement-grey: (
+		"lighten-5":  mix($color-complement, #fafafa, 5%),
+		"lighten-4":  mix($color-complement, #f5f5f5, 5%),
+		"lighten-3":  mix($color-complement, #eeeeee, 5%),
+		"lighten-2":  mix($color-complement, #e0e0e0, 5%),
+		"lighten-1":  mix($color-complement, #bdbdbd, 5%),
+		"base":       mix($color-complement, #9e9e9e, 5%),
+		"darken-1":   mix($color-complement, #757575, 5%),
+		"darken-2":   mix($color-complement, #616161, 5%),
+		"darken-3":   mix($color-complement, #424242, 5%),
+		"darken-4":   mix($color-complement, #212121, 5%),
+		"darken-5":   mix($color-complement, black,  5%)
+	);
+
+	$colors: (
+	  "primary": $primary,
+	  "complement": $complement,
+	  "success": $success,
+	  "danger": $danger,
+	  "warning": $warning,
+	  "info": $info,
+	  "grey": $grey
+	);
+
+
+$red: #F15854;
+$gray: #4D4D4D;
+$blue: #5DA5DA;
+$yellow: #DECF3F;
+$purple: #B276B2;
+$orange: #FAA43A;
+
+$medium-grey: #fafafa;
+
+$facebook-color:    #3b5998;
+$twitter-color:     #55acee;
+$googleplus-color:  #dd4b39;
+$youtube-color: 		#bb0000;
+$linkedin-color: 		#007bb5;
+$instagram-color: 	#e95950;
+$pinterest-color: 	#cb2027;
+$snapchat-color: 		#fffc00;
+$dropbox-color: 		#007ee5;
+$flickr-color: 			#ff0084;
+$tumblr-color: 			#32506d;
+$vk-color: 					#45668e;
+$vimeo-color: 			#aad450;
+$foursquare-color: 	#0072b1;
+$spotify-color: 		#00e461;
+$github-color: 			#000000;
+$behance-color: 		#1769ff;
+
+	// Color Classes
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      ._bg-#{$color_name} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name} {
+        color: $color_value !important;
+      }
+    }
+    @else {
+      ._bg-#{$color_name}-#{$color_type} {
+        background-color: $color_value !important;
+      }
+      ._text-#{$color_name}-#{$color_type} {
+        color: $color_value !important;
+      }
+    }
+  }
+}

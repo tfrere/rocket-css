@@ -1,0 +1,73 @@
+/*
+––––
+
+	title:
+		Message
+
+	comment:
+		La Message est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="message">
+      <h5><i class="icon -sun"></i>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With -with-intent -line-primary</label>
+    <div class="message -with-intent -line-primary">
+      <i class="icon status -sun"></i>
+      <h5>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+
+  script:
+  
+––––
+*/
+
+.message {
+  padding:10px 15px;
+  border: 1px solid color("grey", "lighten-2");
+  border-radius:3px;
+  font-family: $nav-font;
+	box-shadow: 0px 1px 1px -1px #8C9DA1;
+  margin-bottom:$text-size;
+  position:relative;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  p {
+    margin:0;
+    color: inherit;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: inherit;
+  }
+  @each $color_name, $color in $colors {
+		&.-#{$color_name} {
+			background-color:color(#{$color_name}, "base");
+			color:white;
+			border: 1px solid darken(color(#{$color_name}, "base"), 2%);
+      box-shadow: none;
+	  }
+		&.-line-#{$color_name} {
+			background-color: rgba(color(#{$color_name}, "lighten-5"), 0.2)!important;
+			color: color(#{$color_name}, "base");
+			border: 1px solid rgba(color(#{$color_name}, "lighten-3"), 0.3);
+		}
+	}
+  &.-with-intent {
+    >i {
+      position:absolute;
+      font-size: 3rem;
+      top:20px;
+      left:20px;
+    }
+    p, h1,h2,h3,h4,h5,h6 {
+      margin-left:50px;
+    }
+  }
+
+
+}

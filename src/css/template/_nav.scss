@@ -1,0 +1,113 @@
+/*
+––––
+
+	title:
+		Navigation
+
+	comment:
+		La Navigation est une plante qui se mange froide
+
+	markup:
+    <nav>
+      <div class="container">
+        <div class="row">
+          <div class="twelve col">
+            <a id="logo" class="pull-left"></a>
+            <div class="-round pull-right half-left"></div><a class="button -round small pull-right -line-complement">S'inscrire</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="cookie">
+      <div class="container">
+        <div class="row">
+          <div class="twelve col">
+            <p class="pull-left">Ce site utilise des cookies ! <a href="#">En savoir plus </a></p><i class="icon -cross pull-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  script:
+
+––––
+*/
+
+
+#cookie {
+	position:absolute;
+	z-index: 997;
+	top:60px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.03);
+	color:white;
+	p {
+		color:white;
+		margin:0;
+		padding:10px 0;
+		font-size: 0.9em;
+	}
+	i {
+		margin-top:10px;
+		cursor:pointer;
+		opacity:0.5;
+		&:hover {
+			opacity:1;
+		}
+	}
+	a {
+		color:color("complement", "lighten-2");
+	}
+}
+
+#logo {
+	width: 31px;
+	height: 31px;
+	//background-image: url('../assets/imgs/svg/logo.svg');
+	transition: all 200ms ease;
+	opacity:0.8;
+	margin-top:5px;
+	margin-top: 15px;
+	margin-right: 10px;
+	&:hover {
+		opacity:1;
+	}
+}
+
+#nav {
+	height: 60px;
+	width: 100%;
+	background-color: white;
+	position:fixed;
+	z-index: 998;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+	a {
+		text-decoration: none;
+		margin-top: 19px;
+		font-weight: 800;
+		color: color("grey", "darken-3");
+		opacity:0.8;
+		transition: all 200ms ease;
+
+		&:hover 	{ outline: 0; text-decoration: none; opacity:1; }
+		&:active 	{ outline: 0;}
+		&:visited 	{ color: color("grey", "darken-3"); }
+		&:focus	 	{ outline: 0;  }
+	}
+	a.pull-left + a.pull-left {
+		margin-left: 25px;
+	}
+	a.pull-left:not(#logo){
+		opacity:0.6;
+		&:hover {
+			opacity:1;
+		}
+	}
+	a.active {
+		opacity:1!important;
+	}
+	a.pull-right {
+		margin-top: 15px;
+	}
+}

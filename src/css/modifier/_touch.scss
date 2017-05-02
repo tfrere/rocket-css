@@ -1,0 +1,104 @@
+/*
+––––
+
+	title:
+		Touch
+
+	comment:
+		Blabla
+
+	markup:
+    <div class="radio -primary touch ">
+      <input id="radio4" type="radio" name='radio-group' />
+      <label for="radio4"<span>Apples</span></label>
+    </div>
+    <div class="radio -primary touch ">
+      <input id="radio5" type="radio" name='radio-group' checked/>
+      <label for="radio5"<span>Apples</span></label>
+    </div>
+    <br/>
+    <div class="checkbox touch ">
+      <input id="checkbox4" type="checkbox"/>
+      <label for="checkbox4">
+        <span>Lemons</span>
+      </label>
+    </div>
+    <br/>
+    <div class="toggle -round touch ">
+      <input id="toggle4" type="checkbox">
+      <label for="toggle4"><span>Tomatoes</span></label>
+    </div>
+    <div class="card touch">
+      <p> Hello world </p>
+    </div>
+    <button class="button touch">
+    <i class="icon -sun"></i>
+    <span>Bouton</span>
+    </button>
+    <button class="button touch -no-border">
+    <i class="icon -sun"></i>
+    <span>Bouton</span>
+    </button>
+    <button class="button touch -no-border -icon-only -visible">
+    <i class="icon -sun"></i>
+    </button>
+
+  script:
+    $(".touch, .button:not(.-loading):not(.-disabled):not([disabled])").click(function(e){
+    var elem, d, x, y;
+      console.log(2);
+      if($(this).find(".touch-elem").length === 0)
+        $(this).prepend("<div class='touch-elem'></div>");
+      elem = $(this).find(".touch-elem");
+      elem.removeClass("animate");
+      if(!elem.height() && !elem.width()){
+          d = Math.max($(this).outerWidth(), $(this).outerHeight());
+          elem.css({height: d, width: d});
+      }
+      x = e.pageX - $(this).offset().left - elem.width()/2;
+      y = e.pageY - $(this).offset().top - elem.height()/2;
+      elem.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+    });
+
+––––
+*/
+
+
+@keyframes ripple {
+  100% {opacity: 0; transform: scale(2.5);}
+}
+
+@keyframes small-ripple {
+  100% {opacity: 0; transform: scale(1);}
+}
+
+.touch {
+  position:relative;
+  overflow:hidden;
+  transition: all 0.2s ease;
+  z-index:0;
+  &.-visible {
+    overflow: visible;
+  }
+}
+
+.touch-elem {
+  display: block;
+  position: absolute;
+  background:rgba(0, 0, 0, 0.10);
+  border-radius: 100%;
+  transform:scale(0);
+  z-index: 9999999;
+}
+
+.animate {
+  animation:ripple 0.35s ease("swift-out");
+}
+
+.touch.checkbox, .touch.radio, .touch.toggle {
+  overflow: visible;
+  .touch-elem.animate {
+    animation: small-ripple 0.55s ease("swift-out");
+
+  }
+}

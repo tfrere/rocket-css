@@ -1,0 +1,98 @@
+/*
+––––
+
+	title:
+		Figure
+
+	comment:
+		La Figure est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <figure class="filter -nashville -example">
+      <img class="rotate-img" src="/assets/imgs/jpg/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+    <br/>
+    <label>With filter -seventies</label>
+    <figure class="filter -seventies -example">
+      <img class="rotate-img" src="/assets/imgs/jpg/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+
+  script:
+
+––––
+*/
+
+$base-index: 1;
+
+figure {
+	position:relative;
+	z-index: $base-index;
+	overflow:hidden;
+	img:first-child {
+    z-index: $base-index + 1;
+    position:relative;
+    width: 110%;
+    height: 110%;
+    margin-left: -5%;
+    margin-top: -5%;
+	}
+  figcaption {
+    &:after {
+      background: linear-gradient(to top,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0) 60%);
+      content: '';
+      height: 100%;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      z-index: $base-index + 2;
+      opacity: 1;
+    }
+  }
+	figcaption,
+	figcaption > a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	figcaption > a {
+		z-index:  $base-index + 3;
+		text-indent: 200%;
+		white-space: nowrap;
+		font-size: 0;
+		opacity: 0;
+	}
+	.title {
+    z-index: $base-index + 3;
+    color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 26px;
+    left: 17px;
+    font-weight: bold;
+	}
+  .desc {
+    z-index: $base-index + 3;
+    color: color("grey","lighten-3");
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 17px;
+    font-weight: 400;
+	}
+  &.-example {
+    height:150px;
+    width:350px;
+  }
+}

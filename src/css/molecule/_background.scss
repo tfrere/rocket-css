@@ -1,0 +1,99 @@
+/*
+––––
+
+	title:
+		Background
+
+	comment:
+		La Background est une plante qui se mange froide
+
+	markup:
+    <div class="background center -visible -fixed">
+      <div class="filter"></div>
+      <div class="gradient"></div>
+      <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
+      <div class="content center-wrapper"><h5>Title</h5></div>
+    </div>
+
+  script:
+
+––––
+*/
+
+.background {
+	position:relative;
+	overflow:hidden;
+	min-height:200px;
+	h1,h2,h3,h4,h5,h6 {
+		margin: 0;
+	}
+	h1,h2,h3,h4,h5,h6,p, button {
+		color: white;
+	}
+
+	.content {
+		z-index: 1;
+		margin:auto;
+	}
+	&:after {
+		z-index: -300;
+		content:"";
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background-color: color("grey", "base");
+	}
+	.image {
+		width:100%;
+		z-index: -200;
+		position:absolute;
+		display:block;
+		overflow:hidden;
+		margin:0;
+		padding:0;
+		min-height: 100%;
+		background-size: cover;
+		background-attachment: auto;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: all 400ms ease-in-out;
+		opacity:0;
+	}
+	&.-fixed .image {
+		background-attachment: fixed;
+	}
+	&.-visible .image {
+		opacity:1;
+	}
+	.filter {
+		width:100%;
+		height: 100%;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	.gradient {
+		background: linear-gradient(to bottom,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0) 100%);
+		content: '';
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: -100;
+		opacity: .9;
+		&:after {
+			background: rgba(0, 0, 0, 0.6);
+			content: '';
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			z-index: -100;
+			opacity: .6;
+		}
+	}
+}

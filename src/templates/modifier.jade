@@ -1,0 +1,503 @@
+header#modifier-head  div    h3 modifiersection.section#modifier  .bloc#modifier-Filter    h5 Filter    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
+          <figure class="filter -grayscale -example">
+            <img src="/assets/imgs/jpg/leaf.jpg">
+            <figcaption>
+              <h6 class="title">Title</h6>
+              <span class="desc">Dzongsar, Tibet 2004</span>
+            </figcaption>
+          </figure>
+          <br/>
+          <label>With filter -blur</label>
+          <figure class="filter -blur -example">
+            <img src="/assets/imgs/jpg/leaf.jpg">
+            <figcaption>
+              <h6 class="title">Title</h6>
+              <span class="desc">Dzongsar, Tibet 2004</span>
+            </figcaption>
+          </figure>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Filter-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Filter-code.              &lt;label&gt;Simple&lt;/label&gt;
+              &lt;figure class=&quot;filter -grayscale -example&quot;&gt;
+                &lt;img src=&quot;/assets/imgs/jpg/leaf.jpg&quot;&gt;
+                &lt;figcaption&gt;
+                  &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
+                  &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
+                &lt;/figcaption&gt;
+              &lt;/figure&gt;
+              &lt;br/&gt;
+              &lt;label&gt;With filter -blur&lt;/label&gt;
+              &lt;figure class=&quot;filter -blur -example&quot;&gt;
+                &lt;img src=&quot;/assets/imgs/jpg/leaf.jpg&quot;&gt;
+                &lt;figcaption&gt;
+                  &lt;h6 class=&quot;title&quot;&gt;Title&lt;/h6&gt;
+                  &lt;span class=&quot;desc&quot;&gt;Dzongsar, Tibet 2004&lt;/span&gt;
+                &lt;/figcaption&gt;
+              &lt;/figure&gt;
+
+   .bloc#modifier-Level    h5 Level    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="card level-1 toggle-level"><p>Ground</p></div>
+          <div class="card level-2 toggle-level"><p>Level 2</p></div>
+          <div class="card level-3 toggle-level"><p>Level 3</p></div>
+          <div class="card level-4 toggle-level"><p>Level 4</p></div>
+          <div class="card level-5 toggle-level"><p>Level 5</p></div>
+          <div class="card level-6 toggle-level"><p>Level 6</p></div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Level-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Level-code.              &lt;div class=&quot;card level-1 toggle-level&quot;&gt;&lt;p&gt;Ground&lt;/p&gt;&lt;/div&gt;
+              &lt;div class=&quot;card level-2 toggle-level&quot;&gt;&lt;p&gt;Level 2&lt;/p&gt;&lt;/div&gt;
+              &lt;div class=&quot;card level-3 toggle-level&quot;&gt;&lt;p&gt;Level 3&lt;/p&gt;&lt;/div&gt;
+              &lt;div class=&quot;card level-4 toggle-level&quot;&gt;&lt;p&gt;Level 4&lt;/p&gt;&lt;/div&gt;
+              &lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
+              &lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
+
+   .bloc#modifier-Isolate    h5 Isolate    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="isolate">
+            <div>
+              <input type="text" placeholder="Coucou"/>
+            </div>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Isolate-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Isolate-code.              &lt;div class=&quot;isolate&quot;&gt;
+                &lt;div&gt;
+                  &lt;input type=&quot;text&quot; placeholder=&quot;Coucou&quot;/&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+           div(hljs).javascript.Isolate-code.            $(".isolate input").focus(function(){
+              var $element = $(this).closest(".isolate");
+              $element.addClass("-activating");
+              window.setTimeout(function(){
+                $element.addClass("-active");
+              }, 50);
+            });
+            $(".isolate input").blur(function(){
+              var $element = $(this).closest(".isolate");
+              $element.removeClass("-active");
+              window.setTimeout(function(){
+                $element.removeClass("-activating");
+              }, 150);
+            });
+
+  .bloc#modifier-Panel    h5 Panel    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <button class="button open-panel">Open panel</button>
+          <div class="panel -panel -left">
+            <div class="overlay close-panel"></div>
+            <div class="content">
+              <div class="content-wrapper">
+                <header class="header">
+                  <h5>Panel title</h5>
+                  <div class="close-button close-panel">
+                  <i class="icon -cross"></i>
+                  </div>
+                </header>
+              </div>
+            </div>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Panel-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Panel-code.              &lt;button class=&quot;button open-panel&quot;&gt;Open panel&lt;/button&gt;
+              &lt;div class=&quot;panel -panel -left&quot;&gt;
+                &lt;div class=&quot;overlay close-panel&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;div class=&quot;content-wrapper&quot;&gt;
+                    &lt;header class=&quot;header&quot;&gt;
+                      &lt;h5&gt;Panel title&lt;/h5&gt;
+                      &lt;div class=&quot;close-button close-panel&quot;&gt;
+                      &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+                      &lt;/div&gt;
+                    &lt;/header&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+           div(hljs).javascript.Panel-code.            $(".open-panel").click(function(){
+              $(".panel").addClass("-opening");
+              window.setTimeout(function(){
+                $(".panel").addClass("-open");
+                $(".panel").removeClass("-opening");
+              }, 350);
+            });
+            $(".close-panel").click(function(){
+              $(".panel").addClass("-closing");
+              window.setTimeout(function(){
+                $(".panel").removeClass("-open");
+                $(".panel").removeClass("-closing");
+              }, 350);
+            });
+  
+  .bloc#modifier-Loading    h5 Loading    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Button</label>
+          <button class="button loading toggle-loading touch">
+            <i class="icon -sun"></i>
+            <span>Bouton</span>
+          </button>
+          <label>Card</label>
+          <div class="card loading toggle-loading -primary">
+            <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+          </div>
+          <label>Entire list</label>
+          <ul class="list loading toggle-loading">
+            <li class="item touch">
+              <img class="head grey -circle" src="images/joe.jpg"/>
+              <div class="content">
+                <h6 class="title">Item</h6>
+                <p class="desc">bla blbla blalabla</p>
+              </div>
+            </li>
+          </ul>
+          <label>List item</label>
+          <ul class="list">
+            <li class="item touch loading toggle-loading">
+              <img class="head grey -circle" src="images/joe.jpg"/>
+              <div class="content">
+                <h6 class="title">Item</h6>
+                <p class="desc">bla blbla blalabla</p>
+              </div>
+            </li>
+            <li class="item touch">
+              <img class="head grey -circle" src="images/joe.jpg"/>
+              <div class="content">
+                <h6 class="title">Item</h6>
+                <p class="desc">bla blbla blalabla</p>
+              </div>
+            </li>
+          </ul>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Loading-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Loading-code.              &lt;label&gt;Button&lt;/label&gt;
+              &lt;button class=&quot;button loading toggle-loading touch&quot;&gt;
+                &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Bouton&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;label&gt;Card&lt;/label&gt;
+              &lt;div class=&quot;card loading toggle-loading -primary&quot;&gt;
+                &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;label&gt;Entire list&lt;/label&gt;
+              &lt;ul class=&quot;list loading toggle-loading&quot;&gt;
+                &lt;li class=&quot;item touch&quot;&gt;
+                  &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+                  &lt;div class=&quot;content&quot;&gt;
+                    &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+                    &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+              &lt;label&gt;List item&lt;/label&gt;
+              &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;item touch loading toggle-loading&quot;&gt;
+                  &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+                  &lt;div class=&quot;content&quot;&gt;
+                    &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+                    &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;item touch&quot;&gt;
+                  &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+                  &lt;div class=&quot;content&quot;&gt;
+                    &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+                    &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+
+           div(hljs).javascript.Loading-code.            window.setInterval(function() {
+              $(".toggle-loading").each(function() {
+                $(this).toggleClass("loading");
+              });
+            }, 3000);
+
+  .bloc#modifier-Merge    h5 Merge    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Horizontal</label>
+          <div class="merge -horizontal">
+            <fieldset class="-has-icon">
+              <i class="icon -lock"></i>
+              <input type="password" placeholder="Password" />
+            </fieldset>
+            <button class="button -primary -icon-only -no-gradient">
+              <i class="icon -pencil"></i>
+            </button>
+            <button class="button -primary -icon-only -no-gradient">
+              <i class="icon -cross"></i>
+            </button>
+          </div>
+          <div class="merge -horizontal">
+            <input class="-round" type="password" placeholder="Password" />
+            <button class="button loading -primary -round -only-icon toggle-loading ">
+              <i class="icon -sun"></i>
+            </button>
+          </div>
+          <div class="merge -large -horizontal">
+            <button class="button -small -icon-only loading toggle-loading toggle-fail">
+              <i class="icon -sun"></i>
+            </button>
+            <button class="button -small -icon-only">
+              <i class="icon -sun"></i>
+            </button>
+            <button class="button -small -icon-only">
+              <i class="icon -moon"></i>
+            </button>
+          </div>
+          <label>Vertical</label>
+          <div class="merge -large -vertical">
+            <fieldset class="">
+              <input type="password" placeholder="Password" />
+            </fieldset>
+            <fieldset class="-has-icon -right">
+              <i class="icon -eye"></i>
+              <input type="password" placeholder="Password" />
+            </fieldset>
+            <button class="button loading -primary toggle-loading toggle-success">
+              <span>Se connecter</span>
+            </button>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Merge-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Merge-code.              &lt;label&gt;Horizontal&lt;/label&gt;
+              &lt;div class=&quot;merge -horizontal&quot;&gt;
+                &lt;fieldset class=&quot;-has-icon&quot;&gt;
+                  &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+                  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;/fieldset&gt;
+                &lt;button class=&quot;button -primary -icon-only -no-gradient&quot;&gt;
+                  &lt;i class=&quot;icon -pencil&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button class=&quot;button -primary -icon-only -no-gradient&quot;&gt;
+                  &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;merge -horizontal&quot;&gt;
+                &lt;input class=&quot;-round&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;button class=&quot;button loading -primary -round -only-icon toggle-loading &quot;&gt;
+                  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;merge -large -horizontal&quot;&gt;
+                &lt;button class=&quot;button -small -icon-only loading toggle-loading toggle-fail&quot;&gt;
+                  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button class=&quot;button -small -icon-only&quot;&gt;
+                  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;button class=&quot;button -small -icon-only&quot;&gt;
+                  &lt;i class=&quot;icon -moon&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;label&gt;Vertical&lt;/label&gt;
+              &lt;div class=&quot;merge -large -vertical&quot;&gt;
+                &lt;fieldset class=&quot;&quot;&gt;
+                  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;/fieldset&gt;
+                &lt;fieldset class=&quot;-has-icon -right&quot;&gt;
+                  &lt;i class=&quot;icon -eye&quot;&gt;&lt;/i&gt;
+                  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;/fieldset&gt;
+                &lt;button class=&quot;button loading -primary toggle-loading toggle-success&quot;&gt;
+                  &lt;span&gt;Se connecter&lt;/span&gt;
+                &lt;/button&gt;
+              &lt;/div&gt;
+
+   .bloc#modifier-Modal    h5 Modal    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <button class="button open-modal">Open modal</button>
+          <div class="modal">
+            <div class="overlay close-modal"></div>
+            <div class="content">
+              <div class="card content-wrapper">
+                <header class="header">
+                  <h5>Modal title</h5>
+                  <div class="close-button close-modal">
+                    <i class="icon -cross"></i>
+                  </div>
+                </header>
+                <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+                <footer class="footer merge -large -horizontal">
+                  <button class="button">Accept</button>
+                  <button class="button">Decline</button>
+                </footer>
+              </div>
+            </div>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Modal-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Modal-code.              &lt;button class=&quot;button open-modal&quot;&gt;Open modal&lt;/button&gt;
+              &lt;div class=&quot;modal&quot;&gt;
+                &lt;div class=&quot;overlay close-modal&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;div class=&quot;card content-wrapper&quot;&gt;
+                    &lt;header class=&quot;header&quot;&gt;
+                      &lt;h5&gt;Modal title&lt;/h5&gt;
+                      &lt;div class=&quot;close-button close-modal&quot;&gt;
+                        &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+                      &lt;/div&gt;
+                    &lt;/header&gt;
+                    &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+                    &lt;footer class=&quot;footer merge -large -horizontal&quot;&gt;
+                      &lt;button class=&quot;button&quot;&gt;Accept&lt;/button&gt;
+                      &lt;button class=&quot;button&quot;&gt;Decline&lt;/button&gt;
+                    &lt;/footer&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+           div(hljs).javascript.Modal-code.            $(".open-modal").click(function() {
+              $(".modal").addClass("-opening");
+              window.setTimeout(function() {
+                $("body").addClass("no-scroll");
+                $(".modal").addClass("-open");
+                $(".modal").removeClass("-opening");
+              }, 600);
+            });
+            $(".close-modal").click(function() {
+              $(".modal").addClass("-closing");
+              window.setTimeout(function() {
+                $(".modal").removeClass("-open");
+                $(".modal").removeClass("-closing");
+                $("body").removeClass("no-scroll");
+              }, 350);
+            });
+
+  .bloc#modifier-Touch    h5 Touch    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="radio -primary touch ">
+            <input id="radio4" type="radio" name='radio-group' />
+            <label for="radio4"<span>Apples</span></label>
+          </div>
+          <div class="radio -primary touch ">
+            <input id="radio5" type="radio" name='radio-group' checked/>
+            <label for="radio5"<span>Apples</span></label>
+          </div>
+          <br/>
+          <div class="checkbox touch ">
+            <input id="checkbox4" type="checkbox"/>
+            <label for="checkbox4">
+              <span>Lemons</span>
+            </label>
+          </div>
+          <br/>
+          <div class="toggle -round touch ">
+            <input id="toggle4" type="checkbox">
+            <label for="toggle4"><span>Tomatoes</span></label>
+          </div>
+          <div class="card touch">
+            <p> Hello world </p>
+          </div>
+          <button class="button touch">
+          <i class="icon -sun"></i>
+          <span>Bouton</span>
+          </button>
+          <button class="button touch -no-border">
+          <i class="icon -sun"></i>
+          <span>Bouton</span>
+          </button>
+          <button class="button touch -no-border -icon-only -visible">
+          <i class="icon -sun"></i>
+          </button>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Touch-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Touch-code.              &lt;div class=&quot;radio -primary touch &quot;&gt;
+                &lt;input id=&quot;radio4&quot; type=&quot;radio&quot; name='radio-group' /&gt;
+                &lt;label for=&quot;radio4&quot;&lt;span&gt;Apples&lt;/span&gt;&lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;radio -primary touch &quot;&gt;
+                &lt;input id=&quot;radio5&quot; type=&quot;radio&quot; name='radio-group' checked/&gt;
+                &lt;label for=&quot;radio5&quot;&lt;span&gt;Apples&lt;/span&gt;&lt;/label&gt;
+              &lt;/div&gt;
+              &lt;br/&gt;
+              &lt;div class=&quot;checkbox touch &quot;&gt;
+                &lt;input id=&quot;checkbox4&quot; type=&quot;checkbox&quot;/&gt;
+                &lt;label for=&quot;checkbox4&quot;&gt;
+                  &lt;span&gt;Lemons&lt;/span&gt;
+                &lt;/label&gt;
+              &lt;/div&gt;
+              &lt;br/&gt;
+              &lt;div class=&quot;toggle -round touch &quot;&gt;
+                &lt;input id=&quot;toggle4&quot; type=&quot;checkbox&quot;&gt;
+                &lt;label for=&quot;toggle4&quot;&gt;&lt;span&gt;Tomatoes&lt;/span&gt;&lt;/label&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;card touch&quot;&gt;
+                &lt;p&gt; Hello world &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;button class=&quot;button touch&quot;&gt;
+              &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;Bouton&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class=&quot;button touch -no-border&quot;&gt;
+              &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+              &lt;span&gt;Bouton&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class=&quot;button touch -no-border -icon-only -visible&quot;&gt;
+              &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+              &lt;/button&gt;
+
+           div(hljs).javascript.Touch-code.            $(".touch, .button:not(.-loading):not(.-disabled):not([disabled])").click(function(e){
+            var elem, d, x, y;
+              console.log(2);
+              if($(this).find(".touch-elem").length === 0)
+                $(this).prepend("<div class='touch-elem'></div>");
+              elem = $(this).find(".touch-elem");
+              elem.removeClass("animate");
+              if(!elem.height() && !elem.width()){
+                  d = Math.max($(this).outerWidth(), $(this).outerHeight());
+                  elem.css({height: d, width: d});
+              }
+              x = e.pageX - $(this).offset().left - elem.width()/2;
+              y = e.pageY - $(this).offset().top - elem.height()/2;
+              elem.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+            });
+
+footer.footer  h5    a(ui-sref="nav.template") templatescript.    $(".isolate input").focus(function(){
+      var $element = $(this).closest(".isolate");
+      $element.addClass("-activating");
+      window.setTimeout(function(){
+        $element.addClass("-active");
+      }, 50);
+    });
+    $(".isolate input").blur(function(){
+      var $element = $(this).closest(".isolate");
+      $element.removeClass("-active");
+      window.setTimeout(function(){
+        $element.removeClass("-activating");
+      }, 150);
+    });
+
+    $(".open-panel").click(function(){
+      $(".panel").addClass("-opening");
+      window.setTimeout(function(){
+        $(".panel").addClass("-open");
+        $(".panel").removeClass("-opening");
+      }, 350);
+    });
+    $(".close-panel").click(function(){
+      $(".panel").addClass("-closing");
+      window.setTimeout(function(){
+        $(".panel").removeClass("-open");
+        $(".panel").removeClass("-closing");
+      }, 350);
+    });
+  
+    window.setInterval(function() {
+      $(".toggle-loading").each(function() {
+        $(this).toggleClass("loading");
+      });
+    }, 3000);
+
+    $(".open-modal").click(function() {
+      $(".modal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $(".modal").addClass("-open");
+        $(".modal").removeClass("-opening");
+      }, 600);
+    });
+    $(".close-modal").click(function() {
+      $(".modal").addClass("-closing");
+      window.setTimeout(function() {
+        $(".modal").removeClass("-open");
+        $(".modal").removeClass("-closing");
+        $("body").removeClass("no-scroll");
+      }, 350);
+    });
+
+    $(".touch, .button:not(.-loading):not(.-disabled):not([disabled])").click(function(e){
+    var elem, d, x, y;
+      console.log(2);
+      if($(this).find(".touch-elem").length === 0)
+        $(this).prepend("<div class='touch-elem'></div>");
+      elem = $(this).find(".touch-elem");
+      elem.removeClass("animate");
+      if(!elem.height() && !elem.width()){
+          d = Math.max($(this).outerWidth(), $(this).outerHeight());
+          elem.css({height: d, width: d});
+      }
+      x = e.pageX - $(this).offset().left - elem.width()/2;
+      y = e.pageY - $(this).offset().top - elem.height()/2;
+      elem.css({top: y + 'px', left: x + 'px'}).addClass("animate");
+    });
+
+

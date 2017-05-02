@@ -1,0 +1,153 @@
+/*
+––––
+
+	title:
+		Table
+
+	comment:
+		La Table est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Thibaud Frere</td>
+          <td>24</td>
+          <td>Male</td>
+          <td>Paris</td>
+        </tr>
+        <tr>
+          <td>Anthony Lacroix</td>
+          <td>26</td>
+          <td>Male</td>
+          <td>Metz</td>
+        </tr>
+      </tbody>
+    </table>
+    <br/>
+    <label>Simple</label>
+    <table class="-quad">
+      <thead>
+        <tr>
+          <th class="empty shrink"></th>
+          <th>Age</th>
+          <th>Sex</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="shrink"><button class="button -line-primary -no-border -no-gradient"><i class="icon -cross"></i></button></td>
+          <td>24</td>
+          <td>Male</td>
+        </tr>
+        <tr>
+          <td class="shrink"><button class="button -line-primary -no-border -no-gradient"><i class="icon -cross"></i></button></td>
+          <td>26</td>
+          <td>Male</td>
+        </tr>
+      </tbody>
+    </table>
+
+  script:
+  
+––––
+*/
+
+table {
+	width: 100%;
+	text-align: left;
+	font-family: $nav-font;
+	thead {
+		tr th{
+			font-weight: 600;
+			&:first-child {
+				margin-left: 5px;
+			}
+			padding: 15px 15px 15px 1px;
+		}
+
+	}
+
+	td {
+		.button {
+			margin: 0;
+		}
+	}
+	td.shrink, th.shrink {
+		white-space: nowrap;
+	}
+
+	tbody {
+
+		tr {
+			&:last-child {
+				border-bottom:1px solid color("grey", "lighten-2");
+			}
+			&:hover {
+				background-color: color("grey", "lighten-4");
+				td:first-child {
+					margin-left:5px;
+				}
+			}
+			td {
+				&:first-child {
+					margin-left: 5px;
+				}
+				border-top: 1px solid color("grey", "lighten-2");
+				padding: 15px 15px 15px 1px;
+				input {
+					min-width: 10px;
+				    max-width: 100%;
+				    width: 100%;
+				}
+			}
+
+		}
+
+	}
+
+  &.-quad {
+		border-radius:3px;
+		thead {
+			background-color: color("grey", "lighten-5");
+		}
+		thead tr th {
+			border-top: 1px solid color("grey", "lighten-2");
+			&:first-child {
+				border-radius:3px;
+			}
+			&:last-child {
+				border-radius:3px;
+			}
+		}
+		tbody tr:last-child {
+			td:first-child {
+				border-radius:3px;
+			}
+			td:last-child {
+				border-radius:3px;
+			}
+		}
+		thead tr th, tbody tr td {
+      border-right: 1px solid color("grey", "lighten-2");
+			padding: 10px 10px 10px 10px;
+			&:first-child {
+				border-left: 1px solid color("grey", "lighten-2");
+			}
+    }
+  }
+
+	.empty {
+			visibility: hidden;
+	}
+
+}

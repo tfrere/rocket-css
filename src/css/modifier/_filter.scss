@@ -1,0 +1,241 @@
+/*
+––––
+
+	title:
+		Filter
+
+	comment:
+		La Filter est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <figure class="filter -grayscale -example">
+      <img src="/assets/imgs/jpg/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+    <br/>
+    <label>With filter -blur</label>
+    <figure class="filter -blur -example">
+      <img src="/assets/imgs/jpg/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+
+  script:
+
+––––
+*/
+
+$base-index: 4;
+
+.filter {
+  position: relative;
+  &:before, &:after {
+    z-index: $base-index;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    z-index: $base-index + 1;
+  }
+  &.-grayscale img {
+    filter: brightness(0.2);
+    -webkit-filter: brightness(0.2);
+  }
+  &.-blur img {
+    -webkit-filter: blur(5px);
+    overflow:hidden;
+  }
+  &.-seventies {
+    img {
+      filter: contrast(1.1) brightness(1.1) saturate(1.3);
+    }
+    &:before {
+      background: rgba(243, 106, 188, .3);
+      mix-blend-mode: screen;
+    }
+  }
+  &.-inkwell img {
+    filter: sepia(.3) contrast(1.1) brightness(1.1) grayscale(1);
+  }
+  &.-nashville {
+    img {
+      filter: sepia(.2) contrast(1.2) brightness(1.05) saturate(1.2);
+    }
+    &::after {
+      background: rgba(0, 70, 150, .4);
+      mix-blend-mode: lighten;
+    }
+    &::before {
+      background: rgba(247, 176, 153, .56);
+      mix-blend-mode: darken;
+    }
+  }
+  &.-brooklyn {
+    img {
+      filter: contrast(.9) brightness(1.1);
+    }
+    &::after {
+      background: radial-gradient(circle, rgba(168, 223, 193, .4) 70%, rgb(196, 183, 200));
+      mix-blend-mode: overlay;
+    }
+  }
+  &.-aden {
+    img {
+      filter: hue-rotate(-20deg) contrast(.9) saturate(.85) brightness(1.2);
+    }
+    &::after {
+      background: linear-gradient(to right, rgba(66, 10, 14, .2), transparent);
+      mix-blend-mode: darken;
+    }
+    &.-clarendon {
+      img {
+        filter: contrast(1.2) saturate(1.35);
+      }
+      &:before {
+        background: rgba(127, 187, 227, .2);
+        mix-blend-mode: overlay;
+      }
+    }
+  }
+  &.-earlybird {
+    img {
+      filter: contrast(.9) sepia(.2);
+    }
+    &::after {
+      background: radial-gradient(circle, rgb(208, 186, 142) 20%, rgb(54, 3, 9) 85%, rgb(29, 2, 16) 100%);
+      mix-blend-mode: overlay;
+    }
+  }
+  &.-gingham {
+    img {
+      filter: brightness(1.05) hue-rotate(-10deg);
+    }
+    &::after {
+      background: linear-gradient(to right, rgba(66, 10, 14, .2), transparent);
+      mix-blend-mode: darken;
+    }
+  }
+  &.-hudson {
+    img {
+      filter: brightness(1.2) contrast(.9) saturate(1.1);
+    }
+    &::after {
+      background: radial-gradient(circle, rgb(166, 177, 255) 50%, rgb(52, 33, 52));
+      mix-blend-mode: multiply;
+      opacity: .5;
+    }
+
+  }
+  &.-lork {
+    img {
+      filter: contrast(.9);
+    }
+    &::after {
+      background: rgba(242, 242, 242, .8);
+      mix-blend-mode: darken;
+    }
+
+    &::before {
+      background: rgb(34, 37, 63);
+      mix-blend-mode: color-dodge;
+    }
+  }
+  &.-mayfair {
+    img {
+      filter: contrast(1.1) saturate(1.1);
+    }
+    &::after {
+      background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, .8), rgba(255, 200, 200, .6), rgb(17, 17, 17) 60%);
+      mix-blend-mode: overlay;
+      opacity: .4;
+    }
+  }
+  &.-moon {
+    img {
+      filter: grayscale(1) contrast(1.1) brightness(1.1);
+    }
+
+    &::before {
+      background: rgb(160, 160, 160);
+      mix-blend-mode: soft-light;
+    }
+
+    &::after {
+      background: rgb(56, 56, 56);
+      mix-blend-mode: lighten;
+    }
+  }
+  &.-perpetua {
+    &::after {
+      background: linear-gradient(to bottom, rgb(0, 91, 154), rgb(230, 193, 61));
+      mix-blend-mode: soft-light;
+      opacity: .5;
+    }
+  }
+  &.-reyes {
+    img {
+      filter: sepia(.22) brightness(1.1) contrast(.85) saturate(.75);
+    }
+
+     &::after {
+      background: rgb(239, 205, 173);
+      mix-blend-mode: soft-light;
+      opacity: .5;
+    }
+  }
+  &.-toaster {
+    img {
+      filter: contrast(1.5) brightness(.9);
+    }
+    &::after {
+      background: radial-gradient(circle, rgb(128, 78, 15), rgb(59, 0, 59));
+      mix-blend-mode: screen;
+    }
+  }
+  &.-walden {
+    img {
+      filter: brightness(1.1) hue-rotate(-10deg) sepia(.3) saturate(1.6);
+    }
+    &::after {
+      background: rgb(0, 68, 204);
+      mix-blend-mode: screen;
+      opacity: .3;
+    }
+  }
+  &.-willow {
+    img {
+      filter: grayscale(.5) contrast(.95) brightness(.9);
+    }
+    &::before {
+      background-color: radial-gradient(40%, circle, rgb(212, 169, 175) 55%, black 150%);
+      mix-blend-mode: overlay;
+    }
+
+    &::after {
+      background-color: rgb(216, 205, 203);
+      mix-blend-mode: color;
+    }
+  }
+  &.-xpro2 {
+    img {
+      filter: sepia(.3);
+    }
+    &::after {
+      background: radial-gradient(circle, rgb(230, 231, 224) 40%, rgba(43, 42, 161, .6) 110%);
+      mix-blend-mode: color-burn;
+    }
+  }
+
+}

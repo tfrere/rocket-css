@@ -1,0 +1,149 @@
+/*
+––––
+
+	title:
+		Merge
+
+	comment:
+		La Button est une plante qui se mange froide
+
+	markup:
+    <label>Horizontal</label>
+    <div class="merge -horizontal">
+      <fieldset class="-has-icon">
+        <i class="icon -lock"></i>
+        <input type="password" placeholder="Password" />
+      </fieldset>
+      <button class="button -primary -icon-only -no-gradient">
+        <i class="icon -pencil"></i>
+      </button>
+      <button class="button -primary -icon-only -no-gradient">
+        <i class="icon -cross"></i>
+      </button>
+    </div>
+    <div class="merge -horizontal">
+      <input class="-round" type="password" placeholder="Password" />
+      <button class="button loading -primary -round -only-icon toggle-loading ">
+        <i class="icon -sun"></i>
+      </button>
+    </div>
+    <div class="merge -large -horizontal">
+      <button class="button -small -icon-only loading toggle-loading toggle-fail">
+        <i class="icon -sun"></i>
+      </button>
+      <button class="button -small -icon-only">
+        <i class="icon -sun"></i>
+      </button>
+      <button class="button -small -icon-only">
+        <i class="icon -moon"></i>
+      </button>
+    </div>
+    <label>Vertical</label>
+    <div class="merge -large -vertical">
+      <fieldset class="">
+        <input type="password" placeholder="Password" />
+      </fieldset>
+      <fieldset class="-has-icon -right">
+        <i class="icon -eye"></i>
+        <input type="password" placeholder="Password" />
+      </fieldset>
+      <button class="button loading -primary toggle-loading toggle-success">
+        <span>Se connecter</span>
+      </button>
+    </div>
+
+	script:
+
+––––
+*/
+
+.merge {
+	display: flex;
+	button, input {
+		margin-left: 0;
+		margin-right: 0;
+		border-radius: 0;
+	}
+	button {
+		box-shadow: none;
+	}
+  &.-large {
+    fieldset, button, input {
+      width: 100%;
+    }
+    fieldset {
+    }
+  }
+	&.-horizontal {
+    flex-direction: row;
+    display: flex;
+    fieldset, button, input {
+        align-self: flex-end;
+    }
+    button {
+      align-self: flex-end;
+      min-height: 41px;
+    }
+		&>:not(:first-child) {
+			border-left: none;
+		}
+		&>:first-child, &>:first-child input {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+      &.-round {
+        border-top-left-radius: 1000px;
+  			border-bottom-left-radius: 1000px;
+      }
+		}
+		&>:last-child {
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+
+			border-top-left-radius: 0px;
+			border-bottom-left-radius: 0px;
+      &.-round {
+        border-top-right-radius: 1000px;
+  			border-bottom-right-radius: 1000px;
+      }
+		}
+	}
+	&.-vertical {
+		flex-direction: column;
+		display: inline-flex;
+    &.-large {
+      width: 100%;
+    }
+    fieldset, button, input {
+      margin: 0;
+      width: 100%;
+    }
+		&>:first-child, &>:first-child input {
+			border-bottom: none;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+      &.-round {
+        border-top-left-radius: 1000px;
+  			border-top-right-radius: 1000px;
+      }
+		}
+		&>:last-child input, button:last-child {
+			border-top: none;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+      margin-bottom: $text-size!important; // hmmkay
+      &.-round {
+        border-bottom-left-radius: 1000px;
+  			border-bottom-right-radius: 1000px;
+      }
+		}
+	}
+
+}

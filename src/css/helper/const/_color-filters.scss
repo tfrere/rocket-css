@@ -1,0 +1,67 @@
+svg {
+	display: none;
+}
+.normal {
+}
+
+.protanopia {
+	-webkit-filter: url(#protanopia);
+	   -moz-filter: url(#protanopia);
+	    -ms-filter: url(#protanopia);
+	     -o-filter: url(#protanopia);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='protanopia'><feColorMatrix type='matrix' values='0.56667 0.43333 0.00000 0 0 0.55833 0.44167 0.00000 0 0 0.00000 0.24167 0.75833 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.deuteranopia {
+	-webkit-filter: url(#deuteranopia);
+	   -moz-filter: url(#deuteranopia);
+	    -ms-filter: url(#deuteranopia);
+	     -o-filter: url(#deuteranopia);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='deuteranopia'><feColorMatrix type='matrix' values='0.4251 0.6934 -0.1147 0 0 0.3417 0.5882 0.0692 0 0 -0.0105 0.0234 0.9870 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.tritanopia {
+	-webkit-filter: url(#tritanopia);
+	   -moz-filter: url(#tritanopia);
+	    -ms-filter: url(#tritanopia);
+	     -o-filter: url(#tritanopia);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='tritanopia'><feColorMatrix type='matrix' values='0.95000 0.05000 0.00000 0 0 0.00000 0.43333 0.56700 0 0 0.00000 0.47500 0.52500 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.monochromacy {
+	-webkit-filter: url(#monochromacy);
+	   -moz-filter: url(#monochromacy);
+	    -ms-filter: url(#monochromacy);
+	     -o-filter: url(#monochromacy);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='monochromacy'><feColorMatrix type='matrix' values='0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.enhance-r {
+	-webkit-filter: url(#enhance-r);
+	   -moz-filter: url(#enhance-r);
+	    -ms-filter: url(#enhance-r);
+	     -o-filter: url(#enhance-r);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='monochromacy'><feColorMatrix type='matrix' values='1.00 0.00 0.00 0 0 0.00 1.00 0.00 0 0 1.00 0.00 0.00 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.enhance-g {
+	-webkit-filter: url(#enhance-g);
+	   -moz-filter: url(#enhance-g);
+	    -ms-filter: url(#enhance-g);
+	     -o-filter: url(#enhance-g);
+	        //filter: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg'><filter id='monochromacy'><feColorMatrix type='matrix' values='1.00 0.00 0.00 0 0 0.00 1.00 0.00 0 0 0.00 1.00 0.00 0 0 0 0 0 1 0'/></filter></svg>");
+}
+
+.enhance-r2 {
+	-webkit-filter: url(#enhance-r2);
+	   -moz-filter: url(#enhance-r2);
+	    -ms-filter: url(#enhance-r2);
+	     -o-filter: url(#enhance-r2);
+}
+
+.enhance-g2 {
+	-webkit-filter: url(#enhance-g2);
+	   -moz-filter: url(#enhance-g2);
+	    -ms-filter: url(#enhance-g2);
+	     -o-filter: url(#enhance-g2);
+}

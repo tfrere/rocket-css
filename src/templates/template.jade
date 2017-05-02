@@ -1,0 +1,347 @@
+header#template-head  div    h3 templatesection.section#template  .bloc#template-Login    h5 Login    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div id="loginModal" class="modal login">
+            <div class="overlay close-modal"></div>
+            <div class="content">
+              <div class="card content-wrapper">
+                <!--<img class="image" src="images/icon/Comet.svg"></img>-->
+                <div class="close-button close-modal">
+                  <i class="icon -cross"></i>
+                </div>
+                <div>
+                  <h5>Se connecter</h5>
+                  <fieldset class="-large -has-icon -has-tag">
+                    <i class="icon -user"></i>
+                    <input type="password" placeholder="Pseudo ou email" />
+                    <div class="tag visible -line-danger -large -top -pointing">
+                      <span>Votre identifiant n'existe pas</span>
+                    </div>
+                  </fieldset>
+                  <fieldset class="-large -has-icon -has-tag">
+                    <i class="icon -lock"></i>
+                    <input type="password" placeholder="Mot de passe" />
+                    <div class="tag visible -line-danger -large -top -pointing">
+                      <span>Votre mot de passe est inccorect</span>
+                    </div>
+                  </fieldset>
+                  <div class="checkbox">
+                    <input id="checkbox2" type="checkbox"/>
+                    <label for="checkbox2">
+                      <span>rester connecté</span>
+                    </label>
+                  </div>
+                  <button class="button loading -large -primary">
+                    <span>Se connecter</span>
+                  </button>
+                  <footer>
+                    <a href="">S'inscrire</a> -
+                    <a href="">Mot de passe perdu ?</a>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="subscribeModal" class="modal login -subscribe">
+            <div class="overlay close-modal"></div>
+            <div class="content">
+              <div class="card content-wrapper">
+                <!--<img class="image" src="images/icon/Comet.svg"></img>-->
+                <div class="close-button close-modal">
+                  <i class="icon -cross"></i>
+                </div>
+                <div>
+                  <h5>Inscription</h5>
+                  <div class="two-cols-verticaly-aligned">
+                    <div class="wrapper">
+                      <button class="button -large -primary facebook">
+                        <span>Se connecter avec facebook</span>
+                      </button>
+                      <hr class="hr -half -center" data-title="OU"/>
+                      <fieldset class="-large -has-icon ">
+                        <i class="icon -user"></i>
+                        <input type="password" placeholder="Email" />
+                      </fieldset>
+                      <fieldset class="-large -has-icon">
+                        <i class="icon -lock"></i>
+                        <input type="password" placeholder="Mot de passe" />
+                      </fieldset>
+                      <button class="button toggle-loading -large -primary">
+                        <span>S'inscrire</span>
+                      </button>
+                    </div>
+                    <div class="wrapper why">
+                      <img class="image" src="images/icon/moonWalker2.svg"></img>
+                      <label>Pourquoi créer un compte</label>
+                      <p>Bien remplir son compte nous aide à rendre vos résultats plus pertinents encore</p>
+                    </div>
+                  </div>
+                  <footer>
+                    <a href="">Se connecter</a> -
+                    <a href="">Mot de passe perdu ?</a>
+                  </footer>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button open-login-modal">Open login modal</button>
+          <button class="button open-subscribe-modal">Open subscribe modal</button>
+
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Login-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Login-code.              &lt;div id=&quot;loginModal&quot; class=&quot;modal login&quot;&gt;
+                &lt;div class=&quot;overlay close-modal&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;div class=&quot;card content-wrapper&quot;&gt;
+                    &lt;!--&lt;img class=&quot;image&quot; src=&quot;images/icon/Comet.svg&quot;&gt;&lt;/img&gt;--&gt;
+                    &lt;div class=&quot;close-button close-modal&quot;&gt;
+                      &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                      &lt;h5&gt;Se connecter&lt;/h5&gt;
+                      &lt;fieldset class=&quot;-large -has-icon -has-tag&quot;&gt;
+                        &lt;i class=&quot;icon -user&quot;&gt;&lt;/i&gt;
+                        &lt;input type=&quot;password&quot; placeholder=&quot;Pseudo ou email&quot; /&gt;
+                        &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
+                          &lt;span&gt;Votre identifiant n'existe pas&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/fieldset&gt;
+                      &lt;fieldset class=&quot;-large -has-icon -has-tag&quot;&gt;
+                        &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+                        &lt;input type=&quot;password&quot; placeholder=&quot;Mot de passe&quot; /&gt;
+                        &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
+                          &lt;span&gt;Votre mot de passe est inccorect&lt;/span&gt;
+                        &lt;/div&gt;
+                      &lt;/fieldset&gt;
+                      &lt;div class=&quot;checkbox&quot;&gt;
+                        &lt;input id=&quot;checkbox2&quot; type=&quot;checkbox&quot;/&gt;
+                        &lt;label for=&quot;checkbox2&quot;&gt;
+                          &lt;span&gt;rester connecté&lt;/span&gt;
+                        &lt;/label&gt;
+                      &lt;/div&gt;
+                      &lt;button class=&quot;button loading -large -primary&quot;&gt;
+                        &lt;span&gt;Se connecter&lt;/span&gt;
+                      &lt;/button&gt;
+                      &lt;footer&gt;
+                        &lt;a href=&quot;&quot;&gt;S'inscrire&lt;/a&gt; -
+                        &lt;a href=&quot;&quot;&gt;Mot de passe perdu ?&lt;/a&gt;
+                      &lt;/footer&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div id=&quot;subscribeModal&quot; class=&quot;modal login -subscribe&quot;&gt;
+                &lt;div class=&quot;overlay close-modal&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;content&quot;&gt;
+                  &lt;div class=&quot;card content-wrapper&quot;&gt;
+                    &lt;!--&lt;img class=&quot;image&quot; src=&quot;images/icon/Comet.svg&quot;&gt;&lt;/img&gt;--&gt;
+                    &lt;div class=&quot;close-button close-modal&quot;&gt;
+                      &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                      &lt;h5&gt;Inscription&lt;/h5&gt;
+                      &lt;div class=&quot;two-cols-verticaly-aligned&quot;&gt;
+                        &lt;div class=&quot;wrapper&quot;&gt;
+                          &lt;button class=&quot;button -large -primary facebook&quot;&gt;
+                            &lt;span&gt;Se connecter avec facebook&lt;/span&gt;
+                          &lt;/button&gt;
+                          &lt;hr class=&quot;hr -half -center&quot; data-title=&quot;OU&quot;/&gt;
+                          &lt;fieldset class=&quot;-large -has-icon &quot;&gt;
+                            &lt;i class=&quot;icon -user&quot;&gt;&lt;/i&gt;
+                            &lt;input type=&quot;password&quot; placeholder=&quot;Email&quot; /&gt;
+                          &lt;/fieldset&gt;
+                          &lt;fieldset class=&quot;-large -has-icon&quot;&gt;
+                            &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+                            &lt;input type=&quot;password&quot; placeholder=&quot;Mot de passe&quot; /&gt;
+                          &lt;/fieldset&gt;
+                          &lt;button class=&quot;button toggle-loading -large -primary&quot;&gt;
+                            &lt;span&gt;S'inscrire&lt;/span&gt;
+                          &lt;/button&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;wrapper why&quot;&gt;
+                          &lt;img class=&quot;image&quot; src=&quot;images/icon/moonWalker2.svg&quot;&gt;&lt;/img&gt;
+                          &lt;label&gt;Pourquoi créer un compte&lt;/label&gt;
+                          &lt;p&gt;Bien remplir son compte nous aide à rendre vos résultats plus pertinents encore&lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/div&gt;
+                      &lt;footer&gt;
+                        &lt;a href=&quot;&quot;&gt;Se connecter&lt;/a&gt; -
+                        &lt;a href=&quot;&quot;&gt;Mot de passe perdu ?&lt;/a&gt;
+                      &lt;/footer&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;button class=&quot;button open-login-modal&quot;&gt;Open login modal&lt;/button&gt;
+              &lt;button class=&quot;button open-subscribe-modal&quot;&gt;Open subscribe modal&lt;/button&gt;
+
+
+           div(hljs).javascript.Login-code.            $(".open-login-modal").click(function() {
+              $("#loginModal").addClass("-opening");
+              window.setTimeout(function() {
+                $("body").addClass("no-scroll");
+                $("#loginModal").addClass("-open");
+                $("#loginModal").removeClass("-opening");
+              }, 600);
+            });
+            $(".open-subscribe-modal").click(function() {
+              $("#subscribeModal").addClass("-opening");
+              window.setTimeout(function() {
+                $("body").addClass("no-scroll");
+                $("#subscribeModal").addClass("-open");
+                $("#subscribeModal").removeClass("-opening");
+              }, 600);
+            });
+            // closeModal function is already present
+
+  .bloc#template-Hero    h5 Hero    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <section class="background hero">
+            <div class="main-texture"></div>
+            <div id="main-background"></div>
+            <div id="content" class="container">
+              <div class="twelve col">
+                <h1 class="punchline remove-bot">Punchline</h1>
+                <h5 class="subline">Subline</h5>
+                <div><a class="cta touch button -big -round -line-grey-lighten-5">CallToAction</a></div>
+              </div>
+            </div>
+            <div class="invite-to-scroll"></div>
+            <div class="shape"></div>
+          </section>
+
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Hero-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Hero-code.              &lt;section class=&quot;background hero&quot;&gt;
+                &lt;div class=&quot;main-texture&quot;&gt;&lt;/div&gt;
+                &lt;div id=&quot;main-background&quot;&gt;&lt;/div&gt;
+                &lt;div id=&quot;content&quot; class=&quot;container&quot;&gt;
+                  &lt;div class=&quot;twelve col&quot;&gt;
+                    &lt;h1 class=&quot;punchline remove-bot&quot;&gt;Punchline&lt;/h1&gt;
+                    &lt;h5 class=&quot;subline&quot;&gt;Subline&lt;/h5&gt;
+                    &lt;div&gt;&lt;a class=&quot;cta touch button -big -round -line-grey-lighten-5&quot;&gt;CallToAction&lt;/a&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;invite-to-scroll&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;shape&quot;&gt;&lt;/div&gt;
+              &lt;/section&gt;
+
+
+   .bloc#template-Footer    h5 Footer    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <footer id="footer">
+            <div class="container">
+              <div class="row">
+                <div class="three col">
+                  <div id="logo"></div>
+                </div>
+                <div class="three col">
+                  <h6>Réseaux sociaux</h6>
+                  <ul>
+                    <li><a href="#">Google +</a></li>
+                    <li><a href="http://twitter.com/peon_actu">Twitter</a></li>
+                    <li><a href="http://facebook.com/gopeon">Facebook</a></li>
+                  </ul>
+                </div>
+                <div class="three col">
+                  <h6>Presse</h6>
+                  <ul>
+                    <li><a href="#"></a>Contactez-nous</li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+                <div class="three col">
+                  <h6>Légal</h6>
+                  <ul>
+                    <li><a href="#">Mentions-légales</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Footer-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Footer-code.              &lt;footer id=&quot;footer&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                  &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;three col&quot;&gt;
+                      &lt;div id=&quot;logo&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;three col&quot;&gt;
+                      &lt;h6&gt;Réseaux sociaux&lt;/h6&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Google +&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;http://twitter.com/peon_actu&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;http://facebook.com/gopeon&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;three col&quot;&gt;
+                      &lt;h6&gt;Presse&lt;/h6&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;Contactez-nous&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;three col&quot;&gt;
+                      &lt;h6&gt;Légal&lt;/h6&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mentions-légales&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/footer&gt;
+
+
+   .bloc#template-Navigation    h5 Navigation    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <nav>
+            <div class="container">
+              <div class="row">
+                <div class="twelve col">
+                  <a id="logo" class="pull-left"></a>
+                  <div class="-round pull-right half-left"></div><a class="button -round small pull-right -line-complement">S'inscrire</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div id="cookie">
+            <div class="container">
+              <div class="row">
+                <div class="twelve col">
+                  <p class="pull-left">Ce site utilise des cookies ! <a href="#">En savoir plus </a></p><i class="icon -cross pull-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Navigation-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Navigation-code.              &lt;nav&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                  &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;twelve col&quot;&gt;
+                      &lt;a id=&quot;logo&quot; class=&quot;pull-left&quot;&gt;&lt;/a&gt;
+                      &lt;div class=&quot;-round pull-right half-left&quot;&gt;&lt;/div&gt;&lt;a class=&quot;button -round small pull-right -line-complement&quot;&gt;S'inscrire&lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/nav&gt;
+              &lt;div id=&quot;cookie&quot;&gt;
+                &lt;div class=&quot;container&quot;&gt;
+                  &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;twelve col&quot;&gt;
+                      &lt;p class=&quot;pull-left&quot;&gt;Ce site utilise des cookies ! &lt;a href=&quot;#&quot;&gt;En savoir plus &lt;/a&gt;&lt;/p&gt;&lt;i class=&quot;icon -cross pull-right&quot;&gt;&lt;/i&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+
+ footer.footer  h5    a(ui-sref="nav.undefined") undefinedscript.    $(".open-login-modal").click(function() {
+      $("#loginModal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $("#loginModal").addClass("-open");
+        $("#loginModal").removeClass("-opening");
+      }, 600);
+    });
+    $(".open-subscribe-modal").click(function() {
+      $("#subscribeModal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $("#subscribeModal").addClass("-open");
+        $("#subscribeModal").removeClass("-opening");
+      }, 600);
+    });
+    // closeModal function is already present
+
+

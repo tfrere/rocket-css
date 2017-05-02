@@ -1,0 +1,54 @@
+/*
+––––
+
+	title:
+		inviteToScroll
+
+	comment:
+		La inviteToScroll est une plante qui se mange froide
+
+	markup:
+    <div class="invite-to-scroll"></div>
+
+  script:
+
+––––
+*/
+
+@keyframes drop{
+  0%{top:2px;opacity:0}
+  30%{top:8px;opacity:1}
+  100%{top:15px;opacity:0}
+}
+
+.invite-to-scroll {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-clip: padding-box;
+  height: 33px;
+  width: 20px;
+  margin: 0 0 0 -10px;
+  display: block;
+  bottom: 70px;
+  left: 50%;
+  z-index: 2;
+  &:before {
+    content: '';
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    background-clip: padding-box;
+    background: grey;
+    width: 2px;
+    height: 6px;
+    top: 5px;
+    margin: 0 auto;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
+}

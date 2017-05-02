@@ -1,0 +1,60 @@
+/*
+––––
+
+	title:
+		Isolate
+
+	comment:
+		La Isolate est une plante qui se mange froide
+
+	markup:
+    <div class="isolate">
+      <div>
+        <input type="text" placeholder="Coucou"/>
+      </div>
+    </div>
+
+  script:
+    $(".isolate input").focus(function(){
+      var $element = $(this).closest(".isolate");
+      $element.addClass("-activating");
+      window.setTimeout(function(){
+        $element.addClass("-active");
+      }, 50);
+    });
+    $(".isolate input").blur(function(){
+      var $element = $(this).closest(".isolate");
+      $element.removeClass("-active");
+      window.setTimeout(function(){
+        $element.removeClass("-activating");
+      }, 150);
+    });
+
+––––
+*/
+
+
+.isolate {
+  &:after {
+    content:"";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999999;
+    background: rgba(0,0,0,0);
+    transition: background 200ms ease;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+  }
+  &>div {
+    z-index: 999999999999999999999;
+    position: relative;
+  }
+  &.-activating:after {
+    visibility: visible;
+  }
+  &.-active:after {
+    background: rgba(0,0,0,0.6);
+  }
+}

@@ -1,0 +1,71 @@
+@import "template/doc/nav";
+@import "template/doc/section";
+@import "template/doc/footer";
+@import "template/doc/color";
+@import "template/doc/color-donut";
+@import "template/doc/typo";
+@import "template/doc/symbol";
+@import "template/doc/ease-curve";
+@import "template/doc/ease";
+
+html, body {
+	width:100%;
+	height:100%;
+}
+
+body.dark {
+	background-color: color("grey", "darken-3");
+	color:white;
+}
+
+.pattern {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAAAXNSR0IArs4c6QAAAGBJREFUSA1jZCARnD17djOyFmNjY19kPhMyhxrswW8gIyFvEgozdP2D38tUdyFGGJIaZqNhyMBIaZiNhiED1RP2CDRwNC+jZyTS+RhhiG4EqXl9NB2ihyAmn1CYjsAwBACOcRw6x5qRuQAAAABJRU5ErkJggg==');
+	background-repeat: repeat;
+	background-size: 5px 8px !important;
+}
+
+.dark .texture {
+	border-top: 1px solid color("grey", "contrast-lighten-3");
+	border-bottom: 1px solid color("grey", "contrast-lighten-3");
+}
+
+.toggle-code.-hidden {
+	display:none;
+}
+
+.doc-wrapper {
+	margin-left:295px;
+	width:calc(100% - 295px);
+	position:relative;
+	overflow: hidden;
+	&>div>header {
+		z-index: 999;
+		top:0;
+		transition: transform 200ms ease;
+		transform:translateY(0px);
+		position:relative;
+		left:0!important;
+		height:174px;
+		padding-top:45px;
+		&>div {
+			padding: $text-size 9rem;
+			position: relative;
+			&:before {
+				position:absolute;
+				content:"";
+				width: 20px;
+				height:20px;
+				left: -12px;
+				top: calc(50% - 10.5px);
+				border: 1px solid color("primary", "base");
+				transition: left 200ms ease;
+				transform: rotate(45deg);
+			}
+		}
+		h1, h2, h3, h4, h5, h6 {
+			margin-bottom:0;
+			text-transform: uppercase;
+			color: color("primary", "base");
+		}
+	}
+}

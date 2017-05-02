@@ -1,0 +1,390 @@
+/*
+––––
+
+	title:
+		Tag
+
+	comment:
+		La Tag est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="tag"><span>Html</span></div>
+    <div class="tag"><span><i class="icon -sun"></i>Test</span></div>
+    <div class="tag"><img src="assets/imgs/jpg/joe.jpg"/><span>Joe</span></div>
+    <br/>
+    <label>With -square</label>
+    <div class="tag -square -uppercase -blur"><span>Thibaud</span></div>
+    <div class="tag -square -uppercase -blur"><i class="icon -user"></i><span>Thibaud</span></div>
+    <br/>
+    <label>With -round</label>
+    <div class="tag -round"><span>2</span></div>
+    <div class="tag -round"><span>Thibaud</span></div>
+    <div class="tag -round -no-border"><img src="assets/imgs/jpg/joe.jpg"/><span> Joe </span></div>
+    <label>With -ticket</label>
+    <div class="tag -ticket"><span>Html</span></div>
+    <div class="tag -ticket"><span>Js</span></div>
+    <label>With -pointing</label>
+    <div class="tag -pointing"><span>42</span></div>
+    <div class="tag -pointing -bottom"><span>42</span></div>
+    <div class="tag -pointing -left"><span>42</span></div>
+    <div class="tag -pointing -right"><span>42</span></div>
+    <label>With -empty</label>
+    <div class="tag -round -empty"></div>
+    <div class="tag -circular -empty"></div>
+    <br/>
+    <label>With -corner</label>
+    <div class="tag -corner -top-left"><span> 32 </span></div>
+    <div class="tag -corner -top-left"><i class="icon -sun"></i></div>
+    <div class="tag -corner -top-right"><span> 3 </span></div>
+    <div class="tag -corner -top-right"><i class="icon -sun"></i></div>
+
+  script:
+    $(".toggle-active").click(function(){
+    	$(this).toggleClass("-line-primary");
+    });
+
+––––
+*/
+
+
+@keyframes fade-in {
+  0% {
+		opacity:0;
+		visibility: visible;
+  }
+  100% {
+		opacity:1;
+		visibility: visible;
+  }
+}
+
+.tag {
+	position:relative;
+	display:inline-block;
+	white-space: nowrap;
+	background:white;
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 3px;
+	display:inline-block;
+	margin-bottom:$text-size / 2;
+	margin-right:$text-size / 2;
+	transition:all 200ms ease-in-out;
+	font-family: $nav-font;
+	color: $title-color;
+	vertical-align: top;
+  user-select: none;
+  -webkit-user-select: none;
+	text-align: center;
+	&>img {
+			width:26px!important;
+			height:26px;
+			&:not(:only-child) {
+				left: 0; top: -1px;
+				overflow: hidden;
+				position:absolute;
+				border-top-left-radius: 3px;
+				border-bottom-left-radius: 3px;
+			}
+			&.-circle {
+				border-radius: 100%;
+			}
+	}
+	i {
+		font-size: 1.3rem;
+	}
+	&>i {
+		padding: 5px 7px;
+		width:25px!important;
+		height:25px;
+		display:block;
+		&:not(:only-child) {
+			padding: 5px 6px;
+			left: 0px; top: 0;
+			line-height: 1.5rem;
+			overflow: hidden;
+			position:absolute;
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px;
+			border-right: 1px solid rgba(0,0,0,0.1);
+		}
+	}
+	span {
+			margin: 2px 7px 2px 7px;
+			font-family: $nav-font;
+			user-select:unselectable;
+			i {
+    		margin-right: 3px;
+			}
+	}
+	img + span, i + span {
+			margin: 2px 7px 2px 32px;
+	}
+
+	&.-ticket {
+		margin: 0 5px 10px 15px;
+		height: 26px;
+		padding: 0 2px 0 7px;
+		background: rgba(0,0,0,0.05);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #333E48;
+		font-size: 1.2rem;
+		line-height: 27px;
+		border: none;
+		overflow: visible;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+		&:before {
+			content:"\25CF";
+			color: #FFF;
+			position: absolute;
+			text-shadow: 0 0 1px #333;
+			font-size: 11px;
+			line-height: 0px;
+			text-indent: 12px;
+			left: -15px;
+			width: 1px;
+			height: 0px;
+			border-right: 14px solid rgba(0,0,0,0.05);
+			border-top: 13px solid rgba(0, 0, 0, 0);
+			border-bottom: 13px solid rgba(0, 0, 0, 0);
+		}
+	}
+
+	&.-pointing {
+    animation: fade-in 200ms ease;
+		&:before {
+			content: "";
+			color: #FFF;
+			border-top: 1px solid rgba(0,0,0,0.1);
+			border-left: 1px solid rgba(0,0,0,0.1);
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			left: calc(50% - 6px);
+			top: -6px;
+			background-color: white;
+			transform: rotate(45deg);
+		}
+		&.-bottom:before  {
+			left: calc(50% - 5px);
+			top: calc(100% - 5px);
+			transform: rotate(225deg);
+		}
+		&.-left:before {
+			top: calc(50% - 6px);
+			left: -6px;
+			transform: rotate(-45deg);
+		}
+		&.-right:before  {
+			top: calc(50% - 5px);
+			left: calc(100% - 5px);
+			transform: rotate(135deg);
+		}
+    span {
+      z-index: 1;
+    }
+	}
+
+	@each $color_name, $color in $colors {
+
+		&.-#{$color_name} {
+			background-color:color(#{$color_name}, "base");
+			color:white;
+			border: 1px solid darken(color(#{$color_name}, "base"), 2%);
+			i {
+				color:white;
+			}
+			&:before {
+				background-color: color(#{$color_name}, "base");
+				border-top: 1px solid darken(color(#{$color_name}, "base"), 2%);
+				border-left: 1px solid darken(color(#{$color_name}, "base"), 2%);
+			}
+	  }
+
+		&.-line-#{$color_name}:not(.-ticket) {
+			background-color: transparent!important;
+			color: color(#{$color_name}, "base");
+			border: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
+			i {
+				color: color(#{$color_name}, "darken-1");
+			}
+			&:before {
+				background-color: white;
+				border-top: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
+				border-left: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.3);
+			}
+		}
+
+
+	}
+
+	&.-square {
+		border-radius: 0;
+		img, i {
+			border-radius: 0;
+		}
+	}
+
+	&.-uppercase {
+		span {
+			text-transform: uppercase;
+			letter-spacing: 0.3rem;
+			font-size: 1.1rem;
+			padding: 3px 4px 1px;
+			display: block;
+		}
+	}
+
+	&.-large {
+		width: 100%;
+	}
+
+  &.-link {
+    cursor: pointer;
+  }
+
+	&.-blur {
+		backdrop-filter: blur(10px);
+	}
+
+	&.-no-border {
+		border: none;
+		img, i, span {
+			border: none;
+		}
+	}
+
+	&.-round {
+		border-radius: 1000px;
+		min-width: 26px;
+		&>img {
+			border-radius: 1000px;
+		}
+	}
+
+	&.-empty {
+		width: 15px;
+		min-width: 15px;
+		height: 15px;
+	}
+
+  &.-transparent {
+    background-color: transparent;
+  }
+
+}
+
+// Corners
+// =========================
+
+$sqrt2: 1.414; // sqrt(2)
+$cornerSize: 40;
+
+$finalSize: $cornerSize * $sqrt2;
+$offset: $finalSize / 2 + 2;
+
+.tag.-corner {
+		border-radius: 0;
+		border: none;
+		width:40px;
+		height:40px;
+		overflow: hidden;
+		z-index: 2;
+		position: relative;
+		margin:0;
+		padding:0;
+		background: white;
+
+		i {
+			position:absolute;
+			overflow: hidden;
+			z-index: 1;
+			padding: 4px 5px;
+		}
+		span {
+			position: absolute;
+			display: block;
+			margin: 0;
+			padding: 0;
+			margin: -2px 5px;
+			text-align: center;
+			min-width: 15px;
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			width: $finalSize;
+			height: $finalSize;
+			border-radius:0;
+			transform:rotate(45deg);
+		}
+		&.-top-left {
+			&:before {
+				top: - $offset;
+				left: - $offset;
+			}
+			span, i {
+				top:0;
+				left:0;
+			}
+		}
+		&.-top-right {
+			&:before {
+				top: - $offset;
+				right: - $offset;
+			}
+			span, i {
+				top:0;
+				right:0;
+			}
+		}
+		&.-bottom-right {
+			&:before {
+				bottom: - $offset;
+				right: - $offset;
+			}
+			span, i {
+				bottom:0;
+				right:0;
+			}
+		}
+		&.-bottom-left {
+			&:before {
+				bottom: - $offset;
+				left: - $offset;
+			}
+			span, i {
+				bottom:0;
+				left:0;
+			}
+		}
+
+		@each $color_name, $color in $colors {
+
+			&.-#{$color_name} {
+				background-color:transparent;
+				color:white;
+				border:none;
+				&:before {
+					background-color: color(#{$color_name}, "base");
+					border: 1px solid darken(color(#{$color_name}, "base"), 2%);
+					box-shadow: 0px 1px 1px -1px #8C9DA1 inset;
+				}
+		  }
+
+			&.-line-#{$color_name} {
+				background-color: transparent!important;
+				color: color(#{$color_name}, "darken-1");
+				border:none;
+				&:before {
+					background-color: rgba(color(#{$color_name}, "lighten-5"), 0.2);
+					border: 1px solid rgba(darken(color(#{$color_name}, "base"), 2%), 0.5);
+				}
+			}
+
+
+		}
+
+	}

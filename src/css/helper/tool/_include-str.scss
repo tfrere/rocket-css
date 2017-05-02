@@ -1,0 +1,57 @@
+
+
+@function str-explode($string,$dem) {
+    $list: ();
+    $sum: str-length($string);
+
+    @for $i from 1 through $sum {
+        $str: str-index($string,$dem);
+
+        @if str-length($string) >= 1 and $str == null {
+            $list: append($list,$string);
+            $string: '';
+        }
+        //
+        @if type-of($str) == number {
+            $each: str-slice($string,0,($str - 1));
+            $list: append($list,$each);
+            $string: str-slice($string,($str + 1), $sum);
+        }
+    }
+    @return $list;
+}
+
+@function str-trim($string) {
+  $start: 1;
+  $end: str-length($string);
+
+  @for $i from 1 through str-length($string) {
+    $first: str-slice($string, $i, $i);
+    $last: str-slice($string, -$i, -$i);
+
+    @if $first == " " and $i + 1 == $start + 1 {
+      $start: $i + 1;
+    }
+
+    @if $last == " " and str-length($string) - $i == $end - 1 {
+      $end: str-length($string) - $i;
+    }
+  }
+
+  @return str-slice($string, $start, $end);
+}
+
+/// @author Hugo Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}

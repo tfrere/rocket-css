@@ -1,35 +1,5 @@
+var app = angular.module('app', ['hljs', 'ngProgress', 'ui.router', 'ngResource']);
 
-var app = angular.module('app', ['rzModule', 'ng-touch', 'ng-tip', 'countTo','ngSanitize','ngTranslateSelect', 'pascalprecht.translate', 'tmh.dynamicLocale', 'ngCookies', 'ui.router', 'ng-optimizely', 'duScroll', 'duParallax', 'toggleHeight', 'ngResource']);
-
-// constantes locales
-app.constant('LOCALES', {
-    'locales': {
-        'fr': 'fr',
-        'en': 'en',
-        'ru': 'ru',
-        'de': 'de'
-    },
-    'preferredLocale': 'fr'
-});
-
-//debugg helper
-app.config(function ($translateProvider) {
-    $translateProvider.useMissingTranslationHandlerLog();
-});
-
-app.config(function ($translateProvider) {
-    $translateProvider.useStaticFilesLoader({
-        prefix: 'ressources/locale-',// path to translations files
-        suffix: '.json'// suffix, currently- extension of the translations
-    });
-    $translateProvider.useSanitizeValueStrategy('sanitize');
-    $translateProvider.preferredLanguage('fr');// is applied on first load
-    $translateProvider.useLocalStorage(); // saves selected language to localStorage
-});
-
-app.config(function (tmhDynamicLocaleProvider) {
-    tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
-});
 
 app.directive('compileUnsafe', function ($compile) {
   return function (scope, element, attr) {
@@ -53,7 +23,7 @@ app.directive('updateTitle', ['$rootScope', '$timeout',
 
         var listener = function(event, toState) {
 
-          var title = 'Peon';
+          var title = 'CSS - Documentation';
           if (toState.data && toState.data.pageTitle) title = toState.data.pageTitle;
 
           $timeout(function() {
@@ -90,66 +60,30 @@ app.directive('updateDesc', ['$rootScope', '$timeout',
 ]);
 
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.controller('navCtrl', function ( $timeout, ngProgressFactory, $rootScope, $scope ) {
+  $rootScope.progressBar = ngProgressFactory.createInstance();
 
-    moment.locale('fr', {
-      months : "janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre".split("_"),
-      monthsShort : "janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.".split("_"),
-      weekdays : "dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi".split("_"),
-      weekdaysShort : "dim._lun._mar._mer._jeu._ven._sam.".split("_"),
-      weekdaysMin : "Di_Lu_Ma_Me_Je_Ve_Sa".split("_"),
-      longDateFormat : {
-        LT : "HH:mm",
-        LTS : "HH:mm:ss",
-        L : "DD/MM/YYYY",
-        LL : "D MMMM YYYY",
-        LLL : "D MMMM YYYY LT",
-        LLLL : "dddd D MMMM YYYY LT"
-      },
-      calendar : {
-        sameDay: "[Aujourd'hui à] LT",
-        nextDay: '[Demain à] LT',
-        nextWeek: 'dddd [à] LT',
-        lastDay: '[Hier à] LT',
-        lastWeek: 'dddd [dernier à] LT',
-        sameElse: 'L'
-      },
-      relativeTime : {
-        future : "dans %s",
-        past : "il y a %s",
-        s : "quelques secondes",
-        m : "une minute",
-        mm : "%d minutes",
-        h : "une heure",
-        hh : "%d heures",
-        d : "un jour",
-        dd : "%d jours",
-        M : "un mois",
-        MM : "%d mois",
-        y : "une année",
-        yy : "%d ans"
-      },
-      ordinalParse : /\d{1,2}(er| )/,
-      ordinal : function (number) {
-        return number + (number === 1 ? 'er' : '');
-      },
-      meridiemParse: /PD|MD/,
-      isPM: function (input) {
-        return input.charAt(0) === 'M';
-      },
-      // in case the meridiem units are not separated around 12, then implement
-      // this function (look at locale/id.js for an example)
-      // meridiemHour : function (hour, meridiem) {
-      //     return /* 0-23 hour, given meridiem token and hour 1-12 */
-      // },
-      meridiem : function (hours, minutes, isLower) {
-        return hours < 12 ? 'PD' : 'MD';
-      },
-      week : {
-        dow : 1, // Monday is the first day of the week.
-        doy : 4  // The week that contains Jan 4th is the first week of the year.
-      }
-    });
+  $rootScope.$on('$stateChangeStart',
+  function(event, toState, toParams, fromState, fromParams){
+    $rootScope.progressBar.reset();
+    $rootScope.progressBar.start();
+  })
+
+  $rootScope.$on('$stateChangeSuccess',
+  function(event, toState, toParams, fromState, fromParams){
+    $rootScope.progressBar.complete();
+  })
+});
+
+app.controller('homeCtrl', function ( $scope, $timeout) {
+
+});
+
+app.controller('404Ctrl', function ($scope) {
+
+});
+
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $locationProvider.html5Mode({
       enabled: true,
@@ -160,75 +94,60 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     // For any unmatched url, send to 404
     $urlRouterProvider.otherwise('/404');
-    console.log($urlRouterProvider);
     $stateProvider
-        .state('404', {
-            abstract: true,
-            url: '',
-            templateUrl: 'templates/404.html',
-            controller: 'navCtrl'
-        })
         .state('nav', {
             abstract: true,
-            url: '?{lang:[a-z]{2}}',
             templateUrl: 'templates/nav.html',
             controller: 'navCtrl'
         })
         .state('nav.home', {
             url: '/',
-            templateUrl: 'templates/home.html',
-            controller: 'homeCtrl',
-            data: {
-              pageTitle: 'EdEtMoi',
-              pageDesc: 'Assistant personnel pour auto-entrepreneur. Il vous accompagne dans la gestion de vos clients, devis, factures, calcul de vos cotisations et traitement de vos impayés.'
-            }
+            templateUrl: 'templates/typo.html',
+            controller: 'typoCtrl'
         })
-        .state('nav.apropos', {
-            url: '/apropos',
-            templateUrl: 'templates/apropos.html',
-            controller: 'aproposCtrl',
-            data: {
-              pageTitle: 'A propos',
-              pageDesc: ""
-            }
+        .state('nav.typo', {
+            url: '/typo',
+            templateUrl: 'templates/typo.html',
+            controller: 'typoCtrl'
         })
-        .state('nav.assistance', {
-            url: '/assistance',
-            templateUrl: 'templates/assistance.html',
-            controller: 'assistanceCtrl',
-            data: {
-              pageTitle: 'Assistance',
-              pageDesc: "Présentation de l'équipe de vrais humains qui vous assisteront dans tous vos besoins."
-            }
+        .state('nav.color', {
+            url: '/color',
+            templateUrl: 'templates/color.html',
+            controller: 'colorCtrl'
         })
-        .state('nav.cgu', {
-            url: '/cgu',
-            templateUrl: 'templates/cgu.html',
-            data: {
-              pageTitle: 'Cgu'
-            }
+        .state('nav.symbol', {
+            url: '/symbol',
+            templateUrl: 'templates/symbol.html',
+            controller: 'symbolCtrl'
         })
-        .state('nav.form', {
-            url: '/form',
-            templateUrl: 'templates/form.html',
-            controller: 'formCtrl',
-            data: {
-              pageTitle: 'Simulateur'
-            }
+        .state('nav.animation', {
+            url: '/animation',
+            templateUrl: 'templates/animation.html',
+            controller: 'animationCtrl'
+        })
+        .state('nav.atom', {
+            url: '/atom',
+            templateUrl: 'templates/atom.html',
+            controller: 'atomCtrl'
+        })
+        .state('nav.molecule', {
+            url: '/molecule',
+            templateUrl: 'templates/molecule.html',
+            controller: 'atomCtrl'
+        })
+        .state('nav.modifier', {
+            url: '/modifier',
+            templateUrl: 'templates/modifier.html',
+            controller: 'atomCtrl'
+        })
+        .state('nav.template', {
+            url: '/template-Footer',
+            templateUrl: 'templates/template.html',
+            controller: 'atomCtrl'
         })
         .state('nav.404', {
             url: '/404',
-            templateUrl: 'templates/404.html',
-            controller: '404Ctrl',
-            data: {
-              pageTitle: '404'
-            }
-        })
-        .state('nav.cookies', {
-            url: '/cookies',
-            templateUrl: 'templates/cookies.html',
-            data: {
-              pageTitle: 'Cookies'
-            }
+            templateUrl: 'templates/typo.html',
+            controller: '404Ctrl'
         })
 });

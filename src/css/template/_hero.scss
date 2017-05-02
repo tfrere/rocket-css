@@ -1,0 +1,102 @@
+/*
+––––
+
+	title:
+		Hero
+
+	comment:
+		La Hero est une plante qui se mange froide
+
+	markup:
+    <section class="background hero">
+      <div class="main-texture"></div>
+      <div id="main-background"></div>
+      <div id="content" class="container">
+        <div class="twelve col">
+          <h1 class="punchline remove-bot">Punchline</h1>
+          <h5 class="subline">Subline</h5>
+          <div><a class="cta touch button -big -round -line-grey-lighten-5">CallToAction</a></div>
+        </div>
+      </div>
+      <div class="invite-to-scroll"></div>
+      <div class="shape"></div>
+    </section>
+
+
+  script:
+
+––––
+*/
+
+.hero {
+	width: 100%;
+	background-color: darken(#8DB2C8, 10%);
+	position:relative;
+	padding: 75px 0;
+	min-height: 500px;
+	&.semi-background {
+		height: auto;
+		min-height: 108px;
+		padding: 50px;
+		h1,h2,h3,h4,h5,h5 {
+			font-weight: 800!important;
+			color: white!important;
+		}
+	}
+	overflow: visible;
+	background: #02AAB0; /* fallback for old browsers */
+	background: linear-gradient(to left, #02AAB0 , #7092c5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	h1.punchline {
+		font-weight: 800!important;
+	}
+	.button {
+		color:white;
+	}
+	&.light {
+		background-color: lighten(#8DB2C8, 10%);
+	}
+	h3, h4, h5, p {
+		text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+	}
+	h3 {
+		margin-top: 110px;
+		margin-bottom: 60px;
+	}
+	.main-texture {
+		position: absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		background-size: cover;
+		//background-image: url('../assets/imgs/svg/background.svg');
+		opacity: 0.05;
+	}
+  .gradient {
+        background-image: linear-gradient(-135deg, rgba(209, 38, 49, 0.9), rgba(22, 0, 102, 0.9)) !important;
+  }
+  .image {
+    filter: saturate(0);
+  }
+  .shape {
+    width:100%;
+    min-height:83px;
+    background-color: transparent;
+    position:relative;
+    margin: 0;
+    margin-bottom: 0;
+    position: absolute;
+    bottom:0;
+    &:after {
+      content: "";
+      width:100%;
+      min-height:83px;
+      position:absolute;
+      background-repeat: no-repeat;
+      bottom:0px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="83" width="2880" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 2880 83.000002"><g transform="matrix(1 0 0 .91301 0 -877.74)"><path d="m-0.8933 966.1v87.132h2885v-87.132h-15.504l-1431 84.452-1428.6-84.4z" fill-rule="evenodd" fill="#fff"/></g></svg>');
+      background-position: center;
+    }
+  }
+
+}

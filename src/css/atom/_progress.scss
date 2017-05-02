@@ -1,0 +1,220 @@
+/*
+––––
+
+	title:
+		Progress
+
+	comment:
+		La Progress est une plante qui se mange froide
+
+  markup:
+    <label>With -small</label>
+    <div class="progress -small">
+      <div class="bar"></div>
+    </div>
+    <div class="progress -small -wick">
+      <div style="width:30%" class="bar"></div>
+    </div>
+    <label>With -inner</label>
+    <div class="progress -inner">
+      <div style="width:50%" class="bar">
+        <span>60 %</span>
+      </div>
+    </div>
+    <div class="progress -inner -round">
+      <div style="width:60%" class="bar ">
+        <span>80 %</span>
+      </div>
+    </div>
+    <label>With animation</label>
+    <div class="progress -round -active">
+      <div style="width:70%" class="bar">
+        <span>70 %</span>
+      </div>
+    </div>
+    <div class="progress -dashed">
+      <div style="width:100%" class="bar">
+        <span>100 %</span>
+      </div>
+    </div>
+
+  script:
+    var getRandomInt = function(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+    window.setInterval(function(){
+      $(".progress .bar").each(function() {
+        let progressValue = getRandomInt(0,100);
+        $(this).css("width",  progressValue+ "%");
+        $(this).find("span").text(progressValue+"%");
+      });
+    }, 3000);
+
+––––
+*/
+
+@keyframes progress-active {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  90% {
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform:translateX(0px);
+  }
+  100% {
+    transform:translateX(20px);
+  }
+}
+
+.progress {
+  width:100%;
+  margin-bottom:$text-size;
+  height:20px;
+  border-radius: 3px;
+  position:relative;
+  background-color: color("grey", "lighten-4");
+  .bar {
+    border-radius: 3px;
+    position:absolute;
+    min-width:50px;
+    width:10%;
+    min-height:20px;
+    top:0;
+    left:0;
+    z-index: 1;
+    background-color: color("grey", "darken-1");
+    overflow: hidden;
+    transition: width 300ms ease-in-out, background-color 100ms linear;
+    &.-no-animate {
+      transition: none;
+    }
+    span {
+      position:absolute;
+      right:5px;
+      top: 0px;
+      font-family: $nav-font;
+      color:white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+  }
+  &.-active .bar:before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    animation: progress-active 2s ease infinite;
+  }
+
+
+  &.-dashed .bar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: calc(100% + 20px);
+    bottom: 0;
+    right: 0;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, color("grey", "darken-2")), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5,  color("grey", "darken-2")), color-stop(.75,  color("grey", "darken-2")), color-stop(.75, transparent), to(transparent));
+    background-size: 20px 20px;
+    animation: move .5s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+  }
+
+  &.-wick .bar{
+    overflow: visible;
+    &:after {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 8px;
+      bottom: 0px;
+      height: 3px;
+      box-shadow: 1px 0px 8px rgb(0, 0, 0);
+      content: "";
+      border-radius: 100%;
+    }
+  }
+
+  @each $color_name, $color in $colors {
+
+    &.-#{$color_name} {
+      .bar {
+        background-color:color(#{$color_name}, "base");
+      }
+      &.-dashed .bar:after {
+        background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25,color(#{$color_name}, "darken-1")), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, color(#{$color_name}, "darken-1")), color-stop(.75,color(#{$color_name}, "darken-1")), color-stop(.75, transparent), to(transparent));
+      }
+	  }
+
+    &.-line-#{$color_name} {
+      background-color: transparent;
+      border: 1px solid rgba(color(#{$color_name}, "darken-1"), 0.8);
+      .bar {
+        transform:translateY(-1px);
+  			background-color: rgba(color(#{$color_name}, "darken-1"), 0.01);
+        border: 1px solid color(#{$color_name}, "darken-1");
+        &:before {
+          background: rgba(color(#{$color_name}, "darken-1"), 0.2);
+        }
+        span {
+          color: color(#{$color_name}, "darken-1");
+        }
+  		}
+    }
+
+
+	}
+
+  .bar[style*="100%"] {
+    background-color:color("success", "base");
+  }
+  &.-dashed .bar[style*="100%"]:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25,color("success", "darken-1")), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, color("success", "darken-1")), color-stop(.75,color("success", "darken-1")), color-stop(.75, transparent), to(transparent));
+  }
+
+  &.-small {
+    height: 3px;
+    .bar {
+      min-height: 3px;
+    }
+    span {
+      display:none;
+    }
+  }
+  &.-round {
+    border-radius: 1000px;
+    .bar {
+      border-radius: 1000px;
+    }
+  }
+  &.-inner {
+    .bar {
+      min-height:10px;
+      margin: 5px;
+      max-width: calc( 100% - 10px);
+    }
+    span {
+      display:none;
+    }
+  }
+
+}

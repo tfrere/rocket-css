@@ -1,0 +1,165 @@
+/*
+––––
+
+	title:
+		Modal
+
+	comment:
+		La Modal est une plante qui se mange froide
+
+	markup:
+    <button class="button open-modal">Open modal</button>
+    <div class="modal">
+      <div class="overlay close-modal"></div>
+      <div class="content">
+        <div class="card content-wrapper">
+          <header class="header">
+            <h5>Modal title</h5>
+            <div class="close-button close-modal">
+              <i class="icon -cross"></i>
+            </div>
+          </header>
+          <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+          <footer class="footer merge -large -horizontal">
+            <button class="button">Accept</button>
+            <button class="button">Decline</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+  script:
+    $(".open-modal").click(function() {
+      $(".modal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $(".modal").addClass("-open");
+        $(".modal").removeClass("-opening");
+      }, 600);
+    });
+    $(".close-modal").click(function() {
+      $(".modal").addClass("-closing");
+      window.setTimeout(function() {
+        $(".modal").removeClass("-open");
+        $(".modal").removeClass("-closing");
+        $("body").removeClass("no-scroll");
+      }, 350);
+    });
+
+––––
+*/
+
+$modal-overlay-open-duration: 200ms;
+$modal-overlay-close-duration: 150ms;
+$modal-open-duration: 250ms;
+$modal-close-duration: 150ms;
+
+$base-index: 999999999999999999999;
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.modal {
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index: $base-index - 1;
+	top: 0;
+	left: 0;
+	display:none;
+	//overflow: hidden;
+	&>.content {
+		margin: auto;
+		position:relative;
+		display:flex;
+		border-radius:2px;
+		z-index: $base-index;
+		width:auto;
+		padding:15px 20px 20px 20px;
+		min-width: 220px;
+		transition: all $modal-open-duration ease('swift-in-bouncy');
+		transform:scale(0);
+	}
+	.content-wrapper {
+		z-index: $base-index + 1;
+		width: 100%;
+		margin:auto;
+		background-color: white;
+		overflow: visible;
+	}
+	.close-button {
+		position:absolute;
+		top: 0px;
+		right: -75px;
+		opacity: 0.6;
+		transition: opacity .2s ease;
+		padding: 0;
+		cursor:pointer;
+		display: none;
+		i {
+			color:white;
+			font-size: 2.5rem;
+		}
+		&:hover {
+			opacity:1;
+		}
+	}
+	.overlay {
+		width:100%;
+		height:100%;
+		position:fixed;
+		z-index: $base-index - 1;
+		top: 0;
+		left: 0;
+		&::after {
+			content:"";
+			opacity:0;
+			width:100%;
+			height:100%;
+			position:absolute;
+			z-index: 998;
+			background-color:rgba(0,0,0,0.6);
+			top: 0;
+			left: 0;
+			transition: all $modal-overlay-open-duration ease;
+		}
+	}
+
+	&.-opening {
+		display:flex;
+	}
+
+	&.-open {
+		opacity:1;
+		display:flex;
+		overflow: auto;
+		.content {
+			transform:scale(1);
+			overflow: visible;
+			//overflow-y: auto;
+		}
+		.overlay::after {
+			opacity:1;
+		}
+	}
+
+	&.-closing {
+		display:flex;
+		transition: all $modal-close-duration ease('swift-out');
+		opacity:0;
+		.content {
+			transform: scale(0);
+		}
+		.overlay::after {
+			opacity:0;
+			transition: all $modal-overlay-close-duration ease;
+		}
+	}
+}
+
+@include break-point("desktop") {
+	.modal .close-button {
+		display: block;
+	}
+}

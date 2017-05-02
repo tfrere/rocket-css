@@ -1,0 +1,109 @@
+/*
+––––
+
+	title:
+		Toggle
+
+	comment:
+		La Toggle est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="toggle">
+      <input id="toggle1" type="checkbox">
+      <label for="toggle1"><span>Apples</span></label>
+    </div>
+    <label>Checked</label>
+    <div class="toggle -round touch">
+      <input id="toggle2" type="checkbox" checked="checked">
+      <label for="toggle2"><span>Lemons</span></label>
+    </div>
+    <label>Disabled</label>
+    <div class="toggle -round">
+      <input id="toggle3" type="checkbox" checked="checked" disabled>
+      <label for="toggle3"><span>Tomatoes</span></label>
+    </div>
+
+  script:
+
+––––
+*/
+
+
+.toggle {
+	@extend .unselectable;
+	margin-bottom: $text-size / 2;
+	display:inline-block;
+	padding-right:10px;
+	position:relative;
+	input {
+		position: absolute;
+		margin-left: -9999px;
+		visibility: hidden;
+	}
+	label {
+		span {
+			display:inline-block;
+			padding-left: 45px;
+	    line-height: 14px;
+			cursor: pointer;
+			padding-top:2px;
+		}
+	}
+	label:before, label:after {
+		display: block;
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		bottom: 1px;
+		content: "";
+	}
+	label:before {
+		display: block;
+		cursor: pointer;
+		outline: none;
+		user-select: none;
+		padding: 2px;
+		width: 30px;
+		height: 12px;
+		background-color: white;
+		border: 1px solid color("grey", "lighten-2");
+		border-radius: 3px;
+		transition: all 0.2s ease-in-out;
+		box-shadow: 1px 1px 1px #efefef inset;
+	}
+	input:checked + label:before {
+		background-color: color("grey", "lighten-1");
+		border: 1px solid transparent;
+		box-shadow: 1px 1px 1px rgba(color("grey", "base"), 0.6) inset;
+	}
+	label:after {
+		width: 16px;
+		height: 16px;
+		cursor: pointer;
+		background-color: #fff;
+		border-radius: 3px;
+		border: 1px solid color("grey", "lighten-1");
+		transition:all, 200ms, ease-in-out;
+		box-shadow: 1px 1px 1px #e2e2e2;
+	}
+	input:checked + label:after {
+		margin-left: 20px;
+	}
+	input:disabled + label {
+		cursor:not-allowed;
+		opacity:0.5;
+		&:before, &:after {
+			cursor:not-allowed;
+			opacity:0.5;
+		}
+	}
+	&.-round {
+		input + label:before {
+			border-radius:1000px;
+		}
+		label:after {
+			border-radius: 100%;
+		}
+	}
+}

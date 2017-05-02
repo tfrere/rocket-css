@@ -1,0 +1,240 @@
+/*
+––––
+
+	title:
+		Bubble
+
+	comment:
+		La Bubble est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="bubble">
+        <img src="/assets/imgs/jpg/joe.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Joe</span>
+                <span class="date">17h34</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hello Elliot, how are u ?</p>
+        </div>
+    </div>
+    <label>With -mine</label>
+    <div class="bubble -mine toggle-bounce">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+        </div>
+    </div>
+    <label>With -minimalist</label>
+    <div class="bubble -minimalist">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor ascim emet dolor ipsum orem isma ole orem ipsum dolor ascim emet dolor ipsum orem isma ole</p>
+        </div>
+    </div>
+    <div class="bubble -minimalist">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+            <p>Are u there ?</p>
+        </div>
+    </div>
+  script:
+    window.setInterval(function() {
+      $(".toggle-bounce").toggleClass("hide");
+    }, 3000);
+
+––––
+*/
+
+$bubble-2n-color: #fbfbfb;
+
+@keyframes bubbleBounce {
+  0% { transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% { transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% { transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% { transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% { transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% { transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% { transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% { transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% { transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% { transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% { transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% { transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+.bubble {
+	width:100%;
+	margin-bottom:1rem;
+  position:relative;
+  min-height: 65px;
+  button {
+    margin-top:0;
+  }
+	>img {
+		border-radius:100%;
+		width:40px;
+		height:40px;
+    position:absolute;
+    left:0;
+    z-index: 1;
+	}
+  &.hide .content {
+    display: none;
+  }
+	.content {
+		margin-left:55px;
+		padding:0px 15px 1px 15px;
+		float:left;
+    width: calc(100% - 55px);
+		border-radius:5px;
+		background-color:white;
+		display:inline-block;
+		position:relative;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+		transition: box-shadow 200ms ease;
+    animation: bubbleBounce 250ms ease;
+    z-index: 0;
+		span {
+			font-family: $nav-font;
+		}
+
+		p {
+			margin: 0;
+			margin-bottom:8px;
+			max-width:100%;
+			word-wrap:break-word;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			img {
+				display:inline;
+				width:20px;
+				height:20px;
+				transform: translateY(3px);
+				margin-left: 3px;
+				margin-right: 3px;
+			}
+		}
+		.header {
+			position:relative;
+			padding: 7px 75px 0px 0px;
+			.name {
+				font-weight: bold;
+				user-select: unselectable;
+			}
+			.date {
+				transition: all 200ms ease;
+				color:color("grey", "base");
+				user-select: unselectable;
+				font-weight: normal;
+				margin-left:5px;
+        font-size: 80%;
+        font-family: $text-font;
+			}
+			.admin {
+				position:absolute;
+				top:9px;
+				right:-4px;
+				display:block;
+				i {
+          opacity: 0;
+					cursor: pointer;
+					font-size: 1.3rem;
+					color: color("grey", "base");
+					transition: all 200ms ease;
+					&:hover {
+						color:color("grey", "darken-1");
+					}
+				}
+			}
+		}
+    &:hover .admin i {
+      opacity:1;
+    }
+		&::after {
+		  content: "";
+		  display: block; /* reduce the damage in FF3.0 */
+		  position: absolute;
+		  top: 15px;
+		  left: -8px;
+		  width: 0;
+		  border-width: 7px 8px 7px 0;
+		  border-style: solid;
+		  border-color: transparent white;
+		}
+	}
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	&.-mine {
+		>img {
+      right:0;
+      left:auto;
+		}
+		.content {
+			float:right;
+			background-color:#f8fdfa;
+			margin-right: 55px;
+      margin-left: 0px;
+			.date {
+				transition: all 200ms ease;
+				color:color("grey", "base");
+			}
+			&::after {
+				right: -8px;
+				left:initial;
+			  border-width: 7px 0px 7px 8px;
+				border-color: transparent #f8fdfa;
+			}
+		}
+	}
+}
+
+.bubble.-minimalist {
+  >img {
+    width: 30px;
+    height: 30px;
+  }
+  .header {
+    padding: 0px 75px 0px 0px;
+  }
+  .content {
+    box-shadow: none;
+    margin-left:35px;
+    &:after {
+      display: none;
+    }
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid color("grey", "lighten-3");
+  }
+}

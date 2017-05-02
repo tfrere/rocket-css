@@ -1,22 +1,15 @@
-How to run
-======================
+Installation
+=========================
+```npm install; bower install ```
 
-Deploy
-```
-npm install
-bower install
-npm install protractor -g
-./node_modules/protractor/bin/webdriver-manager update
+Dev
+===
+```gulp```
 
-```
+Release
+=======
+```gulp build-doc; gulp build```
 
-Launch
-```
-gulp
-```
-```
-gulp production
-```
 
 MIT Licence
 ======================

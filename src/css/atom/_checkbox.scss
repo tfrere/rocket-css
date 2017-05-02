@@ -1,0 +1,116 @@
+/*
+––––
+
+	title:
+		Checkbox
+
+	comment:
+		La checkbox est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="checkbox">
+      <input id="checkbox2" type="checkbox"/>
+      <label for="checkbox2">
+        <span>Apples</span>
+      </label>
+    </div>
+    <label>Checked</label>
+    <div class="checkbox">
+      <input id="checkbox3" type="checkbox" checked/>
+      <label for="checkbox3">
+        <span>Lemons</span>
+      </label>
+    </div>
+    <label>Disabled</label>
+    <div class="checkbox">
+    <input id="checkbox1" type="checkbox" disabled="disabled"/>
+      <label for="checkbox1">
+        <span>Tomatoes</span>
+      </label>
+    </div>
+
+	script:
+
+––––
+*/
+
+.checkbox {
+
+	display:inline-block;
+	margin-bottom: $text-size / 2;
+	@extend .unselectable;
+	position: relative;
+
+	&:before {
+		@include clearfix();
+	}
+	label {
+		padding-right:10px;
+		margin-bottom:0;
+	}
+	label {
+		cursor: pointer;
+		font-weight: 400;
+		span {
+			padding-left: 30px;
+			line-height: 19px;
+		}
+		&:before {
+			display:block;
+			content:'';
+			position:absolute;
+			width:18px;
+			height:18px;
+			left: 0;
+			border-radius: 3px;
+			border:1px solid color("grey", "lighten-2");
+			cursor:pointer;
+			box-shadow: 1px 1px 1px #efefef inset;
+		}
+		&:after {
+			opacity: 0.1;
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#666" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
+			top: 2px;
+			left: 2px;
+			transform: scale(0);
+			cursor:pointer;
+			transition: transform 200ms ease;
+		}
+		&:hover::after {
+			opacity: 0.2;
+		}
+	}
+	input:checked + label:after {
+		transform: scale(1);
+		opacity: 1;
+	}
+	input {
+		visibility: hidden;
+		display:none;
+	}
+	&.-primary label {
+		&:before {
+			background-color: color("primary", "base");
+			border: 1px solid color("primary", "darken-3");
+		}
+		&:after {
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
+		}
+	}
+	input:disabled + label {
+		cursor:not-allowed;
+		&:after {
+			cursor:not-allowed;
+			opacity:0.5;
+		}
+		span {
+			cursor:not-allowed;
+			opacity:0.5;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+/*
+––––
+
+	title:
+		Tip
+
+	comment:
+		La Tip est une plante qui se mange froide
+
+	markup:
+    <div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
+
+  script:
+    $('.tip').mouseover(function(){
+      $(this).addClass("-visible");
+    });
+    $('.tip').mouseout(function(){
+      $(this).removeClass("-visible");
+    });
+
+––––
+*/
+
+.tip {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  .tag {
+    visibility: hidden;
+  }
+  .button {
+    margin-bottom:0;
+  }
+  &.-bottom {
+    .tag {
+      position: absolute;
+      bottom:calc(-100% - 15px);
+      left:0;
+    }
+  }
+  &.-left {
+    .tag {
+      position: absolute;
+      top:50%;
+      left:-100%;
+    }
+  }
+  &.-visible {
+    .tag {
+      visibility: visible;
+    }
+  }
+}

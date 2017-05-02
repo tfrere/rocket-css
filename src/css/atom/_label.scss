@@ -1,0 +1,78 @@
+/*
+––––
+
+	title:
+		Label
+
+	comment:
+		La Label est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <label>
+      <i class="icon -sun"></i>
+      With icon
+    </label>
+    <label class="-step">
+      <span>1</span>
+      With -step
+    </label>
+    <label class="-step -complete toggle-complete">
+      <span>2</span>
+      With -step -complete
+    </label>
+
+  script:
+
+––––
+*/
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600;
+  i {
+    margin-right: 5px;
+  }
+  &:after {
+    content:"";
+    clear:both;
+  }
+  &.-step {
+    span:first-child {
+      position: relative;
+      border: 1px solid color("grey", "lighten-2");
+      border-radius: 1000px;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: 400;
+      font-family: sans-serif;
+      transition: border 100ms ease;
+      &:after {
+        content:"";
+        width:15px;
+        height:15px;
+        //background-color: white;
+        z-index: 1;
+        position: absolute;
+        top:4.4px;
+        left:4.2px;
+        opacity: 0;
+        transition: opacity 100ms ease;
+        background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#{color("primary","base")}" fill-rule="evenodd" d="M12.785 3.222c-.391-.391-1.023-.391-1.414 0l-4.984 7.181-1.677-2.188c-.39-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2.418 3.156c.391.391 1.024.391 1.415 0l5.656-8.149c.391-.39.391-1.024 0-1.414z"/></svg>');
+      }
+    }
+    &.-complete {
+      span:first-child {
+        border: 1px solid color("primary", "lighten-2");
+        color: white;
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

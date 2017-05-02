@@ -1,0 +1,177 @@
+/*
+––––
+
+	title:
+		Login
+
+	comment:
+		La Login est une plante qui se mange froide
+
+	markup:
+    <div id="loginModal" class="modal login">
+      <div class="overlay close-modal"></div>
+      <div class="content">
+        <div class="card content-wrapper">
+          <!--<img class="image" src="images/icon/Comet.svg"></img>-->
+          <div class="close-button close-modal">
+            <i class="icon -cross"></i>
+          </div>
+          <div>
+            <h5>Se connecter</h5>
+            <fieldset class="-large -has-icon -has-tag">
+              <i class="icon -user"></i>
+              <input type="password" placeholder="Pseudo ou email" />
+              <div class="tag visible -line-danger -large -top -pointing">
+                <span>Votre identifiant n'existe pas</span>
+              </div>
+            </fieldset>
+            <fieldset class="-large -has-icon -has-tag">
+              <i class="icon -lock"></i>
+              <input type="password" placeholder="Mot de passe" />
+              <div class="tag visible -line-danger -large -top -pointing">
+                <span>Votre mot de passe est inccorect</span>
+              </div>
+            </fieldset>
+            <div class="checkbox">
+              <input id="checkbox2" type="checkbox"/>
+              <label for="checkbox2">
+                <span>rester connecté</span>
+              </label>
+            </div>
+            <button class="button loading -large -primary">
+              <span>Se connecter</span>
+            </button>
+            <footer>
+              <a href="">S'inscrire</a> -
+              <a href="">Mot de passe perdu ?</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="subscribeModal" class="modal login -subscribe">
+      <div class="overlay close-modal"></div>
+      <div class="content">
+        <div class="card content-wrapper">
+          <!--<img class="image" src="images/icon/Comet.svg"></img>-->
+          <div class="close-button close-modal">
+            <i class="icon -cross"></i>
+          </div>
+          <div>
+            <h5>Inscription</h5>
+            <div class="two-cols-verticaly-aligned">
+              <div class="wrapper">
+                <button class="button -large -primary facebook">
+                  <span>Se connecter avec facebook</span>
+                </button>
+                <hr class="hr -half -center" data-title="OU"/>
+                <fieldset class="-large -has-icon ">
+                  <i class="icon -user"></i>
+                  <input type="password" placeholder="Email" />
+                </fieldset>
+                <fieldset class="-large -has-icon">
+                  <i class="icon -lock"></i>
+                  <input type="password" placeholder="Mot de passe" />
+                </fieldset>
+                <button class="button toggle-loading -large -primary">
+                  <span>S'inscrire</span>
+                </button>
+              </div>
+              <div class="wrapper why">
+                <img class="image" src="images/icon/moonWalker2.svg"></img>
+                <label>Pourquoi créer un compte</label>
+                <p>Bien remplir son compte nous aide à rendre vos résultats plus pertinents encore</p>
+              </div>
+            </div>
+            <footer>
+              <a href="">Se connecter</a> -
+              <a href="">Mot de passe perdu ?</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="button open-login-modal">Open login modal</button>
+    <button class="button open-subscribe-modal">Open subscribe modal</button>
+
+
+  script:
+    $(".open-login-modal").click(function() {
+      $("#loginModal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $("#loginModal").addClass("-open");
+        $("#loginModal").removeClass("-opening");
+      }, 600);
+    });
+    $(".open-subscribe-modal").click(function() {
+      $("#subscribeModal").addClass("-opening");
+      window.setTimeout(function() {
+        $("body").addClass("no-scroll");
+        $("#subscribeModal").addClass("-open");
+        $("#subscribeModal").removeClass("-opening");
+      }, 600);
+    });
+    // closeModal function is already present
+
+––––
+*/
+
+
+.login {
+  .content {
+    max-width: 400px;
+    .checkbox {
+      margin-top: 0.3rem;
+      margin-bottom:$text-size;
+    }
+  }
+  .card>div {
+    padding: 20px;
+    .two-cols-verticaly-aligned {
+      min-height: auto;
+    }
+  }
+  &.-subscribe .content {
+    max-width: 700px;
+  }
+  footer {
+    //text-align: center;
+    position: absolute;
+    bottom: -45px;
+    width: calc(100% - $text-size * 2);
+    a {
+      color: white;
+    }
+  }
+  .facebook {
+    margin-bottom:0;
+    background-color: $facebook-color;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .why {
+    display: none;
+    margin-left:$text-size * 2;
+    border-left: 1px solid color("grey", "lighten-3");
+    border-radius:0;
+    img {
+      margin: 0 auto;
+      min-width: 125px;
+      margin-bottom:$text-size;
+    }
+    text-align: center;
+  }
+}
+
+@include break-point("desktop") {
+  .login {
+    .wrapper {
+      width: 50%;
+    }
+  }
+  .login .why {
+    display: block;
+  }
+}
