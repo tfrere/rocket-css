@@ -1,4 +1,12 @@
 nav.nav
+  #nav-identity.accordion(ui-sref-active="active")
+    h5.title
+      a(ui-sref='nav.identity') Identity
+    ul
+      li
+        a(href='#identity-main') Main
+      li
+        a(href='#identity-others') Others
   #nav-typography.accordion(ui-sref-active="active")
     h5.title
       a(ui-sref='nav.typo') Typography
@@ -25,14 +33,14 @@ nav.nav
     ul(ui-sref-active="active")
       li
         a(href='#animation-ease') Easings
-  #nav-symbol.accordion(ui-sref-active="active")
-    h5.title
-      a(ui-sref='nav.symbol') Symbol
-    ul(ui-sref-active="active")
-      li
-        a(href='#symbol-icon') Icon
-      li
-        a(href='#symbol-flag') Flag
-      li
-        a(href='#symbol-social') Social
+  //- #nav-symbol.accordion(ui-sref-active="active")
+  //-   h5.title
+  //-     a(ui-sref='nav.symbol') Symbol
+  //-   ul(ui-sref-active="active")
+  //-     li
+  //-       a(href='#symbol-icon') Icon
+  //-     li
+  //-       a(href='#symbol-flag') Flag
+  //-     li
+  //-       a(href='#symbol-social') Social
 div(ui-view="")

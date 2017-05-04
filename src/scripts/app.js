@@ -100,6 +100,11 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             templateUrl: 'templates/nav.html',
             controller: 'navCtrl'
         })
+        .state('nav.identity', {
+            url: '/',
+            templateUrl: 'templates/identity.html',
+            controller: 'identityCtrl'
+        })
         .state('nav.home', {
             url: '/',
             templateUrl: 'templates/typo.html',

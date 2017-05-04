@@ -10,6 +10,10 @@ $curve-color:color("grey","base");
 $curve-dot-density: 30;
 $svg-dot-color:color("primary","base");
 
+.ease-wrapper {
+  display:inline-block;
+}
+
 #ease {
   display: block;
   position: relative;
@@ -256,7 +260,7 @@ $svg-dot-color:color("primary","base");
     $str-2: to-number(str-trim(nth($test, 2)));
     $str-3: to-number(str-trim(nth($test, 3)));
     $str-4: to-number(str-trim(nth($test, 4)));
-    @debug $str-1 $str-2 $str-3 $str-4;
+    border: 1px solid color("grey", "lighten-3");
     @include cubic-bezier($str-1, $str-2, $str-3, $str-4, (
       'name': #{$ease_name}
     ));

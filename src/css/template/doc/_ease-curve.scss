@@ -425,7 +425,7 @@
   // Default options
   $options: map-merge((
     // Enable/disable control-points
-    'control-points': true,
+    'control-points': false,
     // Extra informations
     'informations': true,
     // Size of the grid

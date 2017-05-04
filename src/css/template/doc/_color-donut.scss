@@ -60,17 +60,6 @@ $i: 0;
   }
 }
 
-
-$i: 0;
-.donut-2 {
-  @each $color_type, $color_value in $complement-grey {
-    .-part-#{$i} {
-      transform: rotate($i * $angle);
-      &::after { background-color: $color_value !important; }
-    }
-    $i: $i + 1;
-  }
-}
 //
 // $donut-width: 320px;
 // $hover-variation: 30%;

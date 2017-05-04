@@ -1,0 +1,32 @@
+#identity-section {
+
+  #big {
+    width: 250px;
+  }
+  #medium {
+    width: 150px;
+  }
+  #small {
+    width: 50px;
+  }
+  #favicon {
+    width: 16px;
+  }
+	.two-cols-verticaly-aligned .wrapper:first-child {
+		padding-left:0;
+		padding-right:0;
+	}
+	.two-cols-verticaly-aligned .wrapper:last-child {
+		margin: 3rem 15rem 4rem 8rem;
+	}
+	h2 {
+		margin-bottom: 0;
+	}
+	h6 {
+		text-transform: uppercase;
+		font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    opacity: 0.2;
+	}
+}

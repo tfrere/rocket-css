@@ -1,6 +1,7 @@
 @import "template/doc/nav";
 @import "template/doc/section";
 @import "template/doc/footer";
+@import "template/doc/identity";
 @import "template/doc/color";
 @import "template/doc/color-donut";
 @import "template/doc/typo";
@@ -22,11 +23,6 @@ body.dark {
 	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAgCAYAAAASYli2AAAAAXNSR0IArs4c6QAAAGBJREFUSA1jZCARnD17djOyFmNjY19kPhMyhxrswW8gIyFvEgozdP2D38tUdyFGGJIaZqNhyMBIaZiNhiED1RP2CDRwNC+jZyTS+RhhiG4EqXl9NB2ihyAmn1CYjsAwBACOcRw6x5qRuQAAAABJRU5ErkJggg==');
 	background-repeat: repeat;
 	background-size: 5px 8px !important;
-}
-
-.dark .texture {
-	border-top: 1px solid color("grey", "contrast-lighten-3");
-	border-bottom: 1px solid color("grey", "contrast-lighten-3");
 }
 
 .toggle-code.-hidden {

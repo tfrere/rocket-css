@@ -10,13 +10,17 @@
 	// rocketcss #048b8d
 	// complement($color-primary)
 
-	$color-primary:				#721011;
-	$color-complement:		#C57329;
+	$color-primary:				#C57329;
+	$color-complement:		#be022e;
 
-	$color-success:				#149A57;
-	$color-warning:				#EBAD23;
-	$color-info:					#303E73;
-	$color-danger:				#D23D29;
+	$color-blue:				  #98abbf;
+	$color-green:					#326550;
+	$color-lightgreen:		#727426;
+	$color-yellow:				#e7c419;
+	$color-brown:					#d0905d;
+	$color-orange:				#e2681f;
+	$color-pink:					#f1b6dd;
+	$color-light:					#f2f2f2;
 
 	$primary: (
 	  "lighten-5":  lighten($color-primary, 50%),
@@ -46,59 +50,130 @@
 		"base":       $color-complement
 	);
 
-	$success: (
-	  "lighten-5":  lighten($color-success, 50%),
-	  "lighten-4":  lighten($color-success, 40%),
-	  "lighten-3":  lighten($color-success, 30%),
-	  "lighten-2":  lighten($color-success, 20%),
-	  "lighten-1":  lighten($color-success, 10%),
-	  "darken-1":   darken($color-success, 10%),
-	  "darken-2":   darken($color-success, 20%),
-	  "darken-3":   darken($color-success, 30%),
-	  "darken-4":   darken($color-success, 40%),
-    "darken-5":   darken($color-success, 50%),
-		"base":       $color-success
+	$blue: (
+	  "lighten-5":  lighten($color-blue, 50%),
+	  "lighten-4":  lighten($color-blue, 40%),
+	  "lighten-3":  lighten($color-blue, 30%),
+	  "lighten-2":  lighten($color-blue, 20%),
+	  "lighten-1":  lighten($color-blue, 10%),
+	  "darken-1":   darken($color-blue, 10%),
+	  "darken-2":   darken($color-blue, 20%),
+	  "darken-3":   darken($color-blue, 30%),
+	  "darken-4":   darken($color-blue, 40%),
+    "darken-5":   darken($color-blue, 50%),
+		"base":       $color-blue
 	);
 
-	$warning: (
-	  "lighten-5":  lighten($color-warning, 50%),
-	  "lighten-4":  lighten($color-warning, 40%),
-	  "lighten-3":  lighten($color-warning, 30%),
-	  "lighten-2":  lighten($color-warning, 20%),
-	  "lighten-1":  lighten($color-warning, 10%),
-	  "darken-1":   darken($color-warning, 10%),
-	  "darken-2":   darken($color-warning, 20%),
-	  "darken-3":   darken($color-warning, 30%),
-	  "darken-4":   darken($color-warning, 40%),
-    "darken-5":   darken($color-warning, 50%),
-		"base":       $color-warning
+	$green: (
+	  "lighten-5":  lighten($color-green, 50%),
+	  "lighten-4":  lighten($color-green, 40%),
+	  "lighten-3":  lighten($color-green, 30%),
+	  "lighten-2":  lighten($color-green, 20%),
+	  "lighten-1":  lighten($color-green, 10%),
+	  "darken-1":   darken($color-green, 10%),
+	  "darken-2":   darken($color-green, 20%),
+	  "darken-3":   darken($color-green, 30%),
+	  "darken-4":   darken($color-green, 40%),
+    "darken-5":   darken($color-green, 50%),
+		"base":       $color-green
 	);
 
-	$danger: (
-	  "lighten-5":  lighten($color-danger, 50%),
-	  "lighten-4":  lighten($color-danger, 40%),
-	  "lighten-3":  lighten($color-danger, 30%),
-	  "lighten-2":  lighten($color-danger, 20%),
-	  "lighten-1":  lighten($color-danger, 10%),
-	  "darken-1":   darken($color-danger, 10%),
-	  "darken-2":   darken($color-danger, 20%),
-	  "darken-3":   darken($color-danger, 30%),
-	  "darken-4":   darken($color-danger, 40%),
-      "darken-5":   darken($color-danger, 50%),
-		"base":       $color-danger
+	$lightgreen: (
+	  "lighten-5":  lighten($color-lightgreen, 50%),
+	  "lighten-4":  lighten($color-lightgreen, 40%),
+	  "lighten-3":  lighten($color-lightgreen, 30%),
+	  "lighten-2":  lighten($color-lightgreen, 20%),
+	  "lighten-1":  lighten($color-lightgreen, 10%),
+	  "darken-1":   darken($color-lightgreen, 10%),
+	  "darken-2":   darken($color-lightgreen, 20%),
+	  "darken-3":   darken($color-lightgreen, 30%),
+	  "darken-4":   darken($color-lightgreen, 40%),
+      "darken-5":   darken($color-lightgreen, 50%),
+		"base":       $color-lightgreen
 	);
-	$info: (
-	  "lighten-5":  lighten($color-info, 50%),
-	  "lighten-4":  lighten($color-info, 40%),
-	  "lighten-3":  lighten($color-info, 30%),
-	  "lighten-2":  lighten($color-info, 20%),
-	  "lighten-1":  lighten($color-info, 10%),
-	  "darken-1":   darken($color-info, 10%),
-	  "darken-2":   darken($color-info, 20%),
-	  "darken-3":   darken($color-info, 30%),
-	  "darken-4":   darken($color-info, 40%),
-    "darken-5":   darken($color-info, 50%),
-		"base":       $color-info
+
+	$yellow: (
+	  "lighten-5":  lighten($color-yellow, 50%),
+	  "lighten-4":  lighten($color-yellow, 40%),
+	  "lighten-3":  lighten($color-yellow, 30%),
+	  "lighten-2":  lighten($color-yellow, 20%),
+	  "lighten-1":  lighten($color-yellow, 10%),
+	  "darken-1":   darken($color-yellow, 10%),
+	  "darken-2":   darken($color-yellow, 20%),
+	  "darken-3":   darken($color-yellow, 30%),
+	  "darken-4":   darken($color-yellow, 40%),
+    "darken-5":   darken($color-yellow, 50%),
+		"base":       $color-yellow
+	);
+
+	$brown: (
+	  "lighten-5":  lighten($color-brown, 50%),
+	  "lighten-4":  lighten($color-brown, 40%),
+	  "lighten-3":  lighten($color-brown, 30%),
+	  "lighten-2":  lighten($color-brown, 20%),
+	  "lighten-1":  lighten($color-brown, 10%),
+	  "darken-1":   darken($color-brown, 10%),
+	  "darken-2":   darken($color-brown, 20%),
+	  "darken-3":   darken($color-brown, 30%),
+	  "darken-4":   darken($color-brown, 40%),
+    "darken-5":   darken($color-brown, 50%),
+		"base":       $color-brown
+	);
+
+	$brown: (
+	  "lighten-5":  lighten($color-brown, 50%),
+	  "lighten-4":  lighten($color-brown, 40%),
+	  "lighten-3":  lighten($color-brown, 30%),
+	  "lighten-2":  lighten($color-brown, 20%),
+	  "lighten-1":  lighten($color-brown, 10%),
+	  "darken-1":   darken($color-brown, 10%),
+	  "darken-2":   darken($color-brown, 20%),
+	  "darken-3":   darken($color-brown, 30%),
+	  "darken-4":   darken($color-brown, 40%),
+    "darken-5":   darken($color-brown, 50%),
+		"base":       $color-brown
+	);
+
+	$orange: (
+	  "lighten-5":  lighten($color-orange, 50%),
+	  "lighten-4":  lighten($color-orange, 40%),
+	  "lighten-3":  lighten($color-orange, 30%),
+	  "lighten-2":  lighten($color-orange, 20%),
+	  "lighten-1":  lighten($color-orange, 10%),
+	  "darken-1":   darken($color-orange, 10%),
+	  "darken-2":   darken($color-orange, 20%),
+	  "darken-3":   darken($color-orange, 30%),
+	  "darken-4":   darken($color-orange, 40%),
+    "darken-5":   darken($color-orange, 50%),
+		"base":       $color-orange
+	);
+
+	$pink: (
+	  "lighten-5":  lighten($color-pink, 50%),
+	  "lighten-4":  lighten($color-pink, 40%),
+	  "lighten-3":  lighten($color-pink, 30%),
+	  "lighten-2":  lighten($color-pink, 20%),
+	  "lighten-1":  lighten($color-pink, 10%),
+	  "darken-1":   darken($color-pink, 10%),
+	  "darken-2":   darken($color-pink, 20%),
+	  "darken-3":   darken($color-pink, 30%),
+	  "darken-4":   darken($color-pink, 40%),
+    "darken-5":   darken($color-pink, 50%),
+		"base":       $color-pink
+	);
+
+	$light: (
+	  "lighten-5":  lighten($color-light, 50%),
+	  "lighten-4":  lighten($color-light, 40%),
+	  "lighten-3":  lighten($color-light, 30%),
+	  "lighten-2":  lighten($color-light, 20%),
+	  "lighten-1":  lighten($color-light, 10%),
+	  "darken-1":   darken($color-light, 10%),
+	  "darken-2":   darken($color-light, 20%),
+	  "darken-3":   darken($color-light, 30%),
+	  "darken-4":   darken($color-light, 40%),
+    "darken-5":   darken($color-light, 50%),
+		"base":       $color-light
 	);
 
 	$grey: (
@@ -143,37 +218,19 @@
 	  "darken-5":   mix($color-primary, black,  5%)
 	);
 
-	$complement-grey: (
-		"lighten-5":  mix($color-complement, #fafafa, 5%),
-		"lighten-4":  mix($color-complement, #f5f5f5, 5%),
-		"lighten-3":  mix($color-complement, #eeeeee, 5%),
-		"lighten-2":  mix($color-complement, #e0e0e0, 5%),
-		"lighten-1":  mix($color-complement, #bdbdbd, 5%),
-		"base":       mix($color-complement, #9e9e9e, 5%),
-		"darken-1":   mix($color-complement, #757575, 5%),
-		"darken-2":   mix($color-complement, #616161, 5%),
-		"darken-3":   mix($color-complement, #424242, 5%),
-		"darken-4":   mix($color-complement, #212121, 5%),
-		"darken-5":   mix($color-complement, black,  5%)
-	);
-
 	$colors: (
 	  "primary": $primary,
 	  "complement": $complement,
-	  "success": $success,
-	  "danger": $danger,
-	  "warning": $warning,
-	  "info": $info,
+	  "blue": $blue,
+	  "lightgreen": $lightgreen,
+	  "green": $green,
+		"yellow": $yellow,
+		"brown": $brown,
+		"orange": $orange,
+		"pink": $pink,
+	  "light": $light,
 	  "grey": $grey
 	);
-
-
-$red: #F15854;
-$gray: #4D4D4D;
-$blue: #5DA5DA;
-$yellow: #DECF3F;
-$purple: #B276B2;
-$orange: #FAA43A;
 
 $medium-grey: #fafafa;
 
