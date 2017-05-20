@@ -11,10 +11,10 @@ app.directive('compileUnsafe', function ($compile) {
   };
 });
 
-app.config(function($httpProvider){
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-});
+// app.config(function($httpProvider){
+//     $httpProvider.defaults.useXDomain = true;
+//     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+// });
 
 app.directive('updateTitle', ['$rootScope', '$timeout',
   function($rootScope, $timeout) {
@@ -79,21 +79,16 @@ app.controller('homeCtrl', function ( $scope, $timeout) {
 
 });
 
-app.controller('404Ctrl', function ($scope) {
-
-});
-
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
+    // $locationProvider.html5Mode({
+    //   enabled: true,
+    //   requireBase: false
+    // });
+    // $locationProvider.hashPrefix('!');
     $urlRouterProvider.when('', '/');
-    $locationProvider.hashPrefix('!');
 
     // For any unmatched url, send to 404
-    $urlRouterProvider.otherwise('/404');
     $stateProvider
         .state('nav', {
             abstract: true,
@@ -149,10 +144,5 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/template-Footer',
             templateUrl: 'templates/template.html',
             controller: 'atomCtrl'
-        })
-        .state('nav.404', {
-            url: '/404',
-            templateUrl: 'templates/typo.html',
-            controller: '404Ctrl'
         })
 });

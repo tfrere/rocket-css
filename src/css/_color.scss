@@ -10,13 +10,12 @@
 	// rocketcss #048b8d
 	// complement($color-primary)
 
-	$color-primary:				#C57329;
+	$color-primary:				#E39242;
 	$color-complement:		#8c0222;
 
 	$color-blue:				  #98abbf;
 	$color-green:					#326550;
-	$color-lightgreen:		#727426;
-	$color-yellow:				#e7c419;
+	$color-yellow:				#F4C430;
 	$color-brown:					#d0905d;
 	$color-orange:				#e2681f;
 	$color-pink:					#f1b6dd;
@@ -76,20 +75,6 @@
 	  "darken-4":   darken($color-green, 40%),
     "darken-5":   darken($color-green, 50%),
 		"base":       $color-green
-	);
-
-	$lightgreen: (
-	  "lighten-5":  lighten($color-lightgreen, 50%),
-	  "lighten-4":  lighten($color-lightgreen, 40%),
-	  "lighten-3":  lighten($color-lightgreen, 30%),
-	  "lighten-2":  lighten($color-lightgreen, 20%),
-	  "lighten-1":  lighten($color-lightgreen, 10%),
-	  "darken-1":   darken($color-lightgreen, 10%),
-	  "darken-2":   darken($color-lightgreen, 20%),
-	  "darken-3":   darken($color-lightgreen, 30%),
-	  "darken-4":   darken($color-lightgreen, 40%),
-      "darken-5":   darken($color-lightgreen, 50%),
-		"base":       $color-lightgreen
 	);
 
 	$yellow: (
@@ -222,7 +207,6 @@
 	  "primary": $primary,
 	  "complement": $complement,
 	  "blue": $blue,
-	  "lightgreen": $lightgreen,
 	  "green": $green,
 		"yellow": $yellow,
 		"brown": $brown,

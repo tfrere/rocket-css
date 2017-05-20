@@ -10,6 +10,9 @@
   }
 
   var paths = {
+      ghpages: {
+        url: './dist/**/*'
+      },
       clean: {
         files: rootDir + ''
       },
@@ -78,6 +81,7 @@
   gulp.task('ressources', getTask('ressources'));
   gulp.task('build-doc', getTask('build-doc'));
   gulp.task('plugins', getTask('plugins'));
+  gulp.task('gh-pages', getTask('ghpages'));
 
   gulp.task('build-prod', function(cb) {
     plugins.runSequence('clean', ['build-doc', 'style', 'jade', 'assets', 'vendor', 'plugins', 'scripts', 'ressources']);
