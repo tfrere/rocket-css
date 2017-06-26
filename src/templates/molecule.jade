@@ -1,18 +1,4 @@
-header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#molecule-Background    h5 Background    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="background center -visible -fixed">
-            <div class="filter"></div>
-            <div class="gradient"></div>
-            <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
-            <div class="content center-wrapper"><h5>Title</h5></div>
-          </div>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Background-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Background-code.              &lt;div class=&quot;background center -visible -fixed&quot;&gt;
-                &lt;div class=&quot;filter&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;gradient&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;image&quot; style=&quot;background-image:url(/assets/imgs/jpg/leaf.jpg);&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;content center-wrapper&quot;&gt;&lt;h5&gt;Title&lt;/h5&gt;&lt;/div&gt;
-              &lt;/div&gt;
-
-   .bloc#molecule-Bubble    h5 Bubble    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
+header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#molecule-Bubble    h5 Bubble    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
           <div class="bubble">
               <img src="/assets/imgs/jpg/joe.jpg"/>
               <div class="content">
@@ -128,7 +114,21 @@ header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#mole
               $(".toggle-bounce").toggleClass("hide");
             }, 3000);
 
-  .bloc#molecule-Card    h5 Card    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
+  .bloc#molecule-Background    h5 Background    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="background center -visible -fixed">
+            <div class="filter"></div>
+            <div class="gradient"></div>
+            <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
+            <div class="content center-wrapper"><h5>Title</h5></div>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Background-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Background-code.              &lt;div class=&quot;background center -visible -fixed&quot;&gt;
+                &lt;div class=&quot;filter&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;gradient&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;image&quot; style=&quot;background-image:url(/assets/imgs/jpg/leaf.jpg);&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;content center-wrapper&quot;&gt;&lt;h5&gt;Title&lt;/h5&gt;&lt;/div&gt;
+              &lt;/div&gt;
+
+   .bloc#molecule-Card    h5 Card    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
           <div class="card">
             <div class="progress -small">
               <div class="bar"></div>
@@ -164,6 +164,64 @@ header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#mole
                   &lt;button class=&quot;button&quot;&gt;Accept&lt;/button&gt;
                   &lt;button class=&quot;button&quot;&gt;Decline&lt;/button&gt;
                 &lt;/footer&gt;
+              &lt;/div&gt;
+
+   .bloc#molecule-Fieldset    h5 Fieldset    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>With right tag</label>
+          <fieldset class="-has-icon">
+            <i class="icon -lock"></i>
+            <input type="password" placeholder="Password" />
+            <div class="tag visible -line-danger -left -pointing">
+              <span>Password incorrect</span>
+            </div>
+          </fieldset>
+          <fieldset class="-has-icon -large -has-tag">
+            <i class="icon -lock"></i>
+            <label>With sub tag</label>
+            <input type="password" placeholder="Password" />
+            <div class="tag visible -line-danger -large -top -pointing">
+              <span>Votre password est inccorect</span>
+            </div>
+          </fieldset>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Fieldset-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Fieldset-code.              &lt;label&gt;With right tag&lt;/label&gt;
+              &lt;fieldset class=&quot;-has-icon&quot;&gt;
+                &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+                &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;div class=&quot;tag visible -line-danger -left -pointing&quot;&gt;
+                  &lt;span&gt;Password incorrect&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/fieldset&gt;
+              &lt;fieldset class=&quot;-has-icon -large -has-tag&quot;&gt;
+                &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+                &lt;label&gt;With sub tag&lt;/label&gt;
+                &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+                &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
+                  &lt;span&gt;Votre password est inccorect&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/fieldset&gt;
+
+   .bloc#molecule-Message    h5 Message    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
+          <div class="message">
+            <h5><i class="icon -sun"></i>Title</h5>
+            <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+          </div>
+          <label>With -with-intent -line-primary</label>
+          <div class="message -with-intent -line-primary">
+            <i class="icon status -sun"></i>
+            <h5>Title</h5>
+            <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Message-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Message-code.              &lt;label&gt;Simple&lt;/label&gt;
+              &lt;div class=&quot;message&quot;&gt;
+                &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
+                &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
+              &lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
+                &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
+                &lt;h5&gt;Title&lt;/h5&gt;
+                &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
               &lt;/div&gt;
 
    .bloc#molecule-Figure    h5 Figure    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
@@ -296,127 +354,7 @@ header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#mole
                 &lt;/li&gt;
               &lt;/ul&gt;
 
-   .bloc#molecule-Fieldset    h5 Fieldset    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>With right tag</label>
-          <fieldset class="-has-icon">
-            <i class="icon -lock"></i>
-            <input type="password" placeholder="Password" />
-            <div class="tag visible -line-danger -left -pointing">
-              <span>Password incorrect</span>
-            </div>
-          </fieldset>
-          <fieldset class="-has-icon -large -has-tag">
-            <i class="icon -lock"></i>
-            <label>With sub tag</label>
-            <input type="password" placeholder="Password" />
-            <div class="tag visible -line-danger -large -top -pointing">
-              <span>Votre password est inccorect</span>
-            </div>
-          </fieldset>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Fieldset-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Fieldset-code.              &lt;label&gt;With right tag&lt;/label&gt;
-              &lt;fieldset class=&quot;-has-icon&quot;&gt;
-                &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
-                &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
-                &lt;div class=&quot;tag visible -line-danger -left -pointing&quot;&gt;
-                  &lt;span&gt;Password incorrect&lt;/span&gt;
-                &lt;/div&gt;
-              &lt;/fieldset&gt;
-              &lt;fieldset class=&quot;-has-icon -large -has-tag&quot;&gt;
-                &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
-                &lt;label&gt;With sub tag&lt;/label&gt;
-                &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
-                &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
-                  &lt;span&gt;Votre password est inccorect&lt;/span&gt;
-                &lt;/div&gt;
-              &lt;/fieldset&gt;
-
-   .bloc#molecule-Shape    h5 Shape    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="shape one"></div>
-          <div class="shape two"></div>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Shape-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Shape-code.              &lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
-              &lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
-
-   .bloc#molecule-Dropdown    h5 Dropdown    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="dropdown toggle-dropdown">
-            <div class="merge -large -horizontal">
-              <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
-              <button class="button -primary toggle-loading"><span>Go !</span></button>
-            </div>
-            <div class="results">
-              <ul>
-                <li class="touch">Aide-soignant</li>
-                <li class="touch">A<span class="highlight">id</span>e-soignante</li>
-                <li class="touch">Aide-soignante2</li>
-                <li class="touch">Aide-soignante3</li>
-                <li class="touch">Aide-soignante3</li>
-                <li class="touch">Aide-soignante3</li>
-                <li class="touch">Aide-soignante3</li>
-              </ul>
-            </div>
-          </div>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Dropdown-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Dropdown-code.              &lt;div class=&quot;dropdown toggle-dropdown&quot;&gt;
-                &lt;div class=&quot;merge -large -horizontal&quot;&gt;
-                  &lt;input type=&quot;text&quot; id=&quot;job-input&quot; placeholder=&quot;Dernier métier que vous ayez exercé...&quot;/&gt;
-                  &lt;button class=&quot;button -primary toggle-loading&quot;&gt;&lt;span&gt;Go !&lt;/span&gt;&lt;/button&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;results&quot;&gt;
-                  &lt;ul&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignant&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;A&lt;span class=&quot;highlight&quot;&gt;id&lt;/span&gt;e-soignante&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante2&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-                  &lt;/ul&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-
-           div(hljs).javascript.Dropdown-code.            $(".toggle-dropdown").focusin(function() {
-              $(this).addClass("-visible");
-            });
-            $(".toggle-dropdown input").blur(function() {
-              $(this).parent().removeClass("-visible");
-              $(this).parent().parent().removeClass("-visible");
-            });
-
-
-  .bloc#molecule-Message    h5 Message    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
-          <div class="message">
-            <h5><i class="icon -sun"></i>Title</h5>
-            <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-          </div>
-          <label>With -with-intent -line-primary</label>
-          <div class="message -with-intent -line-primary">
-            <i class="icon status -sun"></i>
-            <h5>Title</h5>
-            <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-          </div>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Message-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Message-code.              &lt;label&gt;Simple&lt;/label&gt;
-              &lt;div class=&quot;message&quot;&gt;
-                &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
-                &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
-              &lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
-                &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
-                &lt;h5&gt;Title&lt;/h5&gt;
-                &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-              &lt;/div&gt;
-
-   .bloc#molecule-Tip    h5 Tip    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
-
-          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Tip-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Tip-code.              &lt;div class=&quot;tip -bottom&quot;&gt;&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;span&gt;Hover me&lt;/span&gt;&lt;/button&gt;&lt;div class=&quot;tag -pointing -top&quot;&gt;&lt;span&gt;This is a tip&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-
-           div(hljs).javascript.Tip-code.            $('.tip').mouseover(function(){
-              $(this).addClass("-visible");
-            });
-            $('.tip').mouseout(function(){
-              $(this).removeClass("-visible");
-            });
-
-  .bloc#molecule-Table    h5 Table    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
+   .bloc#molecule-Table    h5 Table    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <label>Simple</label>
           <table>
             <thead>
               <tr>
@@ -514,9 +452,78 @@ header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#mole
                 &lt;/tbody&gt;
               &lt;/table&gt;
 
- footer.footer  h5    a(ui-sref="nav.modifier") modifierscript.    window.setInterval(function() {
+   .bloc#molecule-Shape    h5 Shape    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="shape one"></div>
+          <div class="shape two"></div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Shape-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Shape-code.              &lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
+              &lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
+
+   .bloc#molecule-Tip    h5 Tip    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Tip-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Tip-code.              &lt;div class=&quot;tip -bottom&quot;&gt;&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;span&gt;Hover me&lt;/span&gt;&lt;/button&gt;&lt;div class=&quot;tag -pointing -top&quot;&gt;&lt;span&gt;This is a tip&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+
+           div(hljs).javascript.Tip-code.            $('.tip').mouseover(function(){
+              $(this).addClass("-visible");
+            });
+            $('.tip').mouseout(function(){
+              $(this).removeClass("-visible");
+            });
+
+  .bloc#molecule-Dropdown    h5 Dropdown    hr    div      div.two-cols-verticaly-aligned        .wrapper.sample.          <div class="dropdown toggle-dropdown">
+            <div class="merge -large -horizontal">
+              <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
+              <button class="button -primary toggle-loading"><span>Go !</span></button>
+            </div>
+            <div class="results">
+              <ul>
+                <li class="touch">Aide-soignant</li>
+                <li class="touch">A<span class="highlight">id</span>e-soignante</li>
+                <li class="touch">Aide-soignante2</li>
+                <li class="touch">Aide-soignante3</li>
+                <li class="touch">Aide-soignante3</li>
+                <li class="touch">Aide-soignante3</li>
+                <li class="touch">Aide-soignante3</li>
+              </ul>
+            </div>
+          </div>
+
+          .wrapper.sample-code          header            h6.desc HTML            fieldset.copy              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#Dropdown-code")                i.icon.-floppy-disk              .tag.-success.-pointing.-left.toggle-copy-success                span Copied          div(hljs).html#Dropdown-code.              &lt;div class=&quot;dropdown toggle-dropdown&quot;&gt;
+                &lt;div class=&quot;merge -large -horizontal&quot;&gt;
+                  &lt;input type=&quot;text&quot; id=&quot;job-input&quot; placeholder=&quot;Dernier métier que vous ayez exercé...&quot;/&gt;
+                  &lt;button class=&quot;button -primary toggle-loading&quot;&gt;&lt;span&gt;Go !&lt;/span&gt;&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;results&quot;&gt;
+                  &lt;ul&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignant&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;A&lt;span class=&quot;highlight&quot;&gt;id&lt;/span&gt;e-soignante&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante2&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+                    &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+
+           div(hljs).javascript.Dropdown-code.            $(".toggle-dropdown").focusin(function() {
+              $(this).addClass("-visible");
+            });
+            $(".toggle-dropdown input").blur(function() {
+              $(this).parent().removeClass("-visible");
+              $(this).parent().parent().removeClass("-visible");
+            });
+
+
+footer.footer  h5    a(ui-sref="nav.modifier") modifierscript.    window.setInterval(function() {
       $(".toggle-bounce").toggleClass("hide");
     }, 3000);
+
+    $('.tip').mouseover(function(){
+      $(this).addClass("-visible");
+    });
+    $('.tip').mouseout(function(){
+      $(this).removeClass("-visible");
+    });
 
     $(".toggle-dropdown").focusin(function() {
       $(this).addClass("-visible");
@@ -526,12 +533,5 @@ header#molecule-head  div    h3 moleculesection.section#molecule  .bloc#mole
       $(this).parent().parent().removeClass("-visible");
     });
 
-
-    $('.tip').mouseover(function(){
-      $(this).addClass("-visible");
-    });
-    $('.tip').mouseout(function(){
-      $(this).removeClass("-visible");
-    });
 
 

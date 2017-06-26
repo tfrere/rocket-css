@@ -34,20 +34,6 @@
   &lt;/figcaption&gt;
 &lt;/figure&gt;
 
-</div></div></div></div></div><div id="modifier-Level" class="bloc"><h5>Level</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="card level-1 toggle-level"><p>Ground</p></div>
-<div class="card level-2 toggle-level"><p>Level 2</p></div>
-<div class="card level-3 toggle-level"><p>Level 3</p></div>
-<div class="card level-4 toggle-level"><p>Level 4</p></div>
-<div class="card level-5 toggle-level"><p>Level 5</p></div>
-<div class="card level-6 toggle-level"><p>Level 6</p></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Level-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Level-code" class="html">&lt;div class=&quot;card level-1 toggle-level&quot;&gt;&lt;p&gt;Ground&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;card level-2 toggle-level&quot;&gt;&lt;p&gt;Level 2&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;card level-3 toggle-level&quot;&gt;&lt;p&gt;Level 3&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;card level-4 toggle-level&quot;&gt;&lt;p&gt;Level 4&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
-
 </div></div></div></div></div><div id="modifier-Isolate" class="bloc"><h5>Isolate</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="isolate">
   <div>
     <input type="text" placeholder="Coucou"/>
@@ -75,130 +61,19 @@ $(".isolate input").blur(function(){
   }, 150);
 });
 
-</div></div></div></div></div><div id="modifier-Panel" class="bloc"><h5>Panel</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><button class="button open-panel">Open panel</button>
-<div class="panel -panel -left">
-  <div class="overlay close-panel"></div>
-  <div class="content">
-    <div class="content-wrapper">
-      <header class="header">
-        <h5>Panel title</h5>
-        <div class="close-button close-panel">
-        <i class="icon -cross"></i>
-        </div>
-      </header>
-    </div>
-  </div>
-</div>
+</div></div></div></div></div><div id="modifier-Level" class="bloc"><h5>Level</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="card level-1 toggle-level"><p>Ground</p></div>
+<div class="card level-2 toggle-level"><p>Level 2</p></div>
+<div class="card level-3 toggle-level"><p>Level 3</p></div>
+<div class="card level-4 toggle-level"><p>Level 4</p></div>
+<div class="card level-5 toggle-level"><p>Level 5</p></div>
+<div class="card level-6 toggle-level"><p>Level 6</p></div>
 
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Panel-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Panel-code" class="html">&lt;button class=&quot;button open-panel&quot;&gt;Open panel&lt;/button&gt;
-&lt;div class=&quot;panel -panel -left&quot;&gt;
-  &lt;div class=&quot;overlay close-panel&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;content&quot;&gt;
-    &lt;div class=&quot;content-wrapper&quot;&gt;
-      &lt;header class=&quot;header&quot;&gt;
-        &lt;h5&gt;Panel title&lt;/h5&gt;
-        &lt;div class=&quot;close-button close-panel&quot;&gt;
-        &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
-        &lt;/div&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-</div><div hljs="hljs" class="javascript Panel-code">$(".open-panel").click(function(){
-  $(".panel").addClass("-opening");
-  window.setTimeout(function(){
-    $(".panel").addClass("-open");
-    $(".panel").removeClass("-opening");
-  }, 350);
-});
-$(".close-panel").click(function(){
-  $(".panel").addClass("-closing");
-  window.setTimeout(function(){
-    $(".panel").removeClass("-open");
-    $(".panel").removeClass("-closing");
-  }, 350);
-});
-
-</div></div></div></div></div><div id="modifier-Loading" class="bloc"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Button</label>
-<button class="button loading toggle-loading touch">
-  <i class="icon -sun"></i>
-  <span>Bouton</span>
-</button>
-<label>Card</label>
-<div class="card loading toggle-loading -primary">
-  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-</div>
-<label>Entire list</label>
-<ul class="list loading toggle-loading">
-  <li class="item touch">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-</ul>
-<label>List item</label>
-<ul class="list">
-  <li class="item touch loading toggle-loading">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-  <li class="item touch">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-</ul>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Loading-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Loading-code" class="html">&lt;label&gt;Button&lt;/label&gt;
-&lt;button class=&quot;button loading toggle-loading touch&quot;&gt;
-  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-  &lt;span&gt;Bouton&lt;/span&gt;
-&lt;/button&gt;
-&lt;label&gt;Card&lt;/label&gt;
-&lt;div class=&quot;card loading toggle-loading -primary&quot;&gt;
-  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-&lt;/div&gt;
-&lt;label&gt;Entire list&lt;/label&gt;
-&lt;ul class=&quot;list loading toggle-loading&quot;&gt;
-  &lt;li class=&quot;item touch&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;label&gt;List item&lt;/label&gt;
-&lt;ul class=&quot;list&quot;&gt;
-  &lt;li class=&quot;item touch loading toggle-loading&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;item touch&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</div><div hljs="hljs" class="javascript Loading-code">window.setInterval(function() {
-  $(".toggle-loading").each(function() {
-    $(this).toggleClass("loading");
-  });
-}, 3000);
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Level-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Level-code" class="html">&lt;div class=&quot;card level-1 toggle-level&quot;&gt;&lt;p&gt;Ground&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;card level-2 toggle-level&quot;&gt;&lt;p&gt;Level 2&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;card level-3 toggle-level&quot;&gt;&lt;p&gt;Level 3&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;card level-4 toggle-level&quot;&gt;&lt;p&gt;Level 4&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
 
 </div></div></div></div></div><div id="modifier-Merge" class="bloc"><h5>Merge</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Horizontal</label>
 <div class="merge -horizontal">
@@ -288,6 +163,86 @@ $(".close-panel").click(function(){
   &lt;/button&gt;
 &lt;/div&gt;
 
+</div></div></div></div></div><div id="modifier-Loading" class="bloc"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Button</label>
+<button class="button loading toggle-loading touch">
+  <i class="icon -sun"></i>
+  <span>Bouton</span>
+</button>
+<label>Card</label>
+<div class="card loading toggle-loading -primary">
+  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+</div>
+<label>Entire list</label>
+<ul class="list loading toggle-loading">
+  <li class="item touch">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+</ul>
+<label>List item</label>
+<ul class="list">
+  <li class="item touch loading toggle-loading">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+  <li class="item touch">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+</ul>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Loading-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Loading-code" class="html">&lt;label&gt;Button&lt;/label&gt;
+&lt;button class=&quot;button loading toggle-loading touch&quot;&gt;
+  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+  &lt;span&gt;Bouton&lt;/span&gt;
+&lt;/button&gt;
+&lt;label&gt;Card&lt;/label&gt;
+&lt;div class=&quot;card loading toggle-loading -primary&quot;&gt;
+  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;label&gt;Entire list&lt;/label&gt;
+&lt;ul class=&quot;list loading toggle-loading&quot;&gt;
+  &lt;li class=&quot;item touch&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;label&gt;List item&lt;/label&gt;
+&lt;ul class=&quot;list&quot;&gt;
+  &lt;li class=&quot;item touch loading toggle-loading&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;item touch&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</div><div hljs="hljs" class="javascript Loading-code">window.setInterval(function() {
+  $(".toggle-loading").each(function() {
+    $(this).toggleClass("loading");
+  });
+}, 3000);
+
 </div></div></div></div></div><div id="modifier-Modal" class="bloc"><h5>Modal</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><button class="button open-modal">Open modal</button>
 <div class="modal">
   <div class="overlay close-modal"></div>
@@ -342,6 +297,51 @@ $(".close-modal").click(function() {
     $(".modal").removeClass("-open");
     $(".modal").removeClass("-closing");
     $("body").removeClass("no-scroll");
+  }, 350);
+});
+
+</div></div></div></div></div><div id="modifier-Panel" class="bloc"><h5>Panel</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><button class="button open-panel">Open panel</button>
+<div class="panel -panel -left">
+  <div class="overlay close-panel"></div>
+  <div class="content">
+    <div class="content-wrapper">
+      <header class="header">
+        <h5>Panel title</h5>
+        <div class="close-button close-panel">
+        <i class="icon -cross"></i>
+        </div>
+      </header>
+    </div>
+  </div>
+</div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Panel-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Panel-code" class="html">&lt;button class=&quot;button open-panel&quot;&gt;Open panel&lt;/button&gt;
+&lt;div class=&quot;panel -panel -left&quot;&gt;
+  &lt;div class=&quot;overlay close-panel&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;content-wrapper&quot;&gt;
+      &lt;header class=&quot;header&quot;&gt;
+        &lt;h5&gt;Panel title&lt;/h5&gt;
+        &lt;div class=&quot;close-button close-panel&quot;&gt;
+        &lt;i class=&quot;icon -cross&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</div><div hljs="hljs" class="javascript Panel-code">$(".open-panel").click(function(){
+  $(".panel").addClass("-opening");
+  window.setTimeout(function(){
+    $(".panel").addClass("-open");
+    $(".panel").removeClass("-opening");
+  }, 350);
+});
+$(".close-panel").click(function(){
+  $(".panel").addClass("-closing");
+  window.setTimeout(function(){
+    $(".panel").removeClass("-open");
+    $(".panel").removeClass("-closing");
   }, 350);
 });
 
@@ -449,23 +449,6 @@ $(".isolate input").blur(function(){
 
 
 
-$(".open-panel").click(function(){
-  $(".panel").addClass("-opening");
-  window.setTimeout(function(){
-    $(".panel").addClass("-open");
-    $(".panel").removeClass("-opening");
-  }, 350);
-});
-$(".close-panel").click(function(){
-  $(".panel").addClass("-closing");
-  window.setTimeout(function(){
-    $(".panel").removeClass("-open");
-    $(".panel").removeClass("-closing");
-  }, 350);
-});
-
-
-
 window.setInterval(function() {
   $(".toggle-loading").each(function() {
     $(this).toggleClass("loading");
@@ -488,6 +471,23 @@ $(".close-modal").click(function() {
     $(".modal").removeClass("-open");
     $(".modal").removeClass("-closing");
     $("body").removeClass("no-scroll");
+  }, 350);
+});
+
+
+
+$(".open-panel").click(function(){
+  $(".panel").addClass("-opening");
+  window.setTimeout(function(){
+    $(".panel").addClass("-open");
+    $(".panel").removeClass("-opening");
+  }, 350);
+});
+$(".close-panel").click(function(){
+  $(".panel").addClass("-closing");
+  window.setTimeout(function(){
+    $(".panel").removeClass("-open");
+    $(".panel").removeClass("-closing");
   }, 350);
 });
 

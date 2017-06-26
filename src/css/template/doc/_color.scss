@@ -185,6 +185,14 @@ $hoverEaseOut: ease-in;
 }
 
 
+#color-additional {
+	.-last {
+		.column {
+			width: 25%;
+		}
+	}
+}
+
 #color-grey {
 	margin-top: $text-size * 3;
 	.column {

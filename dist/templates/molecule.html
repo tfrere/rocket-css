@@ -1,18 +1,4 @@
-<header id="molecule-head"><div><h3>molecule</h3></div></header><section id="molecule" class="section"><div id="molecule-Background" class="bloc"><h5>Background</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="background center -visible -fixed">
-  <div class="filter"></div>
-  <div class="gradient"></div>
-  <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
-  <div class="content center-wrapper"><h5>Title</h5></div>
-</div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Background-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Background-code" class="html">&lt;div class=&quot;background center -visible -fixed&quot;&gt;
-  &lt;div class=&quot;filter&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;gradient&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;image&quot; style=&quot;background-image:url(/assets/imgs/jpg/leaf.jpg);&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;content center-wrapper&quot;&gt;&lt;h5&gt;Title&lt;/h5&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-</div></div></div></div></div><div id="molecule-Bubble" class="bloc"><h5>Bubble</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
+<header id="molecule-head"><div><h3>molecule</h3></div></header><section id="molecule" class="section"><div id="molecule-Bubble" class="bloc"><h5>Bubble</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 <div class="bubble">
     <img src="/assets/imgs/jpg/joe.jpg"/>
     <div class="content">
@@ -128,6 +114,20 @@
   $(".toggle-bounce").toggleClass("hide");
 }, 3000);
 
+</div></div></div></div></div><div id="molecule-Background" class="bloc"><h5>Background</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="background center -visible -fixed">
+  <div class="filter"></div>
+  <div class="gradient"></div>
+  <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
+  <div class="content center-wrapper"><h5>Title</h5></div>
+</div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Background-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Background-code" class="html">&lt;div class=&quot;background center -visible -fixed&quot;&gt;
+  &lt;div class=&quot;filter&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;gradient&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;image&quot; style=&quot;background-image:url(/assets/imgs/jpg/leaf.jpg);&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;content center-wrapper&quot;&gt;&lt;h5&gt;Title&lt;/h5&gt;&lt;/div&gt;
+&lt;/div&gt;
+
 </div></div></div></div></div><div id="molecule-Card" class="bloc"><h5>Card</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 <div class="card">
   <div class="progress -small">
@@ -164,6 +164,64 @@
     &lt;button class=&quot;button&quot;&gt;Accept&lt;/button&gt;
     &lt;button class=&quot;button&quot;&gt;Decline&lt;/button&gt;
   &lt;/footer&gt;
+&lt;/div&gt;
+
+</div></div></div></div></div><div id="molecule-Fieldset" class="bloc"><h5>Fieldset</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>With right tag</label>
+<fieldset class="-has-icon">
+  <i class="icon -lock"></i>
+  <input type="password" placeholder="Password" />
+  <div class="tag visible -line-danger -left -pointing">
+    <span>Password incorrect</span>
+  </div>
+</fieldset>
+<fieldset class="-has-icon -large -has-tag">
+  <i class="icon -lock"></i>
+  <label>With sub tag</label>
+  <input type="password" placeholder="Password" />
+  <div class="tag visible -line-danger -large -top -pointing">
+    <span>Votre password est inccorect</span>
+  </div>
+</fieldset>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Fieldset-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Fieldset-code" class="html">&lt;label&gt;With right tag&lt;/label&gt;
+&lt;fieldset class=&quot;-has-icon&quot;&gt;
+  &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+  &lt;div class=&quot;tag visible -line-danger -left -pointing&quot;&gt;
+    &lt;span&gt;Password incorrect&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset class=&quot;-has-icon -large -has-tag&quot;&gt;
+  &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
+  &lt;label&gt;With sub tag&lt;/label&gt;
+  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
+  &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
+    &lt;span&gt;Votre password est inccorect&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+
+</div></div></div></div></div><div id="molecule-Message" class="bloc"><h5>Message</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
+<div class="message">
+  <h5><i class="icon -sun"></i>Title</h5>
+  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+</div>
+<label>With -with-intent -line-primary</label>
+<div class="message -with-intent -line-primary">
+  <i class="icon status -sun"></i>
+  <h5>Title</h5>
+  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+</div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Message-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Message-code" class="html">&lt;label&gt;Simple&lt;/label&gt;
+&lt;div class=&quot;message&quot;&gt;
+  &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
+  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
+&lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
+  &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
+  &lt;h5&gt;Title&lt;/h5&gt;
+  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
 &lt;/div&gt;
 
 </div></div></div></div></div><div id="molecule-Figure" class="bloc"><h5>Figure</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
@@ -294,126 +352,6 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-</div></div></div></div></div><div id="molecule-Fieldset" class="bloc"><h5>Fieldset</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>With right tag</label>
-<fieldset class="-has-icon">
-  <i class="icon -lock"></i>
-  <input type="password" placeholder="Password" />
-  <div class="tag visible -line-danger -left -pointing">
-    <span>Password incorrect</span>
-  </div>
-</fieldset>
-<fieldset class="-has-icon -large -has-tag">
-  <i class="icon -lock"></i>
-  <label>With sub tag</label>
-  <input type="password" placeholder="Password" />
-  <div class="tag visible -line-danger -large -top -pointing">
-    <span>Votre password est inccorect</span>
-  </div>
-</fieldset>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Fieldset-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Fieldset-code" class="html">&lt;label&gt;With right tag&lt;/label&gt;
-&lt;fieldset class=&quot;-has-icon&quot;&gt;
-  &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
-  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
-  &lt;div class=&quot;tag visible -line-danger -left -pointing&quot;&gt;
-    &lt;span&gt;Password incorrect&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;
-&lt;fieldset class=&quot;-has-icon -large -has-tag&quot;&gt;
-  &lt;i class=&quot;icon -lock&quot;&gt;&lt;/i&gt;
-  &lt;label&gt;With sub tag&lt;/label&gt;
-  &lt;input type=&quot;password&quot; placeholder=&quot;Password&quot; /&gt;
-  &lt;div class=&quot;tag visible -line-danger -large -top -pointing&quot;&gt;
-    &lt;span&gt;Votre password est inccorect&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/fieldset&gt;
-
-</div></div></div></div></div><div id="molecule-Shape" class="bloc"><h5>Shape</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="shape one"></div>
-<div class="shape two"></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Shape-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Shape-code" class="html">&lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
-
-</div></div></div></div></div><div id="molecule-Dropdown" class="bloc"><h5>Dropdown</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="dropdown toggle-dropdown">
-  <div class="merge -large -horizontal">
-    <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
-    <button class="button -primary toggle-loading"><span>Go !</span></button>
-  </div>
-  <div class="results">
-    <ul>
-      <li class="touch">Aide-soignant</li>
-      <li class="touch">A<span class="highlight">id</span>e-soignante</li>
-      <li class="touch">Aide-soignante2</li>
-      <li class="touch">Aide-soignante3</li>
-      <li class="touch">Aide-soignante3</li>
-      <li class="touch">Aide-soignante3</li>
-      <li class="touch">Aide-soignante3</li>
-    </ul>
-  </div>
-</div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Dropdown-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Dropdown-code" class="html">&lt;div class=&quot;dropdown toggle-dropdown&quot;&gt;
-  &lt;div class=&quot;merge -large -horizontal&quot;&gt;
-    &lt;input type=&quot;text&quot; id=&quot;job-input&quot; placeholder=&quot;Dernier métier que vous ayez exercé...&quot;/&gt;
-    &lt;button class=&quot;button -primary toggle-loading&quot;&gt;&lt;span&gt;Go !&lt;/span&gt;&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;results&quot;&gt;
-    &lt;ul&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignant&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;A&lt;span class=&quot;highlight&quot;&gt;id&lt;/span&gt;e-soignante&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignante2&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-</div><div hljs="hljs" class="javascript Dropdown-code">$(".toggle-dropdown").focusin(function() {
-  $(this).addClass("-visible");
-});
-$(".toggle-dropdown input").blur(function() {
-  $(this).parent().removeClass("-visible");
-  $(this).parent().parent().removeClass("-visible");
-});
-
-
-</div></div></div></div></div><div id="molecule-Message" class="bloc"><h5>Message</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
-<div class="message">
-  <h5><i class="icon -sun"></i>Title</h5>
-  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-</div>
-<label>With -with-intent -line-primary</label>
-<div class="message -with-intent -line-primary">
-  <i class="icon status -sun"></i>
-  <h5>Title</h5>
-  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-</div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Message-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Message-code" class="html">&lt;label&gt;Simple&lt;/label&gt;
-&lt;div class=&quot;message&quot;&gt;
-  &lt;h5&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;Title&lt;/h5&gt;
-  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-&lt;/div&gt;
-&lt;label&gt;With -with-intent -line-primary&lt;/label&gt;
-&lt;div class=&quot;message -with-intent -line-primary&quot;&gt;
-  &lt;i class=&quot;icon status -sun&quot;&gt;&lt;/i&gt;
-  &lt;h5&gt;Title&lt;/h5&gt;
-  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-&lt;/div&gt;
-
-</div></div></div></div></div><div id="molecule-Tip" class="bloc"><h5>Tip</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Tip-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Tip-code" class="html">&lt;div class=&quot;tip -bottom&quot;&gt;&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;span&gt;Hover me&lt;/span&gt;&lt;/button&gt;&lt;div class=&quot;tag -pointing -top&quot;&gt;&lt;span&gt;This is a tip&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
-
-</div><div hljs="hljs" class="javascript Tip-code">$('.tip').mouseover(function(){
-  $(this).addClass("-visible");
-});
-$('.tip').mouseout(function(){
-  $(this).removeClass("-visible");
-});
-
 </div></div></div></div></div><div id="molecule-Table" class="bloc"><h5>Table</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Simple</label>
 <table>
   <thead>
@@ -512,14 +450,60 @@ $('.tip').mouseout(function(){
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+</div></div></div></div></div><div id="molecule-Shape" class="bloc"><h5>Shape</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="shape one"></div>
+<div class="shape two"></div>
 
-</div></div></div></div></div></section><footer class="footer"><h5><a ui-sref="nav.modifier">modifier</a></h5></footer><script>window.setInterval(function() {
-  $(".toggle-bounce").toggleClass("hide");
-}, 3000);
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Shape-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Shape-code" class="html">&lt;div class=&quot;shape one&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;shape two&quot;&gt;&lt;/div&gt;
 
+</div></div></div></div></div><div id="molecule-Tip" class="bloc"><h5>Tip</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
 
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Tip-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Tip-code" class="html">&lt;div class=&quot;tip -bottom&quot;&gt;&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;&lt;span&gt;Hover me&lt;/span&gt;&lt;/button&gt;&lt;div class=&quot;tag -pointing -top&quot;&gt;&lt;span&gt;This is a tip&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
 
-$(".toggle-dropdown").focusin(function() {
+</div><div hljs="hljs" class="javascript Tip-code">$('.tip').mouseover(function(){
+  $(this).addClass("-visible");
+});
+$('.tip').mouseout(function(){
+  $(this).removeClass("-visible");
+});
+
+</div></div></div></div></div><div id="molecule-Dropdown" class="bloc"><h5>Dropdown</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><div class="dropdown toggle-dropdown">
+  <div class="merge -large -horizontal">
+    <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
+    <button class="button -primary toggle-loading"><span>Go !</span></button>
+  </div>
+  <div class="results">
+    <ul>
+      <li class="touch">Aide-soignant</li>
+      <li class="touch">A<span class="highlight">id</span>e-soignante</li>
+      <li class="touch">Aide-soignante2</li>
+      <li class="touch">Aide-soignante3</li>
+      <li class="touch">Aide-soignante3</li>
+      <li class="touch">Aide-soignante3</li>
+      <li class="touch">Aide-soignante3</li>
+    </ul>
+  </div>
+</div>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Dropdown-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Dropdown-code" class="html">&lt;div class=&quot;dropdown toggle-dropdown&quot;&gt;
+  &lt;div class=&quot;merge -large -horizontal&quot;&gt;
+    &lt;input type=&quot;text&quot; id=&quot;job-input&quot; placeholder=&quot;Dernier métier que vous ayez exercé...&quot;/&gt;
+    &lt;button class=&quot;button -primary toggle-loading&quot;&gt;&lt;span&gt;Go !&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;results&quot;&gt;
+    &lt;ul&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignant&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;A&lt;span class=&quot;highlight&quot;&gt;id&lt;/span&gt;e-soignante&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignante2&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+      &lt;li class=&quot;touch&quot;&gt;Aide-soignante3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</div><div hljs="hljs" class="javascript Dropdown-code">$(".toggle-dropdown").focusin(function() {
   $(this).addClass("-visible");
 });
 $(".toggle-dropdown input").blur(function() {
@@ -529,10 +513,25 @@ $(".toggle-dropdown input").blur(function() {
 
 
 
+</div></div></div></div></div></section><footer class="footer"><h5><a ui-sref="nav.modifier">modifier</a></h5></footer><script>window.setInterval(function() {
+  $(".toggle-bounce").toggleClass("hide");
+}, 3000);
+
+
 
 $('.tip').mouseover(function(){
   $(this).addClass("-visible");
 });
 $('.tip').mouseout(function(){
   $(this).removeClass("-visible");
+});
+
+
+
+$(".toggle-dropdown").focusin(function() {
+  $(this).addClass("-visible");
+});
+$(".toggle-dropdown input").blur(function() {
+  $(this).parent().removeClass("-visible");
+  $(this).parent().parent().removeClass("-visible");
 });</script>

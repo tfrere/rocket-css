@@ -30,3 +30,416 @@
     opacity: 0.2;
 	}
 }
+
+
+
+
+
+.preview-logo {
+    margin-bottom: 150px;
+}
+
+.preview-logo .logo-container {
+    margin: 0!important;
+    width: inherit!important;
+}
+
+.preview-logo .preview-half {
+    display: inline-block;
+    position: relative;
+    width: 480px;
+    height: 320px;
+    margin: 10px;
+}
+
+.preview-logo .preview-full {
+    position: relative;
+    display: block;
+    width: 985px;
+    margin: 10px auto;
+    height: 590px;
+}
+
+.preview-logo .realism {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: .7;
+    height: 100%;
+    width: 100%;
+}
+
+.preview-logo .plogo {
+    overflow: hidden;
+}
+
+.preview-logo .preview-svg {
+    height: 355px;
+}
+
+.preview-logo .preview-svg img {
+    max-height: 355px;
+    max-width: 470px;
+}
+
+@media (max-width: 600px) {
+    .preview-logo .preview-svg {
+        width:100%;
+        height: 225px;
+    }
+
+    .preview-logo {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .preview-logo .preview-svg {
+        width:100%;
+    }
+}
+
+.preview-logo .preview-business-card {
+    background: url(../assets/imgs/jpg/business-card@2x.jpg);
+    background-size: 480px;
+}
+
+.preview-logo .preview-business-card .plogo {
+    position: absolute;
+    top: 41%;
+    left: 33%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-business-card .plogo.skew {
+    -webkit-transform: translate(-146px,-127.5px) rotateX(12deg) rotateY(3deg) skewX(2deg) skewY(-3deg) rotateZ(-13.5deg) scale(.5);
+    -moz-transform: translate(-146px,-127.5px) rotateX(12deg) rotateY(3deg) skewX(2deg) skewY(-3deg) rotateZ(-13.5deg) scale(.5);
+    transform: translate(-146px,-127.5px) rotateX(12deg) rotateY(3deg) skewX(2deg) skewY(-3deg) rotateZ(-13.5deg) scale(.5);
+}
+
+.preview-logo .preview-business-card .realism {
+    background: url(../assets/imgs/png/business-card-realism@2x.png) no-repeat center;
+    background-size: 337px;
+    background-position: 70px 60px;
+}
+
+.preview-logo .preview-letterhead {
+    background: url(../assets/imgs/jpg/letterhead@2x.jpg);
+    background-size: 520px;
+}
+
+.preview-logo .preview-letterhead .plogo {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-letterhead .plogo.skew {
+    -webkit-transform: translate(-245px,-193.5px) rotateZ(-26.5deg) skewX(37deg) scale(.5);
+    -moz-transform: translate(-245px,-193.5px) rotateZ(-26.5deg) skewX(37deg) scale(.5);
+    transform: translate(-245px,-193.5px) rotateZ(-26.5deg) skewX(37deg) scale(.5);;
+}
+
+.preview-logo .preview-letterhead .realism {
+    background: url(../assets/imgs/png/letterhead-realism@2x.png) no-repeat center;
+    background-size: 379px;
+    background-position: 0 -20px;
+}
+
+.preview-logo .preview-envelope {
+    background: url(../assets/imgs/jpg/envelope@2x.jpg);
+    background-size: 480px;
+}
+
+.preview-logo .preview-envelope .plogo {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-envelope .plogo.skew {
+    -webkit-transform: translate(-91px,-107.5px) rotateZ(-26deg) skewX(38deg) scale(.4) scaleX(.9) scaleY(.7);
+    -moz-transform: translate(-91px,-107.5px) rotateZ(-26deg) skewX(38deg) scale(.4) scaleX(.9) scaleY(.7);
+    transform: translate(-91px,-107.5px) rotateZ(-26deg) skewX(38deg) scale(.4) scaleX(.9) scaleY(.7);
+}
+
+.preview-logo .preview-envelope .realism {
+    background: url(../assets/imgs/png/envelope-realism@2x.png) no-repeat center;
+    background-size: 405px;
+    background-position: 120px 80px;
+}
+
+.preview-logo .preview-iphone {
+    background: url(../assets/imgs/jpg/iphone@2x.jpg);
+    background-size: 480px;
+}
+
+.preview-logo .preview-iphone .plogo {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-iphone .plogo.skew {
+    -webkit-transform: translate(-99px,-177.5px) rotateX(10deg) rotateZ(21deg) skewX(-3deg) scale(.35) scaleY(.8) scaleX(.8);
+    -moz-transform: translate(-99px,-177.5px) rotateX(10deg) rotateZ(21deg) skewX(-3deg) scale(.35) scaleY(.8) scaleX(.8);
+    transform: translate(-99px,-177.5px) rotateX(10deg) rotateZ(21deg) skewX(-3deg) scale(.35) scale(Y(.8) scaleX(.8));
+}
+
+.preview-logo .preview-iphone .realism {
+    background: url(../assets/imgs/png/iphone-realism@2x.png) no-repeat center;
+    background-size: 183px;
+    background-position: 200px 40px;
+}
+
+.preview-logo .preview-box2 {
+    background: url(../assets/imgs/jpg/box2@2x.jpg);
+    background-size: 480px;
+}
+
+.preview-logo .preview-box2 .plogo {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-box2 .plogo.skew {
+    -webkit-transform: translate(-115px,-195.5px) rotateZ(-26deg) skewX(38deg) scale(.3);
+    -moz-transform: translate(-115px,-195.5px) rotateZ(-26deg) skewX(38deg) scale(.3);
+    transform: translate(-115px,-195.5px) rotateZ(-26deg) skewX(38deg) scale(.3);
+}
+
+.preview-logo .preview-box2 .realism {
+    background: url(../assets/imgs/png/box2-realism@2x.png) no-repeat center;
+    background-size: 309px;
+    background-position: 140px 5px;
+}
+
+.preview-logo .preview-box {
+    background: url(../assets/imgs/jpg/box@2x.jpg);
+    background-size: 520px;
+}
+
+.preview-logo .preview-box .plogo {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-box .plogo.skew {
+    -webkit-transform: translate(-163px,-200px) rotateZ(27deg) skewX(-34deg) scale(.37);
+    -moz-transform: translate(-163px,-200px) rotateZ(27deg) skewX(-34deg) scale(.37);
+    transform: translate(-163px,-200px) rotateZ(27deg) skewX(-34deg) scale(.37);
+}
+
+.preview-logo .preview-box .realism {
+    background: url(../assets/imgs/png/box-realism@2x.png) no-repeat center;
+    background-size: 297px;
+    background-position: 30px 30px;
+}
+
+.preview-logo .preview-building {
+    background: url(../assets/imgs/jpg/building@2x.jpg);
+    background-size: 1060px;
+    perspective: 975px;
+}
+
+.preview-logo .preview-building .plogo {
+    position: absolute;
+    top: 47%;
+    left: 42%;
+    height: 350px;
+    width: 500px;
+}
+
+.preview-logo .preview-building .plogo.skew {
+    transform: translate(-137px,-103.5px) rotateY(27deg) scale(.9);
+    -webkit-transform: translate(-137px,-103.5px) rotateY(27deg) scale(.9);
+    -moz-transform: translate(-137px,-103.5px) rotateY(27deg) scale(.9);
+}
+
+.preview-logo .preview-building .plogo.skew.shadow {
+    opacity: .3;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+.preview-logo .preview-building .realism {
+    background: url(../assets/imgs/png/building-realism@2x.png) no-repeat center;
+}
+
+@media (max-width: 800px) {
+    .preview-logo .preview-building {
+        transform:translate(-200px,0)
+    }
+}
+
+@media (max-width: 600px) {
+    .preview-logo .preview-box {
+        height:395px;
+    }
+
+    .preview-logo .preview-box .plogo {
+        top: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .preview-logo .preview-building {
+        transform:translate(-340px,0);
+    }
+}
+
+@media (max-width: 450px) {
+    .preview-logo .preview-half {
+        transform:translate(-80px,0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+ .favorite-logos .vcell, .preview-logo .vcell,.container--editor {
+    position: relative;
+}
+
+ .edit-logos, .favorite-logos, .favorite-logos.company-name-options, .preview-logo, .preview-logo.company-name-options {
+    text-align: center;
+}
+
+ .favorite-logos svg, .preview-logo svg,.app-generator-results .favorite-logos svg,.app-generator-results .preview-logo svg {
+    max-width: 470px;
+    max-height: 355px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+ .favorite-logos .purchased-tag, .preview-logo .purchased-tag {
+    background: #56c744;
+    display: inline-block;
+    font-size: 11px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ .favorite-logos a.favorite-icon, .preview-logo a.favorite-icon,.app-generator-results a.favorite-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 101;
+}
+
+ .favorite-logos a.favorite-icon img, .preview-logo a.favorite-icon img,.app-generator-results a.favorite-icon img {
+    height: 25px;
+    box-shadow: none;
+}
+
+ .favorite-logos .logo-container {
+    width: 470px;
+    margin: 14px;
+}
+
+ .favorite-logos .logo-container, .preview-logo .logo-container {
+    position: relative;
+    height: 355px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.07);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+     .favorite-logos .logo-container, .preview-logo .logo-container {
+        width:280px;
+        height: 225px;
+        margin: 15px 15px 30px;
+    }
+}
+
+ .favorite-logos .logo-container:active, .preview-logo .logo-container:active {
+    transform: none!important;
+}
+
+ .favorite-logos .logo-container.preview-mode, .preview-logo .logo-container.preview-mode {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px;
+    max-width: 975px;
+    height: 355px;
+}
+
+ .favorite-logos .logo-container.focus, .preview-logo .logo-container.focus {
+    width: 100%;
+}
+
+ .favorite-logos .logo-container.focus .atv-card-shadow, .preview-logo .logo-container.focus .atv-card-shadow {
+    display: none;
+}
+
+ .favorite-logos .logo-container .atv-card-layers, .preview-logo .logo-container .atv-card-layers {
+    background-color: #fff;
+}
+
+ .favorite-logos .logo-container .logo-option, .preview-logo .logo-container .logo-option {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+ .favorite-logos .logo-container .logo-option svg, .preview-logo .logo-container .logo-option svg {
+    max-width: 470px;
+    max-height: 355px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+     .favorite-logos .logo-option, .preview-logo .logo-option {
+        transform:scale(.6);
+    }
+}
+
+@media screen and (max-width: 600px) {
+     #logo-favorites .copy-header {
+        height:120px;
+        padding: 0;
+    }
+
+     #logo-favorites .container {
+        margin: 0;
+        padding: 0;
+    }
+}

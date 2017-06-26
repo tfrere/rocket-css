@@ -4,9 +4,9 @@ nav.nav
       a(ui-sref='nav.identity') Identity
     ul
       li
-        a(href='#identity-main') Main
+        a(href='#identity-logo') Logo
       li
-        a(href='#identity-others') Others
+        a(href='#identity-examples') Examples
   #nav-typography.accordion(ui-sref-active="active")
     h5.title
       a(ui-sref='nav.typo') Typography
@@ -15,8 +15,6 @@ nav.nav
         a(href='#typo-hierarchy') Hierarchy
       li
         a(href='#typo-typefaces') Typefaces
-      li
-        a(href='#typo-alphabets') Alphabets
   #nav-color.accordion(ui-sref-active="active")
     h5.title
       a(ui-sref='nav.color') Color
@@ -24,7 +22,7 @@ nav.nav
       li
         a(href='#color-main') Main
       li
-        a(href='#color-semantic') Others
+        a(href='#color-semantic') Semantic
       li
         a(href='#color-grey') Greys
   #nav-animation.accordion(ui-sref-active="active")
@@ -33,14 +31,14 @@ nav.nav
     ul(ui-sref-active="active")
       li
         a(href='#animation-ease') Easings
-  //- #nav-symbol.accordion(ui-sref-active="active")
-  //-   h5.title
-  //-     a(ui-sref='nav.symbol') Symbol
-  //-   ul(ui-sref-active="active")
-  //-     li
-  //-       a(href='#symbol-icon') Icon
-  //-     li
-  //-       a(href='#symbol-flag') Flag
-  //-     li
-  //-       a(href='#symbol-social') Social
+  #nav-symbol.accordion(ui-sref-active="active")
+    h5.title
+      a(ui-sref='nav.symbol') Symbol
+    ul(ui-sref-active="active")
+      li
+        a(href='#symbol-icon') Icon
+      li
+        a(href='#symbol-flag') Flag
+      li
+        a(href='#symbol-social') Social
 div(ui-view="")
