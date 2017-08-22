@@ -1,4 +1,3 @@
-import $ 				from 'jquery';
 
 Array.min = function( array ){
        return Math.min.apply( Math, array );
@@ -7,6 +6,8 @@ Array.min = function( array ){
 const whichCulture = function(color, culture) {
 
   this.currentCulture = culture;
+  this.differenceArray = [];
+  this.lowest = "";
 
   this.currentColor = {
     hex: color,
@@ -266,11 +267,6 @@ const whichCulture = function(color, culture) {
           }
       }
   ];
-  //this.base_colors=["660000","990000","cc0000","cc3333","ea4c88","993399","663399","333399","0066cc","0099cc","66cccc","77cc33","669900","336600","666600","999900","cccc33","ffff00","ffcc33","ff9900","ff6600","cc6633","996633","663300","000000","999999","cccccc","ffffff"];
-
-  // Create an emtyp array for the difference betwwen the colors
-  this.differenceArray = [];
-  this.lowest = "";
 
   this.hex2rgb = function( object ) {
 
@@ -292,29 +288,25 @@ const whichCulture = function(color, culture) {
 
   }
 
-
   this.init = function() {
+
     var that = this;
+
     this.hex2rgb(this.currentColor);
 
-    this.data.map(function(object){
+    this.data.map(function(object) {
       that.hex2rgb(object);
-    	//Add the difference to the differenceArray
     	that.differenceArray.push(Math.sqrt((object.rgb.r - that.currentColor.rgb.r) * (object.rgb.r - that.currentColor.rgb.r) + (object.rgb.g - that.currentColor.rgb.g) * (object.rgb.g - that.currentColor.rgb.g) + (object.rgb.b - that.currentColor.rgb.b) * (object.rgb.b - that.currentColor.rgb.b)));
       that.lowest = Array.min(that.differenceArray);
     });
 
     const indexOfAnswer = this.differenceArray.indexOf(this.lowest);
-
-    let cultures = Object.keys(this.data[indexOfAnswer].cultures);
+    const cultures = Object.keys(this.data[indexOfAnswer].cultures);
     let culture = "";
+
     for(var i = 0; cultures.length > i; i++)
-    {
-      if(this.currentCulture == cultures[i]) {
-        console.log(i, cultures[i], Object.values(this.data[indexOfAnswer].cultures)[i]);
+      if(this.currentCulture == cultures[i])
         culture = Object.values(this.data[indexOfAnswer].cultures)[i];
-      }
-    }
 
     let answer = {
       name: this.data[indexOfAnswer].name,

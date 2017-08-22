@@ -6,6 +6,20 @@
   top: -20px;
 }
 
+.toggle-icon-size {
+  right: 28rem;
+  position: absolute;
+  z-index: 999999;
+  top: -20px;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+
 #symbol-icon, #symbol-flag, #symbol-social {
   margin-top: 0;
   &>div {
@@ -44,6 +58,14 @@
       opacity:1;
       .tag {
         display:inline-block;
+      }
+    }
+  }
+  .list.big {
+    .icon-block {
+      width: 50px;
+      i {
+        font-size: 4.5rem;
       }
     }
   }

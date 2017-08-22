@@ -4,6 +4,7 @@ var del = require("del");
 const atoms = getFiles('./src/css/atom');
 const molecules = getFiles('./src/css/molecule');
 const modifiers = getFiles('./src/css/modifier');
+const templates = getFiles('./src/css/template');
 
 const getEachIcon = /.icon.-(.*):before/gm;
 const getEachSocial = /.social.-(.*) {/gm;
@@ -63,56 +64,58 @@ getFileContent('./src/css/helper/const/_social.scss', function(data) {
   socialHtml += socialBlocks;
   socialHtml += '</div></div>';
 });
-
-getFileContent('./src/css/helper/const/_ease.scss', function(data) {
-  const easings = getEachObjectInfo(getEachEase, data);
-  easings.map(function(ease) {
-    easeBlocks
-     += '<div class="ease-demo  ease-demo-' + ease.name.trim() + '">'
-        + '<div class="grid-wrapper">'
-          + '<div class="grid">'
-            + '<div class="line" ></div>'
-            + '<div class="line" ></div>'
-            + '<div class="line" ></div>'
-            + '<div class="vertical-line" ></div>'
-            + '<div class="vertical-line" ></div>'
-            + '<div class="vertical-line" ></div>'
-          + '</div>'
-        + '</div>'
-        + '<div class="dot-wrapper">'
-          + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
-        + '</div>'
-        + '<span><span></span></span>'
-    + '</div>';
-    //  + '<div class="ease-block ease-demo-' + ease.name.trim() + '">'
-    //     + '<div class="grid-wrapper">'
-    //       + '<div class="grid">'
-    //         + '<div class="line" ></div>'
-    //         + '<div class="line" ></div>'
-    //         + '<div class="line" ></div>'
-    //         + '<div class="vertical-line" ></div>'
-    //         + '<div class="vertical-line" ></div>'
-    //         + '<div class="vertical-line" ></div>'
-    //       + '</div>'
-    //     + '</div>'
-    //     + '<div class="dot-wrapper">'
-    //       + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
-    //     + '</div>'
-    //     + '<span class="svg-dots"></span>'
-    //     + '<span class="svg-lines"></span>'
-    //     + '<span class="curve"></span>'
-    // + '</div>';
-  });
-  easeHtml += '<div class="bloc" id="animation-ease"><h5>Easings</h5><hr/><div> <div class="ease-wrapper">';
-  easeHtml += easeBlocks;
-  easeHtml += '</div></div></div>';
-});
+//
+// getFileContent('./src/css/helper/const/_ease.scss', function(data) {
+//   const easings = getEachObjectInfo(getEachEase, data);
+//   easings.map(function(ease) {
+//     easeBlocks
+//     += '<div class="ease-wrapper">'
+//      + '<div class="ease-demo ease-demo-' + ease.name.trim() + '">'
+//         + '<div class="grid-wrapper">'
+//           + '<div class="grid">'
+//             + '<div class="line" ></div>'
+//             + '<div class="line" ></div>'
+//             + '<div class="line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//           + '</div>'
+//         + '</div>'
+//         + '<div class="dot-wrapper">'
+//           + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
+//         + '</div>'
+//         + '<span><span></span></span>'
+//     + '</div>'
+//      + '<div class="ease-block ease-demo-' + ease.name.trim() + '">'
+//         + '<div class="grid-wrapper">'
+//           + '<div class="grid">'
+//             + '<div class="line" ></div>'
+//             + '<div class="line" ></div>'
+//             + '<div class="line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//             + '<div class="vertical-line" ></div>'
+//           + '</div>'
+//         + '</div>'
+//         + '<div class="dot-wrapper">'
+//           + '<div class="dot dot-square dot-straight dot-' + ease.name.trim() + '"></div>'
+//         + '</div>'
+//         + '<span class="svg-dots"></span>'
+//         + '<span class="svg-lines"></span>'
+//         + '<span class="curve"></span>'
+//         + '</div>'
+//     + '</div>';
+//   });
+//   easeHtml += '<div class="bloc" id="animation-ease"><h5>Easings</h5><hr/><div> <div class="ease-wrapper">';
+//   easeHtml += easeBlocks;
+//   easeHtml += '</div></div></div>';
+// });
 
 getFileContent('./src/doc/jquery.js', function(data) {
   jqueryHtml = data;
 });
 
-const sources = atoms.concat(molecules).concat(modifiers);
+const sources = atoms.concat(molecules).concat(modifiers).concat(templates);
 
 
 sources.map(function(url) {
@@ -155,12 +158,12 @@ setTimeout(function(){
 
     html += head;
     html += navHead;
-
-    html += '<div id="nav-animation" class="accordion"><h5 class="title"><a href="#animation-head">Animation</a></h5><ul>';
-
-    html += '<li><a href="#animation-ease">Easings</a></li>';
-
-    html += "</ul></div>";
+    //
+    // html += '<div id="nav-animation" class="accordion"><h5 class="title"><a href="#animation-head">Animation</a></h5><ul>';
+    //
+    // html += '<li><a href="#animation-ease">Easings</a></li>';
+    //
+    // html += "</ul></div>";
 
     html += '<div id="nav-symbol" class="accordion"><h5 class="title"><a href="#symbol-head">Symbol</a></h5><ul>';
 
@@ -196,14 +199,22 @@ setTimeout(function(){
     });
 
     html += "</ul></div>";
-
+    //
+    // html += '<div id="nav-template" class="accordion"><h5 class="title"><a href="#molecule-head">Template</a></h5><ul>';
+    //
+    // blocs.map(function(bloc) {
+    //   if(bloc.type == "template")
+    //       html += '<li><a href="#template-'+bloc.title+'">' + bloc.title + '</a></li>';
+    // });
+    //
+    // html += "</ul></div>";
 
     html += navFoot;
     html += intro;
 
-    html += '<header id="animation-head"><div><h3>Animation</h3></div></header><section id="ease" class="section">';
-    html += easeHtml;
-    html += '</section>';
+    // html += '<header id="animation-head"><div><h3>Animation</h3></div></header><section id="ease" class="section">';
+    // html += easeHtml;
+    // html += '</section>';
 
     html += '<header id="symbol-head"><div><h3>Symbol</h3></div></header><section id="symbol" class="section">';
     html += iconHtml;
@@ -258,6 +269,22 @@ setTimeout(function(){
         html += '</div></div></div>';
       }
     });
+
+    // html += '</section><header id="template-head"><div><h3>Template</h3></div></header><section class="section" id="template">';
+    //
+    // blocs.map(function(bloc) {
+    //   if(bloc.type == "template") {
+    //     html += '<div class="bloc" id="template-' + bloc.title + '">';
+    //     html += '<h5>' + bloc.title + '</h5><hr/><div><div class="two-cols-verticaly-aligned">';
+    //     html += '<div class="wrapper sample">' + bloc.markup + '</div>';
+    //     html += '<div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy" ><button class="button copy-button -line-primary -no-gradient -no-border" data-clipboard-target="#'+bloc.title+'-code"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><pre>';
+    //     html += '<code class="html" id="'+bloc.title+'-code">' + bloc.code + '</code>';
+    //     if (bloc.script)
+    //       html += '<code class="javascript" id="'+bloc.title+'-code">' + bloc.script + '</code>';
+    //     html += '</pre></div>';
+    //     html += '</div></div></div>';
+    //   }
+    // });
 
     html += '</section>';
 

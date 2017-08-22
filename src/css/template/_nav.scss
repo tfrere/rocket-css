@@ -1,3 +1,41 @@
+/*
+––––
+
+	title:
+		Navigation
+
+	comment:
+		La Navigation est une plante qui se mange froide
+
+	markup:
+		<nav>
+		  <div class="container">
+		    <div class="row">
+		      <div class="twelve col">
+						<a id="logo" class="pull-left"></a>
+		        <div class="-round pull-right half-left"></div><a class="button -round small pull-right -line-complement">S'inscrire</a>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
+		<div id="cookie">
+		  <div class="container">
+		    <div class="row">
+		      <div class="twelve col">
+		        <p class="pull-left">Ce site utilise des cookies ! <a href="#">En savoir plus </a></p><i class="icon -cross pull-right"></i>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+  script:
+
+––––
+*/
+
+
+
 #cookie {
 	position:absolute;
 	z-index: 997;

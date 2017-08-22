@@ -30,12 +30,6 @@
     </button>
     <label>With -disabled</label>
     <input type="submit" value="button" disabled class="button"/>
-    <a class="button -disabled -round">
-      <i class="icon -sun"></i>
-    </a>
-		<a class="button -disabled">
-      <i class="icon -sun"></i>
-    </a>
 
   script:
     window.setInterval(function(){

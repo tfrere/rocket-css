@@ -21,6 +21,10 @@ var options = {
 
 var userList = new List('symbol-icon', options);
 
+$(".toggle-icon-size").click(function() {
+  $('#symbol-icon .list').toggleClass("big");
+});
+
 // FUNCTIONS
 
 const showAsFloat = (value) => {
@@ -158,8 +162,9 @@ $(function() {
         let colorMatch = new whichCulture(colors[index].hex, culture);
         colorMatch.init();
         let cultures = colorMatch.init().cultures;
+        const name = colorMatch.init().name;
         $(this).find('.culture').html("");
-        let text = "<h6>Symbolic for " + culture + "<h6>";
+        let text = "<h6>Symbolic for " + name + " in " + culture + "<h6>";
         for(var i = 0; i < cultures.length; i++) {
           text += "<div class='tag -transparent'><span>" + cultures[i] + "</span></div>";
         }
@@ -200,8 +205,9 @@ $(function() {
       let colorMatch = new whichCulture(colors[index].hex, "westernEuropean");
       colorMatch.init();
       let cultures = colorMatch.init().cultures;
+      const name = colorMatch.init().name;
       $(this).find('.culture').html("");
-      let text = "<h6>Symbolic for westernEuropean<h6>";
+      let text = "<h6>Symbolic for " + name + " in westernEuropean<h6>";
       for(var i = 0; i < cultures.length; i++) {
         text += "<div class='tag -transparent'><span>" + cultures[i] + "</span></div>";
       }
