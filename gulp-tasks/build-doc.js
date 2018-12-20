@@ -266,81 +266,81 @@ module.exports = function (gulp, plugins, paths) {
 
 
     setTimeout(function () {
-      //
-      // // Generate nav.jade
-      // var elements = ['atom', 'molecule', 'modifier', 'template'];
-      //
-      // var buildNav = function(elem) {
-      //   var template = '  #nav-' + elem + '.accordion(ui-sref-active="active")'
-      //        + '\r\n' + '    h5.title'
-      //        + '\r\n' + '      a(ui-sref="nav.' + elem + '") ' + elem
-      //        + '\r\n' + '    ul'+ '\r\n';
-      //  blocs.map(function(bloc) {
-      //    if(bloc.type == elem)
-      //        template += '      li'
-      //           + '\r\n' +  '        a(href="#' + elem + '-' + bloc.title + '") ' + bloc.title + '\r\n';
-      //  });
-      //  return template;
-      // }
-      //
-      // elements.map(function(elem) {
-      //   navTemplate += buildNav(elem);
-      // });
+
+      // Generate nav.jade
+      var elements = ['atom', 'molecule', 'modifier', 'template'];
+
+      var buildNav = function(elem) {
+        var template = '  #nav-' + elem + '.accordion(ui-sref-active="active")'
+             + '\r\n' + '    h5.title'
+             + '\r\n' + '      a(ui-sref="nav.' + elem + '") ' + elem
+             + '\r\n' + '    ul'+ '\r\n';
+       blocs.map(function(bloc) {
+         if(bloc.type == elem)
+             template += '      li'
+                + '\r\n' +  '        a(href="#' + elem + '-' + bloc.title + '") ' + bloc.title + '\r\n';
+       });
+       return template;
+      }
+
+      elements.map(function(elem) {
+        navTemplate += buildNav(elem);
+      });
 
       navTemplate += 'div(ui-view="")';
 
       // Generate atom.jade etc..
-      //
-      // var buildBlocs = function(elem, i) {
-      //
-      //   var template = 'header#' + elem + '-head'
-      //   + '\r' + '  div'
-      //   + '\r' + '    h3 ' + elem + ''
-      //   + '\r' + 'section.section#' + elem + '' + '\r';
-      //   blocs.map(function(bloc) {
-      //     if(bloc.type == elem) {
-      //       template += '  .bloc#' + elem + '-' + bloc.title
-      //          + '\r' + '    h5 ' + bloc.title
-      //          + '\r' + '    hr'
-      //          + '\r' + '    div'
-      //          + '\r' + '      div.two-cols-verticaly-aligned'
-      //          + '\r' + '        .wrapper.sample.'
-      //          + '\r' +            bloc.markup
-      //          + '\r' + '        .wrapper.sample-code'
-      //          + '\r' + '          header'
-      //          + '\r' + '            h6.desc HTML'
-      //          + '\r' + '            fieldset.copy'
-      //          + '\r' + '              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#' + bloc.title + '-code")'
-      //          + '\r' + '                i.icon.-floppy-disk'
-      //          + '\r' + '              .tag.-success.-pointing.-left.toggle-copy-success'
-      //          + '\r' + '                span Copied'
-      //          + '\r' + '          div(hljs).html#' + bloc.title + '-code.'
-      //          + '\r' + bloc.code + '\r';
-      //       if (bloc.script) {
-      //       template += '          div(hljs).javascript.' + bloc.title + '-code.\r' + bloc.script.replace(/^(?!\s*$)/mg, indent.repeat(8)) + '\r';
-      //       }
-      //     }
-      //   });
-      //   template += '\rfooter.footer';
-      //   template += '\r  h5'
-      //   template += '\r    a(ui-sref="nav.' + elements[i + 1] + '") ' + elements[i + 1];
-      //   template += '\rscript.';
-      //   console.log(i);
-      //   blocs.map(function(bloc) {
-      //     if(bloc.type == elem && bloc.script)
-      //       template += '\r' + bloc.script + '\r';
-      //   });
-      //
-      //   return template;
-      //
-      // };
-      //
-      // elements.map(function(elem, i) {
-      //   fs.writeFile ("./src/templates/" + elem + ".jade", buildBlocs(elem, i), function(err) {
-      //     if (err) throw err;
-      //     console.log('nav complete');
-      //   });
-      // });
+
+      var buildBlocs = function(elem, i) {
+
+        var template = 'header#' + elem + '-head'
+        + '\r' + '  div'
+        + '\r' + '    h3 ' + elem + ''
+        + '\r' + 'section.section#' + elem + '' + '\r';
+        blocs.map(function(bloc) {
+          if(bloc.type == elem) {
+            template += '  .bloc#' + elem + '-' + bloc.title
+               + '\r' + '    h5 ' + bloc.title
+               + '\r' + '    hr'
+               + '\r' + '    div'
+               + '\r' + '      div.two-cols-verticaly-aligned'
+               + '\r' + '        .wrapper.sample.'
+               + '\r' +            bloc.markup
+               + '\r' + '        .wrapper.sample-code'
+               + '\r' + '          header'
+               + '\r' + '            h6.desc HTML'
+               + '\r' + '            fieldset.copy'
+               + '\r' + '              button.button.copy-button.-line-primary.-no-gradient.-no-border(data-clipboard-target="#' + bloc.title + '-code")'
+               + '\r' + '                i.icon.-floppy-disk'
+               + '\r' + '              .tag.-success.-pointing.-left.toggle-copy-success'
+               + '\r' + '                span Copied'
+               + '\r' + '          div(hljs).html#' + bloc.title + '-code.'
+               + '\r' + bloc.code + '\r';
+            if (bloc.script) {
+            template += '          div(hljs).javascript.' + bloc.title + '-code.\r' + bloc.script.replace(/^(?!\s*$)/mg, indent.repeat(8)) + '\r';
+            }
+          }
+        });
+        template += '\rfooter.footer';
+        template += '\r  h5'
+        template += '\r    a(ui-sref="nav.' + elements[i + 1] + '") ' + elements[i + 1];
+        template += '\rscript.';
+        console.log(i);
+        blocs.map(function(bloc) {
+          if(bloc.type == elem && bloc.script)
+            template += '\r' + bloc.script + '\r';
+        });
+
+        return template;
+
+      };
+
+      elements.map(function(elem, i) {
+        fs.writeFile ("./src/templates/" + elem + ".jade", buildBlocs(elem, i), function(err) {
+          if (err) throw err;
+          console.log('nav complete');
+        });
+      });
 
       symbolTemplate += flagHtml;
       symbolTemplate += socialHtml;

@@ -1,0 +1,70 @@
+/*
+––––
+
+	title:
+		Pof
+
+	comment:
+		La Pof est une plante qui se mange froide
+
+	markup:
+    <div class="pof"></div>
+
+  script:
+
+––––
+*/
+
+
+@keyframes pof-animation {
+  0% {
+    opacity: .75;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+.pof {
+  background-color: rgba(color("primary", "base"), 0.38);
+  border: 1px solid rgba(color("primary", "base"), 0.54);
+  border-radius: 1rem;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  position: relative;
+  height: 1.5rem;
+  transition: border 200ms, background-color 200ms, height 200ms, width 200ms, transform 200ms ease;
+  width: 1.5rem;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.pof:before, .pof:after {
+  background: transparent;
+  border: solid 1px color("primary", "darken-1");
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  transform-origin: center center;
+  width: 100%;
+  animation: pof-animation 1.4s infinite;
+}
+
+.pof:before {
+  animation-delay: .8s;
+}
+
+.pof:hover {
+  background-color: rgba(color("primary", "base"), 0.54);
+  border-color: color("primary", "darken-1");
+  height: 2rem;
+  width: 2rem;
+}
+
+.pof:active {
+  transform: translateX(-50%) translateY(-50%) scale(1.1);
+}

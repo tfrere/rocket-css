@@ -21,7 +21,7 @@
     @return null;
   }
   @else {
-    $color-brightness: resolve-brightness($color);  
+    $color-brightness: resolve-brightness($color);
     $light-text-brightness: resolve-brightness($light);
     $dark-text-brightness: resolve-brightness($dark);
 

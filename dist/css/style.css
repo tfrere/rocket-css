@@ -5166,7 +5166,7 @@ body {
 /* # Titles
 	–––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 100;
   margin-top: 0;
   margin-bottom: 2rem;
@@ -6291,6 +6291,67 @@ input[disabled='disabled'] {
 ––––
 
 	title:
+		Pof
+
+	comment:
+		La Pof est une plante qui se mange froide
+
+	markup:
+    <div class="pof"></div>
+
+  script:
+
+––––
+*/
+@keyframes pof-animation {
+  0% {
+    opacity: .75;
+    transform: scale(1); }
+  100% {
+    opacity: 0;
+    transform: scale(2); } }
+
+.pof {
+  background-color: rgba(227, 146, 66, 0.38);
+  border: 1px solid rgba(227, 146, 66, 0.54);
+  border-radius: 1rem;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  position: relative;
+  height: 1.5rem;
+  transition: border 200ms, background-color 200ms, height 200ms, width 200ms, transform 200ms ease;
+  width: 1.5rem;
+  transform: translateX(-50%) translateY(-50%) scale(1); }
+
+.pof:before, .pof:after {
+  background: transparent;
+  border: solid 1px #d3781f;
+  border-radius: 50%;
+  content: '';
+  height: 100%;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  transform-origin: center center;
+  width: 100%;
+  animation: pof-animation 1.4s infinite; }
+
+.pof:before {
+  animation-delay: .8s; }
+
+.pof:hover {
+  background-color: rgba(227, 146, 66, 0.54);
+  border-color: #d3781f;
+  height: 2rem;
+  width: 2rem; }
+
+.pof:active {
+  transform: translateX(-50%) translateY(-50%) scale(1.1); }
+
+/*
+––––
+
+	title:
 		Blockquote
 
 	comment:
@@ -6474,7 +6535,10 @@ blockquote.-pullquote, .blockquote.-pullquote {
 .checkbox {
   display: inline-block;
   margin-bottom: 0.75rem;
-  position: relative; }
+  position: relative;
+  min-width: 50%; }
+  .checkbox--large {
+    width: 92%; }
   .checkbox:before {
     content: "";
     display: table;
@@ -7544,6 +7608,373 @@ label {
 ––––
 
 	title:
+		Progress
+
+	comment:
+		La Progress est une plante qui se mange froide
+
+  markup:
+    <label>With -small</label>
+    <div class="progress -small">
+      <div class="bar"></div>
+    </div>
+    <div class="progress -small -wick">
+      <div style="width:30%" class="bar"></div>
+    </div>
+    <label>With -inner</label>
+    <div class="progress -inner">
+      <div style="width:50%" class="bar">
+        <span>60 %</span>
+      </div>
+    </div>
+    <div class="progress -inner -round">
+      <div style="width:60%" class="bar ">
+        <span>80 %</span>
+      </div>
+    </div>
+    <label>With animation</label>
+    <div class="progress -round -active">
+      <div style="width:70%" class="bar">
+        <span>70 %</span>
+      </div>
+    </div>
+    <div class="progress -dashed">
+      <div style="width:100%" class="bar">
+        <span>100 %</span>
+      </div>
+    </div>
+
+  script:
+    var getRandomInt = function(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+    window.setInterval(function(){
+      $(".progress .bar").each(function() {
+        let progressValue = getRandomInt(0,100);
+        $(this).css("width",  progressValue+ "%");
+        $(this).find("span").text(progressValue+"%");
+      });
+    }, 3000);
+
+––––
+*/
+@keyframes progress-active {
+  0% {
+    opacity: 1;
+    width: 0; }
+  90% { }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
+@keyframes move {
+  0% {
+    transform: translateX(0px); }
+  100% {
+    transform: translateX(20px); } }
+
+.progress {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  height: 20px;
+  border-radius: 3px;
+  position: relative;
+  background-color: #f5f5f5; }
+  .progress .bar {
+    border-radius: 3px;
+    position: absolute;
+    min-width: 50px;
+    width: 10%;
+    min-height: 20px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #757575;
+    overflow: hidden;
+    transition: width 300ms ease-in-out, background-color 100ms linear; }
+    .progress .bar.-no-animate {
+      transition: none; }
+    .progress .bar span {
+      position: absolute;
+      right: 5px;
+      top: 0px;
+      font-family: "Noto Sans", sans-serif;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      z-index: 1; }
+  .progress.-active .bar:before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    animation: progress-active 2s ease infinite; }
+  .progress.-dashed .bar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: calc(100% + 20px);
+    bottom: 0;
+    right: 0;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #616161), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #616161), color-stop(0.75, #616161), color-stop(0.75, transparent), to(transparent));
+    background-size: 20px 20px;
+    animation: move .5s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden; }
+  .progress.-wick .bar {
+    overflow: visible; }
+    .progress.-wick .bar:after {
+      display: block;
+      position: absolute;
+      right: 0px;
+      width: 8px;
+      bottom: 0px;
+      height: 3px;
+      box-shadow: 1px 0px 8px black;
+      content: "";
+      border-radius: 100%; }
+  .progress.-primary .bar {
+    background-color: #E39242; }
+  .progress.-primary.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #d3781f), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #d3781f), color-stop(0.75, #d3781f), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-primary {
+    background-color: transparent;
+    border: 1px solid rgba(211, 120, 31, 0.8); }
+    .progress.-line-primary .bar {
+      transform: translateY(-1px);
+      background-color: rgba(211, 120, 31, 0.01);
+      border: 1px solid #d3781f; }
+      .progress.-line-primary .bar:before {
+        background: rgba(211, 120, 31, 0.2); }
+      .progress.-line-primary .bar span {
+        color: #d3781f; }
+  .progress.-complement .bar {
+    background-color: #8c0222; }
+  .progress.-complement.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #5a0116), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #5a0116), color-stop(0.75, #5a0116), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-complement {
+    background-color: transparent;
+    border: 1px solid rgba(90, 1, 22, 0.8); }
+    .progress.-line-complement .bar {
+      transform: translateY(-1px);
+      background-color: rgba(90, 1, 22, 0.01);
+      border: 1px solid #5a0116; }
+      .progress.-line-complement .bar:before {
+        background: rgba(90, 1, 22, 0.2); }
+      .progress.-line-complement .bar span {
+        color: #5a0116; }
+  .progress.-success .bar {
+    background-color: green; }
+  .progress.-success.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #004d00), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #004d00), color-stop(0.75, #004d00), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-success {
+    background-color: transparent;
+    border: 1px solid rgba(0, 77, 0, 0.8); }
+    .progress.-line-success .bar {
+      transform: translateY(-1px);
+      background-color: rgba(0, 77, 0, 0.01);
+      border: 1px solid #004d00; }
+      .progress.-line-success .bar:before {
+        background: rgba(0, 77, 0, 0.2); }
+      .progress.-line-success .bar span {
+        color: #004d00; }
+  .progress.-danger .bar {
+    background-color: red; }
+  .progress.-danger.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #cc0000), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #cc0000), color-stop(0.75, #cc0000), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-danger {
+    background-color: transparent;
+    border: 1px solid rgba(204, 0, 0, 0.8); }
+    .progress.-line-danger .bar {
+      transform: translateY(-1px);
+      background-color: rgba(204, 0, 0, 0.01);
+      border: 1px solid #cc0000; }
+      .progress.-line-danger .bar:before {
+        background: rgba(204, 0, 0, 0.2); }
+      .progress.-line-danger .bar span {
+        color: #cc0000; }
+  .progress.-warning .bar {
+    background-color: orange; }
+  .progress.-warning.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #cc8400), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #cc8400), color-stop(0.75, #cc8400), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-warning {
+    background-color: transparent;
+    border: 1px solid rgba(204, 132, 0, 0.8); }
+    .progress.-line-warning .bar {
+      transform: translateY(-1px);
+      background-color: rgba(204, 132, 0, 0.01);
+      border: 1px solid #cc8400; }
+      .progress.-line-warning .bar:before {
+        background: rgba(204, 132, 0, 0.2); }
+      .progress.-line-warning .bar span {
+        color: #cc8400; }
+  .progress.-info .bar {
+    background-color: blue; }
+  .progress.-info.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #0000cc), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #0000cc), color-stop(0.75, #0000cc), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-info {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 204, 0.8); }
+    .progress.-line-info .bar {
+      transform: translateY(-1px);
+      background-color: rgba(0, 0, 204, 0.01);
+      border: 1px solid #0000cc; }
+      .progress.-line-info .bar:before {
+        background: rgba(0, 0, 204, 0.2); }
+      .progress.-line-info .bar span {
+        color: #0000cc; }
+  .progress.-blue .bar {
+    background-color: #98abbf; }
+  .progress.-blue.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #7991ab), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #7991ab), color-stop(0.75, #7991ab), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-blue {
+    background-color: transparent;
+    border: 1px solid rgba(121, 145, 171, 0.8); }
+    .progress.-line-blue .bar {
+      transform: translateY(-1px);
+      background-color: rgba(121, 145, 171, 0.01);
+      border: 1px solid #7991ab; }
+      .progress.-line-blue .bar:before {
+        background: rgba(121, 145, 171, 0.2); }
+      .progress.-line-blue .bar span {
+        color: #7991ab; }
+  .progress.-green .bar {
+    background-color: #326550; }
+  .progress.-green.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #214335), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #214335), color-stop(0.75, #214335), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-green {
+    background-color: transparent;
+    border: 1px solid rgba(33, 67, 53, 0.8); }
+    .progress.-line-green .bar {
+      transform: translateY(-1px);
+      background-color: rgba(33, 67, 53, 0.01);
+      border: 1px solid #214335; }
+      .progress.-line-green .bar:before {
+        background: rgba(33, 67, 53, 0.2); }
+      .progress.-line-green .bar span {
+        color: #214335; }
+  .progress.-yellow .bar {
+    background-color: #F4C430; }
+  .progress.-yellow.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #e5b00c), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #e5b00c), color-stop(0.75, #e5b00c), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-yellow {
+    background-color: transparent;
+    border: 1px solid rgba(229, 176, 12, 0.8); }
+    .progress.-line-yellow .bar {
+      transform: translateY(-1px);
+      background-color: rgba(229, 176, 12, 0.01);
+      border: 1px solid #e5b00c; }
+      .progress.-line-yellow .bar:before {
+        background: rgba(229, 176, 12, 0.2); }
+      .progress.-line-yellow .bar span {
+        color: #e5b00c; }
+  .progress.-brown .bar {
+    background-color: #d0905d; }
+  .progress.-brown.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #c27538), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #c27538), color-stop(0.75, #c27538), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-brown {
+    background-color: transparent;
+    border: 1px solid rgba(194, 117, 56, 0.8); }
+    .progress.-line-brown .bar {
+      transform: translateY(-1px);
+      background-color: rgba(194, 117, 56, 0.01);
+      border: 1px solid #c27538; }
+      .progress.-line-brown .bar:before {
+        background: rgba(194, 117, 56, 0.2); }
+      .progress.-line-brown .bar span {
+        color: #c27538; }
+  .progress.-orange .bar {
+    background-color: #e2681f; }
+  .progress.-orange.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #b65318), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #b65318), color-stop(0.75, #b65318), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-orange {
+    background-color: transparent;
+    border: 1px solid rgba(182, 83, 24, 0.8); }
+    .progress.-line-orange .bar {
+      transform: translateY(-1px);
+      background-color: rgba(182, 83, 24, 0.01);
+      border: 1px solid #b65318; }
+      .progress.-line-orange .bar:before {
+        background: rgba(182, 83, 24, 0.2); }
+      .progress.-line-orange .bar span {
+        color: #b65318; }
+  .progress.-pink .bar {
+    background-color: #f1b6dd; }
+  .progress.-pink.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #e98bc9), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #e98bc9), color-stop(0.75, #e98bc9), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-pink {
+    background-color: transparent;
+    border: 1px solid rgba(233, 139, 201, 0.8); }
+    .progress.-line-pink .bar {
+      transform: translateY(-1px);
+      background-color: rgba(233, 139, 201, 0.01);
+      border: 1px solid #e98bc9; }
+      .progress.-line-pink .bar:before {
+        background: rgba(233, 139, 201, 0.2); }
+      .progress.-line-pink .bar span {
+        color: #e98bc9; }
+  .progress.-light .bar {
+    background-color: #f2f2f2; }
+  .progress.-light.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #d9d9d9), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #d9d9d9), color-stop(0.75, #d9d9d9), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-light {
+    background-color: transparent;
+    border: 1px solid rgba(217, 217, 217, 0.8); }
+    .progress.-line-light .bar {
+      transform: translateY(-1px);
+      background-color: rgba(217, 217, 217, 0.01);
+      border: 1px solid #d9d9d9; }
+      .progress.-line-light .bar:before {
+        background: rgba(217, 217, 217, 0.2); }
+      .progress.-line-light .bar span {
+        color: #d9d9d9; }
+  .progress.-grey .bar {
+    background-color: #9e9e9e; }
+  .progress.-grey.-dashed .bar:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #757575), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #757575), color-stop(0.75, #757575), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-line-grey {
+    background-color: transparent;
+    border: 1px solid rgba(117, 117, 117, 0.8); }
+    .progress.-line-grey .bar {
+      transform: translateY(-1px);
+      background-color: rgba(117, 117, 117, 0.01);
+      border: 1px solid #757575; }
+      .progress.-line-grey .bar:before {
+        background: rgba(117, 117, 117, 0.2); }
+      .progress.-line-grey .bar span {
+        color: #757575; }
+  .progress .bar[style*="100%"] {
+    background-color: green; }
+  .progress.-dashed .bar[style*="100%"]:after {
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, #004d00), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, #004d00), color-stop(0.75, #004d00), color-stop(0.75, transparent), to(transparent)); }
+  .progress.-small {
+    height: 3px; }
+    .progress.-small .bar {
+      min-height: 3px; }
+    .progress.-small span {
+      display: none; }
+  .progress.-round {
+    border-radius: 1000px; }
+    .progress.-round .bar {
+      border-radius: 1000px; }
+  .progress.-inner .bar {
+    min-height: 10px;
+    margin: 5px;
+    max-width: calc( 100% - 10px); }
+  .progress.-inner span {
+    display: none; }
+
+/*
+––––
+
+	title:
 		Video
 
 	comment:
@@ -7628,6 +8059,2035 @@ label {
   .video.-active .video-box {
     display: none;
     visibility: hidden; }
+
+/*
+––––
+
+	title:
+		Rating
+
+	comment:
+		La Rating est une plante qui se mange froide
+
+	markup:
+    <div class="rating -activable -thumb-up">
+      <div class="level"></div>
+    </div>
+    <div class="rating -activable -thumb-down">
+      <div class="level"></div>
+    </div>
+    <div class="rating -activable -heart">
+      <div class="level touch -visible -active"></div>
+      <div class="level touch -visible -active"></div>
+      <div class="level touch -visible"></div>
+      <div class="level touch -visible"></div>
+      <div class="level touch -visible"></div>
+    </div>
+    <div class="rating -star -warning">
+      <div class="level -active"></div>
+      <div class="level -active"></div>
+      <div class="level -active"></div>
+      <div class="level"></div>
+      <div class="level"></div>
+    </div>
+
+  script:
+    $('.rating.-activable .level').hover(function() {
+      $(this).addClass('-to-active');
+      $(this).parent().find('.level:lt(' + $(this).index() + ')').addClass('-to-active');
+      $(this).parent().find('.level:gt(' + $(this).index() + ')').addClass('-to-not-active');
+    }).mouseout(function() {
+      $(this).parent().find('.level').removeClass('-to-active');
+      $(this).parent().find('.level:gt(' + $(this).index() + ')').removeClass('-to-not-active');
+    }).click(function() {
+      $(this).removeClass('-to-active').addClass('-active');
+    	$('.rating .level').removeClass("-activating");
+    	$(this).addClass("-activating");
+      $(this).parent().find('.level:lt(' + $(this).index() + ')').removeClass('-to-not-active').addClass('-active');
+      $(this).parent().find('.level:gt(' + $(this).index() + ')').removeClass('-to-not-active').removeClass('-active');
+    });
+    
+––––
+*/
+@keyframes ratingActivation {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
+.rating {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 1.5rem; }
+  .rating.-activable .level {
+    cursor: pointer; }
+  .rating .level {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding-right: 3px; }
+    .rating .level:before, .rating .level:after {
+      content: "";
+      width: 28px;
+      height: 28px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 100ms ease-out; }
+    .rating .level:after {
+      transform: scale(0.5);
+      opacity: 0; }
+    .rating .level.-active:after, .rating .level.-to-active:after {
+      transform: scale(1);
+      opacity: 1;
+      transition: all 100ms ease-in; }
+    .rating .level.-activating:after {
+      animation: ratingActivation 150ms linear; }
+    .rating .level.-to-active:not(.-active):after, .rating .level.-active.-to-not-active:after {
+      opacity: 0.8; }
+  .rating.-heart .level:before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><g transform="translate(0 -1036.4)"><path fill="#e0e0e0" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051zm-3.5009-13.18c-1.9301 0-3.5009 1.5707-3.5009 3.5008 0 2.5042 1.9358 4.7793 3.5596 6.2481 1.4498 1.3113 2.9191 2.2308 3.4422 2.5427 0.52308-0.3119 1.9924-1.2314 3.4422-2.5427 1.6238-1.4678 3.5596-3.7439 3.5596-6.2481 0-1.9301-1.5708-3.5008-3.5009-3.5008-1.4029 0-2.7652 1.1542-3.1107 2.1895-0.056117 0.1679-0.21314 0.2817-0.39025 0.2817-0.1771 0-0.33465-0.1138-0.39025-0.2817-0.34494-1.0353-1.7077-2.1895-3.1107-2.1895z"/></g></svg>'); }
+  .rating.-star .level:before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><g transform="translate(0 -1036.4)"><path fill="#e0e0e0" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082zm-4.8321-3.5142c0.071933 0 0.14496 0.017 0.20976 0.053l4.0403 2.2036-0.7303-4.3812c-0.02361-0.1395 0.02196-0.2828 0.123-0.3833l2.9108-2.9108-4.4296-0.7379c-0.13892-0.023-0.25753-0.1115-0.32067-0.2372l-1.8038-3.6077-1.8038 3.6077c-0.063147 0.1257-0.18175 0.2135-0.32067 0.2372l-4.4296 0.7379 2.9108 2.9108c0.099936 0.1 0.14606 0.2427 0.123 0.3833l-0.7303 4.3812 4.0403-2.2036c0.065892-0.037 0.13782-0.053 0.20976-0.053z"/></g></svg>'); }
+  .rating.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#E39242"/><stop offset="100%" stop-color="#d3781f"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#E39242"/><stop offset="100%" stop-color="#d3781f"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-thumb-up .level:before {
+    background-image: url('data:image/svg+xml;utf8, <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><g transform="translate(0 -1036.4)"><path fill="#e0e0e0" d="m15.134 1045.3c0.34693-0.4002 0.54412-1.0608 0.54412-1.6901 0-0.4159-0.09004-0.7799-0.26081-1.0529-0.22215-0.3552-0.57789-0.551-1.0007-0.551h-2.0498c1.1156-2.0287 1.3975-3.5569 0.83772-4.5463-0.39048-0.69-1.1064-0.9341-1.6011-0.9341-0.19573 0-0.36161 0.1448-0.38754 0.3392-0.13994 1.0324-0.9302 2.265-2.1672 3.3806-1.1851 1.0687-2.6413 1.9231-4.1387 2.4349-0.18888-0.3979-0.59354-0.6734-1.0618-0.6734h-2.3487c-0.64737 0-1.1744 0.5269-1.1744 1.1744v7.0462c0 0.6475 0.527 1.1744 1.1744 1.1744h2.3487c0.49617 0 0.9209-0.3092 1.0931-0.7453 1.5355 0.1928 2.1129 0.5011 2.6727 0.8001 0.70071 0.3744 1.3613 0.7281 3.5255 0.7281 0.5637 0 1.0946-0.1473 1.4954-0.4139 0.39146-0.2608 0.64199-0.6274 0.72517-1.0517 0.31219-0.1271 0.58963-0.4197 0.8015-0.8548 0.20649-0.4236 0.34057-0.9644 0.34057-1.3789 0-0.078-0.0049-0.1486-0.01321-0.2143 0.19817-0.1458 0.3758-0.3704 0.5221-0.6665 0.21139-0.4266 0.33812-0.9615 0.33812-1.4297 0-0.3318-0.06166-0.6083-0.18301-0.823-0.01028-0.017-0.02055-0.035-0.03034-0.051zm-11.287 5.3175h-2.3487c-0.21628 0-0.39146-0.1752-0.39146-0.3914v-7.0463c0-0.2163 0.17518-0.3915 0.39146-0.3915h2.3487c0.21628 0 0.39146 0.1752 0.39146 0.3915v7.0453c0 0.2162-0.17518 0.3915-0.39146 0.3915zm10.834-6c-0.11842 0.2377-0.23781 0.3238-0.28968 0.3238-0.21628 0-0.39146 0.1752-0.39146 0.3915s0.17518 0.3914 0.39146 0.3914c0.03278 0 0.05627 0 0.0915 0.061 0.05187 0.092 0.08123 0.2507 0.08123 0.4371 0 0.3484-0.09884 0.7623-0.25689 1.0818-0.15511 0.3122-0.31219 0.4258-0.38118 0.4258-0.21628 0-0.39146 0.1752-0.39146 0.3914 0 0.1385 0.07193 0.2608 0.18105 0.3303 0.02447 0.2481-0.0915 0.9122-0.39244 1.3451-0.11352 0.1635-0.2334 0.2574-0.32736 0.2574-0.21628 0-0.39146 0.1753-0.39146 0.3915 0 0.6889-0.76089 1.0031-1.468 1.0031-1.9676 0-2.5185-0.2947-3.1566-0.6356-0.59648-0.3187-1.2668-0.6772-2.9604-0.8876v-6.4097c1.6451-0.5392 3.2506-1.4694 4.5502-2.6407 1.2473-1.1245 2.0659-2.3396 2.3438-3.4654 0.21285 0.069 0.45311 0.2123 0.60774 0.4839 0.2613 0.4619 0.45702 1.6411-1.169 4.3505-0.07291 0.1207-0.07438 0.2715-0.0049 0.3944 0.06948 0.1232 0.19964 0.1986 0.34057 0.1986h2.727c0.1556 0 0.25592 0.055 0.33665 0.1831 0.0915 0.1462 0.1419 0.3734 0.1419 0.6381 0 0.3317-0.07976 0.6903-0.21285 0.9591z"/></g></svg>'); }
+  .rating.-thumb-down .level:before {
+    background-image: url('data:image/svg+xml;utf8, <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><g transform="translate(0 -1036.4)"><path fill="#e0e0e0" d="m0.86888 1043.5c-0.34693 0.4002-0.54412 1.0608-0.54412 1.6901 0 0.4159 0.090035 0.7799 0.26081 1.0529 0.22215 0.3552 0.57789 0.551 1.0007 0.551h2.0498c-1.1156 2.0287-1.3975 3.5569-0.83772 4.5463 0.39048 0.69 1.1064 0.9341 1.6011 0.9341 0.19573 0 0.36161-0.1448 0.38754-0.3392 0.13995-1.0324 0.9302-2.265 2.1672-3.3806 1.1851-1.0687 2.6413-1.9231 4.1387-2.4349 0.18888 0.3979 0.59354 0.6734 1.0618 0.6734h2.3487c0.64737 0 1.1744-0.5269 1.1744-1.1744v-7.0462c0-0.6475-0.527-1.1744-1.1744-1.1744h-2.3487c-0.49617 0-0.9209 0.3092-1.0931 0.7453-1.5355-0.1928-2.1129-0.5011-2.6727-0.8001-0.70071-0.3744-1.3613-0.7281-3.5255-0.7281-0.5637 0-1.0946 0.1473-1.4954 0.4139-0.39146 0.2608-0.64199 0.6274-0.72517 1.0517-0.31219 0.1271-0.58963 0.4197-0.80151 0.8548-0.20649 0.4236-0.34057 0.9644-0.34057 1.3789 0 0.078 0.00488 0.1486 0.013212 0.2143-0.19817 0.1458-0.3758 0.3704-0.5221 0.6665-0.21139 0.4266-0.33812 0.9615-0.33812 1.4297 0 0.3318 0.061655 0.6083 0.18301 0.823 0.010277 0.017 0.02055 0.035 0.030338 0.051zm11.287-5.3175h2.3487c0.21628 0 0.39146 0.1752 0.39146 0.3914v7.0463c0 0.2163-0.17518 0.3915-0.39146 0.3915h-2.3487c-0.21628 0-0.39146-0.1752-0.39146-0.3915v-7.0453c0-0.2162 0.17518-0.3915 0.39146-0.3915zm-10.835 6.0489c0.11842-0.2377 0.23781-0.3238 0.28968-0.3238 0.21628 0 0.39146-0.1752 0.39146-0.3915s-0.17518-0.3914-0.39146-0.3914c-0.032785 0-0.056271 0-0.091502-0.061-0.051867-0.092-0.081228-0.2507-0.081228-0.4371 0-0.3484 0.098843-0.7623 0.25689-1.0818 0.15511-0.3122 0.31219-0.4258 0.38118-0.4258 0.21628 0 0.39146-0.1752 0.39146-0.3914 0-0.1385-0.071929-0.2608-0.18105-0.3303-0.024467-0.2481 0.091502-0.9122 0.39243-1.3451 0.11352-0.1635 0.23341-0.2574 0.32735-0.2574 0.21628 0 0.39146-0.1753 0.39146-0.3915 0-0.6889 0.76089-1.0031 1.468-1.0031 1.9676 0 2.5185 0.2947 3.1566 0.6356 0.59648 0.3187 1.2668 0.6772 2.9604 0.8876v6.4097c-1.6451 0.5392-3.2506 1.4694-4.5502 2.6407-1.2473 1.1245-2.0659 2.3396-2.3438 3.4654-0.21285-0.069-0.45311-0.2123-0.60773-0.4839-0.2613-0.4619-0.45702-1.6411 1.169-4.3505 0.072908-0.1207 0.074376-0.2715 0.00488-0.3944-0.069484-0.1232-0.19964-0.1986-0.34057-0.1986h-2.727c-0.1556 0-0.25591-0.055-0.33665-0.1831-0.091502-0.1462-0.1419-0.3734-0.1419-0.6381 0-0.3317 0.079758-0.6903 0.21285-0.9591z"/></g></svg>'); }
+  .rating.-thumb-up .level:after {
+    background-image: url('data:image/svg+xml;utf8, <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="green"/><stop offset="100%" stop-color="#004d00"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m15.134 1045.3c0.34693-0.4002 0.54412-1.0608 0.54412-1.6901 0-0.4159-0.09004-0.7799-0.26081-1.0529-0.22215-0.3552-0.57789-0.551-1.0007-0.551h-2.0498c1.1156-2.0287 1.3975-3.5569 0.83772-4.5463-0.39048-0.69-1.1064-0.9341-1.6011-0.9341-0.19573 0-0.36161 0.1448-0.38754 0.3392-0.13994 1.0324-0.9302 2.265-2.1672 3.3806-1.1851 1.0687-2.6413 1.9231-4.1387 2.4349-0.18888-0.3979-0.59354-0.6734-1.0618-0.6734h-2.3487c-0.64737 0-1.1744 0.5269-1.1744 1.1744v7.0462c0 0.6475 0.527 1.1744 1.1744 1.1744h2.3487c0.49617 0 0.9209-0.3092 1.0931-0.7453 1.5355 0.1928 2.1129 0.5011 2.6727 0.8001 0.70071 0.3744 1.3613 0.7281 3.5255 0.7281 0.5637 0 1.0946-0.1473 1.4954-0.4139 0.39146-0.2608 0.64199-0.6274 0.72517-1.0517 0.31219-0.1271 0.58963-0.4197 0.8015-0.8548 0.20649-0.4236 0.34057-0.9644 0.34057-1.3789 0-0.078-0.0049-0.1486-0.01321-0.2143 0.19817-0.1458 0.3758-0.3704 0.5221-0.6665 0.21139-0.4266 0.33812-0.9615 0.33812-1.4297 0-0.3318-0.06166-0.6083-0.18301-0.823-0.01028-0.017-0.02055-0.035-0.03034-0.051z"/></g></svg>'); }
+  .rating.-thumb-down .level:after {
+    background-image: url('data:image/svg+xml;utf8, <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="red"/><stop offset="100%" stop-color="#cc0000"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m0.86888 1043.5c-0.34693 0.4002-0.54412 1.0608-0.54412 1.6901 0 0.4159 0.09004 0.7799 0.26081 1.0529 0.22215 0.3552 0.57789 0.551 1.0007 0.551h2.0498c-1.1156 2.0287-1.3975 3.5569-0.83772 4.5463 0.39048 0.69 1.1064 0.9341 1.6011 0.9341 0.19573 0 0.36161-0.1448 0.38754-0.3392 0.13994-1.0324 0.9302-2.265 2.1672-3.3806 1.1851-1.0687 2.6413-1.9231 4.1387-2.4349 0.18888 0.3979 0.59354 0.6734 1.0618 0.6734h2.3487c0.64737 0 1.1744-0.5269 1.1744-1.1744v-7.0462c0-0.6475-0.527-1.1744-1.1744-1.1744h-2.3487c-0.49617 0-0.9209 0.3092-1.0931 0.7453-1.5355-0.1928-2.1129-0.5011-2.6727-0.8001-0.70071-0.3744-1.3613-0.7281-3.5255-0.7281-0.5637 0-1.0946 0.1473-1.4954 0.4139-0.39146 0.2608-0.64199 0.6274-0.72517 1.0517-0.31219 0.1271-0.58963 0.4197-0.8015 0.8548-0.20649 0.4236-0.34057 0.9644-0.34057 1.3789 0 0.078 0.0049 0.1486 0.01321 0.2143-0.19817 0.1458-0.3758 0.3704-0.5221 0.6665-0.21139 0.4266-0.33812 0.9615-0.33812 1.4297 0 0.3318 0.06166 0.6083 0.18301 0.823 0.01028 0.017 0.02055 0.035 0.03034 0.051z"/></g></svg>'); }
+  .rating.-primary.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#E39242"/><stop offset="100%" stop-color="#d3781f"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-primary.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#E39242"/><stop offset="100%" stop-color="#d3781f"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-complement.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#8c0222"/><stop offset="100%" stop-color="#5a0116"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-complement.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#8c0222"/><stop offset="100%" stop-color="#5a0116"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-success.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="green"/><stop offset="100%" stop-color="#004d00"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-success.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="green"/><stop offset="100%" stop-color="#004d00"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-danger.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="red"/><stop offset="100%" stop-color="#cc0000"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-danger.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="red"/><stop offset="100%" stop-color="#cc0000"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-warning.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="orange"/><stop offset="100%" stop-color="#cc8400"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-warning.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="orange"/><stop offset="100%" stop-color="#cc8400"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-info.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="blue"/><stop offset="100%" stop-color="#0000cc"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-info.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="blue"/><stop offset="100%" stop-color="#0000cc"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-blue.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#98abbf"/><stop offset="100%" stop-color="#7991ab"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-blue.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#98abbf"/><stop offset="100%" stop-color="#7991ab"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-green.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#326550"/><stop offset="100%" stop-color="#214335"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-green.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#326550"/><stop offset="100%" stop-color="#214335"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-yellow.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#F4C430"/><stop offset="100%" stop-color="#e5b00c"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-yellow.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#F4C430"/><stop offset="100%" stop-color="#e5b00c"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-brown.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#d0905d"/><stop offset="100%" stop-color="#c27538"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-brown.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#d0905d"/><stop offset="100%" stop-color="#c27538"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-orange.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#e2681f"/><stop offset="100%" stop-color="#b65318"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-orange.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#e2681f"/><stop offset="100%" stop-color="#b65318"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-pink.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#f1b6dd"/><stop offset="100%" stop-color="#e98bc9"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-pink.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#f1b6dd"/><stop offset="100%" stop-color="#e98bc9"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-light.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#f2f2f2"/><stop offset="100%" stop-color="#d9d9d9"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-light.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#f2f2f2"/><stop offset="100%" stop-color="#d9d9d9"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+  .rating.-grey.-heart .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#9e9e9e"/><stop offset="100%" stop-color="#757575"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m7.9996 1051.6c-0.068989 0-0.13746-0.018-0.20027-0.051-0.077226-0.043-1.9162-1.0719-3.7825-2.757-1.1048-0.9967-1.9863-2.0166-2.6221-3.0313-0.81036-1.2944-1.2207-2.5855-1.2207-3.8387 0-2.3848 1.9399-4.3247 4.3247-4.3247 0.80727 0 1.665 0.3023 2.4146 0.8516 0.43813 0.3212 0.81139 0.7084 1.0863 1.1192 0.27492-0.4108 0.64818-0.798 1.0863-1.1192 0.74961-0.5493 1.6073-0.8516 2.4146-0.8516 2.3847 0 4.3247 1.9399 4.3247 4.3247 0 1.2532-0.41084 2.5443-1.2207 3.8387-0.63531 1.0147-1.5172 2.0346-2.621 3.0313-1.8668 1.6856-3.7053 2.7143-3.7825 2.757-0.062811 0.035-0.13077 0.051-0.20027 0.051z"/></g></svg>'); }
+  .rating.-grey.-star .level:after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16"><linearGradient id="Gradient" x1="0" x2="100%" y1="0" y2="100%"><stop offset="0%" stop-color="#9e9e9e"/><stop offset="100%" stop-color="#757575"/></linearGradient><g transform="translate(0 -1036.4)"><path fill="url(#Gradient)" d="m12.8 1051.8c-0.07193 0-0.14386-0.017-0.20975-0.053l-4.6223-2.5205-4.6223 2.5205c-0.14771 0.081-0.32781 0.069-0.46454-0.028s-0.20646-0.2647-0.17846-0.4305l0.84177-5.0484-3.3544-3.3544c-0.11586-0.1158-0.15814-0.2883-0.10817-0.4448 0.049968-0.1565 0.1834-0.2723 0.34593-0.2998l5.0506-0.8417 2.0965-4.1925c0.074677-0.1482 0.22678-0.2427 0.3926-0.2427 0.16583 0 0.31903 0.094 0.3926 0.2427l2.0965 4.1925 5.0506 0.8417c0.16253 0.027 0.29596 0.1423 0.34593 0.2998 0.04997 0.1576 0.0087 0.3284-0.10817 0.4448l-3.3544 3.3544 0.84177 5.0484c0.02745 0.1658-0.04228 0.3328-0.17846 0.4305-0.07578 0.053-0.16528 0.082-0.25478 0.082z" /></g></svg>'); }
+
+/*
+––––
+
+	title:
+		Button-graindandmortar
+
+	comment:
+		Blabla
+
+	markup:
+		<a href="#" target="_blank" class="button button-grainandmortar">
+			<span class="content" >Visiter le site</span>
+			<span class="extra first"</span>
+			<span class="extra last" ></span>
+		</a>
+
+––––
+*/
+.button-grainandmortar {
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+  color: #E39242;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 0;
+  padding: 0.875em 1.428571429em;
+  border: none;
+  box-shadow: none;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap; }
+  .button-grainandmortar:hover, .button-grainandmortar:focus {
+    border: none; }
+  .button-grainandmortar::after {
+    content: '';
+    width: 80%;
+    left: 50%;
+    height: 1px;
+    bottom: 0;
+    transform: translatex(-50%);
+    transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s;
+    display: block;
+    position: absolute;
+    background: rgba(158, 158, 158, 0.2); }
+  .button-grainandmortar span.extra {
+    display: block;
+    position: absolute;
+    transition: all 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+    width: 100%;
+    top: 0;
+    left: 0; }
+    .button-grainandmortar span.extra::before, .button-grainandmortar span.extra::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: rgba(158, 158, 158, 0.2);
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9); }
+    .button-grainandmortar span.extra.first {
+      height: 100%; }
+      .button-grainandmortar span.extra.first::before, .button-grainandmortar span.extra.first::after {
+        width: 1px;
+        height: 100%;
+        bottom: 0;
+        transform: scale3d(1, 0, 1);
+        transform-origin: bottom center;
+        transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+      .button-grainandmortar span.extra.first::before {
+        left: 0; }
+      .button-grainandmortar span.extra.first::after {
+        right: 0; }
+    .button-grainandmortar span.extra.last {
+      width: 100%;
+      height: 1px; }
+      .button-grainandmortar span.extra.last::before, .button-grainandmortar span.extra.last::after {
+        height: 1px;
+        width: 100%;
+        bottom: 0;
+        transform: scale3d(0, 1, 1);
+        transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+      .button-grainandmortar span.extra.last::before {
+        left: 0;
+        transform-origin: bottom left; }
+      .button-grainandmortar span.extra.last::after {
+        right: 0;
+        transform-origin: bottom right; }
+  .button-grainandmortar:hover {
+    opacity: 1;
+    outline: 0;
+    color: rgba(166, 95, 25, 0.8) !important;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+    .button-grainandmortar:hover::after {
+      width: 100%;
+      background: #e39242;
+      transition: width 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+    .button-grainandmortar:hover span.extra.first::before, .button-grainandmortar:hover span.extra.first::after {
+      transform: scale3d(1, 1, 1);
+      background: #e39242;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.2s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+    .button-grainandmortar:hover span.extra.last::before, .button-grainandmortar:hover span.extra.last::after {
+      transform: scale3d(1, 1, 1);
+      background: #e39242;
+      transition: transform 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0.4s, background 0.2s cubic-bezier(0.2, 0.3, 0.25, 0.9) 0s; }
+  .button-container .button-grainandmortar {
+    margin-bottom: 10px; }
+
+/*
+––––
+
+	title:
+		Button-naira
+
+	comment:
+		Blabla
+
+	markup:
+		<button class="button button-naira">
+			<i class="icon icon-sun"></i>
+			<span>Test</span>
+		</button>
+
+––––
+*/
+@keyframes anim-naira {
+  50% {
+    transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -10deg);
+    animation-timing-function: ease-out; }
+  100% {
+    transform: translate3d(0, 0%, 0) rotate3d(0, 0, 1, 0deg); } }
+
+.button-naira {
+  transition: all 200ms ease-in-out;
+  border: 1px solid #7a4612;
+  background: none;
+  color: inherit;
+  position: relative;
+  z-index: 1;
+  background-color: #E39242;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  transition: background-color 0.3s; }
+  .button-naira:focus {
+    outline: none; }
+  .button-naira::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: #E39242;
+    top: -50%;
+    z-index: -1;
+    transform: translate3d(0, -100%, 0) rotate3d(0, 0, 1, -10deg); }
+  .button-naira > span {
+    vertical-align: middle;
+    display: block;
+    color: white; }
+  .button-naira span + i, .button-naira i + span {
+    margin: 0; }
+  .button-naira i {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: #E39242;
+    transform: translate3d(0, -100%, 0); }
+  .button-naira > span, .button-naira i {
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1); }
+  .button-naira i {
+    padding: 15px 40px; }
+  .button-naira:hover::before {
+    animation: anim-naira 0.3s forwards ease-in;
+    background-color: white; }
+  .button-naira:hover {
+    background-color: white;
+    transition: background-color 0s 0.3s; }
+  .button-naira:hover i {
+    transform: translate3d(0, 0, 0); }
+  .button-naira:hover > span {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0); }
+
+/*
+––––
+
+	title:
+		Button-push
+
+	comment:
+		Blabla
+
+	markup:
+		<buton class="button button-push">Test</button>
+
+––––
+*/
+.button-push {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 30px;
+  color: white;
+  border: 1px solid #d3781f;
+  background-color: #E39242;
+  box-shadow: 0px 5px 0px #a65f19;
+  border-radius: 5px;
+  top: 0px;
+  transition: all 100ms ease-in-out; }
+  .button-push:focus, .button-push:active {
+    outline: none; }
+  .button-push:hover {
+    top: 2px;
+    border: 1px solid #d3781f;
+    box-shadow: 0px 3px 0px #a65f19; }
+  .button-push:active {
+    top: 5px;
+    box-shadow: none !important; }
+
+/*
+––––
+
+	title:
+		Anim-underline
+
+	comment:
+		Blabla
+
+	markup:
+		<a class="underline-by-left">by left</a>
+		<br/>
+		<a class="underline-by-right">by right</a>
+		<br/>
+		<a class="underline-by-scale">by scale</a>
+
+––––
+*/
+@keyframes widthAnim {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes heightAnim {
+  from {
+    height: 0; }
+  to {
+    height: 1px; } }
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
+.underline-by-left {
+  height: 1px;
+  display: inline-block !important;
+  position: relative;
+  cursor: pointer; }
+  .underline-by-left:hover:after {
+    content: '';
+    display: block;
+    background: #E39242;
+    height: 1px;
+    float: left;
+    animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards; }
+
+.underline-by-right {
+  height: 1px;
+  display: inline-block !important;
+  position: relative;
+  cursor: pointer; }
+  .underline-by-right:hover:after {
+    content: '';
+    display: block;
+    background: #E39242;
+    height: 1px;
+    float: right;
+    animation: widthAnim 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards; }
+
+.underline-by-scale {
+  height: 1px;
+  display: inline-block !important;
+  position: relative;
+  cursor: pointer; }
+  .underline-by-scale:hover:after {
+    content: '';
+    display: block;
+    background: #E39242;
+    height: 1px;
+    animation: bounceIn 400ms cubic-bezier(0.385, 0.855, 0.5, 0.995) forwards; }
+
+/*
+––––
+
+	title:
+		Burger-menu
+
+	comment:
+		Burger menu animé
+
+	markup:
+		<div class="burger-menu">
+			<div></div>
+		</div>
+
+	script:
+		$(".burger-menu").click(function(){
+			$(".burger-menu").toggleClass("active");
+		});
+
+––––
+*/
+.burger-menu {
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #FFF;
+  position: relative; }
+  .burger-menu div {
+    transition: all 200ms ease-in-out;
+    position: absolute;
+    z-index: 1200;
+    top: 48%;
+    right: 25%;
+    margin-left: -10px;
+    display: block;
+    width: 10px;
+    height: 1px;
+    background: #E39242; }
+    .burger-menu div:before, .burger-menu div:after {
+      transition: all 400ms ease;
+      content: '';
+      position: absolute;
+      right: 0;
+      background: inherit;
+      width: 20px;
+      height: 1px;
+      z-index: 1199; }
+    .burger-menu div:before {
+      top: -6px; }
+    .burger-menu div:after {
+      bottom: -6px; }
+  .burger-menu:hover div {
+    width: 20px; }
+    .burger-menu:hover div:before {
+      transform: rotate(0deg);
+      top: -6px; }
+    .burger-menu:hover div:after {
+      transform: rotate(0deg);
+      bottom: -6px; }
+  .burger-menu.active {
+    background-color: rgba(255, 255, 255, 0.6); }
+    .burger-menu.active div {
+      background-color: rgba(122, 70, 18, 0); }
+      .burger-menu.active div:before {
+        top: 0;
+        background: #7a4612;
+        transform: rotate(135deg); }
+      .burger-menu.active div:after {
+        bottom: 0;
+        background: #7a4612;
+        transform: rotate(-135deg); }
+
+/*
+––––
+
+	title:
+		Loader-line-scale
+
+	comment:
+		Blabla
+
+	markup:
+		<div class="line-scale">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+––––
+*/
+@keyframes line-scale {
+  0% {
+    transform: scaley(1); }
+  50% {
+    transform: scaley(0.4); }
+  100% {
+    transform: scaley(1); } }
+
+.line-scale > div:nth-child(1) {
+  animation: line-scale 1s 0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.line-scale > div:nth-child(2) {
+  animation: line-scale 1s 0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.line-scale > div:nth-child(3) {
+  animation: line-scale 1s 0.3s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.line-scale > div:nth-child(4) {
+  animation: line-scale 1s 0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.line-scale > div:nth-child(5) {
+  animation: line-scale 1s 0.5s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.line-scale > div {
+  width: 3px;
+  height: 15px;
+  border-radius: 2px;
+  margin: 2px;
+  animation-fill-mode: both;
+  background-color: #E39242;
+  display: inline-block; }
+
+/*
+––––
+
+	title:
+		Loader-circle-line-scale
+
+	comment:
+		Blabla
+
+	markup:
+		<div class="circle-line-scale">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+––––
+*/
+@keyframes circle-line-scale {
+  0% {
+    transform: scale(0.1);
+    opacity: 1; }
+  70% {
+    transform: scale(1);
+    opacity: 0.7; }
+  100% {
+    opacity: 0.0; } }
+
+.circle-line-scale {
+  position: relative; }
+  .circle-line-scale > div:nth-child(0) {
+    animation-delay: 0s; }
+  .circle-line-scale > div:nth-child(1) {
+    animation-delay: 0.2s; }
+  .circle-line-scale > div:nth-child(2) {
+    animation-delay: 0.4s; }
+  .circle-line-scale > div:nth-child(3) {
+    animation-delay: 0.6s; }
+  .circle-line-scale > div {
+    animation-fill-mode: both;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid #E39242;
+    animation: circle-line-scale 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8); }
+  .circle-line-scale:after {
+    content: "";
+    height: 50px;
+    position: relative;
+    display: block; }
+
+/*
+––––
+
+	title:
+		Button-ball-scale
+
+	comment:
+		Blabla
+
+	markup:
+		<div class="ball-scale">
+			<div></div>
+		</div>
+
+––––
+*/
+@keyframes ball-scale {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1);
+    opacity: 0; } }
+
+.ball-scale > div {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin: 5px;
+  animation-fill-mode: both;
+  background-color: #E39242;
+  display: inline-block;
+  animation: ball-scale 1s 0s ease-in-out infinite; }
+
+/*
+––––
+
+	title:
+		Button-ball-pulse
+
+	comment:
+		Blabla
+
+	markup:
+		<div class="ball-pulse">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+––––
+*/
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1; }
+  45% {
+    transform: scale(0.1);
+    opacity: 0.7; }
+  80% {
+    transform: scale(1);
+    opacity: 1; } }
+
+.ball-pulse > div:nth-child(0) {
+  -webkit-animation: scale 0.75s 0s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div:nth-child(1) {
+  -webkit-animation: scale 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div:nth-child(2) {
+  -webkit-animation: scale 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div:nth-child(3) {
+  -webkit-animation: scale 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); }
+
+.ball-pulse > div {
+  background-color: #E39242;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 5px;
+  animation-fill-mode: both;
+  display: inline-block; }
+
+/*
+––––
+
+	title:
+		inviteToScroll
+
+	comment:
+		La inviteToScroll est une plante qui se mange froide
+
+	markup:
+    <div class="invite-to-scroll"></div>
+
+  script:
+
+––––
+*/
+@keyframes drop {
+  0% {
+    top: 2px;
+    opacity: 0; }
+  30% {
+    top: 8px;
+    opacity: 1; }
+  100% {
+    top: 15px;
+    opacity: 0; } }
+
+.invite-to-scroll {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-clip: padding-box;
+  height: 33px;
+  width: 20px;
+  margin: 0 0 0 -10px;
+  display: block;
+  bottom: 70px;
+  left: 50%;
+  z-index: 2; }
+  .invite-to-scroll:before {
+    content: '';
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    background-clip: padding-box;
+    background: grey;
+    width: 2px;
+    height: 6px;
+    top: 5px;
+    margin: 0 auto;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running; }
+
+/*
+––––
+
+	title:
+		Fieldset
+
+	comment:
+		La Fieldset est une plante qui se mange froide
+
+	markup:
+    <label>With right tag</label>
+    <fieldset class="-has-icon">
+      <i class="icon -lock"></i>
+      <input type="password" placeholder="Password" />
+      <div class="tag visible -line-danger -left -pointing">
+        <span>Password incorrect</span>
+      </div>
+    </fieldset>
+    <fieldset class="-has-icon -large -has-tag">
+      <i class="icon -lock"></i>
+      <label>With sub tag</label>
+      <input type="password" placeholder="Password" />
+      <div class="tag visible -line-danger -large -top -pointing">
+        <span>Votre password est inccorect</span>
+      </div>
+    </fieldset>
+
+  script:
+
+––––
+*/
+@keyframes fade-in {
+  0% {
+    transform: translateX(5px); }
+  100% {
+    transform: translateX(0px); } }
+
+fieldset {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border: none;
+  padding: 0;
+  display: inline-block; }
+  fieldset input {
+    width: 100%;
+    margin-bottom: 0 !important; }
+  fieldset.-large {
+    width: 100%; }
+  fieldset:after {
+    clear: both;
+    content: ""; }
+  fieldset.-has-icon input {
+    z-index: 0;
+    padding-left: 50px; }
+  fieldset.-has-icon:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 35px;
+    bottom: 3px;
+    left: 40px;
+    background-color: #fafafa; }
+  fieldset.-has-icon > i {
+    z-index: 1;
+    position: absolute;
+    bottom: 12px;
+    left: 13px;
+    opacity: 0.5;
+    font-size: 1.8rem; }
+  fieldset.-has-icon.-right input {
+    z-index: 0;
+    padding-left: 1.5rem;
+    padding-right: 50px; }
+  fieldset.-has-icon.-right:after {
+    right: 40px;
+    left: auto; }
+  fieldset.-has-icon.-right i {
+    right: 11px;
+    left: auto; }
+  fieldset .tag {
+    position: absolute;
+    min-height: 26px;
+    display: none;
+    animation: fade-in 1OOms; }
+    fieldset .tag.visible {
+      display: block; }
+    fieldset .tag.-left {
+      bottom: -3px;
+      left: calc(100% + 15px); }
+    fieldset .tag.-right {
+      bottom: -3px;
+      right: calc(100% + 8px); }
+    fieldset .tag.-top {
+      top: calc(100% + 12px);
+      left: 0; }
+      fieldset .tag.-top:before {
+        left: 15px; }
+  fieldset.-has-tag {
+    margin-bottom: 4.5rem; }
+
+/*
+––––
+
+	title:
+		Bubble
+
+	comment:
+		La Bubble est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="bubble">
+        <img src="/assets/imgs/jpg/joe.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Joe</span>
+                <span class="date">17h34</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hello Elliot, how are u ?</p>
+        </div>
+    </div>
+    <label>With -mine</label>
+    <div class="bubble -mine toggle-bounce">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+        </div>
+    </div>
+    <label>With -minimalist</label>
+    <div class="bubble -minimalist">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Lorem ipsum dolor ascim emet dolor ipsum orem isma ole orem ipsum dolor ascim emet dolor ipsum orem isma ole</p>
+        </div>
+    </div>
+    <div class="bubble -minimalist">
+        <img src="/assets/imgs/jpg/elliot.jpg"/>
+        <div class="content">
+            <div class="header">
+                <span class="name">Elliot</span>
+                <span class="date">17h36</span>
+                <div class="admin">
+                    <i class="icon -pencil"></i>
+                </div>
+            </div>
+            <p>Hey! I'm fine, and you?</p>
+            <p>Are u there ?</p>
+        </div>
+    </div>
+  script:
+    window.setInterval(function() {
+      $(".toggle-bounce").toggleClass("hide");
+    }, 3000);
+
+––––
+*/
+@keyframes bubbleBounce {
+  0% {
+    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  4.7% {
+    transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  9.41% {
+    transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  14.11% {
+    transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  18.72% {
+    transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  24.32% {
+    transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  29.93% {
+    transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  35.54% {
+    transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  41.04% {
+    transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  52.15% {
+    transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  63.26% {
+    transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  85.49% {
+    transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } }
+
+.bubble {
+  width: 100%;
+  margin-bottom: 1rem;
+  position: relative;
+  min-height: 65px; }
+  .bubble button {
+    margin-top: 0; }
+  .bubble > img {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    z-index: 1; }
+  .bubble.hide .content {
+    display: none; }
+  .bubble .content {
+    margin-left: 55px;
+    padding: 0px 15px 1px 15px;
+    float: left;
+    width: calc(100% - 55px);
+    border-radius: 5px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 200ms ease;
+    animation: bubbleBounce 250ms ease;
+    z-index: 0; }
+    .bubble .content span {
+      font-family: "Noto Sans", sans-serif; }
+    .bubble .content p {
+      margin: 0;
+      margin-bottom: 8px;
+      max-width: 100%;
+      word-wrap: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .bubble .content p img {
+        display: inline;
+        width: 20px;
+        height: 20px;
+        transform: translateY(3px);
+        margin-left: 3px;
+        margin-right: 3px; }
+    .bubble .content .header {
+      position: relative;
+      padding: 7px 75px 0px 0px; }
+      .bubble .content .header .name {
+        font-weight: bold;
+        -webkit-user-select: unselectable;
+        -moz-user-select: unselectable;
+        -ms-user-select: unselectable;
+        user-select: unselectable; }
+      .bubble .content .header .date {
+        transition: all 200ms ease;
+        color: #9e9e9e;
+        -webkit-user-select: unselectable;
+        -moz-user-select: unselectable;
+        -ms-user-select: unselectable;
+        user-select: unselectable;
+        font-weight: normal;
+        margin-left: 5px;
+        font-size: 80%;
+        font-family: "Noto Serif", serif; }
+      .bubble .content .header .admin {
+        position: absolute;
+        top: 9px;
+        right: -4px;
+        display: block; }
+        .bubble .content .header .admin i {
+          opacity: 0;
+          cursor: pointer;
+          font-size: 1.3rem;
+          color: #9e9e9e;
+          transition: all 200ms ease; }
+          .bubble .content .header .admin i:hover {
+            color: #757575; }
+    .bubble .content:hover .admin i {
+      opacity: 1; }
+    .bubble .content::after {
+      content: "";
+      display: block;
+      /* reduce the damage in FF3.0 */
+      position: absolute;
+      top: 15px;
+      left: -8px;
+      width: 0;
+      border-width: 7px 8px 7px 0;
+      border-style: solid;
+      border-color: transparent white; }
+  .bubble::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .bubble.-mine > img {
+    right: 0;
+    left: auto; }
+  .bubble.-mine .content {
+    float: right;
+    background-color: #f8fdfa;
+    margin-right: 55px;
+    margin-left: 0px; }
+    .bubble.-mine .content .date {
+      transition: all 200ms ease;
+      color: #9e9e9e; }
+    .bubble.-mine .content::after {
+      right: -8px;
+      left: initial;
+      border-width: 7px 0px 7px 8px;
+      border-color: transparent #f8fdfa; }
+
+.bubble.-minimalist > img {
+  width: 30px;
+  height: 30px; }
+
+.bubble.-minimalist .header {
+  padding: 0px 75px 0px 0px; }
+
+.bubble.-minimalist .content {
+  box-shadow: none;
+  margin-left: 35px; }
+  .bubble.-minimalist .content:after {
+    display: none; }
+
+.bubble.-minimalist:not(:last-child) {
+  border-bottom: 1px solid #eeeeee; }
+
+/*
+––––
+
+	title:
+		Message
+
+	comment:
+		La Message est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="message">
+      <h5><i class="icon -sun"></i>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With -with-intent -line-primary</label>
+    <div class="message -with-intent -line-primary">
+      <i class="icon status -sun"></i>
+      <h5>Title</h5>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+
+  script:
+  
+––––
+*/
+.message {
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  font-family: "Noto Sans", sans-serif;
+  box-shadow: 0px 1px 1px -1px #8C9DA1;
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 1;
+  transition: opacity 200ms ease; }
+  .message p {
+    margin: 0;
+    color: inherit; }
+  .message h1, .message h2, .message h3, .message h4, .message h5, .message h6 {
+    margin-bottom: 0;
+    font-weight: bold;
+    color: inherit; }
+  .message.-primary {
+    background-color: #E39242;
+    color: white;
+    border: 1px solid #e28d39;
+    box-shadow: none; }
+  .message.-line-primary {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #E39242;
+    border: 1px solid rgba(247, 223, 199, 0.3); }
+  .message.-complement {
+    background-color: #8c0222;
+    color: white;
+    border: 1px solid #820220;
+    box-shadow: none; }
+  .message.-line-complement {
+    background-color: rgba(253, 144, 169, 0.2) !important;
+    color: #8c0222;
+    border: 1px solid rgba(252, 43, 91, 0.3); }
+  .message.-success {
+    background-color: green;
+    color: white;
+    border: 1px solid #007600;
+    box-shadow: none; }
+  .message.-line-success {
+    background-color: rgba(128, 255, 128, 0.2) !important;
+    color: green;
+    border: 1px solid rgba(26, 255, 26, 0.3); }
+  .message.-danger {
+    background-color: red;
+    color: white;
+    border: 1px solid #f50000;
+    box-shadow: none; }
+  .message.-line-danger {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: red;
+    border: 1px solid rgba(255, 153, 153, 0.3); }
+  .message.-warning {
+    background-color: orange;
+    color: white;
+    border: 1px solid #f59e00;
+    box-shadow: none; }
+  .message.-line-warning {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: orange;
+    border: 1px solid rgba(255, 219, 153, 0.3); }
+  .message.-info {
+    background-color: blue;
+    color: white;
+    border: 1px solid #0000f5;
+    box-shadow: none; }
+  .message.-line-info {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: blue;
+    border: 1px solid rgba(153, 153, 255, 0.3); }
+  .message.-blue {
+    background-color: #98abbf;
+    color: white;
+    border: 1px solid #92a6bb;
+    box-shadow: none; }
+  .message.-line-blue {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #98abbf;
+    border: 1px solid rgba(246, 248, 250, 0.3); }
+  .message.-green {
+    background-color: #326550;
+    color: white;
+    border: 1px solid #2f5e4b;
+    box-shadow: none; }
+  .message.-line-green {
+    background-color: rgba(185, 221, 206, 0.2) !important;
+    color: #326550;
+    border: 1px solid rgba(117, 187, 158, 0.3); }
+  .message.-yellow {
+    background-color: #F4C430;
+    color: white;
+    border: 1px solid #f3c126;
+    box-shadow: none; }
+  .message.-line-yellow {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #F4C430;
+    border: 1px solid rgba(252, 237, 193, 0.3); }
+  .message.-brown {
+    background-color: #d0905d;
+    color: white;
+    border: 1px solid #ce8b55;
+    box-shadow: none; }
+  .message.-line-brown {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #d0905d;
+    border: 1px solid rgba(242, 225, 212, 0.3); }
+  .message.-orange {
+    background-color: #e2681f;
+    color: white;
+    border: 1px solid #db641c;
+    box-shadow: none; }
+  .message.-line-orange {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #e2681f;
+    border: 1px solid rgba(244, 195, 166, 0.3); }
+  .message.-pink {
+    background-color: #f1b6dd;
+    color: white;
+    border: 1px solid #efadd9;
+    box-shadow: none; }
+  .message.-line-pink {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #f1b6dd;
+    border: 1px solid rgba(255, 255, 255, 0.3); }
+  .message.-light {
+    background-color: #f2f2f2;
+    color: white;
+    border: 1px solid #ededed;
+    box-shadow: none; }
+  .message.-line-light {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: #f2f2f2;
+    border: 1px solid rgba(255, 255, 255, 0.3); }
+  .message.-grey {
+    background-color: #9e9e9e;
+    color: white;
+    border: 1px solid #999999;
+    box-shadow: none; }
+  .message.-line-grey {
+    background-color: rgba(250, 250, 250, 0.2) !important;
+    color: #9e9e9e;
+    border: 1px solid rgba(238, 238, 238, 0.3); }
+  .message.-with-intent > i {
+    position: absolute;
+    font-size: 3rem;
+    top: 20px;
+    left: 20px; }
+  .message.-with-intent p, .message.-with-intent h1, .message.-with-intent h2, .message.-with-intent h3, .message.-with-intent h4, .message.-with-intent h5, .message.-with-intent h6 {
+    margin-left: 50px; }
+
+/*
+––––
+
+	title:
+		Card
+
+	comment:
+		La Card est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <div class="card">
+      <div class="progress -small">
+        <div class="bar"></div>
+      </div>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+    </div>
+    <label>With color</label>
+    <div class="card -primary">
+      <header class="header">
+        <h5>Header Title</h5>
+      </header>
+      <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+      <footer class="footer merge -large -horizontal">
+        <button class="button">Accept</button>
+        <button class="button">Decline</button>
+      </footer>
+    </div>
+
+  script:
+  
+––––
+*/
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  font-family: "Noto Sans", sans-serif;
+  box-shadow: 0px 1px 1px -1px #8C9DA1;
+  margin-bottom: 1.5rem;
+  position: relative;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  overflow: hidden;
+  background-color: white; }
+  .card p, .card .content {
+    margin: 0;
+    color: inherit;
+    padding: 10px 15px; }
+  .card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+    font-weight: bold; }
+  .card .progress {
+    margin: 0; }
+  .card .header {
+    border-bottom: 1px solid #eeeeee;
+    padding: 10px 15px;
+    position: relative; }
+    .card .header h1, .card .header h2, .card .header h3, .card .header h4, .card .header h5, .card .header h6, .card .header label, .card .header button {
+      margin: 0; }
+  .card .footer {
+    border-top: 1px solid #eeeeee;
+    padding: 15px 15px; }
+    .card .footer h1, .card .footer h2, .card .footer h3, .card .footer h4, .card .footer h5, .card .footer h6 {
+      margin: 0; }
+    .card .footer button {
+      margin: 0; }
+  .card.-primary {
+    box-shadow: 0 -2px 0 0 #e28d39; }
+  .card.-complement {
+    box-shadow: 0 -2px 0 0 #820220; }
+  .card.-success {
+    box-shadow: 0 -2px 0 0 #007600; }
+  .card.-danger {
+    box-shadow: 0 -2px 0 0 #f50000; }
+  .card.-warning {
+    box-shadow: 0 -2px 0 0 #f59e00; }
+  .card.-info {
+    box-shadow: 0 -2px 0 0 #0000f5; }
+  .card.-blue {
+    box-shadow: 0 -2px 0 0 #92a6bb; }
+  .card.-green {
+    box-shadow: 0 -2px 0 0 #2f5e4b; }
+  .card.-yellow {
+    box-shadow: 0 -2px 0 0 #f3c126; }
+  .card.-brown {
+    box-shadow: 0 -2px 0 0 #ce8b55; }
+  .card.-orange {
+    box-shadow: 0 -2px 0 0 #db641c; }
+  .card.-pink {
+    box-shadow: 0 -2px 0 0 #efadd9; }
+  .card.-light {
+    box-shadow: 0 -2px 0 0 #ededed; }
+  .card.-grey {
+    box-shadow: 0 -2px 0 0 #999999; }
+
+/*
+––––
+
+	title:
+		Breadcrumbs
+
+	comment:
+		La Breadcrumbs est une plante qui se mange froide
+
+	markup:
+    <div class="breadcrumbs">
+      <span> Business </span>
+      <span> 8 min </span>
+      <span> Thibaud FRERE </span>
+    </div>
+
+  script:
+
+––––
+*/
+.breadcrumbs {
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  width: 100%;
+  color: #757575; }
+  .breadcrumbs span {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem; }
+  .breadcrumbs a:hover {
+    color: #a65f19; }
+  .breadcrumbs > :not(:first-child):before {
+    content: '/';
+    padding: 0 .3rem;
+    color: #7a4612; }
+
+/*
+––––
+
+	title:
+		List
+
+	comment:
+		La List est une plante qui se mange froide
+
+	markup:
+
+    <label>Simple</label>
+    <ul class="list">
+      <li class="item touch">
+        <img class="head grey -circle" src="assets/imgs/jpg/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With circle image</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+      </li>
+      <li class="item -has-notif touch">
+        <i class="head _bg-grey-lighten-2 icon -sun"></i>
+        <div class="content">
+          <h6 class="title">With icon</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="tag notif -corner -top-right -primary">
+          <span> 32 </span>
+        </div>
+      </li>
+      <li class="item touch -has-notif">
+        <img class="head grey -circle" src="assets/imgs/jpg/joe.jpg"/>
+        <div class="content">
+          <h6 class="title">With tags</h6>
+          <div class="desc">
+            <div class="tag">
+              <i class="icon -sun"></i>
+              <span>Thibaud</span>
+            </div>
+            <div class="tag">
+              <i class="icon -sun"></i>
+              <span>Anthony</span>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="item touch -headless">
+        <div class="content">
+          <h6 class="title">Headless with chevron</h6>
+          <p class="desc">Lorem ipsum dolor</p>
+        </div>
+        <div class="action">
+          <i class="icon -chevron-right"></i>
+        </div>
+      </li>
+    </ul>
+
+  script:
+
+––––
+*/
+@keyframes listItemEnter {
+  0% {
+    transform: scale(0.8);
+    opacity: 0; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes listItemLeave {
+  0% {
+    transform: rotate3d(1, 0, 0, 0deg); }
+  100% {
+    transform: rotate3d(1, 0, 0, 50deg); } }
+
+.list {
+  width: 100%;
+  position: relative; }
+  .list .item {
+    width: 100%;
+    background-color: white;
+    padding: 1.5rem;
+    margin: 0;
+    position: relative;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: "Noto Sans", sans-serif;
+    opacity: 1;
+    transition: opacity 200ms ease;
+    animation: listItemEnter 500ms ease; }
+    .list .item:not(:last-child) {
+      border-bottom: 1px solid #e0e0e0; }
+    .list .item:nth-child(2n) {
+      background-color: #fbfbfb; }
+    .list .item.-active {
+      cursor: default; }
+    .list .item .head {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      margin-right: 1.5rem;
+      opacity: 0.8;
+      font-size: 2rem; }
+      .list .item .head.-circle {
+        border-radius: 100%; }
+    .list .item i.head {
+      padding: 13px; }
+    .list .item .button {
+      margin: 0; }
+    .list .item .content {
+      margin-left: 55px; }
+      .list .item .content .title {
+        margin-top: 0;
+        margin-bottom: 0px;
+        font-weight: bold; }
+      .list .item .content .desc {
+        margin-bottom: 0; }
+        .list .item .content .desc .tag {
+          margin-bottom: 0; }
+      .list .item .content p.desc {
+        margin-top: -6px; }
+    .list .item.-headless .content {
+      margin-left: 0px; }
+    .list .item.-has-notif .notif {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    .list .item.-enter {
+      animation: listItemEnter 500ms ease; }
+  .list .action i {
+    position: absolute;
+    right: 2rem;
+    top: calc(50% - 8px);
+    color: #bdbdbd;
+    transition: transform 200ms ease; }
+  .list:hover .action i {
+    transform: translateX(5px); }
+
+/*
+––––
+
+	title:
+		Table
+
+	comment:
+		La Table est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Sex</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Thibaud Frere</td>
+          <td>24</td>
+          <td>Male</td>
+          <td>Paris</td>
+        </tr>
+        <tr>
+          <td>Anthony Lacroix</td>
+          <td>26</td>
+          <td>Male</td>
+          <td>Metz</td>
+        </tr>
+      </tbody>
+    </table>
+    <br/>
+    <label>Simple</label>
+    <table class="-quad">
+      <thead>
+        <tr>
+          <th class="empty shrink"></th>
+          <th>Age</th>
+          <th>Sex</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="shrink"><button class="button -line-primary -no-border -no-gradient"><i class="icon -cross"></i></button></td>
+          <td>24</td>
+          <td>Male</td>
+        </tr>
+        <tr>
+          <td class="shrink"><button class="button -line-primary -no-border -no-gradient"><i class="icon -cross"></i></button></td>
+          <td>26</td>
+          <td>Male</td>
+        </tr>
+      </tbody>
+    </table>
+
+  script:
+  
+––––
+*/
+table {
+  width: 100%;
+  text-align: left;
+  font-family: "Noto Sans", sans-serif; }
+  table thead tr th {
+    font-weight: 600;
+    padding: 15px 15px 15px 1px; }
+    table thead tr th:first-child  {
+      margin-left: 5px; }
+  table td .button {
+    margin: 0; }
+  table td.shrink, table th.shrink {
+    white-space: nowrap; }
+  table tbody tr:last-child {
+    border-bottom: 1px solid #e0e0e0; }
+  table tbody tr:hover {
+    background-color: #f5f5f5; }
+    table tbody tr:hover td:first-child {
+      margin-left: 5px; }
+  table tbody tr td {
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 15px 15px 1px; }
+    table tbody tr td:first-child  {
+      margin-left: 5px; }
+    table tbody tr td input {
+      min-width: 10px;
+      max-width: 100%;
+      width: 100%; }
+  table.-quad {
+    border-radius: 3px; }
+    table.-quad thead {
+      background-color: #fafafa; }
+    table.-quad thead tr th {
+      border-top: 1px solid #e0e0e0; }
+      table.-quad thead tr th:first-child {
+        border-radius: 3px; }
+      table.-quad thead tr th:last-child {
+        border-radius: 3px; }
+    table.-quad tbody tr:last-child td:first-child {
+      border-radius: 3px; }
+    table.-quad tbody tr:last-child td:last-child {
+      border-radius: 3px; }
+    table.-quad thead tr th, table.-quad tbody tr td {
+      border-right: 1px solid #e0e0e0;
+      padding: 10px 10px 10px 10px; }
+      table.-quad thead tr th:first-child, table.-quad tbody tr td:first-child {
+        border-left: 1px solid #e0e0e0; }
+  table .empty {
+    visibility: hidden; }
+
+/*
+––––
+
+	title:
+		Shape
+
+	comment:
+		La Shape est une plante qui se mange froide
+
+	markup:
+    <div class="shape one"></div>
+    <div class="shape two"></div>
+
+  script:
+  
+––––
+*/
+.shape {
+  width: 100%;
+  min-height: 50px;
+  background-color: #e0e0e0;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  position: absolute;
+  background-repeat: no-repeat; }
+
+.shape.one {
+  bottom: -1px;
+  background-image: url('data:image/svg+xml;utf8,<svg class="lego-element svg-bottom-curve" width="100%" viewBox="0 0 1440 84" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <path d="M0 2276h1440v-48c-378.594 80.074-921.422 3.066-1440-36" id="a"></path> </defs> <use fill="white" xlink:href="#a" transform="translate(0 -2192)" fill-rule="evenodd"></use> </svg>'); }
+
+.shape.two {
+  top: -1px;
+  background-image: url('data:image/svg+xml;utf8, <svg class="lego-element " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 48" width="100%" height="48" preserveAspectRatio="none"> <path style="fill:white" d="M0 46.3V0h1440v26.8C878.3 3.7 232.8 46.9 0 46.3z"></path> </svg>'); }
+
+/*
+––––
+
+	title:
+		Figure
+
+	comment:
+		La Figure est une plante qui se mange froide
+
+	markup:
+    <label>Simple</label>
+    <figure class="filter -nashville -example">
+      <img class="rotate-img" src="/assets/imgs/jpg/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+    <br/>
+    <label>With filter -seventies</label>
+    <figure class="filter -seventies -example">
+      <img class="rotate-img" src="/assets/imgs/jpg/background/leaf.jpg">
+      <figcaption>
+        <h6 class="title">Title</h6>
+        <span class="desc">Dzongsar, Tibet 2004</span>
+      </figcaption>
+    </figure>
+
+  script:
+
+––––
+*/
+figure {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+  figure img:first-child {
+    z-index: 2;
+    position: relative;
+    width: 110%;
+    height: 110%;
+    margin-left: -5%;
+    margin-top: -5%; }
+  figure figcaption:after {
+    background: linear-gradient(to top, black, transparent 60%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+    opacity: 1; }
+  figure figcaption,
+  figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  figure figcaption > a {
+    z-index: 4;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0; }
+  figure .title {
+    z-index: 4;
+    color: white;
+    margin: 0;
+    position: absolute;
+    bottom: 26px;
+    left: 17px;
+    font-weight: bold; }
+  figure .desc {
+    z-index: 4;
+    color: #eeeeee;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 17px;
+    font-weight: 400; }
+  figure.-example {
+    height: 150px;
+    width: 350px; }
+
+/*
+––––
+
+	title:
+		Background
+
+	comment:
+		La Background est une plante qui se mange froide
+
+	markup:
+    <div class="background center -visible -fixed">
+      <div class="filter"></div>
+      <div class="gradient"></div>
+      <div class="image" style="background-image:url(/assets/imgs/jpg/leaf.jpg);"></div>
+      <div class="content center-wrapper"><h5>Title</h5></div>
+    </div>
+
+  script:
+
+––––
+*/
+.background {
+  position: relative;
+  overflow: hidden;
+  min-height: 200px; }
+  .background h1, .background h2, .background h3, .background h4, .background h5, .background h6 {
+    margin: 0; }
+  .background h1, .background h2, .background h3, .background h4, .background h5, .background h6, .background p, .background button {
+    color: white; }
+  .background .content {
+    z-index: 1;
+    margin: auto; }
+  .background:after {
+    z-index: -300;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #9e9e9e; }
+  .background .image {
+    width: 100%;
+    z-index: -200;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 400ms ease-in-out;
+    opacity: 0; }
+  .background.-fixed .image {
+    background-attachment: fixed; }
+  .background.-visible .image {
+    opacity: 1; }
+  .background .filter {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .background .gradient {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 100%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -100;
+    opacity: .9; }
+    .background .gradient:after {
+      background: rgba(0, 0, 0, 0.6);
+      content: '';
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: -100;
+      opacity: .6; }
+
+/*
+––––
+
+	title:
+		Dropdown
+
+	comment:
+		La Dropdown est une plante qui se mange froide
+
+	markup:
+    <div class="dropdown toggle-dropdown">
+      <div class="merge -large -horizontal">
+        <input type="text" id="job-input" placeholder="Dernier métier que vous ayez exercé..."/>
+        <button class="button -primary toggle-loading"><span>Go !</span></button>
+      </div>
+      <div class="results">
+        <ul>
+          <li class="touch">Aide-soignant</li>
+          <li class="touch">A<span class="highlight">id</span>e-soignante</li>
+          <li class="touch">Aide-soignante2</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+          <li class="touch">Aide-soignante3</li>
+        </ul>
+      </div>
+    </div>
+
+  script:
+    $(".toggle-dropdown").focusin(function() {
+    	$(this).addClass("-visible");
+    });
+    $(".toggle-dropdown input").blur(function() {
+    	$(this).parent().removeClass("-visible");
+    	$(this).parent().parent().removeClass("-visible");
+    });
+
+
+––––
+*/
+.dropdown {
+  position: relative; }
+  .dropdown .merge, .dropdown input {
+    position: relative;
+    z-index: 2; }
+  .dropdown input {
+    background-color: white; }
+  .dropdown .button {
+    -ms-flex-negative: 5;
+    flex-shrink: 5;
+    z-index: 2; }
+  .dropdown .results {
+    display: none;
+    background-color: white;
+    width: calc(100% - 1px);
+    margin-top: -31px;
+    top: 100%;
+    position: absolute;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid #e0e0e0;
+    border-top: none; }
+    .dropdown .results:before {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent 100%);
+      content: '';
+      height: 4px;
+      width: 100%;
+      top: 15px;
+      left: 0;
+      position: absolute;
+      opacity: .6; }
+    .dropdown .results ul {
+      margin-top: 1.6rem;
+      padding-top: .4rem;
+      margin-bottom: 0;
+      max-height: 230px;
+      overflow-y: scroll; }
+    .dropdown .results li {
+      padding: 10px 15px;
+      text-align: left;
+      margin: 0;
+      transform: background-color 100ms ease;
+      cursor: pointer;
+      border-bottom: 1px solid #eeeeee;
+      -webkit-user-select: unselectable;
+      -moz-user-select: unselectable;
+      -ms-user-select: unselectable;
+      user-select: unselectable; }
+      .dropdown .results li .highlight {
+        background-color: rgba(255, 237, 40, 0.4); }
+      .dropdown .results li:hover {
+        background-color: #fafafa; }
+  .dropdown.-visible input {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px; }
+  .dropdown.-visible .results {
+    display: block; }
+
+/*
+––––
+
+	title:
+		Tip
+
+	comment:
+		La Tip est une plante qui se mange froide
+
+	markup:
+    <div class="tip -bottom"><button class="button"><i class="icon -sun"></i><span>Hover me</span></button><div class="tag -pointing -top"><span>This is a tip</span></div></div>
+
+  script:
+    $('.tip').mouseover(function(){
+      $(this).addClass("-visible");
+    });
+    $('.tip').mouseout(function(){
+      $(this).removeClass("-visible");
+    });
+
+––––
+*/
+.tip {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block; }
+  .tip .tag {
+    visibility: hidden; }
+  .tip .button {
+    margin-bottom: 0; }
+  .tip.-bottom .tag {
+    position: absolute;
+    bottom: calc(-100% - 15px);
+    left: 0; }
+  .tip.-left .tag {
+    position: absolute;
+    top: 50%;
+    left: -100%; }
+  .tip.-visible .tag {
+    visibility: visible; }
 
 /*
 ––––
@@ -9155,7 +11615,7 @@ label {
     .color .column .variation h3 {
       margin-top: 0; }
     .color .column .variation > div {
-      font-family: "Noto Sans", Helvetica, Arial, sans-serif; }
+      font-family: "Roboto", Helvetica, Arial, sans-serif; }
       .color .column .variation > div span:first-child {
         font-weight: 800;
         margin-right: 10px;
@@ -9359,7 +11819,7 @@ label {
         margin-top: 3rem; }
 
 .title-font {
-  font-family: "Noto Sans", Helvetica, Arial, sans-serif; }
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 .text-font {
   font-family: "Noto Serif", serif; }

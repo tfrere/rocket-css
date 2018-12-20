@@ -75,6 +75,86 @@ $(".isolate input").blur(function(){
 &lt;div class=&quot;card level-5 toggle-level&quot;&gt;&lt;p&gt;Level 5&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;card level-6 toggle-level&quot;&gt;&lt;p&gt;Level 6&lt;/p&gt;&lt;/div&gt;
 
+</div></div></div></div></div><div id="modifier-Loading" class="bloc"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Button</label>
+<button class="button loading toggle-loading touch">
+  <i class="icon -sun"></i>
+  <span>Bouton</span>
+</button>
+<label>Card</label>
+<div class="card loading toggle-loading -primary">
+  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
+</div>
+<label>Entire list</label>
+<ul class="list loading toggle-loading">
+  <li class="item touch">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+</ul>
+<label>List item</label>
+<ul class="list">
+  <li class="item touch loading toggle-loading">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+  <li class="item touch">
+    <img class="head grey -circle" src="images/joe.jpg"/>
+    <div class="content">
+      <h6 class="title">Item</h6>
+      <p class="desc">bla blbla blalabla</p>
+    </div>
+  </li>
+</ul>
+
+</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Loading-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Loading-code" class="html">&lt;label&gt;Button&lt;/label&gt;
+&lt;button class=&quot;button loading toggle-loading touch&quot;&gt;
+  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
+  &lt;span&gt;Bouton&lt;/span&gt;
+&lt;/button&gt;
+&lt;label&gt;Card&lt;/label&gt;
+&lt;div class=&quot;card loading toggle-loading -primary&quot;&gt;
+  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
+&lt;/div&gt;
+&lt;label&gt;Entire list&lt;/label&gt;
+&lt;ul class=&quot;list loading toggle-loading&quot;&gt;
+  &lt;li class=&quot;item touch&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;label&gt;List item&lt;/label&gt;
+&lt;ul class=&quot;list&quot;&gt;
+  &lt;li class=&quot;item touch loading toggle-loading&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;item touch&quot;&gt;
+    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
+      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</div><div hljs="hljs" class="javascript Loading-code">window.setInterval(function() {
+  $(".toggle-loading").each(function() {
+    $(this).toggleClass("loading");
+  });
+}, 3000);
+
 </div></div></div></div></div><div id="modifier-Merge" class="bloc"><h5>Merge</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Horizontal</label>
 <div class="merge -horizontal">
   <fieldset class="-has-icon">
@@ -162,86 +242,6 @@ $(".isolate input").blur(function(){
     &lt;span&gt;Se connecter&lt;/span&gt;
   &lt;/button&gt;
 &lt;/div&gt;
-
-</div></div></div></div></div><div id="modifier-Loading" class="bloc"><h5>Loading</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><label>Button</label>
-<button class="button loading toggle-loading touch">
-  <i class="icon -sun"></i>
-  <span>Bouton</span>
-</button>
-<label>Card</label>
-<div class="card loading toggle-loading -primary">
-  <p>The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.</p>
-</div>
-<label>Entire list</label>
-<ul class="list loading toggle-loading">
-  <li class="item touch">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-</ul>
-<label>List item</label>
-<ul class="list">
-  <li class="item touch loading toggle-loading">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-  <li class="item touch">
-    <img class="head grey -circle" src="images/joe.jpg"/>
-    <div class="content">
-      <h6 class="title">Item</h6>
-      <p class="desc">bla blbla blalabla</p>
-    </div>
-  </li>
-</ul>
-
-</div><div class="wrapper sample-code"><header><h6 class="desc">HTML</h6><fieldset class="copy"><button data-clipboard-target="#Loading-code" class="button copy-button -line-primary -no-gradient -no-border"><i class="icon -floppy-disk"></i></button><div class="tag -success -pointing -left toggle-copy-success"><span>Copied</span></div></fieldset></header><div hljs="hljs" id="Loading-code" class="html">&lt;label&gt;Button&lt;/label&gt;
-&lt;button class=&quot;button loading toggle-loading touch&quot;&gt;
-  &lt;i class=&quot;icon -sun&quot;&gt;&lt;/i&gt;
-  &lt;span&gt;Bouton&lt;/span&gt;
-&lt;/button&gt;
-&lt;label&gt;Card&lt;/label&gt;
-&lt;div class=&quot;card loading toggle-loading -primary&quot;&gt;
-  &lt;p&gt;The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom.&lt;/p&gt;
-&lt;/div&gt;
-&lt;label&gt;Entire list&lt;/label&gt;
-&lt;ul class=&quot;list loading toggle-loading&quot;&gt;
-  &lt;li class=&quot;item touch&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;label&gt;List item&lt;/label&gt;
-&lt;ul class=&quot;list&quot;&gt;
-  &lt;li class=&quot;item touch loading toggle-loading&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li class=&quot;item touch&quot;&gt;
-    &lt;img class=&quot;head grey -circle&quot; src=&quot;images/joe.jpg&quot;/&gt;
-    &lt;div class=&quot;content&quot;&gt;
-      &lt;h6 class=&quot;title&quot;&gt;Item&lt;/h6&gt;
-      &lt;p class=&quot;desc&quot;&gt;bla blbla blalabla&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</div><div hljs="hljs" class="javascript Loading-code">window.setInterval(function() {
-  $(".toggle-loading").each(function() {
-    $(this).toggleClass("loading");
-  });
-}, 3000);
 
 </div></div></div></div></div><div id="modifier-Modal" class="bloc"><h5>Modal</h5><hr/><div><div class="two-cols-verticaly-aligned"><div class="wrapper sample"><button class="button open-modal">Open modal</button>
 <div class="modal">

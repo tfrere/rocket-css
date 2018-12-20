@@ -1,0 +1,58 @@
+/*
+––––
+
+	title:
+		Breadcrumbs
+
+	comment:
+		La Breadcrumbs est une plante qui se mange froide
+
+	markup:
+    <div class="breadcrumbs">
+      <span> Business </span>
+      <span> 8 min </span>
+      <span> Thibaud FRERE </span>
+    </div>
+
+  script:
+
+––––
+*/
+
+@mixin breadcrumbs-item {
+    display: inline-block;
+
+    svg {
+        margin-right: 4px;
+    }
+}
+
+.breadcrumbs {
+
+    display: inline-block;
+    user-select: none;
+    cursor: default;
+    span {
+      font-family: $title-font;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+    }
+    font-size:1.2rem;
+    line-height: 1.2;
+    // to override in some cases
+    width: 100%;
+    color: color("grey", "darken-1");
+
+    a:hover {
+        color: color("primary", "darken-2");
+    }
+
+    & > :not(:first-child) {
+        &:before {
+            content: '/';
+            padding: 0 .3rem;
+            color: color("primary", "darken-3");
+        }
+    }
+
+}

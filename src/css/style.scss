@@ -16,6 +16,7 @@
 
 @import "atom/button";
 @import "atom/input";
+@import "atom/pof";
 @import "atom/blockquote";
 @import "atom/toggle";
 @import "atom/checkbox";
@@ -23,32 +24,33 @@
 @import "atom/radio";
 @import "atom/label";
 @import "atom/tag";
-//@import "atom/progress";
+@import "atom/progress";
 @import "atom/video";
-//@import "atom/rating";
+@import "atom/rating";
 
-// @import "atom/extra/button-grainandmortar";
-// @import "atom/extra/button-naira";
-// @import "atom/extra/button-push";
-// @import "atom/extra/anim-underline";
-// @import "atom/extra/burger-menu";
-// @import "atom/extra/loader-line-scale";
-// @import "atom/extra/loader-circle-scale";
-// @import "atom/extra/loader-ball-scale";
-// @import "atom/extra/loader-ball-pulse";
-// @import "atom/extra/invite-to-scroll";
+@import "atom/extra/button-grainandmortar";
+@import "atom/extra/button-naira";
+@import "atom/extra/button-push";
+@import "atom/extra/anim-underline";
+@import "atom/extra/burger-menu";
+@import "atom/extra/loader-line-scale";
+@import "atom/extra/loader-circle-scale";
+@import "atom/extra/loader-ball-scale";
+@import "atom/extra/loader-ball-pulse";
+@import "atom/extra/invite-to-scroll";
 
-// @import "molecule/fieldset";
-// @import "molecule/bubble";
-// @import "molecule/message";
-// @import "molecule/card";
-// @import "molecule/list";
-// @import "molecule/table";
-// @import "molecule/shape";
-// @import "molecule/figure";
-// @import "molecule/background";
-// @import "molecule/dropdown";
-// @import "molecule/tip";
+@import "molecule/fieldset";
+@import "molecule/bubble";
+@import "molecule/message";
+@import "molecule/card";
+@import "molecule/breadcrumbs";
+@import "molecule/list";
+@import "molecule/table";
+@import "molecule/shape";
+@import "molecule/figure";
+@import "molecule/background";
+@import "molecule/dropdown";
+@import "molecule/tip";
 
 @import "modifier/modal";
 @import "modifier/panel";
