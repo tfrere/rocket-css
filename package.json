@@ -17,7 +17,7 @@
     "fs": "0.0.2",
     "google-maps-api": "^2.0.0",
     "history": "^1.17.0",
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.0",
     "jquery-touchswipe": "^1.6.15",
     "json-loader": "^0.5.4",
     "linebreak": "^0.3.0",
