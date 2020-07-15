@@ -21,7 +21,7 @@
     "jquery-touchswipe": "^1.6.15",
     "json-loader": "^0.5.4",
     "linebreak": "^0.3.0",
-    "lodash": "3.10.0",
+    "lodash": "4.17.19",
     "moment": "^2.11.1",
     "nodemailer": "^1.10.0",
     "object-assign": "^4.0.1",
